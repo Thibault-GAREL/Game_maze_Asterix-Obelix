@@ -2,6 +2,9 @@
 #include <string.h>
 #include <stdio.h>
 
+int pion[8] = {1,267,3,4,5,6,270,268};
+
+
 
 int introduction(){
     printf("                               Bienvenue sur Labyrinthe. Une palpitante chasse au tr%csor dans un labyrithe en mouvement.\n\n",130);
@@ -21,65 +24,48 @@ int nomjoueurs(int nom) {
     sprintf(nom, "%s \4", nom);
 }
 
-int choixdupion(char queljoueur[100]) {
+int choixdupion(char queljoueur[100],int pion1,int pion2,int pion3) {
     int choixpion = 0;
-    printf("\n\nIl y a 8 pions disponibles:\n");
-    printf("Pion 1: \1\n");
-    printf("Pion 2: \14\n");
-    printf("Pion 3: \3\n");
-    printf("Pion 4: \4\n");
-    printf("Pion 5: \5\n");
-    printf("Pion 6: \6\n");
-    printf("Pion 7: \16\n");
-    printf("Pion 8: \13\n");
     printf("\n\n%s choisissez votre pion.\n", queljoueur);
     scanf("%d", &choixpion);
-    if (choixpion < 1 || choixpion > 8) {
+    if (choixpion < 1 || choixpion > 8 || choixpion==pion1 || choixpion==pion2 || choixpion==pion3) {
         printf("S%clectionnez un chiffre entre 1 et 8.\n", 130);
-        while (choixpion < 1 || choixpion > 8) {
+        scanf("%d",&choixpion);
+        while (choixpion < 1 || choixpion > 8 || choixpion==pion1 || choixpion==pion2 || choixpion==pion3) {
             printf("%s choisissez un nouveau pion.\n", queljoueur);
             scanf("%d", &choixpion);
         }
     }
-    switch (choixpion) {
-        case 1: {
-            sprintf(queljoueur, "%s \1", queljoueur);
-            break;
-        }
-        case 2: {
-            sprintf(queljoueur, "%s \14", queljoueur);
-            break;
-        }
-        case 3: {
-            sprintf(queljoueur, "%s \3", queljoueur);
-            break;
-        }
-        case 4: {
-            sprintf(queljoueur, "%s \4", queljoueur);
-            break;
-        }
-        case 5: {
-            sprintf(queljoueur, "%s \5", queljoueur);
-            break;
-        }
-        case 6: {
-            sprintf(queljoueur, "%s \6", queljoueur);
-            break;
-        }
-        case 7: {
-            sprintf(queljoueur, "%s \16", queljoueur);
-            break;
-        }
-        case 8: {
-            sprintf(queljoueur, "%s \13", queljoueur);
-            break;
-        }
-    }
-    return queljoueur;
+    return choixpion;
 }
 
-int reecrituredunom(int nom,int choixpion){
-    sprintf(nom,"%s %s",nom,choixpion);
+int nouveaunom(char queljoueur,int pion){
+    if(pion==1) {
+            sprintf(queljoueur, "%s \1", queljoueur);
+        }
+    else if (pion==2){
+            sprintf(queljoueur, "%s \14", queljoueur);
+        }
+    else if(pion==3){
+            sprintf(queljoueur, "%s \3", queljoueur);
+        }
+    else if (pion==4){
+            sprintf(queljoueur, "%s \4", queljoueur);
+        }
+    else if (pion==5){
+            sprintf(queljoueur, "%s \5", queljoueur);
+        }
+    else if(pion==6){
+            sprintf(queljoueur, "%s \6", queljoueur);
+        }
+    else if(pion==7){
+            sprintf(queljoueur, "%s \16", queljoueur);
+        }
+    else if(pion==8){
+            sprintf(queljoueur, "%s \13", queljoueur);
+        }
+    printf("%s",queljoueur);
+    return queljoueur;
 }
 //
 // Created by Antoine on 01/12/2022.
