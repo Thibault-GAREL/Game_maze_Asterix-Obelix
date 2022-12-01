@@ -32,7 +32,23 @@ int main() {
             scanf("%s",&nomJ4);
         }
     }
-    choixdupion();
-
+    if (nbjoueur==1){
+        nomJ1[100]=choixdupion(nomJ1);
+    }
+    if (nbjoueur==2){
+        nomJ1[100]=choixdupion(nomJ1);
+        nomJ2[100]=choixdupion(nomJ2);
+    }
+    if (nbjoueur==3){
+        nomJ1[100]=choixdupion(nomJ1);
+        nomJ2[100]=choixdupion(nomJ2);
+        nomJ3[100]=choixdupion(nomJ3);
+    }
+    if (nbjoueur==4){
+        nomJ1[100]=choixdupion(nomJ1);
+        nomJ2[100]=choixdupion(nomJ2);
+        nomJ3[100]=choixdupion(nomJ3);
+        nomJ4[100]=choixdupion(nomJ4);
+    }
     return 0;
 }
