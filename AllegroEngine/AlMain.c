@@ -17,9 +17,10 @@ int main()
     al_set_new_bitmap_flags(ALLEGRO_MIN_LINEAR | ALLEGRO_MAG_LINEAR);
     ALLEGRO_BITMAP* image = al_load_bitmap("Grass.png");
 
-    Vector2Int imagePos = {1000,1000};
+    Vector2Int imagePos = {100,100};
 
     GameImage myImage;
+    
     LoadImage(&myImage, "Grass.png");
     myImage.pPosition = &imagePos;
     
