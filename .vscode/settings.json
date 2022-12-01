@@ -1,0 +1,7 @@
+{
+    "cmake.configureOnOpen": false,
+    "files.associations": {
+        "allegro.h": "c",
+        "allegroinit.c": "cpp"
+    }
+}
