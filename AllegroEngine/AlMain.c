@@ -1,5 +1,6 @@
 #include "AlMain.h"
 
+
 int main()
 {
     int frame = 0;
@@ -16,11 +17,12 @@ int main()
     al_set_new_bitmap_flags(ALLEGRO_MIN_LINEAR | ALLEGRO_MAG_LINEAR);
     ALLEGRO_BITMAP* image = al_load_bitmap("Grass.png");
 
-    if (image ==  NULL)
-    {
-        fprintf(stderr, "Erreur dans le chargement de l'image");
-        return 1;
-    }
+    Vector2Int imagePos = {1000,1000};
+
+    GameImage myImage;
+    LoadImage(&myImage, "Grass.png");
+    myImage.pPosition = &imagePos;
+    
     
     ALLEGRO_KEYBOARD_STATE kbdstate;
 
@@ -54,14 +56,10 @@ int main()
         }
 
         al_clear_to_color(al_map_rgb(125,100,100));
-        for (int x = 0; x < 7; x++)
-        {
-            for (int y = 0; y < 7; y++)
-            {
-                al_draw_bitmap(image,offset_w + bw * x, offset_h + bh * y, 1);
-            }
-            
-        }
+
+        Vector2Int pos = *myImage.pPosition;
+        
+        al_draw_bitmap(myImage.pImage, pos.x, pos.y, 0);
         
         al_flip_display();
 
@@ -93,3 +91,4 @@ void InitAllegro()
         return;
     }    
 }
+

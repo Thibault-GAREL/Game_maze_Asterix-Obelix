@@ -2,6 +2,8 @@
     "cmake.configureOnOpen": false,
     "files.associations": {
         "allegro.h": "c",
-        "allegroinit.c": "cpp"
+        "allegroinit.c": "cpp",
+        "allegro_image.h": "c",
+        "stdio.h": "c"
     }
 }
