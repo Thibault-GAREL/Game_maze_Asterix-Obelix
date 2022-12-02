@@ -2,6 +2,8 @@
 #include "fonction.h"
 #include <stdlib.h>
 #include <string.h>
+#include <time.h>
+#include <math.h>
 
 
 int main() {
@@ -11,6 +13,12 @@ int main() {
     int pion2;
     int pion3;
     int pion4;
+    int compteur1=0;
+    int compteur2=0;
+    int compteur3=0;
+    int compteur4=0;
+    int a=0;
+    int partie=1;
     introduction();
     demandenbjoueur();
     scanf("%d",&nbjoueur);
@@ -162,6 +170,45 @@ int main() {
         }
     }
     ecriturenom(nomJ1,nomJ2,nomJ3,nomJ4,nbjoueur);
-
+    a=tirageausort(nbjoueur);
+    while (partie==1){
+        if (a==1){
+            compteur1=1;
+        }
+        else if (a==2){
+            compteur2=1;
+        }
+        else if (a==3){
+            compteur3=1;
+        }
+        else if (a==4){
+            compteur4=1;
+        }
+        if (compteur1==1){
+            compteur1=0;
+            printf("\n                                                                              C'est au tour de %s de jouer.\n",nomJ1);
+            compteur2=1;
+        }
+        compteur2= toursuivant(compteur1,compteur2);
+        if(compteur2==1){
+            compteur2=0;
+            printf("\n                                                                              C'est au tour de %s de jouer.\n",nomJ2);
+            compteur3=1;
+        }
+        compteur3= toursuivant(compteur2,compteur3);
+        compteur1=testquijoue(nbjoueur,3,compteur1,compteur4,compteur3);
+        if(compteur3==1 && nbjoueur>2){
+            compteur3=0;
+            printf("\n                                                                              C'est au tour de %s de jouer.\n",nomJ3);
+        }
+        compteur4= toursuivant(compteur3,compteur4);
+        compteur1=testquijoue(nbjoueur,4,compteur1,compteur4,compteur4);
+        if(compteur4==1 && nbjoueur==4){
+            compteur4=0;
+            printf("\n                                                                              C'est au tour de %s de jouer.\n",nomJ4);
+            compteur1=1;
+        }
+        compteur1= toursuivant(compteur4,compteur1);
+    }
     return 0;
 }

@@ -1,6 +1,9 @@
 #include <stdlib.h>
 #include <string.h>
 #include <stdio.h>
+#include <time.h>
+#include <math.h>
+
 
 int pion[8] = {1,267,3,4,5,6,270,268};
 
@@ -51,6 +54,50 @@ int ecriturenom(char nom1[100],char nom2[100],char nom3[100],char nom4[100],int 
     }
     printf("\n\n                                                            Pour d%cterminer qui commence, faisons un tirage au sort.\n",130);
 }
+
+int tirageausort(int nbjoueur){
+    int b=0;
+    if (nbjoueur==2){
+        srand(time(NULL));
+        int a=rand()%2+1;
+        b=a;
+    }
+    if (nbjoueur==3){
+        srand(time(NULL));
+        int a=rand()%3+1;
+        b=a;
+    }
+    if (nbjoueur==4){
+        srand(time(NULL));
+        int a=rand()%4+1;
+        b=a;
+    }
+    printf("\n                                                                              C'est le Joueur %d qui commence.\n",b);
+    return b;
+}
+
+int testquijoue(int nbjoueur,int numerojoueur,int compteur,int compteur4,int compteur3){
+    if(nbjoueur<numerojoueur){
+        compteur3=0;
+        compteur4=0;
+    }
+    if (nbjoueur>=numerojoueur){
+        compteur4=1;
+    }
+    else {
+        compteur4=1;
+    }
+    return compteur4;
+}
+
+int toursuivant(int compteur1,int compteur2){
+    if (compteur1==0){
+        compteur2=1;
+    }
+    return compteur2;
+}
+
+
 //
 // Created by Antoine on 01/12/2022.
 //
