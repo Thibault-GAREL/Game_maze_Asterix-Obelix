@@ -39,34 +39,6 @@ int choixdupion(char queljoueur[100],int pion1,int pion2,int pion3) {
     return choixpion;
 }
 
-int nouveaunom(char queljoueur,int pion){
-    if(pion==1) {
-            sprintf(queljoueur, "%s \1", queljoueur);
-        }
-    else if (pion==2){
-            sprintf(queljoueur, "%s \14", queljoueur);
-        }
-    else if(pion==3){
-            sprintf(queljoueur, "%s \3", queljoueur);
-        }
-    else if (pion==4){
-            sprintf(queljoueur, "%s \4", queljoueur);
-        }
-    else if (pion==5){
-            sprintf(queljoueur, "%s \5", queljoueur);
-        }
-    else if(pion==6){
-            sprintf(queljoueur, "%s \6", queljoueur);
-        }
-    else if(pion==7){
-            sprintf(queljoueur, "%s \16", queljoueur);
-        }
-    else if(pion==8){
-            sprintf(queljoueur, "%s \13", queljoueur);
-        }
-    printf("%s",queljoueur);
-    return queljoueur;
-}
 //
 // Created by Antoine on 01/12/2022.
 //
