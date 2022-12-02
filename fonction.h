@@ -38,7 +38,19 @@ int choixdupion(char queljoueur[100],int pion1,int pion2,int pion3) {
     }
     return choixpion;
 }
-
+int ecriturenom(char nom1[100],char nom2[100],char nom3[100],char nom4[100],int nbjoueur){
+    if (nbjoueur>1){
+        printf("                                                            Joueur 1 : %s\n",nom1);
+        printf("                                                            Joueur 2 : %s\n",nom2);
+    }
+    if (nbjoueur>2){
+        printf("                                                            Joueur 3 : %s\n",nom3);
+    }
+    if (nbjoueur>3){
+        printf("                                                            Joueur 4 : %s\n",nom4);
+    }
+    printf("\n\n                                                            Pour d%cterminer qui commence, faisons un tirage au sort.\n",130);
+}
 //
 // Created by Antoine on 01/12/2022.
 //

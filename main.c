@@ -161,9 +161,7 @@ int main() {
             sprintf(nomJ4, "%s \13", nomJ4);
         }
     }
-    printf("%s",nomJ1);
-    printf("%s",nomJ2);
-    printf("%s",nomJ3);
-    printf("%s",nomJ4);
+    ecriturenom(nomJ1,nomJ2,nomJ3,nomJ4,nbjoueur);
+
     return 0;
 }
