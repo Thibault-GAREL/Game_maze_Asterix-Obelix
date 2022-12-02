@@ -6,6 +6,6 @@ lien utile [Mermaid](https://github.com/mermaid-js/mermaid)
 
 Créateur :
 - Mathieu GROS
-- Antoine
+- Antoine GOUDEDRANCHE
 - Robin KOENIG
 - Thibault GAREL
