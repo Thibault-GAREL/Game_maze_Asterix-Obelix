@@ -1,4 +1,11 @@
-# Projet
+# Projet Algorithme 
 
-Vous pouvez éditer le fichier README.md (en langage **Markdown**) pour modifier cette partie.
-Vous pouvez générer des schémas en utilisant [Mermaid](https://github.com/mermaid-js/mermaid).
+**Création du jeu Labyrinthe**
+
+lien utile [Mermaid](https://github.com/mermaid-js/mermaid)
+
+Créateur :
+- Mathieu GROS
+- Antoine
+- Robin KOENIG
+- Thibault GAREL
