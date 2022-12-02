@@ -15,7 +15,7 @@ int main()
     }
 
     al_set_new_bitmap_flags(ALLEGRO_MIN_LINEAR | ALLEGRO_MAG_LINEAR);
-    ALLEGRO_BITMAP* image = al_load_bitmap("Grass.png");
+    //ALLEGRO_BITMAP* image = al_load_bitmap("Grass.png");
 
     Vector2Int imagePos = {100,100};
 
@@ -41,11 +41,11 @@ int main()
 		al_draw_scaled_bitmap(image, 0, 0, bw, bh, (w - h) / 2, 0, h, h, 0);
     }*/
 
-    int bw = al_get_bitmap_width(image);
+    /*int bw = al_get_bitmap_width(image);
 	int bh = al_get_bitmap_height(image);
 
     int offset_w = 100;
-    int offset_h = 50;
+    int offset_h = 50;*/
 
     while (1) 
     {

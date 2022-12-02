@@ -1,4 +1,4 @@
-#include "Image.h"
+//#include "Image.h"
 
 
 void LoadImage(GameImage* gameImage, const char *filePath)
@@ -7,6 +7,6 @@ void LoadImage(GameImage* gameImage, const char *filePath)
 
     if (gameImage->pImage ==  NULL)
     {
-        fprintf(stderr, "<ERREUR> dans le chargement de l'image !");
+        fprintf(stderr, "<ERREUR> dans le chargement de l'image");
     }
 }
