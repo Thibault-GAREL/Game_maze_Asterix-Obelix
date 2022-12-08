@@ -1,38 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <windows.h>
-
-
 void color(int t,int f)
 {
     HANDLE H=GetStdHandle(STD_OUTPUT_HANDLE);
     SetConsoleTextAttribute(H,f*16+t);
-}
-
-
-
-
-
-int afficherblocpermanent(){
-    color(9,0);
-    printf("                                 %c%c%c%c%c%c%c%c           %c%c%c%c%c%c%c%c%c%c%c%c           %c%c%c%c%c%c%c%c%c%c%c%c%c%c           %c%c%c%c%c%c%c%c%c\n",474,452,452,452,452,452,452,452,452,452,452,452,452,452,452,452,452,452,452,452,452,452,452,452,452,452,452,452,452,452,452,452,452,452,452,452,452,452,452,452,452,452,447);
-    printf("                                 %c %c%c%c%c%c%c           %c%c%c%c%c  %c%c%c%c%c           %c%c%c%c%c%c  %c%c%c%c%c%c           %c%c%c%c%c%c%c %c\n",435,479,474,452,452,452,452,452,452,452,452,447,474,452,452,452,452,452,452,452,452,452,447,474,452,452,452,452,452,452,452,452,452,452,447,479,435);
-    printf("                                 %c  %c                   %c  %c                    %c  %c                     %c  %c\n",435,435,435,435,435,435,435,435);
-    printf("                                 %c  %c                   %c  %c                    %c  %c                     %c  %c\n\n\n\n",435,435,435,435,435,435,435,435);
-    printf("                                 %c  %c                   %c  %c                                             %c  %c\n",435,435,435,435,435,435);
-    printf("                                 %c  %c                   %c  %c                                             %c  %c\n",435,435,435,435,435,435);
-    printf("                                 %c  %c%c%c%c                %c  %c%c%c%c            %c%c%c%c%c%c%c%c%c%c%c%c%c%c              %c%c%c  %c\n",435,448,452,452,452,435,448,452,452,452,452,452,452,452,452,452,452,452,452,452,452,452,452,452,452,452,473,435);
-    printf("                                 %c  %c%c%c%c                %c  %c%c%c%c            %c%c%c%c%c%c  %c%c%c%c%c%c              %c%c%c  %c\n",435,474,452,452,452,435,474,452,452,452,452,452,452,452,452,447,474,452,452,452,452,452,452,452,447,435);
-    printf("                                 %c  %c                   %c  %c                    %c  %c                     %c  %c\n\n\n\n",435,435,435,435,435,435,435,435);
-    printf("                                 %c  %c                                                                    %c  %c\n",435,435,435,435);
-    printf("                                 %c  %c                   %c  %c                                             %c  %c\n",435,435,435,435,435,435);
-    printf("                                 %c  %c%c%c%c           %c%c%c%c%c%c  %c%c%c%c%c           %c%c%c%c%c%c%c%c%c%c%c%c%c%c              %c%c%c  %c\n",435,448,452,452,452,452,452,452,452,452,473,448,452,452,452,452,452,452,452,452,452,452,452,452,452,452,452,452,452,452,452,452,473,435);
-    printf("                                 %c  %c%c%c%c           %c%c%c%c%c%c%c%c%c%c%c%c%c           %c%c%c%c%c%c  %c%c%c%c%c%c              %c%c%c  %c\n",435,474,452,452,452,452,452,452,452,452,452,452,452,452,452,452,452,452,452,452,452,452,452,447,474,452,452,452,452,452,452,452,447,435);
-    printf("                                 %c  %c                                           %c  %c                     %c  %c\n\n\n\n",435,435,435,435,435,435);
-    printf("                                 %c  %c                                                                    %c  %c\n",435,435,435,435);
-    printf("                                 %c  %c                   %c  %c                    %c  %c                     %c  %c\n",435,435,435,435,435,435,435,435);
-    printf("                                 %c %c%c%c%c%c%c           %c%c%c%c%c  %c%c%c%c%c           %c%c%c%c%c%c  %c%c%c%c%c%c           %c%c%c%c%c%c%c %c\n",435,476,448,452,452,452,452,452,452,452,452,473,448,452,452,452,452,452,452,452,452,452,473,448,452,452,452,452,452,452,452,452,452,452,473,476,435);
-    printf("                                 %c%c%c%c%c%c%c%c           %c%c%c%c%c%c%c%c%c%c%c%c           %c%c%c%c%c%c%c%c%c%c%c%c%c%c           %c%c%c%c%c%c%c%c%c\n",448,452,452,452,452,452,452,452,452,452,452,452,452,452,452,452,452,452,452,452,452,452,452,452,452,452,452,452,452,452,452,452,452,452,452,452,452,452,452,452,452,452,473);
 }
 //piece en T
 int piece1bout1() {
@@ -48,12 +20,6 @@ int piece1bout4(){
     printf("    %c  %c   ",435,435);
 }
 
-
-
-
-
-
-
 //piece en T 180°
 int piece2bout1(){
     printf("    %c  %c   ", 435, 435);
@@ -61,7 +27,6 @@ int piece2bout1(){
 int piece2bout2(){
     printf("    %c  %c   ", 435, 435);
 }
-
 int piece2bout3(){
     printf("%c%c%c%c%c  %c%c%c%c", 452, 452, 452, 452, 473, 448, 452, 452, 452);
 }
@@ -77,11 +42,7 @@ int piece2bout1l1(){
 int piece2bout2l1(){
     printf("%c%c%c%c%c%c%c%c%c%c%c",452,452,452,452,452,452,452,452,452,452,452);
 }
-
-
-
 //piece T à 90°
-
 int piece3bout1(){
     printf("    %c  %c   ",435,435);
 }
@@ -94,7 +55,6 @@ int piece3bout3(){
 int piece3bout4(){
     printf("   %c  %c    ",435,435);
 }
-
 //piece 3 si l1
 int piece3bout1l1(){
     printf("    %c  %c%c%c%c",435,448,452,452,452);
@@ -108,11 +68,7 @@ int piece3bout3l1(){
 int piece3bout4l1(){
     printf("    %c  %c   ",435,435);
 }
-
-
-
 //piece en T à 270°
-
 int piece4bout1(){
     printf("    %c  %c   ",435,435);
 }
@@ -125,7 +81,6 @@ int piece4bout3(){
 int piece4bout4(){
     printf("    %c  %c   ",435,435);
 }
-
 //piece 4 si l1
 int piece4bout1l1(){
     printf("%c%c%c%c%c  %c   ",452,452,452,452,473,435);
@@ -139,8 +94,6 @@ int piece4bout3l1(){
 int piece4bout4l1(){
     printf("    %c  %c   ",435,435);
 }
-
-
 //piece en I
 int piece5bout1(){
     printf("    %c  %c   ",435,435);
@@ -154,7 +107,6 @@ int piece5bout3(){
 int piece5bout4(){
     printf("    %c  %c   ",435,435);
 }
-
 //piece en ==
 int piece6bout1(){
     printf("%c%c%c%c%c%c%c%c%c%c%c",452,452,452,452,452,452,452,452,452,452,452);
@@ -162,8 +114,6 @@ int piece6bout1(){
 int piece6bout2(){
     printf("%c%c%c%c%c%c%c%c%c%c%c",452,452,452,452,452,452,452,452,452,452,452);
 }
-
-
 //piece en L
 int piece7bout1(){
     printf("%c  %c       ",435,435);
@@ -177,7 +127,6 @@ int piece7bout3(){
 int piece7bout4(){
     printf("%c%c%c%c%c%c%c%c%c%c%c",448,452,452,452,452,452,452,452,452,452,452);
 }
-
 //piece 7 si l1
 int piece7bout1l1(){
     printf("%c  %c%c%c%c%c%c%c%c",435,448,452,452,452,452,452,452,452);
@@ -185,7 +134,6 @@ int piece7bout1l1(){
 int piece7bout2l1(){
     printf("%c%c%c%c%c%c%c%c%c%c%c",448,452,452,452,452,452,452,452,452,452,452);
 }
-
 //piece 7 si pas bord
 int p7bout1(){
     printf("    %c  %c   ",435,435);
@@ -199,9 +147,7 @@ int p7bout3(){
 int p7bout4(){
     printf("           ");
 }
-
 //piece en ┘
-
 int piece8bout1(){
     printf("    %c  %c",435,435);
 }
@@ -214,7 +160,6 @@ int piece8bout3(){
 int piece8bout4(){
     printf("%c%c%c%c%c%c%c%c",452,452,452,452,452,452,452,473);
 }
-
 //piece 8 si l1
 int piece8bout1l1(){
     printf("%c%c%c%c%c%c%c%c  %c",452,452,452,452,452,452,452,473,435);
@@ -222,7 +167,6 @@ int piece8bout1l1(){
 int piece8bout2l1(){
     printf("%c%c%c%c%c%c%c%c%c%c%c",452,452,452,452,452,452,452,452,452,452,473);
 }
-
 // piece 8 si pas au bord et pas l1
 int p8bout1(){
     printf("    %c  %c   ",435,435);
@@ -236,11 +180,7 @@ int p8bout3(){
 int p8bout4(){
     printf("           ");
 }
-
-
-
 //piece en ┌
-
 int piece9bout1(){
     printf("    %c%c%c%c%c%c%c",474,452,452,452,452,452,452);
 }
@@ -266,10 +206,6 @@ int p9bout3(){
 int p9bout4(){
     printf("%c  %c",435,435);
 }
-
-
-
-
 //piece en ┐
 int piece10bout1(){
     printf("%c%c%c%c%c%c%c%c   ",452,452,452,452,452,452,452,447);
@@ -287,11 +223,7 @@ int piece10bout4(){
 int a(){
     printf("\n");
 }
-
-
-
-
-int test(int case01,int case03,int case05,int case10,int case11,int case12,int case13,int case14,int case15,int case16,int case21,int case23,int case25,int case30,int case31,int case32,int case33,int case34,int case35,int case36,int case41,int case43,int case45,int case50,int case51,int case52,int case53,int case54,int case55,int case56){
+int test(int case01,int case03,int case05,int case10,int case11,int case12,int case13,int case14,int case15,int case16,int case21,int case23,int case25,int case30,int case31,int case32,int case33,int case34,int case35,int case36,int case41,int case43,int case45,int case50,int case51,int case52,int case53,int case54,int case55,int case56,int case61,int case63,int case65){
     int case01l1,case01l2,case01l3,case01l4;
     case01l1=case01l2=case01l3=case01l4=case01;
     int case03l1,case03l2,case03l3,case03l4;
@@ -330,6 +262,10 @@ int test(int case01,int case03,int case05,int case10,int case11,int case12,int c
     case54l1=case54l2=case54l3=case54l4=case54;
     case55l1=case55l2=case55l3=case55l4=case55;
     case56l1=case56l2=case56l3=case56l4=case56;
+    int case61l1,case61l2,case61l3,case61l4,case63l1,case63l2,case63l3,case63l4,case65l1,case65l2,case65l3,case65l4;
+    case61l1=case61l2=case61l3=case61l4=case61;
+    case63l1=case63l2=case63l3=case63l4=case63;
+    case65l1=case65l2=case65l3=case65l4=case65;
     color(9,0);
     printf("                                 %c%c%c%c%c%c%c%c",474,452,452,452,452,452,452,452);              //DEBUT 1ere LIGNE
     if (case01l1==0){
@@ -1130,7 +1066,7 @@ int test(int case01,int case03,int case05,int case10,int case11,int case12,int c
     }
     if (case15l1==6){
         color(14,0);
-        printf("        ");
+        printf("           ");
     }
     if (case15l1==7){
         color(14,0);
@@ -1559,7 +1495,7 @@ int test(int case01,int case03,int case05,int case10,int case11,int case12,int c
     }
     if (case12l3==4){
         color(14,0);
-        printf("%c%c%c%c%c%c  %c   ",452,452,452,452,452,447,435);
+        printf("%c%c%c%c%c  %c    ",452,452,452,452,447,435);
     }
     if (case12l3==5){
         color(14,0);
@@ -5478,36 +5414,571 @@ int test(int case01,int case03,int case05,int case10,int case11,int case12,int c
     if (case56l4==10){
         printf("     %c  %c",435,435);
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    color(9,0);
+    a();printf("                                 ");
+    printf("%c  %c    ",435,435);
+    color(14,0);
+    if (case61l1==0){
+        printf("           ");
+    }
+    if (case61l1==1){
+        color(14,0);
+        printf("           ");
+    }
+    if (case61l1==2){
+        color(14,0);
+        printf("    %c  %c   ",435,435);
+    }
+    if (case61l1==3){
+        color(14,0);
+        printf("    %c  %c   ",435,435);
+    }
+    if (case61l1==4){
+        color(14,0);
+        printf("    %c  %c   ",435,435);
+    }
+    if (case61l1==5){
+        color(14,0);
+        piece5bout1();
+    }
+    if (case61l1==6){
+        color(14,0);
+        printf("           ");
+    }
+    if (case61l1==7){
+        color(14,0);
+        printf("    %c  %c   ",435,435);
+    }
+    if (case61l1==8){
+        color(14,0);
+        printf("    %c  %c   ",435,435);
+    }
+    if (case61l1==9){
+        color(14,0);
+        printf("           ");
+    }
+    if (case61l1==10){
+        color(14,0);
+        printf("           ");
+    }
+    color(9,0);
+    printf("    %c  %c    ",435,435);
+    color(14,0);
+    if (case63l1==0){
+        printf("           ");
+    }
+    if (case63l1==1){
+        color(14,0);
+        printf("           ");
+    }
+    if (case63l1==2){
+        color(14,0);
+        printf("    %c  %c   ",435,435);
+    }
+    if (case63l1==3){
+        color(14,0);
+        printf("    %c  %c   ",435,435);
+    }
+    if (case63l1==4){
+        color(14,0);
+        printf("    %c  %c   ",435,435);
+    }
+    if (case63l1==5){
+        color(14,0);
+        piece5bout1();
+    }
+    if (case63l1==6){
+        color(14,0);
+        printf("           ");
+    }
+    if (case63l1==7){
+        color(14,0);
+        printf("    %c  %c   ",435,435);
+    }
+    if (case63l1==8){
+        color(14,0);
+        printf("    %c  %c   ",435,435);
+    }
+    if (case63l1==9){
+        color(14,0);
+        printf("           ");
+    }
+    if (case63l1==10){
+        color(14,0);
+        printf("           ");
+    }
+    color(9,0);
+    printf("     %c  %c     ",435,435);
+    color(14,0);
+    if (case65l1==0){
+        printf("           ");
+    }
+    if (case65l1==1){
+        color(14,0);
+        printf("           ");
+    }
+    if (case65l1==2){
+        color(14,0);
+        printf("    %c  %c   ",435,435);
+    }
+    if (case65l1==3){
+        color(14,0);
+        printf("    %c  %c   ",435,435);
+    }
+    if (case65l1==4){
+        color(14,0);
+        printf("    %c  %c   ",435,435);
+    }
+    if (case65l1==5){
+        color(14,0);
+        piece5bout1();
+    }
+    if (case65l1==6){
+        color(14,0);
+        printf("           ");
+    }
+    if (case65l1==7){
+        color(14,0);
+        printf("    %c  %c   ",435,435);
+    }
+    if (case65l1==8){
+        color(14,0);
+        printf("    %c  %c   ",435,435);
+    }
+    if (case65l1==9){
+        color(14,0);
+        printf("           ");
+    }
+    if (case65l1==10){
+        color(14,0);
+        printf("           ");
+    }
+    color(9,0);
+    printf("     %c  %c",435,435);a();
+    printf("                                 %c  %c    ",435,435);
+    color(14,0);
+    if (case61l2==0){
+        printf("           ");
+    }
+    if (case61l2==1){
+        color(14,0);
+        printf("           ");
+    }
+    if (case61l2==2){
+        color(14,0);
+        printf("    %c  %c   ",435,435);
+    }
+    if (case61l2==3){
+        color(14,0);
+        printf("    %c  %c   ",435,435);
+    }
+    if (case61l2==4){
+        color(14,0);
+        printf("    %c  %c   ",435,435);
+    }
+    if (case61l2==5){
+        color(14,0);
+        piece5bout2();
+    }
+    if (case61l2==6){
+        color(14,0);
+        printf("           ");
+    }
+    if (case61l2==7){
+        color(14,0);
+        printf("    %c  %c   ",435,435);
+    }
+    if (case61l2==8){
+        color(14,0);
+        printf("    %c  %c   ",435,435);
+    }
+    if (case61l2==9){
+        color(14,0);
+        printf("           ");
+    }
+    if (case61l2==10){
+        color(14,0);
+        printf("           ");
+    }
+    color(9,0);
+    printf("    %c  %c    ",435,435);
+    color(14,0);
+    if (case63l2==0){
+        printf("           ");
+    }
+    if (case63l2==1){
+        color(14,0);
+        printf("           ");
+    }
+    if (case63l2==2){
+        color(14,0);
+        printf("    %c  %c   ",435,435);
+    }
+    if (case63l2==3){
+        color(14,0);
+        printf("    %c  %c   ",435,435);
+    }
+    if (case63l2==4){
+        color(14,0);
+        printf("    %c  %c   ",435,435);
+    }
+    if (case63l2==5){
+        color(14,0);
+        piece5bout2();
+    }
+    if (case63l2==6){
+        color(14,0);
+        printf("           ");
+    }
+    if (case63l2==7){
+        color(14,0);
+        printf("    %c  %c   ",435,435);
+    }
+    if (case63l2==8){
+        color(14,0);
+        printf("    %c  %c   ",435,435);
+    }
+    if (case63l2==9){
+        color(14,0);
+        printf("           ");
+    }
+    if (case63l2==10){
+        color(14,0);
+        printf("           ");
+    }
+    color(9,0);
+    printf("     %c  %c     ",435,435);
+    color(14,0);
+    if (case65l2==0){
+        printf("           ");
+    }
+    if (case65l2==1){
+        color(14,0);
+        printf("           ");
+    }
+    if (case65l2==2){
+        color(14,0);
+        printf("    %c  %c   ",435,435);
+    }
+    if (case65l2==3){
+        color(14,0);
+        printf("    %c  %c   ",435,435);
+    }
+    if (case65l2==4){
+        color(14,0);
+        printf("    %c  %c   ",435,435);
+    }
+    if (case65l2==5){
+        color(14,0);
+        piece5bout2();
+    }
+    if (case65l2==6){
+        color(14,0);
+        printf("           ");
+    }
+    if (case65l2==7){
+        color(14,0);
+        printf("    %c  %c   ",435,435);
+    }
+    if (case65l2==8){
+        color(14,0);
+        printf("    %c  %c   ",435,435);
+    }
+    if (case65l2==9){
+        color(14,0);
+        printf("           ");
+    }
+    if (case65l2==10){
+        color(14,0);
+        printf("           ");
+    }
+    color(9,0);
+    printf("     %c  %c",435,435);a();
+    printf("                                 %c",435);
+    color(5,0);
+    printf(" %c",479);
+    color(9,0);
+    printf("%c%c%c%c%c",448,452,452,452,452);
+    color(14,0);
+    if (case61l3==0){
+        printf("           ");
+    }
+    if (case61l3==1){
+        color(14,0);
+        printf("%c%c%c%c%c%c%c%c%c%c%c",452,452,452,452,452,452,452,452,452,452,452);
+    }
+    if (case61l3==2){
+        color(14,0);
+        printf("%c%c%c%c%c  %c%c%c%c",452,452,452,452,473,448,452,452,452);
+    }
+    if (case61l3==3){
+        color(14,0);
+        printf("    %c  %c%c%c%c",435,448,452,452,452);
+    }
+    if (case61l3==4){
+        color(14,0);
+        printf("%c%c%c%c%c  %c   ",452,452,452,452,473,435);
+    }
+    if (case61l3==5){
+        color(14,0);
+        piece5bout2();
+    }
+    if (case61l3==6){
+        color(14,0);
+        printf("%c%c%c%c%c%c%c%c%c%c%c",452,452,452,452,452,452,452,452,452,452,452);
+    }
+    if (case61l3==7){
+        color(14,0);
+        printf("    %c  %c%c%c%c",435,448,452,452,452);
+    }
+    if (case61l3==8){
+        color(14,0);
+        printf("%c%c%c%c%c  %c   ",452,452,452,452,473,435);
+    }
+    if (case61l3==9){
+        color(14,0);
+        printf("    %c%c%c%c%c%c%c",474,452,452,452,452,452,452);
+    }
+    if (case61l3==10) {
+        color(14, 0);
+        printf("%c%c%c%c%c%c%c%c   ",452,452,452,452,452,452,452,447);
+    }
+    color(9,0);
+    printf("%c%c%c%c%c  %c%c%c%c%c",452,452,452,452,473,448,452,452,452,452);
+    color(14,0);
+    if (case63l3==0){
+        printf("           ");
+    }
+    if (case63l3==1){
+        color(14,0);
+        printf("%c%c%c%c%c%c%c%c%c%c%c",452,452,452,452,452,452,452,452,452,452,452);
+    }
+    if (case63l3==2){
+        color(14,0);
+        printf("%c%c%c%c%c  %c%c%c%c",452,452,452,452,473,448,452,452,452);
+    }
+    if (case63l3==3){
+        color(14,0);
+        printf("    %c  %c%c%c%c",435,448,452,452,452);
+    }
+    if (case63l3==4){
+        color(14,0);
+        printf("%c%c%c%c%c  %c   ",452,452,452,452,473,435);
+    }
+    if (case63l3==5){
+        color(14,0);
+        piece5bout2();
+    }
+    if (case63l3==6){
+        color(14,0);
+        printf("%c%c%c%c%c%c%c%c%c%c%c",452,452,452,452,452,452,452,452,452,452,452);
+    }
+    if (case63l3==7){
+        color(14,0);
+        printf("    %c  %c%c%c%c",435,448,452,452,452);
+    }
+    if (case63l3==8){
+        color(14,0);
+        printf("%c%c%c%c%c  %c   ",452,452,452,452,473,435);
+    }
+    if (case63l3==9){
+        color(14,0);
+        printf("    %c%c%c%c%c%c%c",474,452,452,452,452,452,452);
+    }
+    if (case63l3==10) {
+        color(14, 0);
+        printf("%c%c%c%c%c%c%c%c   ",452,452,452,452,452,452,452,447);
+    }
+    color(9,0);
+    printf("%c%c%c%c%c%c  %c%c%c%c%c%c",452,452,452,452,452,473,448,452,452,452,452,452);
+    color(14,0);
+    if (case65l3==0){
+        printf("           ");
+    }
+    if (case65l3==1){
+        color(14,0);
+        printf("%c%c%c%c%c%c%c%c%c%c%c",452,452,452,452,452,452,452,452,452,452,452);
+    }
+    if (case65l3==2){
+        color(14,0);
+        printf("%c%c%c%c%c  %c%c%c%c",452,452,452,452,473,448,452,452,452);
+    }
+    if (case65l3==3){
+        color(14,0);
+        printf("    %c  %c%c%c%c",435,448,452,452,452);
+    }
+    if (case65l3==4){
+        color(14,0);
+        printf("%c%c%c%c%c  %c   ",452,452,452,452,473,435);
+    }
+    if (case65l3==5){
+        color(14,0);
+        piece5bout2();
+    }
+    if (case65l3==6){
+        color(14,0);
+        printf("%c%c%c%c%c%c%c%c%c%c%c",452,452,452,452,452,452,452,452,452,452,452);
+    }
+    if (case65l3==7){
+        color(14,0);
+        printf("    %c  %c%c%c%c",435,448,452,452,452);
+    }
+    if (case65l3==8){
+        color(14,0);
+        printf("%c%c%c%c%c  %c   ",452,452,452,452,473,435);
+    }
+    if (case65l3==9){
+        color(14,0);
+        printf("    %c%c%c%c%c%c%c",474,452,452,452,452,452,452);
+    }
+    if (case65l3==10) {
+        color(14, 0);
+        printf("%c%c%c%c%c%c%c%c   ",452,452,452,452,452,452,452,447);
+    }
+    color(9,0);
+    printf("%c%c%c%c%c%c",452,452,452,452,452,473);
+    printf("%c ",479);
+    printf("%c",435);a();
+    printf("                                 ");printf("%c%c%c%c%c%c%c%c",448,452,452,452,452,452,452,452);
+    color(14,0);
+    if (case61l4==0){
+        printf("           ");
+    }
+    if (case61l4==1){
+        color(14,0);
+        printf("%c%c%c%c%c  %c%c%c%c",452,452,452,452,447,474,452,452,452);
+    }
+    if (case61l4==2){
+        color(14,0);
+        printf("%c%c%c%c%c%c%c%c%c%c%c",452,452,452,452,452,452,452,452,452,452,452);
+    }
+    if (case61l4==3){
+        color(14,0);
+        printf("    %c  %c%c%c%c",435,474,452,452,452);
+    }
+    if (case61l4==4){
+        color(14,0);
+        printf("%c%c%c%c%c  %c   ",452,452,452,452,474,435);
+    }
+    if (case61l4==5){
+        color(14,0);
+        printf("    %c  %c   ",435,435);
+    }
+    if (case61l4==6){
+        color(14,0);
+        printf("%c%c%c%c%c%c%c%c%c%c%c",452,452,452,452,452,452,452,452,452,452,452);
+    }
+    if (case61l4==7){
+        color(14,0);
+        printf("    %c%c%c%c%c%c%c",448,452,452,452,452,452,452);
+    }
+    if (case61l4==8){
+        color(14,0);
+        printf("%c%c%c%c%c%c%c%c   ",452,452,452,452,452,452,452,473);
+    }
+    if (case61l4==9){
+        color(14,0);
+        printf("    %c  %c%c%c%c",435,474,452,452,452);
+    }
+    if (case61l4==10) {
+        color(14, 0);
+        printf("%c%c%c%c%c  %c   ",452,452,452,452,447,435);
+    }
+    color(9,0);
+    printf("%c%c%c%c%c%c%c%c%c%c%c%c",452,452,452,452,452,452,452,452,452,452,452,452);
+    color(14,0);
+    if (case63l4==0){
+        printf("           ");
+    }
+    if (case63l4==1){
+        color(14,0);
+        printf("%c%c%c%c%c  %c%c%c%c",452,452,452,452,447,474,452,452,452);
+    }
+    if (case63l4==2){
+        color(14,0);
+        printf("%c%c%c%c%c%c%c%c%c%c%c",452,452,452,452,452,452,452,452,452,452,452);
+    }
+    if (case63l4==3){
+        color(14,0);
+        printf("    %c  %c%c%c%c",435,474,452,452,452);
+    }
+    if (case63l4==4){
+        color(14,0);
+        printf("%c%c%c%c%c  %c   ",452,452,452,452,474,435);
+    }
+    if (case63l4==5){
+        color(14,0);
+        printf("    %c  %c   ",435,435);
+    }
+    if (case63l4==6){
+        color(14,0);
+        printf("%c%c%c%c%c%c%c%c%c%c%c",452,452,452,452,452,452,452,452,452,452,452);
+    }
+    if (case63l4==7){
+        color(14,0);
+        printf("    %c%c%c%c%c%c%c",448,452,452,452,452,452,452);
+    }
+    if (case63l4==8){
+        color(14,0);
+        printf("%c%c%c%c%c%c%c%c   ",452,452,452,452,452,452,452,473);
+    }
+    if (case63l4==9){
+        color(14,0);
+        printf("    %c  %c%c%c%c",435,474,452,452,452);
+    }
+    if (case63l4==10) {
+        color(14, 0);
+        printf("%c%c%c%c%c  %c   ",452,452,452,452,447,435);
+    }
+    color(9,0);
+    printf("%c%c%c%c%c%c%c%c%c%c%c%c%c%c",452,452,452,452,452,452,452,452,452,452,452,452,452,452);
+    color(14,0);
+    if (case65l4==0){
+        printf("           ");
+    }
+    if (case65l4==1){
+        color(14,0);
+        printf("%c%c%c%c%c  %c%c%c%c",452,452,452,452,447,474,452,452,452);
+    }
+    if (case65l4==2){
+        color(14,0);
+        printf("%c%c%c%c%c%c%c%c%c%c%c",452,452,452,452,452,452,452,452,452,452,452);
+    }
+    if (case65l4==3){
+        color(14,0);
+        printf("    %c  %c%c%c%c",435,474,452,452,452);
+    }
+    if (case65l4==4){
+        color(14,0);
+        printf("%c%c%c%c%c  %c   ",452,452,452,452,474,435);
+    }
+    if (case65l4==5){
+        color(14,0);
+        printf("    %c  %c   ",435,435);
+    }
+    if (case65l4==6){
+        color(14,0);
+        printf("%c%c%c%c%c%c%c%c%c%c%c",452,452,452,452,452,452,452,452,452,452,452);
+    }
+    if (case65l4==7){
+        color(14,0);
+        printf("    %c%c%c%c%c%c%c",448,452,452,452,452,452,452);
+    }
+    if (case65l4==8){
+        color(14,0);
+        printf("%c%c%c%c%c%c%c%c   ",452,452,452,452,452,452,452,473);
+    }
+    if (case65l4==9){
+        color(14,0);
+        printf("    %c  %c%c%c%c",435,474,452,452,452);
+    }
+    if (case65l4==10) {
+        color(14, 0);
+        printf("%c%c%c%c%c  %c   ",452,452,452,452,447,435);
+    }
+    color(9,0);
+    printf("%c%c%c%c%c%c%c%c%c",452,452,452,452,452,452,452,452,473);
 }
-
-
-//479 :▀
-//476 :▄
-//
-//473 : ┘
-//474 : ┌
-//447 : ┐
-//448 : └
 // Created by antoi on 03/12/2022.
 //
 
