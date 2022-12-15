@@ -38,7 +38,7 @@
 
     typedef struct
     {
-        unsigned int ERROR; // 0 = pas d'erreur // 1 => Pas de solution // 2 => Réinitializer le composent 
+        unsigned int ERROR; // 0 = pas d'erreur // 1 => Pas de solution // 2 => Réinitializer le composent  
         char name[100];
         GC_SPACE gc_space;
     }GC_PROPERTIES;

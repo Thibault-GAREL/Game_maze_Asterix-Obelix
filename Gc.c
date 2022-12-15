@@ -3,7 +3,7 @@
 
 bool GC_INIT_ALLEGRO()
 {
-    //al_set_new_bitmap_flags(ALLEGRO_MIN_LINEAR | ALLEGRO_MAG_LINEAR);
+    //al_set_new_bitmap_flags(ALLEGRO_MIN_LINEAR | ALLEGRO_MAG_LINEAR) ;
 
     if (!al_init())
     {
