@@ -100,11 +100,6 @@ int toursuivant(int compteur1,int compteur2){
 }
 
 
-int actionafaire(){
-    printf("");
-
-}
-
 void color(int t,int f)
 {
     HANDLE H=GetStdHandle(STD_OUTPUT_HANDLE);
@@ -1088,27 +1083,27 @@ int test(double case01,double case03,double case05,double case10,double case11,d
     }
     if (case05l2==4.1){
         color(14,0);
-        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c ",292);color(14,0);printf("%c",435);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c ",292);color(14,0);printf("%c   ",435);
     }
     if (case05l2==4.2){
         color(14,0);
-        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c ",291);color(14,0);printf("%c",435);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c ",291);color(14,0);printf("%c   ",435);
     }
     if (case05l2==4.3){
         color(14,0);
-        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c ",285);color(14,0);printf("%c",435);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c ",285);color(14,0);printf("%c   ",435);
     }
     if (case05l2==4.4){
         color(14,0);
-        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c ",279);color(14,0);printf("%c",435);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c ",279);color(14,0);printf("%c   ",435);
     }
     if (case05l2==4.5){
         color(14,0);
-        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c ",277);color(14,0);printf("%c",435);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c ",277);color(14,0);printf("%c   ",435);
     }
     if (case05l2==4.6){
         color(14,0);
-        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c ",225);color(14,0);printf("%c",435);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c ",225);color(14,0);printf("%c   ",435);
     }
     if (case05l2==5){
         color(14,0);
@@ -1489,19 +1484,19 @@ int test(double case01,double case03,double case05,double case10,double case11,d
         color(14,0);
         printf("        ");
     }
-    if (case10l1==7){
+    if (case10l1>=7 && case10l1<8){
         color(14,0);
         printf("%c  %c    ",435,435);
     }
-    if (case10l1==8){
+    if (case10l1>=8 && case10l1<9){
         color(14,0);
         printf("%c  %c    ",435,435);
     }
-    if (case10l1==9){
+    if (case10l1>=9 && case10l1<10){
         color(14,0);
         p9bout1();
     }
-    if (case10l1==10){
+    if (case10l1>=10 && case10l1<11){
         color(14,0);
         printf("        ");
     }
@@ -1533,19 +1528,19 @@ int test(double case01,double case03,double case05,double case10,double case11,d
         color(14,0);
         printf("           ");
     }
-    if (case11l1==7){
+    if (case11l1>=7 && case11l1<8){
         color(14,0);
         p7bout1();
     }
-    if (case11l1==8){
+    if (case11l1>=8 && case11l1<9){
         color(14,0);
         p8bout1();
     }
-    if (case11l1==9){
+    if (case11l1>=9 && case11l1<10){
         color(14,0);
         printf("           ");
     }
-    if (case11l1==10){
+    if (case11l1>=10 && case11l1<11){
         color(14,0);
         printf("           ");
     }
@@ -1577,19 +1572,19 @@ int test(double case01,double case03,double case05,double case10,double case11,d
         color(14,0);
         printf("            ");
     }
-    if (case12l1==7){
+    if (case12l1>=7 && case12l1<8){
         color(14,0);
         printf("    %c  %c    ",435,435);
     }
-    if (case12l1==8){
+    if (case12l1>=8 && case12l1<9){
         color(14,0);
         printf("    %c  %c    ",435,435);
     }
-    if (case12l1==9){
+    if (case12l1>=9 && case12l1<10){
         color(14,0);
         printf("            ");
     }
-    if (case12l1==10){
+    if (case12l1>=10 && case12l1<11){
         color(14,0);
         printf("            ");
     }
@@ -1621,19 +1616,19 @@ int test(double case01,double case03,double case05,double case10,double case11,d
         color(14,0);
         printf("           ");
     }
-    if (case13l1==7){
+    if (case13l1>=7 && case13l1<8){
         color(14,0);
         p7bout1();
     }
-    if (case13l1==8){
+    if (case13l1>=8 && case13l1<9){
         color(14,0);
         p8bout1();
     }
-    if (case13l1==9){
+    if (case13l1>=9 && case13l1<10){
         color(14,0);
         printf("           ");
     }
-    if (case13l1==10){
+    if (case13l1>=10 && case13l1<11){
         color(14,0);
         printf("           ");
     }
@@ -1665,19 +1660,19 @@ int test(double case01,double case03,double case05,double case10,double case11,d
         color(14,0);
         printf("              ");
     }
-    if (case14l1==7){
+    if (case14l1>=7 && case14l1<8){
         color(14,0);
         printf("     %c  %c     ",435,435);
     }
-    if (case14l1==8){
+    if (case14l1>=8 && case14l1<9){
         color(14,0);
         printf("     %c  %c     ",435,435);
     }
-    if (case14l1==9){
+    if (case14l1>=9 && case14l1<10){
         color(14,0);
         printf("              ");
     }
-    if (case14l1==10){
+    if (case14l1>=10 && case14l1<11){
         color(14,0);
         printf("              ");
     }
@@ -1709,19 +1704,19 @@ int test(double case01,double case03,double case05,double case10,double case11,d
         color(14,0);
         printf("           ");
     }
-    if (case15l1==7){
+    if (case15l1>=7 && case15l1<8){
         color(14,0);
         p7bout1();
     }
-    if (case15l1==8){
+    if (case15l1>=8 && case15l1<9){
         color(14,0);
         printf("    %c  %c   ",435,435);
     }
-    if (case15l1==9){
+    if (case15l1>=9 && case15l1<10){
         color(14,0);
         printf("           ");
     }
-    if (case15l1==10){
+    if (case15l1>=10 && case15l1<11){
         color(14,0);
         printf("           ");
     }
@@ -1746,16 +1741,16 @@ int test(double case01,double case03,double case05,double case10,double case11,d
     if (case16l1==6){
         printf("         ");
     }
-    if (case16l1==7){
+    if (case16l1>=7 && case16l1<8){
         printf("     %c  %c",435,435);
     }
-    if (case16l1==8){
+    if (case16l1>=8 && case16l1<9){
         printf("     %c  %c",435,435);
     }
-    if (case16l1==9){
+    if (case16l1>=9 && case16l1<10){
         printf("         ");
     }
-    if (case16l1==10){
+    if (case16l1>=10 && case16l1<11){
         printf("         ");
     }
     a();color(15,0);printf("                     2   %c       ",282);color(14,0);
@@ -1846,13 +1841,55 @@ int test(double case01,double case03,double case05,double case10,double case11,d
     if (case10l2==7){
         printf("%c  %c%c%c%c%c",435,448,452,452,452,452);
     }
+    if (case10l2==7.1){
+        printf("%c",435);color(15,0);printf(" %c",189);color(14,0);
+        printf("%c%c%c%c%c",448,452,452,452,452);
+    }
+    if (case10l2==7.2){
+        printf("%c",435);color(15,0);printf(" %c",157);color(14,0);
+        printf("%c%c%c%c%c",448,452,452,452,452);
+    }
+    if (case10l2==7.3){
+        printf("%c",435);color(15,0);printf(" %c",143);color(14,0);
+        printf("%c%c%c%c%c",448,452,452,452,452);
+    }
+    if (case10l2==7.4){
+        printf("%c",435);color(15,0);printf(" %c",37);color(14,0);
+        printf("%c%c%c%c%c",448,452,452,452,452);
+    }
+    if (case10l2==7.5){
+        printf("%c",435);color(15,0);printf(" %c",31);color(14,0);
+        printf("%c%c%c%c%c",448,452,452,452,452);
+    }
+    if (case10l2==7.6){
+        printf("%c",435);color(15,0);printf(" %c",15);color(14,0);
+        printf("%c%c%c%c%c",448,452,452,452,452);
+    }
     if (case10l2==8){
         printf("%c  %c    ",473,435);
     }
-    if (case10l2==9){
+    if (case10l2==8.1){
+        printf("%c",473);color(15,0);printf("%c ",189);color(14,0);printf("%c    ",435);
+    }
+    if (case10l2==8.2){
+        printf("%c",473);color(15,0);printf("%c ",157);color(14,0);printf("%c    ",435);
+    }
+    if (case10l2==8.3){
+        printf("%c",473);color(15,0);printf("%c ",143);color(14,0);printf("%c    ",435);
+    }
+    if (case10l2==8.4){
+        printf("%c",473);color(15,0);printf("%c ",37);color(14,0);printf("%c    ",435);
+    }
+    if (case10l2==8.5){
+        printf("%c",473);color(15,0);printf("%c ",31);color(14,0);printf("%c    ",435);
+    }
+    if (case10l2==8.6){
+        printf("%c",473);color(15,0);printf("%c ",15);color(14,0);printf("%c    ",435);
+    }
+    if (case10l2>=9 && case10l2<10){
         printf("%c%c%c%c%c%c%c%c",474,452,452,452,452,452,452,452);
     }
-    if (case10l2==10){
+    if (case10l2>=10 && case10l2<11){
         printf("%c%c%c%c    ",452,452,452,447);
     }
     if (case11l2==0){
@@ -1964,15 +2001,63 @@ int test(double case01,double case03,double case05,double case10,double case11,d
         color(14,0);
         printf("    %c  %c%c%c%c",435,448,452,452,452);
     }
+    if (case11l2==7.1){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",189);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case11l2==7.2){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",157);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case11l2==7.3){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",143);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case11l2==7.4){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",37);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case11l2==7.5){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",31);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case11l2==7.6){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",15);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
     if (case11l2==8){
         color(14,0);
         printf("%c%c%c%c%c  %c   ",452,452,452,452,473,435);
     }
-    if (case11l2==9){
+    if (case11l2==8.1){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",189);color(14,0);printf("%c   ",435);
+    }
+    if (case11l2==8.2){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",157);color(14,0);printf("%c   ",435);
+    }
+    if (case11l2==8.3){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",143);color(14,0);printf("%c   ",435);
+    }
+    if (case11l2==8.4){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",37);color(14,0);printf("%c   ",435);
+    }
+    if (case11l2==8.5){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",31);color(14,0);printf("%c   ",435);
+    }
+    if (case11l2==8.6){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",189);color(14,0);printf("%c   ",435);
+    }
+    if (case11l2>=9 && case11l2<10){
         color(14,0);
         printf("    %c%c%c%c%c%c%c",474,452,452,452,452,452,452);
     }
-    if (case11l2==10){
+    if (case11l2==10 && case11l2<11){
         color(14,0);
         printf("%c%c%c%c%c%c%c%c   ",452,452,452,452,452,452,452,447);
     }
@@ -2086,15 +2171,63 @@ int test(double case01,double case03,double case05,double case10,double case11,d
         color(14,0);
         printf("    %c  %c%c%c%c%c",435,448,452,452,452,452);
     }
+    if (case12l2==7.1){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",189);color(14,0);printf("%c%c%c%c%c",448,452,452,452,452);
+    }
+    if (case12l2==7.2){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",157);color(14,0);printf("%c%c%c%c%c",448,452,452,452,452);
+    }
+    if (case12l2==7.3){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",143);color(14,0);printf("%c%c%c%c%c",448,452,452,452,452);
+    }
+    if (case12l2==7.4){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",37);color(14,0);printf("%c%c%c%c%c",448,452,452,452,452);
+    }
+    if (case12l2==7.5){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",31);color(14,0);printf("%c%c%c%c%c",448,452,452,452,452);
+    }
+    if (case12l2==7.6){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",15);color(14,0);printf("%c%c%c%c%c",448,452,452,452,452);
+    }
     if (case12l2==8){
         color(14,0);
         printf("%c%c%c%c%c  %c    ",452,452,452,452,473,435);
     }
-    if (case12l2==9){
+    if (case12l2==8.1){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",189);printf("%c    ",435);
+    }
+    if (case12l2==8.2){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",157);printf("%c    ",435);
+    }
+    if (case12l2==8.3){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",143);printf("%c    ",435);
+    }
+    if (case12l2==8.4){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",37);printf("%c    ",435);
+    }
+    if (case12l2==8.5){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",31);printf("%c    ",435);
+    }
+    if (case12l2==8.6){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",15);printf("%c    ",435);
+    }
+    if (case12l2>=9 && case12l2<10){
         color(14,0);
         printf("    %c%c%c%c%c%c%c%c",474,452,452,452,452,452,452,452);
     }
-    if (case12l2==10){
+    if (case12l2>=10 && case12l2<11){
         color(14,0);
         printf("%c%c%c%c%c%c%c%c    ",452,452,452,452,452,452,452,447);
     }
@@ -2207,15 +2340,63 @@ int test(double case01,double case03,double case05,double case10,double case11,d
         color(14,0);
         printf("    %c  %c%c%c%c",435,448,452,452,452);
     }
+    if (case13l2==7.1){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",189);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case13l2==7.2){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",157);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case13l2==7.3){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",143);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case13l2==7.4){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",37);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case13l2==7.5){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",31);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case13l2==7.6){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",15);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
     if (case13l2==8){
         color(14,0);
         printf("%c%c%c%c%c  %c   ",452,452,452,452,473,435);
     }
-    if (case13l2==9){
+    if (case13l2==8.1){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",189);color(14,0);printf("%c   ",435);
+    }
+    if (case13l2==8.2){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",157);color(14,0);printf("%c   ",435);
+    }
+    if (case13l2==8.3){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",143);color(14,0);printf("%c   ",435);
+    }
+    if (case13l2==8.4){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",37);color(14,0);printf("%c   ",435);
+    }
+    if (case13l2==8.5){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",31);color(14,0);printf("%c   ",435);
+    }
+    if (case13l2==8.6){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",189);color(14,0);printf("%c   ",435);
+    }
+    if (case13l2>=9 && case13l2<10){
         color(14,0);
         printf("    %c%c%c%c%c%c%c",474,452,452,452,452,452,452);
     }
-    if (case13l2==10){
+    if (case13l2>=10 && case13l2<11){
         color(14,0);
         printf("%c%c%c%c%c%c%c%c   ",452,452,452,452,452,452,452,447);
     }
@@ -2329,15 +2510,63 @@ int test(double case01,double case03,double case05,double case10,double case11,d
         color(14,0);
         printf("     %c  %c%c%c%c%c%c",435,448,452,452,452,452,452);
     }
+    if (case14l2==7.1){
+        color(14,0);
+        printf("     %c",435);color(15,0);printf(" %c",189);color(14,0);printf("%c%c%c%c%c%c",448,452,452,452,452,452);
+    }
+    if (case14l2==7.2){
+        color(14,0);
+        printf("     %c",435);color(15,0);printf(" %c",157);color(14,0);printf("%c%c%c%c%c%c",448,452,452,452,452,452);
+    }
+    if (case14l2==7.3){
+        color(14,0);
+        printf("     %c",435);color(15,0);printf(" %c",143);color(14,0);printf("%c%c%c%c%c%c",448,452,452,452,452,452);
+    }
+    if (case14l2==7.4){
+        color(14,0);
+        printf("     %c",435);color(15,0);printf(" %c",37);color(14,0);printf("%c%c%c%c%c%c",448,452,452,452,452,452);
+    }
+    if (case14l2==7.5){
+        color(14,0);
+        printf("     %c",435);color(15,0);printf(" %c",31);color(14,0);printf("%c%c%c%c%c%c",448,452,452,452,452,452);
+    }
+    if (case14l2==7.6){
+        color(14,0);
+        printf("     %c",435);color(15,0);printf(" %c",15);color(14,0);printf("%c%c%c%c%c%c",448,452,452,452,452,452);
+    }
     if (case14l2==8){
         color(14,0);
         printf("%c%c%c%c%c%c  %c     ",452,452,452,452,452,473,435);
     }
-    if (case14l2==9){
+    if (case14l2==8.1){
+        color(14,0);
+        printf("%c%c%c%c%c%c",452,452,452,452,452,473);color(15,0);printf("%c ",189);color(14,0);printf("%c     ",435);
+    }
+    if (case14l2==8.2){
+        color(14,0);
+        printf("%c%c%c%c%c%c",452,452,452,452,452,473);color(15,0);printf("%c ",157);color(14,0);printf("%c     ",435);
+    }
+    if (case14l2==8.3){
+        color(14,0);
+        printf("%c%c%c%c%c%c",452,452,452,452,452,473);color(15,0);printf("%c ",143);color(14,0);printf("%c     ",435);
+    }
+    if (case14l2==8.4){
+        color(14,0);
+        printf("%c%c%c%c%c%c",452,452,452,452,452,473);color(15,0);printf("%c ",37);color(14,0);printf("%c     ",435);
+    }
+    if (case14l2==8.5){
+        color(14,0);
+        printf("%c%c%c%c%c%c",452,452,452,452,452,473);color(15,0);printf("%c ",31);color(14,0);printf("%c     ",435);
+    }
+    if (case14l2==8.6){
+        color(14,0);
+        printf("%c%c%c%c%c%c",452,452,452,452,452,473);color(15,0);printf("%c ",15);color(14,0);printf("%c     ",435);
+    }
+    if (case14l2>=9 && case14l2<10){
         color(14,0);
         printf("     %c%c%c%c%c%c%c%c%c",474,452,452,452,452,452,452,452,452);
     }
-    if (case14l2==10){
+    if (case14l2>=10 && case14l2<11){
         color(14,0);
         printf("%c%c%c%c%c%c%c%c%c     ",452,452,452,452,452,452,452,452,447);
     }
@@ -2450,15 +2679,63 @@ int test(double case01,double case03,double case05,double case10,double case11,d
         color(14,0);
         printf("    %c  %c%c%c%c",435,448,452,452,452);
     }
+    if (case15l2==7.1){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",189);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case15l2==7.2){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",157);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case15l2==7.3){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",143);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case15l2==7.4){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",37);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case15l2==7.5){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",31);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case15l2==7.6){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",15);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
     if (case15l2==8){
         color(14,0);
         printf("%c%c%c%c%c  %c   ",452,452,452,452,473,435);
     }
-    if (case15l2==9){
+    if (case15l2==8.1){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",189);color(14,0);printf("%c   ",435);
+    }
+    if (case15l2==8.2){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",157);color(14,0);printf("%c   ",435);
+    }
+    if (case15l2==8.3){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",143);color(14,0);printf("%c   ",435);
+    }
+    if (case15l2==8.4){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",37);color(14,0);printf("%c   ",435);
+    }
+    if (case15l2==8.5){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",31);color(14,0);printf("%c   ",435);
+    }
+    if (case15l2==8.6){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",189);color(14,0);printf("%c   ",435);
+    }
+    if (case15l2>=9 && case15l2<10){
         color(14,0);
         printf("    %c%c%c%c%c%c%c",474,452,452,452,452,452,452);
     }
-    if (case15l2==10){
+    if (case15l2>=10 && case15l2<11){
         color(14,0);
         printf("%c%c%c%c%c%c%c%c   ",452,452,452,452,452,452,452,447);
     }
@@ -2549,13 +2826,49 @@ int test(double case01,double case03,double case05,double case10,double case11,d
     if (case16l2==7){
         printf("     %c  %c",435,448);
     }
+    if (case16l2==7.1){
+        printf("     %c",435);color(15,0);printf(" %c",189);color(14,0);printf("%c",448);
+    }
+    if (case16l2==7.2){
+        printf("     %c",435);color(15,0);printf(" %c",157);color(14,0);printf("%c",448);
+    }
+    if (case16l2==7.3){
+        printf("     %c",435);color(15,0);printf(" %c",143);color(14,0);printf("%c",448);
+    }
+    if (case16l2==7.4){
+        printf("     %c",435);color(15,0);printf(" %c",37);color(14,0);printf("%c",448);
+    }
+    if (case16l2==7.5){
+        printf("     %c",435);color(15,0);printf(" %c",31);color(14,0);printf("%c",448);
+    }
+    if (case16l2==7.6){
+        printf("     %c",435);color(15,0);printf(" %c",15);color(14,0);printf("%c",448);
+    }
     if (case16l2==8){
         printf("%c%c%c%c%c%c  %c",452,452,452,452,452,473,435);
     }
-    if (case16l2==9){
+    if (case16l2==8.1){
+        printf("%c%c%c%c%c%c",452,452,452,452,452,473);color(15,0);printf("%c ",189);color(14,0);printf("%c",435);
+    }
+    if (case16l2==8.2){
+        printf("%c%c%c%c%c%c",452,452,452,452,452,473);color(15,0);printf("%c ",157);color(14,0);printf("%c",435);
+    }
+    if (case16l2==8.3){
+        printf("%c%c%c%c%c%c",452,452,452,452,452,473);color(15,0);printf("%c ",143);color(14,0);printf("%c",435);
+    }
+    if (case16l2==8.4){
+        printf("%c%c%c%c%c%c",452,452,452,452,452,473);color(15,0);printf("%c ",37);color(14,0);printf("%c",435);
+    }
+    if (case16l2==8.5){
+        printf("%c%c%c%c%c%c",452,452,452,452,452,473);color(15,0);printf("%c ",31);color(14,0);printf("%c",435);
+    }
+    if (case16l2==8.6){
+        printf("%c%c%c%c%c%c",452,452,452,452,452,473);color(15,0);printf("%c ",15);color(14,0);printf("%c",435);
+    }
+    if (case16l2>=9 && case16l2<10){
         printf("     %c%c%c%c",474,452,452,452);
     }
-    if (case16l2==10){
+    if (case16l2>=10 && case16l2<11){
         printf("%c%c%c%c%c%c%c%c%c",452,452,452,452,452,452,452,452,447);
     }
     a();printf("                                 ");
@@ -2601,17 +2914,53 @@ int test(double case01,double case03,double case05,double case10,double case11,d
     if (case10l3==6){
         printf("%c%c%c%c%c%c%c%c",452,452,452,452,452,452,452,452);
     }
-    if (case10l3==7){
+    if (case10l3>=7 && case10l3<8){
         printf("%c%c%c%c%c%c%c%c",448,452,452,452,452,452,452,452);
     }
-    if (case10l3==8){
+    if (case10l3>=8 && case10l3<9){
         printf("%c%c%c%c    ",452,452,452,473);
     }
     if (case10l3==9){
         printf("%c  %c%c%c%c%c",435,474,452,452,452,452);
     }
+    if (case10l3==9.1){
+        printf("%c",435);color(15,0);printf(" %c",189);color(14,0);printf("%c%c%c%c%c",474,452,452,452,452);
+    }
+    if (case10l3==9.2){
+        printf("%c",435);color(15,0);printf(" %c",157);color(14,0);printf("%c%c%c%c%c",474,452,452,452,452);
+    }
+    if (case10l3==9.3){
+        printf("%c",435);color(15,0);printf(" %c",143);color(14,0);printf("%c%c%c%c%c",474,452,452,452,452);
+    }
+    if (case10l3==9.4){
+        printf("%c",435);color(15,0);printf(" %c",37);color(14,0);printf("%c%c%c%c%c",474,452,452,452,452);
+    }
+    if (case10l3==9.5){
+        printf("%c",435);color(15,0);printf(" %c",31);color(14,0);printf("%c%c%c%c%c",474,452,452,452,452);
+    }
+    if (case10l3==9.6){
+        printf("%c",435);color(15,0);printf(" %c",15);color(14,0);printf("%c%c%c%c%c",474,452,452,452,452);
+    }
     if (case10l3==10){
         printf("%c  %c    ",447,435);
+    }
+    if (case10l3==10.1){
+        printf("%c",447);color(15,0);printf("%c ",189);color(14,0);printf("%c    ",435);
+    }
+    if (case10l3==10.2){
+        printf("%c",447);color(15,0);printf("%c ",157);color(14,0);printf("%c    ",435);
+    }
+    if (case10l3==10.3){
+        printf("%c",447);color(15,0);printf("%c ",143);color(14,0);printf("%c    ",435);
+    }
+    if (case10l3==10.4){
+        printf("%c",447);color(15,0);printf("%c ",37);color(14,0);printf("%c    ",435);
+    }
+    if (case10l3==10.5){
+        printf("%c",447);color(15,0);printf("%c ",31);color(14,0);printf("%c    ",435);
+    }
+    if (case10l3==10.6){
+        printf("%c",447);color(15,0);printf("%c ",15);color(14,0);printf("%c    ",435);
     }
     if (case11l3==0){
         printf("           ");
@@ -2666,11 +3015,11 @@ int test(double case01,double case03,double case05,double case10,double case11,d
         color(14,0);
         printf("%c%c%c%c%c%c%c%c%c%c%c",452,452,452,452,452,452,452,452,452,452,452);
     }
-    if (case11l3==7){
+    if (case11l3>=7 && case11l3<8){
         color(14,0);
         printf("    %c%c%c%c%c%c%c",448,452,452,452,452,452,452);
     }
-    if (case11l3==8){
+    if (case11l3>=8 && case11l3<9){
         color(14,0);
         printf("%c%c%c%c%c%c%c%c   ",452,452,452,452,452,452,452,473);
     }
@@ -2678,9 +3027,57 @@ int test(double case01,double case03,double case05,double case10,double case11,d
         color(14,0);
         printf("    %c  %c%c%c%c",435,474,452,452,452);
     }
+    if (case11l3==9.1){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",189);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case11l3==9.2){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",157);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case11l3==9.3){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",143);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case11l3==9.4){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",37);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case11l3==9.5){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",31);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case11l3==9.6){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",15);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
     if (case11l3==10) {
         color(14, 0);
         printf("%c%c%c%c%c  %c   ",452, 452,452,452, 447,435);
+    }
+    if (case11l3==10.1) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c ",189);color(14,0);printf("%c   ",435);
+    }
+    if (case11l3==10.2) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c ",157);color(14,0);printf("%c   ",435);
+    }
+    if (case11l3==10.3) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c ",143);color(14,0);printf("%c   ",435);
+    }
+    if (case11l3==10.4) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c ",37);color(14,0);printf("%c   ",435);
+    }
+    if (case11l3==10.5) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c ",31);color(14,0);printf("%c   ",435);
+    }
+    if (case11l3==10.6) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c ",15);color(14,0);printf("%c   ",435);
     }
     if (case12l3==0){
         printf("            ");
@@ -2735,11 +3132,11 @@ int test(double case01,double case03,double case05,double case10,double case11,d
         color(14,0);
         printf("%c%c%c%c%c%c%c%c%c%c%c%c",452,452,452,452,452,452,452,452,452,452,452,452);
     }
-    if (case12l3==7){
+    if (case12l3>=7 && case12l3<8){
         color(14,0);
         printf("    %c%c%c%c%c%c%c%c",448,452,452,452,452,452,452,452);
     }
-    if (case12l3==8){
+    if (case12l3>=8 && case12l3<9){
         color(14,0);
         printf("%c%c%c%c%c%c%c%c    ",452,452,452,452,452,452,452,473);
     }
@@ -2747,9 +3144,57 @@ int test(double case01,double case03,double case05,double case10,double case11,d
         color(14,0);
         printf("    %c  %c%c%c%c%c",435,474,452,452,452,452);
     }
+    if (case12l3==9.1){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",189);color(14,0);printf("%c%c%c%c%c",474,452,452,452,452);
+    }
+    if (case12l3==9.2){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",157);color(14,0);printf("%c%c%c%c%c",474,452,452,452,452);
+    }
+    if (case12l3==9.3){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",143);color(14,0);printf("%c%c%c%c%c",474,452,452,452,452);
+    }
+    if (case12l3==9.4){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",37);color(14,0);printf("%c%c%c%c%c",474,452,452,452,452);
+    }
+    if (case12l3==9.5){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",31);color(14,0);printf("%c%c%c%c%c",474,452,452,452,452);
+    }
+    if (case12l3==9.6){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",15);color(14,0);printf("%c%c%c%c%c",474,452,452,452,452);
+    }
     if (case12l3==10) {
         color(14, 0);
         printf("%c%c%c%c%c  %c    ", 452, 452,452,452, 447,435);
+    }
+    if (case12l3==10.1) {
+        color(14, 0);
+        printf("%c%c%c%c%c", 452, 452,452,452, 447);color(15,0);printf("%c ",189);color(14,0);printf("%c    ",435);
+    }
+    if (case12l3==10.2) {
+        color(14, 0);
+        printf("%c%c%c%c%c", 452, 452,452,452, 447);color(15,0);printf("%c ",157);color(14,0);printf("%c    ",435);
+    }
+    if (case12l3==10.3) {
+        color(14, 0);
+        printf("%c%c%c%c%c", 452, 452,452,452, 447);color(15,0);printf("%c ",143);color(14,0);printf("%c    ",435);
+    }
+    if (case12l3==10.4) {
+        color(14, 0);
+        printf("%c%c%c%c%c", 452, 452,452,452, 447);color(15,0);printf("%c ",37);color(14,0);printf("%c    ",435);
+    }
+    if (case12l3==10.5) {
+        color(14, 0);
+        printf("%c%c%c%c%c", 452, 452,452,452, 447);color(15,0);printf("%c ",31);color(14,0);printf("%c    ",435);
+    }
+    if (case12l3==10.6) {
+        color(14, 0);
+        printf("%c%c%c%c%c", 452, 452,452,452, 447);color(15,0);printf("%c ",15);color(14,0);printf("%c    ",435);
     }
     if (case13l3==0){
         printf("           ");
@@ -2804,11 +3249,11 @@ int test(double case01,double case03,double case05,double case10,double case11,d
         color(14,0);
         printf("%c%c%c%c%c%c%c%c%c%c%c",452,452,452,452,452,452,452,452,452,452,452);
     }
-    if (case13l3==7){
+    if (case13l3>=7 && case13l3<8){
         color(14,0);
         printf("    %c%c%c%c%c%c%c",448,452,452,452,452,452,452);
     }
-    if (case13l3==8){
+    if (case13l3>=8 && case13l3<9){
         color(14,0);
         printf("%c%c%c%c%c%c%c%c   ",452,452,452,452,452,452,452,473);
     }
@@ -2816,9 +3261,57 @@ int test(double case01,double case03,double case05,double case10,double case11,d
         color(14,0);
         printf("    %c  %c%c%c%c",435,474,452,452,452);
     }
+    if (case13l3==9.1){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",189);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case13l3==9.2){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",157);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case13l3==9.3){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",143);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case13l3==9.4){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",37);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case13l3==9.5){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",31);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case13l3==9.6){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",15);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
     if (case13l3==10) {
         color(14, 0);
         printf("%c%c%c%c%c  %c   ",452, 452,452,452, 447,435);
+    }
+    if (case13l3==10.1) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c ",189);color(14,0);printf("%c   ",435);
+    }
+    if (case13l3==10.2) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c ",157);color(14,0);printf("%c   ",435);
+    }
+    if (case13l3==10.3) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c ",143);color(14,0);printf("%c   ",435);
+    }
+    if (case13l3==10.4) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c ",37);color(14,0);printf("%c   ",435);
+    }
+    if (case13l3==10.5) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c ",31);color(14,0);printf("%c   ",435);
+    }
+    if (case13l3==10.6) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c ",15);color(14,0);printf("%c   ",435);
     }
     if (case14l3==0){
         printf("              ");
@@ -2873,11 +3366,11 @@ int test(double case01,double case03,double case05,double case10,double case11,d
         color(14,0);
         printf("%c%c%c%c%c%c%c%c%c%c%c%c%c%c",452,452,452,452,452,452,452,452,452,452,452,452,452,452);
     }
-    if (case14l3==7){
+    if (case14l3>=7 && case14l3<8){
         color(14,0);
         printf("     %c%c%c%c%c%c%c%c%c",448,452,452,452,452,452,452,452,452);
     }
-    if (case14l3==8){
+    if (case14l3>=8 && case14l3<9){
         color(14,0);
         printf("%c%c%c%c%c%c%c%c%c     ",452,452,452,452,452,452,452,452,473);
     }
@@ -2885,9 +3378,57 @@ int test(double case01,double case03,double case05,double case10,double case11,d
         color(14,0);
         printf("     %c  %c%c%c%c%c%c",435,474,452,452,452,452,452);
     }
+    if (case14l3==9.1){
+        color(14,0);
+        printf("     %c",435);color(15,0);printf(" %c",189);color(14,0);printf("%c%c%c%c%c%c",474,452,452,452,452,452);
+    }
+    if (case14l3==9.2){
+        color(14,0);
+        printf("     %c",435);color(15,0);printf(" %c",157);color(14,0);printf("%c%c%c%c%c%c",474,452,452,452,452,452);
+    }
+    if (case14l3==9.3){
+        color(14,0);
+        printf("     %c",435);color(15,0);printf(" %c",143);color(14,0);printf("%c%c%c%c%c%c",474,452,452,452,452,452);
+    }
+    if (case14l3==9.4){
+        color(14,0);
+        printf("     %c",435);color(15,0);printf(" %c",37);color(14,0);printf("%c%c%c%c%c%c",474,452,452,452,452,452);
+    }
+    if (case14l3==9.5){
+        color(14,0);
+        printf("     %c",435);color(15,0);printf(" %c",31);color(14,0);printf("%c%c%c%c%c%c",474,452,452,452,452,452);
+    }
+    if (case14l3==9.6){
+        color(14,0);
+        printf("     %c",435);color(15,0);printf(" %c",15);color(14,0);printf("%c%c%c%c%c%c",474,452,452,452,452,452);
+    }
     if (case14l3==10) {
         color(14, 0);
         printf("%c%c%c%c%c%c  %c     ", 452, 452, 452,452,452, 447,435);
+    }
+    if (case14l3==10.1) {
+        color(14, 0);
+        printf("%c%c%c%c%c%c", 452, 452, 452,452,452, 447);color(15,0);printf("%c ",189);color(14,0);printf("%c     ",435);
+    }
+    if (case14l3==10.2) {
+        color(14, 0);
+        printf("%c%c%c%c%c%c", 452, 452, 452,452,452, 447);color(15,0);printf("%c ",157);color(14,0);printf("%c     ",435);
+    }
+    if (case14l3==10.3) {
+        color(14, 0);
+        printf("%c%c%c%c%c%c", 452, 452, 452,452,452, 447);color(15,0);printf("%c ",143);color(14,0);printf("%c     ",435);
+    }
+    if (case14l3==10.4) {
+        color(14, 0);
+        printf("%c%c%c%c%c%c", 452, 452, 452,452,452, 447);color(15,0);printf("%c ",37);color(14,0);printf("%c     ",435);
+    }
+    if (case14l3==10.5) {
+        color(14, 0);
+        printf("%c%c%c%c%c%c", 452, 452, 452,452,452, 447);color(15,0);printf("%c ",31);color(14,0);printf("%c     ",435);
+    }
+    if (case14l3==10.6) {
+        color(14, 0);
+        printf("%c%c%c%c%c%c", 452, 452, 452,452,452, 447);color(15,0);printf("%c ",15);color(14,0);printf("%c     ",435);
     }
     if (case15l3==0){
         printf("           ");
@@ -2942,11 +3483,11 @@ int test(double case01,double case03,double case05,double case10,double case11,d
         color(14,0);
         printf("%c%c%c%c%c%c%c%c%c%c%c",452,452,452,452,452,452,452,452,452,452,452);
     }
-    if (case15l3==7){
+    if (case15l3>=7 && case15l3<8){
         color(14,0);
         printf("    %c%c%c%c%c%c%c",448,452,452,452,452,452,452);
     }
-    if (case15l3==8){
+    if (case15l3>=8 && case15l3<9){
         color(14,0);
         printf("%c%c%c%c%c%c%c%c   ",452,452,452,452,452,452,452,473);
     }
@@ -2954,9 +3495,57 @@ int test(double case01,double case03,double case05,double case10,double case11,d
         color(14,0);
         printf("    %c  %c%c%c%c",435,474,452,452,452);
     }
+    if (case15l3==9.1){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",189);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case15l3==9.2){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",157);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case15l3==9.3){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",143);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case15l3==9.4){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",37);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case15l3==9.5){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",31);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case15l3==9.6){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",15);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
     if (case15l3==10) {
         color(14, 0);
         printf("%c%c%c%c%c  %c   ",452, 452,452,452, 447,435);
+    }
+    if (case15l3==10.1) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c ",189);color(14,0);printf("%c   ",435);
+    }
+    if (case15l3==10.2) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c ",157);color(14,0);printf("%c   ",435);
+    }
+    if (case15l3==10.3) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c ",143);color(14,0);printf("%c   ",435);
+    }
+    if (case15l3==10.4) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c ",37);color(14,0);printf("%c   ",435);
+    }
+    if (case15l3==10.5) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c ",31);color(14,0);printf("%c   ",435);
+    }
+    if (case15l3==10.6) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c ",15);color(14,0);printf("%c   ",435);
     }
     if (case16l3==0){
         printf("         ");
@@ -3000,17 +3589,53 @@ int test(double case01,double case03,double case05,double case10,double case11,d
     if (case16l3==6){
         printf("%c%c%c%c%c%c%c%c%c",452,452,452,452,452,452,452,452,452);
     }
-    if (case16l3==7){
+    if (case16l3>=7 && case16l3<8){
         printf("     %c%c%c%c",448,452,452,452);
     }
-    if (case16l3==8){
+    if (case16l3>=8 && case16l3<9){
         printf("%c%c%c%c%c%c%c%c%c",452,452,452,452,452,452,452,452,473);
     }
     if (case16l3==9){
         printf("     %c  %c",435,474);
     }
+    if (case16l3==9.1){
+        printf("     %c",435);color(15,0);printf(" %c",189);color(14,0);printf("%c",474);
+    }
+    if (case16l3==9.2){
+        printf("     %c",435);color(15,0);printf(" %c",157);color(14,0);printf("%c",474);
+    }
+    if (case16l3==9.3){
+        printf("     %c",435);color(15,0);printf(" %c",143);color(14,0);printf("%c",474);
+    }
+    if (case16l3==9.4){
+        printf("     %c",435);color(15,0);printf(" %c",37);color(14,0);printf("%c",474);
+    }
+    if (case16l3==9.5){
+        printf("     %c",435);color(15,0);printf(" %c",31);color(14,0);printf("%c",474);
+    }
+    if (case16l3==9.6){
+        printf("     %c",435);color(15,0);printf(" %c",15);color(14,0);printf("%c",474);
+    }
     if (case16l3==10){
         printf("%c%c%c%c%c%c  %c",452,452,452,452,452,447,435);
+    }
+    if (case16l3==10.1){
+        printf("%c%c%c%c%c%c",452,452,452,452,452,447);color(15,0);printf("%c ",189);color(14,0);printf("%c",435);
+    }
+    if (case16l3==10.2){
+        printf("%c%c%c%c%c%c",452,452,452,452,452,447);color(15,0);printf("%c ",157);color(14,0);printf("%c",435);
+    }
+    if (case16l3==10.3){
+        printf("%c%c%c%c%c%c",452,452,452,452,452,447);color(15,0);printf("%c ",143);color(14,0);printf("%c",435);
+    }
+    if (case16l3==10.4){
+        printf("%c%c%c%c%c%c",452,452,452,452,452,447);color(15,0);printf("%c ",37);color(14,0);printf("%c",435);
+    }
+    if (case16l3==10.5){
+        printf("%c%c%c%c%c%c",452,452,452,452,452,447);color(15,0);printf("%c ",31);color(14,0);printf("%c",435);
+    }
+    if (case16l3==10.6){
+        printf("%c%c%c%c%c%c",452,452,452,452,452,447);color(15,0);printf("%c ",15);color(14,0);printf("%c",435);
     }
     a();printf("                                 ");
     if (case10l4==0){
@@ -3041,19 +3666,19 @@ int test(double case01,double case03,double case05,double case10,double case11,d
         color(14,0);
         printf("        ");
     }
-    if (case10l4==7){
+    if (case10l4>=7 && case10l4<8){
         color(14,0);
         printf("        ");
     }
-    if (case10l4==8){
+    if (case10l4>=8 && case10l4<9){
         color(14,0);
         printf("        ");
     }
-    if (case10l4==9){
+    if (case10l4>=9 && case10l4<10){
         color(14,0);
         printf("%c  %c    ",435,435);
     }
-    if (case10l4==10){
+    if (case10l4>=10 && case10l4<11){
         color(14,0);
         printf("%c  %c    ",435,435);
     }
@@ -3084,19 +3709,19 @@ int test(double case01,double case03,double case05,double case10,double case11,d
         color(14,0);
         printf("           ");
     }
-    if (case11l4==7){
+    if (case11l4>=7 && case11l4<8){
         color(14,0);
         printf("           ");
     }
-    if (case11l4==8){
+    if (case11l4>=8 && case11l4<9){
         color(14,0);
         printf("           ");
     }
-    if (case11l4==9){
+    if (case11l4>=9 && case11l4<10){
         color(14,0);
         printf("    %c  %c   ",435,435);
     }
-    if (case11l4==10) {
+    if (case11l4>=10 && case11l4<11) {
         color(14, 0);
         printf("    %c  %c   ",435,435);
     }
@@ -3127,19 +3752,19 @@ int test(double case01,double case03,double case05,double case10,double case11,d
         color(14,0);
         printf("            ");
     }
-    if (case12l4==7){
+    if (case12l4>=7 && case12l4<8){
         color(14,0);
         printf("            ");
     }
-    if (case12l4==8){
+    if (case12l4>=8 && case12l4<9){
         color(14,0);
         printf("            ");
     }
-    if (case12l4==9){
+    if (case12l4>=9 && case12l4<10){
         color(14,0);
         printf("    %c  %c    ",435,435);
     }
-    if (case12l4==10) {
+    if (case12l4>=10 && case12l4<11) {
         color(14, 0);
         printf("    %c  %c    ",435,435);
     }
@@ -3170,19 +3795,19 @@ int test(double case01,double case03,double case05,double case10,double case11,d
         color(14,0);
         printf("           ");
     }
-    if (case13l4==7){
+    if (case13l4>=7 && case13l4<8){
         color(14,0);
         printf("           ");
     }
-    if (case13l4==8){
+    if (case13l4>=8 && case13l4<9){
         color(14,0);
         printf("           ");
     }
-    if (case13l4==9){
+    if (case13l4>=9 && case13l4<10){
         color(14,0);
         printf("    %c  %c   ",435,435);
     }
-    if (case13l4==10) {
+    if (case13l4>=10 && case13l4<11) {
         color(14, 0);
         printf("    %c  %c   ",435,435);
     }
@@ -3213,19 +3838,19 @@ int test(double case01,double case03,double case05,double case10,double case11,d
         color(14,0);
         printf("              ");
     }
-    if (case14l4==7){
+    if (case14l4>=7 && case14l4<8){
         color(14,0);
         printf("              ");
     }
-    if (case14l4==8){
+    if (case14l4>=8 && case14l4<9){
         color(14,0);
         printf("              ");
     }
-    if (case14l4==9){
+    if (case14l4>=9 && case14l4<10){
         color(14,0);
         printf("     %c  %c     ",435,435);
     }
-    if (case14l4==10) {
+    if (case14l4>=10 && case14l4<11) {
         color(14, 0);
         printf("     %c  %c     ",435,435);
     }
@@ -3256,19 +3881,19 @@ int test(double case01,double case03,double case05,double case10,double case11,d
         color(14,0);
         printf("           ");
     }
-    if (case15l4==7){
+    if (case15l4>=7 && case15l4<8){
         color(14,0);
         printf("           ");
     }
-    if (case15l4==8){
+    if (case15l4>=8 && case15l4<9){
         color(14,0);
         printf("           ");
     }
-    if (case15l4==9){
+    if (case15l4>=9 && case15l4<10){
         color(14,0);
         printf("    %c  %c   ",435,435);
     }
-    if (case15l4==10) {
+    if (case15l4>=10 && case15l4<11) {
         color(14, 0);
         printf("    %c  %c   ",435,435);
     }
@@ -3293,16 +3918,16 @@ int test(double case01,double case03,double case05,double case10,double case11,d
     if (case16l4==6){
         printf("         ");
     }
-    if (case16l4==7){
+    if (case16l4>=7 && case16l4<8){
         printf("         ");
     }
-    if (case16l4==8){
+    if (case16l4>=8 && case16l4<9){
         printf("         ");
     }
-    if (case16l4==9){
+    if (case16l4>=9 && case16l4<10){
         printf("     %c  %c",435,435);
     }
-    if (case16l4==10){
+    if (case16l4>=10 && case16l4<11){
         printf("     %c  %c",435,435);
     }
     a();printf("                                 ");
@@ -3337,19 +3962,19 @@ int test(double case01,double case03,double case05,double case10,double case11,d
         color(14,0);
         printf("           ");
     }
-    if (case21l1==7){
+    if (case21l1>=7 && case21l1<8){
         color(14,0);
         p7bout1();
     }
-    if (case21l1==8){
+    if (case21l1>=8 && case21l1<9){
         color(14,0);
         p8bout1();
     }
-    if (case21l1==9){
+    if (case21l1>=9 && case21l1<10){
         color(14,0);
         printf("           ");
     }
-    if (case21l1==10){
+    if (case21l1>=10 && case21l1<11){
         color(14,0);
         printf("           ");
     }
@@ -3384,19 +4009,19 @@ int test(double case01,double case03,double case05,double case10,double case11,d
         color(14,0);
         printf("           ");
     }
-    if (case23l1==7){
+    if (case23l1>=7 && case23l1<8){
         color(14,0);
         p7bout1();
     }
-    if (case23l1==8){
+    if (case23l1>=8 && case23l1<9){
         color(14,0);
         p8bout1();
     }
-    if (case23l1==9){
+    if (case23l1>=9 && case23l1<10){
         color(14,0);
         printf("           ");
     }
-    if (case23l1==10){
+    if (case23l1>=10 && case23l1<11){
         color(14,0);
         printf("           ");
     }
@@ -3431,19 +4056,19 @@ int test(double case01,double case03,double case05,double case10,double case11,d
         color(14,0);
         printf("           ");
     }
-    if (case25l1==7){
+    if (case25l1>=7 && case25l1<8){
         color(14,0);
         p7bout1();
     }
-    if (case25l1==8){
+    if (case25l1>=8 && case25l1<9){
         color(14,0);
         p8bout1();
     }
-    if (case25l1==9){
+    if (case25l1>=9 && case25l1<10){
         color(14,0);
         printf("           ");
     }
-    if (case25l1==10){
+    if (case25l1>=10 && case25l1<11){
         color(14,0);
         printf("           ");
     }
@@ -3502,15 +4127,63 @@ int test(double case01,double case03,double case05,double case10,double case11,d
         color(14,0);
         printf("    %c  %c%c%c%c",435,448,452,452,452);
     }
+    if (case21l2==7.1){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",189);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case21l2==7.2){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",157);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case21l2==7.3){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",143);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case21l2==7.4){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",37);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case21l2==7.5){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",31);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case21l2==7.6){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",15);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
     if (case21l2==8){
         color(14,0);
         printf("%c%c%c%c%c  %c   ",452,452,452,452,473,435);
     }
-    if (case21l2==9){
+    if (case21l2==8.1){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",189);color(14,0);printf("%c   ",435);
+    }
+    if (case21l2==8.2){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",157);color(14,0);printf("%c   ",435);
+    }
+    if (case21l2==8.3){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",143);color(14,0);printf("%c   ",435);
+    }
+    if (case21l2==8.4){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",37);color(14,0);printf("%c   ",435);
+    }
+    if (case21l2==8.5){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",31);color(14,0);printf("%c   ",435);
+    }
+    if (case21l2==8.6){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",189);color(14,0);printf("%c   ",435);
+    }
+    if (case21l2>=9 && case12l2<10){
         color(14,0);
         printf("    %c%c%c%c%c%c%c",474,452,452,452,452,452,452);
     }
-    if (case21l2==10){
+    if (case21l2==10 && case21l2<11){
         color(14,0);
         printf("%c%c%c%c%c%c%c%c   ",452,452,452,452,452,452,452,447);
     }
@@ -3568,15 +4241,63 @@ int test(double case01,double case03,double case05,double case10,double case11,d
         color(14,0);
         printf("    %c  %c%c%c%c",435,448,452,452,452);
     }
+    if (case23l2==7.1){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",189);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case23l2==7.2){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",157);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case23l2==7.3){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",143);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case23l2==7.4){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",37);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case23l2==7.5){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",31);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case23l2==7.6){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",15);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
     if (case23l2==8){
         color(14,0);
         printf("%c%c%c%c%c  %c   ",452,452,452,452,473,435);
     }
-    if (case23l2==9){
+    if (case23l2==8.1){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",189);color(14,0);printf("%c   ",435);
+    }
+    if (case23l2==8.2){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",157);color(14,0);printf("%c   ",435);
+    }
+    if (case23l2==8.3){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",143);color(14,0);printf("%c   ",435);
+    }
+    if (case23l2==8.4){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",37);color(14,0);printf("%c   ",435);
+    }
+    if (case23l2==8.5){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",31);color(14,0);printf("%c   ",435);
+    }
+    if (case23l2==8.6){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",189);color(14,0);printf("%c   ",435);
+    }
+    if (case23l2>=9 && case12l2<10){
         color(14,0);
         printf("    %c%c%c%c%c%c%c",474,452,452,452,452,452,452);
     }
-    if (case23l2==10){
+    if (case23l2>=10 && case23l2<11){
         color(14,0);
         printf("%c%c%c%c%c%c%c%c   ",452,452,452,452,452,452,452,447);
     }
@@ -3634,15 +4355,63 @@ int test(double case01,double case03,double case05,double case10,double case11,d
         color(14,0);
         printf("    %c  %c%c%c%c",435,448,452,452,452);
     }
+    if (case25l2==7.1){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",189);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case25l2==7.2){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",157);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case25l2==7.3){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",143);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case25l2==7.4){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",37);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case25l2==7.5){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",31);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case25l2==7.6){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",15);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
     if (case25l2==8){
         color(14,0);
         printf("%c%c%c%c%c  %c   ",452,452,452,452,473,435);
     }
-    if (case25l2==9){
+    if (case25l2==8.1){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",189);color(14,0);printf("%c   ",435);
+    }
+    if (case25l2==8.2){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",157);color(14,0);printf("%c   ",435);
+    }
+    if (case25l2==8.3){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",143);color(14,0);printf("%c   ",435);
+    }
+    if (case25l2==8.4){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",37);color(14,0);printf("%c   ",435);
+    }
+    if (case25l2==8.5){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",31);color(14,0);printf("%c   ",435);
+    }
+    if (case25l2==8.6){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",189);color(14,0);printf("%c   ",435);
+    }
+    if (case25l2>=9 && case25l2<10){
         color(14,0);
         printf("    %c%c%c%c%c%c%c",474,452,452,452,452,452,452);
     }
-    if (case25l2==10){
+    if (case25l2>=10 && case25l2<11){
         color(14,0);
         printf("%c%c%c%c%c%c%c%c   ",452,452,452,452,452,452,452,447);
     }
@@ -3738,11 +4507,11 @@ int test(double case01,double case03,double case05,double case10,double case11,d
         color(14,0);
         printf("%c%c%c%c%c%c%c%c%c%c%c",452,452,452,452,452,452,452,452,452,452,452);
     }
-    if (case21l3==7){
+    if (case21l3>=7 && case21l3<8){
         color(14,0);
         printf("    %c%c%c%c%c%c%c",448,452,452,452,452,452,452);
     }
-    if (case21l3==8){
+    if (case21l3>=8 && case21l3<9){
         color(14,0);
         printf("%c%c%c%c%c%c%c%c   ",452,452,452,452,452,452,452,473);
     }
@@ -3750,9 +4519,57 @@ int test(double case01,double case03,double case05,double case10,double case11,d
         color(14,0);
         printf("    %c  %c%c%c%c",435,474,452,452,452);
     }
+    if (case21l3==9.1){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",189);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case21l3==9.2){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",157);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case21l3==9.3){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",143);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case21l3==9.4){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",37);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case21l3==9.5){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",31);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case21l3==9.6){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",15);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
     if (case21l3==10) {
         color(14, 0);
         printf("%c%c%c%c%c  %c   ",452, 452,452,452, 447,435);
+    }
+    if (case21l3==10.1) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c ",189);color(14,0);printf("%c   ",435);
+    }
+    if (case21l3==10.2) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c ",157);color(14,0);printf("%c   ",435);
+    }
+    if (case21l3==10.3) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c ",143);color(14,0);printf("%c   ",435);
+    }
+    if (case21l3==10.4) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c ",37);color(14,0);printf("%c   ",435);
+    }
+    if (case21l3==10.5) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c ",31);color(14,0);printf("%c   ",435);
+    }
+    if (case21l3==10.6) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c ",15);color(14,0);printf("%c   ",435);
     }
     color(9,0);
     printf("    %c",435);color(12,0);printf(" %c",463);color(9,0);
@@ -3845,11 +4662,11 @@ int test(double case01,double case03,double case05,double case10,double case11,d
         color(14,0);
         printf("%c%c%c%c%c%c%c%c%c%c%c",452,452,452,452,452,452,452,452,452,452,452);
     }
-    if (case23l3==7){
+    if (case23l3>=7 && case23l3<8){
         color(14,0);
         printf("    %c%c%c%c%c%c%c",448,452,452,452,452,452,452);
     }
-    if (case23l3==8){
+    if (case23l3>=8 && case23l3<9){
         color(14,0);
         printf("%c%c%c%c%c%c%c%c   ",452,452,452,452,452,452,452,473);
     }
@@ -3857,9 +4674,57 @@ int test(double case01,double case03,double case05,double case10,double case11,d
         color(14,0);
         printf("    %c  %c%c%c%c",435,474,452,452,452);
     }
+    if (case23l3==9.1){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",189);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case23l3==9.2){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",157);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case23l3==9.3){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",143);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case23l3==9.4){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",37);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case23l3==9.5){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",31);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case23l3==9.6){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",15);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
     if (case23l3==10) {
         color(14, 0);
         printf("%c%c%c%c%c  %c   ",452, 452,452,452, 447,435);
+    }
+    if (case23l3==10.1) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c ",189);color(14,0);printf("%c   ",435);
+    }
+    if (case23l3==10.2) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c ",157);color(14,0);printf("%c   ",435);
+    }
+    if (case23l3==10.3) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c ",143);color(14,0);printf("%c   ",435);
+    }
+    if (case23l3==10.4) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c ",37);color(14,0);printf("%c   ",435);
+    }
+    if (case23l3==10.5) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c ",31);color(14,0);printf("%c   ",435);
+    }
+    if (case23l3==10.6) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c ",15);color(14,0);printf("%c   ",435);
     }
     color(9,0);
     printf("%c%c%c%c%c%c",452,452,452,452,452,447);color(6,0);printf(" %c",446);color(9,0);
@@ -3952,11 +4817,11 @@ int test(double case01,double case03,double case05,double case10,double case11,d
         color(14,0);
         printf("%c%c%c%c%c%c%c%c%c%c%c",452,452,452,452,452,452,452,452,452,452,452);
     }
-    if (case25l3==7){
+    if (case25l3>=7 && case25l3<8){
         color(14,0);
         printf("    %c%c%c%c%c%c%c",448,452,452,452,452,452,452);
     }
-    if (case25l3==8){
+    if (case25l3>=8 && case25l3<9){
         color(14,0);
         printf("%c%c%c%c%c%c%c%c   ",452,452,452,452,452,452,452,473);
     }
@@ -3964,9 +4829,57 @@ int test(double case01,double case03,double case05,double case10,double case11,d
         color(14,0);
         printf("    %c  %c%c%c%c",435,474,452,452,452);
     }
+    if (case25l3==9.1){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",189);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case25l3==9.2){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",157);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case25l3==9.3){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",143);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case25l3==9.4){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",37);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case25l3==9.5){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",31);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case25l3==9.6){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",15);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
     if (case25l3==10) {
         color(14, 0);
         printf("%c%c%c%c%c  %c   ",452, 452,452,452, 447,435);
+    }
+    if (case25l3==10.1) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c ",189);color(14,0);printf("%c   ",435);
+    }
+    if (case25l3==10.2) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c ",157);color(14,0);printf("%c   ",435);
+    }
+    if (case25l3==10.3) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c ",143);color(14,0);printf("%c   ",435);
+    }
+    if (case25l3==10.4) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c ",37);color(14,0);printf("%c   ",435);
+    }
+    if (case25l3==10.5) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c ",31);color(14,0);printf("%c   ",435);
+    }
+    if (case25l3==10.6) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c ",15);color(14,0);printf("%c   ",435);
     }
     color(9,0);
     printf("%c%c%c%c%c%c",452,452,452,452,452,447);color(8,0);printf("%c ",440);color(9,0);
@@ -4000,19 +4913,19 @@ int test(double case01,double case03,double case05,double case10,double case11,d
         color(14,0);
         printf("           ");
     }
-    if (case21l4==7){
+    if (case21l4>=7 && case21l4<8){
         color(14,0);
         printf("           ");
     }
-    if (case21l4==8){
+    if (case21l4>=8 && case21l4<9){
         color(14,0);
         printf("           ");
     }
-    if (case21l4==9){
+    if (case21l4>=9 && case21l4<10){
         color(14,0);
         printf("    %c  %c   ",435,435);
     }
-    if (case21l4==10) {
+    if (case21l4>=10 && case21l4<11) {
         color(14, 0);
         printf("    %c  %c   ",435,435);
     }
@@ -4046,19 +4959,19 @@ int test(double case01,double case03,double case05,double case10,double case11,d
         color(14,0);
         printf("           ");
     }
-    if (case23l4==7){
+    if (case23l4>=7 && case23l4<8){
         color(14,0);
         printf("           ");
     }
-    if (case23l4==8){
+    if (case23l4>=8 && case23l4<9){
         color(14,0);
         printf("           ");
     }
-    if (case23l4==9){
+    if (case23l4>=9 && case23l4<10){
         color(14,0);
         printf("    %c  %c   ",435,435);
     }
-    if (case23l4==10) {
+    if (case23l4>=10 && case23l4<11) {
         color(14, 0);
         printf("    %c  %c   ",435,435);
     }
@@ -4092,19 +5005,19 @@ int test(double case01,double case03,double case05,double case10,double case11,d
         color(14,0);
         printf("           ");
     }
-    if (case25l4==7){
+    if (case25l4>=7 && case25l4<8){
         color(14,0);
         printf("           ");
     }
-    if (case25l4==8){
+    if (case25l4>=8 && case25l4<9){
         color(14,0);
         printf("           ");
     }
-    if (case25l4==9){
+    if (case25l4>=9 && case25l4<10){
         color(14,0);
         printf("    %c  %c   ",435,435);
     }
-    if (case25l4==10) {
+    if (case25l4>=10 && case25l4<11) {
         color(14, 0);
         printf("    %c  %c   ",435,435);
     }
@@ -4140,19 +5053,19 @@ int test(double case01,double case03,double case05,double case10,double case11,d
         color(14,0);
         printf("        ");
     }
-    if (case30l1==7){
+    if (case30l1>=7 && case30l1<8){
         color(14,0);
         printf("%c  %c    ",435,435);
     }
-    if (case30l1==8){
+    if (case30l1>=8 && case30l1<9){
         color(14,0);
         printf("%c  %c    ",435,435);
     }
-    if (case30l1==9){
+    if (case30l1>=9 && case30l1<10){
         color(14,0);
         p9bout1();
     }
-    if (case30l1==10){
+    if (case30l1>=10 && case30l1<11){
         color(14,0);
         printf("        ");
     }
@@ -4184,19 +5097,19 @@ int test(double case01,double case03,double case05,double case10,double case11,d
         color(14,0);
         printf("           ");
     }
-    if (case31l1==7){
+    if (case31l1>=7 && case31l1<8){
         color(14,0);
         p7bout1();
     }
-    if (case31l1==8){
+    if (case31l1>=8 && case31l1<9){
         color(14,0);
         p8bout1();
     }
-    if (case31l1==9){
+    if (case31l1>=9 && case31l1<10){
         color(14,0);
         printf("           ");
     }
-    if (case31l1==10){
+    if (case31l1>=10 && case31l1<11){
         color(14,0);
         printf("           ");
     }
@@ -4228,19 +5141,19 @@ int test(double case01,double case03,double case05,double case10,double case11,d
         color(14,0);
         printf("            ");
     }
-    if (case32l1==7){
+    if (case32l1>=7 && case32l1<8){
         color(14,0);
         printf("    %c  %c    ",435,435);
     }
-    if (case32l1==8){
+    if (case32l1>=8 && case32l1<9){
         color(14,0);
         printf("    %c  %c    ",435,435);
     }
-    if (case32l1==9){
+    if (case32l1>=9 && case32l1<10){
         color(14,0);
         printf("            ");
     }
-    if (case32l1==10){
+    if (case32l1==10 && case32l1<11){
         color(14,0);
         printf("            ");
     }
@@ -4272,19 +5185,19 @@ int test(double case01,double case03,double case05,double case10,double case11,d
         color(14,0);
         printf("           ");
     }
-    if (case33l1==7){
+    if (case33l1>=7 && case33l1<8){
         color(14,0);
         p7bout1();
     }
-    if (case33l1==8){
+    if (case33l1>=8 && case33l1<9){
         color(14,0);
         p8bout1();
     }
-    if (case33l1==9){
+    if (case33l1>=9 && case13l1<10){
         color(14,0);
         printf("           ");
     }
-    if (case33l1==10){
+    if (case33l1>=10 && case33l1<11){
         color(14,0);
         printf("           ");
     }
@@ -4316,19 +5229,19 @@ int test(double case01,double case03,double case05,double case10,double case11,d
         color(14,0);
         printf("              ");
     }
-    if (case34l1==7){
+    if (case34l1>=7 && case34l1<8){
         color(14,0);
         printf("     %c  %c     ",435,435);
     }
-    if (case34l1==8){
+    if (case34l1>=8 && case34l1<9){
         color(14,0);
         printf("     %c  %c     ",435,435);
     }
-    if (case34l1==9){
+    if (case34l1>=9 && case34l1<10){
         color(14,0);
         printf("              ");
     }
-    if (case34l1==10){
+    if (case34l1>=10 && case34l1<11){
         color(14,0);
         printf("              ");
     }
@@ -4360,19 +5273,19 @@ int test(double case01,double case03,double case05,double case10,double case11,d
         color(14,0);
         printf("           ");
     }
-    if (case35l1==7){
+    if (case35l1>=7 && case35l1<8){
         color(14,0);
         p7bout1();
     }
-    if (case35l1==8){
+    if (case35l1>=8 && case35l1<9){
         color(14,0);
         printf("    %c  %c   ",435,435);
     }
-    if (case35l1==9){
+    if (case35l1>=9 && case35l1<10){
         color(14,0);
         printf("           ");
     }
-    if (case35l1==10){
+    if (case35l1>=10 && case35l1<11){
         color(14,0);
         printf("           ");
     }
@@ -4397,16 +5310,16 @@ int test(double case01,double case03,double case05,double case10,double case11,d
     if (case36l1==6){
         printf("         ");
     }
-    if (case36l1==7){
+    if (case36l1>=7 && case36l1<8){
         printf("     %c  %c",435,435);
     }
-    if (case36l1==8){
+    if (case36l1>=8 && case36l1<9){
         printf("     %c  %c",435,435);
     }
-    if (case36l1==9){
+    if (case36l1>=9 && case36l1<10){
         printf("         ");
     }
-    if (case36l1==10){
+    if (case36l1>=10 && case36l1<11){
         printf("         ");
     }
     a();color(15,0);printf("                     4   %c       ",282);color(14,0);
@@ -4497,13 +5410,55 @@ int test(double case01,double case03,double case05,double case10,double case11,d
     if (case30l2==7){
         printf("%c  %c%c%c%c%c",435,448,452,452,452,452);
     }
+    if (case30l2==7.1){
+        printf("%c",435);color(15,0);printf(" %c",189);color(14,0);
+        printf("%c%c%c%c%c",448,452,452,452,452);
+    }
+    if (case30l2==7.2){
+        printf("%c",435);color(15,0);printf(" %c",157);color(14,0);
+        printf("%c%c%c%c%c",448,452,452,452,452);
+    }
+    if (case30l2==7.3){
+        printf("%c",435);color(15,0);printf(" %c",143);color(14,0);
+        printf("%c%c%c%c%c",448,452,452,452,452);
+    }
+    if (case30l2==7.4){
+        printf("%c",435);color(15,0);printf(" %c",37);color(14,0);
+        printf("%c%c%c%c%c",448,452,452,452,452);
+    }
+    if (case30l2==7.5){
+        printf("%c",435);color(15,0);printf(" %c",31);color(14,0);
+        printf("%c%c%c%c%c",448,452,452,452,452);
+    }
+    if (case30l2==7.6){
+        printf("%c",435);color(15,0);printf(" %c",15);color(14,0);
+        printf("%c%c%c%c%c",448,452,452,452,452);
+    }
     if (case30l2==8){
         printf("%c  %c    ",473,435);
     }
-    if (case30l2==9){
+    if (case30l2==8.1){
+        printf("%c",473);color(15,0);printf("%c ",189);color(14,0);printf("%c    ",435);
+    }
+    if (case30l2==8.2){
+        printf("%c",473);color(15,0);printf("%c ",157);color(14,0);printf("%c    ",435);
+    }
+    if (case30l2==8.3){
+        printf("%c",473);color(15,0);printf("%c ",143);color(14,0);printf("%c    ",435);
+    }
+    if (case30l2==8.4){
+        printf("%c",473);color(15,0);printf("%c ",37);color(14,0);printf("%c    ",435);
+    }
+    if (case30l2==8.5){
+        printf("%c",473);color(15,0);printf("%c ",31);color(14,0);printf("%c    ",435);
+    }
+    if (case30l2==8.6){
+        printf("%c",473);color(15,0);printf("%c ",15);color(14,0);printf("%c    ",435);
+    }
+    if (case30l2>=9 && case30l2<10){
         printf("%c%c%c%c%c%c%c%c",474,452,452,452,452,452,452,452);
     }
-    if (case30l2==10){
+    if (case30l2>=10 && case30l2<11){
         printf("%c%c%c%c    ",452,452,452,447);
     }
     if (case31l2==0){
@@ -4615,15 +5570,63 @@ int test(double case01,double case03,double case05,double case10,double case11,d
         color(14,0);
         printf("    %c  %c%c%c%c",435,448,452,452,452);
     }
+    if (case31l2==7.1){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",189);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case31l2==7.2){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",157);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case31l2==7.3){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",143);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case31l2==7.4){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",37);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case31l2==7.5){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",31);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case31l2==7.6){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",15);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
     if (case31l2==8){
         color(14,0);
         printf("%c%c%c%c%c  %c   ",452,452,452,452,473,435);
     }
-    if (case31l2==9){
+    if (case31l2==8.1){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",189);color(14,0);printf("%c   ",435);
+    }
+    if (case31l2==8.2){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",157);color(14,0);printf("%c   ",435);
+    }
+    if (case31l2==8.3){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",143);color(14,0);printf("%c   ",435);
+    }
+    if (case31l2==8.4){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",37);color(14,0);printf("%c   ",435);
+    }
+    if (case31l2==8.5){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",31);color(14,0);printf("%c   ",435);
+    }
+    if (case31l2==8.6){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",189);color(14,0);printf("%c   ",435);
+    }
+    if (case31l2>=9 && case31l2<10){
         color(14,0);
         printf("    %c%c%c%c%c%c%c",474,452,452,452,452,452,452);
     }
-    if (case31l2==10){
+    if (case31l2==10 && case31l2<11){
         color(14,0);
         printf("%c%c%c%c%c%c%c%c   ",452,452,452,452,452,452,452,447);
     }
@@ -4737,15 +5740,63 @@ int test(double case01,double case03,double case05,double case10,double case11,d
         color(14,0);
         printf("    %c  %c%c%c%c%c",435,448,452,452,452,452);
     }
+    if (case32l2==7.1){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",189);color(14,0);printf("%c%c%c%c%c",448,452,452,452,452);
+    }
+    if (case32l2==7.2){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",157);color(14,0);printf("%c%c%c%c%c",448,452,452,452,452);
+    }
+    if (case32l2==7.3){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",143);color(14,0);printf("%c%c%c%c%c",448,452,452,452,452);
+    }
+    if (case32l2==7.4){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",37);color(14,0);printf("%c%c%c%c%c",448,452,452,452,452);
+    }
+    if (case32l2==7.5){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",31);color(14,0);printf("%c%c%c%c%c",448,452,452,452,452);
+    }
+    if (case32l2==7.6){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",15);color(14,0);printf("%c%c%c%c%c",448,452,452,452,452);
+    }
     if (case32l2==8){
         color(14,0);
         printf("%c%c%c%c%c  %c    ",452,452,452,452,473,435);
     }
-    if (case32l2==9){
+    if (case32l2==8.1){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",189);printf("%c    ",435);
+    }
+    if (case32l2==8.2){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",157);printf("%c    ",435);
+    }
+    if (case32l2==8.3){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",143);printf("%c    ",435);
+    }
+    if (case32l2==8.4){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",37);printf("%c    ",435);
+    }
+    if (case32l2==8.5){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",31);printf("%c    ",435);
+    }
+    if (case32l2==8.6){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",15);printf("%c    ",435);
+    }
+    if (case32l2>=9 && case32l2<10){
         color(14,0);
         printf("    %c%c%c%c%c%c%c%c",474,452,452,452,452,452,452,452);
     }
-    if (case32l2==10){
+    if (case32l2>=10 && case32l2<11){
         color(14,0);
         printf("%c%c%c%c%c%c%c%c    ",452,452,452,452,452,452,452,447);
     }
@@ -4858,15 +5909,63 @@ int test(double case01,double case03,double case05,double case10,double case11,d
         color(14,0);
         printf("    %c  %c%c%c%c",435,448,452,452,452);
     }
+    if (case33l2==7.1){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",189);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case33l2==7.2){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",157);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case33l2==7.3){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",143);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case33l2==7.4){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",37);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case33l2==7.5){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",31);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case33l2==7.6){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",15);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
     if (case33l2==8){
         color(14,0);
         printf("%c%c%c%c%c  %c   ",452,452,452,452,473,435);
     }
-    if (case33l2==9){
+    if (case33l2==8.1){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",189);color(14,0);printf("%c   ",435);
+    }
+    if (case33l2==8.2){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",157);color(14,0);printf("%c   ",435);
+    }
+    if (case33l2==8.3){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",143);color(14,0);printf("%c   ",435);
+    }
+    if (case33l2==8.4){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",37);color(14,0);printf("%c   ",435);
+    }
+    if (case33l2==8.5){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",31);color(14,0);printf("%c   ",435);
+    }
+    if (case33l2==8.6){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",189);color(14,0);printf("%c   ",435);
+    }
+    if (case33l2>=9 && case33l2<10){
         color(14,0);
         printf("    %c%c%c%c%c%c%c",474,452,452,452,452,452,452);
     }
-    if (case33l2==10){
+    if (case33l2>=10 && case33l2<11){
         color(14,0);
         printf("%c%c%c%c%c%c%c%c   ",452,452,452,452,452,452,452,447);
     }
@@ -4980,15 +6079,63 @@ int test(double case01,double case03,double case05,double case10,double case11,d
         color(14,0);
         printf("     %c  %c%c%c%c%c%c",435,448,452,452,452,452,452);
     }
+    if (case34l2==7.1){
+        color(14,0);
+        printf("     %c",435);color(15,0);printf(" %c",189);color(14,0);printf("%c%c%c%c%c%c",448,452,452,452,452,452);
+    }
+    if (case34l2==7.2){
+        color(14,0);
+        printf("     %c",435);color(15,0);printf(" %c",157);color(14,0);printf("%c%c%c%c%c%c",448,452,452,452,452,452);
+    }
+    if (case34l2==7.3){
+        color(14,0);
+        printf("     %c",435);color(15,0);printf(" %c",143);color(14,0);printf("%c%c%c%c%c%c",448,452,452,452,452,452);
+    }
+    if (case34l2==7.4){
+        color(14,0);
+        printf("     %c",435);color(15,0);printf(" %c",37);color(14,0);printf("%c%c%c%c%c%c",448,452,452,452,452,452);
+    }
+    if (case34l2==7.5){
+        color(14,0);
+        printf("     %c",435);color(15,0);printf(" %c",31);color(14,0);printf("%c%c%c%c%c%c",448,452,452,452,452,452);
+    }
+    if (case34l2==7.6){
+        color(14,0);
+        printf("     %c",435);color(15,0);printf(" %c",15);color(14,0);printf("%c%c%c%c%c%c",448,452,452,452,452,452);
+    }
     if (case34l2==8){
         color(14,0);
         printf("%c%c%c%c%c%c  %c     ",452,452,452,452,452,473,435);
     }
-    if (case34l2==9){
+    if (case34l2==8.1){
+        color(14,0);
+        printf("%c%c%c%c%c%c",452,452,452,452,452,473);color(15,0);printf("%c ",189);color(14,0);printf("%c     ",435);
+    }
+    if (case34l2==8.2){
+        color(14,0);
+        printf("%c%c%c%c%c%c",452,452,452,452,452,473);color(15,0);printf("%c ",157);color(14,0);printf("%c     ",435);
+    }
+    if (case34l2==8.3){
+        color(14,0);
+        printf("%c%c%c%c%c%c",452,452,452,452,452,473);color(15,0);printf("%c ",143);color(14,0);printf("%c     ",435);
+    }
+    if (case34l2==8.4){
+        color(14,0);
+        printf("%c%c%c%c%c%c",452,452,452,452,452,473);color(15,0);printf("%c ",37);color(14,0);printf("%c     ",435);
+    }
+    if (case34l2==8.5){
+        color(14,0);
+        printf("%c%c%c%c%c%c",452,452,452,452,452,473);color(15,0);printf("%c ",31);color(14,0);printf("%c     ",435);
+    }
+    if (case34l2==8.6){
+        color(14,0);
+        printf("%c%c%c%c%c%c",452,452,452,452,452,473);color(15,0);printf("%c ",15);color(14,0);printf("%c     ",435);
+    }
+    if (case34l2>=9 && case34l2<10){
         color(14,0);
         printf("     %c%c%c%c%c%c%c%c%c",474,452,452,452,452,452,452,452,452);
     }
-    if (case34l2==10){
+    if (case34l2>=10 && case34l2<11){
         color(14,0);
         printf("%c%c%c%c%c%c%c%c%c     ",452,452,452,452,452,452,452,452,447);
     }
@@ -5101,15 +6248,63 @@ int test(double case01,double case03,double case05,double case10,double case11,d
         color(14,0);
         printf("    %c  %c%c%c%c",435,448,452,452,452);
     }
+    if (case35l2==7.1){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",189);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case35l2==7.2){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",157);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case35l2==7.3){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",143);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case35l2==7.4){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",37);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case35l2==7.5){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",31);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case35l2==7.6){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",15);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
     if (case35l2==8){
         color(14,0);
         printf("%c%c%c%c%c  %c   ",452,452,452,452,473,435);
     }
-    if (case35l2==9){
+    if (case35l2==8.1){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",189);color(14,0);printf("%c   ",435);
+    }
+    if (case35l2==8.2){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",157);color(14,0);printf("%c   ",435);
+    }
+    if (case35l2==8.3){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",143);color(14,0);printf("%c   ",435);
+    }
+    if (case35l2==8.4){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",37);color(14,0);printf("%c   ",435);
+    }
+    if (case35l2==8.5){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",31);color(14,0);printf("%c   ",435);
+    }
+    if (case35l2==8.6){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",189);color(14,0);printf("%c   ",435);
+    }
+    if (case35l2>=9 && case35l2<10){
         color(14,0);
         printf("    %c%c%c%c%c%c%c",474,452,452,452,452,452,452);
     }
-    if (case35l2==10){
+    if (case35l2>=10 && case35l2<11){
         color(14,0);
         printf("%c%c%c%c%c%c%c%c   ",452,452,452,452,452,452,452,447);
     }
@@ -5200,13 +6395,49 @@ int test(double case01,double case03,double case05,double case10,double case11,d
     if (case36l2==7){
         printf("     %c  %c",435,448);
     }
+    if (case36l2==7.1){
+        printf("     %c",435);color(15,0);printf(" %c",189);color(14,0);printf("%c",448);
+    }
+    if (case36l2==7.2){
+        printf("     %c",435);color(15,0);printf(" %c",157);color(14,0);printf("%c",448);
+    }
+    if (case36l2==7.3){
+        printf("     %c",435);color(15,0);printf(" %c",143);color(14,0);printf("%c",448);
+    }
+    if (case36l2==7.4){
+        printf("     %c",435);color(15,0);printf(" %c",37);color(14,0);printf("%c",448);
+    }
+    if (case36l2==7.5){
+        printf("     %c",435);color(15,0);printf(" %c",31);color(14,0);printf("%c",448);
+    }
+    if (case36l2==7.6){
+        printf("     %c",435);color(15,0);printf(" %c",15);color(14,0);printf("%c",448);
+    }
     if (case36l2==8){
         printf("%c%c%c%c%c%c  %c",452,452,452,452,452,473,435);
     }
-    if (case36l2==9){
+    if (case36l2==8.1){
+        printf("%c%c%c%c%c%c",452,452,452,452,452,473);color(15,0);printf("%c ",189);color(14,0);printf("%c",435);
+    }
+    if (case36l2==8.2){
+        printf("%c%c%c%c%c%c",452,452,452,452,452,473);color(15,0);printf("%c ",157);color(14,0);printf("%c",435);
+    }
+    if (case36l2==8.3){
+        printf("%c%c%c%c%c%c",452,452,452,452,452,473);color(15,0);printf("%c ",143);color(14,0);printf("%c",435);
+    }
+    if (case36l2==8.4){
+        printf("%c%c%c%c%c%c",452,452,452,452,452,473);color(15,0);printf("%c ",37);color(14,0);printf("%c",435);
+    }
+    if (case36l2==8.5){
+        printf("%c%c%c%c%c%c",452,452,452,452,452,473);color(15,0);printf("%c ",31);color(14,0);printf("%c",435);
+    }
+    if (case36l2==8.6){
+        printf("%c%c%c%c%c%c",452,452,452,452,452,473);color(15,0);printf("%c ",15);color(14,0);printf("%c",435);
+    }
+    if (case36l2>=9 && case36l2<10){
         printf("     %c%c%c%c",474,452,452,452);
     }
-    if (case36l2==10){
+    if (case36l2>=10 && case36l2<11){
         printf("%c%c%c%c%c%c%c%c%c",452,452,452,452,452,452,452,452,447);
     }
     a();printf("                                 ");
@@ -5252,17 +6483,53 @@ int test(double case01,double case03,double case05,double case10,double case11,d
     if (case30l3==6){
         printf("%c%c%c%c%c%c%c%c",452,452,452,452,452,452,452,452);
     }
-    if (case30l3==7){
+    if (case30l3>=7 && case30l3<8){
         printf("%c%c%c%c%c%c%c%c",448,452,452,452,452,452,452,452);
     }
-    if (case30l3==8){
+    if (case30l3>=8 && case30l3<9){
         printf("%c%c%c%c    ",452,452,452,473);
     }
     if (case30l3==9){
         printf("%c  %c%c%c%c%c",435,474,452,452,452,452);
     }
+    if (case30l3==9.1){
+        printf("%c",435);color(15,0);printf(" %c",189);color(14,0);printf("%c%c%c%c%c",474,452,452,452,452);
+    }
+    if (case30l3==9.2){
+        printf("%c",435);color(15,0);printf(" %c",157);color(14,0);printf("%c%c%c%c%c",474,452,452,452,452);
+    }
+    if (case30l3==9.3){
+        printf("%c",435);color(15,0);printf(" %c",143);color(14,0);printf("%c%c%c%c%c",474,452,452,452,452);
+    }
+    if (case30l3==9.4){
+        printf("%c",435);color(15,0);printf(" %c",37);color(14,0);printf("%c%c%c%c%c",474,452,452,452,452);
+    }
+    if (case30l3==9.5){
+        printf("%c",435);color(15,0);printf(" %c",31);color(14,0);printf("%c%c%c%c%c",474,452,452,452,452);
+    }
+    if (case30l3==9.6){
+        printf("%c",435);color(15,0);printf(" %c",15);color(14,0);printf("%c%c%c%c%c",474,452,452,452,452);
+    }
     if (case30l3==10){
         printf("%c  %c    ",447,435);
+    }
+    if (case30l3==10.1){
+        printf("%c",447);color(15,0);printf("%c ",189);color(14,0);printf("%c    ",435);
+    }
+    if (case30l3==10.2){
+        printf("%c",447);color(15,0);printf("%c ",157);color(14,0);printf("%c    ",435);
+    }
+    if (case30l3==10.3){
+        printf("%c",447);color(15,0);printf("%c ",143);color(14,0);printf("%c    ",435);
+    }
+    if (case30l3==10.4){
+        printf("%c",447);color(15,0);printf("%c ",37);color(14,0);printf("%c    ",435);
+    }
+    if (case30l3==10.5){
+        printf("%c",447);color(15,0);printf("%c ",31);color(14,0);printf("%c    ",435);
+    }
+    if (case30l3==10.6){
+        printf("%c",447);color(15,0);printf("%c ",15);color(14,0);printf("%c    ",435);
     }
     if (case31l3==0){
         printf("           ");
@@ -5317,11 +6584,11 @@ int test(double case01,double case03,double case05,double case10,double case11,d
         color(14,0);
         printf("%c%c%c%c%c%c%c%c%c%c%c",452,452,452,452,452,452,452,452,452,452,452);
     }
-    if (case31l3==7){
+    if (case31l3>=7 && case31l3<8){
         color(14,0);
         printf("    %c%c%c%c%c%c%c",448,452,452,452,452,452,452);
     }
-    if (case31l3==8){
+    if (case31l3>=8 && case31l3<9){
         color(14,0);
         printf("%c%c%c%c%c%c%c%c   ",452,452,452,452,452,452,452,473);
     }
@@ -5329,9 +6596,57 @@ int test(double case01,double case03,double case05,double case10,double case11,d
         color(14,0);
         printf("    %c  %c%c%c%c",435,474,452,452,452);
     }
+    if (case31l3==9.1){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",189);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case31l3==9.2){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",157);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case31l3==9.3){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",143);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case31l3==9.4){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",37);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case31l3==9.5){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",31);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case31l3==9.6){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",15);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
     if (case31l3==10) {
         color(14, 0);
         printf("%c%c%c%c%c  %c   ",452, 452,452,452, 447,435);
+    }
+    if (case31l3==10.1) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c ",189);color(14,0);printf("%c   ",435);
+    }
+    if (case31l3==10.2) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c ",157);color(14,0);printf("%c   ",435);
+    }
+    if (case31l3==10.3) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c ",143);color(14,0);printf("%c   ",435);
+    }
+    if (case31l3==10.4) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c ",37);color(14,0);printf("%c   ",435);
+    }
+    if (case31l3==10.5) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c ",31);color(14,0);printf("%c   ",435);
+    }
+    if (case31l3==10.6) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c ",15);color(14,0);printf("%c   ",435);
     }
     if (case32l3==0){
         printf("            ");
@@ -5386,11 +6701,11 @@ int test(double case01,double case03,double case05,double case10,double case11,d
         color(14,0);
         printf("%c%c%c%c%c%c%c%c%c%c%c%c",452,452,452,452,452,452,452,452,452,452,452,452);
     }
-    if (case32l3==7){
+    if (case32l3>=7 && case32l3<8){
         color(14,0);
         printf("    %c%c%c%c%c%c%c%c",448,452,452,452,452,452,452,452);
     }
-    if (case32l3==8){
+    if (case32l3>=8 && case32l3<9){
         color(14,0);
         printf("%c%c%c%c%c%c%c%c    ",452,452,452,452,452,452,452,473);
     }
@@ -5398,9 +6713,57 @@ int test(double case01,double case03,double case05,double case10,double case11,d
         color(14,0);
         printf("    %c  %c%c%c%c%c",435,474,452,452,452,452);
     }
+    if (case32l3==9.1){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",189);color(14,0);printf("%c%c%c%c%c",474,452,452,452,452);
+    }
+    if (case32l3==9.2){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",157);color(14,0);printf("%c%c%c%c%c",474,452,452,452,452);
+    }
+    if (case32l3==9.3){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",143);color(14,0);printf("%c%c%c%c%c",474,452,452,452,452);
+    }
+    if (case32l3==9.4){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",37);color(14,0);printf("%c%c%c%c%c",474,452,452,452,452);
+    }
+    if (case32l3==9.5){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",31);color(14,0);printf("%c%c%c%c%c",474,452,452,452,452);
+    }
+    if (case32l3==9.6){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",15);color(14,0);printf("%c%c%c%c%c",474,452,452,452,452);
+    }
     if (case32l3==10) {
         color(14, 0);
         printf("%c%c%c%c%c  %c    ", 452, 452,452,452, 447,435);
+    }
+    if (case32l3==10.1) {
+        color(14, 0);
+        printf("%c%c%c%c%c", 452, 452,452,452, 447);color(15,0);printf("%c ",189);color(14,0);printf("%c    ",435);
+    }
+    if (case32l3==10.2) {
+        color(14, 0);
+        printf("%c%c%c%c%c", 452, 452,452,452, 447);color(15,0);printf("%c ",157);color(14,0);printf("%c    ",435);
+    }
+    if (case32l3==10.3) {
+        color(14, 0);
+        printf("%c%c%c%c%c", 452, 452,452,452, 447);color(15,0);printf("%c ",143);color(14,0);printf("%c    ",435);
+    }
+    if (case32l3==10.4) {
+        color(14, 0);
+        printf("%c%c%c%c%c", 452, 452,452,452, 447);color(15,0);printf("%c ",37);color(14,0);printf("%c    ",435);
+    }
+    if (case32l3==10.5) {
+        color(14, 0);
+        printf("%c%c%c%c%c", 452, 452,452,452, 447);color(15,0);printf("%c ",31);color(14,0);printf("%c    ",435);
+    }
+    if (case32l3==10.6) {
+        color(14, 0);
+        printf("%c%c%c%c%c", 452, 452,452,452, 447);color(15,0);printf("%c ",15);color(14,0);printf("%c    ",435);
     }
     if (case33l3==0){
         printf("           ");
@@ -5455,11 +6818,11 @@ int test(double case01,double case03,double case05,double case10,double case11,d
         color(14,0);
         printf("%c%c%c%c%c%c%c%c%c%c%c",452,452,452,452,452,452,452,452,452,452,452);
     }
-    if (case33l3==7){
+    if (case33l3>=7 && case33l3<8){
         color(14,0);
         printf("    %c%c%c%c%c%c%c",448,452,452,452,452,452,452);
     }
-    if (case33l3==8){
+    if (case33l3>=8 && case33l3<9){
         color(14,0);
         printf("%c%c%c%c%c%c%c%c   ",452,452,452,452,452,452,452,473);
     }
@@ -5467,9 +6830,57 @@ int test(double case01,double case03,double case05,double case10,double case11,d
         color(14,0);
         printf("    %c  %c%c%c%c",435,474,452,452,452);
     }
+    if (case33l3==9.1){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",189);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case33l3==9.2){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",157);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case33l3==9.3){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",143);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case33l3==9.4){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",37);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case33l3==9.5){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",31);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case33l3==9.6){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",15);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
     if (case33l3==10) {
         color(14, 0);
         printf("%c%c%c%c%c  %c   ",452, 452,452,452, 447,435);
+    }
+    if (case33l3==10.1) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c ",189);color(14,0);printf("%c   ",435);
+    }
+    if (case33l3==10.2) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c ",157);color(14,0);printf("%c   ",435);
+    }
+    if (case33l3==10.3) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c ",143);color(14,0);printf("%c   ",435);
+    }
+    if (case33l3==10.4) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c ",37);color(14,0);printf("%c   ",435);
+    }
+    if (case33l3==10.5) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c ",31);color(14,0);printf("%c   ",435);
+    }
+    if (case33l3==10.6) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c ",15);color(14,0);printf("%c   ",435);
     }
     if (case34l3==0){
         printf("              ");
@@ -5524,11 +6935,11 @@ int test(double case01,double case03,double case05,double case10,double case11,d
         color(14,0);
         printf("%c%c%c%c%c%c%c%c%c%c%c%c%c%c",452,452,452,452,452,452,452,452,452,452,452,452,452,452);
     }
-    if (case34l3==7){
+    if (case34l3>=7 && case34l3<8){
         color(14,0);
         printf("     %c%c%c%c%c%c%c%c%c",448,452,452,452,452,452,452,452,452);
     }
-    if (case34l3==8){
+    if (case34l3>=8 && case34l3<9){
         color(14,0);
         printf("%c%c%c%c%c%c%c%c%c     ",452,452,452,452,452,452,452,452,473);
     }
@@ -5536,9 +6947,57 @@ int test(double case01,double case03,double case05,double case10,double case11,d
         color(14,0);
         printf("     %c  %c%c%c%c%c%c",435,474,452,452,452,452,452);
     }
+    if (case34l3==9.1){
+        color(14,0);
+        printf("     %c",435);color(15,0);printf(" %c",189);color(14,0);printf("%c%c%c%c%c%c",474,452,452,452,452,452);
+    }
+    if (case34l3==9.2){
+        color(14,0);
+        printf("     %c",435);color(15,0);printf(" %c",157);color(14,0);printf("%c%c%c%c%c%c",474,452,452,452,452,452);
+    }
+    if (case34l3==9.3){
+        color(14,0);
+        printf("     %c",435);color(15,0);printf(" %c",143);color(14,0);printf("%c%c%c%c%c%c",474,452,452,452,452,452);
+    }
+    if (case34l3==9.4){
+        color(14,0);
+        printf("     %c",435);color(15,0);printf(" %c",37);color(14,0);printf("%c%c%c%c%c%c",474,452,452,452,452,452);
+    }
+    if (case34l3==9.5){
+        color(14,0);
+        printf("     %c",435);color(15,0);printf(" %c",31);color(14,0);printf("%c%c%c%c%c%c",474,452,452,452,452,452);
+    }
+    if (case34l3==9.6){
+        color(14,0);
+        printf("     %c",435);color(15,0);printf(" %c",15);color(14,0);printf("%c%c%c%c%c%c",474,452,452,452,452,452);
+    }
     if (case34l3==10) {
         color(14, 0);
         printf("%c%c%c%c%c%c  %c     ", 452, 452, 452,452,452, 447,435);
+    }
+    if (case34l3==10.1) {
+        color(14, 0);
+        printf("%c%c%c%c%c%c", 452, 452, 452,452,452, 447);color(15,0);printf("%c ",189);color(14,0);printf("%c     ",435);
+    }
+    if (case34l3==10.2) {
+        color(14, 0);
+        printf("%c%c%c%c%c%c", 452, 452, 452,452,452, 447);color(15,0);printf("%c ",157);color(14,0);printf("%c     ",435);
+    }
+    if (case34l3==10.3) {
+        color(14, 0);
+        printf("%c%c%c%c%c%c", 452, 452, 452,452,452, 447);color(15,0);printf("%c ",143);color(14,0);printf("%c     ",435);
+    }
+    if (case34l3==10.4) {
+        color(14, 0);
+        printf("%c%c%c%c%c%c", 452, 452, 452,452,452, 447);color(15,0);printf("%c ",37);color(14,0);printf("%c     ",435);
+    }
+    if (case34l3==10.5) {
+        color(14, 0);
+        printf("%c%c%c%c%c%c", 452, 452, 452,452,452, 447);color(15,0);printf("%c ",31);color(14,0);printf("%c     ",435);
+    }
+    if (case34l3==10.6) {
+        color(14, 0);
+        printf("%c%c%c%c%c%c", 452, 452, 452,452,452, 447);color(15,0);printf("%c ",15);color(14,0);printf("%c     ",435);
     }
     if (case35l3==0){
         printf("           ");
@@ -5593,11 +7052,11 @@ int test(double case01,double case03,double case05,double case10,double case11,d
         color(14,0);
         printf("%c%c%c%c%c%c%c%c%c%c%c",452,452,452,452,452,452,452,452,452,452,452);
     }
-    if (case35l3==7){
+    if (case35l3>=7 && case35l3<8){
         color(14,0);
         printf("    %c%c%c%c%c%c%c",448,452,452,452,452,452,452);
     }
-    if (case35l3==8){
+    if (case35l3>=8 && case35l3<9){
         color(14,0);
         printf("%c%c%c%c%c%c%c%c   ",452,452,452,452,452,452,452,473);
     }
@@ -5605,9 +7064,57 @@ int test(double case01,double case03,double case05,double case10,double case11,d
         color(14,0);
         printf("    %c  %c%c%c%c",435,474,452,452,452);
     }
+    if (case35l3==9.1){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",189);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case35l3==9.2){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",157);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case35l3==9.3){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",143);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case35l3==9.4){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",37);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case35l3==9.5){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",31);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case35l3==9.6){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",15);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
     if (case35l3==10) {
         color(14, 0);
         printf("%c%c%c%c%c  %c   ",452, 452,452,452, 447,435);
+    }
+    if (case35l3==10.1) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c ",189);color(14,0);printf("%c   ",435);
+    }
+    if (case35l3==10.2) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c ",157);color(14,0);printf("%c   ",435);
+    }
+    if (case35l3==10.3) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c ",143);color(14,0);printf("%c   ",435);
+    }
+    if (case35l3==10.4) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c ",37);color(14,0);printf("%c   ",435);
+    }
+    if (case35l3==10.5) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c ",31);color(14,0);printf("%c   ",435);
+    }
+    if (case35l3==10.6) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c ",15);color(14,0);printf("%c   ",435);
     }
     if (case36l3==0){
         printf("         ");
@@ -5651,17 +7158,53 @@ int test(double case01,double case03,double case05,double case10,double case11,d
     if (case36l3==6){
         printf("%c%c%c%c%c%c%c%c%c",452,452,452,452,452,452,452,452,452);
     }
-    if (case36l3==7){
+    if (case36l3>=7 && case36l3<8){
         printf("     %c%c%c%c",448,452,452,452);
     }
-    if (case36l3==8){
+    if (case36l3>=8 && case36l3<9){
         printf("%c%c%c%c%c%c%c%c%c",452,452,452,452,452,452,452,452,473);
     }
     if (case36l3==9){
         printf("     %c  %c",435,474);
     }
+    if (case36l3==9.1){
+        printf("     %c",435);color(15,0);printf(" %c",189);color(14,0);printf("%c",474);
+    }
+    if (case36l3==9.2){
+        printf("     %c",435);color(15,0);printf(" %c",157);color(14,0);printf("%c",474);
+    }
+    if (case36l3==9.3){
+        printf("     %c",435);color(15,0);printf(" %c",143);color(14,0);printf("%c",474);
+    }
+    if (case36l3==9.4){
+        printf("     %c",435);color(15,0);printf(" %c",37);color(14,0);printf("%c",474);
+    }
+    if (case36l3==9.5){
+        printf("     %c",435);color(15,0);printf(" %c",31);color(14,0);printf("%c",474);
+    }
+    if (case36l3==9.6){
+        printf("     %c",435);color(15,0);printf(" %c",15);color(14,0);printf("%c",474);
+    }
     if (case36l3==10){
         printf("%c%c%c%c%c%c  %c",452,452,452,452,452,447,435);
+    }
+    if (case36l3==10.1){
+        printf("%c%c%c%c%c%c",452,452,452,452,452,447);color(15,0);printf("%c ",189);color(14,0);printf("%c",435);
+    }
+    if (case36l3==10.2){
+        printf("%c%c%c%c%c%c",452,452,452,452,452,447);color(15,0);printf("%c ",157);color(14,0);printf("%c",435);
+    }
+    if (case36l3==10.3){
+        printf("%c%c%c%c%c%c",452,452,452,452,452,447);color(15,0);printf("%c ",143);color(14,0);printf("%c",435);
+    }
+    if (case36l3==10.4){
+        printf("%c%c%c%c%c%c",452,452,452,452,452,447);color(15,0);printf("%c ",37);color(14,0);printf("%c",435);
+    }
+    if (case36l3==10.5){
+        printf("%c%c%c%c%c%c",452,452,452,452,452,447);color(15,0);printf("%c ",31);color(14,0);printf("%c",435);
+    }
+    if (case36l3==10.6){
+        printf("%c%c%c%c%c%c",452,452,452,452,452,447);color(15,0);printf("%c ",15);color(14,0);printf("%c",435);
     }
     a();printf("                                 ");
     if (case30l4==0){
@@ -5692,19 +7235,19 @@ int test(double case01,double case03,double case05,double case10,double case11,d
         color(14,0);
         printf("        ");
     }
-    if (case30l4==7){
+    if (case30l4>=7 && case30l4<8){
         color(14,0);
         printf("        ");
     }
-    if (case30l4==8){
+    if (case30l4>=8 && case30l4<9){
         color(14,0);
         printf("        ");
     }
-    if (case30l4==9){
+    if (case30l4>=9 && case30l4<10){
         color(14,0);
         printf("%c  %c    ",435,435);
     }
-    if (case30l4==10){
+    if (case30l4>=10 && case30l4<11){
         color(14,0);
         printf("%c  %c    ",435,435);
     }
@@ -5735,19 +7278,19 @@ int test(double case01,double case03,double case05,double case10,double case11,d
         color(14,0);
         printf("           ");
     }
-    if (case31l4==7){
+    if (case31l4>=7 && case31l4<8){
         color(14,0);
         printf("           ");
     }
-    if (case31l4==8){
+    if (case31l4>=8 && case31l4<9){
         color(14,0);
         printf("           ");
     }
-    if (case31l4==9){
+    if (case31l4>=9 && case31l4<10){
         color(14,0);
         printf("    %c  %c   ",435,435);
     }
-    if (case31l4==10) {
+    if (case31l4>=10 && case31l4<11) {
         color(14, 0);
         printf("    %c  %c   ",435,435);
     }
@@ -5778,19 +7321,19 @@ int test(double case01,double case03,double case05,double case10,double case11,d
         color(14,0);
         printf("            ");
     }
-    if (case32l4==7){
+    if (case32l4>=7 && case32l4<8){
         color(14,0);
         printf("            ");
     }
-    if (case32l4==8){
+    if (case32l4>=8 && case32l4<9){
         color(14,0);
         printf("            ");
     }
-    if (case32l4==9){
+    if (case32l4>=9 && case32l4<10){
         color(14,0);
         printf("    %c  %c    ",435,435);
     }
-    if (case32l4==10) {
+    if (case32l4>=10 && case32l4<11) {
         color(14, 0);
         printf("    %c  %c    ",435,435);
     }
@@ -5821,19 +7364,19 @@ int test(double case01,double case03,double case05,double case10,double case11,d
         color(14,0);
         printf("           ");
     }
-    if (case33l4==7){
+    if (case33l4>=7 && case33l4<8){
         color(14,0);
         printf("           ");
     }
-    if (case33l4==8){
+    if (case33l4>=8 && case33l4<9){
         color(14,0);
         printf("           ");
     }
-    if (case33l4==9){
+    if (case33l4>=9 && case33l4<10){
         color(14,0);
         printf("    %c  %c   ",435,435);
     }
-    if (case33l4==10) {
+    if (case33l4>=10 && case33l4<11) {
         color(14, 0);
         printf("    %c  %c   ",435,435);
     }
@@ -5864,19 +7407,19 @@ int test(double case01,double case03,double case05,double case10,double case11,d
         color(14,0);
         printf("              ");
     }
-    if (case34l4==7){
+    if (case34l4>=7 && case34l4<8){
         color(14,0);
         printf("              ");
     }
-    if (case34l4==8){
+    if (case34l4>=8 && case34l4<9){
         color(14,0);
         printf("              ");
     }
-    if (case34l4==9){
+    if (case34l4>=9 && case34l4<10){
         color(14,0);
         printf("     %c  %c     ",435,435);
     }
-    if (case34l4==10) {
+    if (case34l4>=10 && case34l4<11) {
         color(14, 0);
         printf("     %c  %c     ",435,435);
     }
@@ -5907,19 +7450,19 @@ int test(double case01,double case03,double case05,double case10,double case11,d
         color(14,0);
         printf("           ");
     }
-    if (case35l4==7){
+    if (case35l4>=7 && case35l4<8){
         color(14,0);
         printf("           ");
     }
-    if (case35l4==8){
+    if (case35l4>=8 && case35l4<9){
         color(14,0);
         printf("           ");
     }
-    if (case35l4==9){
+    if (case35l4>=9 && case35l4<10){
         color(14,0);
         printf("    %c  %c   ",435,435);
     }
-    if (case35l4==10) {
+    if (case35l4>=10 && case35l4<11) {
         color(14, 0);
         printf("    %c  %c   ",435,435);
     }
@@ -5944,16 +7487,16 @@ int test(double case01,double case03,double case05,double case10,double case11,d
     if (case36l4==6){
         printf("         ");
     }
-    if (case36l4==7){
+    if (case36l4>=7 && case36l4<8){
         printf("         ");
     }
-    if (case36l4==8){
+    if (case36l4>=8 && case36l4<9){
         printf("         ");
     }
-    if (case36l4==9){
+    if (case36l4>=9 && case36l4<10){
         printf("     %c  %c",435,435);
     }
-    if (case36l4==10){
+    if (case36l4>=10 && case36l4<11){
         printf("     %c  %c",435,435);
     }
     color(9,0);
@@ -9830,7 +11373,7 @@ int printpiece34(double b){
     color(15,0);
 }
 
-int demanderinclinaison(int b){            // demander dans quel sens le joueur va incliner la carte poussante
+int demanderinclinaison(int b){            // demander dans quel sens le joueur va incliner la carte poussante // ERREUR INCLINAISON PAS +1 +2 VERIFIER
     int a=0;
     int c=0;
     if (b==5 || b==6){
