@@ -11420,7 +11420,7 @@ int demanderinclinaison(int b){            // demander dans quel sens le joueur 
 
 //
 // Created by Antoine on 01/12/2022.
-//
+//c
 
 #ifndef PROJET_FONCTION_H
 #define PROJET_FONCTION_H
