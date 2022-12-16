@@ -57,6 +57,7 @@
     }GC_BUTTON;
 
     void GC_BUTTON_INIT(GC_BUTTON* gc_button);
+    void GC_BUTTON_UPDATE_EVENT(GC_BUTTON* gc_button, ALLEGRO_EVENT event);
 
 
     typedef struct

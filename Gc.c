@@ -71,6 +71,18 @@ void GC_BUTTON_INIT(GC_BUTTON* gc_button)
     GC_PROPERTIES_INIT(&gc_button->gc_properties);
 }
 
+void GC_BUTTON_UPDATE_EVENT(GC_BUTTON* gc_button, ALLEGRO_EVENT event)
+{
+    if (event.type != ALLEGRO_EVENT_MOUSE_BUTTON_UP)
+    {
+        printf("\n<WARNING> [GC_INPUT_FIELD_UPDATE_EVENT] Invalid event");
+        return;
+    }
+
+    //event.mouse.x
+    //event.mouse.Y
+}
+
 
 void GC_INPUT_FIELD_INIT(GC_INPUT_FIELD* gc_input_field)
 {
