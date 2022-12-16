@@ -4,7 +4,7 @@
 #include <string.h>
 #include <time.h>
 #include <math.h>
-#include <windows.h>
+
 
 int main() {
     char nomJ1[100],nomJ2[100],nomJ3[100],nomJ4[100];
@@ -19,6 +19,8 @@ int main() {
     int compteur4=0;
     int a=0;
     int partie=1;
+    double compteurtresor1=0;
+    double compteurtresor2=0;
     introduction();
     demandenbjoueur();
     scanf("%d",&nbjoueur);
@@ -171,8 +173,43 @@ int main() {
     }
     ecriturenom(nomJ1,nomJ2,nomJ3,nomJ4,nbjoueur);
     a=tirageausort(nbjoueur);
-    afficherblocpermanent();
-    while (partie==1){
+    srand(time(NULL));
+    double tab[35]={0};
+    for (int i=1;i<7;i++){
+        tab[i]=rand()%4+1;
+    }
+    for (int i=7;i<23;i++){
+        tab[i]=rand()%4+7;
+    }
+    for (int i=23;i<35;i++){
+        tab[i]=rand()%2+5;
+    }
+    for (int i=0;i<100;i++){
+        int a = rand()%34+1;
+        int b=rand()%34+1;
+        float c=tab[a];
+        tab[a]=tab[b];
+        tab[b]=c;
+    }
+    for (int i=1;i<35;i++){
+        if (tab[i]==1 || tab[i]==2 || tab[i]==3 || tab[i]==4){
+            compteurtresor1=compteurtresor1+1;
+            tab[i]=tab[i]+(compteurtresor1/10);
+        }
+        else if (tab[i]==7 || tab[i]==8 || tab[i]==9 || tab[i]==10){
+            compteurtresor2=compteurtresor2+1;
+            if (compteurtresor2>0 && compteurtresor2<7){
+                tab[i]=tab[i]+(compteurtresor2/10);
+            }
+            else if (compteurtresor2>6){
+                tab[i]=tab[i];
+            }
+        }
+    }
+    test(tab[1],tab[2],tab[3],tab[4],tab[5],tab[6],tab[7],tab[8],tab[9],tab[10],tab[11],tab[12],tab[13],tab[14],tab[15],tab[16],tab[17],tab[18],tab[19],tab[20],tab[21],tab[22],tab[23],tab[24],tab[25],tab[26],tab[27],tab[28],tab[29],tab[30],tab[31],tab[32],tab[33]);
+    printf("\n\n");printf("                                                  La pi%cce en trop est la pi%cce %f\n\n",138,138,tab[34]);printf("\n");
+    printpiece34(tab[34]);
+    /*while (partie==1){
         if (a==1){
             compteur1=1;
         }
@@ -211,5 +248,6 @@ int main() {
         }
         compteur1= toursuivant(compteur4,compteur1);
     }
+*/
     return 0;
 }
