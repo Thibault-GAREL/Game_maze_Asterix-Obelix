@@ -17,16 +17,32 @@
 
 #endif
 
+#ifndef GCMANAGER
+#define GCMANAGER
+
+    #define KEYBOARD_EVENT
+    typedef struct
+    {
+        ALLEGRO_DISPLAY* display;
+        ALLEGRO_EVENT_QUEUE* events;
+        ALLEGRO_EVENT event;
+    }GC_MANAGER;
+
+    //Retourne l'addresse du nouveau manager si l'initialisation réussie sinon 0 
+    void GC_MANAGER_CREATE(GC_MANAGER* pManager, int width, int height);
+    void GC_MANAGER_UPDATE_EVENT(GC_MANAGER* pManager);
+    void GC_MANAGER_DESTROY(GC_MANAGER* pManger);
+
+#endif
+
 #ifndef SPACE
 #define SPACE
 
     typedef struct
     {
-        float POSITION_X;
-        float POSITION_Y;
+        float POSITION_X, POSITION_Y;
         float ROTATION_Z;
-        int HEIGH;
-        int WIDTH;
+        float HEIGHT, WIDTH;
     }GC_SPACE;
 
     void GC_SPACE_INIT(GC_SPACE* gc_space);
@@ -41,6 +57,7 @@
         unsigned int error; // 0 = pas d'erreur // 1 => Pas de solution // 2 => Réinitializer le composent
         char name[100];
         GC_SPACE gc_space;
+        //GC_MANAGER* pManager;
     }GC_PROPERTIES;
 
     void GC_PROPERTIES_INIT(GC_PROPERTIES* gc_properties);
@@ -50,27 +67,37 @@
 #ifndef GC_COMPONENT
 #define GC_COMPONENT
 
+
+    #define GC_BUTTON_STATE_NONE 0
+    #define GC_BUTTON_STATE_PRESSED 1
+    #define GC_BUTTON_STATE_RELEASED 2
     typedef struct
     {
         char text[200];
-        GC_PROPERTIES gc_properties;
+        bool isMouseOver;
+        char state;
+        ALLEGRO_EVENT* event;
+        GC_PROPERTIES gc_properties;        
     }GC_BUTTON;
 
-    void GC_BUTTON_INIT(GC_BUTTON* gc_button);
-    void GC_BUTTON_UPDATE_EVENT(GC_BUTTON* gc_button, ALLEGRO_EVENT event);
+    void GC_BUTTON_INIT(GC_BUTTON* gc_button, ALLEGRO_EVENT* event);
+    void GC_BUTTON_UPDATE_EVENT(GC_BUTTON* gc_button);
 
 
+    #define GC_KEY_BACKSPACE 8
+    #define GC_KEY_ENTER 13
     typedef struct
     {
-        char text[10];
+        char text[100];
         int cursor;
         bool isValidated;
+        ALLEGRO_EVENT* event;
         GC_PROPERTIES gc_properties;
     }GC_INPUT_FIELD;
 
-    void GC_INPUT_FIELD_INIT(GC_INPUT_FIELD* gc_input_field);
+    void GC_INPUT_FIELD_INIT(GC_INPUT_FIELD* gc_input_field, ALLEGRO_EVENT* event);
     int GC_INPUT_FIELD_GET_CURSOR_OFFSET(GC_INPUT_FIELD* gc_input_field);
-    void GC_INPUT_FIELD_UPDATE_EVENT(GC_INPUT_FIELD* gc_input_field, ALLEGRO_EVENT event);
+    void GC_INPUT_FIELD_UPDATE_EVENT(GC_INPUT_FIELD* gc_input_field);
 
 
     typedef struct
@@ -80,7 +107,7 @@
     }GC_SPRITE;
 
     void GC_SPRITE_INIT(GC_SPRITE* gc_sprite, const char *filePath);
-    void GC_SPRITE_DRAW(GC_SPRITE gc_sprite);
+    void GC_SPRITE_DRAW(GC_SPRITE* gc_sprite);
 
 
     typedef struct
