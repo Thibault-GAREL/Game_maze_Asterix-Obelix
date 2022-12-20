@@ -159,7 +159,14 @@ void GC_SPRITE_INIT(GC_SPRITE* gc_sprite, const char *filePath)
 
 void GC_SPRITE_DRAW(GC_SPRITE gc_sprite)
 {
-    al_draw_bitmap(gc_sprite.pBitmap, gc_sprite.gc_properties.gc_space.POSITION_X, gc_sprite.gc_properties.gc_space.POSITION_X, 0);
+    //al_draw_bitmap(gc_sprite.pBitmap, gc_sprite.gc_properties.gc_space.POSITION_X, gc_sprite.gc_properties.gc_space.POSITION_Y, 0);
+    al_draw_rotated_bitmap(gc_sprite.pBitmap,
+        (al_get_bitmap_width(gc_sprite.pBitmap)+1)/2,
+        (al_get_bitmap_height(gc_sprite.pBitmap)+1)/2,
+        gc_sprite.gc_properties.gc_space.POSITION_X, 
+        gc_sprite.gc_properties.gc_space.POSITION_Y,
+        gc_sprite.gc_properties.gc_space.ROTATION_Z,
+        0);
 }
 
 
