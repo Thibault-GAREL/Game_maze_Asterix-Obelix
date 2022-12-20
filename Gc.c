@@ -45,7 +45,7 @@ void GC_SPACE_INIT(GC_SPACE* gc_space)
 
 void GC_PROPERTIES_INIT(GC_PROPERTIES* gc_properties)
 {
-    gc_properties->ERROR = 0;
+    gc_properties->error = 0;
 
     int nameSize = sizeof(gc_properties->name);
     for (int i = 0; i < nameSize; i++)
@@ -122,7 +122,7 @@ void GC_INPUT_FIELD_UPDATE_EVENT(GC_INPUT_FIELD* gc_input_field, ALLEGRO_EVENT e
     if (gc_input_field->isValidated)
     {
         printf("\n<ERROR> [GC_INPUT_FIELD_UPDATE_EVENT] Input field already validated");
-        gc_input_field->gc_properties.ERROR = 2;
+        gc_input_field->gc_properties.error = 2;
         return;
     }
     
@@ -130,7 +130,7 @@ void GC_INPUT_FIELD_UPDATE_EVENT(GC_INPUT_FIELD* gc_input_field, ALLEGRO_EVENT e
     if (GC_INPUT_FIELD_GET_CURSOR_OFFSET(gc_input_field) < 0)
     {
         printf("\n<ERROR> [GC_INPUT_FIELD_UPDATE_EVENT] Cursor too high: %d", gc_input_field->cursor);
-        gc_input_field->gc_properties.ERROR = 2;
+        gc_input_field->gc_properties.error = 2;
         return;
     }
     
@@ -153,7 +153,7 @@ void GC_SPRITE_INIT(GC_SPRITE* gc_sprite, const char *filePath)
     if (gc_sprite->pBitmap ==  NULL)
     {
         printf("\n<ERROR> [GC_SPRITE_INIT] Can't load bitmap file");
-        gc_sprite->gc_properties.ERROR = 2;
+        gc_sprite->gc_properties.error = 2;
     }
 }
 
