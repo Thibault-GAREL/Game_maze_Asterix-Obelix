@@ -9,3 +9,6 @@ Créateur :
 - Antoine
 - Robin KOENIG
 - Thibault GAREL
+
+
+A travers notre avancé à travers le projet, nous nous sommes dit que nous allons partir sur l'univers d'Astérix et Obélix
