@@ -22,12 +22,15 @@ bool GC_INIT_ALLEGRO()
         fprintf(stderr, "Erreur dans l'initialisation de allegro_image");
         return false;
     }
-    //al_init_font_addon();
-    if (!al_init_font_addon())
+    
+    al_init_font_addon();
+
+    //Pour les certaines version d'Allegro
+    /*if (!al_init_font_addon())
     {
         fprintf(stderr, "Erreur dans l'initialisation de allegro_font");
         return false;
-    }
+    }*/
 
     return true;
 }
