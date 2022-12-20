@@ -11,4 +11,9 @@ Créateur :
 - Thibault GAREL
 
 
-A travers notre avancé à travers le projet, nous nous sommes dit que nous allons partir sur l'univers d'Astérix et Obélix
+A travers notre avancé à travers le projet, nous nous sommes dit que nous allons partir sur l'univers d'Astérix et Obélix.
+Astérix, Obélix, Panoramix et Idéfix (les 4 pions incarnants les joueurs) vont être coincé dans le labyrinthe de la pyramide par Tournevis, le sbire de Amonbofis, le concurent de notre ami l'architecte Numérobis.
+
+** "Ce tombeau sera votre tombeau"**
+
+Cepandant, il faut récupéré tous les trésors pour pouvoir en sortir.
