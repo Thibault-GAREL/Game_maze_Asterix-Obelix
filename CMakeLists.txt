@@ -3,4 +3,6 @@ project(PROJET C)
 
 set(CMAKE_C_STANDARD 99)
 
-add_executable(PROJET main1.c fonction1.h main.c fonction.h)
+add_executable(PROJET main_t.c Gc.c Gc.h )
+
+target_link_libraries(PROJET -lmingw32 -lallegro-5.0.10-monolith-md-debug)

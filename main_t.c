@@ -15,6 +15,14 @@ int main () {
     bool bouton_2_horizontale_montant = false;
     bool bouton_3_horizontale_montant = false;
 
+    bool bouton_1_verticale_descendant = false;
+    bool bouton_2_verticale_descendant = false;
+    bool bouton_3_verticale_descendant = false;
+
+    bool bouton_1_verticale_montant = false;
+    bool bouton_2_verticale_montant = false;
+    bool bouton_3_verticale_montant = false;
+
     srand (time(NULL));
 
     char adresse_tuile_fixe [50] [50] = {"..\\Import\\tuile_1.png",
@@ -110,7 +118,7 @@ int main () {
                 GC_SPRITE_INIT(&tab_plateau[i][j], adresse_tuile_mobile[tab_index [compteur_2]]);  // mettre 1 nb random ici
                 tab_plateau[i][j].gc_properties.gc_space.POSITION_X = 95 * j;
                 tab_plateau[i][j].gc_properties.gc_space.POSITION_Y = 95 * i;
-                tab_plateau[i][j].gc_properties.gc_space.ROTATION_Z = rand()%4*90; //mettre 90 degrée pour l'angle
+                tab_plateau[i][j].gc_properties.gc_space.ROTATION_Z = 0; //rand()%4*90mettre 90 degrée pour l'angle
                 GC_SPRITE_DRAW(tab_plateau  [i][j]);
                 ++compteur_2;
             }
