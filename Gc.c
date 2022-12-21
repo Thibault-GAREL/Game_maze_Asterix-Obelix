@@ -63,22 +63,22 @@ void GC_MANAGER_CREATE(GC_MANAGER* pManager, int width, int height)
     }
 
     al_register_event_source(pManager->events, al_get_keyboard_event_source());
-    if (!al_is_event_source_registered(pManager->events, al_get_keyboard_event_source()))
+    /*if (!al_is_event_source_registered(pManager->events, al_get_keyboard_event_source()))
     {
         fprintf(stderr, "\n<FAIL> Impossible to register keyboard event source");
-    }
+    }*/
     
     al_register_event_source(pManager->events, al_get_mouse_event_source());
-    if (!al_is_event_source_registered(pManager->events, al_get_mouse_event_source()))
+    /*if (!al_is_event_source_registered(pManager->events, al_get_mouse_event_source()))
     {
         fprintf(stderr, "\n<FAIL> Impossible to register mouse event source");
-    }
+    }*/
 
     al_register_event_source(pManager->events, al_get_display_event_source(pManager->display));
-    if (!al_is_event_source_registered(pManager->events, al_get_display_event_source(pManager->display)))
+    /*if (!al_is_event_source_registered(pManager->events, al_get_display_event_source(pManager->display)))
     {
         fprintf(stderr, "\n<FAIL> Impossible to register keyboard event source");
-    }
+    }*/
 
     ALLEGRO_EVENT emptyEvent = {0};
     pManager->event = emptyEvent;
