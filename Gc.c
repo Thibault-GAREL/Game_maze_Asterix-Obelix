@@ -63,19 +63,19 @@ void GC_MANAGER_CREATE(GC_MANAGER* pManager, int width, int height)
     }
 
     al_register_event_source(pManager->events, al_get_keyboard_event_source());
-    /*if (!al_is_event_source_registered(pManager->events, al_get_keyboard_event_source()))
+    /*if (!al_is_event_source_registered(pManager->events, al_get_keyboard_event_source())) //Pour les certaines version d'Allegro
     {
         fprintf(stderr, "\n<FAIL> Impossible to register keyboard event source");
     }*/
     
     al_register_event_source(pManager->events, al_get_mouse_event_source());
-    /*if (!al_is_event_source_registered(pManager->events, al_get_mouse_event_source()))
+    /*if (!al_is_event_source_registered(pManager->events, al_get_mouse_event_source())) //Pour les certaines version d'Allegro
     {
         fprintf(stderr, "\n<FAIL> Impossible to register mouse event source");
     }*/
 
     al_register_event_source(pManager->events, al_get_display_event_source(pManager->display));
-    /*if (!al_is_event_source_registered(pManager->events, al_get_display_event_source(pManager->display)))
+    /*if (!al_is_event_source_registered(pManager->events, al_get_display_event_source(pManager->display))) //Pour les certaines version d'Allegro
     {
         fprintf(stderr, "\n<FAIL> Impossible to register keyboard event source");
     }*/
@@ -310,3 +310,10 @@ void GC_TEXT_DRAW_F(GC_TEXT gc_text)
 {
     al_draw_textf(gc_text.police, gc_text.color, gc_text.gc_properties.gc_space.POSITION_X, gc_text.gc_properties.gc_space.POSITION_Y, 0, gc_text.text);
 }
+
+
+/*
+ *
+ * Gc by Matthieu Gros
+ *
+ */

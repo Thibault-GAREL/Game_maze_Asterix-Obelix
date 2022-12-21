@@ -122,3 +122,10 @@
     void GC_TEXT_DRAW_F(GC_TEXT gc_text);
 
 #endif
+
+
+/*
+ *
+ * Gc by Matthieu Gros
+ *
+ */
