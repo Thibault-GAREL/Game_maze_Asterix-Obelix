@@ -45,7 +45,7 @@ int main() {
 
 
     GC_SPRITE sprite;
-    GC_SPRITE_INIT(&sprite, "..\\Import\\Fleche_1.PNG");
+    GC_SPRITE_INIT(&sprite, ".\\Import\\Fleche_1.PNG"); //"..\\Import\\Fleche_1.PNG"
 
     sprite.gc_properties.gc_space.POSITION_X = 190;
 

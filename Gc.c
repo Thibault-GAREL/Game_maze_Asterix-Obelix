@@ -274,7 +274,7 @@ void GC_SPRITE_INIT(GC_SPRITE* gc_sprite, const char *filePath)
 
     if (gc_sprite->pBitmap ==  NULL)
     {
-        printf("\n<ERROR> [GC_SPRITE_INIT] Can't load bitmap file");
+        printf("\n<ERROR> [GC_SPRITE_INIT] Can't load bitmap file: \'%s\'", filePath);
         gc_sprite->gc_properties.error = 2;
     }
 
