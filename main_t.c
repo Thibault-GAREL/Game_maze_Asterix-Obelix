@@ -4,6 +4,8 @@ int main () {
 
     //GC_SPRITE support_echangeur[0] = {0};
 
+
+
     int bouton_1_horizontale_descendant = 0;
     bool bouton_2_horizontale_descendant = false;
     bool bouton_3_horizontale_descendant = false;
@@ -33,9 +35,9 @@ int main () {
     initalisation_affichage_plateau(tab_index, tab_plateau);
 
 
-    GC_SPRITE_INIT(&tab_plateau[7][0], adresse_tuile_mobile[tab_index[33]]);
-    tab_plateau[7][0].gc_properties.gc_space.POSITION_Y = 95 * 8;
-    GC_SPRITE_DRAW(&tab_plateau[7][0]);
+    //GC_SPRITE_INIT(&tab_plateau[7][0], adresse_tuile_mobile[tab_index[33]]);
+    //tab_plateau[7][0].gc_properties.gc_space.POSITION_Y = 95 * 8;
+    //GC_SPRITE_DRAW(&tab_plateau[7][0]);
 
 
 
