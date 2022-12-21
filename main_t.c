@@ -1,10 +1,6 @@
 #include "fonction_t.h"
 
-int main () {
-
-    //GC_SPRITE support_echangeur[0] = {0};
-
-
+int main() {
 
     int bouton_1_horizontale_descendant = 0;
     bool bouton_2_horizontale_descendant = false;
@@ -28,7 +24,8 @@ int main () {
     GC_MANAGER_CREATE(&manager, 1000, 1000);
 
 
-    int tab_index[50] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25,26, 27, 28, 29, 30, 31, 32, 33};
+    int tab_index[50] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25,
+                         26, 27, 28, 29, 30, 31, 32, 33};
 
     random_sans_remise(tab_index);
 
@@ -71,57 +68,23 @@ int main () {
         al_flip_display();
 
         if (button1.state == 2) {
-            //tab_plateau [0] [1] = support_echangeur [0];
-            //tab_plateau[7][0] = tab_plateau[0][1];
-
-            //tab_plateau[7][0].gc_properties.gc_space.POSITION_Y = 95 * 9;
-            //GC_SPRITE_DRAW(&tab_plateau[7][0]);
-            //GC_SPRITE_DRAW(&tab_plateau[0][1]);
-
             tab_plateau[6][1].gc_properties.gc_space.POSITION_X = 0;
             tab_plateau[6][1].gc_properties.gc_space.POSITION_Y = 95 * 8;
             GC_SPRITE_DRAW(&tab_plateau[6][1]);
 
             for (int i = 0; i < 7; ++i) {
-                tab_plateau[i][1].gc_properties.gc_space.POSITION_Y =
-                        tab_plateau[i][1].gc_properties.gc_space.POSITION_Y + 95;
+                tab_plateau[i][1].gc_properties.gc_space.POSITION_Y = tab_plateau[i][1].gc_properties.gc_space.POSITION_Y + 95;
                 GC_SPRITE_DRAW(&tab_plateau[i][1]);
 
             }
 
-
-
-            /*GC_SPRITE_INIT(&tab_plateau[7][0], adresse_tuile_mobile[tab_index [33]]);
-            tab_plateau[7][0].gc_properties.gc_space.POSITION_Y = 95 * 8;
-            GC_SPRITE_DRAW(&tab_plateau [7][0]);
-
             tab_plateau[7][0].gc_properties.gc_space.POSITION_X = 190;
             tab_plateau[7][0].gc_properties.gc_space.POSITION_Y = 95;
-            GC_SPRITE_DRAW(&tab_plateau [7][0]);*/
-
-            //tab_plateau[0][1].gc_properties.gc_space.POSITION_X = 95 * 2;
-            //tab_plateau[0][1].gc_properties.gc_space.POSITION_Y = 95 * 8;
-            //GC_SPRITE_DRAW(&tab_plateau [0][1]);
-
-
-
-
-
-
-
+            GC_SPRITE_DRAW(&tab_plateau [7][0]);
 
 
 
         }
-
-        for (;;) {
-             al_flip_display();   // mettre à jour : à mettre le + possible à jour
-         }
-
-
-         al_rest(100);
-         GC_MANAGER_DESTROY(&manager);  // détruire à la fin
-
-         return 0;
-     }
     }
+    return 0;
+}

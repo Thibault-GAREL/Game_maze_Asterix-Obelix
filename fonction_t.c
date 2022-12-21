@@ -94,6 +94,11 @@ void initalisation_affichage_plateau (int tab_index [50], GC_SPRITE tab_plateau 
             }
         }
     }
+
+    GC_SPRITE_INIT(&tab_plateau[7][0], adresse_tuile_mobile[tab_index [33]]);
+    tab_plateau[7][0].gc_properties.gc_space.POSITION_Y = 95 * 8;
+    GC_SPRITE_DRAW(&tab_plateau [7][0]);
+
 }
 
 
