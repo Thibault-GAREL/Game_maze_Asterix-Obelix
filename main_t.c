@@ -2,22 +2,6 @@
 
 int main() {
 
-    int bouton_1_horizontale_descendant = 0;
-    bool bouton_2_horizontale_descendant = false;
-    bool bouton_3_horizontale_descendant = false;
-
-    bool bouton_1_horizontale_montant = false;
-    bool bouton_2_horizontale_montant = false;
-    bool bouton_3_horizontale_montant = false;
-
-    bool bouton_1_verticale_descendant = false;
-    bool bouton_2_verticale_descendant = false;
-    bool bouton_3_verticale_descendant = false;
-
-    bool bouton_1_verticale_montant = false;
-    bool bouton_2_verticale_montant = false;
-    bool bouton_3_verticale_montant = false;
-
     GC_SPRITE tab_plateau[7][7] = {0};
 
     GC_MANAGER manager;
@@ -36,13 +20,9 @@ int main() {
     //tab_plateau[7][0].gc_properties.gc_space.POSITION_Y = 95 * 8;
     //GC_SPRITE_DRAW(&tab_plateau[7][0]);
 
-
-
     //tab_plateau[0][1].gc_properties.gc_space.POSITION_X = 95 * 8;
     //tab_plateau[0][1].gc_properties.gc_space.POSITION_Y =  tab_plateau [0] [1].gc_properties.gc_space.POSITION_Y + 95;
     //GC_SPRITE_DRAW(tab_plateau  [0][1]);
-
-
 
     GC_SPRITE sprite;
     GC_SPRITE_INIT(&sprite, ".\\Import\\Fleche_1.PNG"); //"..\\Import\\Fleche_1.PNG"
