@@ -4,7 +4,7 @@
 
 #include "fonction_t.h"
 
-char adresse_tuile_fixe[50][50] = {".\\Import\\tuile_1.png",
+/*char adresse_tuile_fixe[50][50] = {".\\Import\\tuile_1.png",
                                    ".\\Import\\tuile_3.png",
                                    ".\\Import\\tuile_5.png",
                                    ".\\Import\\tuile_7.png",
@@ -54,8 +54,8 @@ char adresse_tuile_mobile[50][50] = {".\\Import\\tuile_2.png",
                                      ".\\Import\\tuile_44.png",
                                      ".\\Import\\tuile_46.png",
                                      ".\\Import\\tuile_48.png",
-                                     ".\\Import\\tuile_50.png"};
-/*
+                                     ".\\Import\\tuile_50.png"};*/
+
 char adresse_tuile_fixe[50][50] = {"..\\Import\\tuile_1.png",
                                    "..\\Import\\tuile_3.png",
                                    "..\\Import\\tuile_5.png",
@@ -108,7 +108,7 @@ char adresse_tuile_mobile[50][50] = {"..\\Import\\tuile_2.png",
                                      "..\\Import\\tuile_46.png",
                                      "..\\Import\\tuile_48.png",
                                      "..\\Import\\tuile_50.png"
-};*/
+};
 
 int* random_sans_remise(int tab_index[MOVABLE_PARTS])
 {

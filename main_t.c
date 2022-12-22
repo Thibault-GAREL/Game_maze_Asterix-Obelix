@@ -11,15 +11,8 @@ int main()
     initalisation_affichage_plateau(random_sans_remise(tab_index), tab_plateau, &extra_piece);
 
 
-    //GC_SPRITE_INIT(&tab_plateau[7][0], adresse_tuile_mobile[tab_index[33]]);
-    //tab_plateau[7][0].gc_properties.gc_space.POSITION_Y = 95 * 8;
-    //GC_SPRITE_DRAW(&tab_plateau[7][0]);
-
-    //tab_plateau[0][1].gc_properties.gc_space.POSITION_X = 95 * 8;
-    //tab_plateau[0][1].gc_properties.gc_space.POSITION_Y =  tab_plateau [0] [1].gc_properties.gc_space.POSITION_Y + 95;
-    //GC_SPRITE_DRAW(tab_plateau  [0][1]);
     GC_SPRITE tab_buttons_sprite[1][1];
-    GC_SPRITE_INIT(&tab_buttons_sprite[0][0], ".\\Import\\Fleche_1.PNG"); //"..\\Import\\Fleche_1.PNG"
+    GC_SPRITE_INIT(&tab_buttons_sprite[0][0], "..\\Import\\Fleche_1.PNG"); //"..\\Import\\Fleche_1.PNG"
 
     tab_buttons_sprite[0][0].gc_properties.gc_space.POSITION_X = 190;
 
