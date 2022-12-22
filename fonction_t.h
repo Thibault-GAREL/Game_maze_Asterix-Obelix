@@ -23,13 +23,22 @@
 #define TAB_BUTTONS_SIDE 3
 #define PI 3.14
 
+typedef struct 
+{
+    GC_BUTTON gc_button;
+    GC_SPRITE gc_sprite;
+    bool sens_direct;
+} BUTTON_DECAL;
+
 int* random_sans_remise(int tab_index[MOVABLE_PARTS]);
 void initalisation_affichage_plateau(int tab_index[MOVABLE_PARTS], GC_SPRITE tab_plateau[PLATEAU_H][PLATEAU_W], GC_SPRITE* pExtra_piece);
 void decal_ligne(GC_SPRITE tab_plateau[PLATEAU_H][PLATEAU_W], GC_SPRITE* const pExtra_piece, const int ln, bool direct_sens);
 void decal_colonne(GC_SPRITE tab_plateau[PLATEAU_H][PLATEAU_W], GC_SPRITE* const pExtra_piece, const int col, const bool direct_sens);
 void UPDATE_Part_Position_DRAW_Plateau(GC_SPRITE tab_plateau[PLATEAU_H][PLATEAU_W], GC_SPRITE* const pExtra_piece);
-void Clear_Diplay(GC_SPRITE tab_plateau[PLATEAU_H][PLATEAU_W], GC_SPRITE* const pExtra_piece, GC_SPRITE tab_buttons[TAB_BUTTONS_SIDE][TAB_BUTTONS_SIDE]);
+void Clear_Diplay();
 
-void test_button ();
+void Init_list_button_decal(BUTTON_DECAL list_button_decal[6], GC_MANAGER* manager, bool y, bool x);
+void List_button_decal_update_event(BUTTON_DECAL list_button_decal_colonne[6]);
+void List_button_decal_draw(BUTTON_DECAL list_button_decal_colonne[6]);
 
 #endif //PROJET_FONCTION_T_H

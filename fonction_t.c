@@ -4,7 +4,7 @@
 
 #include "fonction_t.h"
 
-/*char adresse_tuile_fixe[50][50] = {".\\Import\\tuile_1.png",
+char adresse_tuile_fixe[50][50] = {".\\Import\\tuile_1.png",
                                    ".\\Import\\tuile_3.png",
                                    ".\\Import\\tuile_5.png",
                                    ".\\Import\\tuile_7.png",
@@ -54,9 +54,9 @@ char adresse_tuile_mobile[50][50] = {".\\Import\\tuile_2.png",
                                      ".\\Import\\tuile_44.png",
                                      ".\\Import\\tuile_46.png",
                                      ".\\Import\\tuile_48.png",
-                                     ".\\Import\\tuile_50.png"};*/
+                                     ".\\Import\\tuile_50.png"};
 
-char adresse_tuile_fixe[50][50] = {"..\\Import\\tuile_1.png",
+/*char adresse_tuile_fixe[50][50] = {"..\\Import\\tuile_1.png",
                                    "..\\Import\\tuile_3.png",
                                    "..\\Import\\tuile_5.png",
                                    "..\\Import\\tuile_7.png",
@@ -108,7 +108,7 @@ char adresse_tuile_mobile[50][50] = {"..\\Import\\tuile_2.png",
                                      "..\\Import\\tuile_46.png",
                                      "..\\Import\\tuile_48.png",
                                      "..\\Import\\tuile_50.png"
-};
+};*/
 
 int* random_sans_remise(int tab_index[MOVABLE_PARTS])
 {
@@ -138,7 +138,6 @@ void initalisation_affichage_plateau(int tab_index[MOVABLE_PARTS], GC_SPRITE tab
     int compteur_1 = 0;
     int compteur_2 = 0;
 
-    //Remplacer cette partie par 2*2 boucles for de pas=2 et départ 1 (pièces fixes) et 0 (pièces mobile)
     for (int h = 0; h < PLATEAU_W; ++h)
     {
         for (int w = 0; w < PLATEAU_H; ++w)
@@ -173,15 +172,27 @@ void decal_ligne(GC_SPRITE tab_plateau[PLATEAU_H][PLATEAU_W], GC_SPRITE* const p
 
     if (direct_sens)
     {
-        *pExtra_piece = tab_plateau[PLATEAU_W-1][ln];
+        *pExtra_piece = tab_plateau[ln][PLATEAU_W-1];
 
-        for (int y = 1; y < PLATEAU_W; y ++)
+        for (int x = 1; x < PLATEAU_H; x ++)
         {
-            tab_plateau[PLATEAU_H-y][ln] = tab_plateau[PLATEAU_H-y-1][ln];
+            tab_plateau[ln][PLATEAU_H-x] = tab_plateau[ln][PLATEAU_H-x-1];
         }
 
-        tab_plateau[0][ln] = buffer_part;
+        tab_plateau[ln][0] = buffer_part;
     }
+    else
+    {
+        *pExtra_piece = tab_plateau[ln][0];
+
+        for (int x = 0; x < PLATEAU_H-1; x ++)
+        {
+            tab_plateau[ln][x] = tab_plateau[ln][x+1];
+        }
+
+        tab_plateau[ln][PLATEAU_H-1] = buffer_part;
+    }
+    
 }
 
 void decal_colonne(GC_SPRITE tab_plateau[PLATEAU_H][PLATEAU_W], GC_SPRITE* const pExtra_piece, const int col, const bool direct_sens)
@@ -199,6 +210,18 @@ void decal_colonne(GC_SPRITE tab_plateau[PLATEAU_H][PLATEAU_W], GC_SPRITE* const
 
         tab_plateau[0][col] = buffer_part;
     }
+    else
+    {
+        *pExtra_piece = tab_plateau[0][col];
+
+        for (int y = 0; y < PLATEAU_W-1; y ++)
+        {
+            tab_plateau[y][col] = tab_plateau[y+1][col];
+        }
+
+        tab_plateau[PLATEAU_W-1][col] = buffer_part;
+    }
+    
 }
 
 void UPDATE_Part_Position_DRAW_Plateau(GC_SPRITE tab_plateau[PLATEAU_H][PLATEAU_W], GC_SPRITE* const pExtra_piece)
@@ -218,18 +241,49 @@ void UPDATE_Part_Position_DRAW_Plateau(GC_SPRITE tab_plateau[PLATEAU_H][PLATEAU_
     GC_SPRITE_DRAW(pExtra_piece);
 }
 
-void Clear_Diplay(GC_SPRITE tab_plateau[PLATEAU_H][PLATEAU_W], GC_SPRITE* const pExtra_piece, GC_SPRITE tab_buttons_sprite[TAB_BUTTONS_SIDE][TAB_BUTTONS_SIDE])
+void Clear_Diplay()
 {
     al_clear_to_color(al_map_rgb(0,0,0));
-
-    //Faire une boucle 'for' lorsqu'il y aura plusieurs bouttons
-    GC_SPRITE_DRAW(&tab_buttons_sprite[0][0]); 
-
-    UPDATE_Part_Position_DRAW_Plateau(tab_plateau, pExtra_piece);
 }
 
-void Initialisation_button () {
+void Init_list_button_decal(BUTTON_DECAL list_button_decal[6], GC_MANAGER* manager, bool y, bool x)
+{
+    int j = 1;
+    bool sens_direct = true;
 
+    for (int i = 0; i < 6; i++)
+    {
+        //GC_SPRITE_INIT(&list_button_decal[i].gc_sprite, "..\\Import\\Fleche_1.PNG");
+        GC_SPRITE_INIT(&list_button_decal[i].gc_sprite, ".\\Import\\Fleche_1.PNG");
+        list_button_decal[i].gc_sprite.gc_properties.gc_space.POSITION_X = PART_W *x*2*j + (PART_W * PLATEAU_W + PLATEAU_OFFSET_X) * !sens_direct * !x;
+        list_button_decal[i].gc_sprite.gc_properties.gc_space.POSITION_Y = PART_H *y*2*j + (PART_H * PLATEAU_H + PLATEAU_OFFSET_Y) * !sens_direct * !y;
+        list_button_decal[i].gc_sprite.gc_properties.gc_space.ROTATION_Z = (PI)*!sens_direct + -(PI/2) * y;
+
+        GC_BUTTON_INIT(&list_button_decal[i].gc_button, &manager->event);
+        list_button_decal[i].gc_button.gc_properties.gc_space = list_button_decal[i].gc_sprite.gc_properties.gc_space;
+
+        list_button_decal[i].sens_direct = sens_direct;
+
+        if (++j > 3)
+        {
+            j = 1;
+            sens_direct = false;
+        }
+    }
 }
 
-void test_button () {}
+void List_button_decal_update_event(BUTTON_DECAL list_button_decal[6])
+{
+    for (int i = 0; i < 6; i++)
+    {
+        GC_BUTTON_UPDATE_EVENT(&list_button_decal[i].gc_button);
+    }
+}
+
+void List_button_decal_draw(BUTTON_DECAL list_button_decal[6])
+{
+    for (int i = 0; i < 6; i++)
+    {
+        GC_SPRITE_DRAW(&list_button_decal[i].gc_sprite);
+    }
+}
