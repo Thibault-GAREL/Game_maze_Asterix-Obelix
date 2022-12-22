@@ -16,9 +16,9 @@ Exemple :
 
 Astérix, Obélix, Panoramix et Idéfix (les 4 pions incarnants les joueurs) vont être coincé dans le labyrinthe de la pyramide par Tournevis, le sbire de Amonbofis, le concurent de notre ami l'architecte Numérobis.
 
-Mettre :
-** "Ce tombeau sera votre tombeau"**
+Après nous avoir enfermé, sa voix résonne :
+**"Ce tombeau sera votre tombeau"**
 
-Cepandant, il faut récupéré tous les trésors pour pouvoir en sortir.
+Les 4 joueurs vont donc s'élancé dans une course folle : récupérer tous les trésors pour pouvoir sortir.
 
 Qui sera le plus rapide ? A vous de jouer...
