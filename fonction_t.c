@@ -155,7 +155,7 @@ void initalisation_affichage_plateau(int tab_index[MOVABLE_PARTS], GC_SPRITE tab
                 GC_SPRITE_INIT(&tab_plateau[h][w], adresse_tuile_mobile[tab_index[compteur_2++]]); // mettre 1 nb random ici
                 tab_plateau[h][w].gc_properties.gc_space.POSITION_X = PART_W * w + PLATEAU_OFFSET_X;
                 tab_plateau[h][w].gc_properties.gc_space.POSITION_Y = PART_H * h + PLATEAU_OFFSET_Y;
-                tab_plateau[h][w].gc_properties.gc_space.ROTATION_Z = (PIE / 2) * (rand() % 4); // mettre pie/2 pour l'angle -> radian
+                tab_plateau[h][w].gc_properties.gc_space.ROTATION_Z = (PI / 2) * (rand() % 4); // mettre pie/2 pour l'angle -> radian
                 GC_SPRITE_DRAW(&tab_plateau[h][w]);
             }
         }
@@ -167,9 +167,21 @@ void initalisation_affichage_plateau(int tab_index[MOVABLE_PARTS], GC_SPRITE tab
 }
 
 
-void decal_ligne(GC_SPRITE tab_plateau[PLATEAU_H][PLATEAU_W], GC_SPRITE *pExtra_piece, int ln, bool direct_sens)
+void decal_ligne(GC_SPRITE tab_plateau[PLATEAU_H][PLATEAU_W], GC_SPRITE* const pExtra_piece, const int ln, bool direct_sens)
 {
+    GC_SPRITE buffer_part = *pExtra_piece;
 
+    if (direct_sens)
+    {
+        *pExtra_piece = tab_plateau[PLATEAU_W-1][ln];
+
+        for (int y = 1; y < PLATEAU_W; y ++)
+        {
+            tab_plateau[PLATEAU_H-y][ln] = tab_plateau[PLATEAU_H-y-1][ln];
+        }
+
+        tab_plateau[0][ln] = buffer_part;
+    }
 }
 
 void decal_colonne(GC_SPRITE tab_plateau[PLATEAU_H][PLATEAU_W], GC_SPRITE* const pExtra_piece, const int col, const bool direct_sens)
@@ -215,3 +227,9 @@ void Clear_Diplay(GC_SPRITE tab_plateau[PLATEAU_H][PLATEAU_W], GC_SPRITE* const 
 
     UPDATE_Part_Position_DRAW_Plateau(tab_plateau, pExtra_piece);
 }
+
+void Initialisation_button () {
+
+}
+
+void test_button () {}
