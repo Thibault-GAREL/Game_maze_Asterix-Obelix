@@ -17,11 +17,12 @@
 #define PLATEAU_W 7
 #define PLATEAU_OFFSET_X 95
 #define PLATEAU_OFFSET_Y 95
-#define EXTRA_PART_POS_X 0
-#define EXTRA_PART_POS_Y PART_H * 8
+#define EXTRA_PART_POS_X 190 +190
+#define EXTRA_PART_POS_Y PART_H * 8 + PART_H + 30
 #define MOVABLE_PARTS 34
 #define TAB_BUTTONS_SIDE 3
 #define PI 3.14
+#define BUTTON_PATH ".\\Import\\Fleche_1.PNG"
 
 typedef struct 
 {
