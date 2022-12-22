@@ -6,8 +6,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <windows.h>
+#include <unistd.h>
 
-int pion[8] = {1,267,3,4,5,6,270,268};
+int pion[8] = {33,65,125,493,465,211,322,227};
 
 
 
@@ -43,6 +44,7 @@ int choixdupion(char queljoueur[100],int pion1,int pion2,int pion3) {
     }
     return choixpion;
 }
+
 int ecriturenom(char nom1[100],char nom2[100],char nom3[100],char nom4[100],int nbjoueur){
     if (nbjoueur>1){
         printf("                                                            Joueur 1 : %s\n",nom1);
@@ -54,7 +56,6 @@ int ecriturenom(char nom1[100],char nom2[100],char nom3[100],char nom4[100],int 
     if (nbjoueur>3){
         printf("                                                            Joueur 4 : %s\n",nom4);
     }
-    printf("\n\n                                                            Pour d%cterminer qui commence, faisons un tirage au sort.\n",130);
 }
 
 int tirageausort(int nbjoueur){
@@ -74,7 +75,10 @@ int tirageausort(int nbjoueur){
         int a=rand()%4+1;
         b=a;
     }
+    printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
+    printf("\n\n                                                            Pour d%cterminer qui commence, faisons un tirage au sort.\n",130);
     printf("\n                                                                              C'est le Joueur %d qui commence.\n",b);
+    sleep(4);
     return b;
 }
 
@@ -98,13 +102,202 @@ int toursuivant(int compteur1,int compteur2){
     }
     return compteur2;
 }
-
-
 void color(int t,int f)
 {
     HANDLE H=GetStdHandle(STD_OUTPUT_HANDLE);
     SetConsoleTextAttribute(H,f*16+t);
 }
+int asterix(){
+    color(12,0);printf("                                %c%c%c%c%c%c%c%c%c%c%c%c", 474,452,452,452,452,452,452, 452, 452, 452, 452, 447);color(11,0);printf(" %c%c%c%c%c%c%c%c%c%c%c%c",474,452,452,452,452,452,452,452,452,452,452,447);color(10,0);printf(" %c%c%c%c%c%c%c%c%c%c%c%c",474,452,452,452,452,452,452,452,452,452,452,447);color(15,0);printf(" %c%c%c%c%c%c%c%c%c%c%c%c",474,452,452,452,452,452,452,452,452,452,452,447);color(1,0);printf(" %c%c%c%c%c%c%c%c%c%c%c%c",474,452,452,452,452,452,452,452,452,452,452,447);color(12,0);printf("  %c%c%c%c%c",474,452,452,452,447);color(8,0);printf(" %c%c%c%c%c     %c%c%c%c%c\n",474,452,452,452,447,474,452,452,452,447);
+    color(12,0);printf("                                %c  %c%c%c%c%c%c  %c",435,474,452,452,452,452,447,435);color(11,0);printf(" %c  %c%c%c%c%c%c%c%c%c",435,474,452,452,452,452,452,452,452,473);color(10,0);printf(" %c%c%c%c%c  %c%c%c%c%c",448,452,452,452,447,474,452,452,452,473);color(15,0);printf(" %c  %c%c%c%c%c%c%c%c%c",435,474,452,452,452,452,452,452,452,473);color(1,0);printf(" %c  %c%c%c%c%c   %c",435,474,452,452,452,447,435);color(12,0);printf("  %c   %c",435,435);color(8,0);printf(" %c%c%c %c%c%c %c%c%c %c%c%c\n",448,452,447,448,452,447,474,452,473,474,452,473);
+    color(12,0);printf("                                %c  %c%c%c%c%c%c  %c",435,448,452,452,452,452,473,435);color(11,0);printf(" %c  %c%c%c%c%c%c%c%c%c",435,448,452,452,452,452,452,452,452,447);color(10,0);printf("     %c  %c",435,435);color(15,0);printf("     %c  %c%c%c%c%c",435,448,452,452,452,447);color(1,0);printf("     %c  %c%c%c%c%c %c%c%c",435,448,452,452,452,473,474,452,473);color(12,0);printf("  %c   %c",435,435);color(8,0);printf("   %c%c%c%c%c%c%c%c%c%c%c\n",448,452,452,447,448,452,473,474,452,452,473);
+    color(12,0);printf("                                %c  %c%c%c%c%c%c  %c",435,474,452,452,452,452,447,435);color(11,0);printf(" %c%c%c%c%c%c%c%c%c  %c",448,452,452,452,452,452,452,452,447,435);color(10,0);printf("     %c  %c",435,435);color(15,0);printf("     %c  %c%c%c%c%c",435,474,452,452,452,473);color(1,0);printf("     %c  %c%c%c%c%c %c%c",435,474,452,452,452,447,448,447);color(12,0);printf("   %c   %c",435,435);color(8,0);printf("   %c%c%c%c%c%c%c%c%c%c%c\n",474,452,452,473,474,452,447,448,452,452,447);
+    color(12,0);printf("                                %c  %c    %c  %c",435,435,435,435);color(11,0);printf(" %c%c%c%c%c%c%c%c%c  %c",474,452,452,452,452,452,452,452,473,435);color(10,0);printf("     %c  %c",435,435);color(15,0);printf("     %c  %c%c%c%c%c%c%c%c",435,448,452,452,452,452,452,452,447);color(1,0);printf("  %c  %c   %c  %c",435,435,435,435);color(12,0);printf("   %c   %c",435,435);color(8,0);printf(" %c%c%c %c%c%c %c%c%c %c%c%c\n",474,452,473,474,452,473,448,452,447,448,452,447);
+    color(12,0);printf("                                %c%c%c%c    %c%c%c%c",448,452,452,473,448,452,452,473);color(11,0);printf(" %c%c%c%c%c%c%c%c%c%c%c%c",448,452,452,452,452,452,452,452,452,452,452,473);color(10,0);printf("     %c%c%c%c",448,452,452,473);color(15,0);printf("     %c%c%c%c%c%c%c%c%c%c%c",448,452,452,452,452,452,452,452,452,452,473);color(1,0);printf("  %c%c%c%c   %c%c%c%c",448,452,452,473,448,452,452,473);color(12,0);printf("   %c%c%c%c%c",448,452,452,452,473);color(8,0);printf(" %c%c%c%c%c     %c%c%c%c%c",448,452,452,452,473,448,452,452,452,473);color(0,0);
+}
+
+int distribctre(int nbjoueur){
+    int a=0;
+    a=24/nbjoueur;
+    printf("\n\n\n                                    Il est l'heure de la distribution des tr%csors, vous allez avoir chacun %d tr%csors.\n",130,a,130);
+    sleep(3);
+}
+
+int revealtres1(int nbjoueur,char nomJ1[100],int a,char nomJ2[100],int b,char nomJ3[100],int c,char nomJ4[100],int d){
+    char choix[100];
+    int k=0;
+    char oui[]="OUI";char oui2[]="Oui";char oui3[]="oui";
+    printf("\n\n                                %s est tu pr%ct %c voir ton tr%csor ? (les autres joueurs ne doivent pas regarder)"  ,nomJ1,136,133,130);
+    scanf("%s",choix);
+    if (strcmp(choix,oui)==0 || strcmp(choix,oui2)==0 || strcmp(choix,oui3)==0){
+        color(15,0);printf("\n\n                                            Ton tr%csor est le tr%csor : %c, Bonne chance.\n",130,130,a);printf("\n\n\n");color(0,0);
+        printf("As tu bien vu ?\n");
+        scanf("%s",choix);
+    }
+    else {
+        printf("C'est ton choix, tu abandonnes avant m%cme la fin...\n",136);
+        exit(0);
+    }
+    printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
+    asterix();
+    printf("\n\n\n\n                                %s c'est ton tour, tu vas d%ccouvrir ton tr%csor. Es-tu pr%ct ?  ",nomJ2,130,130,136);
+    scanf("%s",choix);
+    if (strcmp(choix,oui)==0 || strcmp(choix,oui2)==0 || strcmp(choix,oui3)==0){
+        color(15,0);printf("\n\n                                            Ton tr%csor est le tr%csor : %c, Bonne chance.\n",130,130,b);printf("\n\n\n");color(0,0);
+        sleep(1);
+        printf("As tu bien vu ?\n");
+        scanf("%s",choix);
+    }
+    else {
+        printf("C'est ton choix, tu abandonnes avant m%cme la fin...\n",136);
+        exit(0);
+    }
+    if (nbjoueur>2){
+        printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
+        asterix();
+        printf("\n\n\n\n                                %s c'est ton tour, tu vas d%ccouvrir ton tr%csor. Es-tu pr%ct ?",nomJ3,130,130,136);
+        scanf("%s",choix);
+        if (strcmp(choix,oui)==0 || strcmp(choix,oui2)==0 || strcmp(choix,oui3)==0){
+            color(15,0);printf("\n\n                                            Ton tr%csor est le tr%csor : %c, Bonne chance.\n",130,130,c);printf("\n\n\n");color(0,0);
+            sleep(1);
+            printf("As tu bien vu ?\n");
+            scanf("%s",choix);
+        }
+        else {
+            printf("C'est ton choix, tu abandonnes avant m%cme la fin...\n",136);
+            exit(0);
+        }
+    }
+    if (nbjoueur==4){
+        printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
+        asterix();
+        printf("\n\n\n\n                                %s c'est ton tour, tu vas d%ccouvrir ton tr%csor. Es-tu pr%ct ?",nomJ4,130,130,136);
+        scanf("%s",choix);
+        if (strcmp(choix,oui)==0 || strcmp(choix,oui2)==0 || strcmp(choix,oui3)==0){
+            color(15,0);printf("\n\n                                            Ton tr%csor est le tr%csor : %c, Bonne chance.\n",130,130,d);printf("\n\n\n");color(0,0);
+        }
+        else {
+            printf("C'est ton choix, tu abandonnes avant m%cme la fin...\n",136);
+            exit(0);
+        }
+    }
+    sleep(4);
+}
+
+int convert(int lig,int col){
+    int c=0;
+    c=(lig-1)*10+col-1;
+    return c;
+}
+int verifpos4(int nbjoueur,int posjoueur4){
+    if(nbjoueur==3 || nbjoueur==2){
+        posjoueur4=0;
+    }
+    else {
+        posjoueur4=posjoueur4;
+    }
+    return posjoueur4;
+}
+int verifpos3(int nbjoueur,int posjoueur3){
+    if (nbjoueur==2){
+        posjoueur3=0;
+    }
+    else {
+        posjoueur3=posjoueur3;
+    }
+    return posjoueur3;
+}
+
+int testposition(int p1,int p2,int p3,int p4,int numcase,int pion1,int pion2,int pion3,int pion4){
+    int a=0;
+    if (p1==numcase){
+        a=pion1;
+    }
+    if (p2==numcase){
+        a=pion2;
+    }
+    if (p3==numcase){
+        a=pion3;
+    }
+    if (p4==numcase){
+        a=pion4;
+    }
+    return a;
+}
+
+void ecripos(int nbjoueur,char *nom,char *nom1,char *nom2,char *nom3,int lig,int col,int lig1,int col1,int lig2,int col2,int lig3,int col3){
+    printf("La position de %s est ligne :%d et colonne :%d\n",nom,lig,col);
+    printf("La position de %s est ligne :%d et colonne :%d\n",nom1,lig1,col1);
+    if (nbjoueur>2){
+        printf("La position de %s est ligne :%d et colonne :%d\n",nom2,lig2,col2);
+    }
+    if (nbjoueur==4){
+        printf("La position de %s est ligne :%d et colonne :%d\n\n",nom3,lig3,col3);
+    }
+}
+
+int demandmvt(){
+    char choix[100];char choix1[100];int b=0;
+    char lig[100]="ligne";char col[100]="colonne";char haut[100]="haut";char bas[100]="bas";char gauche[100]="gauche";char droite[100]="droite";
+    printf("Veux-tu bouger une colonne ou une ligne ?\n");
+    scanf("%s", choix);
+    if (strcmp(choix,lig)==0){
+        printf("Du c%ct%c droite ou gauche du plateau ?\n",147,130);
+        scanf("%s",choix1);
+        if (strcmp(choix1,gauche)==0){
+            printf("Quelle est le num%cro de la %s que vous voulez modifier (2 - 4 - 6) ?\n",130,choix);
+            scanf("%d",&b);
+            if (b==2){b=1;}
+            else if (b==4){b=2;}
+            else if (b==6){b=3;}
+            else {exit(0);}
+        }
+        else if (strcmp(choix1,droite)==0){
+            printf("Quelle est le num%cro de la %s que vous voulez modifier (2 - 4 - 6) ?\n",130,choix);
+            scanf("%d",&b);
+            if (b==2){b=4;}
+            else if (b==4){b=5;}
+            else if (b==6){b=6;}
+            else {exit(0);}
+        }
+        else {
+            exit(0);
+        }
+    }
+    else if (strcmp(choix,col)==0){
+        printf("Par le haut ou le bas du plateau ?\n");
+        scanf("%s",choix1);
+        if (strcmp(choix1,haut)==0){
+            printf("Quelle est le num%cro de la %s que vous voulez modifier ? (2 - 4 - 6) \n",130,choix);
+            scanf("%d",&b);
+            if (b==2){b=7;}
+            else if (b==4){b=8;}
+            else if (b==6){b=9;}
+            else {exit(0);}
+        }
+        else if (strcmp(choix1,bas)==0){
+            printf("Quelle est le num%cro de la %s que vous voulez modifier ? (2 - 4 - 6) \n",130,choix);
+            scanf("%d",&b);
+            if (b==2){b=10;}
+            else if (b==4){b=11;}
+            else if (b==6){b=12;}
+            else {exit(0);}
+        }
+        else {
+            exit(0);
+        }
+    }
+    else {
+        exit(0);
+    }
+    return b;
+}
+
+
+
+
+
+
 //piece en T
 int piece1bout1() {
     printf("%c%c%c%c%c%c%c%c%c%c%c",452,452,452,452,452,452,452,452,452,452,452);
@@ -322,7 +515,7 @@ int piece10bout4(){
 int a(){
     printf("\n");
 }
-int test(double case01,double case03,double case05,double case10,double case11,double case12,double case13,double case14,double case15,double case16,double case21,double case23,double case25,double case30,double case31,double case32,double case33,double case34,double case35,double case36,double case41,double case43,double case45,double case50,double case51,double case52,double case53,double case54,double case55,double case56,double case61,double case63,double case65){
+int test(int p1,int p2,int p3,int p4,double case01,double case03,double case05,double case10,double case11,double case12,double case13,double case14,double case15,double case16,double case21,double case23,double case25,double case30,double case31,double case32,double case33,double case34,double case35,double case36,double case41,double case43,double case45,double case50,double case51,double case52,double case53,double case54,double case55,double case56,double case61,double case63,double case65,int posJ1,int posJ2,int posJ3,int posJ4){
     a();a();a();printf("                                     1          2          3          4          5          6          7\n");
     printf("                                     %c          %c          %c          %c          %c          %c          %c\n\n",281,281,281,281,281,281,281);
     double case01l1,case01l2,case01l3,case01l4;
@@ -367,8 +560,10 @@ int test(double case01,double case03,double case05,double case10,double case11,d
     case61l1=case61l2=case61l3=case61l4=case61;
     case63l1=case63l2=case63l3=case63l4=case63;
     case65l1=case65l2=case65l3=case65l4=case65;
+    int f;
     color(9,0);
     printf("                                 %c%c%c%c%c%c%c%c",474,452,452,452,452,452,452,452);              //DEBUT 1ere LIGNE
+    f=testposition(posJ1,posJ2,posJ3,posJ4,01,p1,p2,p3,p4);
     if (case01l1==0){
         printf("           ");
     }
@@ -376,29 +571,47 @@ int test(double case01,double case03,double case05,double case10,double case11,d
         color(14,0);
         piece1bout1();
     }
-    if (case01l1==2.1){
+    if (case01l1==2.1 && posJ1!=01 && posJ2!=01 && posJ3!=01 && posJ4!=01){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf(" %c",292);color(14,0);printf("%c%c%c%c",448,452,452,452);
     }
-    if (case01l1==2.2){
+    if (case01l1==2.1 && (posJ1==01||posJ2==01||posJ3==01||posJ4==01)){
+        color(14,0);printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",f,292);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case01l1==2.2 && posJ1!=01 && posJ2!=01 && posJ3!=01 && posJ4!=01){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf(" %c",291);color(14,0);printf("%c%c%c%c",448,452,452,452);
     }
-    if (case01l1==2.3){
+    if (case01l1==2.2 && (posJ1==01||posJ2==01||posJ3==01||posJ4==01)){
+        color(14,0);printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",f,291);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case01l1==2.3 && posJ1!=01 && posJ2!=01 && posJ3!=01 && posJ4!=01){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf(" %c",285);color(14,0);printf("%c%c%c%c",448,452,452,452);
     }
-    if (case01l1==2.4){
-        color(14,0);
-        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf(" %c",279);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    if (case01l1==2.3 && (posJ1==01||posJ2==01||posJ3==01||posJ4==01)){
+        color(14,0);printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",f,285);color(14,0);printf("%c%c%c%c",448,452,452,452);
     }
-    if (case01l1==2.5){
+    if (case01l1==2.4 && posJ1!=01 && posJ2!=01 && posJ3!=01 && posJ4!=01){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf(" %c",428);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case01l1==2.4 && (posJ1==01||posJ2==01||posJ3==01||posJ4==01)){
+        color(14,0);printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",f,428);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case01l1==2.5 && posJ1!=01 && posJ2!=01 && posJ3!=01 && posJ4!=01){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf(" %c",277);color(14,0);printf("%c%c%c%c",448,452,452,452);
     }
-    if (case01l1==2.6){
+    if (case01l1==2.5 && (posJ1==01||posJ2==01||posJ3==01||posJ4==01)){
+        color(14,0);printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",f,277);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case01l1==2.6 && posJ1!=01 && posJ2!=01 && posJ3!=01 && posJ4!=01){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf(" %c",225);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case01l1==2.6 && (posJ1==01||posJ2==01||posJ3==01||posJ4==01)){
+        color(14,0);printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",f,225);color(14,0);printf("%c%c%c%c",448,452,452,452);
     }
     if (case01l1>3 && case01l1<4){
         color(14,0);
@@ -408,69 +621,133 @@ int test(double case01,double case03,double case05,double case10,double case11,d
         color(14,0);
         piece4bout1l1();
     }
-    if (case01l1==5){
+    if (case01l1==5 && posJ1!=01 && posJ2!=01 && posJ3!=01 && posJ4!=01){
         color(14,0);
         piece5bout1();
     }
-    if (case01l1==6){
+    if (case01l1==5 && (posJ1==01||posJ2==01||posJ3==01||posJ4==01)){
+        color(14,0);
+        printf("    %c ",435);color(15,0);printf("%c",f);color(14,0);printf("%c   ",435);
+    }
+    if (case01l1==6 && posJ1!=01 && posJ2!=01 && posJ3!=01 && posJ4!=01){
         color(14,0);
         piece6bout1();
     }
-    if (case01l1==7){
+    if (case01l1==6 && (posJ1==01||posJ2==01||posJ3==01||posJ4==01)){
+        color(14,0);
+        printf("%c%c%c%c",452,452,452,452);color(15,0);printf("%c",f);color(14,0);printf("%c%c%c%c%c%c",452,452,452,452,452,452);
+    }
+    if (case01l1==7 && posJ1!=01 && posJ2!=01 && posJ3!=01 && posJ4!=01){
         color(14,0);
         piece7bout1l1();
     }
-    if (case01l1==7.1){
+    if (case01l1==7 && (posJ1==01||posJ2==01||posJ3==01||posJ4==01)){
+        color(14,0);
+        printf("%c",435);color(15,0);printf(" %c",f);color(14,0);printf("%c%c%c%c%c%c%c%c",448,452,452,452,452,452,452,452);
+    }
+    if (case01l1==7.1 && posJ1!=01 && posJ2!=01 && posJ3!=01 && posJ4!=01){
         color(14,0);
         printf("    %c ",435);color(15,0);printf("%c",189);color(14,0);printf("%c%c%c%c",448,452,452,452);
     }
-    if (case01l1==7.2){
+    if (case01l1==7.1 && (posJ1==01||posJ2==01||posJ3==01||posJ4==01)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,189);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case01l1==7.2 && posJ1!=01 && posJ2!=01 && posJ3!=01 && posJ4!=01){
         color(14,0);
         printf("    %c ",435);color(15,0);printf("%c",157);color(14,0);printf("%c%c%c%c",448,452,452,452);
     }
-    if (case01l1==7.3){
+    if (case01l1==7.2 && (posJ1==01||posJ2==01||posJ3==01||posJ4==01)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,157);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case01l1==7.3 && posJ1!=01 && posJ2!=01 && posJ3!=01 && posJ4!=01){
         color(14,0);
         printf("    %c ",435);color(15,0);printf("%c",143);color(14,0);printf("%c%c%c%c",448,452,452,452);
     }
-    if (case01l1==7.4){
+    if (case01l1==7.3 && (posJ1==01||posJ2==01||posJ3==01||posJ4==01)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,143);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case01l1==7.4 && posJ1!=01 && posJ2!=01 && posJ3!=01 && posJ4!=01){
         color(14,0);
         printf("    %c ",435);color(15,0);printf("%c",37);color(14,0);printf("%c%c%c%c",448,452,452,452);
     }
-    if (case01l1==7.5){
+    if (case01l1==7.4 && (posJ1==01||posJ2==01||posJ3==01||posJ4==01)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,37);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case01l1==7.5 && posJ1!=01 && posJ2!=01 && posJ3!=01 && posJ4!=01){
         color(14,0);
         printf("    %c ",435);color(15,0);printf("%c",31);color(14,0);printf("%c%c%c%c",448,452,452,452);
     }
-    if (case01l1==7.6){
+    if (case01l1==7.5 && (posJ1==01||posJ2==01||posJ3==01||posJ4==01)){
         color(14,0);
-        printf("    %c ",435);color(15,0);printf("%c",15);color(14,0);printf("%c%c%c%c",448,452,452,452);
+        printf("    %c",435);color(15,0);printf("%c%c",f,31);color(14,0);printf("%c%c%c%c",448,452,452,452);
     }
-    if (case01l1==8){
+    if (case01l1==7.6 && posJ1!=01 && posJ2!=01 && posJ3!=01 && posJ4!=01){
+        color(14,0);
+        printf("    %c ",435);color(15,0);printf("%c",459);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case01l1==7.6 && (posJ1==01||posJ2==01||posJ3==01||posJ4==01)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,459);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case01l1==8 && posJ1!=01 && posJ2!=01 && posJ3!=01 && posJ4!=01){
         color(14,0);
         piece8bout1l1();
     }
-    if (case01l1==8.1){
+    if (case01l1==8 && (posJ1==01||posJ2==01||posJ3==01||posJ4==01)){
+        color(14,0);
+        printf("%c%c%c%c%c%c%c%c",452,452,452,452,452,452,452,452);color(15,0);printf("%c ",f);color(14,0);printf("%c",435);
+    }
+    if (case01l1==8.1 && posJ1!=01 && posJ2!=01 && posJ3!=01 && posJ4!=01){
         color(14,0);
         printf("%c%c%c%c",452,452,452,473);color(15,0);printf("%c ",189);color(14,0);printf("%c    ",435);
     }
-    if (case01l1==8.2){
+    if (case01l1==8.1 && (posJ1==01||posJ2==01||posJ3==01||posJ4==01)){
+        color(14,0);
+        printf("%c%c%c%c",452,452,452,473);color(15,0);printf("%c%c",189,f);color(14,0);printf("%c    ",435);
+    }
+    if (case01l1==8.2 && posJ1!=01 && posJ2!=01 && posJ3!=01 && posJ4!=01){
         color(14,0);
         printf("%c%c%c%c",452,452,452,473);color(15,0);printf("%c ",157);color(14,0);printf("%c    ",435);
     }
-    if (case01l1==8.3){
+    if (case01l1==8.2 && (posJ1==01||posJ2==01||posJ3==01||posJ4==01)){
+        color(14,0);
+        printf("%c%c%c%c",452,452,452,473);color(15,0);printf("%c%c",157,f);color(14,0);printf("%c    ",435);
+    }
+    if (case01l1==8.3 && posJ1!=01 && posJ2!=01 && posJ3!=01 && posJ4!=01){
         color(14,0);
         printf("%c%c%c%c",452,452,452,473);color(15,0);printf("%c ",143);color(14,0);printf("%c    ",435);
     }
-    if (case01l1==8.4){
+    if (case01l1==8.3 && (posJ1==01||posJ2==01||posJ3==01||posJ4==01)){
+        color(14,0);
+        printf("%c%c%c%c",452,452,452,473);color(15,0);printf("%c%c",143,f);color(14,0);printf("%c    ",435);
+    }
+    if (case01l1==8.4 && posJ1!=01 && posJ2!=01 && posJ3!=01 && posJ4!=01){
         color(14,0);
         printf("%c%c%c%c",452,452,452,473);color(15,0);printf("%c ",37);color(14,0);printf("%c    ",435);
     }
-    if (case01l1==8.5){
+    if (case01l1==8.4 && (posJ1==01||posJ2==01||posJ3==01||posJ4==01)){
+        color(14,0);
+        printf("%c%c%c%c",452,452,452,473);color(15,0);printf("%c%c",37,f);color(14,0);printf("%c    ",435);
+    }
+    if (case01l1==8.5 && posJ1!=01 && posJ2!=01 && posJ3!=01 && posJ4!=01){
         color(14,0);
         printf("%c%c%c%c",452,452,452,473);color(15,0);printf("%c ",31);color(14,0);printf("%c    ",435);
     }
-    if (case01l1==8.6){
+    if (case01l1==8.5 && (posJ1==01||posJ2==01||posJ3==01||posJ4==01)){
         color(14,0);
-        printf("%c%c%c%c",452,452,452,473);color(15,0);printf("%c ",15);color(14,0);printf("%c    ",435);
+        printf("%c%c%c%c",452,452,452,473);color(15,0);printf("%c%c",31,f);color(14,0);printf("%c    ",435);
+    }
+    if (case01l1==8.6 && posJ1!=01 && posJ2!=01 && posJ3!=01 && posJ4!=01){
+        color(14,0);
+        printf("%c%c%c%c",452,452,452,473);color(15,0);printf("%c ",459);color(14,0);printf("%c    ",435);
+    }
+    if (case01l1==8.6 && (posJ1==01||posJ2==01||posJ3==01||posJ4==01)){
+        color(14,0);
+        printf("%c%c%c%c",452,452,452,473);color(15,0);printf("%c%c",459,f);color(14,0);printf("%c    ",435);
     }
     if (case01l1>=9 && case01l1<10){
         color(14,0);
@@ -482,6 +759,7 @@ int test(double case01,double case03,double case05,double case10,double case11,d
     }
     color(9,0);
     printf("%c%c%c%c%c%c%c%c%c%c%c%c",452,452,452,452,452,452,452,452,452,452,452,452);
+    f=testposition(posJ1,posJ2,posJ3,posJ4,03,p1,p2,p3,p4);
     if (case03l1==0){
         printf("           ");
     }
@@ -489,29 +767,47 @@ int test(double case01,double case03,double case05,double case10,double case11,d
         color(14,0);
         piece1bout1();
     }
-    if (case03l1==2.1){
+    if (case03l1==2.1 && posJ1!=03 && posJ2!=03 && posJ3!=03 && posJ4!=03){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf(" %c",292);color(14,0);printf("%c%c%c%c",448,452,452,452);
     }
-    if (case03l1==2.2){
+    if (case03l1==2.1 && (posJ1==03||posJ2==03||posJ3==03||posJ4==03)){
+        color(14,0);printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",f,292);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case03l1==2.2 && posJ1!=03 && posJ2!=03 && posJ3!=03 && posJ4!=03){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf(" %c",291);color(14,0);printf("%c%c%c%c",448,452,452,452);
     }
-    if (case03l1==2.3){
+    if (case03l1==2.2 && (posJ1==03||posJ2==03||posJ3==03||posJ4==03)){
+        color(14,0);printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",f,291);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case03l1==2.3 && posJ1!=03 && posJ2!=03 && posJ3!=03 && posJ4!=03){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf(" %c",285);color(14,0);printf("%c%c%c%c",448,452,452,452);
     }
-    if (case03l1==2.4){
-        color(14,0);
-        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf(" %c",279);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    if (case03l1==2.3 && (posJ1==03||posJ2==03||posJ3==03||posJ4==03)){
+        color(14,0);printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",f,285);color(14,0);printf("%c%c%c%c",448,452,452,452);
     }
-    if (case03l1==2.5){
+    if (case03l1==2.4 && posJ1!=03 && posJ2!=03 && posJ3!=03 && posJ4!=03){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf(" %c",428);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case03l1==2.4 && (posJ1==03||posJ2==03||posJ3==03||posJ4==03)){
+        color(14,0);printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",f,428);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case03l1==2.5 && posJ1!=03 && posJ2!=03 && posJ3!=03 && posJ4!=03){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf(" %c",277);color(14,0);printf("%c%c%c%c",448,452,452,452);
     }
-    if (case03l1==2.6){
+    if (case03l1==2.5 && (posJ1==03||posJ2==03||posJ3==03||posJ4==03)){
+        color(14,0);printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",f,277);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case03l1==2.6 && posJ1!=03 && posJ2!=03 && posJ3!=03 && posJ4!=03){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf(" %c",225);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case03l1==2.6 && (posJ1==03||posJ2==03||posJ3==03||posJ4==03)){
+        color(14,0);printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",f,225);color(14,0);printf("%c%c%c%c",448,452,452,452);
     }
     if (case03l1>3 && case03l1<4){
         color(14,0);
@@ -521,69 +817,133 @@ int test(double case01,double case03,double case05,double case10,double case11,d
         color(14,0);
         piece4bout1l1();
     }
-    if (case03l1==5){
+    if (case03l1==5 && posJ1!=03 && posJ2!=03 && posJ3!=03 && posJ4!=03){
         color(14,0);
         piece5bout1();
     }
-    if (case03l1==6){
+    if (case03l1==5 && (posJ1==03||posJ2==03||posJ3==03||posJ4==03)){
+        color(14,0);
+        printf("    %c ",435);color(15,0);printf("%c",f);color(14,0);printf("%c   ",435);
+    }
+    if (case03l1==6 && posJ1!=03 && posJ2!=03 && posJ3!=03 && posJ4!=03){
         color(14,0);
         piece6bout1();
     }
-    if (case03l1==7){
+    if (case03l1==6 && (posJ1==03||posJ2==03||posJ3==03||posJ4==03)){
+        color(14,0);
+        printf("%c%c%c%c",452,452,452,452);color(15,0);printf("%c",f);color(14,0);printf("%c%c%c%c%c%c",452,452,452,452,452,452);
+    }
+    if (case03l1==7 && posJ1!=03 && posJ2!=03 && posJ3!=03 && posJ4!=03){
         color(14,0);
         piece7bout1l1();
     }
-    if (case03l1==7.1){
+    if (case03l1==7 && (posJ1==03||posJ2==03||posJ3==03||posJ4==03)){
+        color(14,0);
+        printf("%c",435);color(15,0);printf(" %c",f);color(14,0);printf("%c%c%c%c%c%c%c%c",448,452,452,452,452,452,452,452);
+    }
+    if (case03l1==7.1 && posJ1!=03 && posJ2!=03 && posJ3!=03 && posJ4!=03){
         color(14,0);
         printf("    %c ",435);color(15,0);printf("%c",189);color(14,0);printf("%c%c%c%c",448,452,452,452);
     }
-    if (case03l1==7.2){
+    if (case03l1==7.1 && (posJ1==03||posJ2==03||posJ3==03||posJ4==03)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,189);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case03l1==7.2 && posJ1!=03 && posJ2!=03 && posJ3!=03 && posJ4!=03){
         color(14,0);
         printf("    %c ",435);color(15,0);printf("%c",157);color(14,0);printf("%c%c%c%c",448,452,452,452);
     }
-    if (case03l1==7.3){
+    if (case03l1==7.2 && (posJ1==03||posJ2==03||posJ3==03||posJ4==03)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,157);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case03l1==7.3 && posJ1!=03 && posJ2!=03 && posJ3!=03 && posJ4!=03){
         color(14,0);
         printf("    %c ",435);color(15,0);printf("%c",143);color(14,0);printf("%c%c%c%c",448,452,452,452);
     }
-    if (case03l1==7.4){
+    if (case03l1==7.3 && (posJ1==03||posJ2==03||posJ3==03||posJ4==03)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,143);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case03l1==7.4 && posJ1!=03 && posJ2!=03 && posJ3!=03 && posJ4!=03){
         color(14,0);
         printf("    %c ",435);color(15,0);printf("%c",37);color(14,0);printf("%c%c%c%c",448,452,452,452);
     }
-    if (case03l1==7.5){
+    if (case03l1==7.4 && (posJ1==03||posJ2==03||posJ3==03||posJ4==03)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,37);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case03l1==7.5 && posJ1!=03 && posJ2!=03 && posJ3!=03 && posJ4!=03){
         color(14,0);
         printf("    %c ",435);color(15,0);printf("%c",31);color(14,0);printf("%c%c%c%c",448,452,452,452);
     }
-    if (case03l1==7.6){
+    if (case03l1==7.5 && (posJ1==03||posJ2==03||posJ3==03||posJ4==03)){
         color(14,0);
-        printf("    %c ",435);color(15,0);printf("%c",15);color(14,0);printf("%c%c%c%c",448,452,452,452);
+        printf("    %c",435);color(15,0);printf("%c%c",f,31);color(14,0);printf("%c%c%c%c",448,452,452,452);
     }
-    if (case03l1==8){
+    if (case03l1==7.6 && posJ1!=03 && posJ2!=03 && posJ3!=03 && posJ4!=03){
+        color(14,0);
+        printf("    %c ",435);color(15,0);printf("%c",459);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case03l1==7.6 && (posJ1==03||posJ2==03||posJ3==03||posJ4==03)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,459);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case03l1==8 && posJ1!=03 && posJ2!=03 && posJ3!=03 && posJ4!=03){
         color(14,0);
         piece8bout1l1();
     }
-    if (case03l1==8.1){
+    if (case03l1==8 && (posJ1==03||posJ2==03||posJ3==03||posJ4==03)){
+        color(14,0);
+        printf("%c%c%c%c%c%c%c%c",452,452,452,452,452,452,452,452);color(15,0);printf("%c ",f);color(14,0);printf("%c",435);
+    }
+    if (case03l1==8.1 && posJ1!=03 && posJ2!=03 && posJ3!=03 && posJ4!=03){
         color(14,0);
         printf("%c%c%c%c",452,452,452,473);color(15,0);printf("%c ",189);color(14,0);printf("%c    ",435);
     }
-    if (case03l1==8.2){
+    if (case03l1==8.1 && (posJ1==03||posJ2==03||posJ3==03||posJ4==03)){
+        color(14,0);
+        printf("%c%c%c%c",452,452,452,473);color(15,0);printf("%c%c",189,f);color(14,0);printf("%c    ",435);
+    }
+    if (case03l1==8.2 && posJ1!=03 && posJ2!=03 && posJ3!=03 && posJ4!=03){
         color(14,0);
         printf("%c%c%c%c",452,452,452,473);color(15,0);printf("%c ",157);color(14,0);printf("%c    ",435);
     }
-    if (case03l1==8.3){
+    if (case03l1==8.2 && (posJ1==03||posJ2==03||posJ3==03||posJ4==03)){
+        color(14,0);
+        printf("%c%c%c%c",452,452,452,473);color(15,0);printf("%c%c",157,f);color(14,0);printf("%c    ",435);
+    }
+    if (case03l1==8.3 && posJ1!=03 && posJ2!=03 && posJ3!=03 && posJ4!=03){
         color(14,0);
         printf("%c%c%c%c",452,452,452,473);color(15,0);printf("%c ",143);color(14,0);printf("%c    ",435);
     }
-    if (case03l1==8.4){
+    if (case03l1==8.3 && (posJ1==03||posJ2==03||posJ3==03||posJ4==03)){
+        color(14,0);
+        printf("%c%c%c%c",452,452,452,473);color(15,0);printf("%c%c",143,f);color(14,0);printf("%c    ",435);
+    }
+    if (case03l1==8.4 && posJ1!=03 && posJ2!=03 && posJ3!=03 && posJ4!=03){
         color(14,0);
         printf("%c%c%c%c",452,452,452,473);color(15,0);printf("%c ",37);color(14,0);printf("%c    ",435);
     }
-    if (case03l1==8.5){
+    if (case03l1==8.4 && (posJ1==03||posJ2==03||posJ3==03||posJ4==03)){
+        color(14,0);
+        printf("%c%c%c%c",452,452,452,473);color(15,0);printf("%c%c",37,f);color(14,0);printf("%c    ",435);
+    }
+    if (case03l1==8.5 && posJ1!=03 && posJ2!=03 && posJ3!=03 && posJ4!=03){
         color(14,0);
         printf("%c%c%c%c",452,452,452,473);color(15,0);printf("%c ",31);color(14,0);printf("%c    ",435);
     }
-    if (case03l1==8.6){
+    if (case03l1==8.5 && (posJ1==03||posJ2==03||posJ3==03||posJ4==03)){
         color(14,0);
-        printf("%c%c%c%c",452,452,452,473);color(15,0);printf("%c ",15);color(14,0);printf("%c    ",435);
+        printf("%c%c%c%c",452,452,452,473);color(15,0);printf("%c%c",31,f);color(14,0);printf("%c    ",435);
+    }
+    if (case03l1==8.6 && posJ1!=03 && posJ2!=03 && posJ3!=03 && posJ4!=03){
+        color(14,0);
+        printf("%c%c%c%c",452,452,452,473);color(15,0);printf("%c ",459);color(14,0);printf("%c    ",435);
+    }
+    if (case03l1==8.6 && (posJ1==03||posJ2==03||posJ3==03||posJ4==03)){
+        color(14,0);
+        printf("%c%c%c%c",452,452,452,473);color(15,0);printf("%c%c",459,f);color(14,0);printf("%c    ",435);
     }
     if (case03l1>=9 && case03l1<10){
         color(14,0);
@@ -595,6 +955,7 @@ int test(double case01,double case03,double case05,double case10,double case11,d
     }
     color(9,0);
     printf("%c%c%c%c%c%c%c%c%c%c%c%c%c%c",452,452,452,452,452,452,452,452,452,452,452,452,452,452);
+    f=testposition(posJ1,posJ2,posJ3,posJ4,05,p1,p2,p3,p4);
     if (case05l1==0){
         printf("           ");
     }
@@ -602,29 +963,47 @@ int test(double case01,double case03,double case05,double case10,double case11,d
         color(14,0);
         piece1bout1();
     }
-    if (case05l1==2.1){
+    if (case05l1==2.1 && posJ1!=05 && posJ2!=05 && posJ3!=05 && posJ4!=05){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf(" %c",292);color(14,0);printf("%c%c%c%c",448,452,452,452);
     }
-    if (case05l1==2.2){
+    if (case05l1==2.1 && (posJ1==05||posJ2==05||posJ3==05||posJ4==05)){
+        color(14,0);printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",f,292);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case05l1==2.2 && posJ1!=05 && posJ2!=05 && posJ3!=05 && posJ4!=05){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf(" %c",291);color(14,0);printf("%c%c%c%c",448,452,452,452);
     }
-    if (case05l1==2.3){
+    if (case05l1==2.2 && (posJ1==05||posJ2==05||posJ3==05||posJ4==05)){
+        color(14,0);printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",f,291);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case05l1==2.3 && posJ1!=05 && posJ2!=05 && posJ3!=05 && posJ4!=05){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf(" %c",285);color(14,0);printf("%c%c%c%c",448,452,452,452);
     }
-    if (case05l1==2.4){
-        color(14,0);
-        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf(" %c",279);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    if (case05l1==2.3 && (posJ1==05||posJ2==05||posJ3==05||posJ4==05)){
+        color(14,0);printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",f,285);color(14,0);printf("%c%c%c%c",448,452,452,452);
     }
-    if (case05l1==2.5){
+    if (case05l1==2.4 && posJ1!=05 && posJ2!=05 && posJ3!=05 && posJ4!=05){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf(" %c",428);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case05l1==2.4 && (posJ1==05||posJ2==05||posJ3==05||posJ4==05)){
+        color(14,0);printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",f,428);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case05l1==2.5 && posJ1!=05 && posJ2!=05 && posJ3!=05 && posJ4!=05){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf(" %c",277);color(14,0);printf("%c%c%c%c",448,452,452,452);
     }
-    if (case05l1==2.6){
+    if (case05l1==2.5 && (posJ1==05||posJ2==05||posJ3==05||posJ4==05)){
+        color(14,0);printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",f,277);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case05l1==2.6 && posJ1!=05 && posJ2!=05 && posJ3!=05 && posJ4!=05){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf(" %c",225);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case05l1==2.6 && (posJ1==05||posJ2==05||posJ3==05||posJ4==05)){
+        color(14,0);printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",f,225);color(14,0);printf("%c%c%c%c",448,452,452,452);
     }
     if (case05l1>3 && case05l1<4){
         color(14,0);
@@ -634,69 +1013,133 @@ int test(double case01,double case03,double case05,double case10,double case11,d
         color(14,0);
         piece4bout1l1();
     }
-    if (case05l1==5){
+    if (case05l1==5 && posJ1!=05 && posJ2!=05 && posJ3!=05 && posJ4!=05){
         color(14,0);
         piece5bout1();
     }
-    if (case05l1==6){
+    if (case05l1==5 && (posJ1==05||posJ2==05||posJ3==05||posJ4==05)){
+        color(14,0);
+        printf("    %c ",435);color(15,0);printf("%c",f);color(14,0);printf("%c   ",435);
+    }
+    if (case05l1==6 && posJ1!=05 && posJ2!=05 && posJ3!=05 && posJ4!=05){
         color(14,0);
         piece6bout1();
     }
-    if (case05l1==7){
+    if (case05l1==6 && (posJ1==05||posJ2==05||posJ3==05||posJ4==05)){
+        color(14,0);
+        printf("%c%c%c%c",452,452,452,452);color(15,0);printf("%c",f);color(14,0);printf("%c%c%c%c%c%c",452,452,452,452,452,452);
+    }
+    if (case05l1==7 && posJ1!=05 && posJ2!=05 && posJ3!=05 && posJ4!=05){
         color(14,0);
         piece7bout1l1();
     }
-    if (case05l1==7.1){
+    if (case05l1==7 && (posJ1==05||posJ2==05||posJ3==05||posJ4==05)){
+        color(14,0);
+        printf("%c",435);color(15,0);printf(" %c",f);color(14,0);printf("%c%c%c%c%c%c%c%c",448,452,452,452,452,452,452,452);
+    }
+    if (case05l1==7.1 && posJ1!=05 && posJ2!=05 && posJ3!=05 && posJ4!=05){
         color(14,0);
         printf("    %c ",435);color(15,0);printf("%c",189);color(14,0);printf("%c%c%c%c",448,452,452,452);
     }
-    if (case05l1==7.2){
+    if (case05l1==7.1 && (posJ1==05||posJ2==05||posJ3==05||posJ4==05)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,189);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case05l1==7.2 && posJ1!=05 && posJ2!=05 && posJ3!=05 && posJ4!=05){
         color(14,0);
         printf("    %c ",435);color(15,0);printf("%c",157);color(14,0);printf("%c%c%c%c",448,452,452,452);
     }
-    if (case05l1==7.3){
+    if (case05l1==7.2 && (posJ1==05||posJ2==05||posJ3==05||posJ4==05)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,157);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case05l1==7.3 && posJ1!=05 && posJ2!=05 && posJ3!=05 && posJ4!=05){
         color(14,0);
         printf("    %c ",435);color(15,0);printf("%c",143);color(14,0);printf("%c%c%c%c",448,452,452,452);
     }
-    if (case05l1==7.4){
+    if (case05l1==7.3 && (posJ1==05||posJ2==05||posJ3==05||posJ4==05)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,143);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case05l1==7.4 && posJ1!=05 && posJ2!=05 && posJ3!=05 && posJ4!=05){
         color(14,0);
         printf("    %c ",435);color(15,0);printf("%c",37);color(14,0);printf("%c%c%c%c",448,452,452,452);
     }
-    if (case05l1==7.5){
+    if (case05l1==7.4 && (posJ1==05||posJ2==05||posJ3==05||posJ4==05)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,37);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case05l1==7.5 && posJ1!=05 && posJ2!=05 && posJ3!=05 && posJ4!=05){
         color(14,0);
         printf("    %c ",435);color(15,0);printf("%c",31);color(14,0);printf("%c%c%c%c",448,452,452,452);
     }
-    if (case05l1==7.6){
+    if (case05l1==7.5 && (posJ1==05||posJ2==05||posJ3==05||posJ4==05)){
         color(14,0);
-        printf("    %c ",435);color(15,0);printf("%c",15);color(14,0);printf("%c%c%c%c",448,452,452,452);
+        printf("    %c",435);color(15,0);printf("%c%c",f,31);color(14,0);printf("%c%c%c%c",448,452,452,452);
     }
-    if (case05l1==8){
+    if (case05l1==7.6 && posJ1!=05 && posJ2!=05 && posJ3!=05 && posJ4!=05){
+        color(14,0);
+        printf("    %c ",435);color(15,0);printf("%c",459);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case05l1==7.6 && (posJ1==05||posJ2==05||posJ3==05||posJ4==05)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,459);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case05l1==8 && posJ1!=05 && posJ2!=05 && posJ3!=05 && posJ4!=05){
         color(14,0);
         piece8bout1l1();
     }
-    if (case05l1==8.1){
+    if (case05l1==8 && (posJ1==05||posJ2==05||posJ3==05||posJ4==05)){
+        color(14,0);
+        printf("%c%c%c%c%c%c%c%c",452,452,452,452,452,452,452,452);color(15,0);printf("%c ",f);color(14,0);printf("%c",435);
+    }
+    if (case05l1==8.1 && posJ1!=05 && posJ2!=05 && posJ3!=05 && posJ4!=05){
         color(14,0);
         printf("%c%c%c%c",452,452,452,473);color(15,0);printf("%c ",189);color(14,0);printf("%c    ",435);
     }
-    if (case05l1==8.2){
+    if (case05l1==8.1 && (posJ1==05||posJ2==05||posJ3==05||posJ4==05)){
+        color(14,0);
+        printf("%c%c%c%c",452,452,452,473);color(15,0);printf("%c%c",189,f);color(14,0);printf("%c    ",435);
+    }
+    if (case05l1==8.2 && posJ1!=05 && posJ2!=05 && posJ3!=05 && posJ4!=05){
         color(14,0);
         printf("%c%c%c%c",452,452,452,473);color(15,0);printf("%c ",157);color(14,0);printf("%c    ",435);
     }
-    if (case05l1==8.3){
+    if (case05l1==8.2 && (posJ1==05||posJ2==05||posJ3==05||posJ4==05)){
+        color(14,0);
+        printf("%c%c%c%c",452,452,452,473);color(15,0);printf("%c%c",157,f);color(14,0);printf("%c    ",435);
+    }
+    if (case05l1==8.3 && posJ1!=05 && posJ2!=05 && posJ3!=05 && posJ4!=05){
         color(14,0);
         printf("%c%c%c%c",452,452,452,473);color(15,0);printf("%c ",143);color(14,0);printf("%c    ",435);
     }
-    if (case05l1==8.4){
+    if (case05l1==8.3 && (posJ1==05||posJ2==05||posJ3==05||posJ4==05)){
+        color(14,0);
+        printf("%c%c%c%c",452,452,452,473);color(15,0);printf("%c%c",143,f);color(14,0);printf("%c    ",435);
+    }
+    if (case05l1==8.4 && posJ1!=05 && posJ2!=05 && posJ3!=05 && posJ4!=05){
         color(14,0);
         printf("%c%c%c%c",452,452,452,473);color(15,0);printf("%c ",37);color(14,0);printf("%c    ",435);
     }
-    if (case05l1==8.5){
+    if (case05l1==8.4 && (posJ1==05||posJ2==05||posJ3==05||posJ4==05)){
+        color(14,0);
+        printf("%c%c%c%c",452,452,452,473);color(15,0);printf("%c%c",37,f);color(14,0);printf("%c    ",435);
+    }
+    if (case05l1==8.5 && posJ1!=05 && posJ2!=05 && posJ3!=05 && posJ4!=05){
         color(14,0);
         printf("%c%c%c%c",452,452,452,473);color(15,0);printf("%c ",31);color(14,0);printf("%c    ",435);
     }
-    if (case05l1==8.6){
+    if (case05l1==8.5 && (posJ1==05||posJ2==05||posJ3==05||posJ4==05)){
         color(14,0);
-        printf("%c%c%c%c",452,452,452,473);color(15,0);printf("%c ",15);color(14,0);printf("%c    ",435);
+        printf("%c%c%c%c",452,452,452,473);color(15,0);printf("%c%c",31,f);color(14,0);printf("%c    ",435);
+    }
+    if (case05l1==8.6 && posJ1!=05 && posJ2!=05 && posJ3!=05 && posJ4!=05){
+        color(14,0);
+        printf("%c%c%c%c",452,452,452,473);color(15,0);printf("%c ",459);color(14,0);printf("%c    ",435);
+    }
+    if (case05l1==8.6 && (posJ1==05||posJ2==05||posJ3==05||posJ4==05)){
+        color(14,0);
+        printf("%c%c%c%c",452,452,452,473);color(15,0);printf("%c%c",459,f);color(14,0);printf("%c    ",435);
     }
     if (case05l1>=9 && case05l1<10){
         color(14,0);
@@ -708,89 +1151,172 @@ int test(double case01,double case03,double case05,double case10,double case11,d
     }
     color(9,0);
     printf("%c%c%c%c%c%c%c%c%c",452,452,452,452,452,452,452,452,447);a();
-    color(15,0);printf("                     1   %c",282);color(9,0);printf("       %c",435);
-    color(10,0);
-    printf(" %c",476);
-    color(9,0);
-    printf("%c%c%c%c%c",474,452,452,452,452);      //DEBUT 2eme LIGNE
+    f=testposition(posJ1,posJ2,posJ3,posJ4,00,p1,p2,p3,p4);
+    if (posJ1==00 || posJ2==00 || posJ3==00 || posJ4==00){
+        color(15,0);printf("                     1   %c",282);color(9,0);printf("       %c",435);
+        color(10,0);
+        printf("%c%c",f,476);
+        color(9,0);
+        printf("%c%c%c%c%c",474,452,452,452,452);
+    }
+    else {
+        color(15,0);printf("                     1   %c",282);color(9,0);printf("       %c",435);
+        color(10,0);
+        printf(" %c",476);
+        color(9,0);
+        printf("%c%c%c%c%c",474,452,452,452,452);
+    }//DEBUT 2eme LIGNE
+    f=testposition(posJ1,posJ2,posJ3,posJ4,01,p1,p2,p3,p4);
     if (case01l2==0){
         printf("           ");
     }
-    if (case01l2==1.1){
+    if (case01l2==1.1 && posJ1!=01 && posJ2!=01 && posJ3!=01 && posJ4!=01){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf(" %c",292);color(14,0);printf("%c%c%c%c",474,452,452,452);
     }
-    if (case01l2==1.2){
+    if (case01l2==1.1 && (posJ1==01||posJ2==01||posJ3==01||posJ4==01)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c%c",f,292);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case01l2==1.2 && posJ1!=01 && posJ2!=01 && posJ3!=01 && posJ4!=01){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf(" %c",291);color(14,0);printf("%c%c%c%c",474,452,452,452);
     }
-    if (case01l2==1.3){
+    if (case01l2==1.2 && (posJ1==01||posJ2==01||posJ3==01||posJ4==01)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c%c",f,291);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case01l2==1.3 && posJ1!=01 && posJ2!=01 && posJ3!=01 && posJ4!=01){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf(" %c",285);color(14,0);printf("%c%c%c%c",474,452,452,452);
     }
-    if (case01l2==1.4){
+    if (case01l2==1.3 && (posJ1==01||posJ2==01||posJ3==01||posJ4==01)){
         color(14,0);
-        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf(" %c",279);color(14,0);printf("%c%c%c%c",474,452,452,452);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c%c",f,285);color(14,0);printf("%c%c%c%c",474,452,452,452);
     }
-    if (case01l2==1.5){
+    if (case01l2==1.4 && posJ1!=01 && posJ2!=01 && posJ3!=01 && posJ4!=01){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf(" %c",428);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case01l2==1.4 && (posJ1==01||posJ2==01||posJ3==01||posJ4==01)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c%c",f,428);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case01l2==1.5 && posJ1!=01 && posJ2!=01 && posJ3!=01 && posJ4!=01){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf(" %c",277);color(14,0);printf("%c%c%c%c",474,452,452,452);
     }
-    if (case01l2==1.6){
+    if (case01l2==1.5 && (posJ1==01||posJ2==01||posJ3==01||posJ4==01)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c%c",f,277);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case01l2==1.6 && posJ1!=01 && posJ2!=01 && posJ3!=01 && posJ4!=01){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf(" %c",225);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case01l2==1.6 && (posJ1==01||posJ2==01||posJ3==01||posJ4==01)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c%c",f,225);color(14,0);printf("%c%c%c%c",474,452,452,452);
     }
     if (case01l2>2 && case01l2<3){
         color(14,0);
         piece2bout2l1();
     }
-    if (case01l2==3.1){
+    if (case01l2==3.1 && posJ1!=01 && posJ2!=01 && posJ3!=01 && posJ4!=01){
         color(14,0);
         printf("    %c",435);color(15,0);printf(" %c",292);color(14,0);printf("%c%c%c%c",474,452,452,452);
     }
-    if (case01l2==3.2){
+    if (case01l2==3.1 && (posJ1==01||posJ2==01||posJ3==01||posJ4==01)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,292);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case01l2==3.2 && posJ1!=01 && posJ2!=01 && posJ3!=01 && posJ4!=01){
         color(14,0);
         printf("    %c",435);color(15,0);printf(" %c",291);color(14,0);printf("%c%c%c%c",474,452,452,452);
     }
-    if (case01l2==3.3){
+    if (case01l2==3.2 && (posJ1==01||posJ2==01||posJ3==01||posJ4==01)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,291);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case01l2==3.3 && posJ1!=01 && posJ2!=01 && posJ3!=01 && posJ4!=01){
         color(14,0);
         printf("    %c",435);color(15,0);printf(" %c",285);color(14,0);printf("%c%c%c%c",474,452,452,452);
     }
-    if (case01l2==3.4){
+    if (case01l2==3.3 && (posJ1==01||posJ2==01||posJ3==01||posJ4==01)){
         color(14,0);
-        printf("    %c",435);color(15,0);printf(" %c",279);color(14,0);printf("%c%c%c%c",474,452,452,452);
+        printf("    %c",435);color(15,0);printf("%c%c",f,285);color(14,0);printf("%c%c%c%c",474,452,452,452);
     }
-    if (case01l2==3.5){
+    if (case01l2==3.4 && posJ1!=01 && posJ2!=01 && posJ3!=01 && posJ4!=01){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",428);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case01l2==3.4 && (posJ1==01||posJ2==01||posJ3==01||posJ4==01)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,428);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case01l2==3.5 && posJ1!=01 && posJ2!=01 && posJ3!=01 && posJ4!=01){
         color(14,0);
         printf("    %c",435);color(15,0);printf(" %c",277);color(14,0);printf("%c%c%c%c",474,452,452,452);
     }
-    if (case01l2==3.6){
+    if (case01l2==3.5 && (posJ1==01||posJ2==01||posJ3==01||posJ4==01)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,277);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case01l2==3.6 && posJ1!=01 && posJ2!=01 && posJ3!=01 && posJ4!=01){
         color(14,0);
         printf("    %c",435);color(15,0);printf(" %c",225);color(14,0);printf("%c%c%c%c",474,452,452,452);
     }
-    if (case01l2==4.1){
+    if (case01l2==3.6 && (posJ1==01||posJ2==01||posJ3==01||posJ4==01)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,225);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case01l2==4.1 && posJ1!=01 && posJ2!=01 && posJ3!=01 && posJ4!=01){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c ",292);color(14,0);printf("%c   ",435);
     }
-    if (case01l2==4.2){
+    if (case01l2==4.1 && (posJ1==01||posJ2==01||posJ3==01||posJ4==01)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c%c",292,f);color(14,0);printf("%c   ",435);
+    }
+    if (case01l2==4.2 && posJ1!=01 && posJ2!=01 && posJ3!=01 && posJ4!=01){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c ",291);color(14,0);printf("%c   ",435);
     }
-    if (case01l2==4.3){
+    if (case01l2==4.2 && (posJ1==01||posJ2==01||posJ3==01||posJ4==01)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c%c",291,f);color(14,0);printf("%c   ",435);
+    }
+    if (case01l2==4.3 && posJ1!=01 && posJ2!=01 && posJ3!=01 && posJ4!=01){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c ",285);color(14,0);printf("%c   ",435);
     }
-    if (case01l2==4.4){
+    if (case01l2==4.3 && (posJ1==01||posJ2==01||posJ3==01||posJ4==01)){
         color(14,0);
-        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c ",279);color(14,0);printf("%c   ",435);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c%c",285,f);color(14,0);printf("%c   ",435);
     }
-    if (case01l2==4.5){
+    if (case01l2==4.4 && posJ1!=01 && posJ2!=01 && posJ3!=01 && posJ4!=01){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c ",428);color(14,0);printf("%c   ",435);
+    }
+    if (case01l2==4.4 && (posJ1==01||posJ2==01||posJ3==01||posJ4==01)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c%c",428,f);color(14,0);printf("%c   ",435);
+    }
+    if (case01l2==4.5 && posJ1!=01 && posJ2!=01 && posJ3!=01 && posJ4!=01){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c ",277);color(14,0);printf("%c   ",435);
     }
-    if (case01l2==4.6){
+    if (case01l2==4.5 && (posJ1==01||posJ2==01||posJ3==01||posJ4==01)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c%c",277,f);color(14,0);printf("%c   ",435);
+    }
+    if (case01l2==4.6 && posJ1!=01 && posJ2!=01 && posJ3!=01 && posJ4!=01){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c ",225);color(14,0);printf("%c   ",435);
+    }
+    if (case01l2==4.6 && (posJ1==01||posJ2==01||posJ3==01||posJ4==01)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c%c",225,f);color(14,0);printf("%c   ",435);
     }
     if (case01l2==5){
         color(14,0);
@@ -808,146 +1334,286 @@ int test(double case01,double case03,double case05,double case10,double case11,d
         color(14,0);
         piece8bout2l1();
     }
-    if (case01l2==9){
+    if (case01l2==9 && posJ1!=01 && posJ2!=01 && posJ3!=01 && posJ4!=01){
         color(14,0);
         piece9bout2();
     }
-    if (case01l2==9.1){
+    if (case01l2==9 && (posJ1==01||posJ2==01||posJ3==01||posJ4==01)){
+        color(14,0);
+        printf("%c",435);color(15,0);printf(" %c",f);color(14,0);printf("%c%c%c%c%c%c%c%c",474,452,452,452,452,452,452,452);
+    }
+    if (case01l2==9.1 && posJ1!=01 && posJ2!=01 && posJ3!=01 && posJ4!=01){
         color(14,0);
         printf("    %c ",435);color(15,0);printf("%c",189);color(14,0);printf("%c%c%c%c",474,452,452,452);
     }
-    if (case01l2==9.2){
+    if (case01l2==9.1 && (posJ1==01||posJ2==01||posJ3==01||posJ4==01)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,189);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case01l2==9.2 && posJ1!=01 && posJ2!=01 && posJ3!=01 && posJ4!=01){
         color(14,0);
         printf("    %c ",435);color(15,0);printf("%c",157);color(14,0);printf("%c%c%c%c",474,452,452,452);
     }
-    if (case01l2==9.3){
+    if (case01l2==9.2 && (posJ1==01||posJ2==01||posJ3==01||posJ4==01)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,157);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case01l2==9.3 && posJ1!=01 && posJ2!=01 && posJ3!=01 && posJ4!=01){
         color(14,0);
         printf("    %c ",435);color(15,0);printf("%c",143);color(14,0);printf("%c%c%c%c",474,452,452,452);
     }
-    if (case01l2==9.4){
+    if (case01l2==9.3 && (posJ1==01||posJ2==01||posJ3==01||posJ4==01)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,143);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case01l2==9.4 && posJ1!=01 && posJ2!=01 && posJ3!=01 && posJ4!=01){
         color(14,0);
         printf("    %c ",435);color(15,0);printf("%c",37);color(14,0);printf("%c%c%c%c",474,452,452,452);
     }
-    if (case01l2==9.5){
+    if (case01l2==9.4 && (posJ1==01||posJ2==01||posJ3==01||posJ4==01)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,37);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case01l2==9.5 && posJ1!=01 && posJ2!=01 && posJ3!=01 && posJ4!=01){
         color(14,0);
         printf("    %c ",435);color(15,0);printf("%c",31);color(14,0);printf("%c%c%c%c",474,452,452,452);
     }
-    if (case01l2==9.6){
+    if (case01l2==9.5 && (posJ1==01||posJ2==01||posJ3==01||posJ4==01)){
         color(14,0);
-        printf("    %c ",435);color(15,0);printf("%c",15);color(14,0);printf("%c%c%c%c",474,452,452,452);
+        printf("    %c",435);color(15,0);printf("%c%c",f,31);color(14,0);printf("%c%c%c%c",474,452,452,452);
     }
-    if (case01l2==10){
+    if (case01l2==9.6 && posJ1!=01 && posJ2!=01 && posJ3!=01 && posJ4!=01){
+        color(14,0);
+        printf("    %c ",435);color(15,0);printf("%c",459);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case01l2==9.6 && (posJ1==01||posJ2==01||posJ3==01||posJ4==01)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,459);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case01l2==10 && posJ1!=01 && posJ2!=01 && posJ3!=01 && posJ4!=01){
         color(14,0);
         piece10bout2();
     }
-    if (case01l2==10.1){
+    if (case01l2==10 && (posJ1==01||posJ2==01||posJ3==01||posJ4==01)){
+        color(14,0);
+        printf("%c%c%c%c%c%c%c%c",452,452,452,452,452,452,452,447);color(15,0);printf("%c ",f);color(14,0);printf("%c",435);
+    }
+    if (case01l2==10.1 && posJ1!=01 && posJ2!=01 && posJ3!=01 && posJ4!=01){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c ",189);color(14,0);printf("%c   ",435);
     }
-    if (case01l2==10.2){
+    if (case01l2==10.1 && (posJ1==01||posJ2==01||posJ3==01||posJ4==01)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c%c",189,f);color(14,0);printf("%c   ",435);
+    }
+    if (case01l2==10.2 && posJ1!=01 && posJ2!=01 && posJ3!=01 && posJ4!=01){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c ",157);color(14,0);printf("%c   ",435);
     }
-    if (case01l2==10.3){
+    if (case01l2==10.2 && (posJ1==01||posJ2==01||posJ3==01||posJ4==01)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c%c",157,f);color(14,0);printf("%c   ",435);
+    }
+    if (case01l2==10.3 && posJ1!=01 && posJ2!=01 && posJ3!=01 && posJ4!=01){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c ",143);color(14,0);printf("%c   ",435);
     }
-    if (case01l2==10.4){
+    if (case01l2==10.3 && (posJ1==01||posJ2==01||posJ3==01||posJ4==01)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c%c",143,f);color(14,0);printf("%c   ",435);
+    }
+    if (case01l2==10.4 && posJ1!=01 && posJ2!=01 && posJ3!=01 && posJ4!=01){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c ",37);color(14,0);printf("%c   ",435);
     }
-    if (case01l2==10.5){
+    if (case01l2==10.4 && (posJ1==01||posJ2==01||posJ3==01||posJ4==01)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c%c",37,f);color(14,0);printf("%c   ",435);
+    }
+    if (case01l2==10.5 && posJ1!=01 && posJ2!=01 && posJ3!=01 && posJ4!=01){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c ",31);color(14,0);printf("%c   ",435);
     }
-    if (case01l2==10.6){
+    if (case01l2==10.5 && (posJ1==01||posJ2==01||posJ3==01||posJ4==01)){
         color(14,0);
-        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c ",15);color(14,0);printf("%c   ",435);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c%c",31,f);color(14,0);printf("%c   ",435);
     }
-    color(9,0);
-    printf("%c%c%c%c%c", 452, 452, 452, 452, 447);
-    color(8,0);
-    printf(" %c",497);
-    color(9,0);
-    printf("%c%c%c%c%c", 474,452, 452, 452,452);
+    if (case01l2==10.6 && posJ1!=01 && posJ2!=01 && posJ3!=01 && posJ4!=01){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c ",459);color(14,0);printf("%c   ",435);
+    }
+    if (case01l2==10.6 && (posJ1==01||posJ2==01||posJ3==01||posJ4==01)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c%c",459,f);color(14,0);printf("%c   ",435);
+    }
+    f=testposition(posJ1,posJ2,posJ3,posJ4,02,p1,p2,p3,p4);
+    if (posJ1==02 || posJ2==02 || posJ3==02 || posJ4==02){
+        color(9,0);
+        printf("%c%c%c%c%c", 452, 452, 452, 452, 447);
+        color(8,0);
+        printf("%c%c",f,497);
+        color(9,0);
+        printf("%c%c%c%c%c", 474,452, 452, 452,452);
+    }
+    else {
+        color(9,0);
+        printf("%c%c%c%c%c", 452, 452, 452, 452, 447);
+        color(8,0);
+        printf(" %c",497);
+        color(9,0);
+        printf("%c%c%c%c%c", 474,452, 452, 452,452);
+    }
+    f=testposition(posJ1,posJ2,posJ3,posJ4,03,p1,p2,p3,p4);
     if (case03l2==0){
         printf("           ");
     }
-    if (case03l2==1.1){
+    if (case03l2==1.1 && posJ1!=03 && posJ2!=03 && posJ3!=03 && posJ4!=03){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf(" %c",292);color(14,0);printf("%c%c%c%c",474,452,452,452);
     }
-    if (case03l2==1.2){
+    if (case03l2==1.1 && (posJ1==03||posJ2==03||posJ3==03||posJ4==03)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c%c",f,292);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case03l2==1.2 && posJ1!=03 && posJ2!=03 && posJ3!=03 && posJ4!=03){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf(" %c",291);color(14,0);printf("%c%c%c%c",474,452,452,452);
     }
-    if (case03l2==1.3){
+    if (case03l2==1.2 && (posJ1==03||posJ2==03||posJ3==03||posJ4==03)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c%c",f,291);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case03l2==1.3 && posJ1!=03 && posJ2!=03 && posJ3!=03 && posJ4!=03){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf(" %c",285);color(14,0);printf("%c%c%c%c",474,452,452,452);
     }
-    if (case03l2==1.4){
+    if (case03l2==1.3 && (posJ1==03||posJ2==03||posJ3==03||posJ4==03)){
         color(14,0);
-        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf(" %c",279);color(14,0);printf("%c%c%c%c",474,452,452,452);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c%c",f,285);color(14,0);printf("%c%c%c%c",474,452,452,452);
     }
-    if (case03l2==1.5){
+    if (case03l2==1.4 && posJ1!=03 && posJ2!=03 && posJ3!=03 && posJ4!=03){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf(" %c",428);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case03l2==1.4 && (posJ1==03||posJ2==03||posJ3==03||posJ4==03)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c%c",f,428);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case03l2==1.5 && posJ1!=03 && posJ2!=03 && posJ3!=03 && posJ4!=03){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf(" %c",277);color(14,0);printf("%c%c%c%c",474,452,452,452);
     }
-    if (case03l2==1.6){
+    if (case03l2==1.5 && (posJ1==03||posJ2==03||posJ3==03||posJ4==03)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c%c",f,277);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case03l2==1.6 && posJ1!=03 && posJ2!=03 && posJ3!=03 && posJ4!=03){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf(" %c",225);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case03l2==1.6 && (posJ1==03||posJ2==03||posJ3==03||posJ4==03)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c%c",f,225);color(14,0);printf("%c%c%c%c",474,452,452,452);
     }
     if (case03l2>2 && case03l2<3){
         color(14,0);
         piece2bout2l1();
     }
-    if (case03l2==3.1){
+    if (case03l2==3.1 && posJ1!=03 && posJ2!=03 && posJ3!=03 && posJ4!=03){
         color(14,0);
         printf("    %c",435);color(15,0);printf(" %c",292);color(14,0);printf("%c%c%c%c",474,452,452,452);
     }
-    if (case03l2==3.2){
+    if (case03l2==3.1 && (posJ1==03||posJ2==03||posJ3==03||posJ4==03)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,292);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case03l2==3.2 && posJ1!=03 && posJ2!=03 && posJ3!=03 && posJ4!=03){
         color(14,0);
         printf("    %c",435);color(15,0);printf(" %c",291);color(14,0);printf("%c%c%c%c",474,452,452,452);
     }
-    if (case03l2==3.3){
+    if (case03l2==3.2 && (posJ1==03||posJ2==03||posJ3==03||posJ4==03)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,291);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case03l2==3.3 && posJ1!=03 && posJ2!=03 && posJ3!=03 && posJ4!=03){
         color(14,0);
         printf("    %c",435);color(15,0);printf(" %c",285);color(14,0);printf("%c%c%c%c",474,452,452,452);
     }
-    if (case03l2==3.4){
+    if (case03l2==3.3 && (posJ1==03||posJ2==03||posJ3==03||posJ4==03)){
         color(14,0);
-        printf("    %c",435);color(15,0);printf(" %c",279);color(14,0);printf("%c%c%c%c",474,452,452,452);
+        printf("    %c",435);color(15,0);printf("%c%c",f,285);color(14,0);printf("%c%c%c%c",474,452,452,452);
     }
-    if (case03l2==3.5){
+    if (case03l2==3.4 && posJ1!=03 && posJ2!=03 && posJ3!=03 && posJ4!=03){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",428);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case03l2==3.4 && (posJ1==03||posJ2==03||posJ3==03||posJ4==03)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,428);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case03l2==3.5 && posJ1!=03 && posJ2!=03 && posJ3!=03 && posJ4!=03){
         color(14,0);
         printf("    %c",435);color(15,0);printf(" %c",277);color(14,0);printf("%c%c%c%c",474,452,452,452);
     }
-    if (case03l2==3.6){
+    if (case03l2==3.5 && (posJ1==03||posJ2==03||posJ3==03||posJ4==03)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,277);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case03l2==3.6 && posJ1!=03 && posJ2!=03 && posJ3!=03 && posJ4!=03){
         color(14,0);
         printf("    %c",435);color(15,0);printf(" %c",225);color(14,0);printf("%c%c%c%c",474,452,452,452);
     }
-    if (case03l2==4.1){
+    if (case03l2==3.6 && (posJ1==03||posJ2==03||posJ3==03||posJ4==03)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,225);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case03l2==4.1 && posJ1!=03 && posJ2!=03 && posJ3!=03 && posJ4!=03){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c ",292);color(14,0);printf("%c   ",435);
     }
-    if (case03l2==4.2){
+    if (case03l2==4.1 && (posJ1==03||posJ2==03||posJ3==03||posJ4==03)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c%c",292,f);color(14,0);printf("%c   ",435);
+    }
+    if (case03l2==4.2 && posJ1!=03 && posJ2!=03 && posJ3!=03 && posJ4!=03){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c ",291);color(14,0);printf("%c   ",435);
     }
-    if (case03l2==4.3){
+    if (case03l2==4.2 && (posJ1==03||posJ2==03||posJ3==03||posJ4==03)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c%c",291,f);color(14,0);printf("%c   ",435);
+    }
+    if (case03l2==4.3 && posJ1!=03 && posJ2!=03 && posJ3!=03 && posJ4!=03){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c ",285);color(14,0);printf("%c   ",435);
     }
-    if (case03l2==4.4){
+    if (case03l2==4.3 && (posJ1==03||posJ2==03||posJ3==03||posJ4==03)){
         color(14,0);
-        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c ",279);color(14,0);printf("%c   ",435);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c%c",285,f);color(14,0);printf("%c   ",435);
     }
-    if (case03l2==4.5){
+    if (case03l2==4.4 && posJ1!=03 && posJ2!=03 && posJ3!=03 && posJ4!=03){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c ",428);color(14,0);printf("%c   ",435);
+    }
+    if (case03l2==4.4 && (posJ1==03||posJ2==03||posJ3==03||posJ4==03)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c%c",428,f);color(14,0);printf("%c   ",435);
+    }
+    if (case03l2==4.5 && posJ1!=03 && posJ2!=03 && posJ3!=03 && posJ4!=03){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c ",277);color(14,0);printf("%c   ",435);
     }
-    if (case03l2==4.6){
+    if (case03l2==4.5 && (posJ1==03||posJ2==03||posJ3==03||posJ4==03)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c%c",277,f);color(14,0);printf("%c   ",435);
+    }
+    if (case03l2==4.6 && posJ1!=03 && posJ2!=03 && posJ3!=03 && posJ4!=03){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c ",225);color(14,0);printf("%c   ",435);
+    }
+    if (case03l2==4.6 && (posJ1==03||posJ2==03||posJ3==03||posJ4==03)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c%c",225,f);color(14,0);printf("%c   ",435);
     }
     if (case03l2==5){
         color(14,0);
@@ -965,145 +1631,284 @@ int test(double case01,double case03,double case05,double case10,double case11,d
         color(14,0);
         piece8bout2l1();
     }
-    if (case03l2==9){
+    if (case03l2==9 && posJ1!=03 && posJ2!=03 && posJ3!=03 && posJ4!=03){
         color(14,0);
         piece9bout2();
     }
-    if (case03l2==9.1){
+    if (case03l2==9 && (posJ1==03||posJ2==03||posJ3==03||posJ4==03)){
+        color(14,0);
+        printf("%c",435);color(15,0);printf(" %c",f);color(14,0);printf("%c%c%c%c%c%c%c%c",474,452,452,452,452,452,452,452);
+    }
+    if (case03l2==9.1 && posJ1!=03 && posJ2!=03 && posJ3!=03 && posJ4!=03){
         color(14,0);
         printf("    %c ",435);color(15,0);printf("%c",189);color(14,0);printf("%c%c%c%c",474,452,452,452);
     }
-    if (case03l2==9.2){
+    if (case03l2==9.1 && (posJ1==03||posJ2==03||posJ3==03||posJ4==03)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,189);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case03l2==9.2 && posJ1!=03 && posJ2!=03 && posJ3!=03 && posJ4!=03){
         color(14,0);
         printf("    %c ",435);color(15,0);printf("%c",157);color(14,0);printf("%c%c%c%c",474,452,452,452);
     }
-    if (case03l2==9.3){
+    if (case03l2==9.2 && (posJ1==03||posJ2==03||posJ3==03||posJ4==03)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,157);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case03l2==9.3 && posJ1!=03 && posJ2!=03 && posJ3!=03 && posJ4!=03){
         color(14,0);
         printf("    %c ",435);color(15,0);printf("%c",143);color(14,0);printf("%c%c%c%c",474,452,452,452);
     }
-    if (case03l2==9.4){
+    if (case03l2==9.3 && (posJ1==03||posJ2==03||posJ3==03||posJ4==03)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,143);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case03l2==9.4 && posJ1!=03 && posJ2!=03 && posJ3!=03 && posJ4!=03){
         color(14,0);
         printf("    %c ",435);color(15,0);printf("%c",37);color(14,0);printf("%c%c%c%c",474,452,452,452);
     }
-    if (case03l2==9.5){
+    if (case03l2==9.4 && (posJ1==03||posJ2==03||posJ3==03||posJ4==03)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,37);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case03l2==9.5 && posJ1!=03 && posJ2!=03 && posJ3!=03 && posJ4!=03){
         color(14,0);
         printf("    %c ",435);color(15,0);printf("%c",31);color(14,0);printf("%c%c%c%c",474,452,452,452);
     }
-    if (case03l2==9.6){
+    if (case03l2==9.5 && (posJ1==03||posJ2==03||posJ3==03||posJ4==03)){
         color(14,0);
-        printf("    %c ",435);color(15,0);printf("%c",15);color(14,0);printf("%c%c%c%c",474,452,452,452);
+        printf("    %c",435);color(15,0);printf("%c%c",f,31);color(14,0);printf("%c%c%c%c",474,452,452,452);
     }
-    if (case03l2==10){
+    if (case03l2==9.6 && posJ1!=03 && posJ2!=03 && posJ3!=03 && posJ4!=03){
+        color(14,0);
+        printf("    %c ",435);color(15,0);printf("%c",459);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case03l2==9.6 && (posJ1==03||posJ2==03||posJ3==03||posJ4==03)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,459);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case03l2==10 && posJ1!=03 && posJ2!=03 && posJ3!=03 && posJ4!=03){
         color(14,0);
         piece10bout2();
     }
-    if (case03l2==10.1){
+    if (case03l2==10 && (posJ1==03||posJ2==03||posJ3==03||posJ4==03)){
+        color(14,0);
+        printf("%c%c%c%c%c%c%c%c",452,452,452,452,452,452,452,447);color(15,0);printf("%c ",f);color(14,0);printf("%c",435);
+    }
+    if (case03l2==10.1 && posJ1!=03 && posJ2!=03 && posJ3!=03 && posJ4!=03){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c ",189);color(14,0);printf("%c   ",435);
     }
-    if (case03l2==10.2){
+    if (case03l2==10.1 && (posJ1==03||posJ2==03||posJ3==03||posJ4==03)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c%c",189,f);color(14,0);printf("%c   ",435);
+    }
+    if (case03l2==10.2 && posJ1!=03 && posJ2!=03 && posJ3!=03 && posJ4!=03){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c ",157);color(14,0);printf("%c   ",435);
     }
-    if (case03l2==10.3){
+    if (case03l2==10.2 && (posJ1==03||posJ2==03||posJ3==03||posJ4==03)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c%c",157,f);color(14,0);printf("%c   ",435);
+    }
+    if (case03l2==10.3 && posJ1!=03 && posJ2!=03 && posJ3!=03 && posJ4!=03){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c ",143);color(14,0);printf("%c   ",435);
     }
-    if (case03l2==10.4){
+    if (case03l2==10.3 && (posJ1==03||posJ2==03||posJ3==03||posJ4==03)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c%c",143,f);color(14,0);printf("%c   ",435);
+    }
+    if (case03l2==10.4 && posJ1!=03 && posJ2!=03 && posJ3!=03 && posJ4!=03){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c ",37);color(14,0);printf("%c   ",435);
     }
-    if (case03l2==10.5){
+    if (case03l2==10.4 && (posJ1==03||posJ2==03||posJ3==03||posJ4==03)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c%c",37,f);color(14,0);printf("%c   ",435);
+    }
+    if (case03l2==10.5 && posJ1!=03 && posJ2!=03 && posJ3!=03 && posJ4!=03){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c ",31);color(14,0);printf("%c   ",435);
     }
-    if (case03l2==10.6){
+    if (case03l2==10.5 && (posJ1==03||posJ2==03||posJ3==03||posJ4==03)){
         color(14,0);
-        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c ",15);color(14,0);printf("%c   ",435);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c%c",31,f);color(14,0);printf("%c   ",435);
     }
-    color(9,0);
-    printf("%c%c%c%c%c%c",452, 452, 452, 452, 452, 447);
-    color(5,0);
-    printf("%c ",488);color(9,0);
-    printf("%c%c%c%c%c%c", 474, 452,452, 452, 452,452);
+    if (case03l2==10.6 && posJ1!=03 && posJ2!=03 && posJ3!=03 && posJ4!=03){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c ",459);color(14,0);printf("%c   ",435);
+    }
+    if (case03l2==10.6 && (posJ1==03||posJ2==03||posJ3==03||posJ4==03)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c%c",459,f);color(14,0);printf("%c   ",435);
+    }
+    f=testposition(posJ1,posJ2,posJ3,posJ4,04,p1,p2,p3,p4);
+    if (posJ1==04 || posJ2==04 || posJ3==04 || posJ4==04){
+        color(9,0);
+        printf("%c%c%c%c%c%c",452, 452, 452, 452, 452, 447);
+        color(5,0);
+        printf("%c%c",488,f);color(9,0);
+        printf("%c%c%c%c%c%c", 474, 452,452, 452, 452,452);
+    }
+    else {
+        color(9,0);
+        printf("%c%c%c%c%c%c",452, 452, 452, 452, 452, 447);
+        color(5,0);
+        printf("%c ",488);color(9,0);
+        printf("%c%c%c%c%c%c", 474, 452,452, 452, 452,452);
+    }
+    f=testposition(posJ1,posJ2,posJ3,posJ4,05,p1,p2,p3,p4);
     if (case05l2==0){
         printf("           ");
     }
-    if (case05l2==1.1){
+    if (case05l2==1.1 && posJ1!=05 && posJ2!=05 && posJ3!=05 && posJ4!=05){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf(" %c",292);color(14,0);printf("%c%c%c%c",474,452,452,452);
     }
-    if (case05l2==1.2){
+    if (case05l2==1.1 && (posJ1==05||posJ2==05||posJ3==05||posJ4==05)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c%c",f,292);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case05l2==1.2 && posJ1!=05 && posJ2!=05 && posJ3!=05 && posJ4!=05){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf(" %c",291);color(14,0);printf("%c%c%c%c",474,452,452,452);
     }
-    if (case05l2==1.3){
+    if (case05l2==1.2 && (posJ1==05||posJ2==05||posJ3==05||posJ4==05)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c%c",f,291);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case05l2==1.3 && posJ1!=05 && posJ2!=05 && posJ3!=05 && posJ4!=05){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf(" %c",285);color(14,0);printf("%c%c%c%c",474,452,452,452);
     }
-    if (case05l2==1.4){
+    if (case05l2==1.3 && (posJ1==05||posJ2==05||posJ3==05||posJ4==05)){
         color(14,0);
-        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf(" %c",279);color(14,0);printf("%c%c%c%c",474,452,452,452);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c%c",f,285);color(14,0);printf("%c%c%c%c",474,452,452,452);
     }
-    if (case05l2==1.5){
+    if (case05l2==1.4 && posJ1!=05 && posJ2!=05 && posJ3!=05 && posJ4!=05){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf(" %c",428);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case05l2==1.4 && (posJ1==05||posJ2==05||posJ3==05||posJ4==05)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c%c",f,428);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case05l2==1.5 && posJ1!=05 && posJ2!=05 && posJ3!=05 && posJ4!=05){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf(" %c",277);color(14,0);printf("%c%c%c%c",474,452,452,452);
     }
-    if (case05l2==1.6){
+    if (case05l2==1.5 && (posJ1==05||posJ2==05||posJ3==05||posJ4==05)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c%c",f,277);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case05l2==1.6 && posJ1!=05 && posJ2!=05 && posJ3!=05 && posJ4!=05){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf(" %c",225);color(14,0);printf("%c%c%c%c",474,452,452,452);
     }
+    if (case05l2==1.6 && (posJ1==05||posJ2==05||posJ3==05||posJ4==05)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c%c",f,225);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
     if (case05l2>2 && case05l2<3){
         color(14,0);
-        printf("%c%c%c%c%c%c%c%c%c%c%c",452,452,452,452,452,452,452,452,452,452,452);
+        piece2bout2l1();
     }
-    if (case05l2==3.1){
+    if (case05l2==3.1 && posJ1!=05 && posJ2!=05 && posJ3!=05 && posJ4!=05){
         color(14,0);
         printf("    %c",435);color(15,0);printf(" %c",292);color(14,0);printf("%c%c%c%c",474,452,452,452);
     }
-    if (case05l2==3.2){
+    if (case05l2==3.1 && (posJ1==05||posJ2==05||posJ3==05||posJ4==05)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,292);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case05l2==3.2 && posJ1!=05 && posJ2!=05 && posJ3!=05 && posJ4!=05){
         color(14,0);
         printf("    %c",435);color(15,0);printf(" %c",291);color(14,0);printf("%c%c%c%c",474,452,452,452);
     }
-    if (case05l2==3.3){
+    if (case05l2==3.2 && (posJ1==05||posJ2==05||posJ3==05||posJ4==05)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,291);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case05l2==3.3 && posJ1!=05 && posJ2!=05 && posJ3!=05 && posJ4!=05){
         color(14,0);
         printf("    %c",435);color(15,0);printf(" %c",285);color(14,0);printf("%c%c%c%c",474,452,452,452);
     }
-    if (case05l2==3.4){
+    if (case05l2==3.3 && (posJ1==05||posJ2==05||posJ3==05||posJ4==05)){
         color(14,0);
-        printf("    %c",435);color(15,0);printf(" %c",279);color(14,0);printf("%c%c%c%c",474,452,452,452);
+        printf("    %c",435);color(15,0);printf("%c%c",f,285);color(14,0);printf("%c%c%c%c",474,452,452,452);
     }
-    if (case05l2==3.5){
+    if (case05l2==3.4 && posJ1!=05 && posJ2!=05 && posJ3!=05 && posJ4!=05){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",428);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case05l2==3.4 && (posJ1==05||posJ2==05||posJ3==05||posJ4==05)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,428);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case05l2==3.5 && posJ1!=05 && posJ2!=05 && posJ3!=05 && posJ4!=05){
         color(14,0);
         printf("    %c",435);color(15,0);printf(" %c",277);color(14,0);printf("%c%c%c%c",474,452,452,452);
     }
-    if (case05l2==3.6){
+    if (case05l2==3.5 && (posJ1==05||posJ2==05||posJ3==05||posJ4==05)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,277);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case05l2==3.6 && posJ1!=05 && posJ2!=05 && posJ3!=05 && posJ4!=05){
         color(14,0);
         printf("    %c",435);color(15,0);printf(" %c",225);color(14,0);printf("%c%c%c%c",474,452,452,452);
     }
-    if (case05l2==4.1){
+    if (case05l2==3.6 && (posJ1==05||posJ2==05||posJ3==05||posJ4==05)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,225);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case05l2==4.1 && posJ1!=05 && posJ2!=05 && posJ3!=05 && posJ4!=05){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c ",292);color(14,0);printf("%c   ",435);
     }
-    if (case05l2==4.2){
+    if (case05l2==4.1 && (posJ1==05||posJ2==05||posJ3==05||posJ4==05)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c%c",292,f);color(14,0);printf("%c   ",435);
+    }
+    if (case05l2==4.2 && posJ1!=05 && posJ2!=05 && posJ3!=05 && posJ4!=05){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c ",291);color(14,0);printf("%c   ",435);
     }
-    if (case05l2==4.3){
+    if (case05l2==4.2 && (posJ1==05||posJ2==05||posJ3==05||posJ4==05)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c%c",291,f);color(14,0);printf("%c   ",435);
+    }
+    if (case05l2==4.3 && posJ1!=05 && posJ2!=05 && posJ3!=05 && posJ4!=05){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c ",285);color(14,0);printf("%c   ",435);
     }
-    if (case05l2==4.4){
+    if (case05l2==4.3 && (posJ1==05||posJ2==05||posJ3==05||posJ4==05)){
         color(14,0);
-        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c ",279);color(14,0);printf("%c   ",435);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c%c",285,f);color(14,0);printf("%c   ",435);
     }
-    if (case05l2==4.5){
+    if (case05l2==4.4 && posJ1!=05 && posJ2!=05 && posJ3!=05 && posJ4!=05){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c ",428);color(14,0);printf("%c   ",435);
+    }
+    if (case05l2==4.4 && (posJ1==05||posJ2==05||posJ3==05||posJ4==05)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c%c",428,f);color(14,0);printf("%c   ",435);
+    }
+    if (case05l2==4.5 && posJ1!=05 && posJ2!=05 && posJ3!=05 && posJ4!=05){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c ",277);color(14,0);printf("%c   ",435);
     }
-    if (case05l2==4.6){
+    if (case05l2==4.5 && (posJ1==05||posJ2==05||posJ3==05||posJ4==05)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c%c",277,f);color(14,0);printf("%c   ",435);
+    }
+    if (case05l2==4.6 && posJ1!=05 && posJ2!=05 && posJ3!=05 && posJ4!=05){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c ",225);color(14,0);printf("%c   ",435);
+    }
+    if (case05l2==4.6 && (posJ1==05||posJ2==05||posJ3==05||posJ4==05)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c%c",225,f);color(14,0);printf("%c   ",435);
     }
     if (case05l2==5){
         color(14,0);
@@ -1121,67 +1926,133 @@ int test(double case01,double case03,double case05,double case10,double case11,d
         color(14,0);
         piece8bout2l1();
     }
-    if (case05l2==9){
+    if (case05l2==9 && posJ1!=05 && posJ2!=05 && posJ3!=05 && posJ4!=05){
         color(14,0);
         piece9bout2();
     }
-    if (case05l2==9.1){
+    if (case05l2==9 && (posJ1==05||posJ2==05||posJ3==05||posJ4==05)){
+        color(14,0);
+        printf("%c",435);color(15,0);printf(" %c",f);color(14,0);printf("%c%c%c%c%c%c%c%c",474,452,452,452,452,452,452,452);
+    }
+    if (case05l2==9.1 && posJ1!=05 && posJ2!=05 && posJ3!=05 && posJ4!=05){
         color(14,0);
         printf("    %c ",435);color(15,0);printf("%c",189);color(14,0);printf("%c%c%c%c",474,452,452,452);
     }
-    if (case05l2==9.2){
+    if (case05l2==9.1 && (posJ1==05||posJ2==05||posJ3==05||posJ4==05)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,189);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case05l2==9.2 && posJ1!=05 && posJ2!=05 && posJ3!=05 && posJ4!=05){
         color(14,0);
         printf("    %c ",435);color(15,0);printf("%c",157);color(14,0);printf("%c%c%c%c",474,452,452,452);
     }
-    if (case05l2==9.3){
+    if (case05l2==9.2 && (posJ1==05||posJ2==05||posJ3==05||posJ4==05)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,157);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case05l2==9.3 && posJ1!=05 && posJ2!=05 && posJ3!=05 && posJ4!=05){
         color(14,0);
         printf("    %c ",435);color(15,0);printf("%c",143);color(14,0);printf("%c%c%c%c",474,452,452,452);
     }
-    if (case05l2==9.4){
+    if (case05l2==9.3 && (posJ1==05||posJ2==05||posJ3==05||posJ4==05)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,143);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case05l2==9.4 && posJ1!=05 && posJ2!=05 && posJ3!=05 && posJ4!=05){
         color(14,0);
         printf("    %c ",435);color(15,0);printf("%c",37);color(14,0);printf("%c%c%c%c",474,452,452,452);
     }
-    if (case05l2==9.5){
+    if (case05l2==9.4 && (posJ1==05||posJ2==05||posJ3==05||posJ4==05)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,37);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case05l2==9.5 && posJ1!=05 && posJ2!=05 && posJ3!=05 && posJ4!=05){
         color(14,0);
         printf("    %c ",435);color(15,0);printf("%c",31);color(14,0);printf("%c%c%c%c",474,452,452,452);
     }
-    if (case05l2==9.6){
+    if (case05l2==9.5 && (posJ1==05||posJ2==05||posJ3==05||posJ4==05)){
         color(14,0);
-        printf("    %c ",435);color(15,0);printf("%c",15);color(14,0);printf("%c%c%c%c",474,452,452,452);
+        printf("    %c",435);color(15,0);printf("%c%c",f,31);color(14,0);printf("%c%c%c%c",474,452,452,452);
     }
-    if (case05l2==10){
+    if (case05l2==9.6 && posJ1!=05 && posJ2!=05 && posJ3!=05 && posJ4!=05){
+        color(14,0);
+        printf("    %c ",435);color(15,0);printf("%c",459);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case05l2==9.6 && (posJ1==05||posJ2==05||posJ3==05||posJ4==05)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,459);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case05l2==10 && posJ1!=05 && posJ2!=05 && posJ3!=05 && posJ4!=05){
         color(14,0);
         piece10bout2();
     }
-    if (case05l2==10.1){
+    if (case05l2==10 && (posJ1==05||posJ2==05||posJ3==05||posJ4==05)){
+        color(14,0);
+        printf("%c%c%c%c%c%c%c%c",452,452,452,452,452,452,452,447);color(15,0);printf("%c ",f);color(14,0);printf("%c",435);
+    }
+    if (case05l2==10.1 && posJ1!=05 && posJ2!=05 && posJ3!=05 && posJ4!=05){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c ",189);color(14,0);printf("%c   ",435);
     }
-    if (case05l2==10.2){
+    if (case05l2==10.1 && (posJ1==05||posJ2==05||posJ3==05||posJ4==05)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c%c",189,f);color(14,0);printf("%c   ",435);
+    }
+    if (case05l2==10.2 && posJ1!=05 && posJ2!=05 && posJ3!=05 && posJ4!=05){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c ",157);color(14,0);printf("%c   ",435);
     }
-    if (case05l2==10.3){
+    if (case05l2==10.2 && (posJ1==05||posJ2==05||posJ3==05||posJ4==05)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c%c",157,f);color(14,0);printf("%c   ",435);
+    }
+    if (case05l2==10.3 && posJ1!=05 && posJ2!=05 && posJ3!=05 && posJ4!=05){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c ",143);color(14,0);printf("%c   ",435);
     }
-    if (case05l2==10.4){
+    if (case05l2==10.3 && (posJ1==05||posJ2==05||posJ3==05||posJ4==05)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c%c",143,f);color(14,0);printf("%c   ",435);
+    }
+    if (case05l2==10.4 && posJ1!=05 && posJ2!=05 && posJ3!=05 && posJ4!=05){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c ",37);color(14,0);printf("%c   ",435);
     }
-    if (case05l2==10.5){
+    if (case05l2==10.4 && (posJ1==05||posJ2==05||posJ3==05||posJ4==05)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c%c",37,f);color(14,0);printf("%c   ",435);
+    }
+    if (case05l2==10.5 && posJ1!=05 && posJ2!=05 && posJ3!=05 && posJ4!=05){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c ",31);color(14,0);printf("%c   ",435);
     }
-    if (case05l2==10.6){
+    if (case05l2==10.5 && (posJ1==05||posJ2==05||posJ3==05||posJ4==05)){
         color(14,0);
-        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c ",15);color(14,0);printf("%c   ",435);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c%c",31,f);color(14,0);printf("%c   ",435);
     }
-    color(9,0);
-    printf("%c%c%c%c%c%c",452,452,452,452,452,447);
-    color(12,0);
-    printf("%c ",476);
-    color(9,0);
+    if (case05l2==10.6 && posJ1!=05 && posJ2!=05 && posJ3!=05 && posJ4!=05){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c ",459);color(14,0);printf("%c   ",435);
+    }
+    if (case05l2==10.6 && (posJ1==05||posJ2==05||posJ3==05||posJ4==05)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c%c",459,f);color(14,0);printf("%c   ",435);
+    }
+    f=testposition(posJ1,posJ2,posJ3,posJ4,06,p1,p2,p3,p4);
+    if (posJ1==06 || posJ2==06 || posJ3==06 || posJ4==06){
+        color(9,0);
+        printf("%c%c%c%c%c%c",452,452,452,452,452,447);
+        color(12,0);
+        printf("%c%c",476,f);
+        color(9,0);
+    }
+    else {
+        color(9,0);
+        printf("%c%c%c%c%c%c",452,452,452,452,452,447);
+        color(12,0);
+        printf("%c ",476);
+        color(9,0);
+    }
     printf("%c",435);a();
     printf("                                 %c  %c    ",435,435); //DEBUT 3eme LIGNE
     if (case01l3==0){
@@ -1754,82 +2625,155 @@ int test(double case01,double case03,double case05,double case10,double case11,d
         printf("         ");
     }
     a();color(15,0);printf("                     2   %c       ",282);color(14,0);
+    f=testposition(posJ1,posJ2,posJ3,posJ4,10,p1,p2,p3,p4);
     if (case10l2==0){
         printf("        ");
     }
     if (case10l2>1 && case10l2<2){
         printf("%c%c%c%c%c%c%c%c",452,452,452,452,452,452,452,452);
     }
-    if (case10l2==2.1){
+    if (case10l2==2.1 && posJ1!=10 && posJ2!=10 && posJ3!=10 && posJ4!=10){
         printf("%c",473);color(15,0);printf(" %c",292);color(14,0);
         printf("%c%c%c%c%c",448,452,452,452,452);
     }
-    if (case10l2==2.2){
+    if (case10l2==2.1 && (posJ1==10||posJ2==10||posJ3==10||posJ4==10)){
+        printf("%c",473);color(15,0);printf("%c%c",f,292);color(14,0);
+        printf("%c%c%c%c%c",448,452,452,452,452);
+    }
+    if (case10l2==2.2 && posJ1!=10 && posJ2!=10 && posJ3!=10 && posJ4!=10){
         printf("%c",473);color(15,0);printf(" %c",291);color(14,0);
         printf("%c%c%c%c%c",448,452,452,452,452);
     }
-    if (case10l2==2.3){
+    if (case10l2==2.2 && (posJ1==10||posJ2==10||posJ3==10||posJ4==10)){
+        printf("%c",473);color(15,0);printf("%c%c",f,291);color(14,0);
+        printf("%c%c%c%c%c",448,452,452,452,452);
+    }
+    if (case10l2==2.3 && posJ1!=10 && posJ2!=10 && posJ3!=10 && posJ4!=10){
         printf("%c",473);color(15,0);printf(" %c",285);color(14,0);
         printf("%c%c%c%c%c",448,452,452,452,452);
     }
-    if (case10l2==2.4){
-        printf("%c",473);color(15,0);printf(" %c",279);color(14,0);
+    if (case10l2==2.3 && (posJ1==10||posJ2==10||posJ3==10||posJ4==10)){
+        printf("%c",473);color(15,0);printf("%c%c",f,285);color(14,0);
         printf("%c%c%c%c%c",448,452,452,452,452);
     }
-    if (case10l2==2.5){
+    if (case10l2==2.4 && posJ1!=10 && posJ2!=10 && posJ3!=10 && posJ4!=10){
+        printf("%c",473);color(15,0);printf(" %c",428);color(14,0);
+        printf("%c%c%c%c%c",448,452,452,452,452);
+    }
+    if (case10l2==2.4 && (posJ1==10||posJ2==10||posJ3==10||posJ4==10)){
+        printf("%c",473);color(15,0);printf("%c%c",f,428);color(14,0);
+        printf("%c%c%c%c%c",448,452,452,452,452);
+    }
+    if (case10l2==2.5 && posJ1!=10 && posJ2!=10 && posJ3!=10 && posJ4!=10){
         printf("%c",473);color(15,0);printf(" %c",277);color(14,0);
         printf("%c%c%c%c%c",448,452,452,452,452);
     }
-    if (case10l2==2.6){
+    if (case10l2==2.5 && (posJ1==10||posJ2==10||posJ3==10||posJ4==10)){
+        printf("%c",473);color(15,0);printf("%c%c",f,277);color(14,0);
+        printf("%c%c%c%c%c",448,452,452,452,452);
+    }
+    if (case10l2==2.6 && posJ1!=10 && posJ2!=10 && posJ3!=10 && posJ4!=10){
         printf("%c",473);color(15,0);printf(" %c",225);color(14,0);
         printf("%c%c%c%c%c",448,452,452,452,452);
     }
-    if (case10l2==3.1){
+    if (case10l2==2.6 && (posJ1==10||posJ2==10||posJ3==10||posJ4==10)){
+        printf("%c",473);color(15,0);printf("%c%c",f,225);color(14,0);
+        printf("%c%c%c%c%c",448,452,452,452,452);
+    }
+    if (case10l2==3.1 && posJ1!=10 && posJ2!=10 && posJ3!=10 && posJ4!=10){
         printf("%c",435);color(15,0);printf(" %c",292);color(14,0);
         printf("%c%c%c%c%c",448,452,452,452,452);
     }
-    if (case10l2==3.2){
+    if (case10l2==3.1 && (posJ1==10||posJ2==10||posJ3==10||posJ4==10)){
+        printf("%c",435);color(15,0);printf("%c%c",f,292);color(14,0);
+        printf("%c%c%c%c%c",448,452,452,452,452);
+    }
+    if (case10l2==3.2 && posJ1!=10 && posJ2!=10 && posJ3!=10 && posJ4!=10){
         printf("%c",435);color(15,0);printf(" %c",291);color(14,0);
         printf("%c%c%c%c%c",448,452,452,452,452);
     }
-    if (case10l2==3.3){
+    if (case10l2==3.2 && (posJ1==10||posJ2==10||posJ3==10||posJ4==10)){
+        printf("%c",435);color(15,0);printf("%c%c",f,291);color(14,0);
+        printf("%c%c%c%c%c",448,452,452,452,452);
+    }
+    if (case10l2==3.3 && posJ1!=10 && posJ2!=10 && posJ3!=10 && posJ4!=10){
         printf("%c",435);color(15,0);printf(" %c",285);color(14,0);
         printf("%c%c%c%c%c",448,452,452,452,452);
     }
-    if (case10l2==3.4){
-        printf("%c",435);color(15,0);printf(" %c",279);color(14,0);
+    if (case10l2==3.3 && (posJ1==10||posJ2==10||posJ3==10||posJ4==10)){
+        printf("%c",435);color(15,0);printf("%c%c",f,285);color(14,0);
         printf("%c%c%c%c%c",448,452,452,452,452);
     }
-    if (case10l2==3.5){
+    if (case10l2==3.4 && posJ1!=10 && posJ2!=10 && posJ3!=10 && posJ4!=10){
+        printf("%c",435);color(15,0);printf(" %c",428);color(14,0);
+        printf("%c%c%c%c%c",448,452,452,452,452);
+    }
+    if (case10l2==3.4 && (posJ1==10||posJ2==10||posJ3==10||posJ4==10)){
+        printf("%c",435);color(15,0);printf("%c%c",f,428);color(14,0);
+        printf("%c%c%c%c%c",448,452,452,452,452);
+    }
+    if (case10l2==3.5 && posJ1!=10 && posJ2!=10 && posJ3!=10 && posJ4!=10){
         printf("%c",435);color(15,0);printf(" %c",277);color(14,0);
         printf("%c%c%c%c%c",448,452,452,452,452);
     }
-    if (case10l2==3.6){
+    if (case10l2==3.5 && (posJ1==10||posJ2==10||posJ3==10||posJ4==10)){
+        printf("%c",435);color(15,0);printf("%c%c",f,277);color(14,0);
+        printf("%c%c%c%c%c",448,452,452,452,452);
+    }
+    if (case10l2==3.6 && posJ1!=10 && posJ2!=10 && posJ3!=10 && posJ4!=10){
         printf("%c",435);color(15,0);printf(" %c",225);color(14,0);
         printf("%c%c%c%c%c",448,452,452,452,452);
     }
-    if (case10l2==4.1){
+    if (case10l2==3.6 && (posJ1==10||posJ2==10||posJ3==10||posJ4==10)){
+        printf("%c",435);color(15,0);printf("%c%c",f,225);color(14,0);
+        printf("%c%c%c%c%c",448,452,452,452,452);
+    }
+    if (case10l2==4.1 && posJ1!=10 && posJ2!=10 && posJ3!=10 && posJ4!=10){
         printf("%c",473);color(15,0);printf("%c ",292);color(14,0);
         printf("%c    ",435);
     }
-    if (case10l2==4.2){
+    if (case10l2==4.1 && (posJ1==10||posJ2==10||posJ3==10||posJ4==10)){
+        printf("%c",473);color(15,0);printf("%c%c",f,292);color(14,0);
+        printf("%c    ",435);
+    }
+    if (case10l2==4.2 && posJ1!=10 && posJ2!=10 && posJ3!=10 && posJ4!=10){
         printf("%c",473);color(15,0);printf("%c ",291);color(14,0);
         printf("%c    ",435);
     }
-    if (case10l2==4.3){
+    if (case10l2==4.2 && (posJ1==10||posJ2==10||posJ3==10||posJ4==10)){
+        printf("%c",473);color(15,0);printf("%c%c",f,291);color(14,0);
+        printf("%c    ",435);
+    }
+    if (case10l2==4.3 && posJ1!=10 && posJ2!=10 && posJ3!=10 && posJ4!=10){
         printf("%c",473);color(15,0);printf("%c ",285);color(14,0);
         printf("%c    ",435);
     }
-    if (case10l2==4.4){
-        printf("%c",473);color(15,0);printf("%c ",279);color(14,0);
+    if (case10l2==4.3 && (posJ1==10||posJ2==10||posJ3==10||posJ4==10)){
+        printf("%c",473);color(15,0);printf("%c%c",f,285);color(14,0);
         printf("%c    ",435);
     }
-    if (case10l2==4.5){
+    if (case10l2==4.4 && posJ1!=10 && posJ2!=10 && posJ3!=10 && posJ4!=10){
+        printf("%c",473);color(15,0);printf("%c ",428);color(14,0);
+        printf("%c    ",435);
+    }
+    if (case10l2==4.4 && (posJ1==10||posJ2==10||posJ3==10||posJ4==10)){
+        printf("%c",473);color(15,0);printf("%c%c",f,428);color(14,0);
+        printf("%c    ",435);
+    }
+    if (case10l2==4.5 && posJ1!=10 && posJ2!=10 && posJ3!=10 && posJ4!=10){
         printf("%c",473);color(15,0);printf("%c ",277);color(14,0);
         printf("%c    ",435);
     }
-    if (case10l2==4.6){
-        printf("%c",473);color(15,0);printf("%c ",225);color(15,0);
+    if (case10l2==4.5 && (posJ1==10||posJ2==10||posJ3==10||posJ4==10)){
+        printf("%c",473);color(15,0);printf("%c%c",f,277);color(14,0);
+        printf("%c    ",435);
+    }
+    if (case10l2==4.6 && posJ1!=10 && posJ2!=10 && posJ3!=10 && posJ4!=10){
+        printf("%c",473);color(15,0);printf("%c ",225);color(14,0);
+        printf("%c    ",435);
+    }
+    if (case10l2==4.6 && (posJ1==10||posJ2==10||posJ3==10||posJ4==10)){
+        printf("%c",473);color(15,0);printf("%c%c",f,225);color(14,0);
         printf("%c    ",435);
     }
     if (case10l2==5){
@@ -1838,53 +2782,101 @@ int test(double case01,double case03,double case05,double case10,double case11,d
     if (case10l2==6){
         printf("%c%c%c%c%c%c%c%c",452,452,452,452,452,452,452,452);
     }
-    if (case10l2==7){
+    if (case10l2==7 && posJ1!=10 && posJ2!=10 && posJ3!=10 && posJ4!=10){
         printf("%c  %c%c%c%c%c",435,448,452,452,452,452);
     }
-    if (case10l2==7.1){
+    if (case10l2==7 && (posJ1==10||posJ2==10||posJ3==10||posJ4==10)){
+        printf("%c",435);color(15,0);printf(" %c",f);color(14,0);printf("%c%c%c%c%c",448,452,452,452,452);
+    }
+    if (case10l2==7.1 && posJ1!=10 && posJ2!=10 && posJ3!=10 && posJ4!=10){
         printf("%c",435);color(15,0);printf(" %c",189);color(14,0);
         printf("%c%c%c%c%c",448,452,452,452,452);
     }
-    if (case10l2==7.2){
+    if (case10l2==7.1 && (posJ1==10||posJ2==10||posJ3==10||posJ4==10)){
+        printf("%c",435);color(15,0);printf("%c%c",f,189);color(14,0);
+        printf("%c%c%c%c%c",448,452,452,452,452);
+    }
+    if (case10l2==7.2 && posJ1!=10 && posJ2!=10 && posJ3!=10 && posJ4!=10){
         printf("%c",435);color(15,0);printf(" %c",157);color(14,0);
         printf("%c%c%c%c%c",448,452,452,452,452);
     }
-    if (case10l2==7.3){
+    if (case10l2==7.2 && (posJ1==10||posJ2==10||posJ3==10||posJ4==10)){
+        printf("%c",435);color(15,0);printf("%c%c",f,157);color(14,0);
+        printf("%c%c%c%c%c",448,452,452,452,452);
+    }
+    if (case10l2==7.3 && posJ1!=10 && posJ2!=10 && posJ3!=10 && posJ4!=10){
         printf("%c",435);color(15,0);printf(" %c",143);color(14,0);
         printf("%c%c%c%c%c",448,452,452,452,452);
     }
-    if (case10l2==7.4){
+    if (case10l2==7.3 && (posJ1==10||posJ2==10||posJ3==10||posJ4==10)){
+        printf("%c",435);color(15,0);printf("%c%c",f,143);color(14,0);
+        printf("%c%c%c%c%c",448,452,452,452,452);
+    }
+    if (case10l2==7.4 && posJ1!=10 && posJ2!=10 && posJ3!=10 && posJ4!=10){
         printf("%c",435);color(15,0);printf(" %c",37);color(14,0);
         printf("%c%c%c%c%c",448,452,452,452,452);
     }
-    if (case10l2==7.5){
+    if (case10l2==7.4 && (posJ1==10||posJ2==10||posJ3==10||posJ4==10)){
+        printf("%c",435);color(15,0);printf("%c%c",f,37);color(14,0);
+        printf("%c%c%c%c%c",448,452,452,452,452);
+    }
+    if (case10l2==7.5 && posJ1!=10 && posJ2!=10 && posJ3!=10 && posJ4!=10){
         printf("%c",435);color(15,0);printf(" %c",31);color(14,0);
         printf("%c%c%c%c%c",448,452,452,452,452);
     }
-    if (case10l2==7.6){
-        printf("%c",435);color(15,0);printf(" %c",15);color(14,0);
+    if (case10l2==7.5 && (posJ1==10||posJ2==10||posJ3==10||posJ4==10)){
+        printf("%c",435);color(15,0);printf("%c%c",f,31);color(14,0);
         printf("%c%c%c%c%c",448,452,452,452,452);
     }
-    if (case10l2==8){
+    if (case10l2==7.6 && posJ1!=10 && posJ2!=10 && posJ3!=10 && posJ4!=10){
+        printf("%c",435);color(15,0);printf(" %c",459);color(14,0);
+        printf("%c%c%c%c%c",448,452,452,452,452);
+    }
+    if (case10l2==7.6 && (posJ1==10||posJ2==10||posJ3==10||posJ4==10)){
+        printf("%c",435);color(15,0);printf("%c%c",f,459);color(14,0);
+        printf("%c%c%c%c%c",448,452,452,452,452);
+    }
+    if (case10l2==8 && posJ1!=10 && posJ2!=10 && posJ3!=10 && posJ4!=10){
         printf("%c  %c    ",473,435);
     }
-    if (case10l2==8.1){
+    if (case10l2==8 && (posJ1==10||posJ2==10||posJ3==10||posJ4==10)){
+        printf("%c",473);color(15,0);printf("%c ",f);color(14,0);printf("%c    ",435);
+    }
+    if (case10l2==8.1 && posJ1!=10 && posJ2!=10 && posJ3!=10 && posJ4!=10){
         printf("%c",473);color(15,0);printf("%c ",189);color(14,0);printf("%c    ",435);
     }
-    if (case10l2==8.2){
+    if (case10l2==8.1 && (posJ1==10||posJ2==10||posJ3==10||posJ4==10)){
+        printf("%c",473);color(15,0);printf("%c%c",189,f);color(14,0);printf("%c    ",435);
+    }
+    if (case10l2==8.2 && posJ1!=10 && posJ2!=10 && posJ3!=10 && posJ4!=10){
         printf("%c",473);color(15,0);printf("%c ",157);color(14,0);printf("%c    ",435);
     }
-    if (case10l2==8.3){
+    if (case10l2==8.2 && (posJ1==10||posJ2==10||posJ3==10||posJ4==10)){
+        printf("%c",473);color(15,0);printf("%c%c",157,f);color(14,0);printf("%c    ",435);
+    }
+    if (case10l2==8.3 && posJ1!=10 && posJ2!=10 && posJ3!=10 && posJ4!=10){
         printf("%c",473);color(15,0);printf("%c ",143);color(14,0);printf("%c    ",435);
     }
-    if (case10l2==8.4){
+    if (case10l2==8.3 && (posJ1==10||posJ2==10||posJ3==10||posJ4==10)){
+        printf("%c",473);color(15,0);printf("%c%c",143,f);color(14,0);printf("%c    ",435);
+    }
+    if (case10l2==8.4 && posJ1!=10 && posJ2!=10 && posJ3!=10 && posJ4!=10){
         printf("%c",473);color(15,0);printf("%c ",37);color(14,0);printf("%c    ",435);
     }
-    if (case10l2==8.5){
+    if (case10l2==8.4 && (posJ1==10||posJ2==10||posJ3==10||posJ4==10)){
+        printf("%c",473);color(15,0);printf("%c%c",37,f);color(14,0);printf("%c    ",435);
+    }
+    if (case10l2==8.5 && posJ1!=10 && posJ2!=10 && posJ3!=10 && posJ4!=10){
         printf("%c",473);color(15,0);printf("%c ",31);color(14,0);printf("%c    ",435);
     }
-    if (case10l2==8.6){
-        printf("%c",473);color(15,0);printf("%c ",15);color(14,0);printf("%c    ",435);
+    if (case10l2==8.5 && (posJ1==10||posJ2==10||posJ3==10||posJ4==10)){
+        printf("%c",473);color(15,0);printf("%c%c",31,f);color(14,0);printf("%c    ",435);
+    }
+    if (case10l2==8.6 && posJ1!=10 && posJ2!=10 && posJ3!=10 && posJ4!=10){
+        printf("%c",473);color(15,0);printf("%c ",459);color(14,0);printf("%c    ",435);
+    }
+    if (case10l2==8.6 && (posJ1==10||posJ2==10||posJ3==10||posJ4==10)){
+        printf("%c",473);color(15,0);printf("%c%c",459,f);color(14,0);printf("%c    ",435);
     }
     if (case10l2>=9 && case10l2<10){
         printf("%c%c%c%c%c%c%c%c",474,452,452,452,452,452,452,452);
@@ -1892,6 +2884,7 @@ int test(double case01,double case03,double case05,double case10,double case11,d
     if (case10l2>=10 && case10l2<11){
         printf("%c%c%c%c    ",452,452,452,447);
     }
+    f=testposition(posJ1,posJ2,posJ3,posJ4,11,p1,p2,p3,p4);
     if (case11l2==0){
         printf("           ");
     }
@@ -1899,94 +2892,184 @@ int test(double case01,double case03,double case05,double case10,double case11,d
         color(14,0);
         printf("%c%c%c%c%c%c%c%c%c%c%c",452,452,452,452,452,452,452,452,452,452,452);
     }
-    if (case11l2==2.1){
+    if (case11l2==2.1 && posJ1!=11 && posJ2!=11 && posJ3!=11 && posJ4!=11){
         color(14,0);
         printf("%c%c%c%c%c", 452, 452, 452, 452, 473);color(15,0);printf(" %c",292);color(14,0);
         printf("%c%c%c%c", 448, 452, 452, 452);
     }
-    if (case11l2==2.2){
+    if (case11l2==2.1 && (posJ1==11||posJ2==11||posJ3==11||posJ4==11)){
+        color(14,0);
+        printf("%c%c%c%c%c", 452, 452, 452, 452, 473);color(15,0);printf("%c%c",f,292);color(14,0);
+        printf("%c%c%c%c", 448, 452, 452, 452);
+    }
+    if (case11l2==2.2 && posJ1!=11 && posJ2!=11 && posJ3!=11 && posJ4!=11){
         color(14,0);
         printf("%c%c%c%c%c", 452, 452, 452, 452, 473);color(15,0);printf(" %c",291);color(14,0);
         printf("%c%c%c%c", 448, 452, 452, 452);
     }
-    if (case11l2==2.3){
+    if (case11l2==2.2 && (posJ1==11||posJ2==11||posJ3==11||posJ4==11)){
+        color(14,0);
+        printf("%c%c%c%c%c", 452, 452, 452, 452, 473);color(15,0);printf("%c%c",f,291);color(14,0);
+        printf("%c%c%c%c", 448, 452, 452, 452);
+    }
+    if (case11l2==2.3 && posJ1!=11 && posJ2!=11 && posJ3!=11 && posJ4!=11){
         color(14,0);
         printf("%c%c%c%c%c", 452, 452, 452, 452, 473);color(15,0);printf(" %c",285);color(14,0);
         printf("%c%c%c%c", 448, 452, 452, 452);
     }
-    if (case11l2==2.4){
+    if (case11l2==2.3 && (posJ1==11||posJ2==11||posJ3==11||posJ4==11)){
         color(14,0);
-        printf("%c%c%c%c%c", 452, 452, 452, 452, 473);color(15,0);printf(" %c",279);color(14,0);
+        printf("%c%c%c%c%c", 452, 452, 452, 452, 473);color(15,0);printf("%c%c",f,285);color(14,0);
         printf("%c%c%c%c", 448, 452, 452, 452);
     }
-    if (case11l2==2.5){
+    if (case11l2==2.4 && posJ1!=11 && posJ2!=11 && posJ3!=11 && posJ4!=11){
+        color(14,0);
+        printf("%c%c%c%c%c", 452, 452, 452, 452, 473);color(15,0);printf(" %c",428);color(14,0);
+        printf("%c%c%c%c", 448, 452, 452, 452);
+    }
+    if (case11l2==2.4 && (posJ1==11||posJ2==11||posJ3==11||posJ4==11)){
+        color(14,0);
+        printf("%c%c%c%c%c", 452, 452, 452, 452, 473);color(15,0);printf("%c%c",f,428);color(14,0);
+        printf("%c%c%c%c", 448, 452, 452, 452);
+    }
+    if (case11l2==2.5 && posJ1!=11 && posJ2!=11 && posJ3!=11 && posJ4!=11){
         color(14,0);
         printf("%c%c%c%c%c", 452, 452, 452, 452, 473);color(15,0);printf(" %c",277);color(14,0);
         printf("%c%c%c%c", 448, 452, 452, 452);
     }
-    if (case11l2==2.6){
+    if (case11l2==2.5 && (posJ1==11||posJ2==11||posJ3==11||posJ4==11)){
+        color(14,0);
+        printf("%c%c%c%c%c", 452, 452, 452, 452, 473);color(15,0);printf("%c%c",f,277);color(14,0);
+        printf("%c%c%c%c", 448, 452, 452, 452);
+    }
+    if (case11l2==2.6 && posJ1!=11 && posJ2!=11 && posJ3!=11 && posJ4!=11){
         color(14,0);
         printf("%c%c%c%c%c", 452, 452, 452, 452, 473);color(15,0);printf(" %c",225);color(14,0);
         printf("%c%c%c%c", 448, 452, 452, 452);
     }
-    if (case11l2==3.1){
+    if (case11l2==2.6 && (posJ1==11||posJ2==11||posJ3==11||posJ4==11)){
+        color(14,0);
+        printf("%c%c%c%c%c", 452, 452, 452, 452, 473);color(15,0);printf("%c%c",f,225);color(14,0);
+        printf("%c%c%c%c", 448, 452, 452, 452);
+    }
+    if (case11l2==3.1 && posJ1!=11 && posJ2!=11 && posJ3!=11 && posJ4!=11){
         color(14,0);
         printf("    %c",435);color(15,0);printf(" %c",292);color(14,0);
         printf("%c%c%c%c",448,452,452,452);
     }
-    if (case11l2==3.2){
+    if (case11l2==3.1 && (posJ1==11||posJ2==11||posJ3==11||posJ4==11)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,292);color(14,0);
+        printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case11l2==3.2 && posJ1!=11 && posJ2!=11 && posJ3!=11 && posJ4!=11){
         color(14,0);
         printf("    %c",435);color(15,0);printf(" %c",291);color(14,0);
         printf("%c%c%c%c",448,452,452,452);
     }
-    if (case11l2==3.3){
+    if (case11l2==3.2 && (posJ1==11||posJ2==11||posJ3==11||posJ4==11)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,291);color(14,0);
+        printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case11l2==3.3 && posJ1!=11 && posJ2!=11 && posJ3!=11 && posJ4!=11){
         color(14,0);
         printf("    %c",435);color(15,0);printf(" %c",285);color(14,0);
         printf("%c%c%c%c",448,452,452,452);
     }
-    if (case11l2==3.4){
+    if (case11l2==3.3 && (posJ1==11||posJ2==11||posJ3==11||posJ4==11)){
         color(14,0);
-        printf("    %c",435);color(15,0);printf(" %c",279);color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,285);color(14,0);
         printf("%c%c%c%c",448,452,452,452);
     }
-    if (case11l2==3.5){
+    if (case11l2==3.4 && posJ1!=11 && posJ2!=11 && posJ3!=11 && posJ4!=11){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",428);color(14,0);
+        printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case11l2==3.4 && (posJ1==11||posJ2==11||posJ3==11||posJ4==11)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,428);color(14,0);
+        printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case11l2==3.5 && posJ1!=11 && posJ2!=11 && posJ3!=11 && posJ4!=11){
         color(14,0);
         printf("    %c",435);color(15,0);printf(" %c",277);color(14,0);
         printf("%c%c%c%c",448,452,452,452);
     }
-    if (case11l2==3.6){
+    if (case11l2==3.5 && (posJ1==11||posJ2==11||posJ3==11||posJ4==11)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,277);color(14,0);
+        printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case11l2==3.6 && posJ1!=11 && posJ2!=11 && posJ3!=11 && posJ4!=11){
         color(14,0);
         printf("    %c",435);color(15,0);printf(" %c",225);color(14,0);
         printf("%c%c%c%c",448,452,452,452);
     }
-    if (case11l2==4.1){
+    if (case11l2==3.6 && (posJ1==11||posJ2==11||posJ3==11||posJ4==11)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,225);color(14,0);
+        printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case11l2==4.1 && posJ1!=11 && posJ2!=11 && posJ3!=11 && posJ4!=11){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",292);color(14,0);
         printf("%c   ",435);
     }
-    if (case11l2==4.2){
+    if (case11l2==4.1 && (posJ1==11||posJ2==11||posJ3==11||posJ4==11)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",292,f);color(14,0);
+        printf("%c   ",435);
+    }
+    if (case11l2==4.2 && posJ1!=11 && posJ2!=11 && posJ3!=11 && posJ4!=11){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",291);color(14,0);
         printf("%c   ",435);
     }
-    if (case11l2==4.3){
+    if (case11l2==4.2 && (posJ1==11||posJ2==11||posJ3==11||posJ4==11)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",291,f);color(14,0);
+        printf("%c   ",435);
+    }
+    if (case11l2==4.3 && posJ1!=11 && posJ2!=11 && posJ3!=11 && posJ4!=11){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",285);color(14,0);
         printf("%c   ",435);
     }
-    if (case11l2==4.4){
+    if (case11l2==4.3 && (posJ1==11||posJ2==11||posJ3==11||posJ4==11)){
         color(14,0);
-        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",279);color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",285,f);color(14,0);
         printf("%c   ",435);
     }
-    if (case11l2==4.5){
+    if (case11l2==4.4 && posJ1!=11 && posJ2!=11 && posJ3!=11 && posJ4!=11){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",428);color(14,0);
+        printf("%c   ",435);
+    }
+    if (case11l2==4.4 && (posJ1==11||posJ2==11||posJ3==11||posJ4==11)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",428,f);color(14,0);
+        printf("%c   ",435);
+    }
+    if (case11l2==4.5 && posJ1!=11 && posJ2!=11 && posJ3!=11 && posJ4!=11){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",277);color(14,0);
         printf("%c   ",435);
     }
-    if (case11l2==4.6){
+    if (case11l2==4.5 && (posJ1==11||posJ2==11||posJ3==11||posJ4==11)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",277,f);color(14,0);
+        printf("%c   ",435);
+    }
+    if (case11l2==4.6 && posJ1!=11 && posJ2!=11 && posJ3!=11 && posJ4!=11){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",225);color(14,0);
+        printf("%c   ",435);
+    }
+    if (case11l2==4.6 && (posJ1==11||posJ2==11||posJ3==11||posJ4==11)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",225,f);color(14,0);
         printf("%c   ",435);
     }
     if (case11l2==5){
@@ -1997,70 +3080,127 @@ int test(double case01,double case03,double case05,double case10,double case11,d
         color(14,0);
         printf("%c%c%c%c%c%c%c%c%c%c%c",452,452,452,452,452,452,452,452,452,452,452);
     }
-    if (case11l2==7){
+    if (case11l2==7 && posJ1!=11 && posJ2!=11 && posJ3!=11 && posJ4!=11){
         color(14,0);
         printf("    %c  %c%c%c%c",435,448,452,452,452);
     }
-    if (case11l2==7.1){
+    if (case11l2==7 && (posJ1==11||posJ2==11||posJ3==11||posJ4==11)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",f);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case11l2==7.1 && posJ1!=11 && posJ2!=11 && posJ3!=11 && posJ4!=11){
         color(14,0);
         printf("    %c",435);color(15,0);printf(" %c",189);color(14,0);printf("%c%c%c%c",448,452,452,452);
     }
-    if (case11l2==7.2){
+    if (case11l2==7.1 && (posJ1==11||posJ2==11||posJ3==11||posJ4==11)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,189);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case11l2==7.2 && posJ1!=11 && posJ2!=11 && posJ3!=11 && posJ4!=11){
         color(14,0);
         printf("    %c",435);color(15,0);printf(" %c",157);color(14,0);printf("%c%c%c%c",448,452,452,452);
     }
-    if (case11l2==7.3){
+    if (case11l2==7.2 && (posJ1==11||posJ2==11||posJ3==11||posJ4==11)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,157);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case11l2==7.3 && posJ1!=11 && posJ2!=11 && posJ3!=11 && posJ4!=11){
         color(14,0);
         printf("    %c",435);color(15,0);printf(" %c",143);color(14,0);printf("%c%c%c%c",448,452,452,452);
     }
-    if (case11l2==7.4){
+    if (case11l2==7.3 && (posJ1==11||posJ2==11||posJ3==11||posJ4==11)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,143);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case11l2==7.4 && posJ1!=11 && posJ2!=11 && posJ3!=11 && posJ4!=11){
         color(14,0);
         printf("    %c",435);color(15,0);printf(" %c",37);color(14,0);printf("%c%c%c%c",448,452,452,452);
     }
-    if (case11l2==7.5){
+    if (case11l2==7.4 && (posJ1==11||posJ2==11||posJ3==11||posJ4==11)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,37);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case11l2==7.5 && posJ1!=11 && posJ2!=11 && posJ3!=11 && posJ4!=11){
         color(14,0);
         printf("    %c",435);color(15,0);printf(" %c",31);color(14,0);printf("%c%c%c%c",448,452,452,452);
     }
-    if (case11l2==7.6){
+    if (case11l2==7.5 && (posJ1==11||posJ2==11||posJ3==11||posJ4==11)){
         color(14,0);
-        printf("    %c",435);color(15,0);printf(" %c",15);color(14,0);printf("%c%c%c%c",448,452,452,452);
+        printf("    %c",435);color(15,0);printf("%c%c",f,31);color(14,0);printf("%c%c%c%c",448,452,452,452);
     }
-    if (case11l2==8){
+    if (case11l2==7.6 && posJ1!=11 && posJ2!=11 && posJ3!=11 && posJ4!=11){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",459);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case11l2==7.6 && (posJ1==11||posJ2==11||posJ3==11||posJ4==11)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,459);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case11l2==8 && posJ1!=11 && posJ2!=11 && posJ3!=11 && posJ4!=11){
         color(14,0);
         printf("%c%c%c%c%c  %c   ",452,452,452,452,473,435);
     }
-    if (case11l2==8.1){
+    if (case11l2==8 && (posJ1==11||posJ2==11||posJ3==11||posJ4==11)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",f);color(14,0);printf("%c   ",435);
+    }
+    if (case11l2==8.1 && posJ1!=11 && posJ2!=11 && posJ3!=11 && posJ4!=11){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",189);color(14,0);printf("%c   ",435);
     }
-    if (case11l2==8.2){
+    if (case11l2==8.1 && (posJ1==11||posJ2==11||posJ3==11||posJ4==11)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",189,f);color(14,0);printf("%c   ",435);
+    }
+    if (case11l2==8.2 && posJ1!=11 && posJ2!=11 && posJ3!=11 && posJ4!=11){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",157);color(14,0);printf("%c   ",435);
     }
-    if (case11l2==8.3){
+    if (case11l2==8.2 && (posJ1==11||posJ2==11||posJ3==11||posJ4==11)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",157,f);color(14,0);printf("%c   ",435);
+    }
+    if (case11l2==8.3 && posJ1!=11 && posJ2!=11 && posJ3!=11 && posJ4!=11){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",143);color(14,0);printf("%c   ",435);
     }
-    if (case11l2==8.4){
+    if (case11l2==8.3 && (posJ1==11||posJ2==11||posJ3==11||posJ4==11)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",143,f);color(14,0);printf("%c   ",435);
+    }
+    if (case11l2==8.4 && posJ1!=11 && posJ2!=11 && posJ3!=11 && posJ4!=11){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",37);color(14,0);printf("%c   ",435);
     }
-    if (case11l2==8.5){
+    if (case11l2==8.4 && (posJ1==11||posJ2==11||posJ3==11||posJ4==11)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",37,f);color(14,0);printf("%c   ",435);
+    }
+    if (case11l2==8.5 && posJ1!=11 && posJ2!=11 && posJ3!=11 && posJ4!=11){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",31);color(14,0);printf("%c   ",435);
     }
-    if (case11l2==8.6){
+    if (case11l2==8.5 && (posJ1==11||posJ2==11||posJ3==11||posJ4==11)){
         color(14,0);
-        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",189);color(14,0);printf("%c   ",435);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",31,f);color(14,0);printf("%c   ",435);
+    }
+    if (case11l2==8.6 && posJ1!=11 && posJ2!=11 && posJ3!=11 && posJ4!=11){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",459);color(14,0);printf("%c   ",435);
+    }
+    if (case11l2==8.6 && (posJ1==11||posJ2==11||posJ3==11||posJ4==11)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",459,f);color(14,0);printf("%c   ",435);
     }
     if (case11l2>=9 && case11l2<10){
         color(14,0);
         printf("    %c%c%c%c%c%c%c",474,452,452,452,452,452,452);
     }
-    if (case11l2==10 && case11l2<11){
+    if (case11l2>=10 && case11l2<11){
         color(14,0);
         printf("%c%c%c%c%c%c%c%c   ",452,452,452,452,452,452,452,447);
     }
+    f=testposition(posJ1,posJ2,posJ3,posJ4,12,p1,p2,p3,p4);
     if (case12l2==0){
         color(14,0);
         printf("            ");
@@ -2069,94 +3209,184 @@ int test(double case01,double case03,double case05,double case10,double case11,d
         color(14,0);
         printf("%c%c%c%c%c%c%c%c%c%c%c%c",452,452,452,452,452,452,452,452,452,452,452,452);
     }
-    if (case12l2==2.1){
+    if (case12l2==2.1 && posJ1!=12 && posJ2!=12 && posJ3!=12 && posJ4!=12){
         color(14,0);
         printf("%c%c%c%c%c", 452, 452, 452, 452, 473);color(15,0);printf(" %c",292);color(14,0);
-        printf("%c%c%c%c%c", 448, 452, 452, 452,452);
+        printf("%c%c%c%c%c", 448,452, 452, 452, 452);
     }
-    if (case12l2==2.2){
+    if (case12l2==2.1 && (posJ1==12||posJ2==12||posJ3==12||posJ4==12)){
+        color(14,0);
+        printf("%c%c%c%c%c", 452, 452, 452, 452, 473);color(15,0);printf("%c%c",f,292);color(14,0);
+        printf("%c%c%c%c%c", 448,452, 452, 452, 452);
+    }
+    if (case12l2==2.2 && posJ1!=12 && posJ2!=12 && posJ3!=12 && posJ4!=12){
         color(14,0);
         printf("%c%c%c%c%c", 452, 452, 452, 452, 473);color(15,0);printf(" %c",291);color(14,0);
-        printf("%c%c%c%c%c", 448, 452, 452, 452,452);
+        printf("%c%c%c%c%c", 448,452, 452, 452, 452);
     }
-    if (case12l2==2.3){
+    if (case12l2==2.2 && (posJ1==12||posJ2==12||posJ3==12||posJ4==12)){
+        color(14,0);
+        printf("%c%c%c%c%c", 452, 452, 452, 452, 473);color(15,0);printf("%c%c",f,291);color(14,0);
+        printf("%c%c%c%c%c", 448,452, 452, 452, 452);
+    }
+    if (case12l2==2.3 && posJ1!=12 && posJ2!=12 && posJ3!=12 && posJ4!=12){
         color(14,0);
         printf("%c%c%c%c%c", 452, 452, 452, 452, 473);color(15,0);printf(" %c",285);color(14,0);
-        printf("%c%c%c%c%c", 448, 452, 452, 452,452);
+        printf("%c%c%c%c%c", 448,452, 452, 452, 452);
     }
-    if (case12l2==2.4){
+    if (case12l2==2.3 && (posJ1==12||posJ2==12||posJ3==12||posJ4==12)){
         color(14,0);
-        printf("%c%c%c%c%c", 452, 452, 452, 452, 473);color(15,0);printf(" %c",279);color(14,0);
-        printf("%c%c%c%c%c", 448, 452, 452, 452,452);
+        printf("%c%c%c%c%c", 452, 452, 452, 452, 473);color(15,0);printf("%c%c",f,285);color(14,0);
+        printf("%c%c%c%c%c", 448,452, 452, 452, 452);
     }
-    if (case12l2==2.5){
+    if (case12l2==2.4 && posJ1!=12 && posJ2!=12 && posJ3!=12 && posJ4!=12){
+        color(14,0);
+        printf("%c%c%c%c%c", 452, 452, 452, 452, 473);color(15,0);printf(" %c",428);color(14,0);
+        printf("%c%c%c%c%c", 448,452, 452, 452, 452);
+    }
+    if (case12l2==2.4 && (posJ1==12||posJ2==12||posJ3==12||posJ4==12)){
+        color(14,0);
+        printf("%c%c%c%c%c", 452, 452, 452, 452, 473);color(15,0);printf("%c%c",f,428);color(14,0);
+        printf("%c%c%c%c%c", 448,452, 452, 452, 452);
+    }
+    if (case12l2==2.5 && posJ1!=12 && posJ2!=12 && posJ3!=12 && posJ4!=12){
         color(14,0);
         printf("%c%c%c%c%c", 452, 452, 452, 452, 473);color(15,0);printf(" %c",277);color(14,0);
-        printf("%c%c%c%c%c", 448, 452, 452, 452,452);
+        printf("%c%c%c%c%c", 448,452, 452, 452, 452);
     }
-    if (case12l2==2.6){
+    if (case12l2==2.5 && (posJ1==12||posJ2==12||posJ3==12||posJ4==12)){
+        color(14,0);
+        printf("%c%c%c%c%c", 452, 452, 452, 452, 473);color(15,0);printf("%c%c",f,277);color(14,0);
+        printf("%c%c%c%c%c", 448,452, 452, 452, 452);
+    }
+    if (case12l2==2.6 && posJ1!=12 && posJ2!=12 && posJ3!=12 && posJ4!=12){
         color(14,0);
         printf("%c%c%c%c%c", 452, 452, 452, 452, 473);color(15,0);printf(" %c",225);color(14,0);
-        printf("%c%c%c%c%c", 448, 452, 452, 452,452);
+        printf("%c%c%c%c%c", 448,452, 452, 452, 452);
     }
-    if (case12l2==3.1){
+    if (case12l2==2.6 && (posJ1==12||posJ2==12||posJ3==12||posJ4==12)){
+        color(14,0);
+        printf("%c%c%c%c%c", 452, 452, 452, 452, 473);color(15,0);printf("%c%c",f,225);color(14,0);
+        printf("%c%c%c%c%c", 448,452, 452, 452, 452);
+    }
+    if (case12l2==3.1 && posJ1!=12 && posJ2!=12 && posJ3!=12 && posJ4!=12){
         color(14,0);
         printf("    %c",435);color(15,0);printf(" %c",292);color(14,0);
         printf("%c%c%c%c%c",448,452,452,452,452);
     }
-    if (case12l2==3.2){
+    if (case12l2==3.1 && (posJ1==12||posJ2==12||posJ3==12||posJ4==12)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,292);color(14,0);
+        printf("%c%c%c%c%c",448,452,452,452,452);
+    }
+    if (case12l2==3.2 && posJ1!=12 && posJ2!=12 && posJ3!=12 && posJ4!=12){
         color(14,0);
         printf("    %c",435);color(15,0);printf(" %c",291);color(14,0);
         printf("%c%c%c%c%c",448,452,452,452,452);
     }
-    if (case12l2==3.3){
+    if (case12l2==3.2 && (posJ1==12||posJ2==12||posJ3==12||posJ4==12)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,291);color(14,0);
+        printf("%c%c%c%c%c",448,452,452,452,452);
+    }
+    if (case12l2==3.3 && posJ1!=12 && posJ2!=12 && posJ3!=12 && posJ4!=12){
         color(14,0);
         printf("    %c",435);color(15,0);printf(" %c",285);color(14,0);
         printf("%c%c%c%c%c",448,452,452,452,452);
     }
-    if (case12l2==3.4){
+    if (case12l2==3.3 && (posJ1==12||posJ2==12||posJ3==12||posJ4==12)){
         color(14,0);
-        printf("    %c",435);color(15,0);printf(" %c",279);color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,285);color(14,0);
         printf("%c%c%c%c%c",448,452,452,452,452);
     }
-    if (case12l2==3.5){
+    if (case12l2==3.4 && posJ1!=12 && posJ2!=12 && posJ3!=12 && posJ4!=12){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",428);color(14,0);
+        printf("%c%c%c%c%c",448,452,452,452,452);
+    }
+    if (case12l2==3.4 && (posJ1==12||posJ2==12||posJ3==12||posJ4==12)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,428);color(14,0);
+        printf("%c%c%c%c%c",448,452,452,452,452);
+    }
+    if (case12l2==3.5 && posJ1!=12 && posJ2!=12 && posJ3!=12 && posJ4!=12){
         color(14,0);
         printf("    %c",435);color(15,0);printf(" %c",277);color(14,0);
         printf("%c%c%c%c%c",448,452,452,452,452);
     }
-    if (case12l2==3.6){
+    if (case12l2==3.5 && (posJ1==12||posJ2==12||posJ3==12||posJ4==12)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,277);color(14,0);
+        printf("%c%c%c%c%c",448,452,452,452,452);
+    }
+    if (case12l2==3.6 && posJ1!=12 && posJ2!=12 && posJ3!=12 && posJ4!=12){
         color(14,0);
         printf("    %c",435);color(15,0);printf(" %c",225);color(14,0);
         printf("%c%c%c%c%c",448,452,452,452,452);
     }
-    if (case12l2==4.1){
+    if (case12l2==3.6 && (posJ1==12||posJ2==12||posJ3==12||posJ4==12)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,225);color(14,0);
+        printf("%c%c%c%c%c",448,452,452,452,452);
+    }
+    if (case12l2==4.1 && posJ1!=12 && posJ2!=12 && posJ3!=12 && posJ4!=12){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",292);color(14,0);
         printf("%c    ",435);
     }
-    if (case12l2==4.2){
+    if (case12l2==4.1 && (posJ1==12||posJ2==12||posJ3==12||posJ4==12)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",292,f);color(14,0);
+        printf("%c    ",435);
+    }
+    if (case12l2==4.2 && posJ1!=12 && posJ2!=12 && posJ3!=12 && posJ4!=12){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",291);color(14,0);
         printf("%c    ",435);
     }
-    if (case12l2==4.3){
+    if (case12l2==4.2 && (posJ1==12||posJ2==12||posJ3==12||posJ4==12)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",291,f);color(14,0);
+        printf("%c    ",435);
+    }
+    if (case12l2==4.3 && posJ1!=12 && posJ2!=12 && posJ3!=12 && posJ4!=12){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",285);color(14,0);
         printf("%c    ",435);
     }
-    if (case12l2==4.4){
+    if (case12l2==4.3 && (posJ1==12||posJ2==12||posJ3==12||posJ4==12)){
         color(14,0);
-        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",279);color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",285,f);color(14,0);
         printf("%c    ",435);
     }
-    if (case12l2==4.5){
+    if (case12l2==4.4 && posJ1!=12 && posJ2!=12 && posJ3!=12 && posJ4!=12){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",428);color(14,0);
+        printf("%c    ",435);
+    }
+    if (case12l2==4.4 && (posJ1==12||posJ2==12||posJ3==12||posJ4==12)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",428,f);color(14,0);
+        printf("%c    ",435);
+    }
+    if (case12l2==4.5 && posJ1!=12 && posJ2!=12 && posJ3!=12 && posJ4!=12){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",277);color(14,0);
         printf("%c    ",435);
     }
-    if (case12l2==4.6){
+    if (case12l2==4.5 && (posJ1==12||posJ2==12||posJ3==12||posJ4==12)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",277,f);color(14,0);
+        printf("%c    ",435);
+    }
+    if (case12l2==4.6 && posJ1!=12 && posJ2!=12 && posJ3!=12 && posJ4!=12){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",225);color(14,0);
+        printf("%c    ",435);
+    }
+    if (case12l2==4.6 && (posJ1==12||posJ2==12||posJ3==12||posJ4==12)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",225,f);color(14,0);
         printf("%c    ",435);
     }
     if (case12l2==5){
@@ -2167,70 +3397,127 @@ int test(double case01,double case03,double case05,double case10,double case11,d
         color(14,0);
         printf("%c%c%c%c%c%c%c%c%c%c%c%c",452,452,452,452,452,452,452,452,452,452,452,452);
     }
-    if (case12l2==7){
+    if (case12l2==7 && posJ1!=12 && posJ2!=12 && posJ3!=12 && posJ4!=12){
         color(14,0);
         printf("    %c  %c%c%c%c%c",435,448,452,452,452,452);
     }
-    if (case12l2==7.1){
+    if (case12l2==7 && (posJ1==12||posJ2==12||posJ3==12||posJ4==12)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",f);color(14,0);printf("%c%c%c%c%c",448,452,452,452,452);
+    }
+    if (case12l2==7.1 && posJ1!=12 && posJ2!=12 && posJ3!=12 && posJ4!=12){
         color(14,0);
         printf("    %c",435);color(15,0);printf(" %c",189);color(14,0);printf("%c%c%c%c%c",448,452,452,452,452);
     }
-    if (case12l2==7.2){
+    if (case12l2==7.1 && (posJ1==12||posJ2==12||posJ3==12||posJ4==12)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,189);color(14,0);printf("%c%c%c%c%c",448,452,452,452,452);
+    }
+    if (case12l2==7.2 && posJ1!=12 && posJ2!=12 && posJ3!=12 && posJ4!=12){
         color(14,0);
         printf("    %c",435);color(15,0);printf(" %c",157);color(14,0);printf("%c%c%c%c%c",448,452,452,452,452);
     }
-    if (case12l2==7.3){
+    if (case12l2==7.2 && (posJ1==12||posJ2==12||posJ3==12||posJ4==12)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,157);color(14,0);printf("%c%c%c%c%c",448,452,452,452,452);
+    }
+    if (case12l2==7.3 && posJ1!=12 && posJ2!=12 && posJ3!=12 && posJ4!=12){
         color(14,0);
         printf("    %c",435);color(15,0);printf(" %c",143);color(14,0);printf("%c%c%c%c%c",448,452,452,452,452);
     }
-    if (case12l2==7.4){
+    if (case12l2==7.3 && (posJ1==12||posJ2==12||posJ3==12||posJ4==12)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,143);color(14,0);printf("%c%c%c%c%c",448,452,452,452,452);
+    }
+    if (case12l2==7.4 && posJ1!=12 && posJ2!=12 && posJ3!=12 && posJ4!=12){
         color(14,0);
         printf("    %c",435);color(15,0);printf(" %c",37);color(14,0);printf("%c%c%c%c%c",448,452,452,452,452);
     }
-    if (case12l2==7.5){
+    if (case12l2==7.4 && (posJ1==12||posJ2==12||posJ3==12||posJ4==12)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,37);color(14,0);printf("%c%c%c%c%c",448,452,452,452,452);
+    }
+    if (case12l2==7.5 && posJ1!=12 && posJ2!=12 && posJ3!=12 && posJ4!=12){
         color(14,0);
         printf("    %c",435);color(15,0);printf(" %c",31);color(14,0);printf("%c%c%c%c%c",448,452,452,452,452);
     }
-    if (case12l2==7.6){
+    if (case12l2==7.5 && (posJ1==12||posJ2==12||posJ3==12||posJ4==12)){
         color(14,0);
-        printf("    %c",435);color(15,0);printf(" %c",15);color(14,0);printf("%c%c%c%c%c",448,452,452,452,452);
+        printf("    %c",435);color(15,0);printf("%c%c",f,31);color(14,0);printf("%c%c%c%c%c",448,452,452,452,452);
     }
-    if (case12l2==8){
+    if (case12l2==7.6 && posJ1!=12 && posJ2!=12 && posJ3!=12 && posJ4!=12){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",459);color(14,0);printf("%c%c%c%c%c",448,452,452,452,452);
+    }
+    if (case12l2==7.6 && (posJ1==12||posJ2==12||posJ3==12||posJ4==12)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,459);color(14,0);printf("%c%c%c%c%c",448,452,452,452,452);
+    }
+    if (case12l2==8 && posJ1!=12 && posJ2!=12 && posJ3!=12 && posJ4!=12){
         color(14,0);
         printf("%c%c%c%c%c  %c    ",452,452,452,452,473,435);
     }
-    if (case12l2==8.1){
+    if (case12l2==8 && (posJ1==12||posJ2==12||posJ3==12||posJ4==12)){
         color(14,0);
-        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",189);printf("%c    ",435);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",f);color(14,0);printf("%c    ",435);
     }
-    if (case12l2==8.2){
+    if (case12l2==8.1 && posJ1!=12 && posJ2!=12 && posJ3!=12 && posJ4!=12){
         color(14,0);
-        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",157);printf("%c    ",435);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",189);color(14,0);printf("%c    ",435);
     }
-    if (case12l2==8.3){
+    if (case12l2==8.1 && (posJ1==12||posJ2==12||posJ3==12||posJ4==12)){
         color(14,0);
-        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",143);printf("%c    ",435);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",189);color(14,0);printf("%c    ",435);
     }
-    if (case12l2==8.4){
+    if (case12l2==8.2 && posJ1!=12 && posJ2!=12 && posJ3!=12 && posJ4!=12){
         color(14,0);
-        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",37);printf("%c    ",435);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",157);color(14,0);printf("%c    ",435);
     }
-    if (case12l2==8.5){
+    if (case12l2==8.2 && (posJ1==12||posJ2==12||posJ3==12||posJ4==12)){
         color(14,0);
-        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",31);printf("%c    ",435);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",157);color(14,0);printf("%c    ",435);
     }
-    if (case12l2==8.6){
+    if (case12l2==8.3 && posJ1!=12 && posJ2!=12 && posJ3!=12 && posJ4!=12){
         color(14,0);
-        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",15);printf("%c    ",435);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",143);color(14,0);printf("%c    ",435);
+    }
+    if (case12l2==8.3 && (posJ1==12||posJ2==12||posJ3==12||posJ4==12)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",143);color(14,0);printf("%c    ",435);
+    }
+    if (case12l2==8.4 && posJ1!=12 && posJ2!=12 && posJ3!=12 && posJ4!=12){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",37);color(14,0);printf("%c    ",435);
+    }
+    if (case12l2==8.4 && (posJ1==12||posJ2==12||posJ3==12||posJ4==12)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",37);color(14,0);printf("%c    ",435);
+    }
+    if (case12l2==8.5 && posJ1!=12 && posJ2!=12 && posJ3!=12 && posJ4!=12){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",31);color(14,0);printf("%c    ",435);
+    }
+    if (case12l2==8.5 && (posJ1==12||posJ2==12||posJ3==12||posJ4==12)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",31,f);color(14,0);printf("%c    ",435);
+    }
+    if (case12l2==8.6 && posJ1!=12 && posJ2!=12 && posJ3!=12 && posJ4!=12){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",459);color(14,0);printf("%c    ",435);
+    }
+    if (case12l2==8.6 && (posJ1==12||posJ2==12||posJ3==12||posJ4==12)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",459,f);color(14,0);printf("%c    ",435);
     }
     if (case12l2>=9 && case12l2<10){
         color(14,0);
         printf("    %c%c%c%c%c%c%c%c",474,452,452,452,452,452,452,452);
     }
-    if (case12l2>=10 && case12l2<11){
+    if (case12l2>=10 && case12l2<12){
         color(14,0);
         printf("%c%c%c%c%c%c%c%c    ",452,452,452,452,452,452,452,447);
     }
+    f=testposition(posJ1,posJ2,posJ3,posJ4,13,p1,p2,p3,p4);
     if (case13l2==0){
         printf("           ");
     }
@@ -2238,94 +3525,184 @@ int test(double case01,double case03,double case05,double case10,double case11,d
         color(14,0);
         printf("%c%c%c%c%c%c%c%c%c%c%c",452,452,452,452,452,452,452,452,452,452,452);
     }
-    if (case13l2==2.1){
+    if (case13l2==2.1 && posJ1!=13 && posJ2!=13 && posJ3!=13 && posJ4!=13){
         color(14,0);
         printf("%c%c%c%c%c", 452, 452, 452, 452, 473);color(15,0);printf(" %c",292);color(14,0);
         printf("%c%c%c%c", 448, 452, 452, 452);
     }
-    if (case13l2==2.2){
+    if (case13l2==2.1 && (posJ1==13||posJ2==13||posJ3==13||posJ4==13)){
+        color(14,0);
+        printf("%c%c%c%c%c", 452, 452, 452, 452, 473);color(15,0);printf("%c%c",f,292);color(14,0);
+        printf("%c%c%c%c", 448, 452, 452, 452);
+    }
+    if (case13l2==2.2 && posJ1!=13 && posJ2!=13 && posJ3!=13 && posJ4!=13){
         color(14,0);
         printf("%c%c%c%c%c", 452, 452, 452, 452, 473);color(15,0);printf(" %c",291);color(14,0);
         printf("%c%c%c%c", 448, 452, 452, 452);
     }
-    if (case13l2==2.3){
+    if (case13l2==2.2 && (posJ1==13||posJ2==13||posJ3==13||posJ4==13)){
+        color(14,0);
+        printf("%c%c%c%c%c", 452, 452, 452, 452, 473);color(15,0);printf("%c%c",f,291);color(14,0);
+        printf("%c%c%c%c", 448, 452, 452, 452);
+    }
+    if (case13l2==2.3 && posJ1!=13 && posJ2!=13 && posJ3!=13 && posJ4!=13){
         color(14,0);
         printf("%c%c%c%c%c", 452, 452, 452, 452, 473);color(15,0);printf(" %c",285);color(14,0);
         printf("%c%c%c%c", 448, 452, 452, 452);
     }
-    if (case13l2==2.4){
+    if (case13l2==2.3 && (posJ1==13||posJ2==13||posJ3==13||posJ4==13)){
         color(14,0);
-        printf("%c%c%c%c%c", 452, 452, 452, 452, 473);color(15,0);printf(" %c",279);color(14,0);
+        printf("%c%c%c%c%c", 452, 452, 452, 452, 473);color(15,0);printf("%c%c",f,285);color(14,0);
         printf("%c%c%c%c", 448, 452, 452, 452);
     }
-    if (case13l2==2.5){
+    if (case13l2==2.4 && posJ1!=13 && posJ2!=13 && posJ3!=13 && posJ4!=13){
+        color(14,0);
+        printf("%c%c%c%c%c", 452, 452, 452, 452, 473);color(15,0);printf(" %c",428);color(14,0);
+        printf("%c%c%c%c", 448, 452, 452, 452);
+    }
+    if (case13l2==2.4 && (posJ1==13||posJ2==13||posJ3==13||posJ4==13)){
+        color(14,0);
+        printf("%c%c%c%c%c", 452, 452, 452, 452, 473);color(15,0);printf("%c%c",f,428);color(14,0);
+        printf("%c%c%c%c", 448, 452, 452, 452);
+    }
+    if (case13l2==2.5 && posJ1!=13 && posJ2!=13 && posJ3!=13 && posJ4!=13){
         color(14,0);
         printf("%c%c%c%c%c", 452, 452, 452, 452, 473);color(15,0);printf(" %c",277);color(14,0);
         printf("%c%c%c%c", 448, 452, 452, 452);
     }
-    if (case13l2==2.6){
+    if (case13l2==2.5 && (posJ1==13||posJ2==13||posJ3==13||posJ4==13)){
+        color(14,0);
+        printf("%c%c%c%c%c", 452, 452, 452, 452, 473);color(15,0);printf("%c%c",f,277);color(14,0);
+        printf("%c%c%c%c", 448, 452, 452, 452);
+    }
+    if (case13l2==2.6 && posJ1!=13 && posJ2!=13 && posJ3!=13 && posJ4!=13){
         color(14,0);
         printf("%c%c%c%c%c", 452, 452, 452, 452, 473);color(15,0);printf(" %c",225);color(14,0);
         printf("%c%c%c%c", 448, 452, 452, 452);
     }
-    if (case13l2==3.1){
+    if (case13l2==2.6 && (posJ1==13||posJ2==13||posJ3==13||posJ4==13)){
+        color(14,0);
+        printf("%c%c%c%c%c", 452, 452, 452, 452, 473);color(15,0);printf("%c%c",f,225);color(14,0);
+        printf("%c%c%c%c", 448, 452, 452, 452);
+    }
+    if (case13l2==3.1 && posJ1!=13 && posJ2!=13 && posJ3!=13 && posJ4!=13){
         color(14,0);
         printf("    %c",435);color(15,0);printf(" %c",292);color(14,0);
         printf("%c%c%c%c",448,452,452,452);
     }
-    if (case13l2==3.2){
+    if (case13l2==3.1 && (posJ1==13||posJ2==13||posJ3==13||posJ4==13)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,292);color(14,0);
+        printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case13l2==3.2 && posJ1!=13 && posJ2!=13 && posJ3!=13 && posJ4!=13){
         color(14,0);
         printf("    %c",435);color(15,0);printf(" %c",291);color(14,0);
         printf("%c%c%c%c",448,452,452,452);
     }
-    if (case13l2==3.3){
+    if (case13l2==3.2 && (posJ1==13||posJ2==13||posJ3==13||posJ4==13)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,291);color(14,0);
+        printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case13l2==3.3 && posJ1!=13 && posJ2!=13 && posJ3!=13 && posJ4!=13){
         color(14,0);
         printf("    %c",435);color(15,0);printf(" %c",285);color(14,0);
         printf("%c%c%c%c",448,452,452,452);
     }
-    if (case13l2==3.4){
+    if (case13l2==3.3 && (posJ1==13||posJ2==13||posJ3==13||posJ4==13)){
         color(14,0);
-        printf("    %c",435);color(15,0);printf(" %c",279);color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,285);color(14,0);
         printf("%c%c%c%c",448,452,452,452);
     }
-    if (case13l2==3.5){
+    if (case13l2==3.4 && posJ1!=13 && posJ2!=13 && posJ3!=13 && posJ4!=13){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",428);color(14,0);
+        printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case13l2==3.4 && (posJ1==13||posJ2==13||posJ3==13||posJ4==13)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,428);color(14,0);
+        printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case13l2==3.5 && posJ1!=13 && posJ2!=13 && posJ3!=13 && posJ4!=13){
         color(14,0);
         printf("    %c",435);color(15,0);printf(" %c",277);color(14,0);
         printf("%c%c%c%c",448,452,452,452);
     }
-    if (case13l2==3.6){
+    if (case13l2==3.5 && (posJ1==13||posJ2==13||posJ3==13||posJ4==13)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,277);color(14,0);
+        printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case13l2==3.6 && posJ1!=13 && posJ2!=13 && posJ3!=13 && posJ4!=13){
         color(14,0);
         printf("    %c",435);color(15,0);printf(" %c",225);color(14,0);
         printf("%c%c%c%c",448,452,452,452);
     }
-    if (case13l2==4.1){
+    if (case13l2==3.6 && (posJ1==13||posJ2==13||posJ3==13||posJ4==13)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,225);color(14,0);
+        printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case13l2==4.1 && posJ1!=13 && posJ2!=13 && posJ3!=13 && posJ4!=13){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",292);color(14,0);
         printf("%c   ",435);
     }
-    if (case13l2==4.2){
+    if (case13l2==4.1 && (posJ1==13||posJ2==13||posJ3==13||posJ4==13)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",292,f);color(14,0);
+        printf("%c   ",435);
+    }
+    if (case13l2==4.2 && posJ1!=13 && posJ2!=13 && posJ3!=13 && posJ4!=13){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",291);color(14,0);
         printf("%c   ",435);
     }
-    if (case13l2==4.3){
+    if (case13l2==4.2 && (posJ1==13||posJ2==13||posJ3==13||posJ4==13)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",291,f);color(14,0);
+        printf("%c   ",435);
+    }
+    if (case13l2==4.3 && posJ1!=13 && posJ2!=13 && posJ3!=13 && posJ4!=13){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",285);color(14,0);
         printf("%c   ",435);
     }
-    if (case13l2==4.4){
+    if (case13l2==4.3 && (posJ1==13||posJ2==13||posJ3==13||posJ4==13)){
         color(14,0);
-        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",279);color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",285,f);color(14,0);
         printf("%c   ",435);
     }
-    if (case13l2==4.5){
+    if (case13l2==4.4 && posJ1!=13 && posJ2!=13 && posJ3!=13 && posJ4!=13){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",428);color(14,0);
+        printf("%c   ",435);
+    }
+    if (case13l2==4.4 && (posJ1==13||posJ2==13||posJ3==13||posJ4==13)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",428,f);color(14,0);
+        printf("%c   ",435);
+    }
+    if (case13l2==4.5 && posJ1!=13 && posJ2!=13 && posJ3!=13 && posJ4!=13){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",277);color(14,0);
         printf("%c   ",435);
     }
-    if (case13l2==4.6){
+    if (case13l2==4.5 && (posJ1==13||posJ2==13||posJ3==13||posJ4==13)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",277,f);color(14,0);
+        printf("%c   ",435);
+    }
+    if (case13l2==4.6 && posJ1!=13 && posJ2!=13 && posJ3!=13 && posJ4!=13){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",225);color(14,0);
+        printf("%c   ",435);
+    }
+    if (case13l2==4.6 && (posJ1==13||posJ2==13||posJ3==13||posJ4==13)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",225,f);color(14,0);
         printf("%c   ",435);
     }
     if (case13l2==5){
@@ -2336,70 +3713,127 @@ int test(double case01,double case03,double case05,double case10,double case11,d
         color(14,0);
         printf("%c%c%c%c%c%c%c%c%c%c%c",452,452,452,452,452,452,452,452,452,452,452);
     }
-    if (case13l2==7){
+    if (case13l2==7 && posJ1!=13 && posJ2!=13 && posJ3!=13 && posJ4!=13){
         color(14,0);
         printf("    %c  %c%c%c%c",435,448,452,452,452);
     }
-    if (case13l2==7.1){
+    if (case13l2==7 && (posJ1==13||posJ2==13||posJ3==13||posJ4==13)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",f);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case13l2==7.1 && posJ1!=13 && posJ2!=13 && posJ3!=13 && posJ4!=13){
         color(14,0);
         printf("    %c",435);color(15,0);printf(" %c",189);color(14,0);printf("%c%c%c%c",448,452,452,452);
     }
-    if (case13l2==7.2){
+    if (case13l2==7.1 && (posJ1==13||posJ2==13||posJ3==13||posJ4==13)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,189);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case13l2==7.2 && posJ1!=13 && posJ2!=13 && posJ3!=13 && posJ4!=13){
         color(14,0);
         printf("    %c",435);color(15,0);printf(" %c",157);color(14,0);printf("%c%c%c%c",448,452,452,452);
     }
-    if (case13l2==7.3){
+    if (case13l2==7.2 && (posJ1==13||posJ2==13||posJ3==13||posJ4==13)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,157);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case13l2==7.3 && posJ1!=13 && posJ2!=13 && posJ3!=13 && posJ4!=13){
         color(14,0);
         printf("    %c",435);color(15,0);printf(" %c",143);color(14,0);printf("%c%c%c%c",448,452,452,452);
     }
-    if (case13l2==7.4){
+    if (case13l2==7.3 && (posJ1==13||posJ2==13||posJ3==13||posJ4==13)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,143);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case13l2==7.4 && posJ1!=13 && posJ2!=13 && posJ3!=13 && posJ4!=13){
         color(14,0);
         printf("    %c",435);color(15,0);printf(" %c",37);color(14,0);printf("%c%c%c%c",448,452,452,452);
     }
-    if (case13l2==7.5){
+    if (case13l2==7.4 && (posJ1==13||posJ2==13||posJ3==13||posJ4==13)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,37);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case13l2==7.5 && posJ1!=13 && posJ2!=13 && posJ3!=13 && posJ4!=13){
         color(14,0);
         printf("    %c",435);color(15,0);printf(" %c",31);color(14,0);printf("%c%c%c%c",448,452,452,452);
     }
-    if (case13l2==7.6){
+    if (case13l2==7.5 && (posJ1==13||posJ2==13||posJ3==13||posJ4==13)){
         color(14,0);
-        printf("    %c",435);color(15,0);printf(" %c",15);color(14,0);printf("%c%c%c%c",448,452,452,452);
+        printf("    %c",435);color(15,0);printf("%c%c",f,31);color(14,0);printf("%c%c%c%c",448,452,452,452);
     }
-    if (case13l2==8){
+    if (case13l2==7.6 && posJ1!=13 && posJ2!=13 && posJ3!=13 && posJ4!=13){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",459);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case13l2==7.6 && (posJ1==13||posJ2==13||posJ3==13||posJ4==13)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,459);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case13l2==8 && posJ1!=13 && posJ2!=13 && posJ3!=13 && posJ4!=13){
         color(14,0);
         printf("%c%c%c%c%c  %c   ",452,452,452,452,473,435);
     }
-    if (case13l2==8.1){
+    if (case13l2==8 && (posJ1==13||posJ2==13||posJ3==13||posJ4==13)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",f);color(14,0);printf("%c   ",435);
+    }
+    if (case13l2==8.1 && posJ1!=13 && posJ2!=13 && posJ3!=13 && posJ4!=13){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",189);color(14,0);printf("%c   ",435);
     }
-    if (case13l2==8.2){
+    if (case13l2==8.1 && (posJ1==13||posJ2==13||posJ3==13||posJ4==13)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",189,f);color(14,0);printf("%c   ",435);
+    }
+    if (case13l2==8.2 && posJ1!=13 && posJ2!=13 && posJ3!=13 && posJ4!=13){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",157);color(14,0);printf("%c   ",435);
     }
-    if (case13l2==8.3){
+    if (case13l2==8.2 && (posJ1==13||posJ2==13||posJ3==13||posJ4==13)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",157,f);color(14,0);printf("%c   ",435);
+    }
+    if (case13l2==8.3 && posJ1!=13 && posJ2!=13 && posJ3!=13 && posJ4!=13){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",143);color(14,0);printf("%c   ",435);
     }
-    if (case13l2==8.4){
+    if (case13l2==8.3 && (posJ1==13||posJ2==13||posJ3==13||posJ4==13)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",143,f);color(14,0);printf("%c   ",435);
+    }
+    if (case13l2==8.4 && posJ1!=13 && posJ2!=13 && posJ3!=13 && posJ4!=13){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",37);color(14,0);printf("%c   ",435);
     }
-    if (case13l2==8.5){
+    if (case13l2==8.4 && (posJ1==13||posJ2==13||posJ3==13||posJ4==13)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",37,f);color(14,0);printf("%c   ",435);
+    }
+    if (case13l2==8.5 && posJ1!=13 && posJ2!=13 && posJ3!=13 && posJ4!=13){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",31);color(14,0);printf("%c   ",435);
     }
-    if (case13l2==8.6){
+    if (case13l2==8.5 && (posJ1==13||posJ2==13||posJ3==13||posJ4==13)){
         color(14,0);
-        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",189);color(14,0);printf("%c   ",435);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",31,f);color(14,0);printf("%c   ",435);
+    }
+    if (case13l2==8.6 && posJ1!=13 && posJ2!=13 && posJ3!=13 && posJ4!=13){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",459);color(14,0);printf("%c   ",435);
+    }
+    if (case13l2==8.6 && (posJ1==13||posJ2==13||posJ3==13||posJ4==13)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",459,f);color(14,0);printf("%c   ",435);
     }
     if (case13l2>=9 && case13l2<10){
         color(14,0);
         printf("    %c%c%c%c%c%c%c",474,452,452,452,452,452,452);
     }
-    if (case13l2>=10 && case13l2<11){
+    if (case13l2>=10 && case13l2<13){
         color(14,0);
         printf("%c%c%c%c%c%c%c%c   ",452,452,452,452,452,452,452,447);
     }
+    f=testposition(posJ1,posJ2,posJ3,posJ4,14,p1,p2,p3,p4);
     if (case14l2==0){
         color(14,0);
         printf("              ");
@@ -2408,94 +3842,184 @@ int test(double case01,double case03,double case05,double case10,double case11,d
         color(14,0);
         printf("%c%c%c%c%c%c%c%c%c%c%c%c%c%c",452,452,452,452,452,452,452,452,452,452,452,452,452,452);
     }
-    if (case14l2==2.1){
+    if (case14l2==2.1 && posJ1!=14 && posJ2!=14 && posJ3!=14 && posJ4!=14){
         color(14,0);
-        printf("%c%c%c%c%c%c",452,452, 452, 452, 452, 473);color(15,0);printf(" %c",292);color(14,0);
-        printf("%c%c%c%c%c%c", 448, 452, 452, 452,452,452);
+        printf("%c%c%c%c%c%c",452, 452, 452, 452, 452, 473);color(15,0);printf(" %c",292);color(14,0);
+        printf("%c%c%c%c%c%c", 448,452,452, 452, 452, 452);
     }
-    if (case14l2==2.2){
+    if (case14l2==2.1 && (posJ1==14||posJ2==14||posJ3==14||posJ4==14)){
+        color(14,0);
+        printf("%c%c%c%c%c%c",452, 452, 452, 452, 452, 473);color(15,0);printf("%c%c",f,292);color(14,0);
+        printf("%c%c%c%c%c%c", 448,452,452, 452, 452, 452);
+    }
+    if (case14l2==2.2 && posJ1!=14 && posJ2!=14 && posJ3!=14 && posJ4!=14){
         color(14,0);
         printf("%c%c%c%c%c%c",452, 452, 452, 452, 452, 473);color(15,0);printf(" %c",291);color(14,0);
-        printf("%c%c%c%c%c%c", 448, 452, 452, 452,452,452);
+        printf("%c%c%c%c%c%c", 448,452,452, 452, 452, 452);
     }
-    if (case14l2==2.3){
+    if (case14l2==2.2 && (posJ1==14||posJ2==14||posJ3==14||posJ4==14)){
         color(14,0);
-        printf("%c%c%c%c%c%c",452, 452, 452, 452, 452, 473);color(15,0);printf(" %c",285);color(14,0);
-        printf("%c%c%c%c%c%c", 448, 452, 452, 452,452,452);
+        printf("%c%c%c%c%c%c",452, 452, 452, 452, 452, 473);color(15,0);printf("%c%c",f,291);color(14,0);
+        printf("%c%c%c%c%c%c", 448,452,452, 452, 452, 452);
     }
-    if (case14l2==2.4){
+    if (case14l2==2.3 && posJ1!=14 && posJ2!=14 && posJ3!=14 && posJ4!=14){
         color(14,0);
-        printf("%c%c%c%c%c%c",452, 452, 452, 452, 452, 473);color(15,0);printf(" %c",279);color(14,0);
-        printf("%c%c%c%c%c%c", 448, 452, 452, 452,452,452);
+        printf("%c%c%c%c%c", 452, 452, 452, 452, 473);color(15,0);printf(" %c",285);color(14,0);
+        printf("%c%c%c%c%c", 448,452, 452, 452, 452);
     }
-    if (case14l2==2.5){
+    if (case14l2==2.3 && (posJ1==14||posJ2==14||posJ3==14||posJ4==14)){
         color(14,0);
-        printf("%c%c%c%c%c%c", 452,452, 452, 452, 452, 473);color(15,0);printf(" %c",277);color(14,0);
-        printf("%c%c%c%c%c%c", 448, 452, 452, 452,452,452);
+        printf("%c%c%c%c%c%c",452, 452, 452, 452, 452, 473);color(15,0);printf("%c%c",f,285);color(14,0);
+        printf("%c%c%c%c%c%c", 448,452,452, 452, 452, 452);
     }
-    if (case14l2==2.6){
+    if (case14l2==2.4 && posJ1!=14 && posJ2!=14 && posJ3!=14 && posJ4!=14){
+        color(14,0);
+        printf("%c%c%c%c%c%c",452, 452, 452, 452, 452, 473);color(15,0);printf(" %c",428);color(14,0);
+        printf("%c%c%c%c%c%c", 448,452,452, 452, 452, 452);
+    }
+    if (case14l2==2.4 && (posJ1==14||posJ2==14||posJ3==14||posJ4==14)){
+        color(14,0);
+        printf("%c%c%c%c%c%c",452, 452, 452, 452, 452, 473);color(15,0);printf("%c%c",f,428);color(14,0);
+        printf("%c%c%c%c%c%c", 448,452,452, 452, 452, 452);
+    }
+    if (case14l2==2.5 && posJ1!=14 && posJ2!=14 && posJ3!=14 && posJ4!=14){
+        color(14,0);
+        printf("%c%c%c%c%c%c",452, 452, 452, 452, 452, 473);color(15,0);printf(" %c",277);color(14,0);
+        printf("%c%c%c%c%c%c", 448,452,452, 452, 452, 452);
+    }
+    if (case14l2==2.5 && (posJ1==14||posJ2==14||posJ3==14||posJ4==14)){
+        color(14,0);
+        printf("%c%c%c%c%c%c",452, 452, 452, 452, 452, 473);color(15,0);printf("%c%c",f,277);color(14,0);
+        printf("%c%c%c%c%c%c", 448,452,452, 452, 452, 452);
+    }
+    if (case14l2==2.6 && posJ1!=14 && posJ2!=14 && posJ3!=14 && posJ4!=14){
         color(14,0);
         printf("%c%c%c%c%c%c",452, 452, 452, 452, 452, 473);color(15,0);printf(" %c",225);color(14,0);
-        printf("%c%c%c%c%c%c", 448, 452, 452, 452,452,452);
+        printf("%c%c%c%c%c%c", 448,452,452, 452, 452, 452);
     }
-    if (case14l2==3.1){
+    if (case14l2==2.6 && (posJ1==14||posJ2==14||posJ3==14||posJ4==14)){
+        color(14,0);
+        printf("%c%c%c%c%c%c",452, 452, 452, 452, 452, 473);color(15,0);printf("%c%c",f,225);color(14,0);
+        printf("%c%c%c%c%c%c", 448,452, 452, 452, 452,452);
+    }
+    if (case14l2==3.1 && posJ1!=14 && posJ2!=14 && posJ3!=14 && posJ4!=14){
         color(14,0);
         printf("     %c",435);color(15,0);printf(" %c",292);color(14,0);
         printf("%c%c%c%c%c%c",448,452,452,452,452,452);
     }
-    if (case14l2==3.2){
+    if (case14l2==3.1 && (posJ1==14||posJ2==14||posJ3==14||posJ4==14)){
+        color(14,0);
+        printf("     %c",435);color(15,0);printf("%c%c",f,292);color(14,0);
+        printf("%c%c%c%c%c%c",448,452,452,452,452,452);
+    }
+    if (case14l2==3.2 && posJ1!=14 && posJ2!=14 && posJ3!=14 && posJ4!=14){
         color(14,0);
         printf("     %c",435);color(15,0);printf(" %c",291);color(14,0);
         printf("%c%c%c%c%c%c",448,452,452,452,452,452);
     }
-    if (case14l2==3.3){
+    if (case14l2==3.2 && (posJ1==14||posJ2==14||posJ3==14||posJ4==14)){
+        color(14,0);
+        printf("     %c",435);color(15,0);printf("%c%c",f,291);color(14,0);
+        printf("%c%c%c%c%c%c",448,452,452,452,452,452);
+    }
+    if (case14l2==3.3 && posJ1!=14 && posJ2!=14 && posJ3!=14 && posJ4!=14){
         color(14,0);
         printf("     %c",435);color(15,0);printf(" %c",285);color(14,0);
         printf("%c%c%c%c%c%c",448,452,452,452,452,452);
     }
-    if (case14l2==3.4){
+    if (case14l2==3.3 && (posJ1==14||posJ2==14||posJ3==14||posJ4==14)){
         color(14,0);
-        printf("     %c",435);color(15,0);printf(" %c",279);color(14,0);
+        printf("     %c",435);color(15,0);printf("%c%c",f,285);color(14,0);
         printf("%c%c%c%c%c%c",448,452,452,452,452,452);
     }
-    if (case14l2==3.5){
+    if (case14l2==3.4 && posJ1!=14 && posJ2!=14 && posJ3!=14 && posJ4!=14){
+        color(14,0);
+        printf("     %c",435);color(15,0);printf(" %c",428);color(14,0);
+        printf("%c%c%c%c%c%c",448,452,452,452,452,452);
+    }
+    if (case14l2==3.4 && (posJ1==14||posJ2==14||posJ3==14||posJ4==14)){
+        color(14,0);
+        printf("     %c",435);color(15,0);printf("%c%c",f,428);color(14,0);
+        printf("%c%c%c%c%c%c",448,452,452,452,452,452);
+    }
+    if (case14l2==3.5 && posJ1!=14 && posJ2!=14 && posJ3!=14 && posJ4!=14){
         color(14,0);
         printf("     %c",435);color(15,0);printf(" %c",277);color(14,0);
         printf("%c%c%c%c%c%c",448,452,452,452,452,452);
     }
-    if (case14l2==3.6){
+    if (case14l2==3.5 && (posJ1==14||posJ2==14||posJ3==14||posJ4==14)){
+        color(14,0);
+        printf("     %c",435);color(15,0);printf("%c%c",f,277);color(14,0);
+        printf("%c%c%c%c%c%c",448,452,452,452,452,452);
+    }
+    if (case14l2==3.6 && posJ1!=14 && posJ2!=14 && posJ3!=14 && posJ4!=14){
         color(14,0);
         printf("     %c",435);color(15,0);printf(" %c",225);color(14,0);
         printf("%c%c%c%c%c%c",448,452,452,452,452,452);
     }
-    if (case14l2==4.1){
+    if (case14l2==3.6 && (posJ1==14||posJ2==14||posJ3==14||posJ4==14)){
+        color(14,0);
+        printf("     %c",435);color(15,0);printf("%c%c",f,225);color(14,0);
+        printf("%c%c%c%c%c%c",448,452,452,452,452,452);
+    }
+    if (case14l2==4.1 && posJ1!=14 && posJ2!=14 && posJ3!=14 && posJ4!=14){
         color(14,0);
         printf("%c%c%c%c%c%c",452,452,452,452,452,473);color(15,0);printf("%c ",292);color(14,0);
         printf("%c     ",435);
     }
-    if (case14l2==4.2){
+    if (case14l2==4.1 && (posJ1==14||posJ2==14||posJ3==14||posJ4==14)){
+        color(14,0);
+        printf("%c%c%c%c%c%c",452,452,452,452,452,473);color(15,0);printf("%c%c",292,f);color(14,0);
+        printf("%c     ",435);
+    }
+    if (case14l2==4.2 && posJ1!=14 && posJ2!=14 && posJ3!=14 && posJ4!=14){
         color(14,0);
         printf("%c%c%c%c%c%c",452,452,452,452,452,473);color(15,0);printf("%c ",291);color(14,0);
         printf("%c     ",435);
     }
-    if (case14l2==4.3){
+    if (case14l2==4.2 && (posJ1==14||posJ2==14||posJ3==14||posJ4==14)){
+        color(14,0);
+        printf("%c%c%c%c%c%c",452,452,452,452,452,473);color(15,0);printf("%c%c",291,f);color(14,0);
+        printf("%c     ",435);
+    }
+    if (case14l2==4.3 && posJ1!=14 && posJ2!=14 && posJ3!=14 && posJ4!=14){
         color(14,0);
         printf("%c%c%c%c%c%c",452,452,452,452,452,473);color(15,0);printf("%c ",285);color(14,0);
         printf("%c     ",435);
     }
-    if (case14l2==4.4){
+    if (case14l2==4.3 && (posJ1==14||posJ2==14||posJ3==14||posJ4==14)){
         color(14,0);
-        printf("%c%c%c%c%c%c",452,452,452,452,452,473);color(15,0);printf("%c ",279);color(14,0);
+        printf("%c%c%c%c%c%c",452,452,452,452,452,473);color(15,0);printf("%c%c",285,f);color(14,0);
         printf("%c     ",435);
     }
-    if (case14l2==4.5){
+    if (case14l2==4.4 && posJ1!=14 && posJ2!=14 && posJ3!=14 && posJ4!=14){
+        color(14,0);
+        printf("%c%c%c%c%c%c",452,452,452,452,452,473);color(15,0);printf("%c ",428);color(14,0);
+        printf("%c     ",435);
+    }
+    if (case14l2==4.4 && (posJ1==14||posJ2==14||posJ3==14||posJ4==14)){
+        color(14,0);
+        printf("%c%c%c%c%c%c",452,452,452,452,452,473);color(15,0);printf("%c%c",428,f);color(14,0);
+        printf("%c     ",435);
+    }
+    if (case14l2==4.5 && posJ1!=14 && posJ2!=14 && posJ3!=14 && posJ4!=14){
         color(14,0);
         printf("%c%c%c%c%c%c",452,452,452,452,452,473);color(15,0);printf("%c ",277);color(14,0);
         printf("%c     ",435);
     }
-    if (case14l2==4.6){
+    if (case14l2==4.5 && (posJ1==14||posJ2==14||posJ3==14||posJ4==14)){
+        color(14,0);
+        printf("%c%c%c%c%c%c",452,452,452,452,452,473);color(15,0);printf("%c%c",277,f);color(14,0);
+        printf("%c     ",435);
+    }
+    if (case14l2==4.6 && posJ1!=14 && posJ2!=14 && posJ3!=14 && posJ4!=14){
         color(14,0);
         printf("%c%c%c%c%c%c",452,452,452,452,452,473);color(15,0);printf("%c ",225);color(14,0);
+        printf("%c     ",435);
+    }
+    if (case14l2==4.6 && (posJ1==14||posJ2==14||posJ3==14||posJ4==14)){
+        color(14,0);
+        printf("%c%c%c%c%c%c",452,452,452,452,452,473);color(15,0);printf("%c%c",225,f);color(14,0);
         printf("%c     ",435);
     }
     if (case14l2==5){
@@ -2506,70 +4030,127 @@ int test(double case01,double case03,double case05,double case10,double case11,d
         color(14,0);
         printf("%c%c%c%c%c%c%c%c%c%c%c%c%c%c",452,452,452,452,452,452,452,452,452,452,452,452,452,452);
     }
-    if (case14l2==7){
+    if (case14l2==7 && posJ1!=14 && posJ2!=14 && posJ3!=14 && posJ4!=14){
         color(14,0);
         printf("     %c  %c%c%c%c%c%c",435,448,452,452,452,452,452);
     }
-    if (case14l2==7.1){
+    if (case14l2==7 && (posJ1==14||posJ2==14||posJ3==14||posJ4==14)){
         color(14,0);
-        printf("     %c",435);color(15,0);printf(" %c",189);color(14,0);printf("%c%c%c%c%c%c",448,452,452,452,452,452);
+        printf("     %c",435);color(15,0);printf(" %c",f);color(14,0);printf("%c%c%c%c%c%c",448,452,452,452,452,452);
     }
-    if (case14l2==7.2){
+    if (case14l2==7.1 && posJ1!=14 && posJ2!=14 && posJ3!=14 && posJ4!=14){
         color(14,0);
-        printf("     %c",435);color(15,0);printf(" %c",157);color(14,0);printf("%c%c%c%c%c%c",448,452,452,452,452,452);
+        printf("     %c",435);color(15,0);printf(" %c",189);color(14,0);printf("%c%c%c%c%c%c",452,448,452,452,452,452);
     }
-    if (case14l2==7.3){
+    if (case14l2==7.1 && (posJ1==14||posJ2==14||posJ3==14||posJ4==14)){
+        color(14,0);
+        printf("     %c",435);color(15,0);printf("%c%c",f,189);color(14,0);printf("%c%c%c%c%c%c",452,448,452,452,452,452);
+    }
+    if (case14l2==7.2 && posJ1!=14 && posJ2!=14 && posJ3!=14 && posJ4!=14){
+        color(14,0);
+        printf("     %c",435);color(15,0);printf(" %c",157);color(14,0);printf("%c%c%c%c%c%c",452,448,452,452,452,452);
+    }
+    if (case14l2==7.2 && (posJ1==14||posJ2==14||posJ3==14||posJ4==14)){
+        color(14,0);
+        printf("     %c",435);color(15,0);printf("%c%c",f,157);color(14,0);printf("%c%c%c%c%c%c",452,448,452,452,452,452);
+    }
+    if (case14l2==7.3 && posJ1!=14 && posJ2!=14 && posJ3!=14 && posJ4!=14){
         color(14,0);
         printf("     %c",435);color(15,0);printf(" %c",143);color(14,0);printf("%c%c%c%c%c%c",448,452,452,452,452,452);
     }
-    if (case14l2==7.4){
+    if (case14l2==7.3 && (posJ1==14||posJ2==14||posJ3==14||posJ4==14)){
         color(14,0);
-        printf("     %c",435);color(15,0);printf(" %c",37);color(14,0);printf("%c%c%c%c%c%c",448,452,452,452,452,452);
+        printf("     %c",435);color(15,0);printf("%c%c",f,143);color(14,0);printf("%c%c%c%c%c%c",452,448,452,452,452,452);
     }
-    if (case14l2==7.5){
+    if (case14l2==7.4 && posJ1!=14 && posJ2!=14 && posJ3!=14 && posJ4!=14){
+        color(14,0);
+        printf("     %c",435);color(15,0);printf(" %c",37);color(14,0);printf("%c%c%c%c%c%c",452,448,452,452,452,452);
+    }
+    if (case14l2==7.4 && (posJ1==14||posJ2==14||posJ3==14||posJ4==14)){
+        color(14,0);
+        printf("     %c",435);color(15,0);printf("%c%c",f,37);color(14,0);printf("%c%c%c%c%c%c",452,448,452,452,452,452);
+    }
+    if (case14l2==7.5 && posJ1!=14 && posJ2!=14 && posJ3!=14 && posJ4!=14){
         color(14,0);
         printf("     %c",435);color(15,0);printf(" %c",31);color(14,0);printf("%c%c%c%c%c%c",448,452,452,452,452,452);
     }
-    if (case14l2==7.6){
+    if (case14l2==7.5 && (posJ1==14||posJ2==14||posJ3==14||posJ4==14)){
         color(14,0);
-        printf("     %c",435);color(15,0);printf(" %c",15);color(14,0);printf("%c%c%c%c%c%c",448,452,452,452,452,452);
+        printf("     %c",435);color(15,0);printf("%c%c",f,31);color(14,0);printf("%c%c%c%c%c%c",448,452,452,452,452,452);
     }
-    if (case14l2==8){
+    if (case14l2==7.6 && posJ1!=14 && posJ2!=14 && posJ3!=14 && posJ4!=14){
+        color(14,0);
+        printf("     %c",435);color(15,0);printf(" %c",459);color(14,0);printf("%c%c%c%c%c%c",448,452,452,452,452,452);
+    }
+    if (case14l2==7.6 && (posJ1==14||posJ2==14||posJ3==14||posJ4==14)){
+        color(14,0);
+        printf("     %c",435);color(15,0);printf("%c%c",f,459);color(14,0);printf("%c%c%c%c%c%c",448,452,452,452,452,452);
+    }
+    if (case14l2==8 && posJ1!=14 && posJ2!=14 && posJ3!=14 && posJ4!=14){
         color(14,0);
         printf("%c%c%c%c%c%c  %c     ",452,452,452,452,452,473,435);
     }
-    if (case14l2==8.1){
+    if (case14l2==8 && (posJ1==14||posJ2==14||posJ3==14||posJ4==14)){
+        color(14,0);
+        printf("%c%c%c%c%c%c",452,452,452,452,452,473);color(15,0);printf("%c ",f);color(14,0);printf("%c     ",435);
+    }
+    if (case14l2==8.1 && posJ1!=14 && posJ2!=14 && posJ3!=14 && posJ4!=14){
         color(14,0);
         printf("%c%c%c%c%c%c",452,452,452,452,452,473);color(15,0);printf("%c ",189);color(14,0);printf("%c     ",435);
     }
-    if (case14l2==8.2){
+    if (case14l2==8.1 && (posJ1==14||posJ2==14||posJ3==14||posJ4==14)){
+        color(14,0);
+        printf("%c%c%c%c%c%c",452,452,452,452,452,473);color(15,0);printf("%c ",189);color(14,0);printf("%c     ",435);
+    }
+    if (case14l2==8.2 && posJ1!=14 && posJ2!=14 && posJ3!=14 && posJ4!=14){
         color(14,0);
         printf("%c%c%c%c%c%c",452,452,452,452,452,473);color(15,0);printf("%c ",157);color(14,0);printf("%c     ",435);
     }
-    if (case14l2==8.3){
+    if (case14l2==8.2 && (posJ1==14||posJ2==14||posJ3==14||posJ4==14)){
+        color(14,0);
+        printf("%c%c%c%c%c%c",452,452,452,452,452,473);color(15,0);printf("%c ",157);color(14,0);printf("%c     ",435);
+    }
+    if (case14l2==8.3 && posJ1!=14 && posJ2!=14 && posJ3!=14 && posJ4!=14){
         color(14,0);
         printf("%c%c%c%c%c%c",452,452,452,452,452,473);color(15,0);printf("%c ",143);color(14,0);printf("%c     ",435);
     }
-    if (case14l2==8.4){
+    if (case14l2==8.3 && (posJ1==14||posJ2==14||posJ3==14||posJ4==14)){
+        color(14,0);
+        printf("%c%c%c%c%c%c",452,452,452,452,452,473);color(15,0);printf("%c ",143);color(14,0);printf("%c     ",435);
+    }
+    if (case14l2==8.4 && posJ1!=14 && posJ2!=14 && posJ3!=14 && posJ4!=14){
         color(14,0);
         printf("%c%c%c%c%c%c",452,452,452,452,452,473);color(15,0);printf("%c ",37);color(14,0);printf("%c     ",435);
     }
-    if (case14l2==8.5){
+    if (case14l2==8.4 && (posJ1==14||posJ2==14||posJ3==14||posJ4==14)){
+        color(14,0);
+        printf("%c%c%c%c%c%c",452,452,452,452,452,473);color(15,0);printf("%c ",37);color(14,0);printf("%c     ",435);
+    }
+    if (case14l2==8.5 && posJ1!=14 && posJ2!=14 && posJ3!=14 && posJ4!=14){
         color(14,0);
         printf("%c%c%c%c%c%c",452,452,452,452,452,473);color(15,0);printf("%c ",31);color(14,0);printf("%c     ",435);
     }
-    if (case14l2==8.6){
+    if (case14l2==8.5 && (posJ1==14||posJ2==14||posJ3==14||posJ4==14)){
         color(14,0);
-        printf("%c%c%c%c%c%c",452,452,452,452,452,473);color(15,0);printf("%c ",15);color(14,0);printf("%c     ",435);
+        printf("%c%c%c%c%c%c",452,452,452,452,452,473);color(15,0);printf("%c%c",31,f);color(14,0);printf("%c     ",435);
+    }
+    if (case14l2==8.6 && posJ1!=14 && posJ2!=14 && posJ3!=14 && posJ4!=14){
+        color(14,0);
+        printf("%c%c%c%c%c%c",452,452,452,452,452,473);color(15,0);printf("%c ",459);color(14,0);printf("%c     ",435);
+    }
+    if (case14l2==8.6 && (posJ1==14||posJ2==14||posJ3==14||posJ4==14)){
+        color(14,0);
+        printf("%c%c%c%c%c%c",452,452,452,452,452,473);color(15,0);printf("%c%c",459,f);color(14,0);printf("%c     ",435);
     }
     if (case14l2>=9 && case14l2<10){
         color(14,0);
         printf("     %c%c%c%c%c%c%c%c%c",474,452,452,452,452,452,452,452,452);
     }
-    if (case14l2>=10 && case14l2<11){
+    if (case14l2>=10 && case14l2<14){
         color(14,0);
         printf("%c%c%c%c%c%c%c%c%c     ",452,452,452,452,452,452,452,452,447);
     }
+    f=testposition(posJ1,posJ2,posJ3,posJ4,15,p1,p2,p3,p4);
     if (case15l2==0){
         printf("           ");
     }
@@ -2577,94 +4158,184 @@ int test(double case01,double case03,double case05,double case10,double case11,d
         color(14,0);
         printf("%c%c%c%c%c%c%c%c%c%c%c",452,452,452,452,452,452,452,452,452,452,452);
     }
-    if (case15l2==2.1){
+    if (case15l2==2.1 && posJ1!=15 && posJ2!=15 && posJ3!=15 && posJ4!=15){
         color(14,0);
         printf("%c%c%c%c%c", 452, 452, 452, 452, 473);color(15,0);printf(" %c",292);color(14,0);
         printf("%c%c%c%c", 448, 452, 452, 452);
     }
-    if (case15l2==2.2){
+    if (case15l2==2.1 && (posJ1==15||posJ2==15||posJ3==15||posJ4==15)){
+        color(14,0);
+        printf("%c%c%c%c%c", 452, 452, 452, 452, 473);color(15,0);printf("%c%c",f,292);color(14,0);
+        printf("%c%c%c%c", 448, 452, 452, 452);
+    }
+    if (case15l2==2.2 && posJ1!=15 && posJ2!=15 && posJ3!=15 && posJ4!=15){
         color(14,0);
         printf("%c%c%c%c%c", 452, 452, 452, 452, 473);color(15,0);printf(" %c",291);color(14,0);
         printf("%c%c%c%c", 448, 452, 452, 452);
     }
-    if (case15l2==2.3){
+    if (case15l2==2.2 && (posJ1==15||posJ2==15||posJ3==15||posJ4==15)){
+        color(14,0);
+        printf("%c%c%c%c%c", 452, 452, 452, 452, 473);color(15,0);printf("%c%c",f,291);color(14,0);
+        printf("%c%c%c%c", 448, 452, 452, 452);
+    }
+    if (case15l2==2.3 && posJ1!=15 && posJ2!=15 && posJ3!=15 && posJ4!=15){
         color(14,0);
         printf("%c%c%c%c%c", 452, 452, 452, 452, 473);color(15,0);printf(" %c",285);color(14,0);
         printf("%c%c%c%c", 448, 452, 452, 452);
     }
-    if (case15l2==2.4){
+    if (case15l2==2.3 && (posJ1==15||posJ2==15||posJ3==15||posJ4==15)){
         color(14,0);
-        printf("%c%c%c%c%c", 452, 452, 452, 452, 473);color(15,0);printf(" %c",279);color(14,0);
+        printf("%c%c%c%c%c", 452, 452, 452, 452, 473);color(15,0);printf("%c%c",f,285);color(14,0);
         printf("%c%c%c%c", 448, 452, 452, 452);
     }
-    if (case15l2==2.5){
+    if (case15l2==2.4 && posJ1!=15 && posJ2!=15 && posJ3!=15 && posJ4!=15){
+        color(14,0);
+        printf("%c%c%c%c%c", 452, 452, 452, 452, 473);color(15,0);printf(" %c",428);color(14,0);
+        printf("%c%c%c%c", 448, 452, 452, 452);
+    }
+    if (case15l2==2.4 && (posJ1==15||posJ2==15||posJ3==15||posJ4==15)){
+        color(14,0);
+        printf("%c%c%c%c%c", 452, 452, 452, 452, 473);color(15,0);printf("%c%c",f,428);color(14,0);
+        printf("%c%c%c%c", 448, 452, 452, 452);
+    }
+    if (case15l2==2.5 && posJ1!=15 && posJ2!=15 && posJ3!=15 && posJ4!=15){
         color(14,0);
         printf("%c%c%c%c%c", 452, 452, 452, 452, 473);color(15,0);printf(" %c",277);color(14,0);
         printf("%c%c%c%c", 448, 452, 452, 452);
     }
-    if (case15l2==2.6){
+    if (case15l2==2.5 && (posJ1==15||posJ2==15||posJ3==15||posJ4==15)){
+        color(14,0);
+        printf("%c%c%c%c%c", 452, 452, 452, 452, 473);color(15,0);printf("%c%c",f,277);color(14,0);
+        printf("%c%c%c%c", 448, 452, 452, 452);
+    }
+    if (case15l2==2.6 && posJ1!=15 && posJ2!=15 && posJ3!=15 && posJ4!=15){
         color(14,0);
         printf("%c%c%c%c%c", 452, 452, 452, 452, 473);color(15,0);printf(" %c",225);color(14,0);
         printf("%c%c%c%c", 448, 452, 452, 452);
     }
-    if (case15l2==3.1){
+    if (case15l2==2.6 && (posJ1==15||posJ2==15||posJ3==15||posJ4==15)){
+        color(14,0);
+        printf("%c%c%c%c%c", 452, 452, 452, 452, 473);color(15,0);printf("%c%c",f,225);color(14,0);
+        printf("%c%c%c%c", 448, 452, 452, 452);
+    }
+    if (case15l2==3.1 && posJ1!=15 && posJ2!=15 && posJ3!=15 && posJ4!=15){
         color(14,0);
         printf("    %c",435);color(15,0);printf(" %c",292);color(14,0);
         printf("%c%c%c%c",448,452,452,452);
     }
-    if (case15l2==3.2){
+    if (case15l2==3.1 && (posJ1==15||posJ2==15||posJ3==15||posJ4==15)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,292);color(14,0);
+        printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case15l2==3.2 && posJ1!=15 && posJ2!=15 && posJ3!=15 && posJ4!=15){
         color(14,0);
         printf("    %c",435);color(15,0);printf(" %c",291);color(14,0);
         printf("%c%c%c%c",448,452,452,452);
     }
-    if (case15l2==3.3){
+    if (case15l2==3.2 && (posJ1==15||posJ2==15||posJ3==15||posJ4==15)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,291);color(14,0);
+        printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case15l2==3.3 && posJ1!=15 && posJ2!=15 && posJ3!=15 && posJ4!=15){
         color(14,0);
         printf("    %c",435);color(15,0);printf(" %c",285);color(14,0);
         printf("%c%c%c%c",448,452,452,452);
     }
-    if (case15l2==3.4){
+    if (case15l2==3.3 && (posJ1==15||posJ2==15||posJ3==15||posJ4==15)){
         color(14,0);
-        printf("    %c",435);color(15,0);printf(" %c",279);color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,285);color(14,0);
         printf("%c%c%c%c",448,452,452,452);
     }
-    if (case15l2==3.5){
+    if (case15l2==3.4 && posJ1!=15 && posJ2!=15 && posJ3!=15 && posJ4!=15){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",428);color(14,0);
+        printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case15l2==3.4 && (posJ1==15||posJ2==15||posJ3==15||posJ4==15)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,428);color(14,0);
+        printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case15l2==3.5 && posJ1!=15 && posJ2!=15 && posJ3!=15 && posJ4!=15){
         color(14,0);
         printf("    %c",435);color(15,0);printf(" %c",277);color(14,0);
         printf("%c%c%c%c",448,452,452,452);
     }
-    if (case15l2==3.6){
+    if (case15l2==3.5 && (posJ1==15||posJ2==15||posJ3==15||posJ4==15)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,277);color(14,0);
+        printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case15l2==3.6 && posJ1!=15 && posJ2!=15 && posJ3!=15 && posJ4!=15){
         color(14,0);
         printf("    %c",435);color(15,0);printf(" %c",225);color(14,0);
         printf("%c%c%c%c",448,452,452,452);
     }
-    if (case15l2==4.1){
+    if (case15l2==3.6 && (posJ1==15||posJ2==15||posJ3==15||posJ4==15)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,225);color(14,0);
+        printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case15l2==4.1 && posJ1!=15 && posJ2!=15 && posJ3!=15 && posJ4!=15){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",292);color(14,0);
         printf("%c   ",435);
     }
-    if (case15l2==4.2){
+    if (case15l2==4.1 && (posJ1==15||posJ2==15||posJ3==15||posJ4==15)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",292,f);color(14,0);
+        printf("%c   ",435);
+    }
+    if (case15l2==4.2 && posJ1!=15 && posJ2!=15 && posJ3!=15 && posJ4!=15){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",291);color(14,0);
         printf("%c   ",435);
     }
-    if (case15l2==4.3){
+    if (case15l2==4.2 && (posJ1==15||posJ2==15||posJ3==15||posJ4==15)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",291,f);color(14,0);
+        printf("%c   ",435);
+    }
+    if (case15l2==4.3 && posJ1!=15 && posJ2!=15 && posJ3!=15 && posJ4!=15){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",285);color(14,0);
         printf("%c   ",435);
     }
-    if (case15l2==4.4){
+    if (case15l2==4.3 && (posJ1==15||posJ2==15||posJ3==15||posJ4==15)){
         color(14,0);
-        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",279);color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",285,f);color(14,0);
         printf("%c   ",435);
     }
-    if (case15l2==4.5){
+    if (case15l2==4.4 && posJ1!=15 && posJ2!=15 && posJ3!=15 && posJ4!=15){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",428);color(14,0);
+        printf("%c   ",435);
+    }
+    if (case15l2==4.4 && (posJ1==15||posJ2==15||posJ3==15||posJ4==15)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",428,f);color(14,0);
+        printf("%c   ",435);
+    }
+    if (case15l2==4.5 && posJ1!=15 && posJ2!=15 && posJ3!=15 && posJ4!=15){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",277);color(14,0);
         printf("%c   ",435);
     }
-    if (case15l2==4.6){
+    if (case15l2==4.5 && (posJ1==15||posJ2==15||posJ3==15||posJ4==15)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",277,f);color(14,0);
+        printf("%c   ",435);
+    }
+    if (case15l2==4.6 && posJ1!=15 && posJ2!=15 && posJ3!=15 && posJ4!=15){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",225);color(14,0);
+        printf("%c   ",435);
+    }
+    if (case15l2==4.6 && (posJ1==15||posJ2==15||posJ3==15||posJ4==15)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",225,f);color(14,0);
         printf("%c   ",435);
     }
     if (case15l2==5){
@@ -2675,61 +4346,117 @@ int test(double case01,double case03,double case05,double case10,double case11,d
         color(14,0);
         printf("%c%c%c%c%c%c%c%c%c%c%c",452,452,452,452,452,452,452,452,452,452,452);
     }
-    if (case15l2==7){
+    if (case15l2==7 && posJ1!=15 && posJ2!=15 && posJ3!=15 && posJ4!=15){
         color(14,0);
         printf("    %c  %c%c%c%c",435,448,452,452,452);
     }
-    if (case15l2==7.1){
+    if (case15l2==7 && (posJ1==15||posJ2==15||posJ3==15||posJ4==15)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",f);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case15l2==7.1 && posJ1!=15 && posJ2!=15 && posJ3!=15 && posJ4!=15){
         color(14,0);
         printf("    %c",435);color(15,0);printf(" %c",189);color(14,0);printf("%c%c%c%c",448,452,452,452);
     }
-    if (case15l2==7.2){
+    if (case15l2==7.1 && (posJ1==15||posJ2==15||posJ3==15||posJ4==15)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,189);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case15l2==7.2 && posJ1!=15 && posJ2!=15 && posJ3!=15 && posJ4!=15){
         color(14,0);
         printf("    %c",435);color(15,0);printf(" %c",157);color(14,0);printf("%c%c%c%c",448,452,452,452);
     }
-    if (case15l2==7.3){
+    if (case15l2==7.2 && (posJ1==15||posJ2==15||posJ3==15||posJ4==15)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,157);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case15l2==7.3 && posJ1!=15 && posJ2!=15 && posJ3!=15 && posJ4!=15){
         color(14,0);
         printf("    %c",435);color(15,0);printf(" %c",143);color(14,0);printf("%c%c%c%c",448,452,452,452);
     }
-    if (case15l2==7.4){
+    if (case15l2==7.3 && (posJ1==15||posJ2==15||posJ3==15||posJ4==15)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,143);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case15l2==7.4 && posJ1!=15 && posJ2!=15 && posJ3!=15 && posJ4!=15){
         color(14,0);
         printf("    %c",435);color(15,0);printf(" %c",37);color(14,0);printf("%c%c%c%c",448,452,452,452);
     }
-    if (case15l2==7.5){
+    if (case15l2==7.4 && (posJ1==15||posJ2==15||posJ3==15||posJ4==15)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,37);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case15l2==7.5 && posJ1!=15 && posJ2!=15 && posJ3!=15 && posJ4!=15){
         color(14,0);
         printf("    %c",435);color(15,0);printf(" %c",31);color(14,0);printf("%c%c%c%c",448,452,452,452);
     }
-    if (case15l2==7.6){
+    if (case15l2==7.5 && (posJ1==15||posJ2==15||posJ3==15||posJ4==15)){
         color(14,0);
-        printf("    %c",435);color(15,0);printf(" %c",15);color(14,0);printf("%c%c%c%c",448,452,452,452);
+        printf("    %c",435);color(15,0);printf("%c%c",f,31);color(14,0);printf("%c%c%c%c",448,452,452,452);
     }
-    if (case15l2==8){
+    if (case15l2==7.6 && posJ1!=15 && posJ2!=15 && posJ3!=15 && posJ4!=15){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",459);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case15l2==7.6 && (posJ1==15||posJ2==15||posJ3==15||posJ4==15)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,459);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case15l2==8 && posJ1!=15 && posJ2!=15 && posJ3!=15 && posJ4!=15){
         color(14,0);
         printf("%c%c%c%c%c  %c   ",452,452,452,452,473,435);
     }
-    if (case15l2==8.1){
+    if (case15l2==8 && (posJ1==15||posJ2==15||posJ3==15||posJ4==15)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",f);color(14,0);printf("%c   ",435);
+    }
+    if (case15l2==8.1 && posJ1!=15 && posJ2!=15 && posJ3!=15 && posJ4!=15){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",189);color(14,0);printf("%c   ",435);
     }
-    if (case15l2==8.2){
+    if (case15l2==8.1 && (posJ1==15||posJ2==15||posJ3==15||posJ4==15)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",189,f);color(14,0);printf("%c   ",435);
+    }
+    if (case15l2==8.2 && posJ1!=15 && posJ2!=15 && posJ3!=15 && posJ4!=15){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",157);color(14,0);printf("%c   ",435);
     }
-    if (case15l2==8.3){
+    if (case15l2==8.2 && (posJ1==15||posJ2==15||posJ3==15||posJ4==15)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",157,f);color(14,0);printf("%c   ",435);
+    }
+    if (case15l2==8.3 && posJ1!=15 && posJ2!=15 && posJ3!=15 && posJ4!=15){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",143);color(14,0);printf("%c   ",435);
     }
-    if (case15l2==8.4){
+    if (case15l2==8.3 && (posJ1==15||posJ2==15||posJ3==15||posJ4==15)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",143,f);color(14,0);printf("%c   ",435);
+    }
+    if (case15l2==8.4 && posJ1!=15 && posJ2!=15 && posJ3!=15 && posJ4!=15){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",37);color(14,0);printf("%c   ",435);
     }
-    if (case15l2==8.5){
+    if (case15l2==8.4 && (posJ1==15||posJ2==15||posJ3==15||posJ4==15)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",37,f);color(14,0);printf("%c   ",435);
+    }
+    if (case15l2==8.5 && posJ1!=15 && posJ2!=15 && posJ3!=15 && posJ4!=15){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",31);color(14,0);printf("%c   ",435);
     }
-    if (case15l2==8.6){
+    if (case15l2==8.5 && (posJ1==15||posJ2==15||posJ3==15||posJ4==15)){
         color(14,0);
-        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",189);color(14,0);printf("%c   ",435);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",31,f);color(14,0);printf("%c   ",435);
+    }
+    if (case15l2==8.6 && posJ1!=15 && posJ2!=15 && posJ3!=15 && posJ4!=15){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",459);color(14,0);printf("%c   ",435);
+    }
+    if (case15l2==8.6 && (posJ1==15||posJ2==15||posJ3==15||posJ4==15)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",459,f);color(14,0);printf("%c   ",435);
     }
     if (case15l2>=9 && case15l2<10){
         color(14,0);
@@ -2739,82 +4466,155 @@ int test(double case01,double case03,double case05,double case10,double case11,d
         color(14,0);
         printf("%c%c%c%c%c%c%c%c   ",452,452,452,452,452,452,452,447);
     }
+    f=testposition(posJ1,posJ2,posJ3,posJ4,16,p1,p2,p3,p4);
     if (case16l2==0){
         printf("         ");
     }
     if (case16l2>1 && case16l2<2){
         printf("%c%c%c%c%c%c%c%c%c",452,452,452,452,452,452,452,452,452);
     }
-    if (case16l2==2.1){
+    if (case16l2==2.1 && posJ1!=16 && posJ2!=16 && posJ3!=16 && posJ4!=16){
         printf("%c%c%c%c%c%c",452,452,452,452,452,473);color(15,0);printf("%c ",292);color(14,0);
         printf("%c",448);
     }
-    if (case16l2==2.2){
+    if (case16l2==2.1 && (posJ1==16||posJ2==16||posJ3==16||posJ4==16)){
+        printf("%c%c%c%c%c%c",452,452,452,452,452,473);color(15,0);printf("%c%c",292,f);color(14,0);
+        printf("%c",448);
+    }
+    if (case16l2==2.2 && posJ1!=16 && posJ2!=16 && posJ3!=16 && posJ4!=16){
         printf("%c%c%c%c%c%c",452,452,452,452,452,473);color(15,0);printf("%c ",291);color(14,0);
         printf("%c",448);
     }
-    if (case16l2==2.3){
+    if (case16l2==2.2 && (posJ1==16||posJ2==16||posJ3==16||posJ4==16)){
+        printf("%c%c%c%c%c%c",452,452,452,452,452,473);color(15,0);printf("%c%c",291,f);color(14,0);
+        printf("%c",448);
+    }
+    if (case16l2==2.3 && posJ1!=16 && posJ2!=16 && posJ3!=16 && posJ4!=16){
         printf("%c%c%c%c%c%c",452,452,452,452,452,473);color(15,0);printf("%c ",285);color(14,0);
         printf("%c",448);
     }
-    if (case16l2==2.4){
-        printf("%c%c%c%c%c%c",452,452,452,452,452,473);color(15,0);printf("%c ",279);color(14,0);
+    if (case16l2==2.3 && (posJ1==16||posJ2==16||posJ3==16||posJ4==16)){
+        printf("%c%c%c%c%c%c",452,452,452,452,452,473);color(15,0);printf("%c%c",285,f);color(14,0);
         printf("%c",448);
     }
-    if (case16l2==2.5){
+    if (case16l2==2.4 && posJ1!=16 && posJ2!=16 && posJ3!=16 && posJ4!=16){
+        printf("%c%c%c%c%c%c",452,452,452,452,452,473);color(15,0);printf("%c ",428);color(14,0);
+        printf("%c",448);
+    }
+    if (case16l2==2.4 && (posJ1==16||posJ2==16||posJ3==16||posJ4==16)){
+        printf("%c%c%c%c%c%c",452,452,452,452,452,473);color(15,0);printf("%c%c",428,f);color(14,0);
+        printf("%c",448);
+    }
+    if (case16l2==2.5 && posJ1!=16 && posJ2!=16 && posJ3!=16 && posJ4!=16){
         printf("%c%c%c%c%c%c",452,452,452,452,452,473);color(15,0);printf("%c ",277);color(14,0);
         printf("%c",448);
     }
-    if (case16l2==2.6){
+    if (case16l2==2.5 && (posJ1==16||posJ2==16||posJ3==16||posJ4==16)){
+        printf("%c%c%c%c%c%c",452,452,452,452,452,473);color(15,0);printf("%c%c",277,f);color(14,0);
+        printf("%c",448);
+    }
+    if (case16l2==2.6 && posJ1!=16 && posJ2!=16 && posJ3!=16 && posJ4!=16){
         printf("%c%c%c%c%c%c",452,452,452,452,452,473);color(15,0);printf("%c ",225);color(14,0);
         printf("%c",448);
     }
-    if (case16l2==3.1){
+    if (case16l2==2.6 && (posJ1==16||posJ2==16||posJ3==16||posJ4==16)){
+        printf("%c%c%c%c%c%c",452,452,452,452,452,473);color(15,0);printf("%c%c",225,f);color(14,0);
+        printf("%c",448);
+    }
+    if (case16l2==3.1 && posJ1!=16 && posJ2!=16 && posJ3!=16 && posJ4!=16){
         printf("     %c",435);color(15,0);printf(" %c",292);color(14,0);
         printf("%c",448);
     }
-    if (case16l2==3.2){
+    if (case16l2==3.1 && (posJ1==16||posJ2==16||posJ3==16||posJ4==16)){
+        printf("     %c",435);color(15,0);printf("%c%c",f,292);color(14,0);
+        printf("%c",448);
+    }
+    if (case16l2==3.2 && posJ1!=16 && posJ2!=16 && posJ3!=16 && posJ4!=16){
         printf("     %c",435);color(15,0);printf(" %c",291);color(14,0);
         printf("%c",448);
     }
-    if (case16l2==3.3){
+    if (case16l2==3.2 && (posJ1==16||posJ2==16||posJ3==16||posJ4==16)){
+        printf("     %c",435);color(15,0);printf("%c%c",f,291);color(14,0);
+        printf("%c",448);
+    }
+    if (case16l2==3.3 && posJ1!=16 && posJ2!=16 && posJ3!=16 && posJ4!=16){
         printf("     %c",435);color(15,0);printf(" %c",285);color(14,0);
         printf("%c",448);
     }
-    if (case16l2==3.4){
-        printf("     %c",435);color(15,0);printf(" %c",279);color(14,0);
+    if (case16l2==3.3 && (posJ1==16||posJ2==16||posJ3==16||posJ4==16)){
+        printf("     %c",435);color(15,0);printf("%c%c",f,285);color(14,0);
         printf("%c",448);
     }
-    if (case16l2==3.5){
+    if (case16l2==3.4 && posJ1!=16 && posJ2!=16 && posJ3!=16 && posJ4!=16){
+        printf("     %c",435);color(15,0);printf(" %c",428);color(14,0);
+        printf("%c",448);
+    }
+    if (case16l2==3.4 && (posJ1==16||posJ2==16||posJ3==16||posJ4==16)){
+        printf("     %c",435);color(15,0);printf("%c%c",f,428);color(14,0);
+        printf("%c",448);
+    }
+    if (case16l2==3.5 && posJ1!=16 && posJ2!=16 && posJ3!=16 && posJ4!=16){
         printf("     %c",435);color(15,0);printf(" %c",277);color(14,0);
         printf("%c",448);
     }
-    if (case16l2==3.6){
+    if (case16l2==3.5 && (posJ1==16||posJ2==16||posJ3==16||posJ4==16)){
+        printf("     %c",435);color(15,0);printf("%c%c",f,277);color(14,0);
+        printf("%c",448);
+    }
+    if (case16l2==3.6 && posJ1!=16 && posJ2!=16 && posJ3!=16 && posJ4!=16){
         printf("     %c",435);color(15,0);printf(" %c",225);color(14,0);
         printf("%c",448);
     }
-    if (case16l2==4.1){
+    if (case16l2==3.6 && (posJ1==16||posJ2==16||posJ3==16||posJ4==16)){
+        printf("     %c",435);color(15,0);printf("%c%c",f,225);color(14,0);
+        printf("%c",448);
+    }
+    if (case16l2==4.1 && posJ1!=16 && posJ2!=16 && posJ3!=16 && posJ4!=16){
         printf("%c%c%c%c%c%c",452,452,452,452,452,473);color(15,0);printf("%c ",292);color(14,0);
         printf("%c",435);
     }
-    if (case16l2==4.2){
+    if (case16l2==4.1 && (posJ1==16||posJ2==16||posJ3==16||posJ4==16)){
+        printf("%c%c%c%c%c%c",452,452,452,452,452,473);color(15,0);printf("%c%c",292,f);color(14,0);
+        printf("%c",435);
+    }
+    if (case16l2==4.2 && posJ1!=16 && posJ2!=16 && posJ3!=16 && posJ4!=16){
         printf("%c%c%c%c%c%c",452,452,452,452,452,473);color(15,0);printf("%c ",291);color(14,0);
         printf("%c",435);
     }
-    if (case16l2==4.3){
+    if (case16l2==4.2 && (posJ1==16||posJ2==16||posJ3==16||posJ4==16)){
+        printf("%c%c%c%c%c%c",452,452,452,452,452,473);color(15,0);printf("%c%c",291,f);color(14,0);
+        printf("%c",435);
+    }
+    if (case16l2==4.3 && posJ1!=16 && posJ2!=16 && posJ3!=16 && posJ4!=16){
         printf("%c%c%c%c%c%c",452,452,452,452,452,473);color(15,0);printf("%c ",285);color(14,0);
         printf("%c",435);
     }
-    if (case16l2==4.4){
-        printf("%c%c%c%c%c%c",452,452,452,452,452,473);color(15,0);printf("%c ",279);color(14,0);
+    if (case16l2==4.3 && (posJ1==16||posJ2==16||posJ3==16||posJ4==16)){
+        printf("%c%c%c%c%c%c",452,452,452,452,452,473);color(15,0);printf("%c%c",285,f);color(14,0);
         printf("%c",435);
     }
-    if (case16l2==4.5){
+    if (case16l2==4.4 && posJ1!=16 && posJ2!=16 && posJ3!=16 && posJ4!=16){
+        printf("%c%c%c%c%c%c",452,452,452,452,452,473);color(15,0);printf("%c ",428);color(14,0);
+        printf("%c",435);
+    }
+    if (case16l2==4.4 && (posJ1==16||posJ2==16||posJ3==16||posJ4==16)){
+        printf("%c%c%c%c%c%c",452,452,452,452,452,473);color(15,0);printf("%c%c",428,f);color(14,0);
+        printf("%c",435);
+    }
+    if (case16l2==4.5 && posJ1!=16 && posJ2!=16 && posJ3!=16 && posJ4!=16){
         printf("%c%c%c%c%c%c",452,452,452,452,452,473);color(15,0);printf("%c ",277);color(14,0);
         printf("%c",435);
     }
-    if (case16l2==4.6){
+    if (case16l2==4.5 && (posJ1==16||posJ2==16||posJ3==16||posJ4==16)){
+        printf("%c%c%c%c%c%c",452,452,452,452,452,473);color(15,0);printf("%c%c",277,f);color(14,0);
+        printf("%c",435);
+    }
+    if (case16l2==4.6 && posJ1!=16 && posJ2!=16 && posJ3!=16 && posJ4!=16){
         printf("%c%c%c%c%c%c",452,452,452,452,452,473);color(15,0);printf("%c ",225);color(14,0);
+        printf("%c",435);
+    }
+    if (case16l2==4.6 && (posJ1==16||posJ2==16||posJ3==16||posJ4==16)){
+        printf("%c%c%c%c%c%c",452,452,452,452,452,473);color(15,0);printf("%c%c",225,f);color(14,0);
         printf("%c",435);
     }
     if (case16l2==5){
@@ -2823,47 +4623,89 @@ int test(double case01,double case03,double case05,double case10,double case11,d
     if (case16l2==6){
         printf("%c%c%c%c%c%c%c%c%c",452,452,452,452,452,452,452,452,452);
     }
-    if (case16l2==7){
+    if (case16l2==7 && posJ1!=16 && posJ2!=16 && posJ3!=16 && posJ4!=16){
         printf("     %c  %c",435,448);
     }
-    if (case16l2==7.1){
+    if (case16l2==7 && (posJ1==16||posJ2==16||posJ3==16||posJ4==16)){
+        printf("     %c",435);color(15,0);printf(" %c",f);color(14,0);printf("%c",448);
+    }
+    if (case16l2==7.1 && posJ1!=16 && posJ2!=16 && posJ3!=16 && posJ4!=16){
         printf("     %c",435);color(15,0);printf(" %c",189);color(14,0);printf("%c",448);
     }
-    if (case16l2==7.2){
+    if (case16l2==7.1 && (posJ1==16||posJ2==16||posJ3==16||posJ4==16)){
+        printf("     %c",435);color(15,0);printf("%c%c",f,189);color(14,0);printf("%c",448);
+    }
+    if (case16l2==7.2 && posJ1!=16 && posJ2!=16 && posJ3!=16 && posJ4!=16){
         printf("     %c",435);color(15,0);printf(" %c",157);color(14,0);printf("%c",448);
     }
-    if (case16l2==7.3){
+    if (case16l2==7.2 && (posJ1==16||posJ2==16||posJ3==16||posJ4==16)){
+        printf("     %c",435);color(15,0);printf("%c%c",f,157);color(14,0);printf("%c",448);
+    }
+    if (case16l2==7.3 && posJ1!=16 && posJ2!=16 && posJ3!=16 && posJ4!=16){
         printf("     %c",435);color(15,0);printf(" %c",143);color(14,0);printf("%c",448);
     }
-    if (case16l2==7.4){
+    if (case16l2==7.3 && (posJ1==16||posJ2==16||posJ3==16||posJ4==16)){
+        printf("     %c",435);color(15,0);printf("%c%c",f,143);color(14,0);printf("%c",448);
+    }
+    if (case16l2==7.4 && posJ1!=16 && posJ2!=16 && posJ3!=16 && posJ4!=16){
         printf("     %c",435);color(15,0);printf(" %c",37);color(14,0);printf("%c",448);
     }
-    if (case16l2==7.5){
+    if (case16l2==7.4 && (posJ1==16||posJ2==16||posJ3==16||posJ4==16)){
+        printf("     %c",435);color(15,0);printf("%c%c",f,37);color(14,0);printf("%c",448);
+    }
+    if (case16l2==7.5 && posJ1!=16 && posJ2!=16 && posJ3!=16 && posJ4!=16){
         printf("     %c",435);color(15,0);printf(" %c",31);color(14,0);printf("%c",448);
     }
-    if (case16l2==7.6){
-        printf("     %c",435);color(15,0);printf(" %c",15);color(14,0);printf("%c",448);
+    if (case16l2==7.5 && (posJ1==16||posJ2==16||posJ3==16||posJ4==16)){
+        printf("     %c",435);color(15,0);printf("%c%c",f,31);color(14,0);printf("%c",448);
     }
-    if (case16l2==8){
+    if (case16l2==7.6 && posJ1!=16 && posJ2!=16 && posJ3!=16 && posJ4!=16){
+        printf("     %c",435);color(15,0);printf(" %c",459);color(14,0);printf("%c",448);
+    }
+    if (case16l2==7.6 && (posJ1==16||posJ2==16||posJ3==16||posJ4==16)){
+        printf("     %c",435);color(15,0);printf("%c%c",f,459);color(14,0);printf("%c",448);
+    }
+    if (case16l2==8 && posJ1!=16 && posJ2!=16 && posJ3!=16 && posJ4!=16){
         printf("%c%c%c%c%c%c  %c",452,452,452,452,452,473,435);
     }
-    if (case16l2==8.1){
+    if (case16l2==8 && (posJ1==16||posJ2==16||posJ3==16||posJ4==16)){
+        printf("%c%c%c%c%c%c",452,452,452,452,452,473);color(15,0);printf("%c ",f);color(14,0);printf("%c",435);
+    }
+    if (case16l2==8.1 && posJ1!=16 && posJ2!=16 && posJ3!=16 && posJ4!=16){
         printf("%c%c%c%c%c%c",452,452,452,452,452,473);color(15,0);printf("%c ",189);color(14,0);printf("%c",435);
     }
-    if (case16l2==8.2){
+    if (case16l2==8.1 && (posJ1==16||posJ2==16||posJ3==16||posJ4==16)){
+        printf("%c%c%c%c%c%c",452,452,452,452,452,473);color(15,0);printf("%c%c",189,f);color(14,0);printf("%c",435);
+    }
+    if (case16l2==8.2 && posJ1!=16 && posJ2!=16 && posJ3!=16 && posJ4!=16){
         printf("%c%c%c%c%c%c",452,452,452,452,452,473);color(15,0);printf("%c ",157);color(14,0);printf("%c",435);
     }
-    if (case16l2==8.3){
+    if (case16l2==8.2 && (posJ1==16||posJ2==16||posJ3==16||posJ4==16)){
+        printf("%c%c%c%c%c%c",452,452,452,452,452,473);color(15,0);printf("%c%c",157,f);color(14,0);printf("%c",435);
+    }
+    if (case16l2==8.3 && posJ1!=16 && posJ2!=16 && posJ3!=16 && posJ4!=16){
         printf("%c%c%c%c%c%c",452,452,452,452,452,473);color(15,0);printf("%c ",143);color(14,0);printf("%c",435);
     }
-    if (case16l2==8.4){
+    if (case16l2==8.3 && (posJ1==16||posJ2==16||posJ3==16||posJ4==16)){
+        printf("%c%c%c%c%c%c",452,452,452,452,452,473);color(15,0);printf("%c%c",143,f);color(14,0);printf("%c",435);
+    }
+    if (case16l2==8.4 && posJ1!=16 && posJ2!=16 && posJ3!=16 && posJ4!=16){
         printf("%c%c%c%c%c%c",452,452,452,452,452,473);color(15,0);printf("%c ",37);color(14,0);printf("%c",435);
     }
-    if (case16l2==8.5){
+    if (case16l2==8.4 && (posJ1==16||posJ2==16||posJ3==16||posJ4==16)){
+        printf("%c%c%c%c%c%c",452,452,452,452,452,473);color(15,0);printf("%c%c",37,f);color(14,0);printf("%c",435);
+    }
+    if (case16l2==8.5 && posJ1!=16 && posJ2!=16 && posJ3!=16 && posJ4!=16){
         printf("%c%c%c%c%c%c",452,452,452,452,452,473);color(15,0);printf("%c ",31);color(14,0);printf("%c",435);
     }
-    if (case16l2==8.6){
-        printf("%c%c%c%c%c%c",452,452,452,452,452,473);color(15,0);printf("%c ",15);color(14,0);printf("%c",435);
+    if (case16l2==8.5 && (posJ1==16||posJ2==16||posJ3==16||posJ4==16)){
+        printf("%c%c%c%c%c%c",452,452,452,452,452,473);color(15,0);printf("%c%c",31,f);color(14,0);printf("%c",435);
+    }
+    if (case16l2==8.6 && posJ1!=16 && posJ2!=16 && posJ3!=16 && posJ4!=16){
+        printf("%c%c%c%c%c%c",452,452,452,452,452,473);color(15,0);printf("%c ",459);color(14,0);printf("%c",435);
+    }
+    if (case16l2==8.6 && (posJ1==16||posJ2==16||posJ3==16||posJ4==16)){
+        printf("%c%c%c%c%c%c",452,452,452,452,452,473);color(15,0);printf("%c%c",459,f);color(14,0);printf("%c",435);
     }
     if (case16l2>=9 && case16l2<10){
         printf("     %c%c%c%c",474,452,452,452);
@@ -2872,31 +4714,56 @@ int test(double case01,double case03,double case05,double case10,double case11,d
         printf("%c%c%c%c%c%c%c%c%c",452,452,452,452,452,452,452,452,447);
     }
     a();printf("                                 ");
+    f=testposition(posJ1,posJ2,posJ3,posJ4,10,p1,p2,p3,p4);
     if (case10l3==0){
         printf("        ");
     }
-    if (case10l3==1.1){
+    if (case10l3==1.1 && posJ1!=10 && posJ2!=10 && posJ3!=10 && posJ4!=10){
         printf("%c",447);color(15,0);printf(" %c",292);color(14,0);
         printf("%c%c%c%c%c",474,452,452,452,452);
     }
-    if (case10l3==1.2){
+    if (case10l3==1.1 && (posJ1==10||posJ2==10||posJ3==10||posJ4==10)){
+        printf("%c",447);color(15,0);printf("%c%c",f,292);color(14,0);
+        printf("%c%c%c%c%c",474,452,452,452,452);
+    }
+    if (case10l3==1.2 && posJ1!=10 && posJ2!=10 && posJ3!=10 && posJ4!=10){
         printf("%c",447);color(15,0);printf(" %c",291);color(14,0);
         printf("%c%c%c%c%c",474,452,452,452,452);
     }
-    if (case10l3==1.3){
+    if (case10l3==1.2 && (posJ1==10||posJ2==10||posJ3==10||posJ4==10)){
+        printf("%c",447);color(15,0);printf("%c%c",f,291);color(14,0);
+        printf("%c%c%c%c%c",474,452,452,452,452);
+    }
+    if (case10l3==1.3 && posJ1!=10 && posJ2!=10 && posJ3!=10 && posJ4!=10){
         printf("%c",447);color(15,0);printf(" %c",285);color(14,0);
         printf("%c%c%c%c%c",474,452,452,452,452);
     }
-    if (case10l3==1.4){
-        printf("%c",447);color(15,0);printf(" %c",279);color(14,0);
+    if (case10l3==1.3 && (posJ1==10||posJ2==10||posJ3==10||posJ4==10)){
+        printf("%c",447);color(15,0);printf("%c%c",f,285);color(14,0);
         printf("%c%c%c%c%c",474,452,452,452,452);
     }
-    if (case10l3==1.5){
+    if (case10l3==1.4 && posJ1!=10 && posJ2!=10 && posJ3!=10 && posJ4!=10){
+        printf("%c",447);color(15,0);printf(" %c",428);color(14,0);
+        printf("%c%c%c%c%c",474,452,452,452,452);
+    }
+    if (case10l3==1.4 && (posJ1==10||posJ2==10||posJ3==10||posJ4==10)){
+        printf("%c",447);color(15,0);printf("%c%c",f,428);color(14,0);
+        printf("%c%c%c%c%c",474,452,452,452,452);
+    }
+    if (case10l3==1.5 && posJ1!=10 && posJ2!=10 && posJ3!=10 && posJ4!=10){
         printf("%c",447);color(15,0);printf(" %c",277);color(14,0);
         printf("%c%c%c%c%c",474,452,452,452,452);
     }
-    if (case10l3==1.6){
+    if (case10l3==1.5 && (posJ1==10||posJ2==10||posJ3==10||posJ4==10)){
+        printf("%c",447);color(15,0);printf("%c%c",f,277);color(14,0);
+        printf("%c%c%c%c%c",474,452,452,452,452);
+    }
+    if (case10l3==1.6 && posJ1!=10 && posJ2!=10 && posJ3!=10 && posJ4!=10){
         printf("%c",447);color(15,0);printf(" %c",225);color(14,0);
+        printf("%c%c%c%c%c",474,452,452,452,452);
+    }
+    if (case10l3==1.6 && (posJ1==10||posJ2==10||posJ3==10||posJ4==10)){
+        printf("%c",447);color(15,0);printf("%c%c",f,225);color(14,0);
         printf("%c%c%c%c%c",474,452,452,452,452);
     }
     if (case10l3>2 && case10l3<3){
@@ -2908,11 +4775,17 @@ int test(double case01,double case03,double case05,double case10,double case11,d
     if (case10l3>4 && case10l3<5){
         printf("%c  %c    ",447,435);
     }
-    if (case10l3==5){
+    if (case10l3==5 && posJ1!=10 && posJ2!=10 && posJ3!=10 && posJ4!=10){
         printf("%c  %c    ",435,435);
     }
-    if (case10l3==6){
+    if (case10l3==5 && (posJ1==10||posJ2==10||posJ3==10||posJ4==10)){
+        printf("%c",435);color(15,0);printf(" %c",f);color(14,0);printf("%c    ",435);
+    }
+    if (case10l3==6 && posJ1!=10 && posJ2!=10 && posJ3!=10 && posJ4!=10){
         printf("%c%c%c%c%c%c%c%c",452,452,452,452,452,452,452,452);
+    }
+    if (case10l3==6 && (posJ1==10||posJ2==10||posJ3==10||posJ4==10)){
+        printf("%c%c%c",452,452,452);color(15,0);printf("%c",f);color(14,0);printf("%c%c%c%c",452,452,452,452);
     }
     if (case10l3>=7 && case10l3<8){
         printf("%c%c%c%c%c%c%c%c",448,452,452,452,452,452,452,452);
@@ -2920,79 +4793,152 @@ int test(double case01,double case03,double case05,double case10,double case11,d
     if (case10l3>=8 && case10l3<9){
         printf("%c%c%c%c    ",452,452,452,473);
     }
-    if (case10l3==9){
+    if (case10l3==9 && posJ1!=10 && posJ2!=10 && posJ3!=10 && posJ4!=10){
         printf("%c  %c%c%c%c%c",435,474,452,452,452,452);
     }
-    if (case10l3==9.1){
+    if (case10l3==9 && (posJ1==10||posJ2==10||posJ3==10||posJ4==10)){
+        printf("%c",435);color(15,0);printf(" %c",f);color(14,0);printf("%c%c%c%c%c",474,452,452,452,452);
+    }
+    if (case10l3==9.1 && posJ1!=10 && posJ2!=10 && posJ3!=10 && posJ4!=10){
         printf("%c",435);color(15,0);printf(" %c",189);color(14,0);printf("%c%c%c%c%c",474,452,452,452,452);
     }
-    if (case10l3==9.2){
+    if (case10l3==9.1 && (posJ1==10||posJ2==10||posJ3==10||posJ4==10)){
+        printf("%c",435);color(15,0);printf("%c%c",f,189);color(14,0);printf("%c%c%c%c%c",474,452,452,452,452);
+    }
+    if (case10l3==9.2 && posJ1!=10 && posJ2!=10 && posJ3!=10 && posJ4!=10){
         printf("%c",435);color(15,0);printf(" %c",157);color(14,0);printf("%c%c%c%c%c",474,452,452,452,452);
     }
-    if (case10l3==9.3){
+    if (case10l3==9.2 && (posJ1==10||posJ2==10||posJ3==10||posJ4==10)){
+        printf("%c",435);color(15,0);printf("%c%c",f,157);color(14,0);printf("%c%c%c%c%c",474,452,452,452,452);
+    }
+    if (case10l3==9.3 && posJ1!=10 && posJ2!=10 && posJ3!=10 && posJ4!=10){
         printf("%c",435);color(15,0);printf(" %c",143);color(14,0);printf("%c%c%c%c%c",474,452,452,452,452);
     }
-    if (case10l3==9.4){
+    if (case10l3==9.3 && (posJ1==10||posJ2==10||posJ3==10||posJ4==10)){
+        printf("%c",435);color(15,0);printf("%c%c",f,143);color(14,0);printf("%c%c%c%c%c",474,452,452,452,452);
+    }
+    if (case10l3==9.4 && posJ1!=10 && posJ2!=10 && posJ3!=10 && posJ4!=10){
         printf("%c",435);color(15,0);printf(" %c",37);color(14,0);printf("%c%c%c%c%c",474,452,452,452,452);
     }
-    if (case10l3==9.5){
+    if (case10l3==9.4 && (posJ1==10||posJ2==10||posJ3==10||posJ4==10)){
+        printf("%c",435);color(15,0);printf("%c%c",f,37);color(14,0);printf("%c%c%c%c%c",474,452,452,452,452);
+    }
+    if (case10l3==9.5 && posJ1!=10 && posJ2!=10 && posJ3!=10 && posJ4!=10){
         printf("%c",435);color(15,0);printf(" %c",31);color(14,0);printf("%c%c%c%c%c",474,452,452,452,452);
     }
-    if (case10l3==9.6){
-        printf("%c",435);color(15,0);printf(" %c",15);color(14,0);printf("%c%c%c%c%c",474,452,452,452,452);
+    if (case10l3==9.5 && (posJ1==10||posJ2==10||posJ3==10||posJ4==10)){
+        printf("%c",435);color(15,0);printf("%c%c",f,31);color(14,0);printf("%c%c%c%c%c",474,452,452,452,452);
     }
-    if (case10l3==10){
+    if (case10l3==9.6 && posJ1!=10 && posJ2!=10 && posJ3!=10 && posJ4!=10){
+        printf("%c",435);color(15,0);printf(" %c",459);color(14,0);printf("%c%c%c%c%c",474,452,452,452,452);
+    }
+    if (case10l3==9.6 && (posJ1==10||posJ2==10||posJ3==10||posJ4==10)){
+        printf("%c",435);color(15,0);printf("%c%c",f,459);color(14,0);printf("%c%c%c%c%c",474,452,452,452,452);
+    }
+    if (case10l3==10 && posJ1!=10 && posJ2!=10 && posJ3!=10 && posJ4!=10){
         printf("%c  %c    ",447,435);
     }
-    if (case10l3==10.1){
+    if (case10l3==10 && (posJ1==10||posJ2==10||posJ3==10||posJ4==10)){
+        printf("%c",447);color(15,0);printf("%c ",f);color(14,0);printf("%c    ",435);
+    }
+    if (case10l3==10.1 && posJ1!=10 && posJ2!=10 && posJ3!=10 && posJ4!=10){
         printf("%c",447);color(15,0);printf("%c ",189);color(14,0);printf("%c    ",435);
     }
-    if (case10l3==10.2){
+    if (case10l3==10.1 && (posJ1==10||posJ2==10||posJ3==10||posJ4==10)){
+        printf("%c",447);color(15,0);printf("%c%c",189,f);color(14,0);printf("%c    ",435);
+    }
+    if (case10l3==10.2 && posJ1!=10 && posJ2!=10 && posJ3!=10 && posJ4!=10){
         printf("%c",447);color(15,0);printf("%c ",157);color(14,0);printf("%c    ",435);
     }
-    if (case10l3==10.3){
+    if (case10l3==10.2 && (posJ1==10||posJ2==10||posJ3==10||posJ4==10)){
+        printf("%c",447);color(15,0);printf("%c%c",157,f);color(14,0);printf("%c    ",435);
+    }
+    if (case10l3==10.3 && posJ1!=10 && posJ2!=10 && posJ3!=10 && posJ4!=10){
         printf("%c",447);color(15,0);printf("%c ",143);color(14,0);printf("%c    ",435);
     }
-    if (case10l3==10.4){
+    if (case10l3==10.3 && (posJ1==10||posJ2==10||posJ3==10||posJ4==10)){
+        printf("%c",447);color(15,0);printf("%c%c",143,f);color(14,0);printf("%c    ",435);
+    }
+    if (case10l3==10.4 && posJ1!=10 && posJ2!=10 && posJ3!=10 && posJ4!=10){
         printf("%c",447);color(15,0);printf("%c ",37);color(14,0);printf("%c    ",435);
     }
-    if (case10l3==10.5){
+    if (case10l3==10.4 && (posJ1==10||posJ2==10||posJ3==10||posJ4==10)){
+        printf("%c",447);color(15,0);printf("%c%c",37,f);color(14,0);printf("%c    ",435);
+    }
+    if (case10l3==10.5 && posJ1!=10 && posJ2!=10 && posJ3!=10 && posJ4!=10){
         printf("%c",447);color(15,0);printf("%c ",31);color(14,0);printf("%c    ",435);
     }
-    if (case10l3==10.6){
-        printf("%c",447);color(15,0);printf("%c ",15);color(14,0);printf("%c    ",435);
+    if (case10l3==10.5 && (posJ1==10||posJ2==10||posJ3==10||posJ4==10)){
+        printf("%c",447);color(15,0);printf("%c%c",31,f);color(14,0);printf("%c    ",435);
     }
+    if (case10l3==10.6 && posJ1!=10 && posJ2!=10 && posJ3!=10 && posJ4!=10){
+        printf("%c",447);color(15,0);printf("%c ",459);color(14,0);printf("%c    ",435);
+    }
+    if (case10l3==10.6 && (posJ1==10||posJ2==10||posJ3==10||posJ4==10)){
+        printf("%c",447);color(15,0);printf("%c%c",459,f);color(14,0);printf("%c    ",435);
+    }
+    f=testposition(posJ1,posJ2,posJ3,posJ4,11,p1,p2,p3,p4);
     if (case11l3==0){
         printf("           ");
     }
-    if (case11l3==1.1){
+    if (case11l3==1.1 && posJ1!=11 && posJ2!=11 && posJ3!=11 && posJ4!=11){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf(" %c",292);color(14,0);
         printf("%c%c%c%c",474,452,452,452);
     }
-    if (case11l3==1.2){
+    if (case11l3==1.1 && (posJ1==11||posJ2==11||posJ3==11||posJ4==11)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c%c",f,292);color(14,0);
+        printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case11l3==1.2 && posJ1!=11 && posJ2!=11 && posJ3!=11 && posJ4!=11){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf(" %c",291);color(14,0);
         printf("%c%c%c%c",474,452,452,452);
     }
-    if (case11l3==1.3){
+    if (case11l3==1.2 && (posJ1==11||posJ2==11||posJ3==11||posJ4==11)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c%c",f,291);color(14,0);
+        printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case11l3==1.3 && posJ1!=11 && posJ2!=11 && posJ3!=11 && posJ4!=11){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf(" %c",285);color(14,0);
         printf("%c%c%c%c",474,452,452,452);
     }
-    if (case11l3==1.4){
+    if (case11l3==1.3 && (posJ1==11||posJ2==11||posJ3==11||posJ4==11)){
         color(14,0);
-        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf(" %c",279);color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c%c",f,285);color(14,0);
         printf("%c%c%c%c",474,452,452,452);
     }
-    if (case11l3==1.5){
+    if (case11l3==1.4 && posJ1!=11 && posJ2!=11 && posJ3!=11 && posJ4!=11){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf(" %c",428);color(14,0);
+        printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case11l3==1.4 && (posJ1==11||posJ2==11||posJ3==11||posJ4==11)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c%c",f,428);color(14,0);
+        printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case11l3==1.5 && posJ1!=11 && posJ2!=11 && posJ3!=11 && posJ4!=11){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf(" %c",277);color(14,0);
         printf("%c%c%c%c",474,452,452,452);
     }
-    if (case11l3==1.6){
+    if (case11l3==1.5 && (posJ1==11||posJ2==11||posJ3==11||posJ4==11)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c%c",f,277);color(14,0);
+        printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case11l3==1.6 && posJ1!=11 && posJ2!=11 && posJ3!=11 && posJ4!=11){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf(" %c",225);color(14,0);
+        printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case11l3==1.6 && (posJ1==11||posJ2==11||posJ3==11||posJ4==11)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c%c",f,225);color(14,0);
         printf("%c%c%c%c",474,452,452,452);
     }
     if (case11l3>2 && case11l3<3){
@@ -3007,13 +4953,21 @@ int test(double case01,double case03,double case05,double case10,double case11,d
         color(14,0);
         printf("%c%c%c%c%c  %c   ",452,452,452,452,447,435);
     }
-    if (case11l3==5){
+    if (case11l3==5 && posJ1!=11 && posJ2!=11 && posJ3!=11 && posJ4!=11){
         color(14,0);
         piece5bout2();
     }
-    if (case11l3==6){
+    if (case11l3==5 && (posJ1==11||posJ2==11||posJ3==11||posJ4==11)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c ",f);color(14,0);printf("%c   ",435);
+    }
+    if (case11l3==6 && posJ1!=11 && posJ2!=11 && posJ3!=11 && posJ4!=11){
         color(14,0);
         printf("%c%c%c%c%c%c%c%c%c%c%c",452,452,452,452,452,452,452,452,452,452,452);
+    }
+    if (case11l3==6 && (posJ1==11||posJ2==11||posJ3==11||posJ4==11)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,452);color(15,0);printf("%c",f);color(14,0);printf("%c%c%c%c%c",452,452,452,452,452);
     }
     if (case11l3>=7 && case11l3<8){
         color(14,0);
@@ -3023,93 +4977,180 @@ int test(double case01,double case03,double case05,double case10,double case11,d
         color(14,0);
         printf("%c%c%c%c%c%c%c%c   ",452,452,452,452,452,452,452,473);
     }
-    if (case11l3==9){
+    if (case11l3==9 && posJ1!=11 && posJ2!=11 && posJ3!=11 && posJ4!=11){
         color(14,0);
         printf("    %c  %c%c%c%c",435,474,452,452,452);
     }
-    if (case11l3==9.1){
+    if (case11l3==9 && (posJ1==11||posJ2==11||posJ3==11||posJ4==11)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",f);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case11l3==9.1 && posJ1!=11 && posJ2!=11 && posJ3!=11 && posJ4!=11){
         color(14,0);
         printf("    %c",435);color(15,0);printf(" %c",189);color(14,0);printf("%c%c%c%c",474,452,452,452);
     }
-    if (case11l3==9.2){
+    if (case11l3==9.1 && (posJ1==11||posJ2==11||posJ3==11||posJ4==11)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,189);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case11l3==9.2 && posJ1!=11 && posJ2!=11 && posJ3!=11 && posJ4!=11){
         color(14,0);
         printf("    %c",435);color(15,0);printf(" %c",157);color(14,0);printf("%c%c%c%c",474,452,452,452);
     }
-    if (case11l3==9.3){
+    if (case11l3==9.2 && (posJ1==11||posJ2==11||posJ3==11||posJ4==11)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,157);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case11l3==9.3 && posJ1!=11 && posJ2!=11 && posJ3!=11 && posJ4!=11){
         color(14,0);
         printf("    %c",435);color(15,0);printf(" %c",143);color(14,0);printf("%c%c%c%c",474,452,452,452);
     }
-    if (case11l3==9.4){
+    if (case11l3==9.3 && (posJ1==11||posJ2==11||posJ3==11||posJ4==11)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,143);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case11l3==9.4 && posJ1!=11 && posJ2!=11 && posJ3!=11 && posJ4!=11){
         color(14,0);
         printf("    %c",435);color(15,0);printf(" %c",37);color(14,0);printf("%c%c%c%c",474,452,452,452);
     }
-    if (case11l3==9.5){
+    if (case11l3==9.4 && (posJ1==11||posJ2==11||posJ3==11||posJ4==11)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,37);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case11l3==9.5 && posJ1!=11 && posJ2!=11 && posJ3!=11 && posJ4!=11){
         color(14,0);
         printf("    %c",435);color(15,0);printf(" %c",31);color(14,0);printf("%c%c%c%c",474,452,452,452);
     }
-    if (case11l3==9.6){
+    if (case11l3==9.5 && (posJ1==11||posJ2==11||posJ3==11||posJ4==11)){
         color(14,0);
-        printf("    %c",435);color(15,0);printf(" %c",15);color(14,0);printf("%c%c%c%c",474,452,452,452);
+        printf("    %c",435);color(15,0);printf("%c%c",f,31);color(14,0);printf("%c%c%c%c",474,452,452,452);
     }
-    if (case11l3==10) {
+    if (case11l3==9.6 && posJ1!=11 && posJ2!=11 && posJ3!=11 && posJ4!=11){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",459);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case11l3==9.6 && (posJ1==11||posJ2==11||posJ3==11||posJ4==11)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,459);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case11l3==10 && (posJ1==11||posJ2==11||posJ3==11||posJ4==11)) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c ",f);color(14,0);printf("%c   ",435);
+    }
+    if (case11l3==10 && posJ1!=11 && posJ2!=11 && posJ3!=11 && posJ4!=11) {
         color(14, 0);
         printf("%c%c%c%c%c  %c   ",452, 452,452,452, 447,435);
     }
-    if (case11l3==10.1) {
+    if (case11l3==10.1 && posJ1!=11 && posJ2!=11 && posJ3!=11 && posJ4!=11) {
         color(14, 0);
         printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c ",189);color(14,0);printf("%c   ",435);
     }
-    if (case11l3==10.2) {
+    if (case11l3==10.1 && (posJ1==11||posJ2==11||posJ3==11||posJ4==11)) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c%c",189,f);color(14,0);printf("%c   ",435);
+    }
+    if (case11l3==10.2 && posJ1!=11 && posJ2!=11 && posJ3!=11 && posJ4!=11) {
         color(14, 0);
         printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c ",157);color(14,0);printf("%c   ",435);
     }
-    if (case11l3==10.3) {
+    if (case11l3==10.2 && (posJ1==11||posJ2==11||posJ3==11||posJ4==11)) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c%c",157,f);color(14,0);printf("%c   ",435);
+    }
+    if (case11l3==10.3 && posJ1!=11 && posJ2!=11 && posJ3!=11 && posJ4!=11) {
         color(14, 0);
         printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c ",143);color(14,0);printf("%c   ",435);
     }
-    if (case11l3==10.4) {
+    if (case11l3==10.3 && (posJ1==11||posJ2==11||posJ3==11||posJ4==11)) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c%c",143,f);color(14,0);printf("%c   ",435);
+    }
+    if (case11l3==10.4 && posJ1!=11 && posJ2!=11 && posJ3!=11 && posJ4!=11) {
         color(14, 0);
         printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c ",37);color(14,0);printf("%c   ",435);
     }
-    if (case11l3==10.5) {
+    if (case11l3==10.4 && (posJ1==11||posJ2==11||posJ3==11||posJ4==11)) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c%c",37,f);color(14,0);printf("%c   ",435);
+    }
+    if (case11l3==10.5 && posJ1!=11 && posJ2!=11 && posJ3!=11 && posJ4!=11) {
         color(14, 0);
         printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c ",31);color(14,0);printf("%c   ",435);
     }
-    if (case11l3==10.6) {
+    if (case11l3==10.5 && (posJ1==11||posJ2==11||posJ3==11||posJ4==11)) {
         color(14, 0);
-        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c ",15);color(14,0);printf("%c   ",435);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c%c",31,f);color(14,0);printf("%c   ",435);
     }
+    if (case11l3==10.6 && posJ1!=11 && posJ2!=11 && posJ3!=11 && posJ4!=11) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c ",459);color(14,0);printf("%c   ",435);
+    }
+    if (case11l3==10.6 && (posJ1==11||posJ2==11||posJ3==11||posJ4==11)) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c%c",459,f);color(14,0);printf("%c   ",435);
+    }
+    f=testposition(posJ1,posJ2,posJ3,posJ4,12,p1,p2,p3,p4);
     if (case12l3==0){
         printf("            ");
     }
-    if (case12l3==1.1){
+    if (case12l3==1.1 && posJ1!=12 && posJ2!=12 && posJ3!=12 && posJ4!=12){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf(" %c",292);color(14,0);
         printf("%c%c%c%c%c",474,452,452,452,452);
     }
-    if (case12l3==1.2){
+    if (case12l3==1.1 && (posJ1==12||posJ2==12||posJ3==12||posJ4==12)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c%c",f,292);color(14,0);
+        printf("%c%c%c%c%c",474,452,452,452,452);
+    }
+    if (case12l3==1.2 && posJ1!=12 && posJ2!=12 && posJ3!=12 && posJ4!=12){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf(" %c",291);color(14,0);
         printf("%c%c%c%c%c",474,452,452,452,452);
     }
-    if (case12l3==1.3){
+    if (case12l3==1.2 && (posJ1==12||posJ2==12||posJ3==12||posJ4==12)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c%c",f,291);color(14,0);
+        printf("%c%c%c%c%c",474,452,452,452,452);
+    }
+    if (case12l3==1.3 && posJ1!=12 && posJ2!=12 && posJ3!=12 && posJ4!=12){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf(" %c",285);color(14,0);
         printf("%c%c%c%c%c",474,452,452,452,452);
     }
-    if (case12l3==1.4){
+    if (case12l3==1.3 && (posJ1==12||posJ2==12||posJ3==12||posJ4==12)){
         color(14,0);
-        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf(" %c",279);color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c%c",f,285);color(14,0);
         printf("%c%c%c%c%c",474,452,452,452,452);
     }
-    if (case12l3==1.5){
+    if (case12l3==1.4 && posJ1!=12 && posJ2!=12 && posJ3!=12 && posJ4!=12){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf(" %c",428);color(14,0);
+        printf("%c%c%c%c%c",474,452,452,452,452);
+    }
+    if (case12l3==1.4 && (posJ1==12||posJ2==12||posJ3==12||posJ4==12)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c%c",f,428);color(14,0);
+        printf("%c%c%c%c%c",474,452,452,452,452);
+    }
+    if (case12l3==1.5 && posJ1!=12 && posJ2!=12 && posJ3!=12 && posJ4!=12){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf(" %c",277);color(14,0);
         printf("%c%c%c%c%c",474,452,452,452,452);
     }
-    if (case12l3==1.6){
+    if (case12l3==1.5 && (posJ1==12||posJ2==12||posJ3==12||posJ4==12)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c%c",f,277);color(14,0);
+        printf("%c%c%c%c%c",474,452,452,452,452);
+    }
+    if (case12l3==1.6 && posJ1!=12 && posJ2!=12 && posJ3!=12 && posJ4!=12){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf(" %c",225);color(14,0);
+        printf("%c%c%c%c%c",474,452,452,452,452);
+    }
+    if (case12l3==1.6 && (posJ1==12||posJ2==12||posJ3==12||posJ4==12)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c%c",f,225);color(14,0);
         printf("%c%c%c%c%c",474,452,452,452,452);
     }
     if (case12l3>2 && case12l3<3){
@@ -3124,13 +5165,21 @@ int test(double case01,double case03,double case05,double case10,double case11,d
         color(14,0);
         printf("%c%c%c%c%c  %c    ",452,452,452,452,447,435);
     }
-    if (case12l3==5){
+    if (case12l3==5 && posJ1!=12 && posJ2!=12 && posJ3!=12 && posJ4!=12){
         color(14,0);
         printf("    %c  %c    ",435,435);
     }
-    if (case12l3==6){
+    if (case12l3==5 && (posJ1==12||posJ2==12||posJ3==12||posJ4==12)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c ",f);color(14,0);printf("%c    ",435);
+    }
+    if (case12l3==6 && posJ1!=12 && posJ2!=12 && posJ3!=12 && posJ4!=12){
         color(14,0);
         printf("%c%c%c%c%c%c%c%c%c%c%c%c",452,452,452,452,452,452,452,452,452,452,452,452);
+    }
+    if (case12l3==6 && (posJ1==12||posJ2==12||posJ3==12||posJ4==12)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,452);color(15,0);printf("%c",f);color(14,0);printf("%c%c%c%c%c%c",452,452,452,452,452,452);
     }
     if (case12l3>=7 && case12l3<8){
         color(14,0);
@@ -3140,96 +5189,183 @@ int test(double case01,double case03,double case05,double case10,double case11,d
         color(14,0);
         printf("%c%c%c%c%c%c%c%c    ",452,452,452,452,452,452,452,473);
     }
-    if (case12l3==9){
+    if (case12l3==9 && posJ1!=12 && posJ2!=12 && posJ3!=12 && posJ4!=12){
         color(14,0);
         printf("    %c  %c%c%c%c%c",435,474,452,452,452,452);
     }
-    if (case12l3==9.1){
+    if (case12l3==9 && (posJ1==12||posJ2==12||posJ3==12||posJ4==12)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",f);color(14,0);printf("%c%c%c%c%c",474,452,452,452,452);
+    }
+    if (case12l3==9.1 && posJ1!=12 && posJ2!=12 && posJ3!=12 && posJ4!=12){
         color(14,0);
         printf("    %c",435);color(15,0);printf(" %c",189);color(14,0);printf("%c%c%c%c%c",474,452,452,452,452);
     }
-    if (case12l3==9.2){
+    if (case12l3==9.1 && (posJ1==12||posJ2==12||posJ3==12||posJ4==12)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,189);color(14,0);printf("%c%c%c%c%c",474,452,452,452,452);
+    }
+    if (case12l3==9.2 && posJ1!=12 && posJ2!=12 && posJ3!=12 && posJ4!=12){
         color(14,0);
         printf("    %c",435);color(15,0);printf(" %c",157);color(14,0);printf("%c%c%c%c%c",474,452,452,452,452);
     }
-    if (case12l3==9.3){
+    if (case12l3==9.2 && (posJ1==12||posJ2==12||posJ3==12||posJ4==12)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,157);color(14,0);printf("%c%c%c%c%c",474,452,452,452,452);
+    }
+    if (case12l3==9.3 && posJ1!=12 && posJ2!=12 && posJ3!=12 && posJ4!=12){
         color(14,0);
         printf("    %c",435);color(15,0);printf(" %c",143);color(14,0);printf("%c%c%c%c%c",474,452,452,452,452);
     }
-    if (case12l3==9.4){
+    if (case12l3==9.3 && (posJ1==12||posJ2==12||posJ3==12||posJ4==12)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,143);color(14,0);printf("%c%c%c%c%c",474,452,452,452,452);
+    }
+    if (case12l3==9.4 && posJ1!=12 && posJ2!=12 && posJ3!=12 && posJ4!=12){
         color(14,0);
         printf("    %c",435);color(15,0);printf(" %c",37);color(14,0);printf("%c%c%c%c%c",474,452,452,452,452);
     }
-    if (case12l3==9.5){
+    if (case12l3==9.4 && (posJ1==12||posJ2==12||posJ3==12||posJ4==12)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,37);color(14,0);printf("%c%c%c%c%c",474,452,452,452,452);
+    }
+    if (case12l3==9.5 && posJ1!=12 && posJ2!=12 && posJ3!=12 && posJ4!=12){
         color(14,0);
         printf("    %c",435);color(15,0);printf(" %c",31);color(14,0);printf("%c%c%c%c%c",474,452,452,452,452);
     }
-    if (case12l3==9.6){
+    if (case12l3==9.5 && (posJ1==12||posJ2==12||posJ3==12||posJ4==12)){
         color(14,0);
-        printf("    %c",435);color(15,0);printf(" %c",15);color(14,0);printf("%c%c%c%c%c",474,452,452,452,452);
+        printf("    %c",435);color(15,0);printf("%c%c",f,31);color(14,0);printf("%c%c%c%c%c",474,452,452,452,452);
     }
-    if (case12l3==10) {
+    if (case12l3==9.6 && posJ1!=12 && posJ2!=12 && posJ3!=12 && posJ4!=12){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",459);color(14,0);printf("%c%c%c%c%c",474,452,452,452,452);
+    }
+    if (case12l3==9.6 && (posJ1==12||posJ2==12||posJ3==12||posJ4==12)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,459);color(14,0);printf("%c%c%c%c%c",474,452,452,452,452);
+    }
+    if (case12l3==10 && (posJ1==12||posJ2==12||posJ3==12||posJ4==12)) {
         color(14, 0);
-        printf("%c%c%c%c%c  %c    ", 452, 452,452,452, 447,435);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c ",f);color(14,0);printf("%c    ",435);
     }
-    if (case12l3==10.1) {
+    if (case12l3==10 && posJ1!=12 && posJ2!=12 && posJ3!=12 && posJ4!=12) {
         color(14, 0);
-        printf("%c%c%c%c%c", 452, 452,452,452, 447);color(15,0);printf("%c ",189);color(14,0);printf("%c    ",435);
+        printf("%c%c%c%c%c  %c    ",452, 452,452,452, 447,435);
     }
-    if (case12l3==10.2) {
+    if (case12l3==10.1 && posJ1!=12 && posJ2!=12 && posJ3!=12 && posJ4!=12) {
         color(14, 0);
-        printf("%c%c%c%c%c", 452, 452,452,452, 447);color(15,0);printf("%c ",157);color(14,0);printf("%c    ",435);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c ",189);color(14,0);printf("%c    ",435);
     }
-    if (case12l3==10.3) {
+    if (case12l3==10.1 && (posJ1==12||posJ2==12||posJ3==12||posJ4==12)) {
         color(14, 0);
-        printf("%c%c%c%c%c", 452, 452,452,452, 447);color(15,0);printf("%c ",143);color(14,0);printf("%c    ",435);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c%c",189,f);color(14,0);printf("%c    ",435);
     }
-    if (case12l3==10.4) {
+    if (case12l3==10.2 && posJ1!=12 && posJ2!=12 && posJ3!=12 && posJ4!=12) {
         color(14, 0);
-        printf("%c%c%c%c%c", 452, 452,452,452, 447);color(15,0);printf("%c ",37);color(14,0);printf("%c    ",435);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c ",157);color(14,0);printf("%c    ",435);
     }
-    if (case12l3==10.5) {
+    if (case12l3==10.2 && (posJ1==12||posJ2==12||posJ3==12||posJ4==12)) {
         color(14, 0);
-        printf("%c%c%c%c%c", 452, 452,452,452, 447);color(15,0);printf("%c ",31);color(14,0);printf("%c    ",435);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c%c",157,f);color(14,0);printf("%c    ",435);
     }
-    if (case12l3==10.6) {
+    if (case12l3==10.3 && posJ1!=12 && posJ2!=12 && posJ3!=12 && posJ4!=12) {
         color(14, 0);
-        printf("%c%c%c%c%c", 452, 452,452,452, 447);color(15,0);printf("%c ",15);color(14,0);printf("%c    ",435);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c ",143);color(14,0);printf("%c    ",435);
     }
+    if (case12l3==10.3 && (posJ1==12||posJ2==12||posJ3==12||posJ4==12)) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c%c",143,f);color(14,0);printf("%c    ",435);
+    }
+    if (case12l3==10.4 && posJ1!=12 && posJ2!=12 && posJ3!=12 && posJ4!=12) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c ",37);color(14,0);printf("%c    ",435);
+    }
+    if (case12l3==10.4 && (posJ1==12||posJ2==12||posJ3==12||posJ4==12)) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c%c",37,f);color(14,0);printf("%c    ",435);
+    }
+    if (case12l3==10.5 && posJ1!=12 && posJ2!=12 && posJ3!=12 && posJ4!=12) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c ",31);color(14,0);printf("%c    ",435);
+    }
+    if (case12l3==10.5 && (posJ1==12||posJ2==12||posJ3==12||posJ4==12)) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c%c",31,f);color(14,0);printf("%c    ",435);
+    }
+    if (case12l3==10.6 && posJ1!=12 && posJ2!=12 && posJ3!=12 && posJ4!=12) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c ",459);color(14,0);printf("%c    ",435);
+    }
+    if (case12l3==10.6 && (posJ1==12||posJ2==12||posJ3==12||posJ4==12)) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c%c",459,f);color(14,0);printf("%c    ",435);
+    }
+    f=testposition(posJ1,posJ2,posJ3,posJ4,13,p1,p2,p3,p4);
     if (case13l3==0){
         printf("           ");
     }
-    if (case13l3==1.1){
+    if (case13l3==1.1 && posJ1!=13 && posJ2!=13 && posJ3!=13 && posJ4!=13){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf(" %c",292);color(14,0);
         printf("%c%c%c%c",474,452,452,452);
     }
-    if (case13l3==1.2){
+    if (case13l3==1.1 && (posJ1==13||posJ2==13||posJ3==13||posJ4==13)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c%c",f,292);color(14,0);
+        printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case13l3==1.2 && posJ1!=13 && posJ2!=13 && posJ3!=13 && posJ4!=13){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf(" %c",291);color(14,0);
         printf("%c%c%c%c",474,452,452,452);
     }
-    if (case13l3==1.3){
+    if (case13l3==1.2 && (posJ1==13||posJ2==13||posJ3==13||posJ4==13)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c%c",f,291);color(14,0);
+        printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case13l3==1.3 && posJ1!=13 && posJ2!=13 && posJ3!=13 && posJ4!=13){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf(" %c",285);color(14,0);
         printf("%c%c%c%c",474,452,452,452);
     }
-    if (case13l3==1.4){
+    if (case13l3==1.3 && (posJ1==13||posJ2==13||posJ3==13||posJ4==13)){
         color(14,0);
-        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf(" %c",279);color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c%c",f,285);color(14,0);
         printf("%c%c%c%c",474,452,452,452);
     }
-    if (case13l3==1.5){
+    if (case13l3==1.4 && posJ1!=13 && posJ2!=13 && posJ3!=13 && posJ4!=13){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf(" %c",428);color(14,0);
+        printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case13l3==1.4 && (posJ1==13||posJ2==13||posJ3==13||posJ4==13)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c%c",f,428);color(14,0);
+        printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case13l3==1.5 && posJ1!=13 && posJ2!=13 && posJ3!=13 && posJ4!=13){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf(" %c",277);color(14,0);
         printf("%c%c%c%c",474,452,452,452);
     }
-    if (case13l3==1.6){
+    if (case13l3==1.5 && (posJ1==13||posJ2==13||posJ3==13||posJ4==13)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c%c",f,277);color(14,0);
+        printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case13l3==1.6 && posJ1!=13 && posJ2!=13 && posJ3!=13 && posJ4!=13){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf(" %c",225);color(14,0);
         printf("%c%c%c%c",474,452,452,452);
     }
-    if (case13l3>2 && case13l2<3){
+    if (case13l3==1.6 && (posJ1==13||posJ2==13||posJ3==13||posJ4==13)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c%c",f,225);color(14,0);
+        printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case13l3>2 && case13l3<3){
         color(14,0);
         printf("%c%c%c%c%c%c%c%c%c%c%c",452,452,452,452,452,452,452,452,452,452,452);
     }
@@ -3241,13 +5377,21 @@ int test(double case01,double case03,double case05,double case10,double case11,d
         color(14,0);
         printf("%c%c%c%c%c  %c   ",452,452,452,452,447,435);
     }
-    if (case13l3==5){
+    if (case13l3==5 && posJ1!=13 && posJ2!=13 && posJ3!=13 && posJ4!=13){
         color(14,0);
         piece5bout2();
     }
-    if (case13l3==6){
+    if (case13l3==5 && (posJ1==13||posJ2==13||posJ3==13||posJ4==13)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c ",f);color(14,0);printf("%c   ",435);
+    }
+    if (case13l3==6 && posJ1!=13 && posJ2!=13 && posJ3!=13 && posJ4!=13){
         color(14,0);
         printf("%c%c%c%c%c%c%c%c%c%c%c",452,452,452,452,452,452,452,452,452,452,452);
+    }
+    if (case13l3==6 && (posJ1==13||posJ2==13||posJ3==13||posJ4==13)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,452);color(15,0);printf("%c",f);color(14,0);printf("%c%c%c%c%c",452,452,452,452,452);
     }
     if (case13l3>=7 && case13l3<8){
         color(14,0);
@@ -3257,93 +5401,180 @@ int test(double case01,double case03,double case05,double case10,double case11,d
         color(14,0);
         printf("%c%c%c%c%c%c%c%c   ",452,452,452,452,452,452,452,473);
     }
-    if (case13l3==9){
+    if (case13l3==9 && posJ1!=13 && posJ2!=13 && posJ3!=13 && posJ4!=13){
         color(14,0);
         printf("    %c  %c%c%c%c",435,474,452,452,452);
     }
-    if (case13l3==9.1){
+    if (case13l3==9 && (posJ1==13||posJ2==13||posJ3==13||posJ4==13)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",f);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case13l3==9.1 && posJ1!=13 && posJ2!=13 && posJ3!=13 && posJ4!=13){
         color(14,0);
         printf("    %c",435);color(15,0);printf(" %c",189);color(14,0);printf("%c%c%c%c",474,452,452,452);
     }
-    if (case13l3==9.2){
+    if (case13l3==9.1 && (posJ1==13||posJ2==13||posJ3==13||posJ4==13)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,189);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case13l3==9.2 && posJ1!=13 && posJ2!=13 && posJ3!=13 && posJ4!=13){
         color(14,0);
         printf("    %c",435);color(15,0);printf(" %c",157);color(14,0);printf("%c%c%c%c",474,452,452,452);
     }
-    if (case13l3==9.3){
+    if (case13l3==9.2 && (posJ1==13||posJ2==13||posJ3==13||posJ4==13)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,157);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case13l3==9.3 && posJ1!=13 && posJ2!=13 && posJ3!=13 && posJ4!=13){
         color(14,0);
         printf("    %c",435);color(15,0);printf(" %c",143);color(14,0);printf("%c%c%c%c",474,452,452,452);
     }
-    if (case13l3==9.4){
+    if (case13l3==9.3 && (posJ1==13||posJ2==13||posJ3==13||posJ4==13)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,143);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case13l3==9.4 && posJ1!=13 && posJ2!=13 && posJ3!=13 && posJ4!=13){
         color(14,0);
         printf("    %c",435);color(15,0);printf(" %c",37);color(14,0);printf("%c%c%c%c",474,452,452,452);
     }
-    if (case13l3==9.5){
+    if (case13l3==9.4 && (posJ1==13||posJ2==13||posJ3==13||posJ4==13)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,37);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case13l3==9.5 && posJ1!=13 && posJ2!=13 && posJ3!=13 && posJ4!=13){
         color(14,0);
         printf("    %c",435);color(15,0);printf(" %c",31);color(14,0);printf("%c%c%c%c",474,452,452,452);
     }
-    if (case13l3==9.6){
+    if (case13l3==9.5 && (posJ1==13||posJ2==13||posJ3==13||posJ4==13)){
         color(14,0);
-        printf("    %c",435);color(15,0);printf(" %c",15);color(14,0);printf("%c%c%c%c",474,452,452,452);
+        printf("    %c",435);color(15,0);printf("%c%c",f,31);color(14,0);printf("%c%c%c%c",474,452,452,452);
     }
-    if (case13l3==10) {
+    if (case13l3==9.6 && posJ1!=13 && posJ2!=13 && posJ3!=13 && posJ4!=13){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",459);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case13l3==9.6 && (posJ1==13||posJ2==13||posJ3==13||posJ4==13)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,459);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case13l3==10 && (posJ1==13||posJ2==13||posJ3==13||posJ4==13)) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c ",f);color(14,0);printf("%c   ",435);
+    }
+    if (case13l3==10 && posJ1!=13 && posJ2!=13 && posJ3!=13 && posJ4!=13) {
         color(14, 0);
         printf("%c%c%c%c%c  %c   ",452, 452,452,452, 447,435);
     }
-    if (case13l3==10.1) {
+    if (case13l3==10.1 && posJ1!=13 && posJ2!=13 && posJ3!=13 && posJ4!=13) {
         color(14, 0);
         printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c ",189);color(14,0);printf("%c   ",435);
     }
-    if (case13l3==10.2) {
+    if (case13l3==10.1 && (posJ1==13||posJ2==13||posJ3==13||posJ4==13)) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c%c",189,f);color(14,0);printf("%c   ",435);
+    }
+    if (case13l3==10.2 && posJ1!=13 && posJ2!=13 && posJ3!=13 && posJ4!=13) {
         color(14, 0);
         printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c ",157);color(14,0);printf("%c   ",435);
     }
-    if (case13l3==10.3) {
+    if (case13l3==10.2 && (posJ1==13||posJ2==13||posJ3==13||posJ4==13)) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c%c",157,f);color(14,0);printf("%c   ",435);
+    }
+    if (case13l3==10.3 && posJ1!=13 && posJ2!=13 && posJ3!=13 && posJ4!=13) {
         color(14, 0);
         printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c ",143);color(14,0);printf("%c   ",435);
     }
-    if (case13l3==10.4) {
+    if (case13l3==10.3 && (posJ1==13||posJ2==13||posJ3==13||posJ4==13)) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c%c",143,f);color(14,0);printf("%c   ",435);
+    }
+    if (case13l3==10.4 && posJ1!=13 && posJ2!=13 && posJ3!=13 && posJ4!=13) {
         color(14, 0);
         printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c ",37);color(14,0);printf("%c   ",435);
     }
-    if (case13l3==10.5) {
+    if (case13l3==10.4 && (posJ1==13||posJ2==13||posJ3==13||posJ4==13)) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c%c",37,f);color(14,0);printf("%c   ",435);
+    }
+    if (case13l3==10.5 && posJ1!=13 && posJ2!=13 && posJ3!=13 && posJ4!=13) {
         color(14, 0);
         printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c ",31);color(14,0);printf("%c   ",435);
     }
-    if (case13l3==10.6) {
+    if (case13l3==10.5 && (posJ1==13||posJ2==13||posJ3==13||posJ4==13)) {
         color(14, 0);
-        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c ",15);color(14,0);printf("%c   ",435);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c%c",31,f);color(14,0);printf("%c   ",435);
     }
+    if (case13l3==10.6 && posJ1!=13 && posJ2!=13 && posJ3!=13 && posJ4!=13) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c ",459);color(14,0);printf("%c   ",435);
+    }
+    if (case13l3==10.6 && (posJ1==13||posJ2==13||posJ3==13||posJ4==13)) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c%c",459,f);color(14,0);printf("%c   ",435);
+    }
+    f=testposition(posJ1,posJ2,posJ3,posJ4,14,p1,p2,p3,p4);
     if (case14l3==0){
         printf("              ");
     }
-    if (case14l3==1.1){
+    if (case14l3==1.1 && posJ1!=14 && posJ2!=14 && posJ3!=14 && posJ4!=14){
         color(14,0);
         printf("%c%c%c%c%c%c",452,452,452,452,452,447);color(15,0);printf(" %c",292);color(14,0);
         printf("%c%c%c%c%c%c",474,452,452,452,452,452);
     }
-    if (case14l3==1.2){
+    if (case14l3==1.1 && (posJ1==14||posJ2==14||posJ3==14||posJ4==14)){
+        color(14,0);
+        printf("%c%c%c%c%c%c",452,452,452,452,452,447);color(15,0);printf("%c%c",f,292);color(14,0);
+        printf("%c%c%c%c%c%c",474,452,452,452,452,452);
+    }
+    if (case14l3==1.2 && posJ1!=14 && posJ2!=14 && posJ3!=14 && posJ4!=14){
         color(14,0);
         printf("%c%c%c%c%c%c",452,452,452,452,452,447);color(15,0);printf(" %c",291);color(14,0);
         printf("%c%c%c%c%c%c",474,452,452,452,452,452);
     }
-    if (case14l3==1.3){
+    if (case14l3==1.2 && (posJ1==14||posJ2==14||posJ3==14||posJ4==14)){
+        color(14,0);
+        printf("%c%c%c%c%c%c",452,452,452,452,452,447);color(15,0);printf("%c%c",f,291);color(14,0);
+        printf("%c%c%c%c%c%c",474,452,452,452,452,452);
+    }
+    if (case14l3==1.3 && posJ1!=14 && posJ2!=14 && posJ3!=14 && posJ4!=14){
         color(14,0);
         printf("%c%c%c%c%c%c",452,452,452,452,452,447);color(15,0);printf(" %c",285);color(14,0);
         printf("%c%c%c%c%c%c",474,452,452,452,452,452);
     }
-    if (case14l3==1.4){
+    if (case14l3==1.3 && (posJ1==14||posJ2==14||posJ3==14||posJ4==14)){
         color(14,0);
-        printf("%c%c%c%c%c%c",452,452,452,452,452,447);color(15,0);printf(" %c",279);color(14,0);
+        printf("%c%c%c%c%c%c",452,452,452,452,452,447);color(15,0);printf("%c%c",f,285);color(14,0);
         printf("%c%c%c%c%c%c",474,452,452,452,452,452);
     }
-    if (case14l3==1.5){
+    if (case14l3==1.4 && posJ1!=14 && posJ2!=14 && posJ3!=14 && posJ4!=14){
+        color(14,0);
+        printf("%c%c%c%c%c%c",452,452,452,452,452,447);color(15,0);printf(" %c",428);color(14,0);
+        printf("%c%c%c%c%c%c",474,452,452,452,452,452);
+    }
+    if (case14l3==1.4 && (posJ1==14||posJ2==14||posJ3==14||posJ4==14)){
+        color(14,0);
+        printf("%c%c%c%c%c%c",452,452,452,452,452,447);color(15,0);printf("%c%c",f,428);color(14,0);
+        printf("%c%c%c%c%c%c",474,452,452,452,452,452);
+    }
+    if (case14l3==1.5 && posJ1!=14 && posJ2!=14 && posJ3!=14 && posJ4!=14){
         color(14,0);
         printf("%c%c%c%c%c%c",452,452,452,452,452,447);color(15,0);printf(" %c",277);color(14,0);
         printf("%c%c%c%c%c%c",474,452,452,452,452,452);
     }
-    if (case14l3==1.6){
+    if (case14l3==1.5 && (posJ1==14||posJ2==14||posJ3==14||posJ4==14)){
+        color(14,0);
+        printf("%c%c%c%c%c%c",452,452,452,452,452,447);color(15,0);printf("%c%c",f,277);color(14,0);
+        printf("%c%c%c%c%c%c",474,452,452,452,452,452);
+    }
+    if (case14l3==1.6 && posJ1!=14 && posJ2!=14 && posJ3!=14 && posJ4!=14){
         color(14,0);
         printf("%c%c%c%c%c%c",452,452,452,452,452,447);color(15,0);printf(" %c",225);color(14,0);
+        printf("%c%c%c%c%c%c",474,452,452,452,452,452);
+    }
+    if (case14l3==1.6 && (posJ1==14||posJ2==14||posJ3==14||posJ4==14)){
+        color(14,0);
+        printf("%c%c%c%c%c%c",452,452,452,452,452,447);color(15,0);printf("%c%c",f,225);color(14,0);
         printf("%c%c%c%c%c%c",474,452,452,452,452,452);
     }
     if (case14l3>2 && case14l3<3){
@@ -3358,13 +5589,21 @@ int test(double case01,double case03,double case05,double case10,double case11,d
         color(14,0);
         printf("%c%c%c%c%c%c  %c     ",452,452,452,452,452,447,435);
     }
-    if (case14l3==5){
+    if (case14l3==5 && posJ1!=14 && posJ2!=14 && posJ3!=14 && posJ4!=14){
         color(14,0);
         printf("     %c  %c     ",435,435);
     }
-    if (case14l3==6){
+    if (case14l3==5 && (posJ1==14||posJ2==14||posJ3==14||posJ4==14)){
+        color(14,0);
+        printf("     %c",435);color(15,0);printf("%c ",f);color(14,0);printf("%c     ",435);
+    }
+    if (case14l3==6 && posJ1!=14 && posJ2!=14 && posJ3!=14 && posJ4!=14){
         color(14,0);
         printf("%c%c%c%c%c%c%c%c%c%c%c%c%c%c",452,452,452,452,452,452,452,452,452,452,452,452,452,452);
+    }
+    if (case14l3==6 && (posJ1==14||posJ2==14||posJ3==14||posJ4==14)){
+        color(14,0);
+        printf("%c%c%c%c%c%c",452,452,452,452,452,452);color(15,0);printf("%c",f);color(14,0);printf("%c%c%c%c%c%c%c",452,452,452,452,452,452,452);
     }
     if (case14l3>=7 && case14l3<8){
         color(14,0);
@@ -3374,93 +5613,180 @@ int test(double case01,double case03,double case05,double case10,double case11,d
         color(14,0);
         printf("%c%c%c%c%c%c%c%c%c     ",452,452,452,452,452,452,452,452,473);
     }
-    if (case14l3==9){
+    if (case14l3==9 && posJ1!=14 && posJ2!=14 && posJ3!=14 && posJ4!=14){
         color(14,0);
         printf("     %c  %c%c%c%c%c%c",435,474,452,452,452,452,452);
     }
-    if (case14l3==9.1){
+    if (case14l3==9 && (posJ1==14||posJ2==14||posJ3==14||posJ4==14)){
+        color(14,0);
+        printf("     %c",435);color(15,0);printf(" %c",f);color(14,0);printf("%c%c%c%c%c%c",474,452,452,452,452,452);
+    }
+    if (case14l3==9.1 && posJ1!=14 && posJ2!=14 && posJ3!=14 && posJ4!=14){
         color(14,0);
         printf("     %c",435);color(15,0);printf(" %c",189);color(14,0);printf("%c%c%c%c%c%c",474,452,452,452,452,452);
     }
-    if (case14l3==9.2){
+    if (case14l3==9.1 && (posJ1==14||posJ2==14||posJ3==14||posJ4==14)){
+        color(14,0);
+        printf("     %c",435);color(15,0);printf("%c%c",f,189);color(14,0);printf("%c%c%c%c%c%c",474,452,452,452,452,452);
+    }
+    if (case14l3==9.2 && posJ1!=14 && posJ2!=14 && posJ3!=14 && posJ4!=14){
         color(14,0);
         printf("     %c",435);color(15,0);printf(" %c",157);color(14,0);printf("%c%c%c%c%c%c",474,452,452,452,452,452);
     }
-    if (case14l3==9.3){
+    if (case14l3==9.2 && (posJ1==14||posJ2==14||posJ3==14||posJ4==14)){
+        color(14,0);
+        printf("     %c",435);color(15,0);printf("%c%c",f,157);color(14,0);printf("%c%c%c%c%c%c",474,452,452,452,452,452);
+    }
+    if (case14l3==9.3 && posJ1!=14 && posJ2!=14 && posJ3!=14 && posJ4!=14){
         color(14,0);
         printf("     %c",435);color(15,0);printf(" %c",143);color(14,0);printf("%c%c%c%c%c%c",474,452,452,452,452,452);
     }
-    if (case14l3==9.4){
+    if (case14l3==9.3 && (posJ1==14||posJ2==14||posJ3==14||posJ4==14)){
+        color(14,0);
+        printf("     %c",435);color(15,0);printf("%c%c",f,143);color(14,0);printf("%c%c%c%c%c%c",474,452,452,452,452,452);
+    }
+    if (case14l3==9.4 && posJ1!=14 && posJ2!=14 && posJ3!=14 && posJ4!=14){
         color(14,0);
         printf("     %c",435);color(15,0);printf(" %c",37);color(14,0);printf("%c%c%c%c%c%c",474,452,452,452,452,452);
     }
-    if (case14l3==9.5){
+    if (case14l3==9.4 && (posJ1==14||posJ2==14||posJ3==14||posJ4==14)){
+        color(14,0);
+        printf("     %c",435);color(15,0);printf("%c%c",f,37);color(14,0);printf("%c%c%c%c%c%c",474,452,452,452,452,452);
+    }
+    if (case14l3==9.5 && posJ1!=14 && posJ2!=14 && posJ3!=14 && posJ4!=14){
         color(14,0);
         printf("     %c",435);color(15,0);printf(" %c",31);color(14,0);printf("%c%c%c%c%c%c",474,452,452,452,452,452);
     }
-    if (case14l3==9.6){
+    if (case14l3==9.5 && (posJ1==14||posJ2==14||posJ3==14||posJ4==14)){
         color(14,0);
-        printf("     %c",435);color(15,0);printf(" %c",15);color(14,0);printf("%c%c%c%c%c%c",474,452,452,452,452,452);
+        printf("     %c",435);color(15,0);printf("%c%c",f,31);color(14,0);printf("%c%c%c%c%c%c",474,452,452,452,452,452);
     }
-    if (case14l3==10) {
+    if (case14l3==9.6 && posJ1!=14 && posJ2!=14 && posJ3!=14 && posJ4!=14){
+        color(14,0);
+        printf("     %c",435);color(15,0);printf(" %c",459);color(14,0);printf("%c%c%c%c%c%c",474,452,452,452,452,452);
+    }
+    if (case14l3==9.6 && (posJ1==14||posJ2==14||posJ3==14||posJ4==14)){
+        color(14,0);
+        printf("     %c",435);color(15,0);printf("%c%c",f,459);color(14,0);printf("%c%c%c%c%c%c",474,452,452,452,452,452);
+    }
+    if (case14l3==10 && (posJ1==14||posJ2==14||posJ3==14||posJ4==14)) {
         color(14, 0);
-        printf("%c%c%c%c%c%c  %c     ", 452, 452, 452,452,452, 447,435);
+        printf("%c%c%c%c%c%c",452,452, 452,452,452, 447);color(15,0);printf("%c ",f);color(14,0);printf("%c     ",435);
     }
-    if (case14l3==10.1) {
+    if (case14l3==10 && posJ1!=14 && posJ2!=14 && posJ3!=14 && posJ4!=14) {
         color(14, 0);
-        printf("%c%c%c%c%c%c", 452, 452, 452,452,452, 447);color(15,0);printf("%c ",189);color(14,0);printf("%c     ",435);
+        printf("%c%c%c%c%c%c  %c     ",452,452, 452,452,452, 447,435);
     }
-    if (case14l3==10.2) {
+    if (case14l3==10.1 && posJ1!=14 && posJ2!=14 && posJ3!=14 && posJ4!=14) {
         color(14, 0);
-        printf("%c%c%c%c%c%c", 452, 452, 452,452,452, 447);color(15,0);printf("%c ",157);color(14,0);printf("%c     ",435);
+        printf("%c%c%c%c%c%c",452,452, 452,452,452, 447);color(15,0);printf("%c ",189);color(14,0);printf("%c     ",435);
     }
-    if (case14l3==10.3) {
+    if (case14l3==10.1 && (posJ1==14||posJ2==14||posJ3==14||posJ4==14)) {
         color(14, 0);
-        printf("%c%c%c%c%c%c", 452, 452, 452,452,452, 447);color(15,0);printf("%c ",143);color(14,0);printf("%c     ",435);
+        printf("%c%c%c%c%c%c",452,452, 452,452,452, 447);color(15,0);printf("%c%c",189,f);color(14,0);printf("%c     ",435);
     }
-    if (case14l3==10.4) {
+    if (case14l3==10.2 && posJ1!=14 && posJ2!=14 && posJ3!=14 && posJ4!=14) {
         color(14, 0);
-        printf("%c%c%c%c%c%c", 452, 452, 452,452,452, 447);color(15,0);printf("%c ",37);color(14,0);printf("%c     ",435);
+        printf("%c%c%c%c%c%c",452,452, 452,452,452, 447);color(15,0);printf("%c ",157);color(14,0);printf("%c     ",435);
     }
-    if (case14l3==10.5) {
+    if (case14l3==10.2 && (posJ1==14||posJ2==14||posJ3==14||posJ4==14)) {
         color(14, 0);
-        printf("%c%c%c%c%c%c", 452, 452, 452,452,452, 447);color(15,0);printf("%c ",31);color(14,0);printf("%c     ",435);
+        printf("%c%c%c%c%c%c",452,452, 452,452,452, 447);color(15,0);printf("%c%c",157,f);color(14,0);printf("%c     ",435);
     }
-    if (case14l3==10.6) {
+    if (case14l3==10.3 && posJ1!=14 && posJ2!=14 && posJ3!=14 && posJ4!=14) {
         color(14, 0);
-        printf("%c%c%c%c%c%c", 452, 452, 452,452,452, 447);color(15,0);printf("%c ",15);color(14,0);printf("%c     ",435);
+        printf("%c%c%c%c%c%c",452,452, 452,452,452, 447);color(15,0);printf("%c ",143);color(14,0);printf("%c     ",435);
     }
+    if (case14l3==10.3 && (posJ1==14||posJ2==14||posJ3==14||posJ4==14)) {
+        color(14, 0);
+        printf("%c%c%c%c%c%c",452, 452,452,452,452, 447);color(15,0);printf("%c%c",143,f);color(14,0);printf("%c     ",435);
+    }
+    if (case14l3==10.4 && posJ1!=14 && posJ2!=14 && posJ3!=14 && posJ4!=14) {
+        color(14, 0);
+        printf("%c%c%c%c%c%c",452,452, 452,452,452, 447);color(15,0);printf("%c ",37);color(14,0);printf("%c     ",435);
+    }
+    if (case14l3==10.4 && (posJ1==14||posJ2==14||posJ3==14||posJ4==14)) {
+        color(14, 0);
+        printf("%c%c%c%c%c%c",452,452, 452,452,452, 447);color(15,0);printf("%c%c",37,f);color(14,0);printf("%c     ",435);
+    }
+    if (case14l3==10.5 && posJ1!=14 && posJ2!=14 && posJ3!=14 && posJ4!=14) {
+        color(14, 0);
+        printf("%c%c%c%c%c%c",452,452, 452,452,452, 447);color(15,0);printf("%c ",31);color(14,0);printf("%c     ",435);
+    }
+    if (case14l3==10.5 && (posJ1==14||posJ2==14||posJ3==14||posJ4==14)) {
+        color(14, 0);
+        printf("%c%c%c%c%c%c",452,452, 452,452,452, 447);color(15,0);printf("%c%c",31,f);color(14,0);printf("%c     ",435);
+    }
+    if (case14l3==10.6 && posJ1!=14 && posJ2!=14 && posJ3!=14 && posJ4!=14) {
+        color(14, 0);
+        printf("%c%c%c%c%c%c",452,452, 452,452,452, 447);color(15,0);printf("%c ",459);color(14,0);printf("%c     ",435);
+    }
+    if (case14l3==10.6 && (posJ1==14||posJ2==14||posJ3==14||posJ4==14)) {
+        color(14, 0);
+        printf("%c%c%c%c%c%c",452,452, 452,452,452, 447);color(15,0);printf("%c%c",459,f);color(14,0);printf("%c     ",435);
+    }
+    f=testposition(posJ1,posJ2,posJ3,posJ4,15,p1,p2,p3,p4);
     if (case15l3==0){
         printf("           ");
     }
-    if (case15l3==1.1){
+    if (case15l3==1.1 && posJ1!=15 && posJ2!=15 && posJ3!=15 && posJ4!=15){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf(" %c",292);color(14,0);
         printf("%c%c%c%c",474,452,452,452);
     }
-    if (case15l3==1.2){
+    if (case15l3==1.1 && (posJ1==15||posJ2==15||posJ3==15||posJ4==15)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c%c",f,292);color(14,0);
+        printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case15l3==1.2 && posJ1!=15 && posJ2!=15 && posJ3!=15 && posJ4!=15){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf(" %c",291);color(14,0);
         printf("%c%c%c%c",474,452,452,452);
     }
-    if (case15l3==1.3){
+    if (case15l3==1.2 && (posJ1==15||posJ2==15||posJ3==15||posJ4==15)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c%c",f,291);color(14,0);
+        printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case15l3==1.3 && posJ1!=15 && posJ2!=15 && posJ3!=15 && posJ4!=15){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf(" %c",285);color(14,0);
         printf("%c%c%c%c",474,452,452,452);
     }
-    if (case15l3==1.4){
+    if (case15l3==1.3 && (posJ1==15||posJ2==15||posJ3==15||posJ4==15)){
         color(14,0);
-        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf(" %c",279);color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c%c",f,285);color(14,0);
         printf("%c%c%c%c",474,452,452,452);
     }
-    if (case15l3==1.5){
+    if (case15l3==1.4 && posJ1!=15 && posJ2!=15 && posJ3!=15 && posJ4!=15){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf(" %c",428);color(14,0);
+        printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case15l3==1.4 && (posJ1==15||posJ2==15||posJ3==15||posJ4==15)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c%c",f,428);color(14,0);
+        printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case15l3==1.5 && posJ1!=15 && posJ2!=15 && posJ3!=15 && posJ4!=15){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf(" %c",277);color(14,0);
         printf("%c%c%c%c",474,452,452,452);
     }
-    if (case15l3==1.6){
+    if (case15l3==1.5 && (posJ1==15||posJ2==15||posJ3==15||posJ4==15)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c%c",f,277);color(14,0);
+        printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case15l3==1.6 && posJ1!=15 && posJ2!=15 && posJ3!=15 && posJ4!=15){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf(" %c",225);color(14,0);
+        printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case15l3==1.6 && (posJ1==15||posJ2==15||posJ3==15||posJ4==15)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c%c",f,225);color(14,0);
         printf("%c%c%c%c",474,452,452,452);
     }
     if (case15l3>2 && case15l3<3){
@@ -3475,13 +5801,21 @@ int test(double case01,double case03,double case05,double case10,double case11,d
         color(14,0);
         printf("%c%c%c%c%c  %c   ",452,452,452,452,447,435);
     }
-    if (case15l3==5){
+    if (case15l3==5 && posJ1!=15 && posJ2!=15 && posJ3!=15 && posJ4!=15){
         color(14,0);
         piece5bout2();
     }
-    if (case15l3==6){
+    if (case15l3==5 && (posJ1==15||posJ2==15||posJ3==15||posJ4==15)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c ",f);color(14,0);printf("%c   ",435);
+    }
+    if (case15l3==6 && posJ1!=15 && posJ2!=15 && posJ3!=15 && posJ4!=15){
         color(14,0);
         printf("%c%c%c%c%c%c%c%c%c%c%c",452,452,452,452,452,452,452,452,452,452,452);
+    }
+    if (case15l3==6 && (posJ1==15||posJ2==15||posJ3==15||posJ4==15)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,452);color(15,0);printf("%c",f);color(14,0);printf("%c%c%c%c%c",452,452,452,452,452);
     }
     if (case15l3>=7 && case15l3<8){
         color(14,0);
@@ -3491,87 +5825,168 @@ int test(double case01,double case03,double case05,double case10,double case11,d
         color(14,0);
         printf("%c%c%c%c%c%c%c%c   ",452,452,452,452,452,452,452,473);
     }
-    if (case15l3==9){
+    if (case15l3==9 && posJ1!=15 && posJ2!=15 && posJ3!=15 && posJ4!=15){
         color(14,0);
         printf("    %c  %c%c%c%c",435,474,452,452,452);
     }
-    if (case15l3==9.1){
+    if (case15l3==9 && (posJ1==15||posJ2==15||posJ3==15||posJ4==15)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",f);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case15l3==9.1 && posJ1!=15 && posJ2!=15 && posJ3!=15 && posJ4!=15){
         color(14,0);
         printf("    %c",435);color(15,0);printf(" %c",189);color(14,0);printf("%c%c%c%c",474,452,452,452);
     }
-    if (case15l3==9.2){
+    if (case15l3==9.1 && (posJ1==15||posJ2==15||posJ3==15||posJ4==15)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,189);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case15l3==9.2 && posJ1!=15 && posJ2!=15 && posJ3!=15 && posJ4!=15){
         color(14,0);
         printf("    %c",435);color(15,0);printf(" %c",157);color(14,0);printf("%c%c%c%c",474,452,452,452);
     }
-    if (case15l3==9.3){
+    if (case15l3==9.2 && (posJ1==15||posJ2==15||posJ3==15||posJ4==15)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,157);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case15l3==9.3 && posJ1!=15 && posJ2!=15 && posJ3!=15 && posJ4!=15){
         color(14,0);
         printf("    %c",435);color(15,0);printf(" %c",143);color(14,0);printf("%c%c%c%c",474,452,452,452);
     }
-    if (case15l3==9.4){
+    if (case15l3==9.3 && (posJ1==15||posJ2==15||posJ3==15||posJ4==15)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,143);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case15l3==9.4 && posJ1!=15 && posJ2!=15 && posJ3!=15 && posJ4!=15){
         color(14,0);
         printf("    %c",435);color(15,0);printf(" %c",37);color(14,0);printf("%c%c%c%c",474,452,452,452);
     }
-    if (case15l3==9.5){
+    if (case15l3==9.4 && (posJ1==15||posJ2==15||posJ3==15||posJ4==15)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,37);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case15l3==9.5 && posJ1!=15 && posJ2!=15 && posJ3!=15 && posJ4!=15){
         color(14,0);
         printf("    %c",435);color(15,0);printf(" %c",31);color(14,0);printf("%c%c%c%c",474,452,452,452);
     }
-    if (case15l3==9.6){
+    if (case15l3==9.5 && (posJ1==15||posJ2==15||posJ3==15||posJ4==15)){
         color(14,0);
-        printf("    %c",435);color(15,0);printf(" %c",15);color(14,0);printf("%c%c%c%c",474,452,452,452);
+        printf("    %c",435);color(15,0);printf("%c%c",f,31);color(14,0);printf("%c%c%c%c",474,452,452,452);
     }
-    if (case15l3==10) {
+    if (case15l3==9.6 && posJ1!=15 && posJ2!=15 && posJ3!=15 && posJ4!=15){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",459);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case15l3==9.6 && (posJ1==15||posJ2==15||posJ3==15||posJ4==15)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,459);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case15l3==10 && (posJ1==15||posJ2==15||posJ3==15||posJ4==15)) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c ",f);color(14,0);printf("%c   ",435);
+    }
+    if (case15l3==10 && posJ1!=15 && posJ2!=15 && posJ3!=15 && posJ4!=15) {
         color(14, 0);
         printf("%c%c%c%c%c  %c   ",452, 452,452,452, 447,435);
     }
-    if (case15l3==10.1) {
+    if (case15l3==10.1 && posJ1!=15 && posJ2!=15 && posJ3!=15 && posJ4!=15) {
         color(14, 0);
         printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c ",189);color(14,0);printf("%c   ",435);
     }
-    if (case15l3==10.2) {
+    if (case15l3==10.1 && (posJ1==15||posJ2==15||posJ3==15||posJ4==15)) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c%c",189,f);color(14,0);printf("%c   ",435);
+    }
+    if (case15l3==10.2 && posJ1!=15 && posJ2!=15 && posJ3!=15 && posJ4!=15) {
         color(14, 0);
         printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c ",157);color(14,0);printf("%c   ",435);
     }
-    if (case15l3==10.3) {
+    if (case15l3==10.2 && (posJ1==15||posJ2==15||posJ3==15||posJ4==15)) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c%c",157,f);color(14,0);printf("%c   ",435);
+    }
+    if (case15l3==10.3 && posJ1!=15 && posJ2!=15 && posJ3!=15 && posJ4!=15) {
         color(14, 0);
         printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c ",143);color(14,0);printf("%c   ",435);
     }
-    if (case15l3==10.4) {
+    if (case15l3==10.3 && (posJ1==15||posJ2==15||posJ3==15||posJ4==15)) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c%c",143,f);color(14,0);printf("%c   ",435);
+    }
+    if (case15l3==10.4 && posJ1!=15 && posJ2!=15 && posJ3!=15 && posJ4!=15) {
         color(14, 0);
         printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c ",37);color(14,0);printf("%c   ",435);
     }
-    if (case15l3==10.5) {
+    if (case15l3==10.4 && (posJ1==15||posJ2==15||posJ3==15||posJ4==15)) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c%c",37,f);color(14,0);printf("%c   ",435);
+    }
+    if (case15l3==10.5 && posJ1!=15 && posJ2!=15 && posJ3!=15 && posJ4!=15) {
         color(14, 0);
         printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c ",31);color(14,0);printf("%c   ",435);
     }
-    if (case15l3==10.6) {
+    if (case15l3==10.5 && (posJ1==15||posJ2==15||posJ3==15||posJ4==15)) {
         color(14, 0);
-        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c ",15);color(14,0);printf("%c   ",435);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c%c",31,f);color(14,0);printf("%c   ",435);
     }
+    if (case15l3==10.6 && posJ1!=15 && posJ2!=15 && posJ3!=15 && posJ4!=15) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c ",459);color(14,0);printf("%c   ",435);
+    }
+    if (case15l3==10.6 && (posJ1==15||posJ2==15||posJ3==15||posJ4==15)) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c%c",459,f);color(14,0);printf("%c   ",435);
+    }
+    f=testposition(posJ1,posJ2,posJ3,posJ4,16,p1,p2,p3,p4);
     if (case16l3==0){
         printf("         ");
     }
-    if (case16l3==1.1){
+    if (case16l3==1.1 && posJ1!=16 && posJ2!=16 && posJ3!=16 && posJ4!=16){
         printf("%c%c%c%c%c%c",452,452,452,452,452,447);color(15,0),printf("%c ",292);color(14,0);
         printf("%c",474);
     }
-    if (case16l3==1.2){
+    if (case16l3==1.1 && (posJ1==16||posJ2==16||posJ3==16||posJ4==16)){
+        printf("%c%c%c%c%c%c",452,452,452,452,452,447);color(15,0),printf("%c%c",292,f);color(14,0);
+        printf("%c",474);
+    }
+    if (case16l3==1.2 && posJ1!=16 && posJ2!=16 && posJ3!=16 && posJ4!=16){
         printf("%c%c%c%c%c%c",452,452,452,452,452,447);color(15,0),printf("%c ",291);color(14,0);
         printf("%c",474);
     }
-    if (case16l3==1.3){
+    if (case16l3==1.2 && (posJ1==16||posJ2==16||posJ3==16||posJ4==16)){
+        printf("%c%c%c%c%c%c",452,452,452,452,452,447);color(15,0),printf("%c%c",291,f);color(14,0);
+        printf("%c",474);
+    }
+    if (case16l3==1.3 && posJ1!=16 && posJ2!=16 && posJ3!=16 && posJ4!=16){
         printf("%c%c%c%c%c%c",452,452,452,452,452,447);color(15,0),printf("%c ",285);color(14,0);
         printf("%c",474);
     }
-    if (case16l3==1.4){
-        printf("%c%c%c%c%c%c",452,452,452,452,452,447);color(15,0),printf("%c ",279);color(14,0);
+    if (case16l3==1.3 && (posJ1==16||posJ2==16||posJ3==16||posJ4==16)){
+        printf("%c%c%c%c%c%c",452,452,452,452,452,447);color(15,0),printf("%c%c",285,f);color(14,0);
         printf("%c",474);
     }
-    if (case16l3==1.5){
+    if (case16l3==1.4 && posJ1!=16 && posJ2!=16 && posJ3!=16 && posJ4!=16){
+        printf("%c%c%c%c%c%c",452,452,452,452,452,447);color(15,0),printf("%c ",428);color(14,0);
+        printf("%c",474);
+    }
+    if (case16l3==1.4 && (posJ1==16||posJ2==16||posJ3==16||posJ4==16)){
+        printf("%c%c%c%c%c%c",452,452,452,452,452,447);color(15,0),printf("%c%c",428,f);color(14,0);
+        printf("%c",474);
+    }
+    if (case16l3==1.5 && posJ1!=16 && posJ2!=16 && posJ3!=16 && posJ4!=16){
         printf("%c%c%c%c%c%c",452,452,452,452,452,447);color(15,0),printf("%c ",277);color(14,0);
         printf("%c",474);
     }
-    if (case16l3==1.6){
+    if (case16l3==1.5 && (posJ1==16||posJ2==16||posJ3==16||posJ4==16)){
+        printf("%c%c%c%c%c%c",452,452,452,452,452,447);color(15,0),printf("%c%c",277,f);color(14,0);
+        printf("%c",474);
+    }
+    if (case16l3==1.6 && posJ1!=16 && posJ2!=16 && posJ3!=16 && posJ4!=16){
         printf("%c%c%c%c%c%c",452,452,452,452,452,447);color(15,0),printf("%c ",225);color(14,0);
+        printf("%c",474);
+    }
+    if (case16l3==1.6 && (posJ1==16||posJ2==16||posJ3==16||posJ4==16)){
+        printf("%c%c%c%c%c%c",452,452,452,452,452,447);color(15,0),printf("%c%c",225,f);color(14,0);
         printf("%c",474);
     }
     if (case16l3>2 && case16l3<3){
@@ -3583,11 +5998,17 @@ int test(double case01,double case03,double case05,double case10,double case11,d
     if (case16l3>4 && case16l3<5){
         printf("%c%c%c%c%c%c  %c",452,452,452,452,452,447,435);
     }
-    if (case16l3==5){
+    if (case16l3==5 && posJ1!=16 && posJ2!=16 && posJ3!=16 && posJ4!=16){
         printf("     %c  %c",435,435);
     }
-    if (case16l3==6){
+    if (case16l3==5 && (posJ1==16||posJ2==16||posJ3==16||posJ4==16)){
+        printf("     %c",435);color(15,0);printf("%c ",f);color(14,0);printf("%c",435);
+    }
+    if (case16l3==6 && posJ1!=16 && posJ2!=16 && posJ3!=16 && posJ4!=16){
         printf("%c%c%c%c%c%c%c%c%c",452,452,452,452,452,452,452,452,452);
+    }
+    if (case16l3==6 && (posJ1==16||posJ2==16||posJ3==16||posJ4==16)){
+        printf("%c%c%c%c",452,452,452,452);color(15,0);printf("%c",f);color(14,0);printf("%c%c%c%c",452,452,452,452);
     }
     if (case16l3>=7 && case16l3<8){
         printf("     %c%c%c%c",448,452,452,452);
@@ -3595,47 +6016,89 @@ int test(double case01,double case03,double case05,double case10,double case11,d
     if (case16l3>=8 && case16l3<9){
         printf("%c%c%c%c%c%c%c%c%c",452,452,452,452,452,452,452,452,473);
     }
-    if (case16l3==9){
+    if (case16l3==9 && posJ1!=16 && posJ2!=16 && posJ3!=16 && posJ4!=16){
         printf("     %c  %c",435,474);
     }
-    if (case16l3==9.1){
+    if (case16l3==9 && (posJ1==16||posJ2==16||posJ3==16||posJ4==16)){
+        printf("     %c",435);color(15,0);printf(" %c",f);color(14,0);printf("%c",474);
+    }
+    if (case16l3==9.1 && posJ1!=16 && posJ2!=16 && posJ3!=16 && posJ4!=16){
         printf("     %c",435);color(15,0);printf(" %c",189);color(14,0);printf("%c",474);
     }
-    if (case16l3==9.2){
+    if (case16l3==9.1 && (posJ1==16||posJ2==16||posJ3==16||posJ4==16)){
+        printf("     %c",435);color(15,0);printf("%c%c",f,189);color(14,0);printf("%c",474);
+    }
+    if (case16l3==9.2 && posJ1!=16 && posJ2!=16 && posJ3!=16 && posJ4!=16){
         printf("     %c",435);color(15,0);printf(" %c",157);color(14,0);printf("%c",474);
     }
-    if (case16l3==9.3){
+    if (case16l3==9.2 && (posJ1==16||posJ2==16||posJ3==16||posJ4==16)){
+        printf("     %c",435);color(15,0);printf("%c%c",f,157);color(14,0);printf("%c",474);
+    }
+    if (case16l3==9.3 && posJ1!=16 && posJ2!=16 && posJ3!=16 && posJ4!=16){
         printf("     %c",435);color(15,0);printf(" %c",143);color(14,0);printf("%c",474);
     }
-    if (case16l3==9.4){
+    if (case16l3==9.3 && (posJ1==16||posJ2==16||posJ3==16||posJ4==16)){
+        printf("     %c",435);color(15,0);printf("%c%c",f,143);color(14,0);printf("%c",474);
+    }
+    if (case16l3==9.4 && posJ1!=16 && posJ2!=16 && posJ3!=16 && posJ4!=16){
         printf("     %c",435);color(15,0);printf(" %c",37);color(14,0);printf("%c",474);
     }
-    if (case16l3==9.5){
+    if (case16l3==9.4 && (posJ1==16||posJ2==16||posJ3==16||posJ4==16)){
+        printf("     %c",435);color(15,0);printf("%c%c",f,37);color(14,0);printf("%c",474);
+    }
+    if (case16l3==9.5 && posJ1!=16 && posJ2!=16 && posJ3!=16 && posJ4!=16){
         printf("     %c",435);color(15,0);printf(" %c",31);color(14,0);printf("%c",474);
     }
-    if (case16l3==9.6){
-        printf("     %c",435);color(15,0);printf(" %c",15);color(14,0);printf("%c",474);
+    if (case16l3==9.5 && (posJ1==16||posJ2==16||posJ3==16||posJ4==16)){
+        printf("     %c",435);color(15,0);printf("%c%c",f,31);color(14,0);printf("%c",474);
     }
-    if (case16l3==10){
+    if (case16l3==9.6 && posJ1!=16 && posJ2!=16 && posJ3!=16 && posJ4!=16){
+        printf("     %c",435);color(15,0);printf(" %c",459);color(14,0);printf("%c",474);
+    }
+    if (case16l3==9.6 && (posJ1==16||posJ2==16||posJ3==16||posJ4==16)){
+        printf("     %c",435);color(15,0);printf("%c%c",f,459);color(14,0);printf("%c",474);
+    }
+    if (case16l3==10 && posJ1!=16 && posJ2!=16 && posJ3!=16 && posJ4!=16){
         printf("%c%c%c%c%c%c  %c",452,452,452,452,452,447,435);
     }
-    if (case16l3==10.1){
+    if (case16l3==10 && (posJ1==16||posJ2==16||posJ3==16||posJ4==16)){
+        printf("%c%c%c%c%c%c",452,452,452,452,452,447);color(15,0);printf("%c ",f);color(14,0);printf("%c",435);
+    }
+    if (case16l3==10.1 && posJ1!=16 && posJ2!=16 && posJ3!=16 && posJ4!=16){
         printf("%c%c%c%c%c%c",452,452,452,452,452,447);color(15,0);printf("%c ",189);color(14,0);printf("%c",435);
     }
-    if (case16l3==10.2){
+    if (case16l3==10.1 && (posJ1==16||posJ2==16||posJ3==16||posJ4==16)){
+        printf("%c%c%c%c%c%c",452,452,452,452,452,447);color(15,0);printf("%c%c",189,f);color(14,0);printf("%c",435);
+    }
+    if (case16l3==10.2 && posJ1!=16 && posJ2!=16 && posJ3!=16 && posJ4!=16){
         printf("%c%c%c%c%c%c",452,452,452,452,452,447);color(15,0);printf("%c ",157);color(14,0);printf("%c",435);
     }
-    if (case16l3==10.3){
+    if (case16l3==10.2 && (posJ1==16||posJ2==16||posJ3==16||posJ4==16)){
+        printf("%c%c%c%c%c%c",452,452,452,452,452,447);color(15,0);printf("%c%c",157,f);color(14,0);printf("%c",435);
+    }
+    if (case16l3==10.3 && posJ1!=16 && posJ2!=16 && posJ3!=16 && posJ4!=16){
         printf("%c%c%c%c%c%c",452,452,452,452,452,447);color(15,0);printf("%c ",143);color(14,0);printf("%c",435);
     }
-    if (case16l3==10.4){
+    if (case16l3==10.3 && (posJ1==16||posJ2==16||posJ3==16||posJ4==16)){
+        printf("%c%c%c%c%c%c",452,452,452,452,452,447);color(15,0);printf("%c%c",143,f);color(14,0);printf("%c",435);
+    }
+    if (case16l3==10.4 && posJ1!=16 && posJ2!=16 && posJ3!=16 && posJ4!=16){
         printf("%c%c%c%c%c%c",452,452,452,452,452,447);color(15,0);printf("%c ",37);color(14,0);printf("%c",435);
     }
-    if (case16l3==10.5){
+    if (case16l3==10.4 && (posJ1==16||posJ2==16||posJ3==16||posJ4==16)){
+        printf("%c%c%c%c%c%c",452,452,452,452,452,447);color(15,0);printf("%c%c",37,f);color(14,0);printf("%c",435);
+    }
+    if (case16l3==10.5 && posJ1!=16 && posJ2!=16 && posJ3!=16 && posJ4!=16){
         printf("%c%c%c%c%c%c",452,452,452,452,452,447);color(15,0);printf("%c ",31);color(14,0);printf("%c",435);
     }
-    if (case16l3==10.6){
-        printf("%c%c%c%c%c%c",452,452,452,452,452,447);color(15,0);printf("%c ",15);color(14,0);printf("%c",435);
+    if (case16l3==10.5 && (posJ1==16||posJ2==16||posJ3==16||posJ4==16)){
+        printf("%c%c%c%c%c%c",452,452,452,452,452,447);color(15,0);printf("%c%c",31,f);color(14,0);printf("%c",435);
+    }
+    if (case16l3==10.6 && posJ1!=16 && posJ2!=16 && posJ3!=16 && posJ4!=16){
+        printf("%c%c%c%c%c%c",452,452,452,452,452,447);color(15,0);printf("%c ",459);color(14,0);printf("%c",435);
+    }
+    if (case16l3==10.6 && (posJ1==16||posJ2==16||posJ3==16||posJ4==16)){
+        printf("%c%c%c%c%c%c",452,452,452,452,452,447);color(15,0);printf("%c%c",459,f);color(14,0);printf("%c",435);
     }
     a();printf("                                 ");
     if (case10l4==0){
@@ -4074,8 +6537,15 @@ int test(double case01,double case03,double case05,double case10,double case11,d
     }
     color(9,0);
     printf("     %c  %c",435,435);a();color(15,0);
-    printf("                     3   %c       ",282);color(9,0);printf("%c  %c%c%c%c%c",435,448,452,452,452,452);
+    f=testposition(posJ1,posJ2,posJ3,posJ4,20,p1,p2,p3,p4);
+    if(posJ1!=20 && posJ2!=20 && posJ3!=20 && posJ4!=20){
+        printf("                     3   %c       ",282);color(9,0);printf("%c  %c%c%c%c%c",435,448,452,452,452,452);
+    }
+    if(posJ1==20 || posJ2==20 || posJ3==20 ||posJ4==20){
+        printf("                     3   %c       ",282);color(9,0);printf("%c",435);color(15,0);printf(" %c",f);color(9,0);printf("%c%c%c%c%c",448,452,452,452,452);
+    }
     color(14,0);
+    f=testposition(posJ1,posJ2,posJ3,posJ4,21,p1,p2,p3,p4);
     if (case21l2==0){
         printf("           ");
     }
@@ -4083,37 +6553,185 @@ int test(double case01,double case03,double case05,double case10,double case11,d
         color(14,0);
         printf("%c%c%c%c%c%c%c%c%c%c%c",452,452,452,452,452,452,452,452,452,452,452);
     }
-    if (case21l2==2.1){
+    if (case21l2==2.1 && posJ1!=21 && posJ2!=21 && posJ3!=21 && posJ4!=21){
         color(14,0);
-        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf(" %c",292);color(14,0);printf("%c%c%c%c",448,452,452,452);
+        printf("%c%c%c%c%c", 452, 452, 452, 452, 473);color(15,0);printf(" %c",292);color(14,0);
+        printf("%c%c%c%c", 448, 452, 452, 452);
     }
-    if (case21l2==2.2){
+    if (case21l2==2.1 && (posJ1==21||posJ2==21||posJ3==21||posJ4==21)){
         color(14,0);
-        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf(" %c",291);color(14,0);printf("%c%c%c%c",448,452,452,452);
+        printf("%c%c%c%c%c", 452, 452, 452, 452, 473);color(15,0);printf("%c%c",f,292);color(14,0);
+        printf("%c%c%c%c", 448, 452, 452, 452);
     }
-    if (case21l2==2.3){
+    if (case21l2==2.2 && posJ1!=21 && posJ2!=21 && posJ3!=21 && posJ4!=21){
         color(14,0);
-        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf(" %c",285);color(14,0);printf("%c%c%c%c",448,452,452,452);
+        printf("%c%c%c%c%c", 452, 452, 452, 452, 473);color(15,0);printf(" %c",291);color(14,0);
+        printf("%c%c%c%c", 448, 452, 452, 452);
     }
-    if (case21l2==2.4){
+    if (case21l2==2.2 && (posJ1==21||posJ2==21||posJ3==21||posJ4==21)){
         color(14,0);
-        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf(" %c",279);color(14,0);printf("%c%c%c%c",448,452,452,452);
+        printf("%c%c%c%c%c", 452, 452, 452, 452, 473);color(15,0);printf("%c%c",f,291);color(14,0);
+        printf("%c%c%c%c", 448, 452, 452, 452);
     }
-    if (case21l2==2.5){
+    if (case21l2==2.3 && posJ1!=21 && posJ2!=21 && posJ3!=21 && posJ4!=21){
         color(14,0);
-        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf(" %c",277);color(14,0);printf("%c%c%c%c",448,452,452,452);
+        printf("%c%c%c%c%c", 452, 452, 452, 452, 473);color(15,0);printf(" %c",285);color(14,0);
+        printf("%c%c%c%c", 448, 452, 452, 452);
     }
-    if (case21l2==2.6){
+    if (case21l2==2.3 && (posJ1==21||posJ2==21||posJ3==21||posJ4==21)){
         color(14,0);
-        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf(" %c",225);color(14,0);printf("%c%c%c%c",448,452,452,452);
+        printf("%c%c%c%c%c", 452, 452, 452, 452, 473);color(15,0);printf("%c%c",f,285);color(14,0);
+        printf("%c%c%c%c", 448, 452, 452, 452);
     }
-    if (case21l2>3 && case21l3<4){
+    if (case21l2==2.4 && posJ1!=21 && posJ2!=21 && posJ3!=21 && posJ4!=21){
         color(14,0);
-        printf("    %c  %c%c%c%c",435,448,452,452,452);
+        printf("%c%c%c%c%c", 452, 452, 452, 452, 473);color(15,0);printf(" %c",428);color(14,0);
+        printf("%c%c%c%c", 448, 452, 452, 452);
     }
-    if (case21l2>4 && case21l2<5){
+    if (case21l2==2.4 && (posJ1==21||posJ2==21||posJ3==21||posJ4==21)){
         color(14,0);
-        piece4bout1l1();
+        printf("%c%c%c%c%c", 452, 452, 452, 452, 473);color(15,0);printf("%c%c",f,428);color(14,0);
+        printf("%c%c%c%c", 448, 452, 452, 452);
+    }
+    if (case21l2==2.5 && posJ1!=21 && posJ2!=21 && posJ3!=21 && posJ4!=21){
+        color(14,0);
+        printf("%c%c%c%c%c", 452, 452, 452, 452, 473);color(15,0);printf(" %c",277);color(14,0);
+        printf("%c%c%c%c", 448, 452, 452, 452);
+    }
+    if (case21l2==2.5 && (posJ1==21||posJ2==21||posJ3==21||posJ4==21)){
+        color(14,0);
+        printf("%c%c%c%c%c", 452, 452, 452, 452, 473);color(15,0);printf("%c%c",f,277);color(14,0);
+        printf("%c%c%c%c", 448, 452, 452, 452);
+    }
+    if (case21l2==2.6 && posJ1!=21 && posJ2!=21 && posJ3!=21 && posJ4!=21){
+        color(14,0);
+        printf("%c%c%c%c%c", 452, 452, 452, 452, 473);color(15,0);printf(" %c",225);color(14,0);
+        printf("%c%c%c%c", 448, 452, 452, 452);
+    }
+    if (case21l2==2.6 && (posJ1==21||posJ2==21||posJ3==21||posJ4==21)){
+        color(14,0);
+        printf("%c%c%c%c%c", 452, 452, 452, 452, 473);color(15,0);printf("%c%c",f,225);color(14,0);
+        printf("%c%c%c%c", 448, 452, 452, 452);
+    }
+    if (case21l2==3.1 && posJ1!=21 && posJ2!=21 && posJ3!=21 && posJ4!=21){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",292);color(14,0);
+        printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case21l2==3.1 && (posJ1==21||posJ2==21||posJ3==21||posJ4==21)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,292);color(14,0);
+        printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case21l2==3.2 && posJ1!=21 && posJ2!=21 && posJ3!=21 && posJ4!=21){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",291);color(14,0);
+        printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case21l2==3.2 && (posJ1==21||posJ2==21||posJ3==21||posJ4==21)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,291);color(14,0);
+        printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case21l2==3.3 && posJ1!=21 && posJ2!=21 && posJ3!=21 && posJ4!=21){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",285);color(14,0);
+        printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case21l2==3.3 && (posJ1==21||posJ2==21||posJ3==21||posJ4==21)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,285);color(14,0);
+        printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case21l2==3.4 && posJ1!=21 && posJ2!=21 && posJ3!=21 && posJ4!=21){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",428);color(14,0);
+        printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case21l2==3.4 && (posJ1==21||posJ2==21||posJ3==21||posJ4==21)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,428);color(14,0);
+        printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case21l2==3.5 && posJ1!=21 && posJ2!=21 && posJ3!=21 && posJ4!=21){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",277);color(14,0);
+        printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case21l2==3.5 && (posJ1==21||posJ2==21||posJ3==21||posJ4==21)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,277);color(14,0);
+        printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case21l2==3.6 && posJ1!=21 && posJ2!=21 && posJ3!=21 && posJ4!=21){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",225);color(14,0);
+        printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case21l2==3.6 && (posJ1==21||posJ2==21||posJ3==21||posJ4==21)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,225);color(14,0);
+        printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case21l2==4.1 && posJ1!=21 && posJ2!=21 && posJ3!=21 && posJ4!=21){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",292);color(14,0);
+        printf("%c   ",435);
+    }
+    if (case21l2==4.1 && (posJ1==21||posJ2==21||posJ3==21||posJ4==21)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",292,f);color(14,0);
+        printf("%c   ",435);
+    }
+    if (case21l2==4.2 && posJ1!=21 && posJ2!=21 && posJ3!=21 && posJ4!=21){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",291);color(14,0);
+        printf("%c   ",435);
+    }
+    if (case21l2==4.2 && (posJ1==21||posJ2==21||posJ3==21||posJ4==21)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",291,f);color(14,0);
+        printf("%c   ",435);
+    }
+    if (case21l2==4.3 && posJ1!=21 && posJ2!=21 && posJ3!=21 && posJ4!=21){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",285);color(14,0);
+        printf("%c   ",435);
+    }
+    if (case21l2==4.3 && (posJ1==21||posJ2==21||posJ3==21||posJ4==21)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",285,f);color(14,0);
+        printf("%c   ",435);
+    }
+    if (case21l2==4.4 && posJ1!=21 && posJ2!=21 && posJ3!=21 && posJ4!=21){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",428);color(14,0);
+        printf("%c   ",435);
+    }
+    if (case21l2==4.4 && (posJ1==21||posJ2==21||posJ3==21||posJ4==21)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",428,f);color(14,0);
+        printf("%c   ",435);
+    }
+    if (case21l2==4.5 && posJ1!=21 && posJ2!=21 && posJ3!=21 && posJ4!=21){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",277);color(14,0);
+        printf("%c   ",435);
+    }
+    if (case21l2==4.5 && (posJ1==21||posJ2==21||posJ3==21||posJ4==21)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",277,f);color(14,0);
+        printf("%c   ",435);
+    }
+    if (case21l2==4.6 && posJ1!=21 && posJ2!=21 && posJ3!=21 && posJ4!=21){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",225);color(14,0);
+        printf("%c   ",435);
+    }
+    if (case21l2==4.6 && (posJ1==21||posJ2==21||posJ3==21||posJ4==21)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",225,f);color(14,0);
+        printf("%c   ",435);
     }
     if (case21l2==5){
         color(14,0);
@@ -4123,73 +6741,136 @@ int test(double case01,double case03,double case05,double case10,double case11,d
         color(14,0);
         printf("%c%c%c%c%c%c%c%c%c%c%c",452,452,452,452,452,452,452,452,452,452,452);
     }
-    if (case21l2==7){
+    if (case21l2==7 && posJ1!=21 && posJ2!=21 && posJ3!=21 && posJ4!=21){
         color(14,0);
         printf("    %c  %c%c%c%c",435,448,452,452,452);
     }
-    if (case21l2==7.1){
+    if (case21l2==7 && (posJ1==21||posJ2==21||posJ3==21||posJ4==21)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",f);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case21l2==7.1 && posJ1!=21 && posJ2!=21 && posJ3!=21 && posJ4!=21){
         color(14,0);
         printf("    %c",435);color(15,0);printf(" %c",189);color(14,0);printf("%c%c%c%c",448,452,452,452);
     }
-    if (case21l2==7.2){
+    if (case21l2==7.1 && (posJ1==21||posJ2==21||posJ3==21||posJ4==21)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,189);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case21l2==7.2 && posJ1!=21 && posJ2!=21 && posJ3!=21 && posJ4!=21){
         color(14,0);
         printf("    %c",435);color(15,0);printf(" %c",157);color(14,0);printf("%c%c%c%c",448,452,452,452);
     }
-    if (case21l2==7.3){
+    if (case21l2==7.2 && (posJ1==21||posJ2==21||posJ3==21||posJ4==21)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,157);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case21l2==7.3 && posJ1!=21 && posJ2!=21 && posJ3!=21 && posJ4!=21){
         color(14,0);
         printf("    %c",435);color(15,0);printf(" %c",143);color(14,0);printf("%c%c%c%c",448,452,452,452);
     }
-    if (case21l2==7.4){
+    if (case21l2==7.3 && (posJ1==21||posJ2==21||posJ3==21||posJ4==21)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,143);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case21l2==7.4 && posJ1!=21 && posJ2!=21 && posJ3!=21 && posJ4!=21){
         color(14,0);
         printf("    %c",435);color(15,0);printf(" %c",37);color(14,0);printf("%c%c%c%c",448,452,452,452);
     }
-    if (case21l2==7.5){
+    if (case21l2==7.4 && (posJ1==21||posJ2==21||posJ3==21||posJ4==21)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,37);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case21l2==7.5 && posJ1!=21 && posJ2!=21 && posJ3!=21 && posJ4!=21){
         color(14,0);
         printf("    %c",435);color(15,0);printf(" %c",31);color(14,0);printf("%c%c%c%c",448,452,452,452);
     }
-    if (case21l2==7.6){
+    if (case21l2==7.5 && (posJ1==21||posJ2==21||posJ3==21||posJ4==21)){
         color(14,0);
-        printf("    %c",435);color(15,0);printf(" %c",15);color(14,0);printf("%c%c%c%c",448,452,452,452);
+        printf("    %c",435);color(15,0);printf("%c%c",f,31);color(14,0);printf("%c%c%c%c",448,452,452,452);
     }
-    if (case21l2==8){
+    if (case21l2==7.6 && posJ1!=21 && posJ2!=21 && posJ3!=21 && posJ4!=21){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",459);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case21l2==7.6 && (posJ1==21||posJ2==21||posJ3==21||posJ4==21)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,459);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case21l2==8 && posJ1!=21 && posJ2!=21 && posJ3!=21 && posJ4!=21){
         color(14,0);
         printf("%c%c%c%c%c  %c   ",452,452,452,452,473,435);
     }
-    if (case21l2==8.1){
+    if (case21l2==8 && (posJ1==21||posJ2==21||posJ3==21||posJ4==21)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",f);color(14,0);printf("%c   ",435);
+    }
+    if (case21l2==8.1 && posJ1!=21 && posJ2!=21 && posJ3!=21 && posJ4!=21){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",189);color(14,0);printf("%c   ",435);
     }
-    if (case21l2==8.2){
+    if (case21l2==8.1 && (posJ1==21||posJ2==21||posJ3==21||posJ4==21)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",189,f);color(14,0);printf("%c   ",435);
+    }
+    if (case21l2==8.2 && posJ1!=21 && posJ2!=21 && posJ3!=21 && posJ4!=21){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",157);color(14,0);printf("%c   ",435);
     }
-    if (case21l2==8.3){
+    if (case21l2==8.2 && (posJ1==21||posJ2==21||posJ3==21||posJ4==21)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",157,f);color(14,0);printf("%c   ",435);
+    }
+    if (case21l2==8.3 && posJ1!=21 && posJ2!=21 && posJ3!=21 && posJ4!=21){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",143);color(14,0);printf("%c   ",435);
     }
-    if (case21l2==8.4){
+    if (case21l2==8.3 && (posJ1==21||posJ2==21||posJ3==21||posJ4==21)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",143,f);color(14,0);printf("%c   ",435);
+    }
+    if (case21l2==8.4 && posJ1!=21 && posJ2!=21 && posJ3!=21 && posJ4!=21){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",37);color(14,0);printf("%c   ",435);
     }
-    if (case21l2==8.5){
+    if (case21l2==8.4 && (posJ1==21||posJ2==21||posJ3==21||posJ4==21)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",37,f);color(14,0);printf("%c   ",435);
+    }
+    if (case21l2==8.5 && posJ1!=21 && posJ2!=21 && posJ3!=21 && posJ4!=21){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",31);color(14,0);printf("%c   ",435);
     }
-    if (case21l2==8.6){
+    if (case21l2==8.5 && (posJ1==21||posJ2==21||posJ3==21||posJ4==21)){
         color(14,0);
-        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",189);color(14,0);printf("%c   ",435);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",31,f);color(14,0);printf("%c   ",435);
     }
-    if (case21l2>=9 && case12l2<10){
+    if (case21l2==8.6 && posJ1!=21 && posJ2!=21 && posJ3!=21 && posJ4!=21){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",459);color(14,0);printf("%c   ",435);
+    }
+    if (case21l2==8.6 && (posJ1==21||posJ2==21||posJ3==21||posJ4==21)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",459,f);color(14,0);printf("%c   ",435);
+    }
+    if (case21l2>=9 && case21l2<10){
         color(14,0);
         printf("    %c%c%c%c%c%c%c",474,452,452,452,452,452,452);
     }
-    if (case21l2==10 && case21l2<11){
+    if (case21l2>=10 && case21l2<11){
         color(14,0);
         printf("%c%c%c%c%c%c%c%c   ",452,452,452,452,452,452,452,447);
     }
     color(9,0);
-    printf("    %c  %c%c%c%c%c",435,448,452,452,452,452);
+    f=testposition(posJ1,posJ2,posJ3,posJ4,22,p1,p2,p3,p4);
+    if (posJ1!=22 && posJ2!=22 && posJ3!=22 && posJ4!=22){
+        printf("    %c  %c%c%c%c%c",435,448,452,452,452,452);
+    }
+    if (posJ1==22||posJ2==22||posJ3==22||posJ4==22){
+        printf("    %c",435);color(15,0);printf("%c ",f);color(9,0);printf("%c%c%c%c%c",448,452,452,452,452);
+    }
     color(14,0);
+    f=testposition(posJ1,posJ2,posJ3,posJ4,23,p1,p2,p3,p4);
     if (case23l2==0){
         printf("           ");
     }
@@ -4197,37 +6878,185 @@ int test(double case01,double case03,double case05,double case10,double case11,d
         color(14,0);
         printf("%c%c%c%c%c%c%c%c%c%c%c",452,452,452,452,452,452,452,452,452,452,452);
     }
-    if (case23l2==2.1){
+    if (case23l2==2.1 && posJ1!=23 && posJ2!=23 && posJ3!=23 && posJ4!=23){
         color(14,0);
-        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf(" %c",292);color(14,0);printf("%c%c%c%c",448,452,452,452);
+        printf("%c%c%c%c%c", 452, 452, 452, 452, 473);color(15,0);printf(" %c",292);color(14,0);
+        printf("%c%c%c%c", 448, 452, 452, 452);
     }
-    if (case23l2==2.2){
+    if (case23l2==2.1 && (posJ1==23||posJ2==23||posJ3==23||posJ4==23)){
         color(14,0);
-        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf(" %c",291);color(14,0);printf("%c%c%c%c",448,452,452,452);
+        printf("%c%c%c%c%c", 452, 452, 452, 452, 473);color(15,0);printf("%c%c",f,292);color(14,0);
+        printf("%c%c%c%c", 448, 452, 452, 452);
     }
-    if (case23l2==2.3){
+    if (case23l2==2.2 && posJ1!=23 && posJ2!=23 && posJ3!=23 && posJ4!=23){
         color(14,0);
-        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf(" %c",285);color(14,0);printf("%c%c%c%c",448,452,452,452);
+        printf("%c%c%c%c%c", 452, 452, 452, 452, 473);color(15,0);printf(" %c",291);color(14,0);
+        printf("%c%c%c%c", 448, 452, 452, 452);
     }
-    if (case23l2==2.4){
+    if (case23l2==2.2 && (posJ1==23||posJ2==23||posJ3==23||posJ4==23)){
         color(14,0);
-        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf(" %c",279);color(14,0);printf("%c%c%c%c",448,452,452,452);
+        printf("%c%c%c%c%c", 452, 452, 452, 452, 473);color(15,0);printf("%c%c",f,291);color(14,0);
+        printf("%c%c%c%c", 448, 452, 452, 452);
     }
-    if (case23l2==2.5){
+    if (case23l2==2.3 && posJ1!=23 && posJ2!=23 && posJ3!=23 && posJ4!=23){
         color(14,0);
-        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf(" %c",277);color(14,0);printf("%c%c%c%c",448,452,452,452);
+        printf("%c%c%c%c%c", 452, 452, 452, 452, 473);color(15,0);printf(" %c",285);color(14,0);
+        printf("%c%c%c%c", 448, 452, 452, 452);
     }
-    if (case23l2==2.6){
+    if (case23l2==2.3 && (posJ1==23||posJ2==23||posJ3==23||posJ4==23)){
         color(14,0);
-        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf(" %c",225);color(14,0);printf("%c%c%c%c",448,452,452,452);
+        printf("%c%c%c%c%c", 452, 452, 452, 452, 473);color(15,0);printf("%c%c",f,285);color(14,0);
+        printf("%c%c%c%c", 448, 452, 452, 452);
     }
-    if (case23l2>3 && case23l3<4){
+    if (case23l2==2.4 && posJ1!=23 && posJ2!=23 && posJ3!=23 && posJ4!=23){
         color(14,0);
-        printf("    %c  %c%c%c%c",435,448,452,452,452);
+        printf("%c%c%c%c%c", 452, 452, 452, 452, 473);color(15,0);printf(" %c",428);color(14,0);
+        printf("%c%c%c%c", 448, 452, 452, 452);
     }
-    if (case23l2>4 && case23l2<5){
+    if (case23l2==2.4 && (posJ1==23||posJ2==23||posJ3==23||posJ4==23)){
         color(14,0);
-        piece4bout1l1();
+        printf("%c%c%c%c%c", 452, 452, 452, 452, 473);color(15,0);printf("%c%c",f,428);color(14,0);
+        printf("%c%c%c%c", 448, 452, 452, 452);
+    }
+    if (case23l2==2.5 && posJ1!=23 && posJ2!=23 && posJ3!=23 && posJ4!=23){
+        color(14,0);
+        printf("%c%c%c%c%c", 452, 452, 452, 452, 473);color(15,0);printf(" %c",277);color(14,0);
+        printf("%c%c%c%c", 448, 452, 452, 452);
+    }
+    if (case23l2==2.5 && (posJ1==23||posJ2==23||posJ3==23||posJ4==23)){
+        color(14,0);
+        printf("%c%c%c%c%c", 452, 452, 452, 452, 473);color(15,0);printf("%c%c",f,277);color(14,0);
+        printf("%c%c%c%c", 448, 452, 452, 452);
+    }
+    if (case23l2==2.6 && posJ1!=23 && posJ2!=23 && posJ3!=23 && posJ4!=23){
+        color(14,0);
+        printf("%c%c%c%c%c", 452, 452, 452, 452, 473);color(15,0);printf(" %c",225);color(14,0);
+        printf("%c%c%c%c", 448, 452, 452, 452);
+    }
+    if (case23l2==2.6 && (posJ1==23||posJ2==23||posJ3==23||posJ4==23)){
+        color(14,0);
+        printf("%c%c%c%c%c", 452, 452, 452, 452, 473);color(15,0);printf("%c%c",f,225);color(14,0);
+        printf("%c%c%c%c", 448, 452, 452, 452);
+    }
+    if (case23l2==3.1 && posJ1!=23 && posJ2!=23 && posJ3!=23 && posJ4!=23){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",292);color(14,0);
+        printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case23l2==3.1 && (posJ1==23||posJ2==23||posJ3==23||posJ4==23)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,292);color(14,0);
+        printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case23l2==3.2 && posJ1!=23 && posJ2!=23 && posJ3!=23 && posJ4!=23){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",291);color(14,0);
+        printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case23l2==3.2 && (posJ1==23||posJ2==23||posJ3==23||posJ4==23)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,291);color(14,0);
+        printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case23l2==3.3 && posJ1!=23 && posJ2!=23 && posJ3!=23 && posJ4!=23){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",285);color(14,0);
+        printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case23l2==3.3 && (posJ1==23||posJ2==23||posJ3==23||posJ4==23)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,285);color(14,0);
+        printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case23l2==3.4 && posJ1!=23 && posJ2!=23 && posJ3!=23 && posJ4!=23){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",428);color(14,0);
+        printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case23l2==3.4 && (posJ1==23||posJ2==23||posJ3==23||posJ4==23)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,428);color(14,0);
+        printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case23l2==3.5 && posJ1!=23 && posJ2!=23 && posJ3!=23 && posJ4!=23){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",277);color(14,0);
+        printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case23l2==3.5 && (posJ1==23||posJ2==23||posJ3==23||posJ4==23)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,277);color(14,0);
+        printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case23l2==3.6 && posJ1!=23 && posJ2!=23 && posJ3!=23 && posJ4!=23){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",225);color(14,0);
+        printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case23l2==3.6 && (posJ1==23||posJ2==23||posJ3==23||posJ4==23)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,225);color(14,0);
+        printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case23l2==4.1 && posJ1!=23 && posJ2!=23 && posJ3!=23 && posJ4!=23){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",292);color(14,0);
+        printf("%c   ",435);
+    }
+    if (case23l2==4.1 && (posJ1==23||posJ2==23||posJ3==23||posJ4==23)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",292,f);color(14,0);
+        printf("%c   ",435);
+    }
+    if (case23l2==4.2 && posJ1!=23 && posJ2!=23 && posJ3!=23 && posJ4!=23){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",291);color(14,0);
+        printf("%c   ",435);
+    }
+    if (case23l2==4.2 && (posJ1==23||posJ2==23||posJ3==23||posJ4==23)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",291,f);color(14,0);
+        printf("%c   ",435);
+    }
+    if (case23l2==4.3 && posJ1!=23 && posJ2!=23 && posJ3!=23 && posJ4!=23){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",285);color(14,0);
+        printf("%c   ",435);
+    }
+    if (case23l2==4.3 && (posJ1==23||posJ2==23||posJ3==23||posJ4==23)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",285,f);color(14,0);
+        printf("%c   ",435);
+    }
+    if (case23l2==4.4 && posJ1!=23 && posJ2!=23 && posJ3!=23 && posJ4!=23){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",428);color(14,0);
+        printf("%c   ",435);
+    }
+    if (case23l2==4.4 && (posJ1==23||posJ2==23||posJ3==23||posJ4==23)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",428,f);color(14,0);
+        printf("%c   ",435);
+    }
+    if (case23l2==4.5 && posJ1!=23 && posJ2!=23 && posJ3!=23 && posJ4!=23){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",277);color(14,0);
+        printf("%c   ",435);
+    }
+    if (case23l2==4.5 && (posJ1==23||posJ2==23||posJ3==23||posJ4==23)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",277,f);color(14,0);
+        printf("%c   ",435);
+    }
+    if (case23l2==4.6 && posJ1!=23 && posJ2!=23 && posJ3!=23 && posJ4!=23){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",225);color(14,0);
+        printf("%c   ",435);
+    }
+    if (case23l2==4.6 && (posJ1==23||posJ2==23||posJ3==23||posJ4==23)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",225,f);color(14,0);
+        printf("%c   ",435);
     }
     if (case23l2==5){
         color(14,0);
@@ -4237,63 +7066,119 @@ int test(double case01,double case03,double case05,double case10,double case11,d
         color(14,0);
         printf("%c%c%c%c%c%c%c%c%c%c%c",452,452,452,452,452,452,452,452,452,452,452);
     }
-    if (case23l2==7){
+    if (case23l2==7 && posJ1!=23 && posJ2!=23 && posJ3!=23 && posJ4!=23){
         color(14,0);
         printf("    %c  %c%c%c%c",435,448,452,452,452);
     }
-    if (case23l2==7.1){
+    if (case23l2==7 && (posJ1==23||posJ2==23||posJ3==23||posJ4==23)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",f);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case23l2==7.1 && posJ1!=23 && posJ2!=23 && posJ3!=23 && posJ4!=23){
         color(14,0);
         printf("    %c",435);color(15,0);printf(" %c",189);color(14,0);printf("%c%c%c%c",448,452,452,452);
     }
-    if (case23l2==7.2){
+    if (case23l2==7.1 && (posJ1==23||posJ2==23||posJ3==23||posJ4==23)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,189);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case23l2==7.2 && posJ1!=23 && posJ2!=23 && posJ3!=23 && posJ4!=23){
         color(14,0);
         printf("    %c",435);color(15,0);printf(" %c",157);color(14,0);printf("%c%c%c%c",448,452,452,452);
     }
-    if (case23l2==7.3){
+    if (case23l2==7.2 && (posJ1==23||posJ2==23||posJ3==23||posJ4==23)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,157);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case23l2==7.3 && posJ1!=23 && posJ2!=23 && posJ3!=23 && posJ4!=23){
         color(14,0);
         printf("    %c",435);color(15,0);printf(" %c",143);color(14,0);printf("%c%c%c%c",448,452,452,452);
     }
-    if (case23l2==7.4){
+    if (case23l2==7.3 && (posJ1==23||posJ2==23||posJ3==23||posJ4==23)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,143);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case23l2==7.4 && posJ1!=23 && posJ2!=23 && posJ3!=23 && posJ4!=23){
         color(14,0);
         printf("    %c",435);color(15,0);printf(" %c",37);color(14,0);printf("%c%c%c%c",448,452,452,452);
     }
-    if (case23l2==7.5){
+    if (case23l2==7.4 && (posJ1==23||posJ2==23||posJ3==23||posJ4==23)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,37);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case23l2==7.5 && posJ1!=23 && posJ2!=23 && posJ3!=23 && posJ4!=23){
         color(14,0);
         printf("    %c",435);color(15,0);printf(" %c",31);color(14,0);printf("%c%c%c%c",448,452,452,452);
     }
-    if (case23l2==7.6){
+    if (case23l2==7.5 && (posJ1==23||posJ2==23||posJ3==23||posJ4==23)){
         color(14,0);
-        printf("    %c",435);color(15,0);printf(" %c",15);color(14,0);printf("%c%c%c%c",448,452,452,452);
+        printf("    %c",435);color(15,0);printf("%c%c",f,31);color(14,0);printf("%c%c%c%c",448,452,452,452);
     }
-    if (case23l2==8){
+    if (case23l2==7.6 && posJ1!=23 && posJ2!=23 && posJ3!=23 && posJ4!=23){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",459);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case23l2==7.6 && (posJ1==23||posJ2==23||posJ3==23||posJ4==23)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,459);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case23l2==8 && posJ1!=23 && posJ2!=23 && posJ3!=23 && posJ4!=23){
         color(14,0);
         printf("%c%c%c%c%c  %c   ",452,452,452,452,473,435);
     }
-    if (case23l2==8.1){
+    if (case23l2==8 && (posJ1==23||posJ2==23||posJ3==23||posJ4==23)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",f);color(14,0);printf("%c   ",435);
+    }
+    if (case23l2==8.1 && posJ1!=23 && posJ2!=23 && posJ3!=23 && posJ4!=23){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",189);color(14,0);printf("%c   ",435);
     }
-    if (case23l2==8.2){
+    if (case23l2==8.1 && (posJ1==23||posJ2==23||posJ3==23||posJ4==23)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",189,f);color(14,0);printf("%c   ",435);
+    }
+    if (case23l2==8.2 && posJ1!=23 && posJ2!=23 && posJ3!=23 && posJ4!=23){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",157);color(14,0);printf("%c   ",435);
     }
-    if (case23l2==8.3){
+    if (case23l2==8.2 && (posJ1==23||posJ2==23||posJ3==23||posJ4==23)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",157,f);color(14,0);printf("%c   ",435);
+    }
+    if (case23l2==8.3 && posJ1!=23 && posJ2!=23 && posJ3!=23 && posJ4!=23){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",143);color(14,0);printf("%c   ",435);
     }
-    if (case23l2==8.4){
+    if (case23l2==8.3 && (posJ1==23||posJ2==23||posJ3==23||posJ4==23)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",143,f);color(14,0);printf("%c   ",435);
+    }
+    if (case23l2==8.4 && posJ1!=23 && posJ2!=23 && posJ3!=23 && posJ4!=23){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",37);color(14,0);printf("%c   ",435);
     }
-    if (case23l2==8.5){
+    if (case23l2==8.4 && (posJ1==23||posJ2==23||posJ3==23||posJ4==23)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",37,f);color(14,0);printf("%c   ",435);
+    }
+    if (case23l2==8.5 && posJ1!=23 && posJ2!=23 && posJ3!=23 && posJ4!=23){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",31);color(14,0);printf("%c   ",435);
     }
-    if (case23l2==8.6){
+    if (case23l2==8.5 && (posJ1==23||posJ2==23||posJ3==23||posJ4==23)){
         color(14,0);
-        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",189);color(14,0);printf("%c   ",435);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",31,f);color(14,0);printf("%c   ",435);
     }
-    if (case23l2>=9 && case12l2<10){
+    if (case23l2==8.6 && posJ1!=23 && posJ2!=23 && posJ3!=23 && posJ4!=23){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",459);color(14,0);printf("%c   ",435);
+    }
+    if (case23l2==8.6 && (posJ1==23||posJ2==23||posJ3==23||posJ4==23)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",459,f);color(14,0);printf("%c   ",435);
+    }
+    if (case23l2>=9 && case23l2<10){
         color(14,0);
         printf("    %c%c%c%c%c%c%c",474,452,452,452,452,452,452);
     }
@@ -4304,6 +7189,7 @@ int test(double case01,double case03,double case05,double case10,double case11,d
     color(9,0);
     printf("%c%c%c%c%c%c%c%c%c%c%c%c%c%c",452,452,452,452,452,452,452,452,452,452,452,452,452,452);
     color(14,0);
+    f=testposition(posJ1,posJ2,posJ3,posJ4,25,p1,p2,p3,p4);
     if (case25l2==0){
         printf("           ");
     }
@@ -4311,37 +7197,185 @@ int test(double case01,double case03,double case05,double case10,double case11,d
         color(14,0);
         printf("%c%c%c%c%c%c%c%c%c%c%c",452,452,452,452,452,452,452,452,452,452,452);
     }
-    if (case25l2==2.1){
+    if (case25l2==2.1 && posJ1!=25 && posJ2!=25 && posJ3!=25 && posJ4!=25){
         color(14,0);
-        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf(" %c",292);color(14,0);printf("%c%c%c%c",448,452,452,452);
+        printf("%c%c%c%c%c", 452, 452, 452, 452, 473);color(15,0);printf(" %c",292);color(14,0);
+        printf("%c%c%c%c", 448, 452, 452, 452);
     }
-    if (case25l2==2.2){
+    if (case25l2==2.1 && (posJ1==25||posJ2==25||posJ3==25||posJ4==25)){
         color(14,0);
-        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf(" %c",291);color(14,0);printf("%c%c%c%c",448,452,452,452);
+        printf("%c%c%c%c%c", 452, 452, 452, 452, 473);color(15,0);printf("%c%c",f,292);color(14,0);
+        printf("%c%c%c%c", 448, 452, 452, 452);
     }
-    if (case25l2==2.3){
+    if (case25l2==2.2 && posJ1!=25 && posJ2!=25 && posJ3!=25 && posJ4!=25){
         color(14,0);
-        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf(" %c",285);color(14,0);printf("%c%c%c%c",448,452,452,452);
+        printf("%c%c%c%c%c", 452, 452, 452, 452, 473);color(15,0);printf(" %c",291);color(14,0);
+        printf("%c%c%c%c", 448, 452, 452, 452);
     }
-    if (case25l2==2.4){
+    if (case25l2==2.2 && (posJ1==25||posJ2==25||posJ3==25||posJ4==25)){
         color(14,0);
-        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf(" %c",279);color(14,0);printf("%c%c%c%c",448,452,452,452);
+        printf("%c%c%c%c%c", 452, 452, 452, 452, 473);color(15,0);printf("%c%c",f,291);color(14,0);
+        printf("%c%c%c%c", 448, 452, 452, 452);
     }
-    if (case25l2==2.5){
+    if (case25l2==2.3 && posJ1!=25 && posJ2!=25 && posJ3!=25 && posJ4!=25){
         color(14,0);
-        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf(" %c",277);color(14,0);printf("%c%c%c%c",448,452,452,452);
+        printf("%c%c%c%c%c", 452, 452, 452, 452, 473);color(15,0);printf(" %c",285);color(14,0);
+        printf("%c%c%c%c", 448, 452, 452, 452);
     }
-    if (case25l2==2.6){
+    if (case25l2==2.3 && (posJ1==25||posJ2==25||posJ3==25||posJ4==25)){
         color(14,0);
-        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf(" %c",225);color(14,0);printf("%c%c%c%c",448,452,452,452);
+        printf("%c%c%c%c%c", 452, 452, 452, 452, 473);color(15,0);printf("%c%c",f,285);color(14,0);
+        printf("%c%c%c%c", 448, 452, 452, 452);
     }
-    if (case25l2>3 && case25l3<4){
+    if (case25l2==2.4 && posJ1!=25 && posJ2!=25 && posJ3!=25 && posJ4!=25){
         color(14,0);
-        printf("    %c  %c%c%c%c",435,448,452,452,452);
+        printf("%c%c%c%c%c", 452, 452, 452, 452, 473);color(15,0);printf(" %c",428);color(14,0);
+        printf("%c%c%c%c", 448, 452, 452, 452);
     }
-    if (case25l2>4 && case25l2<5){
+    if (case25l2==2.4 && (posJ1==25||posJ2==25||posJ3==25||posJ4==25)){
         color(14,0);
-        piece4bout1l1();
+        printf("%c%c%c%c%c", 452, 452, 452, 452, 473);color(15,0);printf("%c%c",f,428);color(14,0);
+        printf("%c%c%c%c", 448, 452, 452, 452);
+    }
+    if (case25l2==2.5 && posJ1!=25 && posJ2!=25 && posJ3!=25 && posJ4!=25){
+        color(14,0);
+        printf("%c%c%c%c%c", 452, 452, 452, 452, 473);color(15,0);printf(" %c",277);color(14,0);
+        printf("%c%c%c%c", 448, 452, 452, 452);
+    }
+    if (case25l2==2.5 && (posJ1==25||posJ2==25||posJ3==25||posJ4==25)){
+        color(14,0);
+        printf("%c%c%c%c%c", 452, 452, 452, 452, 473);color(15,0);printf("%c%c",f,277);color(14,0);
+        printf("%c%c%c%c", 448, 452, 452, 452);
+    }
+    if (case25l2==2.6 && posJ1!=25 && posJ2!=25 && posJ3!=25 && posJ4!=25){
+        color(14,0);
+        printf("%c%c%c%c%c", 452, 452, 452, 452, 473);color(15,0);printf(" %c",225);color(14,0);
+        printf("%c%c%c%c", 448, 452, 452, 452);
+    }
+    if (case25l2==2.6 && (posJ1==25||posJ2==25||posJ3==25||posJ4==25)){
+        color(14,0);
+        printf("%c%c%c%c%c", 452, 452, 452, 452, 473);color(15,0);printf("%c%c",f,225);color(14,0);
+        printf("%c%c%c%c", 448, 452, 452, 452);
+    }
+    if (case25l2==3.1 && posJ1!=25 && posJ2!=25 && posJ3!=25 && posJ4!=25){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",292);color(14,0);
+        printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case25l2==3.1 && (posJ1==25||posJ2==25||posJ3==25||posJ4==25)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,292);color(14,0);
+        printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case25l2==3.2 && posJ1!=25 && posJ2!=25 && posJ3!=25 && posJ4!=25){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",291);color(14,0);
+        printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case25l2==3.2 && (posJ1==25||posJ2==25||posJ3==25||posJ4==25)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,291);color(14,0);
+        printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case25l2==3.3 && posJ1!=25 && posJ2!=25 && posJ3!=25 && posJ4!=25){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",285);color(14,0);
+        printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case25l2==3.3 && (posJ1==25||posJ2==25||posJ3==25||posJ4==25)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,285);color(14,0);
+        printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case25l2==3.4 && posJ1!=25 && posJ2!=25 && posJ3!=25 && posJ4!=25){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",428);color(14,0);
+        printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case25l2==3.4 && (posJ1==25||posJ2==25||posJ3==25||posJ4==25)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,428);color(14,0);
+        printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case25l2==3.5 && posJ1!=25 && posJ2!=25 && posJ3!=25 && posJ4!=25){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",277);color(14,0);
+        printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case25l2==3.5 && (posJ1==25||posJ2==25||posJ3==25||posJ4==25)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,277);color(14,0);
+        printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case25l2==3.6 && posJ1!=25 && posJ2!=25 && posJ3!=25 && posJ4!=25){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",225);color(14,0);
+        printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case25l2==3.6 && (posJ1==25||posJ2==25||posJ3==25||posJ4==25)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,225);color(14,0);
+        printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case25l2==4.1 && posJ1!=25 && posJ2!=25 && posJ3!=25 && posJ4!=25){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",292);color(14,0);
+        printf("%c   ",435);
+    }
+    if (case25l2==4.1 && (posJ1==25||posJ2==25||posJ3==25||posJ4==25)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",292,f);color(14,0);
+        printf("%c   ",435);
+    }
+    if (case25l2==4.2 && posJ1!=25 && posJ2!=25 && posJ3!=25 && posJ4!=25){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",291);color(14,0);
+        printf("%c   ",435);
+    }
+    if (case25l2==4.2 && (posJ1==25||posJ2==25||posJ3==25||posJ4==25)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",291,f);color(14,0);
+        printf("%c   ",435);
+    }
+    if (case25l2==4.3 && posJ1!=25 && posJ2!=25 && posJ3!=25 && posJ4!=25){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",285);color(14,0);
+        printf("%c   ",435);
+    }
+    if (case25l2==4.3 && (posJ1==25||posJ2==25||posJ3==25||posJ4==25)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",285,f);color(14,0);
+        printf("%c   ",435);
+    }
+    if (case25l2==4.4 && posJ1!=25 && posJ2!=25 && posJ3!=25 && posJ4!=25){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",428);color(14,0);
+        printf("%c   ",435);
+    }
+    if (case25l2==4.4 && (posJ1==25||posJ2==25||posJ3==25||posJ4==25)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",428,f);color(14,0);
+        printf("%c   ",435);
+    }
+    if (case25l2==4.5 && posJ1!=25 && posJ2!=25 && posJ3!=25 && posJ4!=25){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",277);color(14,0);
+        printf("%c   ",435);
+    }
+    if (case25l2==4.5 && (posJ1==25||posJ2==25||posJ3==25||posJ4==25)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",277,f);color(14,0);
+        printf("%c   ",435);
+    }
+    if (case25l2==4.6 && posJ1!=25 && posJ2!=25 && posJ3!=25 && posJ4!=25){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",225);color(14,0);
+        printf("%c   ",435);
+    }
+    if (case25l2==4.6 && (posJ1==25||posJ2==25||posJ3==25||posJ4==25)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",225,f);color(14,0);
+        printf("%c   ",435);
     }
     if (case25l2==5){
         color(14,0);
@@ -4351,61 +7385,117 @@ int test(double case01,double case03,double case05,double case10,double case11,d
         color(14,0);
         printf("%c%c%c%c%c%c%c%c%c%c%c",452,452,452,452,452,452,452,452,452,452,452);
     }
-    if (case25l2==7){
+    if (case25l2==7 && posJ1!=25 && posJ2!=25 && posJ3!=25 && posJ4!=25){
         color(14,0);
         printf("    %c  %c%c%c%c",435,448,452,452,452);
     }
-    if (case25l2==7.1){
+    if (case25l2==7 && (posJ1==25||posJ2==25||posJ3==25||posJ4==25)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",f);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case25l2==7.1 && posJ1!=25 && posJ2!=25 && posJ3!=25 && posJ4!=25){
         color(14,0);
         printf("    %c",435);color(15,0);printf(" %c",189);color(14,0);printf("%c%c%c%c",448,452,452,452);
     }
-    if (case25l2==7.2){
+    if (case25l2==7.1 && (posJ1==25||posJ2==25||posJ3==25||posJ4==25)){
         color(14,0);
-        printf("    %c",435);color(15,0);printf(" %c",157);color(14,0);printf("%c%c%c%c",448,452,452,452);
+        printf("    %c",435);color(15,0);printf("%c%c",f,189);color(14,0);printf("%c%c%c%c",448,452,452,452);
     }
-    if (case25l2==7.3){
+    if (case25l2==7.2 && posJ1!=25 && posJ2!=25 && posJ3!=25 && posJ4!=25){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",257);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case25l2==7.2 && (posJ1==25||posJ2==25||posJ3==25||posJ4==25)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,257);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case25l2==7.3 && posJ1!=25 && posJ2!=25 && posJ3!=25 && posJ4!=25){
         color(14,0);
         printf("    %c",435);color(15,0);printf(" %c",143);color(14,0);printf("%c%c%c%c",448,452,452,452);
     }
-    if (case25l2==7.4){
+    if (case25l2==7.3 && (posJ1==25||posJ2==25||posJ3==25||posJ4==25)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,143);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case25l2==7.4 && posJ1!=25 && posJ2!=25 && posJ3!=25 && posJ4!=25){
         color(14,0);
         printf("    %c",435);color(15,0);printf(" %c",37);color(14,0);printf("%c%c%c%c",448,452,452,452);
     }
-    if (case25l2==7.5){
+    if (case25l2==7.4 && (posJ1==25||posJ2==25||posJ3==25||posJ4==25)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,37);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case25l2==7.5 && posJ1!=25 && posJ2!=25 && posJ3!=25 && posJ4!=25){
         color(14,0);
         printf("    %c",435);color(15,0);printf(" %c",31);color(14,0);printf("%c%c%c%c",448,452,452,452);
     }
-    if (case25l2==7.6){
+    if (case25l2==7.5 && (posJ1==25||posJ2==25||posJ3==25||posJ4==25)){
         color(14,0);
-        printf("    %c",435);color(15,0);printf(" %c",15);color(14,0);printf("%c%c%c%c",448,452,452,452);
+        printf("    %c",435);color(15,0);printf("%c%c",f,31);color(14,0);printf("%c%c%c%c",448,452,452,452);
     }
-    if (case25l2==8){
+    if (case25l2==7.6 && posJ1!=25 && posJ2!=25 && posJ3!=25 && posJ4!=25){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",459);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case25l2==7.6 && (posJ1==25||posJ2==25||posJ3==25||posJ4==25)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,459);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case25l2==8 && posJ1!=25 && posJ2!=25 && posJ3!=25 && posJ4!=25){
         color(14,0);
         printf("%c%c%c%c%c  %c   ",452,452,452,452,473,435);
     }
-    if (case25l2==8.1){
+    if (case25l2==8 && (posJ1==25||posJ2==25||posJ3==25||posJ4==25)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",f);color(14,0);printf("%c   ",435);
+    }
+    if (case25l2==8.1 && posJ1!=25 && posJ2!=25 && posJ3!=25 && posJ4!=25){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",189);color(14,0);printf("%c   ",435);
     }
-    if (case25l2==8.2){
+    if (case25l2==8.1 && (posJ1==25||posJ2==25||posJ3==25||posJ4==25)){
         color(14,0);
-        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",157);color(14,0);printf("%c   ",435);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",189,f);color(14,0);printf("%c   ",435);
     }
-    if (case25l2==8.3){
+    if (case25l2==8.2 && posJ1!=25 && posJ2!=25 && posJ3!=25 && posJ4!=25){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",257);color(14,0);printf("%c   ",435);
+    }
+    if (case25l2==8.2 && (posJ1==25||posJ2==25||posJ3==25||posJ4==25)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",257,f);color(14,0);printf("%c   ",435);
+    }
+    if (case25l2==8.3 && posJ1!=25 && posJ2!=25 && posJ3!=25 && posJ4!=25){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",143);color(14,0);printf("%c   ",435);
     }
-    if (case25l2==8.4){
+    if (case25l2==8.3 && (posJ1==25||posJ2==25||posJ3==25||posJ4==25)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",143,f);color(14,0);printf("%c   ",435);
+    }
+    if (case25l2==8.4 && posJ1!=25 && posJ2!=25 && posJ3!=25 && posJ4!=25){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",37);color(14,0);printf("%c   ",435);
     }
-    if (case25l2==8.5){
+    if (case25l2==8.4 && (posJ1==25||posJ2==25||posJ3==25||posJ4==25)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",37,f);color(14,0);printf("%c   ",435);
+    }
+    if (case25l2==8.5 && posJ1!=25 && posJ2!=25 && posJ3!=25 && posJ4!=25){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",31);color(14,0);printf("%c   ",435);
     }
-    if (case25l2==8.6){
+    if (case25l2==8.5 && (posJ1==25||posJ2==25||posJ3==25||posJ4==25)){
         color(14,0);
-        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",189);color(14,0);printf("%c   ",435);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",31,f);color(14,0);printf("%c   ",435);
+    }
+    if (case25l2==8.6 && posJ1!=25 && posJ2!=25 && posJ3!=25 && posJ4!=25){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",459);color(14,0);printf("%c   ",435);
+    }
+    if (case25l2==8.6 && (posJ1==25||posJ2==25||posJ3==25||posJ4==25)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",459,f);color(14,0);printf("%c   ",435);
     }
     if (case25l2>=9 && case25l2<10){
         color(14,0);
@@ -4416,96 +7506,107 @@ int test(double case01,double case03,double case05,double case10,double case11,d
         printf("%c%c%c%c%c%c%c%c   ",452,452,452,452,452,452,452,447);
     }
     color(9,0);
-    printf("%c%c%c%c%c%c  %c",452,452,452,452,452,473,435);a();
+    f=testposition(posJ1,posJ2,posJ3,posJ4,26,p1,p2,p3,p4);
+    if (posJ1!=26 && posJ2!=26 && posJ3!=26 && posJ4!=26){
+        printf("%c%c%c%c%c%c  %c",452,452,452,452,452,473,435);a();
+    }
+    if (posJ1==26||posJ2==26||posJ3==26||posJ4==26){
+        printf("%c%c%c%c%c%c",452,452,452,452,452,473);color(15,0);printf("%c ",f);color(9,0);printf("%c",435);a();
+    }
     printf("                                 ");printf("%c",435);color(11,0);printf(" %c",464);color(9,0);
     printf("%c%c%c%c%c",474,452,452,452,452);
     color(14,0);
+    f=testposition(posJ1,posJ2,posJ3,posJ4,21,p1,p2,p3,p4);
     if (case21l3==0){
         printf("           ");
     }
-    if (case21l3==1.1){
+    if (case21l3==1.1 && posJ1!=21 && posJ2!=21 && posJ3!=21 && posJ4!=21){
         color(14,0);
-        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf(" %c",292);color(14,0);printf("%c%c%c%c",474,452,452,452);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf(" %c",292);color(14,0);
+        printf("%c%c%c%c",474,452,452,452);
     }
-    if (case21l3==1.2){
+    if (case21l3==1.1 && (posJ1==21||posJ2==21||posJ3==21||posJ4==21)){
         color(14,0);
-        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf(" %c",291);color(14,0);printf("%c%c%c%c",474,452,452,452);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c%c",f,292);color(14,0);
+        printf("%c%c%c%c",474,452,452,452);
     }
-    if (case21l3==1.3){
+    if (case21l3==1.2 && posJ1!=21 && posJ2!=21 && posJ3!=21 && posJ4!=21){
         color(14,0);
-        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf(" %c",285);color(14,0);printf("%c%c%c%c",474,452,452,452);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf(" %c",291);color(14,0);
+        printf("%c%c%c%c",474,452,452,452);
     }
-    if (case21l3==1.4){
+    if (case21l3==1.2 && (posJ1==21||posJ2==21||posJ3==21||posJ4==21)){
         color(14,0);
-        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf(" %c",279);color(14,0);printf("%c%c%c%c",474,452,452,452);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c%c",f,291);color(14,0);
+        printf("%c%c%c%c",474,452,452,452);
     }
-    if (case21l3==1.5){
+    if (case21l3==1.3 && posJ1!=21 && posJ2!=21 && posJ3!=21 && posJ4!=21){
         color(14,0);
-        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf(" %c",277);color(14,0);printf("%c%c%c%c",474,452,452,452);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf(" %c",285);color(14,0);
+        printf("%c%c%c%c",474,452,452,452);
     }
-    if (case21l3==1.6){
+    if (case21l3==1.3 && (posJ1==21||posJ2==21||posJ3==21||posJ4==21)){
         color(14,0);
-        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf(" %c",225);color(14,0);printf("%c%c%c%c",474,452,452,452);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c%c",f,285);color(14,0);
+        printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case21l3==1.4 && posJ1!=21 && posJ2!=21 && posJ3!=21 && posJ4!=21){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf(" %c",428);color(14,0);
+        printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case21l3==1.4 && (posJ1==21||posJ2==21||posJ3==21||posJ4==21)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c%c",f,428);color(14,0);
+        printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case21l3==1.5 && posJ1!=21 && posJ2!=21 && posJ3!=21 && posJ4!=21){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf(" %c",277);color(14,0);
+        printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case21l3==1.5 && (posJ1==21||posJ2==21||posJ3==21||posJ4==21)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c%c",f,277);color(14,0);
+        printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case21l3==1.6 && posJ1!=21 && posJ2!=21 && posJ3!=21 && posJ4!=21){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf(" %c",225);color(14,0);
+        printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case21l3==1.6 && (posJ1==21||posJ2==21||posJ3==21||posJ4==21)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c%c",f,225);color(14,0);
+        printf("%c%c%c%c",474,452,452,452);
     }
     if (case21l3>2 && case21l3<3){
         color(14,0);
         printf("%c%c%c%c%c%c%c%c%c%c%c",452,452,452,452,452,452,452,452,452,452,452);
     }
-    if (case21l3==3.1){
+    if (case21l3>3 && case21l3<4){
         color(14,0);
-        printf("    %c",435);color(15,0);printf(" %c",292);color(14,0);printf("%c%c%c%c",474,452,452,452);
+        printf("    %c  %c%c%c%c",435,474,452,452,452);
     }
-    if (case21l3==3.2){
+    if (case21l3>4 && case21l3<5){
         color(14,0);
-        printf("    %c",435);color(15,0);printf(" %c",291);color(14,0);printf("%c%c%c%c",474,452,452,452);
+        printf("%c%c%c%c%c  %c   ",452,452,452,452,447,435);
     }
-    if (case21l3==3.3){
-        color(14,0);
-        printf("    %c",435);color(15,0);printf(" %c",285);color(14,0);printf("%c%c%c%c",474,452,452,452);
-    }
-    if (case21l3==3.4){
-        color(14,0);
-        printf("    %c",435);color(15,0);printf(" %c",279);color(14,0);printf("%c%c%c%c",474,452,452,452);
-    }
-    if (case21l3==3.5){
-        color(14,0);
-        printf("    %c",435);color(15,0);printf(" %c",277);color(14,0);printf("%c%c%c%c",474,452,452,452);
-    }
-    if (case21l3==3.6){
-        color(14,0);
-        printf("    %c",435);color(15,0);printf(" %c",225);color(14,0);printf("%c%c%c%c",474,452,452,452);
-    }
-    if (case21l3==4.1){
-        color(14,0);
-        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c ",292);color(14,0);printf("%c   ",435);
-    }
-    if (case21l3==4.2){
-        color(14,0);
-        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c ",291);color(14,0);printf("%c   ",435);
-    }
-    if (case21l3==4.3){
-        color(14,0);
-        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c ",285);color(14,0);printf("%c   ",435);
-    }
-    if (case21l3==4.4){
-        color(14,0);
-        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c ",279);color(14,0);printf("%c   ",435);
-    }
-    if (case21l3==4.5){
-        color(14,0);
-        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c ",277);color(14,0);printf("%c",435);
-    }
-    if (case21l3==4.6){
-        color(14,0);
-        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c ",225);color(14,0);printf("%c",435);
-    }
-    if (case21l3==5){
+    if (case21l3==5 && posJ1!=21 && posJ2!=21 && posJ3!=21 && posJ4!=21){
         color(14,0);
         piece5bout2();
     }
-    if (case21l3==6){
+    if (case21l3==5 && (posJ1==21||posJ2==21||posJ3==21||posJ4==21)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c ",f);color(14,0);printf("%c   ",435);
+    }
+    if (case21l3==6 && posJ1!=21 && posJ2!=21 && posJ3!=21 && posJ4!=21){
         color(14,0);
         printf("%c%c%c%c%c%c%c%c%c%c%c",452,452,452,452,452,452,452,452,452,452,452);
+    }
+    if (case21l3==6 && (posJ1==21||posJ2==21||posJ3==21||posJ4==21)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,452);color(15,0);printf("%c",f);color(14,0);printf("%c%c%c%c%c",452,452,452,452,452);
     }
     if (case21l3>=7 && case21l3<8){
         color(14,0);
@@ -4515,152 +7616,213 @@ int test(double case01,double case03,double case05,double case10,double case11,d
         color(14,0);
         printf("%c%c%c%c%c%c%c%c   ",452,452,452,452,452,452,452,473);
     }
-    if (case21l3==9){
+    if (case21l3==9 && posJ1!=21 && posJ2!=21 && posJ3!=21 && posJ4!=21){
         color(14,0);
         printf("    %c  %c%c%c%c",435,474,452,452,452);
     }
-    if (case21l3==9.1){
+    if (case21l3==9 && (posJ1==21||posJ2==21||posJ3==21||posJ4==21)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",f);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case21l3==9.1 && posJ1!=21 && posJ2!=21 && posJ3!=21 && posJ4!=21){
         color(14,0);
         printf("    %c",435);color(15,0);printf(" %c",189);color(14,0);printf("%c%c%c%c",474,452,452,452);
     }
-    if (case21l3==9.2){
+    if (case21l3==9.1 && (posJ1==21||posJ2==21||posJ3==21||posJ4==21)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,189);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case21l3==9.2 && posJ1!=21 && posJ2!=21 && posJ3!=21 && posJ4!=21){
         color(14,0);
         printf("    %c",435);color(15,0);printf(" %c",157);color(14,0);printf("%c%c%c%c",474,452,452,452);
     }
-    if (case21l3==9.3){
+    if (case21l3==9.2 && (posJ1==21||posJ2==21||posJ3==21||posJ4==21)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,157);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case21l3==9.3 && posJ1!=21 && posJ2!=21 && posJ3!=21 && posJ4!=21){
         color(14,0);
         printf("    %c",435);color(15,0);printf(" %c",143);color(14,0);printf("%c%c%c%c",474,452,452,452);
     }
-    if (case21l3==9.4){
+    if (case21l3==9.3 && (posJ1==21||posJ2==21||posJ3==21||posJ4==21)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,143);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case21l3==9.4 && posJ1!=21 && posJ2!=21 && posJ3!=21 && posJ4!=21){
         color(14,0);
         printf("    %c",435);color(15,0);printf(" %c",37);color(14,0);printf("%c%c%c%c",474,452,452,452);
     }
-    if (case21l3==9.5){
+    if (case21l3==9.4 && (posJ1==21||posJ2==21||posJ3==21||posJ4==21)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,37);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case21l3==9.5 && posJ1!=21 && posJ2!=21 && posJ3!=21 && posJ4!=21){
         color(14,0);
         printf("    %c",435);color(15,0);printf(" %c",31);color(14,0);printf("%c%c%c%c",474,452,452,452);
     }
-    if (case21l3==9.6){
+    if (case21l3==9.5 && (posJ1==21||posJ2==21||posJ3==21||posJ4==21)){
         color(14,0);
-        printf("    %c",435);color(15,0);printf(" %c",15);color(14,0);printf("%c%c%c%c",474,452,452,452);
+        printf("    %c",435);color(15,0);printf("%c%c",f,31);color(14,0);printf("%c%c%c%c",474,452,452,452);
     }
-    if (case21l3==10) {
+    if (case21l3==9.6 && posJ1!=21 && posJ2!=21 && posJ3!=21 && posJ4!=21){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",459);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case21l3==9.6 && (posJ1==21||posJ2==21||posJ3==21||posJ4==21)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,459);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case21l3==10 && (posJ1==21||posJ2==21||posJ3==21||posJ4==21)) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c ",f);color(14,0);printf("%c   ",435);
+    }
+    if (case21l3==10 && posJ1!=21 && posJ2!=21 && posJ3!=21 && posJ4!=21) {
         color(14, 0);
         printf("%c%c%c%c%c  %c   ",452, 452,452,452, 447,435);
     }
-    if (case21l3==10.1) {
+    if (case21l3==10.1 && posJ1!=21 && posJ2!=21 && posJ3!=21 && posJ4!=21) {
         color(14, 0);
         printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c ",189);color(14,0);printf("%c   ",435);
     }
-    if (case21l3==10.2) {
+    if (case21l3==10.1 && (posJ1==21||posJ2==21||posJ3==21||posJ4==21)) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c%c",189,f);color(14,0);printf("%c   ",435);
+    }
+    if (case21l3==10.2 && posJ1!=21 && posJ2!=21 && posJ3!=21 && posJ4!=21) {
         color(14, 0);
         printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c ",157);color(14,0);printf("%c   ",435);
     }
-    if (case21l3==10.3) {
+    if (case21l3==10.2 && (posJ1==21||posJ2==21||posJ3==21||posJ4==21)) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c%c",157,f);color(14,0);printf("%c   ",435);
+    }
+    if (case21l3==10.3 && posJ1!=21 && posJ2!=21 && posJ3!=21 && posJ4!=21) {
         color(14, 0);
         printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c ",143);color(14,0);printf("%c   ",435);
     }
-    if (case21l3==10.4) {
+    if (case21l3==10.3 && (posJ1==21||posJ2==21||posJ3==21||posJ4==21)) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c%c",143,f);color(14,0);printf("%c   ",435);
+    }
+    if (case21l3==10.4 && posJ1!=21 && posJ2!=21 && posJ3!=21 && posJ4!=21) {
         color(14, 0);
         printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c ",37);color(14,0);printf("%c   ",435);
     }
-    if (case21l3==10.5) {
+    if (case21l3==10.4 && (posJ1==21||posJ2==21||posJ3==21||posJ4==21)) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c%c",37,f);color(14,0);printf("%c   ",435);
+    }
+    if (case21l3==10.5 && posJ1!=21 && posJ2!=21 && posJ3!=21 && posJ4!=21) {
         color(14, 0);
         printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c ",31);color(14,0);printf("%c   ",435);
     }
-    if (case21l3==10.6) {
+    if (case21l3==10.5 && (posJ1==21||posJ2==21||posJ3==21||posJ4==21)) {
         color(14, 0);
-        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c ",15);color(14,0);printf("%c   ",435);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c%c",31,f);color(14,0);printf("%c   ",435);
+    }
+    if (case21l3==10.6 && posJ1!=21 && posJ2!=21 && posJ3!=21 && posJ4!=21) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c ",459);color(14,0);printf("%c   ",435);
+    }
+    if (case21l3==10.6 && (posJ1==21||posJ2==21||posJ3==21||posJ4==21)) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c%c",459,f);color(14,0);printf("%c   ",435);
     }
     color(9,0);
     printf("    %c",435);color(12,0);printf(" %c",463);color(9,0);
     printf("%c%c%c%c%c",474,452,452,452,452);
     color(14,0);
+    f=testposition(posJ1,posJ2,posJ3,posJ4,23,p1,p2,p3,p4);
     if (case23l3==0){
         printf("           ");
     }
-    if (case23l3==1.1){
+    if (case23l3==1.1 && posJ1!=23 && posJ2!=23 && posJ3!=23 && posJ4!=23){
         color(14,0);
-        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf(" %c",292);color(14,0);printf("%c%c%c%c",474,452,452,452);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf(" %c",292);color(14,0);
+        printf("%c%c%c%c",474,452,452,452);
     }
-    if (case23l3==1.2){
+    if (case23l3==1.1 && (posJ1==23||posJ2==23||posJ3==23||posJ4==23)){
         color(14,0);
-        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf(" %c",291);color(14,0);printf("%c%c%c%c",474,452,452,452);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c%c",f,292);color(14,0);
+        printf("%c%c%c%c",474,452,452,452);
     }
-    if (case23l3==1.3){
+    if (case23l3==1.2 && posJ1!=23 && posJ2!=23 && posJ3!=23 && posJ4!=23){
         color(14,0);
-        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf(" %c",285);color(14,0);printf("%c%c%c%c",474,452,452,452);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf(" %c",291);color(14,0);
+        printf("%c%c%c%c",474,452,452,452);
     }
-    if (case23l3==1.4){
+    if (case23l3==1.2 && (posJ1==23||posJ2==23||posJ3==23||posJ4==23)){
         color(14,0);
-        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf(" %c",279);color(14,0);printf("%c%c%c%c",474,452,452,452);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c%c",f,291);color(14,0);
+        printf("%c%c%c%c",474,452,452,452);
     }
-    if (case23l3==1.5){
+    if (case23l3==1.3 && posJ1!=23 && posJ2!=23 && posJ3!=23 && posJ4!=23){
         color(14,0);
-        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf(" %c",277);color(14,0);printf("%c%c%c%c",474,452,452,452);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf(" %c",285);color(14,0);
+        printf("%c%c%c%c",474,452,452,452);
     }
-    if (case23l3==1.6){
+    if (case23l3==1.3 && (posJ1==23||posJ2==23||posJ3==23||posJ4==23)){
         color(14,0);
-        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf(" %c",225);color(14,0);printf("%c%c%c%c",474,452,452,452);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c%c",f,285);color(14,0);
+        printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case23l3==1.4 && posJ1!=23 && posJ2!=23 && posJ3!=23 && posJ4!=23){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf(" %c",428);color(14,0);
+        printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case23l3==1.4 && (posJ1==23||posJ2==23||posJ3==23||posJ4==23)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c%c",f,428);color(14,0);
+        printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case23l3==1.5 && posJ1!=23 && posJ2!=23 && posJ3!=23 && posJ4!=23){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf(" %c",277);color(14,0);
+        printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case23l3==1.5 && (posJ1==23||posJ2==23||posJ3==23||posJ4==23)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c%c",f,277);color(14,0);
+        printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case23l3==1.6 && posJ1!=23 && posJ2!=23 && posJ3!=23 && posJ4!=23){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf(" %c",225);color(14,0);
+        printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case23l3==1.6 && (posJ1==23||posJ2==23||posJ3==23||posJ4==23)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c%c",f,225);color(14,0);
+        printf("%c%c%c%c",474,452,452,452);
     }
     if (case23l3>2 && case23l3<3){
         color(14,0);
         printf("%c%c%c%c%c%c%c%c%c%c%c",452,452,452,452,452,452,452,452,452,452,452);
     }
-    if (case23l3==3.1){
+    if (case23l3>3 && case23l3<4){
         color(14,0);
-        printf("    %c",435);color(15,0);printf(" %c",292);color(14,0);printf("%c%c%c%c",474,452,452,452);
+        printf("    %c  %c%c%c%c",435,474,452,452,452);
     }
-    if (case23l3==3.2){
+    if (case23l3>4 && case23l3<5){
         color(14,0);
-        printf("    %c",435);color(15,0);printf(" %c",291);color(14,0);printf("%c%c%c%c",474,452,452,452);
+        printf("%c%c%c%c%c  %c   ",452,452,452,452,447,435);
     }
-    if (case23l3==3.3){
-        color(14,0);
-        printf("    %c",435);color(15,0);printf(" %c",285);color(14,0);printf("%c%c%c%c",474,452,452,452);
-    }
-    if (case23l3==3.4){
-        color(14,0);
-        printf("    %c",435);color(15,0);printf(" %c",279);color(14,0);printf("%c%c%c%c",474,452,452,452);
-    }
-    if (case23l3==3.5){
-        color(14,0);
-        printf("    %c",435);color(15,0);printf(" %c",277);color(14,0);printf("%c%c%c%c",474,452,452,452);
-    }
-    if (case23l3==3.6){
-        color(14,0);
-        printf("    %c",435);color(15,0);printf(" %c",225);color(14,0);printf("%c%c%c%c",474,452,452,452);
-    }
-    if (case23l3==4.1){
-        color(14,0);
-        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c ",292);color(14,0);printf("%c   ",435);
-    }
-    if (case23l3==4.2){
-        color(14,0);
-        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c ",291);color(14,0);printf("%c   ",435);
-    }
-    if (case23l3==4.3){
-        color(14,0);
-        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c ",285);color(14,0);printf("%c   ",435);
-    }
-    if (case23l3==4.4){
-        color(14,0);
-        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c ",279);color(14,0);printf("%c   ",435);
-    }
-    if (case23l3==4.5){
-        color(14,0);
-        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c ",277);color(14,0);printf("%c",435);
-    }
-    if (case23l3==4.6){
-        color(14,0);
-        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c ",225);color(14,0);printf("%c",435);
-    }
-    if (case23l3==5){
+    if (case23l3==5 && posJ1!=23 && posJ2!=23 && posJ3!=23 && posJ4!=23){
         color(14,0);
         piece5bout2();
     }
-    if (case23l3==6){
+    if (case23l3==5 && (posJ1==23||posJ2==23||posJ3==23||posJ4==23)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c ",f);color(14,0);printf("%c   ",435);
+    }
+    if (case23l3==6 && posJ1!=23 && posJ2!=23 && posJ3!=23 && posJ4!=23){
         color(14,0);
         printf("%c%c%c%c%c%c%c%c%c%c%c",452,452,452,452,452,452,452,452,452,452,452);
+    }
+    if (case23l3==6 && (posJ1==23||posJ2==23||posJ3==23||posJ4==23)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,452);color(15,0);printf("%c",f);color(14,0);printf("%c%c%c%c%c",452,452,452,452,452);
     }
     if (case23l3>=7 && case23l3<8){
         color(14,0);
@@ -4670,152 +7832,220 @@ int test(double case01,double case03,double case05,double case10,double case11,d
         color(14,0);
         printf("%c%c%c%c%c%c%c%c   ",452,452,452,452,452,452,452,473);
     }
-    if (case23l3==9){
+    if (case23l3==9 && posJ1!=23 && posJ2!=23 && posJ3!=23 && posJ4!=23){
         color(14,0);
         printf("    %c  %c%c%c%c",435,474,452,452,452);
     }
-    if (case23l3==9.1){
+    if (case23l3==9 && (posJ1==23||posJ2==23||posJ3==23||posJ4==23)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",f);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case23l3==9.1 && posJ1!=23 && posJ2!=23 && posJ3!=23 && posJ4!=23){
         color(14,0);
         printf("    %c",435);color(15,0);printf(" %c",189);color(14,0);printf("%c%c%c%c",474,452,452,452);
     }
-    if (case23l3==9.2){
+    if (case23l3==9.1 && (posJ1==23||posJ2==23||posJ3==23||posJ4==23)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,189);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case23l3==9.2 && posJ1!=23 && posJ2!=23 && posJ3!=23 && posJ4!=23){
         color(14,0);
         printf("    %c",435);color(15,0);printf(" %c",157);color(14,0);printf("%c%c%c%c",474,452,452,452);
     }
-    if (case23l3==9.3){
+    if (case23l3==9.2 && (posJ1==23||posJ2==23||posJ3==23||posJ4==23)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,157);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case23l3==9.3 && posJ1!=23 && posJ2!=23 && posJ3!=23 && posJ4!=23){
         color(14,0);
         printf("    %c",435);color(15,0);printf(" %c",143);color(14,0);printf("%c%c%c%c",474,452,452,452);
     }
-    if (case23l3==9.4){
+    if (case23l3==9.3 && (posJ1==23||posJ2==23||posJ3==23||posJ4==23)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,143);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case23l3==9.4 && posJ1!=23 && posJ2!=23 && posJ3!=23 && posJ4!=23){
         color(14,0);
         printf("    %c",435);color(15,0);printf(" %c",37);color(14,0);printf("%c%c%c%c",474,452,452,452);
     }
-    if (case23l3==9.5){
+    if (case23l3==9.4 && (posJ1==23||posJ2==23||posJ3==23||posJ4==23)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,37);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case23l3==9.5 && posJ1!=23 && posJ2!=23 && posJ3!=23 && posJ4!=23){
         color(14,0);
         printf("    %c",435);color(15,0);printf(" %c",31);color(14,0);printf("%c%c%c%c",474,452,452,452);
     }
-    if (case23l3==9.6){
+    if (case23l3==9.5 && (posJ1==23||posJ2==23||posJ3==23||posJ4==23)){
         color(14,0);
-        printf("    %c",435);color(15,0);printf(" %c",15);color(14,0);printf("%c%c%c%c",474,452,452,452);
+        printf("    %c",435);color(15,0);printf("%c%c",f,31);color(14,0);printf("%c%c%c%c",474,452,452,452);
     }
-    if (case23l3==10) {
+    if (case23l3==9.6 && posJ1!=23 && posJ2!=23 && posJ3!=23 && posJ4!=23){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",459);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case23l3==9.6 && (posJ1==23||posJ2==23||posJ3==23||posJ4==23)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,459);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case23l3==10 && (posJ1==23||posJ2==23||posJ3==23||posJ4==23)) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c ",f);color(14,0);printf("%c   ",435);
+    }
+    if (case23l3==10 && posJ1!=23 && posJ2!=23 && posJ3!=23 && posJ4!=23) {
         color(14, 0);
         printf("%c%c%c%c%c  %c   ",452, 452,452,452, 447,435);
     }
-    if (case23l3==10.1) {
+    if (case23l3==10.1 && posJ1!=23 && posJ2!=23 && posJ3!=23 && posJ4!=23) {
         color(14, 0);
         printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c ",189);color(14,0);printf("%c   ",435);
     }
-    if (case23l3==10.2) {
+    if (case23l3==10.1 && (posJ1==23||posJ2==23||posJ3==23||posJ4==23)) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c%c",189,f);color(14,0);printf("%c   ",435);
+    }
+    if (case23l3==10.2 && posJ1!=23 && posJ2!=23 && posJ3!=23 && posJ4!=23) {
         color(14, 0);
         printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c ",157);color(14,0);printf("%c   ",435);
     }
-    if (case23l3==10.3) {
+    if (case23l3==10.2 && (posJ1==23||posJ2==23||posJ3==23||posJ4==23)) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c%c",157,f);color(14,0);printf("%c   ",435);
+    }
+    if (case23l3==10.3 && posJ1!=23 && posJ2!=23 && posJ3!=23 && posJ4!=23) {
         color(14, 0);
         printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c ",143);color(14,0);printf("%c   ",435);
     }
-    if (case23l3==10.4) {
+    if (case23l3==10.3 && (posJ1==23||posJ2==23||posJ3==23||posJ4==23)) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c%c",143,f);color(14,0);printf("%c   ",435);
+    }
+    if (case23l3==10.4 && posJ1!=23 && posJ2!=23 && posJ3!=23 && posJ4!=23) {
         color(14, 0);
         printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c ",37);color(14,0);printf("%c   ",435);
     }
-    if (case23l3==10.5) {
+    if (case23l3==10.4 && (posJ1==23||posJ2==23||posJ3==23||posJ4==23)) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c%c",37,f);color(14,0);printf("%c   ",435);
+    }
+    if (case23l3==10.5 && posJ1!=23 && posJ2!=23 && posJ3!=23 && posJ4!=23) {
         color(14, 0);
         printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c ",31);color(14,0);printf("%c   ",435);
     }
-    if (case23l3==10.6) {
+    if (case23l3==10.5 && (posJ1==23||posJ2==23||posJ3==23||posJ4==23)) {
         color(14, 0);
-        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c ",15);color(14,0);printf("%c   ",435);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c%c",31,f);color(14,0);printf("%c   ",435);
+    }
+    if (case23l3==10.6 && posJ1!=23 && posJ2!=23 && posJ3!=23 && posJ4!=23) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c ",459);color(14,0);printf("%c   ",435);
+    }
+    if (case23l3==10.6 && (posJ1==23||posJ2==23||posJ3==23||posJ4==23)) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c%c",459,f);color(14,0);printf("%c   ",435);
     }
     color(9,0);
-    printf("%c%c%c%c%c%c",452,452,452,452,452,447);color(6,0);printf(" %c",446);color(9,0);
-    printf("%c%c%c%c%c%c",474,452,452,452,452,452);
+    f=testposition(posJ1,posJ2,posJ3,posJ4,24,p1,p2,p3,p4);
+    if (posJ1!=24 && posJ2!=24 && posJ3!=24 && posJ4!=24){
+        printf("%c%c%c%c%c%c",452,452,452,452,452,447);color(6,0);printf(" %c",446);color(9,0);
+        printf("%c%c%c%c%c%c",474,452,452,452,452,452);
+    }
+    if (posJ1==24||posJ2==24||posJ3==24||posJ4==24){
+        printf("%c%c%c%c%c%c",452,452,452,452,452,447);color(6,0);printf("%c%c",f,446);color(9,0);
+        printf("%c%c%c%c%c%c",474,452,452,452,452,452);
+    }
     color(14,0);
+    f=testposition(posJ1,posJ2,posJ3,posJ4,25,p1,p2,p3,p4);
     if (case25l3==0){
         printf("           ");
     }
-    if (case25l3==1.1){
+    if (case25l3==1.1 && posJ1!=25 && posJ2!=25 && posJ3!=25 && posJ4!=25){
         color(14,0);
-        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf(" %c",292);color(14,0);printf("%c%c%c%c",474,452,452,452);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf(" %c",292);color(14,0);
+        printf("%c%c%c%c",474,452,452,452);
     }
-    if (case25l3==1.2){
+    if (case25l3==1.1 && (posJ1==25||posJ2==25||posJ3==25||posJ4==25)){
         color(14,0);
-        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf(" %c",291);color(14,0);printf("%c%c%c%c",474,452,452,452);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c%c",f,292);color(14,0);
+        printf("%c%c%c%c",474,452,452,452);
     }
-    if (case25l3==1.3){
+    if (case25l3==1.2 && posJ1!=25 && posJ2!=25 && posJ3!=25 && posJ4!=25){
         color(14,0);
-        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf(" %c",285);color(14,0);printf("%c%c%c%c",474,452,452,452);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf(" %c",291);color(14,0);
+        printf("%c%c%c%c",474,452,452,452);
     }
-    if (case25l3==1.4){
+    if (case25l3==1.2 && (posJ1==25||posJ2==25||posJ3==25||posJ4==25)){
         color(14,0);
-        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf(" %c",279);color(14,0);printf("%c%c%c%c",474,452,452,452);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c%c",f,291);color(14,0);
+        printf("%c%c%c%c",474,452,452,452);
     }
-    if (case25l3==1.5){
+    if (case25l3==1.3 && posJ1!=25 && posJ2!=25 && posJ3!=25 && posJ4!=25){
         color(14,0);
-        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf(" %c",277);color(14,0);printf("%c%c%c%c",474,452,452,452);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf(" %c",285);color(14,0);
+        printf("%c%c%c%c",474,452,452,452);
     }
-    if (case25l3==1.6){
+    if (case25l3==1.3 && (posJ1==25||posJ2==25||posJ3==25||posJ4==25)){
         color(14,0);
-        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf(" %c",225);color(14,0);printf("%c%c%c%c",474,452,452,452);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c%c",f,285);color(14,0);
+        printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case25l3==1.4 && posJ1!=25 && posJ2!=25 && posJ3!=25 && posJ4!=25){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf(" %c",428);color(14,0);
+        printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case25l3==1.4 && (posJ1==25||posJ2==25||posJ3==25||posJ4==25)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c%c",f,428);color(14,0);
+        printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case25l3==1.5 && posJ1!=25 && posJ2!=25 && posJ3!=25 && posJ4!=25){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf(" %c",277);color(14,0);
+        printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case25l3==1.5 && (posJ1==25||posJ2==25||posJ3==25||posJ4==25)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c%c",f,277);color(14,0);
+        printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case25l3==1.6 && posJ1!=25 && posJ2!=25 && posJ3!=25 && posJ4!=25){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf(" %c",225);color(14,0);
+        printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case25l3==1.6 && (posJ1==25||posJ2==25||posJ3==25||posJ4==25)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c%c",f,225);color(14,0);
+        printf("%c%c%c%c",474,452,452,452);
     }
     if (case25l3>2 && case25l3<3){
         color(14,0);
         printf("%c%c%c%c%c%c%c%c%c%c%c",452,452,452,452,452,452,452,452,452,452,452);
     }
-    if (case25l3==3.1){
+    if (case25l3>3 && case25l3<4){
         color(14,0);
-        printf("    %c",435);color(15,0);printf(" %c",292);color(14,0);printf("%c%c%c%c",474,452,452,452);
+        printf("    %c  %c%c%c%c",435,474,452,452,452);
     }
-    if (case25l3==3.2){
+    if (case25l3>4 && case25l3<5){
         color(14,0);
-        printf("    %c",435);color(15,0);printf(" %c",291);color(14,0);printf("%c%c%c%c",474,452,452,452);
+        printf("%c%c%c%c%c  %c   ",452,452,452,452,447,435);
     }
-    if (case25l3==3.3){
-        color(14,0);
-        printf("    %c",435);color(15,0);printf(" %c",285);color(14,0);printf("%c%c%c%c",474,452,452,452);
-    }
-    if (case25l3==3.4){
-        color(14,0);
-        printf("    %c",435);color(15,0);printf(" %c",279);color(14,0);printf("%c%c%c%c",474,452,452,452);
-    }
-    if (case25l3==3.5){
-        color(14,0);
-        printf("    %c",435);color(15,0);printf(" %c",277);color(14,0);printf("%c%c%c%c",474,452,452,452);
-    }
-    if (case25l3==3.6){
-        color(14,0);
-        printf("    %c",435);color(15,0);printf(" %c",225);color(14,0);printf("%c%c%c%c",474,452,452,452);
-    }
-    if (case25l3==4.1){
-        color(14,0);
-        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c ",292);color(14,0);printf("%c   ",435);
-    }
-    if (case25l3==4.2){
-        color(14,0);
-        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c ",291);color(14,0);printf("%c   ",435);
-    }
-    if (case25l3==4.3){
-        color(14,0);
-        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c ",285);color(14,0);printf("%c   ",435);
-    }
-    if (case25l3==4.4){
-        color(14,0);
-        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c ",279);color(14,0);printf("%c   ",435);
-    }
-    if (case25l3==4.5){
-        color(14,0);
-        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c ",277);color(14,0);printf("%c",435);
-    }
-    if (case25l3==4.6){
-        color(14,0);
-        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c ",225);color(14,0);printf("%c",435);
-    }
-    if (case25l3==5){
+    if (case25l3==5 && posJ1!=25 && posJ2!=25 && posJ3!=25 && posJ4!=25){
         color(14,0);
         piece5bout2();
     }
-    if (case25l3==6){
+    if (case25l3==5 && (posJ1==25||posJ2==25||posJ3==25||posJ4==25)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c ",f);color(14,0);printf("%c   ",435);
+    }
+    if (case25l3==6 && posJ1!=25 && posJ2!=25 && posJ3!=25 && posJ4!=25){
         color(14,0);
         printf("%c%c%c%c%c%c%c%c%c%c%c",452,452,452,452,452,452,452,452,452,452,452);
+    }
+    if (case25l3==6 && (posJ1==25||posJ2==25||posJ3==25||posJ4==25)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,452);color(15,0);printf("%c",f);color(14,0);printf("%c%c%c%c%c",452,452,452,452,452);
     }
     if (case25l3>=7 && case25l3<8){
         color(14,0);
@@ -4825,61 +8055,117 @@ int test(double case01,double case03,double case05,double case10,double case11,d
         color(14,0);
         printf("%c%c%c%c%c%c%c%c   ",452,452,452,452,452,452,452,473);
     }
-    if (case25l3==9){
+    if (case25l3==9 && posJ1!=25 && posJ2!=25 && posJ3!=25 && posJ4!=25){
         color(14,0);
         printf("    %c  %c%c%c%c",435,474,452,452,452);
     }
-    if (case25l3==9.1){
+    if (case25l3==9 && (posJ1==25||posJ2==25||posJ3==25||posJ4==25)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",f);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case25l3==9.1 && posJ1!=25 && posJ2!=25 && posJ3!=25 && posJ4!=25){
         color(14,0);
         printf("    %c",435);color(15,0);printf(" %c",189);color(14,0);printf("%c%c%c%c",474,452,452,452);
     }
-    if (case25l3==9.2){
+    if (case25l3==9.1 && (posJ1==25||posJ2==25||posJ3==25||posJ4==25)){
         color(14,0);
-        printf("    %c",435);color(15,0);printf(" %c",157);color(14,0);printf("%c%c%c%c",474,452,452,452);
+        printf("    %c",435);color(15,0);printf("%c%c",f,189);color(14,0);printf("%c%c%c%c",474,452,452,452);
     }
-    if (case25l3==9.3){
+    if (case25l3==9.2 && posJ1!=25 && posJ2!=25 && posJ3!=25 && posJ4!=25){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",257);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case25l3==9.2 && (posJ1==25||posJ2==25||posJ3==25||posJ4==25)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,257);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case25l3==9.3 && posJ1!=25 && posJ2!=25 && posJ3!=25 && posJ4!=25){
         color(14,0);
         printf("    %c",435);color(15,0);printf(" %c",143);color(14,0);printf("%c%c%c%c",474,452,452,452);
     }
-    if (case25l3==9.4){
+    if (case25l3==9.3 && (posJ1==25||posJ2==25||posJ3==25||posJ4==25)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,143);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case25l3==9.4 && posJ1!=25 && posJ2!=25 && posJ3!=25 && posJ4!=25){
         color(14,0);
         printf("    %c",435);color(15,0);printf(" %c",37);color(14,0);printf("%c%c%c%c",474,452,452,452);
     }
-    if (case25l3==9.5){
+    if (case25l3==9.4 && (posJ1==25||posJ2==25||posJ3==25||posJ4==25)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,37);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case25l3==9.5 && posJ1!=25 && posJ2!=25 && posJ3!=25 && posJ4!=25){
         color(14,0);
         printf("    %c",435);color(15,0);printf(" %c",31);color(14,0);printf("%c%c%c%c",474,452,452,452);
     }
-    if (case25l3==9.6){
+    if (case25l3==9.5 && (posJ1==25||posJ2==25||posJ3==25||posJ4==25)){
         color(14,0);
-        printf("    %c",435);color(15,0);printf(" %c",15);color(14,0);printf("%c%c%c%c",474,452,452,452);
+        printf("    %c",435);color(15,0);printf("%c%c",f,31);color(14,0);printf("%c%c%c%c",474,452,452,452);
     }
-    if (case25l3==10) {
+    if (case25l3==9.6 && posJ1!=25 && posJ2!=25 && posJ3!=25 && posJ4!=25){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",459);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case25l3==9.6 && (posJ1==25||posJ2==25||posJ3==25||posJ4==25)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,459);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case25l3==10 && (posJ1==25||posJ2==25||posJ3==25||posJ4==25)) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c ",f);color(14,0);printf("%c   ",435);
+    }
+    if (case25l3==10 && posJ1!=25 && posJ2!=25 && posJ3!=25 && posJ4!=25) {
         color(14, 0);
         printf("%c%c%c%c%c  %c   ",452, 452,452,452, 447,435);
     }
-    if (case25l3==10.1) {
+    if (case25l3==10.1 && posJ1!=25 && posJ2!=25 && posJ3!=25 && posJ4!=25) {
         color(14, 0);
         printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c ",189);color(14,0);printf("%c   ",435);
     }
-    if (case25l3==10.2) {
+    if (case25l3==10.1 && (posJ1==25||posJ2==25||posJ3==25||posJ4==25)) {
         color(14, 0);
-        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c ",157);color(14,0);printf("%c   ",435);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c%c",189,f);color(14,0);printf("%c   ",435);
     }
-    if (case25l3==10.3) {
+    if (case25l3==10.2 && posJ1!=25 && posJ2!=25 && posJ3!=25 && posJ4!=25) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c ",257);color(14,0);printf("%c   ",435);
+    }
+    if (case25l3==10.2 && (posJ1==25||posJ2==25||posJ3==25||posJ4==25)) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c%c",257,f);color(14,0);printf("%c   ",435);
+    }
+    if (case25l3==10.3 && posJ1!=25 && posJ2!=25 && posJ3!=25 && posJ4!=25) {
         color(14, 0);
         printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c ",143);color(14,0);printf("%c   ",435);
     }
-    if (case25l3==10.4) {
+    if (case25l3==10.3 && (posJ1==25||posJ2==25||posJ3==25||posJ4==25)) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c%c",143,f);color(14,0);printf("%c   ",435);
+    }
+    if (case25l3==10.4 && posJ1!=25 && posJ2!=25 && posJ3!=25 && posJ4!=25) {
         color(14, 0);
         printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c ",37);color(14,0);printf("%c   ",435);
     }
-    if (case25l3==10.5) {
+    if (case25l3==10.4 && (posJ1==25||posJ2==25||posJ3==25||posJ4==25)) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c%c",37,f);color(14,0);printf("%c   ",435);
+    }
+    if (case25l3==10.5 && posJ1!=25 && posJ2!=25 && posJ3!=25 && posJ4!=25) {
         color(14, 0);
         printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c ",31);color(14,0);printf("%c   ",435);
     }
-    if (case25l3==10.6) {
+    if (case25l3==10.5 && (posJ1==25||posJ2==25||posJ3==25||posJ4==25)) {
         color(14, 0);
-        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c ",15);color(14,0);printf("%c   ",435);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c%c",31,f);color(14,0);printf("%c   ",435);
+    }
+    if (case25l3==10.6 && posJ1!=25 && posJ2!=25 && posJ3!=25 && posJ4!=25) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c ",459);color(14,0);printf("%c   ",435);
+    }
+    if (case25l3==10.6 && (posJ1==25||posJ2==25||posJ3==25||posJ4==25)) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c%c",459,f);color(14,0);printf("%c   ",435);
     }
     color(9,0);
     printf("%c%c%c%c%c%c",452,452,452,452,452,447);color(8,0);printf("%c ",440);color(9,0);
@@ -5193,7 +8479,7 @@ int test(double case01,double case03,double case05,double case10,double case11,d
         color(14,0);
         p8bout1();
     }
-    if (case33l1>=9 && case13l1<10){
+    if (case33l1>=9 && case33l1<10){
         color(14,0);
         printf("           ");
     }
@@ -5329,76 +8615,148 @@ int test(double case01,double case03,double case05,double case10,double case11,d
     if (case30l2>1 && case30l2<2){
         printf("%c%c%c%c%c%c%c%c",452,452,452,452,452,452,452,452);
     }
-    if (case30l2==2.1){
+    if (case30l2==2.1 && posJ1!=30 && posJ2!=30 && posJ3!=30 && posJ4!=30){
         printf("%c",473);color(15,0);printf(" %c",292);color(14,0);
         printf("%c%c%c%c%c",448,452,452,452,452);
     }
-    if (case30l2==2.2){
+    if (case30l2==2.1 && (posJ1==30||posJ2==30||posJ3==30||posJ4==30)){
+        printf("%c",473);color(15,0);printf("%c%c",f,292);color(14,0);
+        printf("%c%c%c%c%c",448,452,452,452,452);
+    }
+    if (case30l2==2.2 && posJ1!=30 && posJ2!=30 && posJ3!=30 && posJ4!=30){
         printf("%c",473);color(15,0);printf(" %c",291);color(14,0);
         printf("%c%c%c%c%c",448,452,452,452,452);
     }
-    if (case30l2==2.3){
+    if (case30l2==2.2 && (posJ1==30||posJ2==30||posJ3==30||posJ4==30)){
+        printf("%c",473);color(15,0);printf("%c%c",f,291);color(14,0);
+        printf("%c%c%c%c%c",448,452,452,452,452);
+    }
+    if (case30l2==2.3 && posJ1!=30 && posJ2!=30 && posJ3!=30 && posJ4!=30){
         printf("%c",473);color(15,0);printf(" %c",285);color(14,0);
         printf("%c%c%c%c%c",448,452,452,452,452);
     }
-    if (case30l2==2.4){
-        printf("%c",473);color(15,0);printf(" %c",279);color(14,0);
+    if (case30l2==2.3 && (posJ1==30||posJ2==30||posJ3==30||posJ4==30)){
+        printf("%c",473);color(15,0);printf("%c%c",f,285);color(14,0);
         printf("%c%c%c%c%c",448,452,452,452,452);
     }
-    if (case30l2==2.5){
+    if (case30l2==2.4 && posJ1!=30 && posJ2!=30 && posJ3!=30 && posJ4!=30){
+        printf("%c",473);color(15,0);printf(" %c",428);color(14,0);
+        printf("%c%c%c%c%c",448,452,452,452,452);
+    }
+    if (case30l2==2.4 && (posJ1==30||posJ2==30||posJ3==30||posJ4==30)){
+        printf("%c",473);color(15,0);printf("%c%c",f,428);color(14,0);
+        printf("%c%c%c%c%c",448,452,452,452,452);
+    }
+    if (case30l2==2.5 && posJ1!=30 && posJ2!=30 && posJ3!=30 && posJ4!=30){
         printf("%c",473);color(15,0);printf(" %c",277);color(14,0);
         printf("%c%c%c%c%c",448,452,452,452,452);
     }
-    if (case30l2==2.6){
+    if (case30l2==2.5 && (posJ1==30||posJ2==30||posJ3==30||posJ4==30)){
+        printf("%c",473);color(15,0);printf("%c%c",f,277);color(14,0);
+        printf("%c%c%c%c%c",448,452,452,452,452);
+    }
+    if (case30l2==2.6 && posJ1!=30 && posJ2!=30 && posJ3!=30 && posJ4!=30){
         printf("%c",473);color(15,0);printf(" %c",225);color(14,0);
         printf("%c%c%c%c%c",448,452,452,452,452);
     }
-    if (case30l2==3.1){
+    if (case30l2==2.6 && (posJ1==30||posJ2==30||posJ3==30||posJ4==30)){
+        printf("%c",473);color(15,0);printf("%c%c",f,225);color(14,0);
+        printf("%c%c%c%c%c",448,452,452,452,452);
+    }
+    if (case30l2==3.1 && posJ1!=30 && posJ2!=30 && posJ3!=30 && posJ4!=30){
         printf("%c",435);color(15,0);printf(" %c",292);color(14,0);
         printf("%c%c%c%c%c",448,452,452,452,452);
     }
-    if (case30l2==3.2){
+    if (case30l2==3.1 && (posJ1==30||posJ2==30||posJ3==30||posJ4==30)){
+        printf("%c",435);color(15,0);printf("%c%c",f,292);color(14,0);
+        printf("%c%c%c%c%c",448,452,452,452,452);
+    }
+    if (case30l2==3.2 && posJ1!=30 && posJ2!=30 && posJ3!=30 && posJ4!=30){
         printf("%c",435);color(15,0);printf(" %c",291);color(14,0);
         printf("%c%c%c%c%c",448,452,452,452,452);
     }
-    if (case30l2==3.3){
+    if (case30l2==3.2 && (posJ1==30||posJ2==30||posJ3==30||posJ4==30)){
+        printf("%c",435);color(15,0);printf("%c%c",f,291);color(14,0);
+        printf("%c%c%c%c%c",448,452,452,452,452);
+    }
+    if (case30l2==3.3 && posJ1!=30 && posJ2!=30 && posJ3!=30 && posJ4!=30){
         printf("%c",435);color(15,0);printf(" %c",285);color(14,0);
         printf("%c%c%c%c%c",448,452,452,452,452);
     }
-    if (case30l2==3.4){
-        printf("%c",435);color(15,0);printf(" %c",279);color(14,0);
+    if (case30l2==3.3 && (posJ1==30||posJ2==30||posJ3==30||posJ4==30)){
+        printf("%c",435);color(15,0);printf("%c%c",f,285);color(14,0);
         printf("%c%c%c%c%c",448,452,452,452,452);
     }
-    if (case30l2==3.5){
+    if (case30l2==3.4 && posJ1!=30 && posJ2!=30 && posJ3!=30 && posJ4!=30){
+        printf("%c",435);color(15,0);printf(" %c",428);color(14,0);
+        printf("%c%c%c%c%c",448,452,452,452,452);
+    }
+    if (case30l2==3.4 && (posJ1==30||posJ2==30||posJ3==30||posJ4==30)){
+        printf("%c",435);color(15,0);printf("%c%c",f,428);color(14,0);
+        printf("%c%c%c%c%c",448,452,452,452,452);
+    }
+    if (case30l2==3.5 && posJ1!=30 && posJ2!=30 && posJ3!=30 && posJ4!=30){
         printf("%c",435);color(15,0);printf(" %c",277);color(14,0);
         printf("%c%c%c%c%c",448,452,452,452,452);
     }
-    if (case30l2==3.6){
+    if (case30l2==3.5 && (posJ1==30||posJ2==30||posJ3==30||posJ4==30)){
+        printf("%c",435);color(15,0);printf("%c%c",f,277);color(14,0);
+        printf("%c%c%c%c%c",448,452,452,452,452);
+    }
+    if (case30l2==3.6 && posJ1!=30 && posJ2!=30 && posJ3!=30 && posJ4!=30){
         printf("%c",435);color(15,0);printf(" %c",225);color(14,0);
         printf("%c%c%c%c%c",448,452,452,452,452);
     }
-    if (case30l2==4.1){
+    if (case30l2==3.6 && (posJ1==30||posJ2==30||posJ3==30||posJ4==30)){
+        printf("%c",435);color(15,0);printf("%c%c",f,225);color(14,0);
+        printf("%c%c%c%c%c",448,452,452,452,452);
+    }
+    if (case30l2==4.1 && posJ1!=30 && posJ2!=30 && posJ3!=30 && posJ4!=30){
         printf("%c",473);color(15,0);printf("%c ",292);color(14,0);
         printf("%c    ",435);
     }
-    if (case30l2==4.2){
+    if (case30l2==4.1 && (posJ1==30||posJ2==30||posJ3==30||posJ4==30)){
+        printf("%c",473);color(15,0);printf("%c%c",f,292);color(14,0);
+        printf("%c    ",435);
+    }
+    if (case30l2==4.2 && posJ1!=30 && posJ2!=30 && posJ3!=30 && posJ4!=30){
         printf("%c",473);color(15,0);printf("%c ",291);color(14,0);
         printf("%c    ",435);
     }
-    if (case30l2==4.3){
+    if (case30l2==4.2 && (posJ1==30||posJ2==30||posJ3==30||posJ4==30)){
+        printf("%c",473);color(15,0);printf("%c%c",f,291);color(14,0);
+        printf("%c    ",435);
+    }
+    if (case30l2==4.3 && posJ1!=30 && posJ2!=30 && posJ3!=30 && posJ4!=30){
         printf("%c",473);color(15,0);printf("%c ",285);color(14,0);
         printf("%c    ",435);
     }
-    if (case30l2==4.4){
-        printf("%c",473);color(15,0);printf("%c ",279);color(14,0);
+    if (case30l2==4.3 && (posJ1==30||posJ2==30||posJ3==30||posJ4==30)){
+        printf("%c",473);color(15,0);printf("%c%c",f,285);color(14,0);
         printf("%c    ",435);
     }
-    if (case30l2==4.5){
+    if (case30l2==4.4 && posJ1!=30 && posJ2!=30 && posJ3!=30 && posJ4!=30){
+        printf("%c",473);color(15,0);printf("%c ",428);color(14,0);
+        printf("%c    ",435);
+    }
+    if (case30l2==4.4 && (posJ1==30||posJ2==30||posJ3==30||posJ4==30)){
+        printf("%c",473);color(15,0);printf("%c%c",f,428);color(14,0);
+        printf("%c    ",435);
+    }
+    if (case30l2==4.5 && posJ1!=30 && posJ2!=30 && posJ3!=30 && posJ4!=30){
         printf("%c",473);color(15,0);printf("%c ",277);color(14,0);
         printf("%c    ",435);
     }
-    if (case30l2==4.6){
-        printf("%c",473);color(15,0);printf("%c ",225);color(15,0);
+    if (case30l2==4.5 && (posJ1==30||posJ2==30||posJ3==30||posJ4==30)){
+        printf("%c",473);color(15,0);printf("%c%c",f,277);color(14,0);
+        printf("%c    ",435);
+    }
+    if (case30l2==4.6 && posJ1!=30 && posJ2!=30 && posJ3!=30 && posJ4!=30){
+        printf("%c",473);color(15,0);printf("%c ",225);color(14,0);
+        printf("%c    ",435);
+    }
+    if (case30l2==4.6 && (posJ1==30||posJ2==30||posJ3==30||posJ4==30)){
+        printf("%c",473);color(15,0);printf("%c%c",f,225);color(14,0);
         printf("%c    ",435);
     }
     if (case30l2==5){
@@ -5407,53 +8765,101 @@ int test(double case01,double case03,double case05,double case10,double case11,d
     if (case30l2==6){
         printf("%c%c%c%c%c%c%c%c",452,452,452,452,452,452,452,452);
     }
-    if (case30l2==7){
+    if (case30l2==7 && posJ1!=30 && posJ2!=30 && posJ3!=30 && posJ4!=30){
         printf("%c  %c%c%c%c%c",435,448,452,452,452,452);
     }
-    if (case30l2==7.1){
+    if (case30l2==7 && (posJ1==30||posJ2==30||posJ3==30||posJ4==30)){
+        printf("%c",435);color(15,0);printf(" %c",f);color(14,0);printf("%c%c%c%c%c",448,452,452,452,452);
+    }
+    if (case30l2==7.1 && posJ1!=30 && posJ2!=30 && posJ3!=30 && posJ4!=30){
         printf("%c",435);color(15,0);printf(" %c",189);color(14,0);
         printf("%c%c%c%c%c",448,452,452,452,452);
     }
-    if (case30l2==7.2){
+    if (case30l2==7.1 && (posJ1==30||posJ2==30||posJ3==30||posJ4==30)){
+        printf("%c",435);color(15,0);printf("%c%c",f,189);color(14,0);
+        printf("%c%c%c%c%c",448,452,452,452,452);
+    }
+    if (case30l2==7.2 && posJ1!=30 && posJ2!=30 && posJ3!=30 && posJ4!=30){
         printf("%c",435);color(15,0);printf(" %c",157);color(14,0);
         printf("%c%c%c%c%c",448,452,452,452,452);
     }
-    if (case30l2==7.3){
+    if (case30l2==7.2 && (posJ1==30||posJ2==30||posJ3==30||posJ4==30)){
+        printf("%c",435);color(15,0);printf("%c%c",f,157);color(14,0);
+        printf("%c%c%c%c%c",448,452,452,452,452);
+    }
+    if (case30l2==7.3 && posJ1!=30 && posJ2!=30 && posJ3!=30 && posJ4!=30){
         printf("%c",435);color(15,0);printf(" %c",143);color(14,0);
         printf("%c%c%c%c%c",448,452,452,452,452);
     }
-    if (case30l2==7.4){
+    if (case30l2==7.3 && (posJ1==30||posJ2==30||posJ3==30||posJ4==30)){
+        printf("%c",435);color(15,0);printf("%c%c",f,143);color(14,0);
+        printf("%c%c%c%c%c",448,452,452,452,452);
+    }
+    if (case30l2==7.4 && posJ1!=30 && posJ2!=30 && posJ3!=30 && posJ4!=30){
         printf("%c",435);color(15,0);printf(" %c",37);color(14,0);
         printf("%c%c%c%c%c",448,452,452,452,452);
     }
-    if (case30l2==7.5){
+    if (case30l2==7.4 && (posJ1==30||posJ2==30||posJ3==30||posJ4==30)){
+        printf("%c",435);color(15,0);printf("%c%c",f,37);color(14,0);
+        printf("%c%c%c%c%c",448,452,452,452,452);
+    }
+    if (case30l2==7.5 && posJ1!=30 && posJ2!=30 && posJ3!=30 && posJ4!=30){
         printf("%c",435);color(15,0);printf(" %c",31);color(14,0);
         printf("%c%c%c%c%c",448,452,452,452,452);
     }
-    if (case30l2==7.6){
-        printf("%c",435);color(15,0);printf(" %c",15);color(14,0);
+    if (case30l2==7.5 && (posJ1==30||posJ2==30||posJ3==30||posJ4==30)){
+        printf("%c",435);color(15,0);printf("%c%c",f,31);color(14,0);
         printf("%c%c%c%c%c",448,452,452,452,452);
     }
-    if (case30l2==8){
+    if (case30l2==7.6 && posJ1!=30 && posJ2!=30 && posJ3!=30 && posJ4!=30){
+        printf("%c",435);color(15,0);printf(" %c",459);color(14,0);
+        printf("%c%c%c%c%c",448,452,452,452,452);
+    }
+    if (case30l2==7.6 && (posJ1==30||posJ2==30||posJ3==30||posJ4==30)){
+        printf("%c",435);color(15,0);printf("%c%c",f,459);color(14,0);
+        printf("%c%c%c%c%c",448,452,452,452,452);
+    }
+    if (case30l2==8 && posJ1!=30 && posJ2!=30 && posJ3!=30 && posJ4!=30){
         printf("%c  %c    ",473,435);
     }
-    if (case30l2==8.1){
+    if (case30l2==8 && (posJ1==30||posJ2==30||posJ3==30||posJ4==30)){
+        printf("%c",473);color(15,0);printf("%c ",f);color(14,0);printf("%c    ",435);
+    }
+    if (case30l2==8.1 && posJ1!=30 && posJ2!=30 && posJ3!=30 && posJ4!=30){
         printf("%c",473);color(15,0);printf("%c ",189);color(14,0);printf("%c    ",435);
     }
-    if (case30l2==8.2){
+    if (case30l2==8.1 && (posJ1==30||posJ2==30||posJ3==30||posJ4==30)){
+        printf("%c",473);color(15,0);printf("%c%c",189,f);color(14,0);printf("%c    ",435);
+    }
+    if (case30l2==8.2 && posJ1!=30 && posJ2!=30 && posJ3!=30 && posJ4!=30){
         printf("%c",473);color(15,0);printf("%c ",157);color(14,0);printf("%c    ",435);
     }
-    if (case30l2==8.3){
+    if (case30l2==8.2 && (posJ1==30||posJ2==30||posJ3==30||posJ4==30)){
+        printf("%c",473);color(15,0);printf("%c%c",157,f);color(14,0);printf("%c    ",435);
+    }
+    if (case30l2==8.3 && posJ1!=30 && posJ2!=30 && posJ3!=30 && posJ4!=30){
         printf("%c",473);color(15,0);printf("%c ",143);color(14,0);printf("%c    ",435);
     }
-    if (case30l2==8.4){
+    if (case30l2==8.3 && (posJ1==30||posJ2==30||posJ3==30||posJ4==30)){
+        printf("%c",473);color(15,0);printf("%c%c",143,f);color(14,0);printf("%c    ",435);
+    }
+    if (case30l2==8.4 && posJ1!=30 && posJ2!=30 && posJ3!=30 && posJ4!=30){
         printf("%c",473);color(15,0);printf("%c ",37);color(14,0);printf("%c    ",435);
     }
-    if (case30l2==8.5){
+    if (case30l2==8.4 && (posJ1==30||posJ2==30||posJ3==30||posJ4==30)){
+        printf("%c",473);color(15,0);printf("%c%c",37,f);color(14,0);printf("%c    ",435);
+    }
+    if (case30l2==8.5 && posJ1!=30 && posJ2!=30 && posJ3!=30 && posJ4!=30){
         printf("%c",473);color(15,0);printf("%c ",31);color(14,0);printf("%c    ",435);
     }
-    if (case30l2==8.6){
-        printf("%c",473);color(15,0);printf("%c ",15);color(14,0);printf("%c    ",435);
+    if (case30l2==8.5 && (posJ1==30||posJ2==30||posJ3==30||posJ4==30)){
+        printf("%c",473);color(15,0);printf("%c%c",31,f);color(14,0);printf("%c    ",435);
+    }
+    if (case30l2==8.6 && posJ1!=30 && posJ2!=30 && posJ3!=30 && posJ4!=30){
+        printf("%c",473);color(15,0);printf("%c ",459);color(14,0);printf("%c    ",435);
+    }
+    if (case30l2==8.6 && (posJ1==30||posJ2==30||posJ3==30||posJ4==30)){
+        printf("%c",473);color(15,0);printf("%c%c",459,f);color(14,0);printf("%c    ",435);
     }
     if (case30l2>=9 && case30l2<10){
         printf("%c%c%c%c%c%c%c%c",474,452,452,452,452,452,452,452);
@@ -5461,6 +8867,7 @@ int test(double case01,double case03,double case05,double case10,double case11,d
     if (case30l2>=10 && case30l2<11){
         printf("%c%c%c%c    ",452,452,452,447);
     }
+    f=testposition(posJ1,posJ2,posJ3,posJ4,31,p1,p2,p3,p4);
     if (case31l2==0){
         printf("           ");
     }
@@ -5468,94 +8875,184 @@ int test(double case01,double case03,double case05,double case10,double case11,d
         color(14,0);
         printf("%c%c%c%c%c%c%c%c%c%c%c",452,452,452,452,452,452,452,452,452,452,452);
     }
-    if (case31l2==2.1){
+    if (case31l2==2.1 && posJ1!=31 && posJ2!=31 && posJ3!=31 && posJ4!=31){
         color(14,0);
         printf("%c%c%c%c%c", 452, 452, 452, 452, 473);color(15,0);printf(" %c",292);color(14,0);
         printf("%c%c%c%c", 448, 452, 452, 452);
     }
-    if (case31l2==2.2){
+    if (case31l2==2.1 && (posJ1==31||posJ2==31||posJ3==31||posJ4==31)){
+        color(14,0);
+        printf("%c%c%c%c%c", 452, 452, 452, 452, 473);color(15,0);printf("%c%c",f,292);color(14,0);
+        printf("%c%c%c%c", 448, 452, 452, 452);
+    }
+    if (case31l2==2.2 && posJ1!=31 && posJ2!=31 && posJ3!=31 && posJ4!=31){
         color(14,0);
         printf("%c%c%c%c%c", 452, 452, 452, 452, 473);color(15,0);printf(" %c",291);color(14,0);
         printf("%c%c%c%c", 448, 452, 452, 452);
     }
-    if (case31l2==2.3){
+    if (case31l2==2.2 && (posJ1==31||posJ2==31||posJ3==31||posJ4==31)){
+        color(14,0);
+        printf("%c%c%c%c%c", 452, 452, 452, 452, 473);color(15,0);printf("%c%c",f,291);color(14,0);
+        printf("%c%c%c%c", 448, 452, 452, 452);
+    }
+    if (case31l2==2.3 && posJ1!=31 && posJ2!=31 && posJ3!=31 && posJ4!=31){
         color(14,0);
         printf("%c%c%c%c%c", 452, 452, 452, 452, 473);color(15,0);printf(" %c",285);color(14,0);
         printf("%c%c%c%c", 448, 452, 452, 452);
     }
-    if (case31l2==2.4){
+    if (case31l2==2.3 && (posJ1==31||posJ2==31||posJ3==31||posJ4==31)){
         color(14,0);
-        printf("%c%c%c%c%c", 452, 452, 452, 452, 473);color(15,0);printf(" %c",279);color(14,0);
+        printf("%c%c%c%c%c", 452, 452, 452, 452, 473);color(15,0);printf("%c%c",f,285);color(14,0);
         printf("%c%c%c%c", 448, 452, 452, 452);
     }
-    if (case31l2==2.5){
+    if (case31l2==2.4 && posJ1!=31 && posJ2!=31 && posJ3!=31 && posJ4!=31){
+        color(14,0);
+        printf("%c%c%c%c%c", 452, 452, 452, 452, 473);color(15,0);printf(" %c",428);color(14,0);
+        printf("%c%c%c%c", 448, 452, 452, 452);
+    }
+    if (case31l2==2.4 && (posJ1==31||posJ2==31||posJ3==31||posJ4==31)){
+        color(14,0);
+        printf("%c%c%c%c%c", 452, 452, 452, 452, 473);color(15,0);printf("%c%c",f,428);color(14,0);
+        printf("%c%c%c%c", 448, 452, 452, 452);
+    }
+    if (case31l2==2.5 && posJ1!=31 && posJ2!=31 && posJ3!=31 && posJ4!=31){
         color(14,0);
         printf("%c%c%c%c%c", 452, 452, 452, 452, 473);color(15,0);printf(" %c",277);color(14,0);
         printf("%c%c%c%c", 448, 452, 452, 452);
     }
-    if (case31l2==2.6){
+    if (case31l2==2.5 && (posJ1==31||posJ2==31||posJ3==31||posJ4==31)){
+        color(14,0);
+        printf("%c%c%c%c%c", 452, 452, 452, 452, 473);color(15,0);printf("%c%c",f,277);color(14,0);
+        printf("%c%c%c%c", 448, 452, 452, 452);
+    }
+    if (case31l2==2.6 && posJ1!=31 && posJ2!=31 && posJ3!=31 && posJ4!=31){
         color(14,0);
         printf("%c%c%c%c%c", 452, 452, 452, 452, 473);color(15,0);printf(" %c",225);color(14,0);
         printf("%c%c%c%c", 448, 452, 452, 452);
     }
-    if (case31l2==3.1){
+    if (case31l2==2.6 && (posJ1==31||posJ2==31||posJ3==31||posJ4==31)){
+        color(14,0);
+        printf("%c%c%c%c%c", 452, 452, 452, 452, 473);color(15,0);printf("%c%c",f,225);color(14,0);
+        printf("%c%c%c%c", 448, 452, 452, 452);
+    }
+    if (case31l2==3.1 && posJ1!=31 && posJ2!=31 && posJ3!=31 && posJ4!=31){
         color(14,0);
         printf("    %c",435);color(15,0);printf(" %c",292);color(14,0);
         printf("%c%c%c%c",448,452,452,452);
     }
-    if (case31l2==3.2){
+    if (case31l2==3.1 && (posJ1==31||posJ2==31||posJ3==31||posJ4==31)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,292);color(14,0);
+        printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case31l2==3.2 && posJ1!=31 && posJ2!=31 && posJ3!=31 && posJ4!=31){
         color(14,0);
         printf("    %c",435);color(15,0);printf(" %c",291);color(14,0);
         printf("%c%c%c%c",448,452,452,452);
     }
-    if (case31l2==3.3){
+    if (case31l2==3.2 && (posJ1==31||posJ2==31||posJ3==31||posJ4==31)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,291);color(14,0);
+        printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case31l2==3.3 && posJ1!=31 && posJ2!=31 && posJ3!=31 && posJ4!=31){
         color(14,0);
         printf("    %c",435);color(15,0);printf(" %c",285);color(14,0);
         printf("%c%c%c%c",448,452,452,452);
     }
-    if (case31l2==3.4){
+    if (case31l2==3.3 && (posJ1==31||posJ2==31||posJ3==31||posJ4==31)){
         color(14,0);
-        printf("    %c",435);color(15,0);printf(" %c",279);color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,285);color(14,0);
         printf("%c%c%c%c",448,452,452,452);
     }
-    if (case31l2==3.5){
+    if (case31l2==3.4 && posJ1!=31 && posJ2!=31 && posJ3!=31 && posJ4!=31){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",428);color(14,0);
+        printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case31l2==3.4 && (posJ1==31||posJ2==31||posJ3==31||posJ4==31)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,428);color(14,0);
+        printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case31l2==3.5 && posJ1!=31 && posJ2!=31 && posJ3!=31 && posJ4!=31){
         color(14,0);
         printf("    %c",435);color(15,0);printf(" %c",277);color(14,0);
         printf("%c%c%c%c",448,452,452,452);
     }
-    if (case31l2==3.6){
+    if (case31l2==3.5 && (posJ1==31||posJ2==31||posJ3==31||posJ4==31)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,277);color(14,0);
+        printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case31l2==3.6 && posJ1!=31 && posJ2!=31 && posJ3!=31 && posJ4!=31){
         color(14,0);
         printf("    %c",435);color(15,0);printf(" %c",225);color(14,0);
         printf("%c%c%c%c",448,452,452,452);
     }
-    if (case31l2==4.1){
+    if (case31l2==3.6 && (posJ1==31||posJ2==31||posJ3==31||posJ4==31)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,225);color(14,0);
+        printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case31l2==4.1 && posJ1!=31 && posJ2!=31 && posJ3!=31 && posJ4!=31){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",292);color(14,0);
         printf("%c   ",435);
     }
-    if (case31l2==4.2){
+    if (case31l2==4.1 && (posJ1==31||posJ2==31||posJ3==31||posJ4==31)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",292,f);color(14,0);
+        printf("%c   ",435);
+    }
+    if (case31l2==4.2 && posJ1!=31 && posJ2!=31 && posJ3!=31 && posJ4!=31){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",291);color(14,0);
         printf("%c   ",435);
     }
-    if (case31l2==4.3){
+    if (case31l2==4.2 && (posJ1==31||posJ2==31||posJ3==31||posJ4==31)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",291,f);color(14,0);
+        printf("%c   ",435);
+    }
+    if (case31l2==4.3 && posJ1!=31 && posJ2!=31 && posJ3!=31 && posJ4!=31){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",285);color(14,0);
         printf("%c   ",435);
     }
-    if (case31l2==4.4){
+    if (case31l2==4.3 && (posJ1==31||posJ2==31||posJ3==31||posJ4==31)){
         color(14,0);
-        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",279);color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",285,f);color(14,0);
         printf("%c   ",435);
     }
-    if (case31l2==4.5){
+    if (case31l2==4.4 && posJ1!=31 && posJ2!=31 && posJ3!=31 && posJ4!=31){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",428);color(14,0);
+        printf("%c   ",435);
+    }
+    if (case31l2==4.4 && (posJ1==31||posJ2==31||posJ3==31||posJ4==31)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",428,f);color(14,0);
+        printf("%c   ",435);
+    }
+    if (case31l2==4.5 && posJ1!=31 && posJ2!=31 && posJ3!=31 && posJ4!=31){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",277);color(14,0);
         printf("%c   ",435);
     }
-    if (case31l2==4.6){
+    if (case31l2==4.5 && (posJ1==31||posJ2==31||posJ3==31||posJ4==31)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",277,f);color(14,0);
+        printf("%c   ",435);
+    }
+    if (case31l2==4.6 && posJ1!=31 && posJ2!=31 && posJ3!=31 && posJ4!=31){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",225);color(14,0);
+        printf("%c   ",435);
+    }
+    if (case31l2==4.6 && (posJ1==31||posJ2==31||posJ3==31||posJ4==31)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",225,f);color(14,0);
         printf("%c   ",435);
     }
     if (case31l2==5){
@@ -5566,166 +9063,313 @@ int test(double case01,double case03,double case05,double case10,double case11,d
         color(14,0);
         printf("%c%c%c%c%c%c%c%c%c%c%c",452,452,452,452,452,452,452,452,452,452,452);
     }
-    if (case31l2==7){
+    if (case31l2==7 && posJ1!=31 && posJ2!=31 && posJ3!=31 && posJ4!=31){
         color(14,0);
         printf("    %c  %c%c%c%c",435,448,452,452,452);
     }
-    if (case31l2==7.1){
+    if (case31l2==7 && (posJ1==31||posJ2==31||posJ3==31||posJ4==31)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",f);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case31l2==7.1 && posJ1!=31 && posJ2!=31 && posJ3!=31 && posJ4!=31){
         color(14,0);
         printf("    %c",435);color(15,0);printf(" %c",189);color(14,0);printf("%c%c%c%c",448,452,452,452);
     }
-    if (case31l2==7.2){
+    if (case31l2==7.1 && (posJ1==31||posJ2==31||posJ3==31||posJ4==31)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,189);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case31l2==7.2 && posJ1!=31 && posJ2!=31 && posJ3!=31 && posJ4!=31){
         color(14,0);
         printf("    %c",435);color(15,0);printf(" %c",157);color(14,0);printf("%c%c%c%c",448,452,452,452);
     }
-    if (case31l2==7.3){
+    if (case31l2==7.2 && (posJ1==31||posJ2==31||posJ3==31||posJ4==31)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,157);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case31l2==7.3 && posJ1!=31 && posJ2!=31 && posJ3!=31 && posJ4!=31){
         color(14,0);
         printf("    %c",435);color(15,0);printf(" %c",143);color(14,0);printf("%c%c%c%c",448,452,452,452);
     }
-    if (case31l2==7.4){
+    if (case31l2==7.3 && (posJ1==31||posJ2==31||posJ3==31||posJ4==31)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,143);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case31l2==7.4 && posJ1!=31 && posJ2!=31 && posJ3!=31 && posJ4!=31){
         color(14,0);
         printf("    %c",435);color(15,0);printf(" %c",37);color(14,0);printf("%c%c%c%c",448,452,452,452);
     }
-    if (case31l2==7.5){
+    if (case31l2==7.4 && (posJ1==31||posJ2==31||posJ3==31||posJ4==31)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,37);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case31l2==7.5 && posJ1!=31 && posJ2!=31 && posJ3!=31 && posJ4!=31){
         color(14,0);
         printf("    %c",435);color(15,0);printf(" %c",31);color(14,0);printf("%c%c%c%c",448,452,452,452);
     }
-    if (case31l2==7.6){
+    if (case31l2==7.5 && (posJ1==31||posJ2==31||posJ3==31||posJ4==31)){
         color(14,0);
-        printf("    %c",435);color(15,0);printf(" %c",15);color(14,0);printf("%c%c%c%c",448,452,452,452);
+        printf("    %c",435);color(15,0);printf("%c%c",f,31);color(14,0);printf("%c%c%c%c",448,452,452,452);
     }
-    if (case31l2==8){
+    if (case31l2==7.6 && posJ1!=31 && posJ2!=31 && posJ3!=31 && posJ4!=31){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",459);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case31l2==7.6 && (posJ1==31||posJ2==31||posJ3==31||posJ4==31)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,459);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case31l2==8 && posJ1!=31 && posJ2!=31 && posJ3!=31 && posJ4!=31){
         color(14,0);
         printf("%c%c%c%c%c  %c   ",452,452,452,452,473,435);
     }
-    if (case31l2==8.1){
+    if (case31l2==8 && (posJ1==31||posJ2==31||posJ3==31||posJ4==31)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",f);color(14,0);printf("%c   ",435);
+    }
+    if (case31l2==8.1 && posJ1!=31 && posJ2!=31 && posJ3!=31 && posJ4!=31){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",189);color(14,0);printf("%c   ",435);
     }
-    if (case31l2==8.2){
+    if (case31l2==8.1 && (posJ1==31||posJ2==31||posJ3==31||posJ4==31)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",189,f);color(14,0);printf("%c   ",435);
+    }
+    if (case31l2==8.2 && posJ1!=31 && posJ2!=31 && posJ3!=31 && posJ4!=31){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",157);color(14,0);printf("%c   ",435);
     }
-    if (case31l2==8.3){
+    if (case31l2==8.2 && (posJ1==31||posJ2==31||posJ3==31||posJ4==31)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",157,f);color(14,0);printf("%c   ",435);
+    }
+    if (case31l2==8.3 && posJ1!=31 && posJ2!=31 && posJ3!=31 && posJ4!=31){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",143);color(14,0);printf("%c   ",435);
     }
-    if (case31l2==8.4){
+    if (case31l2==8.3 && (posJ1==31||posJ2==31||posJ3==31||posJ4==31)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",143,f);color(14,0);printf("%c   ",435);
+    }
+    if (case31l2==8.4 && posJ1!=31 && posJ2!=31 && posJ3!=31 && posJ4!=31){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",37);color(14,0);printf("%c   ",435);
     }
-    if (case31l2==8.5){
+    if (case31l2==8.4 && (posJ1==31||posJ2==31||posJ3==31||posJ4==31)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",37,f);color(14,0);printf("%c   ",435);
+    }
+    if (case31l2==8.5 && posJ1!=31 && posJ2!=31 && posJ3!=31 && posJ4!=31){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",31);color(14,0);printf("%c   ",435);
     }
-    if (case31l2==8.6){
+    if (case31l2==8.5 && (posJ1==31||posJ2==31||posJ3==31||posJ4==31)){
         color(14,0);
-        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",189);color(14,0);printf("%c   ",435);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",31,f);color(14,0);printf("%c   ",435);
+    }
+    if (case31l2==8.6 && posJ1!=31 && posJ2!=31 && posJ3!=31 && posJ4!=31){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",459);color(14,0);printf("%c   ",435);
+    }
+    if (case31l2==8.6 && (posJ1==31||posJ2==31||posJ3==31||posJ4==31)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",459,f);color(14,0);printf("%c   ",435);
     }
     if (case31l2>=9 && case31l2<10){
         color(14,0);
         printf("    %c%c%c%c%c%c%c",474,452,452,452,452,452,452);
     }
-    if (case31l2==10 && case31l2<11){
+    if (case31l2>=10 && case31l2<11){
         color(14,0);
         printf("%c%c%c%c%c%c%c%c   ",452,452,452,452,452,452,452,447);
     }
+    f=testposition(posJ1,posJ2,posJ3,posJ4,32,p1,p2,p3,p4);
     if (case32l2==0){
         color(14,0);
         printf("            ");
     }
     if (case32l2>1 && case32l2<2){
         color(14,0);
-        printf("%c%c%c%c%c%c%c%c%c%c%c",452,452,452,452,452,452,452,452,452,452,452);
+        printf("%c%c%c%c%c%c%c%c%c%c%c%c",452,452,452,452,452,452,452,452,452,452,452,452);
     }
-    if (case32l2==2.1){
+    if (case32l2==2.1 && posJ1!=32 && posJ2!=32 && posJ3!=32 && posJ4!=32){
         color(14,0);
         printf("%c%c%c%c%c", 452, 452, 452, 452, 473);color(15,0);printf(" %c",292);color(14,0);
-        printf("%c%c%c%c%c", 448, 452, 452, 452,452);
+        printf("%c%c%c%c%c", 448,452, 452, 452, 452);
     }
-    if (case32l2==2.2){
+    if (case32l2==2.1 && (posJ1==32||posJ2==32||posJ3==32||posJ4==32)){
+        color(14,0);
+        printf("%c%c%c%c%c", 452, 452, 452, 452, 473);color(15,0);printf("%c%c",f,292);color(14,0);
+        printf("%c%c%c%c%c", 448,452, 452, 452, 452);
+    }
+    if (case32l2==2.2 && posJ1!=32 && posJ2!=32 && posJ3!=32 && posJ4!=32){
         color(14,0);
         printf("%c%c%c%c%c", 452, 452, 452, 452, 473);color(15,0);printf(" %c",291);color(14,0);
-        printf("%c%c%c%c%c", 448, 452, 452, 452,452);
+        printf("%c%c%c%c%c", 448,452, 452, 452, 452);
     }
-    if (case32l2==2.3){
+    if (case32l2==2.2 && (posJ1==32||posJ2==32||posJ3==32||posJ4==32)){
+        color(14,0);
+        printf("%c%c%c%c%c", 452, 452, 452, 452, 473);color(15,0);printf("%c%c",f,291);color(14,0);
+        printf("%c%c%c%c%c", 448,452, 452, 452, 452);
+    }
+    if (case32l2==2.3 && posJ1!=32 && posJ2!=32 && posJ3!=32 && posJ4!=32){
         color(14,0);
         printf("%c%c%c%c%c", 452, 452, 452, 452, 473);color(15,0);printf(" %c",285);color(14,0);
-        printf("%c%c%c%c%c", 448, 452, 452, 452,452);
+        printf("%c%c%c%c%c", 448,452, 452, 452, 452);
     }
-    if (case32l2==2.4){
+    if (case32l2==2.3 && (posJ1==32||posJ2==32||posJ3==32||posJ4==32)){
         color(14,0);
-        printf("%c%c%c%c%c", 452, 452, 452, 452, 473);color(15,0);printf(" %c",279);color(14,0);
-        printf("%c%c%c%c%c", 448, 452, 452, 452,452);
+        printf("%c%c%c%c%c", 452, 452, 452, 452, 473);color(15,0);printf("%c%c",f,285);color(14,0);
+        printf("%c%c%c%c%c", 448,452, 452, 452, 452);
     }
-    if (case32l2==2.5){
+    if (case32l2==2.4 && posJ1!=32 && posJ2!=32 && posJ3!=32 && posJ4!=32){
+        color(14,0);
+        printf("%c%c%c%c%c", 452, 452, 452, 452, 473);color(15,0);printf(" %c",428);color(14,0);
+        printf("%c%c%c%c%c", 448,452, 452, 452, 452);
+    }
+    if (case32l2==2.4 && (posJ1==32||posJ2==32||posJ3==32||posJ4==32)){
+        color(14,0);
+        printf("%c%c%c%c%c", 452, 452, 452, 452, 473);color(15,0);printf("%c%c",f,428);color(14,0);
+        printf("%c%c%c%c%c", 448,452, 452, 452, 452);
+    }
+    if (case32l2==2.5 && posJ1!=32 && posJ2!=32 && posJ3!=32 && posJ4!=32){
         color(14,0);
         printf("%c%c%c%c%c", 452, 452, 452, 452, 473);color(15,0);printf(" %c",277);color(14,0);
-        printf("%c%c%c%c%c", 448, 452, 452, 452,452);
+        printf("%c%c%c%c%c", 448,452, 452, 452, 452);
     }
-    if (case32l2==2.6){
+    if (case32l2==2.5 && (posJ1==32||posJ2==32||posJ3==32||posJ4==32)){
+        color(14,0);
+        printf("%c%c%c%c%c", 452, 452, 452, 452, 473);color(15,0);printf("%c%c",f,277);color(14,0);
+        printf("%c%c%c%c%c", 448,452, 452, 452, 452);
+    }
+    if (case32l2==2.6 && posJ1!=32 && posJ2!=32 && posJ3!=32 && posJ4!=32){
         color(14,0);
         printf("%c%c%c%c%c", 452, 452, 452, 452, 473);color(15,0);printf(" %c",225);color(14,0);
-        printf("%c%c%c%c%c", 448, 452, 452, 452,452);
+        printf("%c%c%c%c%c", 448,452, 452, 452, 452);
     }
-    if (case32l2==3.1){
+    if (case32l2==2.6 && (posJ1==32||posJ2==32||posJ3==32||posJ4==32)){
+        color(14,0);
+        printf("%c%c%c%c%c", 452, 452, 452, 452, 473);color(15,0);printf("%c%c",f,225);color(14,0);
+        printf("%c%c%c%c%c", 448,452, 452, 452, 452);
+    }
+    if (case32l2==3.1 && posJ1!=32 && posJ2!=32 && posJ3!=32 && posJ4!=32){
         color(14,0);
         printf("    %c",435);color(15,0);printf(" %c",292);color(14,0);
         printf("%c%c%c%c%c",448,452,452,452,452);
     }
-    if (case32l2==3.2){
+    if (case32l2==3.1 && (posJ1==32||posJ2==32||posJ3==32||posJ4==32)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,292);color(14,0);
+        printf("%c%c%c%c%c",448,452,452,452,452);
+    }
+    if (case32l2==3.2 && posJ1!=32 && posJ2!=32 && posJ3!=32 && posJ4!=32){
         color(14,0);
         printf("    %c",435);color(15,0);printf(" %c",291);color(14,0);
         printf("%c%c%c%c%c",448,452,452,452,452);
     }
-    if (case32l2==3.3){
+    if (case32l2==3.2 && (posJ1==32||posJ2==32||posJ3==32||posJ4==32)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,291);color(14,0);
+        printf("%c%c%c%c%c",448,452,452,452,452);
+    }
+    if (case32l2==3.3 && posJ1!=32 && posJ2!=32 && posJ3!=32 && posJ4!=32){
         color(14,0);
         printf("    %c",435);color(15,0);printf(" %c",285);color(14,0);
         printf("%c%c%c%c%c",448,452,452,452,452);
     }
-    if (case32l2==3.4){
+    if (case32l2==3.3 && (posJ1==32||posJ2==32||posJ3==32||posJ4==32)){
         color(14,0);
-        printf("    %c",435);color(15,0);printf(" %c",279);color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,285);color(14,0);
         printf("%c%c%c%c%c",448,452,452,452,452);
     }
-    if (case32l2==3.5){
+    if (case32l2==3.4 && posJ1!=32 && posJ2!=32 && posJ3!=32 && posJ4!=32){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",428);color(14,0);
+        printf("%c%c%c%c%c",448,452,452,452,452);
+    }
+    if (case32l2==3.4 && (posJ1==32||posJ2==32||posJ3==32||posJ4==32)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,428);color(14,0);
+        printf("%c%c%c%c%c",448,452,452,452,452);
+    }
+    if (case32l2==3.5 && posJ1!=32 && posJ2!=32 && posJ3!=32 && posJ4!=32){
         color(14,0);
         printf("    %c",435);color(15,0);printf(" %c",277);color(14,0);
         printf("%c%c%c%c%c",448,452,452,452,452);
     }
-    if (case32l2==3.6){
+    if (case32l2==3.5 && (posJ1==32||posJ2==32||posJ3==32||posJ4==32)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,277);color(14,0);
+        printf("%c%c%c%c%c",448,452,452,452,452);
+    }
+    if (case32l2==3.6 && posJ1!=32 && posJ2!=32 && posJ3!=32 && posJ4!=32){
         color(14,0);
         printf("    %c",435);color(15,0);printf(" %c",225);color(14,0);
         printf("%c%c%c%c%c",448,452,452,452,452);
     }
-    if (case32l2==4.1){
+    if (case32l2==3.6 && (posJ1==32||posJ2==32||posJ3==32||posJ4==32)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,225);color(14,0);
+        printf("%c%c%c%c%c",448,452,452,452,452);
+    }
+    if (case32l2==4.1 && posJ1!=32 && posJ2!=32 && posJ3!=32 && posJ4!=32){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",292);color(14,0);
         printf("%c    ",435);
     }
-    if (case32l2==4.2){
+    if (case32l2==4.1 && (posJ1==32||posJ2==32||posJ3==32||posJ4==32)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",292,f);color(14,0);
+        printf("%c    ",435);
+    }
+    if (case32l2==4.2 && posJ1!=32 && posJ2!=32 && posJ3!=32 && posJ4!=32){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",291);color(14,0);
         printf("%c    ",435);
     }
-    if (case32l2==4.3){
+    if (case32l2==4.2 && (posJ1==32||posJ2==32||posJ3==32||posJ4==32)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",291,f);color(14,0);
+        printf("%c    ",435);
+    }
+    if (case32l2==4.3 && posJ1!=32 && posJ2!=32 && posJ3!=32 && posJ4!=32){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",285);color(14,0);
         printf("%c    ",435);
     }
-    if (case32l2==4.4){
+    if (case32l2==4.3 && (posJ1==32||posJ2==32||posJ3==32||posJ4==32)){
         color(14,0);
-        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",279);color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",285,f);color(14,0);
         printf("%c    ",435);
     }
-    if (case32l2==4.5){
+    if (case32l2==4.4 && posJ1!=32 && posJ2!=32 && posJ3!=32 && posJ4!=32){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",428);color(14,0);
+        printf("%c    ",435);
+    }
+    if (case32l2==4.4 && (posJ1==32||posJ2==32||posJ3==32||posJ4==32)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",428,f);color(14,0);
+        printf("%c    ",435);
+    }
+    if (case32l2==4.5 && posJ1!=32 && posJ2!=32 && posJ3!=32 && posJ4!=32){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",277);color(14,0);
         printf("%c    ",435);
     }
-    if (case32l2==4.6){
+    if (case32l2==4.5 && (posJ1==32||posJ2==32||posJ3==32||posJ4==32)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",277,f);color(14,0);
+        printf("%c    ",435);
+    }
+    if (case32l2==4.6 && posJ1!=32 && posJ2!=32 && posJ3!=32 && posJ4!=32){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",225);color(14,0);
+        printf("%c    ",435);
+    }
+    if (case32l2==4.6 && (posJ1==32||posJ2==32||posJ3==32||posJ4==32)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",225,f);color(14,0);
         printf("%c    ",435);
     }
     if (case32l2==5){
@@ -5736,61 +9380,117 @@ int test(double case01,double case03,double case05,double case10,double case11,d
         color(14,0);
         printf("%c%c%c%c%c%c%c%c%c%c%c%c",452,452,452,452,452,452,452,452,452,452,452,452);
     }
-    if (case32l2==7){
+    if (case32l2==7 && posJ1!=32 && posJ2!=32 && posJ3!=32 && posJ4!=32){
         color(14,0);
         printf("    %c  %c%c%c%c%c",435,448,452,452,452,452);
     }
-    if (case32l2==7.1){
+    if (case32l2==7 && (posJ1==32||posJ2==32||posJ3==32||posJ4==32)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",f);color(14,0);printf("%c%c%c%c%c",448,452,452,452,452);
+    }
+    if (case32l2==7.1 && posJ1!=32 && posJ2!=32 && posJ3!=32 && posJ4!=32){
         color(14,0);
         printf("    %c",435);color(15,0);printf(" %c",189);color(14,0);printf("%c%c%c%c%c",448,452,452,452,452);
     }
-    if (case32l2==7.2){
+    if (case32l2==7.1 && (posJ1==32||posJ2==32||posJ3==32||posJ4==32)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,189);color(14,0);printf("%c%c%c%c%c",448,452,452,452,452);
+    }
+    if (case32l2==7.2 && posJ1!=32 && posJ2!=32 && posJ3!=32 && posJ4!=32){
         color(14,0);
         printf("    %c",435);color(15,0);printf(" %c",157);color(14,0);printf("%c%c%c%c%c",448,452,452,452,452);
     }
-    if (case32l2==7.3){
+    if (case32l2==7.2 && (posJ1==32||posJ2==32||posJ3==32||posJ4==32)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,157);color(14,0);printf("%c%c%c%c%c",448,452,452,452,452);
+    }
+    if (case32l2==7.3 && posJ1!=32 && posJ2!=32 && posJ3!=32 && posJ4!=32){
         color(14,0);
         printf("    %c",435);color(15,0);printf(" %c",143);color(14,0);printf("%c%c%c%c%c",448,452,452,452,452);
     }
-    if (case32l2==7.4){
+    if (case32l2==7.3 && (posJ1==32||posJ2==32||posJ3==32||posJ4==32)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,143);color(14,0);printf("%c%c%c%c%c",448,452,452,452,452);
+    }
+    if (case32l2==7.4 && posJ1!=32 && posJ2!=32 && posJ3!=32 && posJ4!=32){
         color(14,0);
         printf("    %c",435);color(15,0);printf(" %c",37);color(14,0);printf("%c%c%c%c%c",448,452,452,452,452);
     }
-    if (case32l2==7.5){
+    if (case32l2==7.4 && (posJ1==32||posJ2==32||posJ3==32||posJ4==32)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,37);color(14,0);printf("%c%c%c%c%c",448,452,452,452,452);
+    }
+    if (case32l2==7.5 && posJ1!=32 && posJ2!=32 && posJ3!=32 && posJ4!=32){
         color(14,0);
         printf("    %c",435);color(15,0);printf(" %c",31);color(14,0);printf("%c%c%c%c%c",448,452,452,452,452);
     }
-    if (case32l2==7.6){
+    if (case32l2==7.5 && (posJ1==32||posJ2==32||posJ3==32||posJ4==32)){
         color(14,0);
-        printf("    %c",435);color(15,0);printf(" %c",15);color(14,0);printf("%c%c%c%c%c",448,452,452,452,452);
+        printf("    %c",435);color(15,0);printf("%c%c",f,31);color(14,0);printf("%c%c%c%c%c",448,452,452,452,452);
     }
-    if (case32l2==8){
+    if (case32l2==7.6 && posJ1!=32 && posJ2!=32 && posJ3!=32 && posJ4!=32){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",459);color(14,0);printf("%c%c%c%c%c",448,452,452,452,452);
+    }
+    if (case32l2==7.6 && (posJ1==32||posJ2==32||posJ3==32||posJ4==32)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,459);color(14,0);printf("%c%c%c%c%c",448,452,452,452,452);
+    }
+    if (case32l2==8 && posJ1!=32 && posJ2!=32 && posJ3!=32 && posJ4!=32){
         color(14,0);
         printf("%c%c%c%c%c  %c    ",452,452,452,452,473,435);
     }
-    if (case32l2==8.1){
+    if (case32l2==8 && (posJ1==32||posJ2==32||posJ3==32||posJ4==32)){
         color(14,0);
-        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",189);printf("%c    ",435);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",f);color(14,0);printf("%c    ",435);
     }
-    if (case32l2==8.2){
+    if (case32l2==8.1 && posJ1!=32 && posJ2!=32 && posJ3!=32 && posJ4!=32){
         color(14,0);
-        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",157);printf("%c    ",435);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",189);color(14,0);printf("%c    ",435);
     }
-    if (case32l2==8.3){
+    if (case32l2==8.1 && (posJ1==32||posJ2==32||posJ3==32||posJ4==32)){
         color(14,0);
-        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",143);printf("%c    ",435);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",189);color(14,0);printf("%c    ",435);
     }
-    if (case32l2==8.4){
+    if (case32l2==8.2 && posJ1!=32 && posJ2!=32 && posJ3!=32 && posJ4!=32){
         color(14,0);
-        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",37);printf("%c    ",435);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",157);color(14,0);printf("%c    ",435);
     }
-    if (case32l2==8.5){
+    if (case32l2==8.2 && (posJ1==32||posJ2==32||posJ3==32||posJ4==32)){
         color(14,0);
-        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",31);printf("%c    ",435);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",157);color(14,0);printf("%c    ",435);
     }
-    if (case32l2==8.6){
+    if (case32l2==8.3 && posJ1!=32 && posJ2!=32 && posJ3!=32 && posJ4!=32){
         color(14,0);
-        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",15);printf("%c    ",435);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",143);color(14,0);printf("%c    ",435);
+    }
+    if (case32l2==8.3 && (posJ1==32||posJ2==32||posJ3==32||posJ4==32)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",143);color(14,0);printf("%c    ",435);
+    }
+    if (case32l2==8.4 && posJ1!=32 && posJ2!=32 && posJ3!=32 && posJ4!=32){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",37);color(14,0);printf("%c    ",435);
+    }
+    if (case32l2==8.4 && (posJ1==32||posJ2==32||posJ3==32||posJ4==32)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",37);color(14,0);printf("%c    ",435);
+    }
+    if (case32l2==8.5 && posJ1!=32 && posJ2!=32 && posJ3!=32 && posJ4!=32){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",31);color(14,0);printf("%c    ",435);
+    }
+    if (case32l2==8.5 && (posJ1==32||posJ2==32||posJ3==32||posJ4==32)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",31,f);color(14,0);printf("%c    ",435);
+    }
+    if (case32l2==8.6 && posJ1!=32 && posJ2!=32 && posJ3!=32 && posJ4!=32){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",459);color(14,0);printf("%c    ",435);
+    }
+    if (case32l2==8.6 && (posJ1==32||posJ2==32||posJ3==32||posJ4==32)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",459,f);color(14,0);printf("%c    ",435);
     }
     if (case32l2>=9 && case32l2<10){
         color(14,0);
@@ -5800,6 +9500,7 @@ int test(double case01,double case03,double case05,double case10,double case11,d
         color(14,0);
         printf("%c%c%c%c%c%c%c%c    ",452,452,452,452,452,452,452,447);
     }
+    f=testposition(posJ1,posJ2,posJ3,posJ4,33,p1,p2,p3,p4);
     if (case33l2==0){
         printf("           ");
     }
@@ -5807,94 +9508,184 @@ int test(double case01,double case03,double case05,double case10,double case11,d
         color(14,0);
         printf("%c%c%c%c%c%c%c%c%c%c%c",452,452,452,452,452,452,452,452,452,452,452);
     }
-    if (case33l2==2.1){
+    if (case33l2==2.1 && posJ1!=33 && posJ2!=33 && posJ3!=33 && posJ4!=33){
         color(14,0);
         printf("%c%c%c%c%c", 452, 452, 452, 452, 473);color(15,0);printf(" %c",292);color(14,0);
         printf("%c%c%c%c", 448, 452, 452, 452);
     }
-    if (case33l2==2.2){
+    if (case33l2==2.1 && (posJ1==33||posJ2==33||posJ3==33||posJ4==33)){
+        color(14,0);
+        printf("%c%c%c%c%c", 452, 452, 452, 452, 473);color(15,0);printf("%c%c",f,292);color(14,0);
+        printf("%c%c%c%c", 448, 452, 452, 452);
+    }
+    if (case33l2==2.2 && posJ1!=33 && posJ2!=33 && posJ3!=33 && posJ4!=33){
         color(14,0);
         printf("%c%c%c%c%c", 452, 452, 452, 452, 473);color(15,0);printf(" %c",291);color(14,0);
         printf("%c%c%c%c", 448, 452, 452, 452);
     }
-    if (case33l2==2.3){
+    if (case33l2==2.2 && (posJ1==33||posJ2==33||posJ3==33||posJ4==33)){
+        color(14,0);
+        printf("%c%c%c%c%c", 452, 452, 452, 452, 473);color(15,0);printf("%c%c",f,291);color(14,0);
+        printf("%c%c%c%c", 448, 452, 452, 452);
+    }
+    if (case33l2==2.3 && posJ1!=33 && posJ2!=33 && posJ3!=33 && posJ4!=33){
         color(14,0);
         printf("%c%c%c%c%c", 452, 452, 452, 452, 473);color(15,0);printf(" %c",285);color(14,0);
         printf("%c%c%c%c", 448, 452, 452, 452);
     }
-    if (case33l2==2.4){
+    if (case33l2==2.3 && (posJ1==33||posJ2==33||posJ3==33||posJ4==33)){
         color(14,0);
-        printf("%c%c%c%c%c", 452, 452, 452, 452, 473);color(15,0);printf(" %c",279);color(14,0);
+        printf("%c%c%c%c%c", 452, 452, 452, 452, 473);color(15,0);printf("%c%c",f,285);color(14,0);
         printf("%c%c%c%c", 448, 452, 452, 452);
     }
-    if (case33l2==2.5){
+    if (case33l2==2.4 && posJ1!=33 && posJ2!=33 && posJ3!=33 && posJ4!=33){
+        color(14,0);
+        printf("%c%c%c%c%c", 452, 452, 452, 452, 473);color(15,0);printf(" %c",428);color(14,0);
+        printf("%c%c%c%c", 448, 452, 452, 452);
+    }
+    if (case33l2==2.4 && (posJ1==33||posJ2==33||posJ3==33||posJ4==33)){
+        color(14,0);
+        printf("%c%c%c%c%c", 452, 452, 452, 452, 473);color(15,0);printf("%c%c",f,428);color(14,0);
+        printf("%c%c%c%c", 448, 452, 452, 452);
+    }
+    if (case33l2==2.5 && posJ1!=33 && posJ2!=33 && posJ3!=33 && posJ4!=33){
         color(14,0);
         printf("%c%c%c%c%c", 452, 452, 452, 452, 473);color(15,0);printf(" %c",277);color(14,0);
         printf("%c%c%c%c", 448, 452, 452, 452);
     }
-    if (case33l2==2.6){
+    if (case33l2==2.5 && (posJ1==33||posJ2==33||posJ3==33||posJ4==33)){
+        color(14,0);
+        printf("%c%c%c%c%c", 452, 452, 452, 452, 473);color(15,0);printf("%c%c",f,277);color(14,0);
+        printf("%c%c%c%c", 448, 452, 452, 452);
+    }
+    if (case33l2==2.6 && posJ1!=33 && posJ2!=33 && posJ3!=33 && posJ4!=33){
         color(14,0);
         printf("%c%c%c%c%c", 452, 452, 452, 452, 473);color(15,0);printf(" %c",225);color(14,0);
         printf("%c%c%c%c", 448, 452, 452, 452);
     }
-    if (case33l2==3.1){
+    if (case33l2==2.6 && (posJ1==33||posJ2==33||posJ3==33||posJ4==33)){
+        color(14,0);
+        printf("%c%c%c%c%c", 452, 452, 452, 452, 473);color(15,0);printf("%c%c",f,225);color(14,0);
+        printf("%c%c%c%c", 448, 452, 452, 452);
+    }
+    if (case33l2==3.1 && posJ1!=33 && posJ2!=33 && posJ3!=33 && posJ4!=33){
         color(14,0);
         printf("    %c",435);color(15,0);printf(" %c",292);color(14,0);
         printf("%c%c%c%c",448,452,452,452);
     }
-    if (case33l2==3.2){
+    if (case33l2==3.1 && (posJ1==33||posJ2==33||posJ3==33||posJ4==33)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,292);color(14,0);
+        printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case33l2==3.2 && posJ1!=33 && posJ2!=33 && posJ3!=33 && posJ4!=33){
         color(14,0);
         printf("    %c",435);color(15,0);printf(" %c",291);color(14,0);
         printf("%c%c%c%c",448,452,452,452);
     }
-    if (case33l2==3.3){
+    if (case33l2==3.2 && (posJ1==33||posJ2==33||posJ3==33||posJ4==33)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,291);color(14,0);
+        printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case33l2==3.3 && posJ1!=33 && posJ2!=33 && posJ3!=33 && posJ4!=33){
         color(14,0);
         printf("    %c",435);color(15,0);printf(" %c",285);color(14,0);
         printf("%c%c%c%c",448,452,452,452);
     }
-    if (case33l2==3.4){
+    if (case33l2==3.3 && (posJ1==33||posJ2==33||posJ3==33||posJ4==33)){
         color(14,0);
-        printf("    %c",435);color(15,0);printf(" %c",279);color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,285);color(14,0);
         printf("%c%c%c%c",448,452,452,452);
     }
-    if (case33l2==3.5){
+    if (case33l2==3.4 && posJ1!=33 && posJ2!=33 && posJ3!=33 && posJ4!=33){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",428);color(14,0);
+        printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case33l2==3.4 && (posJ1==33||posJ2==33||posJ3==33||posJ4==33)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,428);color(14,0);
+        printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case33l2==3.5 && posJ1!=33 && posJ2!=33 && posJ3!=33 && posJ4!=33){
         color(14,0);
         printf("    %c",435);color(15,0);printf(" %c",277);color(14,0);
         printf("%c%c%c%c",448,452,452,452);
     }
-    if (case33l2==3.6){
+    if (case33l2==3.5 && (posJ1==33||posJ2==33||posJ3==33||posJ4==33)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,277);color(14,0);
+        printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case33l2==3.6 && posJ1!=33 && posJ2!=33 && posJ3!=33 && posJ4!=33){
         color(14,0);
         printf("    %c",435);color(15,0);printf(" %c",225);color(14,0);
         printf("%c%c%c%c",448,452,452,452);
     }
-    if (case33l2==4.1){
+    if (case33l2==3.6 && (posJ1==33||posJ2==33||posJ3==33||posJ4==33)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,225);color(14,0);
+        printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case33l2==4.1 && posJ1!=33 && posJ2!=33 && posJ3!=33 && posJ4!=33){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",292);color(14,0);
         printf("%c   ",435);
     }
-    if (case33l2==4.2){
+    if (case33l2==4.1 && (posJ1==33||posJ2==33||posJ3==33||posJ4==33)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",292,f);color(14,0);
+        printf("%c   ",435);
+    }
+    if (case33l2==4.2 && posJ1!=33 && posJ2!=33 && posJ3!=33 && posJ4!=33){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",291);color(14,0);
         printf("%c   ",435);
     }
-    if (case33l2==4.3){
+    if (case33l2==4.2 && (posJ1==33||posJ2==33||posJ3==33||posJ4==33)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",291,f);color(14,0);
+        printf("%c   ",435);
+    }
+    if (case33l2==4.3 && posJ1!=33 && posJ2!=33 && posJ3!=33 && posJ4!=33){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",285);color(14,0);
         printf("%c   ",435);
     }
-    if (case33l2==4.4){
+    if (case33l2==4.3 && (posJ1==33||posJ2==33||posJ3==33||posJ4==33)){
         color(14,0);
-        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",279);color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",285,f);color(14,0);
         printf("%c   ",435);
     }
-    if (case33l2==4.5){
+    if (case33l2==4.4 && posJ1!=33 && posJ2!=33 && posJ3!=33 && posJ4!=33){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",428);color(14,0);
+        printf("%c   ",435);
+    }
+    if (case33l2==4.4 && (posJ1==33||posJ2==33||posJ3==33||posJ4==33)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",428,f);color(14,0);
+        printf("%c   ",435);
+    }
+    if (case33l2==4.5 && posJ1!=33 && posJ2!=33 && posJ3!=33 && posJ4!=33){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",277);color(14,0);
         printf("%c   ",435);
     }
-    if (case33l2==4.6){
+    if (case33l2==4.5 && (posJ1==33||posJ2==33||posJ3==33||posJ4==33)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",277,f);color(14,0);
+        printf("%c   ",435);
+    }
+    if (case33l2==4.6 && posJ1!=33 && posJ2!=33 && posJ3!=33 && posJ4!=33){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",225);color(14,0);
+        printf("%c   ",435);
+    }
+    if (case33l2==4.6 && (posJ1==33||posJ2==33||posJ3==33||posJ4==33)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",225,f);color(14,0);
         printf("%c   ",435);
     }
     if (case33l2==5){
@@ -5905,61 +9696,117 @@ int test(double case01,double case03,double case05,double case10,double case11,d
         color(14,0);
         printf("%c%c%c%c%c%c%c%c%c%c%c",452,452,452,452,452,452,452,452,452,452,452);
     }
-    if (case33l2==7){
+    if (case33l2==7 && posJ1!=33 && posJ2!=33 && posJ3!=33 && posJ4!=33){
         color(14,0);
         printf("    %c  %c%c%c%c",435,448,452,452,452);
     }
-    if (case33l2==7.1){
+    if (case33l2==7 && (posJ1==33||posJ2==33||posJ3==33||posJ4==33)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",f);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case33l2==7.1 && posJ1!=33 && posJ2!=33 && posJ3!=33 && posJ4!=33){
         color(14,0);
         printf("    %c",435);color(15,0);printf(" %c",189);color(14,0);printf("%c%c%c%c",448,452,452,452);
     }
-    if (case33l2==7.2){
+    if (case33l2==7.1 && (posJ1==33||posJ2==33||posJ3==33||posJ4==33)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,189);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case33l2==7.2 && posJ1!=33 && posJ2!=33 && posJ3!=33 && posJ4!=33){
         color(14,0);
         printf("    %c",435);color(15,0);printf(" %c",157);color(14,0);printf("%c%c%c%c",448,452,452,452);
     }
-    if (case33l2==7.3){
+    if (case33l2==7.2 && (posJ1==33||posJ2==33||posJ3==33||posJ4==33)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,157);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case33l2==7.3 && posJ1!=33 && posJ2!=33 && posJ3!=33 && posJ4!=33){
         color(14,0);
         printf("    %c",435);color(15,0);printf(" %c",143);color(14,0);printf("%c%c%c%c",448,452,452,452);
     }
-    if (case33l2==7.4){
+    if (case33l2==7.3 && (posJ1==33||posJ2==33||posJ3==33||posJ4==33)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,143);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case33l2==7.4 && posJ1!=33 && posJ2!=33 && posJ3!=33 && posJ4!=33){
         color(14,0);
         printf("    %c",435);color(15,0);printf(" %c",37);color(14,0);printf("%c%c%c%c",448,452,452,452);
     }
-    if (case33l2==7.5){
+    if (case33l2==7.4 && (posJ1==33||posJ2==33||posJ3==33||posJ4==33)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,37);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case33l2==7.5 && posJ1!=33 && posJ2!=33 && posJ3!=33 && posJ4!=33){
         color(14,0);
         printf("    %c",435);color(15,0);printf(" %c",31);color(14,0);printf("%c%c%c%c",448,452,452,452);
     }
-    if (case33l2==7.6){
+    if (case33l2==7.5 && (posJ1==33||posJ2==33||posJ3==33||posJ4==33)){
         color(14,0);
-        printf("    %c",435);color(15,0);printf(" %c",15);color(14,0);printf("%c%c%c%c",448,452,452,452);
+        printf("    %c",435);color(15,0);printf("%c%c",f,31);color(14,0);printf("%c%c%c%c",448,452,452,452);
     }
-    if (case33l2==8){
+    if (case33l2==7.6 && posJ1!=33 && posJ2!=33 && posJ3!=33 && posJ4!=33){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",459);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case33l2==7.6 && (posJ1==33||posJ2==33||posJ3==33||posJ4==33)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,459);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case33l2==8 && posJ1!=33 && posJ2!=33 && posJ3!=33 && posJ4!=33){
         color(14,0);
         printf("%c%c%c%c%c  %c   ",452,452,452,452,473,435);
     }
-    if (case33l2==8.1){
+    if (case33l2==8 && (posJ1==33||posJ2==33||posJ3==33||posJ4==33)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",f);color(14,0);printf("%c   ",435);
+    }
+    if (case33l2==8.1 && posJ1!=33 && posJ2!=33 && posJ3!=33 && posJ4!=33){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",189);color(14,0);printf("%c   ",435);
     }
-    if (case33l2==8.2){
+    if (case33l2==8.1 && (posJ1==33||posJ2==33||posJ3==33||posJ4==33)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",189,f);color(14,0);printf("%c   ",435);
+    }
+    if (case33l2==8.2 && posJ1!=33 && posJ2!=33 && posJ3!=33 && posJ4!=33){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",157);color(14,0);printf("%c   ",435);
     }
-    if (case33l2==8.3){
+    if (case33l2==8.2 && (posJ1==33||posJ2==33||posJ3==33||posJ4==33)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",157,f);color(14,0);printf("%c   ",435);
+    }
+    if (case33l2==8.3 && posJ1!=33 && posJ2!=33 && posJ3!=33 && posJ4!=33){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",143);color(14,0);printf("%c   ",435);
     }
-    if (case33l2==8.4){
+    if (case33l2==8.3 && (posJ1==33||posJ2==33||posJ3==33||posJ4==33)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",143,f);color(14,0);printf("%c   ",435);
+    }
+    if (case33l2==8.4 && posJ1!=33 && posJ2!=33 && posJ3!=33 && posJ4!=33){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",37);color(14,0);printf("%c   ",435);
     }
-    if (case33l2==8.5){
+    if (case33l2==8.4 && (posJ1==33||posJ2==33||posJ3==33||posJ4==33)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",37,f);color(14,0);printf("%c   ",435);
+    }
+    if (case33l2==8.5 && posJ1!=33 && posJ2!=33 && posJ3!=33 && posJ4!=33){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",31);color(14,0);printf("%c   ",435);
     }
-    if (case33l2==8.6){
+    if (case33l2==8.5 && (posJ1==33||posJ2==33||posJ3==33||posJ4==33)){
         color(14,0);
-        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",189);color(14,0);printf("%c   ",435);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",31,f);color(14,0);printf("%c   ",435);
+    }
+    if (case33l2==8.6 && posJ1!=33 && posJ2!=33 && posJ3!=33 && posJ4!=33){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",459);color(14,0);printf("%c   ",435);
+    }
+    if (case33l2==8.6 && (posJ1==33||posJ2==33||posJ3==33||posJ4==33)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",459,f);color(14,0);printf("%c   ",435);
     }
     if (case33l2>=9 && case33l2<10){
         color(14,0);
@@ -5969,6 +9816,7 @@ int test(double case01,double case03,double case05,double case10,double case11,d
         color(14,0);
         printf("%c%c%c%c%c%c%c%c   ",452,452,452,452,452,452,452,447);
     }
+    f=testposition(posJ1,posJ2,posJ3,posJ4,34,p1,p2,p3,p4);
     if (case34l2==0){
         color(14,0);
         printf("              ");
@@ -5977,94 +9825,184 @@ int test(double case01,double case03,double case05,double case10,double case11,d
         color(14,0);
         printf("%c%c%c%c%c%c%c%c%c%c%c%c%c%c",452,452,452,452,452,452,452,452,452,452,452,452,452,452);
     }
-    if (case34l2==2.1){
+    if (case34l2==2.1 && posJ1!=34 && posJ2!=34 && posJ3!=34 && posJ4!=34){
         color(14,0);
-        printf("%c%c%c%c%c%c",452,452, 452, 452, 452, 473);color(15,0);printf(" %c",292);color(14,0);
-        printf("%c%c%c%c%c%c", 448, 452, 452, 452,452,452);
+        printf("%c%c%c%c%c%c",452, 452, 452, 452, 452, 473);color(15,0);printf(" %c",292);color(14,0);
+        printf("%c%c%c%c%c%c", 448,452,452, 452, 452, 452);
     }
-    if (case34l2==2.2){
+    if (case34l2==2.1 && (posJ1==34||posJ2==34||posJ3==34||posJ4==34)){
+        color(14,0);
+        printf("%c%c%c%c%c%c",452, 452, 452, 452, 452, 473);color(15,0);printf("%c%c",f,292);color(14,0);
+        printf("%c%c%c%c%c%c", 448,452,452, 452, 452, 452);
+    }
+    if (case34l2==2.2 && posJ1!=34 && posJ2!=34 && posJ3!=34 && posJ4!=34){
         color(14,0);
         printf("%c%c%c%c%c%c",452, 452, 452, 452, 452, 473);color(15,0);printf(" %c",291);color(14,0);
-        printf("%c%c%c%c%c%c", 448, 452, 452, 452,452,452);
+        printf("%c%c%c%c%c%c", 448,452,452, 452, 452, 452);
     }
-    if (case34l2==2.3){
+    if (case34l2==2.2 && (posJ1==34||posJ2==34||posJ3==34||posJ4==34)){
         color(14,0);
-        printf("%c%c%c%c%c%c",452, 452, 452, 452, 452, 473);color(15,0);printf(" %c",285);color(14,0);
-        printf("%c%c%c%c%c%c", 448, 452, 452, 452,452,452);
+        printf("%c%c%c%c%c%c",452, 452, 452, 452, 452, 473);color(15,0);printf("%c%c",f,291);color(14,0);
+        printf("%c%c%c%c%c%c", 448,452,452, 452, 452, 452);
     }
-    if (case34l2==2.4){
+    if (case34l2==2.3 && posJ1!=34 && posJ2!=34 && posJ3!=34 && posJ4!=34){
         color(14,0);
-        printf("%c%c%c%c%c%c",452, 452, 452, 452, 452, 473);color(15,0);printf(" %c",279);color(14,0);
-        printf("%c%c%c%c%c%c", 448, 452, 452, 452,452,452);
+        printf("%c%c%c%c%c", 452, 452, 452, 452, 473);color(15,0);printf(" %c",285);color(14,0);
+        printf("%c%c%c%c%c", 448,452, 452, 452, 452);
     }
-    if (case34l2==2.5){
+    if (case34l2==2.3 && (posJ1==34||posJ2==34||posJ3==34||posJ4==34)){
         color(14,0);
-        printf("%c%c%c%c%c%c", 452,452, 452, 452, 452, 473);color(15,0);printf(" %c",277);color(14,0);
-        printf("%c%c%c%c%c%c", 448, 452, 452, 452,452,452);
+        printf("%c%c%c%c%c%c",452, 452, 452, 452, 452, 473);color(15,0);printf("%c%c",f,285);color(14,0);
+        printf("%c%c%c%c%c%c", 448,452,452, 452, 452, 452);
     }
-    if (case34l2==2.6){
+    if (case34l2==2.4 && posJ1!=34 && posJ2!=34 && posJ3!=34 && posJ4!=34){
+        color(14,0);
+        printf("%c%c%c%c%c%c",452, 452, 452, 452, 452, 473);color(15,0);printf(" %c",428);color(14,0);
+        printf("%c%c%c%c%c%c", 448,452,452, 452, 452, 452);
+    }
+    if (case34l2==2.4 && (posJ1==34||posJ2==34||posJ3==34||posJ4==34)){
+        color(14,0);
+        printf("%c%c%c%c%c%c",452, 452, 452, 452, 452, 473);color(15,0);printf("%c%c",f,428);color(14,0);
+        printf("%c%c%c%c%c%c", 448,452,452, 452, 452, 452);
+    }
+    if (case34l2==2.5 && posJ1!=34 && posJ2!=34 && posJ3!=34 && posJ4!=34){
+        color(14,0);
+        printf("%c%c%c%c%c%c",452, 452, 452, 452, 452, 473);color(15,0);printf(" %c",277);color(14,0);
+        printf("%c%c%c%c%c%c", 448,452,452, 452, 452, 452);
+    }
+    if (case34l2==2.5 && (posJ1==34||posJ2==34||posJ3==34||posJ4==34)){
+        color(14,0);
+        printf("%c%c%c%c%c%c",452, 452, 452, 452, 452, 473);color(15,0);printf("%c%c",f,277);color(14,0);
+        printf("%c%c%c%c%c%c", 448,452,452, 452, 452, 452);
+    }
+    if (case34l2==2.6 && posJ1!=34 && posJ2!=34 && posJ3!=34 && posJ4!=34){
         color(14,0);
         printf("%c%c%c%c%c%c",452, 452, 452, 452, 452, 473);color(15,0);printf(" %c",225);color(14,0);
-        printf("%c%c%c%c%c%c", 448, 452, 452, 452,452,452);
+        printf("%c%c%c%c%c%c", 448,452,452, 452, 452, 452);
     }
-    if (case34l2==3.1){
+    if (case34l2==2.6 && (posJ1==34||posJ2==34||posJ3==34||posJ4==34)){
+        color(14,0);
+        printf("%c%c%c%c%c%c",452, 452, 452, 452, 452, 473);color(15,0);printf("%c%c",f,225);color(14,0);
+        printf("%c%c%c%c%c%c", 448,452, 452, 452, 452,452);
+    }
+    if (case34l2==3.1 && posJ1!=34 && posJ2!=34 && posJ3!=34 && posJ4!=34){
         color(14,0);
         printf("     %c",435);color(15,0);printf(" %c",292);color(14,0);
         printf("%c%c%c%c%c%c",448,452,452,452,452,452);
     }
-    if (case34l2==3.2){
+    if (case34l2==3.1 && (posJ1==34||posJ2==34||posJ3==34||posJ4==34)){
+        color(14,0);
+        printf("     %c",435);color(15,0);printf("%c%c",f,292);color(14,0);
+        printf("%c%c%c%c%c%c",448,452,452,452,452,452);
+    }
+    if (case34l2==3.2 && posJ1!=34 && posJ2!=34 && posJ3!=34 && posJ4!=34){
         color(14,0);
         printf("     %c",435);color(15,0);printf(" %c",291);color(14,0);
         printf("%c%c%c%c%c%c",448,452,452,452,452,452);
     }
-    if (case34l2==3.3){
+    if (case34l2==3.2 && (posJ1==34||posJ2==34||posJ3==34||posJ4==34)){
+        color(14,0);
+        printf("     %c",435);color(15,0);printf("%c%c",f,291);color(14,0);
+        printf("%c%c%c%c%c%c",448,452,452,452,452,452);
+    }
+    if (case34l2==3.3 && posJ1!=34 && posJ2!=34 && posJ3!=34 && posJ4!=34){
         color(14,0);
         printf("     %c",435);color(15,0);printf(" %c",285);color(14,0);
         printf("%c%c%c%c%c%c",448,452,452,452,452,452);
     }
-    if (case34l2==3.4){
+    if (case34l2==3.3 && (posJ1==34||posJ2==34||posJ3==34||posJ4==34)){
         color(14,0);
-        printf("     %c",435);color(15,0);printf(" %c",279);color(14,0);
+        printf("     %c",435);color(15,0);printf("%c%c",f,285);color(14,0);
         printf("%c%c%c%c%c%c",448,452,452,452,452,452);
     }
-    if (case34l2==3.5){
+    if (case34l2==3.4 && posJ1!=34 && posJ2!=34 && posJ3!=34 && posJ4!=34){
+        color(14,0);
+        printf("     %c",435);color(15,0);printf(" %c",428);color(14,0);
+        printf("%c%c%c%c%c%c",448,452,452,452,452,452);
+    }
+    if (case34l2==3.4 && (posJ1==34||posJ2==34||posJ3==34||posJ4==34)){
+        color(14,0);
+        printf("     %c",435);color(15,0);printf("%c%c",f,428);color(14,0);
+        printf("%c%c%c%c%c%c",448,452,452,452,452,452);
+    }
+    if (case34l2==3.5 && posJ1!=34 && posJ2!=34 && posJ3!=34 && posJ4!=34){
         color(14,0);
         printf("     %c",435);color(15,0);printf(" %c",277);color(14,0);
         printf("%c%c%c%c%c%c",448,452,452,452,452,452);
     }
-    if (case34l2==3.6){
+    if (case34l2==3.5 && (posJ1==34||posJ2==34||posJ3==34||posJ4==34)){
+        color(14,0);
+        printf("     %c",435);color(15,0);printf("%c%c",f,277);color(14,0);
+        printf("%c%c%c%c%c%c",448,452,452,452,452,452);
+    }
+    if (case34l2==3.6 && posJ1!=34 && posJ2!=34 && posJ3!=34 && posJ4!=34){
         color(14,0);
         printf("     %c",435);color(15,0);printf(" %c",225);color(14,0);
         printf("%c%c%c%c%c%c",448,452,452,452,452,452);
     }
-    if (case34l2==4.1){
+    if (case34l2==3.6 && (posJ1==34||posJ2==34||posJ3==34||posJ4==34)){
+        color(14,0);
+        printf("     %c",435);color(15,0);printf("%c%c",f,225);color(14,0);
+        printf("%c%c%c%c%c%c",448,452,452,452,452,452);
+    }
+    if (case34l2==4.1 && posJ1!=34 && posJ2!=34 && posJ3!=34 && posJ4!=34){
         color(14,0);
         printf("%c%c%c%c%c%c",452,452,452,452,452,473);color(15,0);printf("%c ",292);color(14,0);
         printf("%c     ",435);
     }
-    if (case34l2==4.2){
+    if (case34l2==4.1 && (posJ1==34||posJ2==34||posJ3==34||posJ4==34)){
+        color(14,0);
+        printf("%c%c%c%c%c%c",452,452,452,452,452,473);color(15,0);printf("%c%c",292,f);color(14,0);
+        printf("%c     ",435);
+    }
+    if (case34l2==4.2 && posJ1!=34 && posJ2!=34 && posJ3!=34 && posJ4!=34){
         color(14,0);
         printf("%c%c%c%c%c%c",452,452,452,452,452,473);color(15,0);printf("%c ",291);color(14,0);
         printf("%c     ",435);
     }
-    if (case34l2==4.3){
+    if (case34l2==4.2 && (posJ1==34||posJ2==34||posJ3==34||posJ4==34)){
+        color(14,0);
+        printf("%c%c%c%c%c%c",452,452,452,452,452,473);color(15,0);printf("%c%c",291,f);color(14,0);
+        printf("%c     ",435);
+    }
+    if (case34l2==4.3 && posJ1!=34 && posJ2!=34 && posJ3!=34 && posJ4!=34){
         color(14,0);
         printf("%c%c%c%c%c%c",452,452,452,452,452,473);color(15,0);printf("%c ",285);color(14,0);
         printf("%c     ",435);
     }
-    if (case34l2==4.4){
+    if (case34l2==4.3 && (posJ1==34||posJ2==34||posJ3==34||posJ4==34)){
         color(14,0);
-        printf("%c%c%c%c%c%c",452,452,452,452,452,473);color(15,0);printf("%c ",279);color(14,0);
+        printf("%c%c%c%c%c%c",452,452,452,452,452,473);color(15,0);printf("%c%c",285,f);color(14,0);
         printf("%c     ",435);
     }
-    if (case34l2==4.5){
+    if (case34l2==4.4 && posJ1!=34 && posJ2!=34 && posJ3!=34 && posJ4!=34){
+        color(14,0);
+        printf("%c%c%c%c%c%c",452,452,452,452,452,473);color(15,0);printf("%c ",428);color(14,0);
+        printf("%c     ",435);
+    }
+    if (case34l2==4.4 && (posJ1==34||posJ2==34||posJ3==34||posJ4==34)){
+        color(14,0);
+        printf("%c%c%c%c%c%c",452,452,452,452,452,473);color(15,0);printf("%c%c",428,f);color(14,0);
+        printf("%c     ",435);
+    }
+    if (case34l2==4.5 && posJ1!=34 && posJ2!=34 && posJ3!=34 && posJ4!=34){
         color(14,0);
         printf("%c%c%c%c%c%c",452,452,452,452,452,473);color(15,0);printf("%c ",277);color(14,0);
         printf("%c     ",435);
     }
-    if (case34l2==4.6){
+    if (case34l2==4.5 && (posJ1==34||posJ2==34||posJ3==34||posJ4==34)){
+        color(14,0);
+        printf("%c%c%c%c%c%c",452,452,452,452,452,473);color(15,0);printf("%c%c",277,f);color(14,0);
+        printf("%c     ",435);
+    }
+    if (case34l2==4.6 && posJ1!=34 && posJ2!=34 && posJ3!=34 && posJ4!=34){
         color(14,0);
         printf("%c%c%c%c%c%c",452,452,452,452,452,473);color(15,0);printf("%c ",225);color(14,0);
+        printf("%c     ",435);
+    }
+    if (case34l2==4.6 && (posJ1==34||posJ2==34||posJ3==34||posJ4==34)){
+        color(14,0);
+        printf("%c%c%c%c%c%c",452,452,452,452,452,473);color(15,0);printf("%c%c",225,f);color(14,0);
         printf("%c     ",435);
     }
     if (case34l2==5){
@@ -6075,70 +10013,127 @@ int test(double case01,double case03,double case05,double case10,double case11,d
         color(14,0);
         printf("%c%c%c%c%c%c%c%c%c%c%c%c%c%c",452,452,452,452,452,452,452,452,452,452,452,452,452,452);
     }
-    if (case34l2==7){
+    if (case34l2==7 && posJ1!=34 && posJ2!=34 && posJ3!=34 && posJ4!=34){
         color(14,0);
         printf("     %c  %c%c%c%c%c%c",435,448,452,452,452,452,452);
     }
-    if (case34l2==7.1){
+    if (case34l2==7 && (posJ1==34||posJ2==34||posJ3==34||posJ4==34)){
         color(14,0);
-        printf("     %c",435);color(15,0);printf(" %c",189);color(14,0);printf("%c%c%c%c%c%c",448,452,452,452,452,452);
+        printf("     %c",435);color(15,0);printf(" %c",f);color(14,0);printf("%c%c%c%c%c%c",448,452,452,452,452,452);
     }
-    if (case34l2==7.2){
+    if (case34l2==7.1 && posJ1!=34 && posJ2!=34 && posJ3!=34 && posJ4!=34){
         color(14,0);
-        printf("     %c",435);color(15,0);printf(" %c",157);color(14,0);printf("%c%c%c%c%c%c",448,452,452,452,452,452);
+        printf("     %c",435);color(15,0);printf(" %c",189);color(14,0);printf("%c%c%c%c%c%c",452,448,452,452,452,452);
     }
-    if (case34l2==7.3){
+    if (case34l2==7.1 && (posJ1==34||posJ2==34||posJ3==34||posJ4==34)){
+        color(14,0);
+        printf("     %c",435);color(15,0);printf("%c%c",f,189);color(14,0);printf("%c%c%c%c%c%c",452,448,452,452,452,452);
+    }
+    if (case34l2==7.2 && posJ1!=34 && posJ2!=34 && posJ3!=34 && posJ4!=34){
+        color(14,0);
+        printf("     %c",435);color(15,0);printf(" %c",157);color(14,0);printf("%c%c%c%c%c%c",452,448,452,452,452,452);
+    }
+    if (case34l2==7.2 && (posJ1==34||posJ2==34||posJ3==34||posJ4==34)){
+        color(14,0);
+        printf("     %c",435);color(15,0);printf("%c%c",f,157);color(14,0);printf("%c%c%c%c%c%c",452,448,452,452,452,452);
+    }
+    if (case34l2==7.3 && posJ1!=34 && posJ2!=34 && posJ3!=34 && posJ4!=34){
         color(14,0);
         printf("     %c",435);color(15,0);printf(" %c",143);color(14,0);printf("%c%c%c%c%c%c",448,452,452,452,452,452);
     }
-    if (case34l2==7.4){
+    if (case34l2==7.3 && (posJ1==34||posJ2==34||posJ3==34||posJ4==34)){
         color(14,0);
-        printf("     %c",435);color(15,0);printf(" %c",37);color(14,0);printf("%c%c%c%c%c%c",448,452,452,452,452,452);
+        printf("     %c",435);color(15,0);printf("%c%c",f,143);color(14,0);printf("%c%c%c%c%c%c",452,448,452,452,452,452);
     }
-    if (case34l2==7.5){
+    if (case34l2==7.4 && posJ1!=34 && posJ2!=34 && posJ3!=34 && posJ4!=34){
+        color(14,0);
+        printf("     %c",435);color(15,0);printf(" %c",37);color(14,0);printf("%c%c%c%c%c%c",452,448,452,452,452,452);
+    }
+    if (case34l2==7.4 && (posJ1==34||posJ2==34||posJ3==34||posJ4==34)){
+        color(14,0);
+        printf("     %c",435);color(15,0);printf("%c%c",f,37);color(14,0);printf("%c%c%c%c%c%c",452,448,452,452,452,452);
+    }
+    if (case34l2==7.5 && posJ1!=34 && posJ2!=34 && posJ3!=34 && posJ4!=34){
         color(14,0);
         printf("     %c",435);color(15,0);printf(" %c",31);color(14,0);printf("%c%c%c%c%c%c",448,452,452,452,452,452);
     }
-    if (case34l2==7.6){
+    if (case34l2==7.5 && (posJ1==34||posJ2==34||posJ3==34||posJ4==34)){
         color(14,0);
-        printf("     %c",435);color(15,0);printf(" %c",15);color(14,0);printf("%c%c%c%c%c%c",448,452,452,452,452,452);
+        printf("     %c",435);color(15,0);printf("%c%c",f,31);color(14,0);printf("%c%c%c%c%c%c",448,452,452,452,452,452);
     }
-    if (case34l2==8){
+    if (case34l2==7.6 && posJ1!=34 && posJ2!=34 && posJ3!=34 && posJ4!=34){
+        color(14,0);
+        printf("     %c",435);color(15,0);printf(" %c",459);color(14,0);printf("%c%c%c%c%c%c",448,452,452,452,452,452);
+    }
+    if (case34l2==7.6 && (posJ1==34||posJ2==34||posJ3==34||posJ4==34)){
+        color(14,0);
+        printf("     %c",435);color(15,0);printf("%c%c",f,459);color(14,0);printf("%c%c%c%c%c%c",448,452,452,452,452,452);
+    }
+    if (case34l2==8 && posJ1!=34 && posJ2!=34 && posJ3!=34 && posJ4!=34){
         color(14,0);
         printf("%c%c%c%c%c%c  %c     ",452,452,452,452,452,473,435);
     }
-    if (case34l2==8.1){
+    if (case34l2==8 && (posJ1==34||posJ2==34||posJ3==34||posJ4==34)){
+        color(14,0);
+        printf("%c%c%c%c%c%c",452,452,452,452,452,473);color(15,0);printf("%c ",f);color(14,0);printf("%c     ",435);
+    }
+    if (case34l2==8.1 && posJ1!=34 && posJ2!=34 && posJ3!=34 && posJ4!=34){
         color(14,0);
         printf("%c%c%c%c%c%c",452,452,452,452,452,473);color(15,0);printf("%c ",189);color(14,0);printf("%c     ",435);
     }
-    if (case34l2==8.2){
+    if (case34l2==8.1 && (posJ1==34||posJ2==34||posJ3==34||posJ4==34)){
+        color(14,0);
+        printf("%c%c%c%c%c%c",452,452,452,452,452,473);color(15,0);printf("%c ",189);color(14,0);printf("%c     ",435);
+    }
+    if (case34l2==8.2 && posJ1!=34 && posJ2!=34 && posJ3!=34 && posJ4!=34){
         color(14,0);
         printf("%c%c%c%c%c%c",452,452,452,452,452,473);color(15,0);printf("%c ",157);color(14,0);printf("%c     ",435);
     }
-    if (case34l2==8.3){
+    if (case34l2==8.2 && (posJ1==34||posJ2==34||posJ3==34||posJ4==34)){
+        color(14,0);
+        printf("%c%c%c%c%c%c",452,452,452,452,452,473);color(15,0);printf("%c ",157);color(14,0);printf("%c     ",435);
+    }
+    if (case34l2==8.3 && posJ1!=34 && posJ2!=34 && posJ3!=34 && posJ4!=34){
         color(14,0);
         printf("%c%c%c%c%c%c",452,452,452,452,452,473);color(15,0);printf("%c ",143);color(14,0);printf("%c     ",435);
     }
-    if (case34l2==8.4){
+    if (case34l2==8.3 && (posJ1==34||posJ2==34||posJ3==34||posJ4==34)){
+        color(14,0);
+        printf("%c%c%c%c%c%c",452,452,452,452,452,473);color(15,0);printf("%c ",143);color(14,0);printf("%c     ",435);
+    }
+    if (case34l2==8.4 && posJ1!=34 && posJ2!=34 && posJ3!=34 && posJ4!=34){
         color(14,0);
         printf("%c%c%c%c%c%c",452,452,452,452,452,473);color(15,0);printf("%c ",37);color(14,0);printf("%c     ",435);
     }
-    if (case34l2==8.5){
+    if (case34l2==8.4 && (posJ1==34||posJ2==34||posJ3==34||posJ4==34)){
+        color(14,0);
+        printf("%c%c%c%c%c%c",452,452,452,452,452,473);color(15,0);printf("%c ",37);color(14,0);printf("%c     ",435);
+    }
+    if (case34l2==8.5 && posJ1!=34 && posJ2!=34 && posJ3!=34 && posJ4!=34){
         color(14,0);
         printf("%c%c%c%c%c%c",452,452,452,452,452,473);color(15,0);printf("%c ",31);color(14,0);printf("%c     ",435);
     }
-    if (case34l2==8.6){
+    if (case34l2==8.5 && (posJ1==34||posJ2==34||posJ3==34||posJ4==34)){
         color(14,0);
-        printf("%c%c%c%c%c%c",452,452,452,452,452,473);color(15,0);printf("%c ",15);color(14,0);printf("%c     ",435);
+        printf("%c%c%c%c%c%c",452,452,452,452,452,473);color(15,0);printf("%c%c",31,f);color(14,0);printf("%c     ",435);
+    }
+    if (case34l2==8.6 && posJ1!=34 && posJ2!=34 && posJ3!=34 && posJ4!=34){
+        color(14,0);
+        printf("%c%c%c%c%c%c",452,452,452,452,452,473);color(15,0);printf("%c ",459);color(14,0);printf("%c     ",435);
+    }
+    if (case34l2==8.6 && (posJ1==34||posJ2==34||posJ3==34||posJ4==34)){
+        color(14,0);
+        printf("%c%c%c%c%c%c",452,452,452,452,452,473);color(15,0);printf("%c%c",459,f);color(14,0);printf("%c     ",435);
     }
     if (case34l2>=9 && case34l2<10){
         color(14,0);
         printf("     %c%c%c%c%c%c%c%c%c",474,452,452,452,452,452,452,452,452);
     }
-    if (case34l2>=10 && case34l2<11){
+    if (case34l2>=10 && case34l2<14){
         color(14,0);
         printf("%c%c%c%c%c%c%c%c%c     ",452,452,452,452,452,452,452,452,447);
     }
+    f=testposition(posJ1,posJ2,posJ3,posJ4,35,p1,p2,p3,p4);
     if (case35l2==0){
         printf("           ");
     }
@@ -6146,94 +10141,184 @@ int test(double case01,double case03,double case05,double case10,double case11,d
         color(14,0);
         printf("%c%c%c%c%c%c%c%c%c%c%c",452,452,452,452,452,452,452,452,452,452,452);
     }
-    if (case35l2==2.1){
+    if (case35l2==2.1 && posJ1!=35 && posJ2!=35 && posJ3!=35 && posJ4!=35){
         color(14,0);
         printf("%c%c%c%c%c", 452, 452, 452, 452, 473);color(15,0);printf(" %c",292);color(14,0);
         printf("%c%c%c%c", 448, 452, 452, 452);
     }
-    if (case35l2==2.2){
+    if (case35l2==2.1 && (posJ1==35||posJ2==35||posJ3==35||posJ4==35)){
+        color(14,0);
+        printf("%c%c%c%c%c", 452, 452, 452, 452, 473);color(15,0);printf("%c%c",f,292);color(14,0);
+        printf("%c%c%c%c", 448, 452, 452, 452);
+    }
+    if (case35l2==2.2 && posJ1!=35 && posJ2!=35 && posJ3!=35 && posJ4!=35){
         color(14,0);
         printf("%c%c%c%c%c", 452, 452, 452, 452, 473);color(15,0);printf(" %c",291);color(14,0);
         printf("%c%c%c%c", 448, 452, 452, 452);
     }
-    if (case35l2==2.3){
+    if (case35l2==2.2 && (posJ1==35||posJ2==35||posJ3==35||posJ4==35)){
+        color(14,0);
+        printf("%c%c%c%c%c", 452, 452, 452, 452, 473);color(15,0);printf("%c%c",f,291);color(14,0);
+        printf("%c%c%c%c", 448, 452, 452, 452);
+    }
+    if (case35l2==2.3 && posJ1!=35 && posJ2!=35 && posJ3!=35 && posJ4!=35){
         color(14,0);
         printf("%c%c%c%c%c", 452, 452, 452, 452, 473);color(15,0);printf(" %c",285);color(14,0);
         printf("%c%c%c%c", 448, 452, 452, 452);
     }
-    if (case35l2==2.4){
+    if (case35l2==2.3 && (posJ1==35||posJ2==35||posJ3==35||posJ4==35)){
         color(14,0);
-        printf("%c%c%c%c%c", 452, 452, 452, 452, 473);color(15,0);printf(" %c",279);color(14,0);
+        printf("%c%c%c%c%c", 452, 452, 452, 452, 473);color(15,0);printf("%c%c",f,285);color(14,0);
         printf("%c%c%c%c", 448, 452, 452, 452);
     }
-    if (case35l2==2.5){
+    if (case35l2==2.4 && posJ1!=35 && posJ2!=35 && posJ3!=35 && posJ4!=35){
+        color(14,0);
+        printf("%c%c%c%c%c", 452, 452, 452, 452, 473);color(15,0);printf(" %c",428);color(14,0);
+        printf("%c%c%c%c", 448, 452, 452, 452);
+    }
+    if (case35l2==2.4 && (posJ1==35||posJ2==35||posJ3==35||posJ4==35)){
+        color(14,0);
+        printf("%c%c%c%c%c", 452, 452, 452, 452, 473);color(15,0);printf("%c%c",f,428);color(14,0);
+        printf("%c%c%c%c", 448, 452, 452, 452);
+    }
+    if (case35l2==2.5 && posJ1!=35 && posJ2!=35 && posJ3!=35 && posJ4!=35){
         color(14,0);
         printf("%c%c%c%c%c", 452, 452, 452, 452, 473);color(15,0);printf(" %c",277);color(14,0);
         printf("%c%c%c%c", 448, 452, 452, 452);
     }
-    if (case35l2==2.6){
+    if (case35l2==2.5 && (posJ1==35||posJ2==35||posJ3==35||posJ4==35)){
+        color(14,0);
+        printf("%c%c%c%c%c", 452, 452, 452, 452, 473);color(15,0);printf("%c%c",f,277);color(14,0);
+        printf("%c%c%c%c", 448, 452, 452, 452);
+    }
+    if (case35l2==2.6 && posJ1!=35 && posJ2!=35 && posJ3!=35 && posJ4!=35){
         color(14,0);
         printf("%c%c%c%c%c", 452, 452, 452, 452, 473);color(15,0);printf(" %c",225);color(14,0);
         printf("%c%c%c%c", 448, 452, 452, 452);
     }
-    if (case35l2==3.1){
+    if (case35l2==2.6 && (posJ1==35||posJ2==35||posJ3==35||posJ4==35)){
+        color(14,0);
+        printf("%c%c%c%c%c", 452, 452, 452, 452, 473);color(15,0);printf("%c%c",f,225);color(14,0);
+        printf("%c%c%c%c", 448, 452, 452, 452);
+    }
+    if (case35l2==3.1 && posJ1!=35 && posJ2!=35 && posJ3!=35 && posJ4!=35){
         color(14,0);
         printf("    %c",435);color(15,0);printf(" %c",292);color(14,0);
         printf("%c%c%c%c",448,452,452,452);
     }
-    if (case35l2==3.2){
+    if (case35l2==3.1 && (posJ1==35||posJ2==35||posJ3==35||posJ4==35)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,292);color(14,0);
+        printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case35l2==3.2 && posJ1!=35 && posJ2!=35 && posJ3!=35 && posJ4!=35){
         color(14,0);
         printf("    %c",435);color(15,0);printf(" %c",291);color(14,0);
         printf("%c%c%c%c",448,452,452,452);
     }
-    if (case35l2==3.3){
+    if (case35l2==3.2 && (posJ1==35||posJ2==35||posJ3==35||posJ4==35)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,291);color(14,0);
+        printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case35l2==3.3 && posJ1!=35 && posJ2!=35 && posJ3!=35 && posJ4!=35){
         color(14,0);
         printf("    %c",435);color(15,0);printf(" %c",285);color(14,0);
         printf("%c%c%c%c",448,452,452,452);
     }
-    if (case35l2==3.4){
+    if (case35l2==3.3 && (posJ1==35||posJ2==35||posJ3==35||posJ4==35)){
         color(14,0);
-        printf("    %c",435);color(15,0);printf(" %c",279);color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,285);color(14,0);
         printf("%c%c%c%c",448,452,452,452);
     }
-    if (case35l2==3.5){
+    if (case35l2==3.4 && posJ1!=35 && posJ2!=35 && posJ3!=35 && posJ4!=35){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",428);color(14,0);
+        printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case35l2==3.4 && (posJ1==35||posJ2==35||posJ3==35||posJ4==35)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,428);color(14,0);
+        printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case35l2==3.5 && posJ1!=35 && posJ2!=35 && posJ3!=35 && posJ4!=35){
         color(14,0);
         printf("    %c",435);color(15,0);printf(" %c",277);color(14,0);
         printf("%c%c%c%c",448,452,452,452);
     }
-    if (case35l2==3.6){
+    if (case35l2==3.5 && (posJ1==35||posJ2==35||posJ3==35||posJ4==35)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,277);color(14,0);
+        printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case35l2==3.6 && posJ1!=35 && posJ2!=35 && posJ3!=35 && posJ4!=35){
         color(14,0);
         printf("    %c",435);color(15,0);printf(" %c",225);color(14,0);
         printf("%c%c%c%c",448,452,452,452);
     }
-    if (case35l2==4.1){
+    if (case35l2==3.6 && (posJ1==35||posJ2==35||posJ3==35||posJ4==35)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,225);color(14,0);
+        printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case35l2==4.1 && posJ1!=35 && posJ2!=35 && posJ3!=35 && posJ4!=35){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",292);color(14,0);
         printf("%c   ",435);
     }
-    if (case35l2==4.2){
+    if (case35l2==4.1 && (posJ1==35||posJ2==35||posJ3==35||posJ4==35)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",292,f);color(14,0);
+        printf("%c   ",435);
+    }
+    if (case35l2==4.2 && posJ1!=35 && posJ2!=35 && posJ3!=35 && posJ4!=35){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",291);color(14,0);
         printf("%c   ",435);
     }
-    if (case35l2==4.3){
+    if (case35l2==4.2 && (posJ1==35||posJ2==35||posJ3==35||posJ4==35)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",291,f);color(14,0);
+        printf("%c   ",435);
+    }
+    if (case35l2==4.3 && posJ1!=35 && posJ2!=35 && posJ3!=35 && posJ4!=35){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",285);color(14,0);
         printf("%c   ",435);
     }
-    if (case35l2==4.4){
+    if (case35l2==4.3 && (posJ1==35||posJ2==35||posJ3==35||posJ4==35)){
         color(14,0);
-        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",279);color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",285,f);color(14,0);
         printf("%c   ",435);
     }
-    if (case35l2==4.5){
+    if (case35l2==4.4 && posJ1!=35 && posJ2!=35 && posJ3!=35 && posJ4!=35){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",428);color(14,0);
+        printf("%c   ",435);
+    }
+    if (case35l2==4.4 && (posJ1==35||posJ2==35||posJ3==35||posJ4==35)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",428,f);color(14,0);
+        printf("%c   ",435);
+    }
+    if (case35l2==4.5 && posJ1!=35 && posJ2!=35 && posJ3!=35 && posJ4!=35){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",277);color(14,0);
         printf("%c   ",435);
     }
-    if (case35l2==4.6){
+    if (case35l2==4.5 && (posJ1==35||posJ2==35||posJ3==35||posJ4==35)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",277,f);color(14,0);
+        printf("%c   ",435);
+    }
+    if (case35l2==4.6 && posJ1!=35 && posJ2!=35 && posJ3!=35 && posJ4!=35){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",225);color(14,0);
+        printf("%c   ",435);
+    }
+    if (case35l2==4.6 && (posJ1==35||posJ2==35||posJ3==35||posJ4==35)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",225,f);color(14,0);
         printf("%c   ",435);
     }
     if (case35l2==5){
@@ -6244,61 +10329,117 @@ int test(double case01,double case03,double case05,double case10,double case11,d
         color(14,0);
         printf("%c%c%c%c%c%c%c%c%c%c%c",452,452,452,452,452,452,452,452,452,452,452);
     }
-    if (case35l2==7){
+    if (case35l2==7 && posJ1!=35 && posJ2!=35 && posJ3!=35 && posJ4!=35){
         color(14,0);
         printf("    %c  %c%c%c%c",435,448,452,452,452);
     }
-    if (case35l2==7.1){
+    if (case35l2==7 && (posJ1==35||posJ2==35||posJ3==35||posJ4==35)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",f);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case35l2==7.1 && posJ1!=35 && posJ2!=35 && posJ3!=35 && posJ4!=35){
         color(14,0);
         printf("    %c",435);color(15,0);printf(" %c",189);color(14,0);printf("%c%c%c%c",448,452,452,452);
     }
-    if (case35l2==7.2){
+    if (case35l2==7.1 && (posJ1==35||posJ2==35||posJ3==35||posJ4==35)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,189);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case35l2==7.2 && posJ1!=35 && posJ2!=35 && posJ3!=35 && posJ4!=35){
         color(14,0);
         printf("    %c",435);color(15,0);printf(" %c",157);color(14,0);printf("%c%c%c%c",448,452,452,452);
     }
-    if (case35l2==7.3){
+    if (case35l2==7.2 && (posJ1==35||posJ2==35||posJ3==35||posJ4==35)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,157);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case35l2==7.3 && posJ1!=35 && posJ2!=35 && posJ3!=35 && posJ4!=35){
         color(14,0);
         printf("    %c",435);color(15,0);printf(" %c",143);color(14,0);printf("%c%c%c%c",448,452,452,452);
     }
-    if (case35l2==7.4){
+    if (case35l2==7.3 && (posJ1==35||posJ2==35||posJ3==35||posJ4==35)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,143);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case35l2==7.4 && posJ1!=35 && posJ2!=35 && posJ3!=35 && posJ4!=35){
         color(14,0);
         printf("    %c",435);color(15,0);printf(" %c",37);color(14,0);printf("%c%c%c%c",448,452,452,452);
     }
-    if (case35l2==7.5){
+    if (case35l2==7.4 && (posJ1==35||posJ2==35||posJ3==35||posJ4==35)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,37);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case35l2==7.5 && posJ1!=35 && posJ2!=35 && posJ3!=35 && posJ4!=35){
         color(14,0);
         printf("    %c",435);color(15,0);printf(" %c",31);color(14,0);printf("%c%c%c%c",448,452,452,452);
     }
-    if (case35l2==7.6){
+    if (case35l2==7.5 && (posJ1==35||posJ2==35||posJ3==35||posJ4==35)){
         color(14,0);
-        printf("    %c",435);color(15,0);printf(" %c",15);color(14,0);printf("%c%c%c%c",448,452,452,452);
+        printf("    %c",435);color(15,0);printf("%c%c",f,31);color(14,0);printf("%c%c%c%c",448,452,452,452);
     }
-    if (case35l2==8){
+    if (case35l2==7.6 && posJ1!=35 && posJ2!=35 && posJ3!=35 && posJ4!=35){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",459);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case35l2==7.6 && (posJ1==35||posJ2==35||posJ3==35||posJ4==35)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,459);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case35l2==8 && posJ1!=35 && posJ2!=35 && posJ3!=35 && posJ4!=35){
         color(14,0);
         printf("%c%c%c%c%c  %c   ",452,452,452,452,473,435);
     }
-    if (case35l2==8.1){
+    if (case35l2==8 && (posJ1==35||posJ2==35||posJ3==35||posJ4==35)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",f);color(14,0);printf("%c   ",435);
+    }
+    if (case35l2==8.1 && posJ1!=35 && posJ2!=35 && posJ3!=35 && posJ4!=35){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",189);color(14,0);printf("%c   ",435);
     }
-    if (case35l2==8.2){
+    if (case35l2==8.1 && (posJ1==35||posJ2==35||posJ3==35||posJ4==35)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",189,f);color(14,0);printf("%c   ",435);
+    }
+    if (case35l2==8.2 && posJ1!=35 && posJ2!=35 && posJ3!=35 && posJ4!=35){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",157);color(14,0);printf("%c   ",435);
     }
-    if (case35l2==8.3){
+    if (case35l2==8.2 && (posJ1==35||posJ2==35||posJ3==35||posJ4==35)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",157,f);color(14,0);printf("%c   ",435);
+    }
+    if (case35l2==8.3 && posJ1!=35 && posJ2!=35 && posJ3!=35 && posJ4!=35){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",143);color(14,0);printf("%c   ",435);
     }
-    if (case35l2==8.4){
+    if (case35l2==8.3 && (posJ1==35||posJ2==35||posJ3==35||posJ4==35)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",143,f);color(14,0);printf("%c   ",435);
+    }
+    if (case35l2==8.4 && posJ1!=35 && posJ2!=35 && posJ3!=35 && posJ4!=35){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",37);color(14,0);printf("%c   ",435);
     }
-    if (case35l2==8.5){
+    if (case35l2==8.4 && (posJ1==35||posJ2==35||posJ3==35||posJ4==35)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",37,f);color(14,0);printf("%c   ",435);
+    }
+    if (case35l2==8.5 && posJ1!=35 && posJ2!=35 && posJ3!=35 && posJ4!=35){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",31);color(14,0);printf("%c   ",435);
     }
-    if (case35l2==8.6){
+    if (case35l2==8.5 && (posJ1==35||posJ2==35||posJ3==35||posJ4==35)){
         color(14,0);
-        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",189);color(14,0);printf("%c   ",435);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",31,f);color(14,0);printf("%c   ",435);
+    }
+    if (case35l2==8.6 && posJ1!=35 && posJ2!=35 && posJ3!=35 && posJ4!=35){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",459);color(14,0);printf("%c   ",435);
+    }
+    if (case35l2==8.6 && (posJ1==35||posJ2==35||posJ3==35||posJ4==35)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",459,f);color(14,0);printf("%c   ",435);
     }
     if (case35l2>=9 && case35l2<10){
         color(14,0);
@@ -6308,82 +10449,155 @@ int test(double case01,double case03,double case05,double case10,double case11,d
         color(14,0);
         printf("%c%c%c%c%c%c%c%c   ",452,452,452,452,452,452,452,447);
     }
+    f=testposition(posJ1,posJ2,posJ3,posJ4,36,p1,p2,p3,p4);
     if (case36l2==0){
         printf("         ");
     }
     if (case36l2>1 && case36l2<2){
         printf("%c%c%c%c%c%c%c%c%c",452,452,452,452,452,452,452,452,452);
     }
-    if (case36l2==2.1){
+    if (case36l2==2.1 && posJ1!=36 && posJ2!=36 && posJ3!=36 && posJ4!=36){
         printf("%c%c%c%c%c%c",452,452,452,452,452,473);color(15,0);printf("%c ",292);color(14,0);
         printf("%c",448);
     }
-    if (case36l2==2.2){
+    if (case36l2==2.1 && (posJ1==36||posJ2==36||posJ3==36||posJ4==36)){
+        printf("%c%c%c%c%c%c",452,452,452,452,452,473);color(15,0);printf("%c%c",292,f);color(14,0);
+        printf("%c",448);
+    }
+    if (case36l2==2.2 && posJ1!=36 && posJ2!=36 && posJ3!=36 && posJ4!=36){
         printf("%c%c%c%c%c%c",452,452,452,452,452,473);color(15,0);printf("%c ",291);color(14,0);
         printf("%c",448);
     }
-    if (case36l2==2.3){
+    if (case36l2==2.2 && (posJ1==36||posJ2==36||posJ3==36||posJ4==36)){
+        printf("%c%c%c%c%c%c",452,452,452,452,452,473);color(15,0);printf("%c%c",291,f);color(14,0);
+        printf("%c",448);
+    }
+    if (case36l2==2.3 && posJ1!=36 && posJ2!=36 && posJ3!=36 && posJ4!=36){
         printf("%c%c%c%c%c%c",452,452,452,452,452,473);color(15,0);printf("%c ",285);color(14,0);
         printf("%c",448);
     }
-    if (case36l2==2.4){
-        printf("%c%c%c%c%c%c",452,452,452,452,452,473);color(15,0);printf("%c ",279);color(14,0);
+    if (case36l2==2.3 && (posJ1==36||posJ2==36||posJ3==36||posJ4==36)){
+        printf("%c%c%c%c%c%c",452,452,452,452,452,473);color(15,0);printf("%c%c",285,f);color(14,0);
         printf("%c",448);
     }
-    if (case36l2==2.5){
+    if (case36l2==2.4 && posJ1!=36 && posJ2!=36 && posJ3!=36 && posJ4!=36){
+        printf("%c%c%c%c%c%c",452,452,452,452,452,473);color(15,0);printf("%c ",428);color(14,0);
+        printf("%c",448);
+    }
+    if (case36l2==2.4 && (posJ1==36||posJ2==36||posJ3==36||posJ4==36)){
+        printf("%c%c%c%c%c%c",452,452,452,452,452,473);color(15,0);printf("%c%c",428,f);color(14,0);
+        printf("%c",448);
+    }
+    if (case36l2==2.5 && posJ1!=36 && posJ2!=36 && posJ3!=36 && posJ4!=36){
         printf("%c%c%c%c%c%c",452,452,452,452,452,473);color(15,0);printf("%c ",277);color(14,0);
         printf("%c",448);
     }
-    if (case36l2==2.6){
+    if (case36l2==2.5 && (posJ1==36||posJ2==36||posJ3==36||posJ4==36)){
+        printf("%c%c%c%c%c%c",452,452,452,452,452,473);color(15,0);printf("%c%c",277,f);color(14,0);
+        printf("%c",448);
+    }
+    if (case36l2==2.6 && posJ1!=36 && posJ2!=36 && posJ3!=36 && posJ4!=36){
         printf("%c%c%c%c%c%c",452,452,452,452,452,473);color(15,0);printf("%c ",225);color(14,0);
         printf("%c",448);
     }
-    if (case36l2==3.1){
+    if (case36l2==2.6 && (posJ1==36||posJ2==36||posJ3==36||posJ4==36)){
+        printf("%c%c%c%c%c%c",452,452,452,452,452,473);color(15,0);printf("%c%c",225,f);color(14,0);
+        printf("%c",448);
+    }
+    if (case36l2==3.1 && posJ1!=36 && posJ2!=36 && posJ3!=36 && posJ4!=36){
         printf("     %c",435);color(15,0);printf(" %c",292);color(14,0);
         printf("%c",448);
     }
-    if (case36l2==3.2){
+    if (case36l2==3.1 && (posJ1==36||posJ2==36||posJ3==36||posJ4==36)){
+        printf("     %c",435);color(15,0);printf("%c%c",f,292);color(14,0);
+        printf("%c",448);
+    }
+    if (case36l2==3.2 && posJ1!=36 && posJ2!=36 && posJ3!=36 && posJ4!=36){
         printf("     %c",435);color(15,0);printf(" %c",291);color(14,0);
         printf("%c",448);
     }
-    if (case36l2==3.3){
+    if (case36l2==3.2 && (posJ1==36||posJ2==36||posJ3==36||posJ4==36)){
+        printf("     %c",435);color(15,0);printf("%c%c",f,291);color(14,0);
+        printf("%c",448);
+    }
+    if (case36l2==3.3 && posJ1!=36 && posJ2!=36 && posJ3!=36 && posJ4!=36){
         printf("     %c",435);color(15,0);printf(" %c",285);color(14,0);
         printf("%c",448);
     }
-    if (case36l2==3.4){
-        printf("     %c",435);color(15,0);printf(" %c",279);color(14,0);
+    if (case36l2==3.3 && (posJ1==36||posJ2==36||posJ3==36||posJ4==36)){
+        printf("     %c",435);color(15,0);printf("%c%c",f,285);color(14,0);
         printf("%c",448);
     }
-    if (case36l2==3.5){
+    if (case36l2==3.4 && posJ1!=36 && posJ2!=36 && posJ3!=36 && posJ4!=36){
+        printf("     %c",435);color(15,0);printf(" %c",428);color(14,0);
+        printf("%c",448);
+    }
+    if (case36l2==3.4 && (posJ1==36||posJ2==36||posJ3==36||posJ4==36)){
+        printf("     %c",435);color(15,0);printf("%c%c",f,428);color(14,0);
+        printf("%c",448);
+    }
+    if (case36l2==3.5 && posJ1!=36 && posJ2!=36 && posJ3!=36 && posJ4!=36){
         printf("     %c",435);color(15,0);printf(" %c",277);color(14,0);
         printf("%c",448);
     }
-    if (case36l2==3.6){
+    if (case36l2==3.5 && (posJ1==36||posJ2==36||posJ3==36||posJ4==36)){
+        printf("     %c",435);color(15,0);printf("%c%c",f,277);color(14,0);
+        printf("%c",448);
+    }
+    if (case36l2==3.6 && posJ1!=36 && posJ2!=36 && posJ3!=36 && posJ4!=36){
         printf("     %c",435);color(15,0);printf(" %c",225);color(14,0);
         printf("%c",448);
     }
-    if (case36l2==4.1){
+    if (case36l2==3.6 && (posJ1==36||posJ2==36||posJ3==36||posJ4==36)){
+        printf("     %c",435);color(15,0);printf("%c%c",f,225);color(14,0);
+        printf("%c",448);
+    }
+    if (case36l2==4.1 && posJ1!=36 && posJ2!=36 && posJ3!=36 && posJ4!=36){
         printf("%c%c%c%c%c%c",452,452,452,452,452,473);color(15,0);printf("%c ",292);color(14,0);
         printf("%c",435);
     }
-    if (case36l2==4.2){
+    if (case36l2==4.1 && (posJ1==36||posJ2==36||posJ3==36||posJ4==36)){
+        printf("%c%c%c%c%c%c",452,452,452,452,452,473);color(15,0);printf("%c%c",292,f);color(14,0);
+        printf("%c",435);
+    }
+    if (case36l2==4.2 && posJ1!=36 && posJ2!=36 && posJ3!=36 && posJ4!=36){
         printf("%c%c%c%c%c%c",452,452,452,452,452,473);color(15,0);printf("%c ",291);color(14,0);
         printf("%c",435);
     }
-    if (case36l2==4.3){
+    if (case36l2==4.2 && (posJ1==36||posJ2==36||posJ3==36||posJ4==36)){
+        printf("%c%c%c%c%c%c",452,452,452,452,452,473);color(15,0);printf("%c%c",291,f);color(14,0);
+        printf("%c",435);
+    }
+    if (case36l2==4.3 && posJ1!=36 && posJ2!=36 && posJ3!=36 && posJ4!=36){
         printf("%c%c%c%c%c%c",452,452,452,452,452,473);color(15,0);printf("%c ",285);color(14,0);
         printf("%c",435);
     }
-    if (case36l2==4.4){
-        printf("%c%c%c%c%c%c",452,452,452,452,452,473);color(15,0);printf("%c ",279);color(14,0);
+    if (case36l2==4.3 && (posJ1==36||posJ2==36||posJ3==36||posJ4==36)){
+        printf("%c%c%c%c%c%c",452,452,452,452,452,473);color(15,0);printf("%c%c",285,f);color(14,0);
         printf("%c",435);
     }
-    if (case36l2==4.5){
+    if (case36l2==4.4 && posJ1!=36 && posJ2!=36 && posJ3!=36 && posJ4!=36){
+        printf("%c%c%c%c%c%c",452,452,452,452,452,473);color(15,0);printf("%c ",428);color(14,0);
+        printf("%c",435);
+    }
+    if (case36l2==4.4 && (posJ1==36||posJ2==36||posJ3==36||posJ4==36)){
+        printf("%c%c%c%c%c%c",452,452,452,452,452,473);color(15,0);printf("%c%c",428,f);color(14,0);
+        printf("%c",435);
+    }
+    if (case36l2==4.5 && posJ1!=36 && posJ2!=36 && posJ3!=36 && posJ4!=36){
         printf("%c%c%c%c%c%c",452,452,452,452,452,473);color(15,0);printf("%c ",277);color(14,0);
         printf("%c",435);
     }
-    if (case36l2==4.6){
+    if (case36l2==4.5 && (posJ1==36||posJ2==36||posJ3==36||posJ4==36)){
+        printf("%c%c%c%c%c%c",452,452,452,452,452,473);color(15,0);printf("%c%c",277,f);color(14,0);
+        printf("%c",435);
+    }
+    if (case36l2==4.6 && posJ1!=36 && posJ2!=36 && posJ3!=36 && posJ4!=36){
         printf("%c%c%c%c%c%c",452,452,452,452,452,473);color(15,0);printf("%c ",225);color(14,0);
+        printf("%c",435);
+    }
+    if (case36l2==4.6 && (posJ1==36||posJ2==36||posJ3==36||posJ4==36)){
+        printf("%c%c%c%c%c%c",452,452,452,452,452,473);color(15,0);printf("%c%c",225,f);color(14,0);
         printf("%c",435);
     }
     if (case36l2==5){
@@ -6392,47 +10606,89 @@ int test(double case01,double case03,double case05,double case10,double case11,d
     if (case36l2==6){
         printf("%c%c%c%c%c%c%c%c%c",452,452,452,452,452,452,452,452,452);
     }
-    if (case36l2==7){
+    if (case36l2==7 && posJ1!=36 && posJ2!=36 && posJ3!=36 && posJ4!=36){
         printf("     %c  %c",435,448);
     }
-    if (case36l2==7.1){
+    if (case36l2==7 && (posJ1==36||posJ2==36||posJ3==36||posJ4==36)){
+        printf("     %c",435);color(15,0);printf(" %c",f);color(14,0);printf("%c",448);
+    }
+    if (case36l2==7.1 && posJ1!=36 && posJ2!=36 && posJ3!=36 && posJ4!=36){
         printf("     %c",435);color(15,0);printf(" %c",189);color(14,0);printf("%c",448);
     }
-    if (case36l2==7.2){
+    if (case36l2==7.1 && (posJ1==36||posJ2==36||posJ3==36||posJ4==36)){
+        printf("     %c",435);color(15,0);printf("%c%c",f,189);color(14,0);printf("%c",448);
+    }
+    if (case36l2==7.2 && posJ1!=36 && posJ2!=36 && posJ3!=36 && posJ4!=36){
         printf("     %c",435);color(15,0);printf(" %c",157);color(14,0);printf("%c",448);
     }
-    if (case36l2==7.3){
+    if (case36l2==7.2 && (posJ1==36||posJ2==36||posJ3==36||posJ4==36)){
+        printf("     %c",435);color(15,0);printf("%c%c",f,157);color(14,0);printf("%c",448);
+    }
+    if (case36l2==7.3 && posJ1!=36 && posJ2!=36 && posJ3!=36 && posJ4!=36){
         printf("     %c",435);color(15,0);printf(" %c",143);color(14,0);printf("%c",448);
     }
-    if (case36l2==7.4){
+    if (case36l2==7.3 && (posJ1==36||posJ2==36||posJ3==36||posJ4==36)){
+        printf("     %c",435);color(15,0);printf("%c%c",f,143);color(14,0);printf("%c",448);
+    }
+    if (case36l2==7.4 && posJ1!=36 && posJ2!=36 && posJ3!=36 && posJ4!=36){
         printf("     %c",435);color(15,0);printf(" %c",37);color(14,0);printf("%c",448);
     }
-    if (case36l2==7.5){
+    if (case36l2==7.4 && (posJ1==36||posJ2==36||posJ3==36||posJ4==36)){
+        printf("     %c",435);color(15,0);printf("%c%c",f,37);color(14,0);printf("%c",448);
+    }
+    if (case36l2==7.5 && posJ1!=36 && posJ2!=36 && posJ3!=36 && posJ4!=36){
         printf("     %c",435);color(15,0);printf(" %c",31);color(14,0);printf("%c",448);
     }
-    if (case36l2==7.6){
-        printf("     %c",435);color(15,0);printf(" %c",15);color(14,0);printf("%c",448);
+    if (case36l2==7.5 && (posJ1==36||posJ2==36||posJ3==36||posJ4==36)){
+        printf("     %c",435);color(15,0);printf("%c%c",f,31);color(14,0);printf("%c",448);
     }
-    if (case36l2==8){
+    if (case36l2==7.6 && posJ1!=36 && posJ2!=36 && posJ3!=36 && posJ4!=36){
+        printf("     %c",435);color(15,0);printf(" %c",459);color(14,0);printf("%c",448);
+    }
+    if (case36l2==7.6 && (posJ1==36||posJ2==36||posJ3==36||posJ4==36)){
+        printf("     %c",435);color(15,0);printf("%c%c",f,459);color(14,0);printf("%c",448);
+    }
+    if (case36l2==8 && posJ1!=36 && posJ2!=36 && posJ3!=36 && posJ4!=36){
         printf("%c%c%c%c%c%c  %c",452,452,452,452,452,473,435);
     }
-    if (case36l2==8.1){
+    if (case36l2==8 && (posJ1==36||posJ2==36||posJ3==36||posJ4==36)){
+        printf("%c%c%c%c%c%c",452,452,452,452,452,473);color(15,0);printf("%c ",f);color(14,0);printf("%c",435);
+    }
+    if (case36l2==8.1 && posJ1!=36 && posJ2!=36 && posJ3!=36 && posJ4!=36){
         printf("%c%c%c%c%c%c",452,452,452,452,452,473);color(15,0);printf("%c ",189);color(14,0);printf("%c",435);
     }
-    if (case36l2==8.2){
+    if (case36l2==8.1 && (posJ1==36||posJ2==36||posJ3==36||posJ4==36)){
+        printf("%c%c%c%c%c%c",452,452,452,452,452,473);color(15,0);printf("%c%c",189,f);color(14,0);printf("%c",435);
+    }
+    if (case36l2==8.2 && posJ1!=36 && posJ2!=36 && posJ3!=36 && posJ4!=36){
         printf("%c%c%c%c%c%c",452,452,452,452,452,473);color(15,0);printf("%c ",157);color(14,0);printf("%c",435);
     }
-    if (case36l2==8.3){
+    if (case36l2==8.2 && (posJ1==36||posJ2==36||posJ3==36||posJ4==36)){
+        printf("%c%c%c%c%c%c",452,452,452,452,452,473);color(15,0);printf("%c%c",157,f);color(14,0);printf("%c",435);
+    }
+    if (case36l2==8.3 && posJ1!=36 && posJ2!=36 && posJ3!=36 && posJ4!=36){
         printf("%c%c%c%c%c%c",452,452,452,452,452,473);color(15,0);printf("%c ",143);color(14,0);printf("%c",435);
     }
-    if (case36l2==8.4){
+    if (case36l2==8.3 && (posJ1==36||posJ2==36||posJ3==36||posJ4==36)){
+        printf("%c%c%c%c%c%c",452,452,452,452,452,473);color(15,0);printf("%c%c",143,f);color(14,0);printf("%c",435);
+    }
+    if (case36l2==8.4 && posJ1!=36 && posJ2!=36 && posJ3!=36 && posJ4!=36){
         printf("%c%c%c%c%c%c",452,452,452,452,452,473);color(15,0);printf("%c ",37);color(14,0);printf("%c",435);
     }
-    if (case36l2==8.5){
+    if (case36l2==8.4 && (posJ1==36||posJ2==36||posJ3==36||posJ4==36)){
+        printf("%c%c%c%c%c%c",452,452,452,452,452,473);color(15,0);printf("%c%c",37,f);color(14,0);printf("%c",435);
+    }
+    if (case36l2==8.5 && posJ1!=36 && posJ2!=36 && posJ3!=36 && posJ4!=36){
         printf("%c%c%c%c%c%c",452,452,452,452,452,473);color(15,0);printf("%c ",31);color(14,0);printf("%c",435);
     }
-    if (case36l2==8.6){
-        printf("%c%c%c%c%c%c",452,452,452,452,452,473);color(15,0);printf("%c ",15);color(14,0);printf("%c",435);
+    if (case36l2==8.5 && (posJ1==36||posJ2==36||posJ3==36||posJ4==36)){
+        printf("%c%c%c%c%c%c",452,452,452,452,452,473);color(15,0);printf("%c%c",31,f);color(14,0);printf("%c",435);
+    }
+    if (case36l2==8.6 && posJ1!=36 && posJ2!=36 && posJ3!=36 && posJ4!=36){
+        printf("%c%c%c%c%c%c",452,452,452,452,452,473);color(15,0);printf("%c ",459);color(14,0);printf("%c",435);
+    }
+    if (case36l2==8.6 && (posJ1==36||posJ2==36||posJ3==36||posJ4==36)){
+        printf("%c%c%c%c%c%c",452,452,452,452,452,473);color(15,0);printf("%c%c",459,f);color(14,0);printf("%c",435);
     }
     if (case36l2>=9 && case36l2<10){
         printf("     %c%c%c%c",474,452,452,452);
@@ -6441,31 +10697,56 @@ int test(double case01,double case03,double case05,double case10,double case11,d
         printf("%c%c%c%c%c%c%c%c%c",452,452,452,452,452,452,452,452,447);
     }
     a();printf("                                 ");
+    f=testposition(posJ1,posJ2,posJ3,posJ4,30,p1,p2,p3,p4);
     if (case30l3==0){
         printf("        ");
     }
-    if (case30l3==1.1){
+    if (case30l3==1.1 && posJ1!=30 && posJ2!=30 && posJ3!=30 && posJ4!=30){
         printf("%c",447);color(15,0);printf(" %c",292);color(14,0);
         printf("%c%c%c%c%c",474,452,452,452,452);
     }
-    if (case30l3==1.2){
+    if (case30l3==1.1 && (posJ1==30||posJ2==30||posJ3==30||posJ4==30)){
+        printf("%c",447);color(15,0);printf("%c%c",f,292);color(14,0);
+        printf("%c%c%c%c%c",474,452,452,452,452);
+    }
+    if (case30l3==1.2 && posJ1!=30 && posJ2!=30 && posJ3!=30 && posJ4!=30){
         printf("%c",447);color(15,0);printf(" %c",291);color(14,0);
         printf("%c%c%c%c%c",474,452,452,452,452);
     }
-    if (case30l3==1.3){
+    if (case30l3==1.2 && (posJ1==30||posJ2==30||posJ3==30||posJ4==30)){
+        printf("%c",447);color(15,0);printf("%c%c",f,291);color(14,0);
+        printf("%c%c%c%c%c",474,452,452,452,452);
+    }
+    if (case30l3==1.3 && posJ1!=30 && posJ2!=30 && posJ3!=30 && posJ4!=30){
         printf("%c",447);color(15,0);printf(" %c",285);color(14,0);
         printf("%c%c%c%c%c",474,452,452,452,452);
     }
-    if (case30l3==1.4){
-        printf("%c",447);color(15,0);printf(" %c",279);color(14,0);
+    if (case30l3==1.3 && (posJ1==30||posJ2==30||posJ3==30||posJ4==30)){
+        printf("%c",447);color(15,0);printf("%c%c",f,285);color(14,0);
         printf("%c%c%c%c%c",474,452,452,452,452);
     }
-    if (case30l3==1.5){
+    if (case30l3==1.4 && posJ1!=30 && posJ2!=30 && posJ3!=30 && posJ4!=30){
+        printf("%c",447);color(15,0);printf(" %c",428);color(14,0);
+        printf("%c%c%c%c%c",474,452,452,452,452);
+    }
+    if (case30l3==1.4 && (posJ1==30||posJ2==30||posJ3==30||posJ4==30)){
+        printf("%c",447);color(15,0);printf("%c%c",f,428);color(14,0);
+        printf("%c%c%c%c%c",474,452,452,452,452);
+    }
+    if (case30l3==1.5 && posJ1!=30 && posJ2!=30 && posJ3!=30 && posJ4!=30){
         printf("%c",447);color(15,0);printf(" %c",277);color(14,0);
         printf("%c%c%c%c%c",474,452,452,452,452);
     }
-    if (case30l3==1.6){
+    if (case30l3==1.5 && (posJ1==30||posJ2==30||posJ3==30||posJ4==30)){
+        printf("%c",447);color(15,0);printf("%c%c",f,277);color(14,0);
+        printf("%c%c%c%c%c",474,452,452,452,452);
+    }
+    if (case30l3==1.6 && posJ1!=30 && posJ2!=30 && posJ3!=30 && posJ4!=30){
         printf("%c",447);color(15,0);printf(" %c",225);color(14,0);
+        printf("%c%c%c%c%c",474,452,452,452,452);
+    }
+    if (case30l3==1.6 && (posJ1==30||posJ2==30||posJ3==30||posJ4==30)){
+        printf("%c",447);color(15,0);printf("%c%c",f,225);color(14,0);
         printf("%c%c%c%c%c",474,452,452,452,452);
     }
     if (case30l3>2 && case30l3<3){
@@ -6477,11 +10758,17 @@ int test(double case01,double case03,double case05,double case10,double case11,d
     if (case30l3>4 && case30l3<5){
         printf("%c  %c    ",447,435);
     }
-    if (case30l3==5){
+    if (case30l3==5 && posJ1!=30 && posJ2!=30 && posJ3!=30 && posJ4!=30){
         printf("%c  %c    ",435,435);
     }
-    if (case30l3==6){
+    if (case30l3==5 && (posJ1==30||posJ2==30||posJ3==30||posJ4==30)){
+        printf("%c",435);color(15,0);printf(" %c",f);color(14,0);printf("%c    ",435);
+    }
+    if (case30l3==6 && posJ1!=30 && posJ2!=30 && posJ3!=30 && posJ4!=30){
         printf("%c%c%c%c%c%c%c%c",452,452,452,452,452,452,452,452);
+    }
+    if (case30l3==6 && (posJ1==30||posJ2==30||posJ3==30||posJ4==30)){
+        printf("%c%c%c",452,452,452);color(15,0);printf("%c",f);color(14,0);printf("%c%c%c%c",452,452,452,452);
     }
     if (case30l3>=7 && case30l3<8){
         printf("%c%c%c%c%c%c%c%c",448,452,452,452,452,452,452,452);
@@ -6489,79 +10776,152 @@ int test(double case01,double case03,double case05,double case10,double case11,d
     if (case30l3>=8 && case30l3<9){
         printf("%c%c%c%c    ",452,452,452,473);
     }
-    if (case30l3==9){
+    if (case30l3==9 && posJ1!=30 && posJ2!=30 && posJ3!=30 && posJ4!=30){
         printf("%c  %c%c%c%c%c",435,474,452,452,452,452);
     }
-    if (case30l3==9.1){
+    if (case30l3==9 && (posJ1==30||posJ2==30||posJ3==30||posJ4==30)){
+        printf("%c",435);color(15,0);printf(" %c",f);color(14,0);printf("%c%c%c%c%c",474,452,452,452,452);
+    }
+    if (case30l3==9.1 && posJ1!=30 && posJ2!=30 && posJ3!=30 && posJ4!=30){
         printf("%c",435);color(15,0);printf(" %c",189);color(14,0);printf("%c%c%c%c%c",474,452,452,452,452);
     }
-    if (case30l3==9.2){
+    if (case30l3==9.1 && (posJ1==30||posJ2==30||posJ3==30||posJ4==30)){
+        printf("%c",435);color(15,0);printf("%c%c",f,189);color(14,0);printf("%c%c%c%c%c",474,452,452,452,452);
+    }
+    if (case30l3==9.2 && posJ1!=30 && posJ2!=30 && posJ3!=30 && posJ4!=30){
         printf("%c",435);color(15,0);printf(" %c",157);color(14,0);printf("%c%c%c%c%c",474,452,452,452,452);
     }
-    if (case30l3==9.3){
+    if (case30l3==9.2 && (posJ1==30||posJ2==30||posJ3==30||posJ4==30)){
+        printf("%c",435);color(15,0);printf("%c%c",f,157);color(14,0);printf("%c%c%c%c%c",474,452,452,452,452);
+    }
+    if (case30l3==9.3 && posJ1!=30 && posJ2!=30 && posJ3!=30 && posJ4!=30){
         printf("%c",435);color(15,0);printf(" %c",143);color(14,0);printf("%c%c%c%c%c",474,452,452,452,452);
     }
-    if (case30l3==9.4){
+    if (case30l3==9.3 && (posJ1==30||posJ2==30||posJ3==30||posJ4==30)){
+        printf("%c",435);color(15,0);printf("%c%c",f,143);color(14,0);printf("%c%c%c%c%c",474,452,452,452,452);
+    }
+    if (case30l3==9.4 && posJ1!=30 && posJ2!=30 && posJ3!=30 && posJ4!=30){
         printf("%c",435);color(15,0);printf(" %c",37);color(14,0);printf("%c%c%c%c%c",474,452,452,452,452);
     }
-    if (case30l3==9.5){
+    if (case30l3==9.4 && (posJ1==30||posJ2==30||posJ3==30||posJ4==30)){
+        printf("%c",435);color(15,0);printf("%c%c",f,37);color(14,0);printf("%c%c%c%c%c",474,452,452,452,452);
+    }
+    if (case30l3==9.5 && posJ1!=30 && posJ2!=30 && posJ3!=30 && posJ4!=30){
         printf("%c",435);color(15,0);printf(" %c",31);color(14,0);printf("%c%c%c%c%c",474,452,452,452,452);
     }
-    if (case30l3==9.6){
-        printf("%c",435);color(15,0);printf(" %c",15);color(14,0);printf("%c%c%c%c%c",474,452,452,452,452);
+    if (case30l3==9.5 && (posJ1==30||posJ2==30||posJ3==30||posJ4==30)){
+        printf("%c",435);color(15,0);printf("%c%c",f,31);color(14,0);printf("%c%c%c%c%c",474,452,452,452,452);
     }
-    if (case30l3==10){
+    if (case30l3==9.6 && posJ1!=30 && posJ2!=30 && posJ3!=30 && posJ4!=30){
+        printf("%c",435);color(15,0);printf(" %c",459);color(14,0);printf("%c%c%c%c%c",474,452,452,452,452);
+    }
+    if (case30l3==9.6 && (posJ1==30||posJ2==30||posJ3==30||posJ4==30)){
+        printf("%c",435);color(15,0);printf("%c%c",f,459);color(14,0);printf("%c%c%c%c%c",474,452,452,452,452);
+    }
+    if (case30l3==10 && posJ1!=30 && posJ2!=30 && posJ3!=30 && posJ4!=30){
         printf("%c  %c    ",447,435);
     }
-    if (case30l3==10.1){
+    if (case30l3==10 && (posJ1==30||posJ2==30||posJ3==30||posJ4==30)){
+        printf("%c",447);color(15,0);printf("%c ",f);color(14,0);printf("%c    ",435);
+    }
+    if (case30l3==10.1 && posJ1!=30 && posJ2!=30 && posJ3!=30 && posJ4!=30){
         printf("%c",447);color(15,0);printf("%c ",189);color(14,0);printf("%c    ",435);
     }
-    if (case30l3==10.2){
+    if (case30l3==10.1 && (posJ1==30||posJ2==30||posJ3==30||posJ4==30)){
+        printf("%c",447);color(15,0);printf("%c%c",189,f);color(14,0);printf("%c    ",435);
+    }
+    if (case30l3==10.2 && posJ1!=30 && posJ2!=30 && posJ3!=30 && posJ4!=30){
         printf("%c",447);color(15,0);printf("%c ",157);color(14,0);printf("%c    ",435);
     }
-    if (case30l3==10.3){
+    if (case30l3==10.2 && (posJ1==30||posJ2==30||posJ3==30||posJ4==30)){
+        printf("%c",447);color(15,0);printf("%c%c",157,f);color(14,0);printf("%c    ",435);
+    }
+    if (case30l3==10.3 && posJ1!=30 && posJ2!=30 && posJ3!=30 && posJ4!=30){
         printf("%c",447);color(15,0);printf("%c ",143);color(14,0);printf("%c    ",435);
     }
-    if (case30l3==10.4){
+    if (case30l3==10.3 && (posJ1==30||posJ2==30||posJ3==30||posJ4==30)){
+        printf("%c",447);color(15,0);printf("%c%c",143,f);color(14,0);printf("%c    ",435);
+    }
+    if (case30l3==10.4 && posJ1!=30 && posJ2!=30 && posJ3!=30 && posJ4!=30){
         printf("%c",447);color(15,0);printf("%c ",37);color(14,0);printf("%c    ",435);
     }
-    if (case30l3==10.5){
+    if (case30l3==10.4 && (posJ1==30||posJ2==30||posJ3==30||posJ4==30)){
+        printf("%c",447);color(15,0);printf("%c%c",37,f);color(14,0);printf("%c    ",435);
+    }
+    if (case30l3==10.5 && posJ1!=30 && posJ2!=30 && posJ3!=30 && posJ4!=30){
         printf("%c",447);color(15,0);printf("%c ",31);color(14,0);printf("%c    ",435);
     }
-    if (case30l3==10.6){
-        printf("%c",447);color(15,0);printf("%c ",15);color(14,0);printf("%c    ",435);
+    if (case30l3==10.5 && (posJ1==30||posJ2==30||posJ3==30||posJ4==30)){
+        printf("%c",447);color(15,0);printf("%c%c",31,f);color(14,0);printf("%c    ",435);
     }
+    if (case30l3==10.6 && posJ1!=30 && posJ2!=30 && posJ3!=30 && posJ4!=30){
+        printf("%c",447);color(15,0);printf("%c ",459);color(14,0);printf("%c    ",435);
+    }
+    if (case30l3==10.6 && (posJ1==30||posJ2==30||posJ3==30||posJ4==30)){
+        printf("%c",447);color(15,0);printf("%c%c",459,f);color(14,0);printf("%c    ",435);
+    }
+    f=testposition(posJ1,posJ2,posJ3,posJ4,31,p1,p2,p3,p4);
     if (case31l3==0){
         printf("           ");
     }
-    if (case31l3==1.1){
+    if (case31l3==1.1 && posJ1!=31 && posJ2!=31 && posJ3!=31 && posJ4!=31){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf(" %c",292);color(14,0);
         printf("%c%c%c%c",474,452,452,452);
     }
-    if (case31l3==1.2){
+    if (case31l3==1.1 && (posJ1==31||posJ2==31||posJ3==31||posJ4==31)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c%c",f,292);color(14,0);
+        printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case31l3==1.2 && posJ1!=31 && posJ2!=31 && posJ3!=31 && posJ4!=31){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf(" %c",291);color(14,0);
         printf("%c%c%c%c",474,452,452,452);
     }
-    if (case31l3==1.3){
+    if (case31l3==1.2 && (posJ1==31||posJ2==31||posJ3==31||posJ4==31)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c%c",f,291);color(14,0);
+        printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case31l3==1.3 && posJ1!=31 && posJ2!=31 && posJ3!=31 && posJ4!=31){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf(" %c",285);color(14,0);
         printf("%c%c%c%c",474,452,452,452);
     }
-    if (case31l3==1.4){
+    if (case31l3==1.3 && (posJ1==31||posJ2==31||posJ3==31||posJ4==31)){
         color(14,0);
-        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf(" %c",279);color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c%c",f,285);color(14,0);
         printf("%c%c%c%c",474,452,452,452);
     }
-    if (case31l3==1.5){
+    if (case31l3==1.4 && posJ1!=31 && posJ2!=31 && posJ3!=31 && posJ4!=31){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf(" %c",428);color(14,0);
+        printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case31l3==1.4 && (posJ1==31||posJ2==31||posJ3==31||posJ4==31)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c%c",f,428);color(14,0);
+        printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case31l3==1.5 && posJ1!=31 && posJ2!=31 && posJ3!=31 && posJ4!=31){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf(" %c",277);color(14,0);
         printf("%c%c%c%c",474,452,452,452);
     }
-    if (case31l3==1.6){
+    if (case31l3==1.5 && (posJ1==31||posJ2==31||posJ3==31||posJ4==31)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c%c",f,277);color(14,0);
+        printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case31l3==1.6 && posJ1!=31 && posJ2!=31 && posJ3!=31 && posJ4!=31){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf(" %c",225);color(14,0);
+        printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case31l3==1.6 && (posJ1==31||posJ2==31||posJ3==31||posJ4==31)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c%c",f,225);color(14,0);
         printf("%c%c%c%c",474,452,452,452);
     }
     if (case31l3>2 && case31l3<3){
@@ -6576,13 +10936,21 @@ int test(double case01,double case03,double case05,double case10,double case11,d
         color(14,0);
         printf("%c%c%c%c%c  %c   ",452,452,452,452,447,435);
     }
-    if (case31l3==5){
+    if (case31l3==5 && posJ1!=31 && posJ2!=31 && posJ3!=31 && posJ4!=31){
         color(14,0);
         piece5bout2();
     }
-    if (case31l3==6){
+    if (case31l3==5 && (posJ1==31||posJ2==31||posJ3==31||posJ4==31)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c ",f);color(14,0);printf("%c   ",435);
+    }
+    if (case31l3==6 && posJ1!=31 && posJ2!=31 && posJ3!=31 && posJ4!=31){
         color(14,0);
         printf("%c%c%c%c%c%c%c%c%c%c%c",452,452,452,452,452,452,452,452,452,452,452);
+    }
+    if (case31l3==6 && (posJ1==31||posJ2==31||posJ3==31||posJ4==31)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,452);color(15,0);printf("%c",f);color(14,0);printf("%c%c%c%c%c",452,452,452,452,452);
     }
     if (case31l3>=7 && case31l3<8){
         color(14,0);
@@ -6592,93 +10960,180 @@ int test(double case01,double case03,double case05,double case10,double case11,d
         color(14,0);
         printf("%c%c%c%c%c%c%c%c   ",452,452,452,452,452,452,452,473);
     }
-    if (case31l3==9){
+    if (case31l3==9 && posJ1!=31 && posJ2!=31 && posJ3!=31 && posJ4!=31){
         color(14,0);
         printf("    %c  %c%c%c%c",435,474,452,452,452);
     }
-    if (case31l3==9.1){
+    if (case31l3==9 && (posJ1==31||posJ2==31||posJ3==31||posJ4==31)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",f);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case31l3==9.1 && posJ1!=31 && posJ2!=31 && posJ3!=31 && posJ4!=31){
         color(14,0);
         printf("    %c",435);color(15,0);printf(" %c",189);color(14,0);printf("%c%c%c%c",474,452,452,452);
     }
-    if (case31l3==9.2){
+    if (case31l3==9.1 && (posJ1==31||posJ2==31||posJ3==31||posJ4==31)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,189);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case31l3==9.2 && posJ1!=31 && posJ2!=31 && posJ3!=31 && posJ4!=31){
         color(14,0);
         printf("    %c",435);color(15,0);printf(" %c",157);color(14,0);printf("%c%c%c%c",474,452,452,452);
     }
-    if (case31l3==9.3){
+    if (case31l3==9.2 && (posJ1==31||posJ2==31||posJ3==31||posJ4==31)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,157);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case31l3==9.3 && posJ1!=31 && posJ2!=31 && posJ3!=31 && posJ4!=31){
         color(14,0);
         printf("    %c",435);color(15,0);printf(" %c",143);color(14,0);printf("%c%c%c%c",474,452,452,452);
     }
-    if (case31l3==9.4){
+    if (case31l3==9.3 && (posJ1==31||posJ2==31||posJ3==31||posJ4==31)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,143);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case31l3==9.4 && posJ1!=31 && posJ2!=31 && posJ3!=31 && posJ4!=31){
         color(14,0);
         printf("    %c",435);color(15,0);printf(" %c",37);color(14,0);printf("%c%c%c%c",474,452,452,452);
     }
-    if (case31l3==9.5){
+    if (case31l3==9.4 && (posJ1==31||posJ2==31||posJ3==31||posJ4==31)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,37);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case31l3==9.5 && posJ1!=31 && posJ2!=31 && posJ3!=31 && posJ4!=31){
         color(14,0);
         printf("    %c",435);color(15,0);printf(" %c",31);color(14,0);printf("%c%c%c%c",474,452,452,452);
     }
-    if (case31l3==9.6){
+    if (case31l3==9.5 && (posJ1==31||posJ2==31||posJ3==31||posJ4==31)){
         color(14,0);
-        printf("    %c",435);color(15,0);printf(" %c",15);color(14,0);printf("%c%c%c%c",474,452,452,452);
+        printf("    %c",435);color(15,0);printf("%c%c",f,31);color(14,0);printf("%c%c%c%c",474,452,452,452);
     }
-    if (case31l3==10) {
+    if (case31l3==9.6 && posJ1!=31 && posJ2!=31 && posJ3!=31 && posJ4!=31){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",459);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case31l3==9.6 && (posJ1==31||posJ2==31||posJ3==31||posJ4==31)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,459);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case31l3==10 && (posJ1==31||posJ2==31||posJ3==31||posJ4==31)) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c ",f);color(14,0);printf("%c   ",435);
+    }
+    if (case31l3==10 && posJ1!=31 && posJ2!=31 && posJ3!=31 && posJ4!=31) {
         color(14, 0);
         printf("%c%c%c%c%c  %c   ",452, 452,452,452, 447,435);
     }
-    if (case31l3==10.1) {
+    if (case31l3==10.1 && posJ1!=31 && posJ2!=31 && posJ3!=31 && posJ4!=31) {
         color(14, 0);
         printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c ",189);color(14,0);printf("%c   ",435);
     }
-    if (case31l3==10.2) {
+    if (case31l3==10.1 && (posJ1==31||posJ2==31||posJ3==31||posJ4==31)) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c%c",189,f);color(14,0);printf("%c   ",435);
+    }
+    if (case31l3==10.2 && posJ1!=31 && posJ2!=31 && posJ3!=31 && posJ4!=31) {
         color(14, 0);
         printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c ",157);color(14,0);printf("%c   ",435);
     }
-    if (case31l3==10.3) {
+    if (case31l3==10.2 && (posJ1==31||posJ2==31||posJ3==31||posJ4==31)) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c%c",157,f);color(14,0);printf("%c   ",435);
+    }
+    if (case31l3==10.3 && posJ1!=31 && posJ2!=31 && posJ3!=31 && posJ4!=31) {
         color(14, 0);
         printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c ",143);color(14,0);printf("%c   ",435);
     }
-    if (case31l3==10.4) {
+    if (case31l3==10.3 && (posJ1==31||posJ2==31||posJ3==31||posJ4==31)) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c%c",143,f);color(14,0);printf("%c   ",435);
+    }
+    if (case31l3==10.4 && posJ1!=31 && posJ2!=31 && posJ3!=31 && posJ4!=31) {
         color(14, 0);
         printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c ",37);color(14,0);printf("%c   ",435);
     }
-    if (case31l3==10.5) {
+    if (case31l3==10.4 && (posJ1==31||posJ2==31||posJ3==31||posJ4==31)) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c%c",37,f);color(14,0);printf("%c   ",435);
+    }
+    if (case31l3==10.5 && posJ1!=31 && posJ2!=31 && posJ3!=31 && posJ4!=31) {
         color(14, 0);
         printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c ",31);color(14,0);printf("%c   ",435);
     }
-    if (case31l3==10.6) {
+    if (case31l3==10.5 && (posJ1==31||posJ2==31||posJ3==31||posJ4==31)) {
         color(14, 0);
-        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c ",15);color(14,0);printf("%c   ",435);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c%c",31,f);color(14,0);printf("%c   ",435);
     }
+    if (case31l3==10.6 && posJ1!=31 && posJ2!=31 && posJ3!=31 && posJ4!=31) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c ",459);color(14,0);printf("%c   ",435);
+    }
+    if (case31l3==10.6 && (posJ1==31||posJ2==31||posJ3==31||posJ4==31)) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c%c",459,f);color(14,0);printf("%c   ",435);
+    }
+    f=testposition(posJ1,posJ2,posJ3,posJ4,32,p1,p2,p3,p4);
     if (case32l3==0){
         printf("            ");
     }
-    if (case32l3==1.1){
+    if (case32l3==1.1 && posJ1!=32 && posJ2!=32 && posJ3!=32 && posJ4!=32){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf(" %c",292);color(14,0);
         printf("%c%c%c%c%c",474,452,452,452,452);
     }
-    if (case32l3==1.2){
+    if (case32l3==1.1 && (posJ1==32||posJ2==32||posJ3==32||posJ4==32)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c%c",f,292);color(14,0);
+        printf("%c%c%c%c%c",474,452,452,452,452);
+    }
+    if (case32l3==1.2 && posJ1!=32 && posJ2!=32 && posJ3!=32 && posJ4!=32){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf(" %c",291);color(14,0);
         printf("%c%c%c%c%c",474,452,452,452,452);
     }
-    if (case32l3==1.3){
+    if (case32l3==1.2 && (posJ1==32||posJ2==32||posJ3==32||posJ4==32)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c%c",f,291);color(14,0);
+        printf("%c%c%c%c%c",474,452,452,452,452);
+    }
+    if (case32l3==1.3 && posJ1!=32 && posJ2!=32 && posJ3!=32 && posJ4!=32){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf(" %c",285);color(14,0);
         printf("%c%c%c%c%c",474,452,452,452,452);
     }
-    if (case32l3==1.4){
+    if (case32l3==1.3 && (posJ1==32||posJ2==32||posJ3==32||posJ4==32)){
         color(14,0);
-        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf(" %c",279);color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c%c",f,285);color(14,0);
         printf("%c%c%c%c%c",474,452,452,452,452);
     }
-    if (case32l3==1.5){
+    if (case32l3==1.4 && posJ1!=32 && posJ2!=32 && posJ3!=32 && posJ4!=32){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf(" %c",428);color(14,0);
+        printf("%c%c%c%c%c",474,452,452,452,452);
+    }
+    if (case32l3==1.4 && (posJ1==32||posJ2==32||posJ3==32||posJ4==32)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c%c",f,428);color(14,0);
+        printf("%c%c%c%c%c",474,452,452,452,452);
+    }
+    if (case32l3==1.5 && posJ1!=32 && posJ2!=32 && posJ3!=32 && posJ4!=32){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf(" %c",277);color(14,0);
         printf("%c%c%c%c%c",474,452,452,452,452);
     }
-    if (case32l3==1.6){
+    if (case32l3==1.5 && (posJ1==32||posJ2==32||posJ3==32||posJ4==32)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c%c",f,277);color(14,0);
+        printf("%c%c%c%c%c",474,452,452,452,452);
+    }
+    if (case32l3==1.6 && posJ1!=32 && posJ2!=32 && posJ3!=32 && posJ4!=32){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf(" %c",225);color(14,0);
+        printf("%c%c%c%c%c",474,452,452,452,452);
+    }
+    if (case32l3==1.6 && (posJ1==32||posJ2==32||posJ3==32||posJ4==32)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c%c",f,225);color(14,0);
         printf("%c%c%c%c%c",474,452,452,452,452);
     }
     if (case32l3>2 && case32l3<3){
@@ -6693,13 +11148,21 @@ int test(double case01,double case03,double case05,double case10,double case11,d
         color(14,0);
         printf("%c%c%c%c%c  %c    ",452,452,452,452,447,435);
     }
-    if (case32l3==5){
+    if (case32l3==5 && posJ1!=32 && posJ2!=32 && posJ3!=32 && posJ4!=32){
         color(14,0);
         printf("    %c  %c    ",435,435);
     }
-    if (case32l3==6){
+    if (case32l3==5 && (posJ1==32||posJ2==32||posJ3==32||posJ4==32)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c ",f);color(14,0);printf("%c    ",435);
+    }
+    if (case32l3==6 && posJ1!=32 && posJ2!=32 && posJ3!=32 && posJ4!=32){
         color(14,0);
         printf("%c%c%c%c%c%c%c%c%c%c%c%c",452,452,452,452,452,452,452,452,452,452,452,452);
+    }
+    if (case32l3==6 && (posJ1==32||posJ2==32||posJ3==32||posJ4==32)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,452);color(15,0);printf("%c",f);color(14,0);printf("%c%c%c%c%c%c",452,452,452,452,452,452);
     }
     if (case32l3>=7 && case32l3<8){
         color(14,0);
@@ -6709,96 +11172,183 @@ int test(double case01,double case03,double case05,double case10,double case11,d
         color(14,0);
         printf("%c%c%c%c%c%c%c%c    ",452,452,452,452,452,452,452,473);
     }
-    if (case32l3==9){
+    if (case32l3==9 && posJ1!=32 && posJ2!=32 && posJ3!=32 && posJ4!=32){
         color(14,0);
         printf("    %c  %c%c%c%c%c",435,474,452,452,452,452);
     }
-    if (case32l3==9.1){
+    if (case32l3==9 && (posJ1==32||posJ2==32||posJ3==32||posJ4==32)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",f);color(14,0);printf("%c%c%c%c%c",474,452,452,452,452);
+    }
+    if (case32l3==9.1 && posJ1!=32 && posJ2!=32 && posJ3!=32 && posJ4!=32){
         color(14,0);
         printf("    %c",435);color(15,0);printf(" %c",189);color(14,0);printf("%c%c%c%c%c",474,452,452,452,452);
     }
-    if (case32l3==9.2){
+    if (case32l3==9.1 && (posJ1==32||posJ2==32||posJ3==32||posJ4==32)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,189);color(14,0);printf("%c%c%c%c%c",474,452,452,452,452);
+    }
+    if (case32l3==9.2 && posJ1!=32 && posJ2!=32 && posJ3!=32 && posJ4!=32){
         color(14,0);
         printf("    %c",435);color(15,0);printf(" %c",157);color(14,0);printf("%c%c%c%c%c",474,452,452,452,452);
     }
-    if (case32l3==9.3){
+    if (case32l3==9.2 && (posJ1==32||posJ2==32||posJ3==32||posJ4==32)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,157);color(14,0);printf("%c%c%c%c%c",474,452,452,452,452);
+    }
+    if (case32l3==9.3 && posJ1!=32 && posJ2!=32 && posJ3!=32 && posJ4!=32){
         color(14,0);
         printf("    %c",435);color(15,0);printf(" %c",143);color(14,0);printf("%c%c%c%c%c",474,452,452,452,452);
     }
-    if (case32l3==9.4){
+    if (case32l3==9.3 && (posJ1==32||posJ2==32||posJ3==32||posJ4==32)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,143);color(14,0);printf("%c%c%c%c%c",474,452,452,452,452);
+    }
+    if (case32l3==9.4 && posJ1!=32 && posJ2!=32 && posJ3!=32 && posJ4!=32){
         color(14,0);
         printf("    %c",435);color(15,0);printf(" %c",37);color(14,0);printf("%c%c%c%c%c",474,452,452,452,452);
     }
-    if (case32l3==9.5){
+    if (case32l3==9.4 && (posJ1==32||posJ2==32||posJ3==32||posJ4==32)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,37);color(14,0);printf("%c%c%c%c%c",474,452,452,452,452);
+    }
+    if (case32l3==9.5 && posJ1!=32 && posJ2!=32 && posJ3!=32 && posJ4!=32){
         color(14,0);
         printf("    %c",435);color(15,0);printf(" %c",31);color(14,0);printf("%c%c%c%c%c",474,452,452,452,452);
     }
-    if (case32l3==9.6){
+    if (case32l3==9.5 && (posJ1==32||posJ2==32||posJ3==32||posJ4==32)){
         color(14,0);
-        printf("    %c",435);color(15,0);printf(" %c",15);color(14,0);printf("%c%c%c%c%c",474,452,452,452,452);
+        printf("    %c",435);color(15,0);printf("%c%c",f,31);color(14,0);printf("%c%c%c%c%c",474,452,452,452,452);
     }
-    if (case32l3==10) {
+    if (case32l3==9.6 && posJ1!=32 && posJ2!=32 && posJ3!=32 && posJ4!=32){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",459);color(14,0);printf("%c%c%c%c%c",474,452,452,452,452);
+    }
+    if (case32l3==9.6 && (posJ1==32||posJ2==32||posJ3==32||posJ4==32)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,459);color(14,0);printf("%c%c%c%c%c",474,452,452,452,452);
+    }
+    if (case32l3==10 && (posJ1==32||posJ2==32||posJ3==32||posJ4==32)) {
         color(14, 0);
-        printf("%c%c%c%c%c  %c    ", 452, 452,452,452, 447,435);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c ",f);color(14,0);printf("%c    ",435);
     }
-    if (case32l3==10.1) {
+    if (case32l3==10 && posJ1!=32 && posJ2!=32 && posJ3!=32 && posJ4!=32) {
         color(14, 0);
-        printf("%c%c%c%c%c", 452, 452,452,452, 447);color(15,0);printf("%c ",189);color(14,0);printf("%c    ",435);
+        printf("%c%c%c%c%c  %c    ",452, 452,452,452, 447,435);
     }
-    if (case32l3==10.2) {
+    if (case32l3==10.1 && posJ1!=32 && posJ2!=32 && posJ3!=32 && posJ4!=32) {
         color(14, 0);
-        printf("%c%c%c%c%c", 452, 452,452,452, 447);color(15,0);printf("%c ",157);color(14,0);printf("%c    ",435);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c ",189);color(14,0);printf("%c    ",435);
     }
-    if (case32l3==10.3) {
+    if (case32l3==10.1 && (posJ1==32||posJ2==32||posJ3==32||posJ4==32)) {
         color(14, 0);
-        printf("%c%c%c%c%c", 452, 452,452,452, 447);color(15,0);printf("%c ",143);color(14,0);printf("%c    ",435);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c%c",189,f);color(14,0);printf("%c    ",435);
     }
-    if (case32l3==10.4) {
+    if (case32l3==10.2 && posJ1!=32 && posJ2!=32 && posJ3!=32 && posJ4!=32) {
         color(14, 0);
-        printf("%c%c%c%c%c", 452, 452,452,452, 447);color(15,0);printf("%c ",37);color(14,0);printf("%c    ",435);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c ",157);color(14,0);printf("%c    ",435);
     }
-    if (case32l3==10.5) {
+    if (case32l3==10.2 && (posJ1==32||posJ2==32||posJ3==32||posJ4==32)) {
         color(14, 0);
-        printf("%c%c%c%c%c", 452, 452,452,452, 447);color(15,0);printf("%c ",31);color(14,0);printf("%c    ",435);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c%c",157,f);color(14,0);printf("%c    ",435);
     }
-    if (case32l3==10.6) {
+    if (case32l3==10.3 && posJ1!=32 && posJ2!=32 && posJ3!=32 && posJ4!=32) {
         color(14, 0);
-        printf("%c%c%c%c%c", 452, 452,452,452, 447);color(15,0);printf("%c ",15);color(14,0);printf("%c    ",435);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c ",143);color(14,0);printf("%c    ",435);
     }
+    if (case32l3==10.3 && (posJ1==32||posJ2==32||posJ3==32||posJ4==32)) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c%c",143,f);color(14,0);printf("%c    ",435);
+    }
+    if (case32l3==10.4 && posJ1!=32 && posJ2!=32 && posJ3!=32 && posJ4!=32) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c ",37);color(14,0);printf("%c    ",435);
+    }
+    if (case32l3==10.4 && (posJ1==32||posJ2==32||posJ3==32||posJ4==32)) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c%c",37,f);color(14,0);printf("%c    ",435);
+    }
+    if (case32l3==10.5 && posJ1!=32 && posJ2!=32 && posJ3!=32 && posJ4!=32) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c ",31);color(14,0);printf("%c    ",435);
+    }
+    if (case32l3==10.5 && (posJ1==32||posJ2==32||posJ3==32||posJ4==32)) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c%c",31,f);color(14,0);printf("%c    ",435);
+    }
+    if (case32l3==10.6 && posJ1!=32 && posJ2!=32 && posJ3!=32 && posJ4!=32) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c ",459);color(14,0);printf("%c    ",435);
+    }
+    if (case32l3==10.6 && (posJ1==32||posJ2==32||posJ3==32||posJ4==32)) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c%c",459,f);color(14,0);printf("%c    ",435);
+    }
+    f=testposition(posJ1,posJ2,posJ3,posJ4,33,p1,p2,p3,p4);
     if (case33l3==0){
         printf("           ");
     }
-    if (case33l3==1.1){
+    if (case33l3==1.1 && posJ1!=33 && posJ2!=33 && posJ3!=33 && posJ4!=33){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf(" %c",292);color(14,0);
         printf("%c%c%c%c",474,452,452,452);
     }
-    if (case33l3==1.2){
+    if (case33l3==1.1 && (posJ1==33||posJ2==33||posJ3==33||posJ4==33)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c%c",f,292);color(14,0);
+        printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case33l3==1.2 && posJ1!=33 && posJ2!=33 && posJ3!=33 && posJ4!=33){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf(" %c",291);color(14,0);
         printf("%c%c%c%c",474,452,452,452);
     }
-    if (case33l3==1.3){
+    if (case33l3==1.2 && (posJ1==33||posJ2==33||posJ3==33||posJ4==33)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c%c",f,291);color(14,0);
+        printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case33l3==1.3 && posJ1!=33 && posJ2!=33 && posJ3!=33 && posJ4!=33){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf(" %c",285);color(14,0);
         printf("%c%c%c%c",474,452,452,452);
     }
-    if (case33l3==1.4){
+    if (case33l3==1.3 && (posJ1==33||posJ2==33||posJ3==33||posJ4==33)){
         color(14,0);
-        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf(" %c",279);color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c%c",f,285);color(14,0);
         printf("%c%c%c%c",474,452,452,452);
     }
-    if (case33l3==1.5){
+    if (case33l3==1.4 && posJ1!=33 && posJ2!=33 && posJ3!=33 && posJ4!=33){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf(" %c",428);color(14,0);
+        printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case33l3==1.4 && (posJ1==33||posJ2==33||posJ3==33||posJ4==33)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c%c",f,428);color(14,0);
+        printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case33l3==1.5 && posJ1!=33 && posJ2!=33 && posJ3!=33 && posJ4!=33){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf(" %c",277);color(14,0);
         printf("%c%c%c%c",474,452,452,452);
     }
-    if (case33l3==1.6){
+    if (case33l3==1.5 && (posJ1==33||posJ2==33||posJ3==33||posJ4==33)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c%c",f,277);color(14,0);
+        printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case33l3==1.6 && posJ1!=33 && posJ2!=33 && posJ3!=33 && posJ4!=33){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf(" %c",225);color(14,0);
         printf("%c%c%c%c",474,452,452,452);
     }
-    if (case33l3>2 && case33l2<3){
+    if (case33l3==1.6 && (posJ1==33||posJ2==33||posJ3==33||posJ4==33)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c%c",f,225);color(14,0);
+        printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case33l3>2 && case33l3<3){
         color(14,0);
         printf("%c%c%c%c%c%c%c%c%c%c%c",452,452,452,452,452,452,452,452,452,452,452);
     }
@@ -6810,13 +11360,21 @@ int test(double case01,double case03,double case05,double case10,double case11,d
         color(14,0);
         printf("%c%c%c%c%c  %c   ",452,452,452,452,447,435);
     }
-    if (case33l3==5){
+    if (case33l3==5 && posJ1!=33 && posJ2!=33 && posJ3!=33 && posJ4!=33){
         color(14,0);
         piece5bout2();
     }
-    if (case33l3==6){
+    if (case33l3==5 && (posJ1==33||posJ2==33||posJ3==33||posJ4==33)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c ",f);color(14,0);printf("%c   ",435);
+    }
+    if (case33l3==6 && posJ1!=33 && posJ2!=33 && posJ3!=33 && posJ4!=33){
         color(14,0);
         printf("%c%c%c%c%c%c%c%c%c%c%c",452,452,452,452,452,452,452,452,452,452,452);
+    }
+    if (case33l3==6 && (posJ1==33||posJ2==33||posJ3==33||posJ4==33)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,452);color(15,0);printf("%c",f);color(14,0);printf("%c%c%c%c%c",452,452,452,452,452);
     }
     if (case33l3>=7 && case33l3<8){
         color(14,0);
@@ -6826,93 +11384,180 @@ int test(double case01,double case03,double case05,double case10,double case11,d
         color(14,0);
         printf("%c%c%c%c%c%c%c%c   ",452,452,452,452,452,452,452,473);
     }
-    if (case33l3==9){
+    if (case33l3==9 && posJ1!=33 && posJ2!=33 && posJ3!=33 && posJ4!=33){
         color(14,0);
         printf("    %c  %c%c%c%c",435,474,452,452,452);
     }
-    if (case33l3==9.1){
+    if (case33l3==9 && (posJ1==33||posJ2==33||posJ3==33||posJ4==33)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",f);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case33l3==9.1 && posJ1!=33 && posJ2!=33 && posJ3!=33 && posJ4!=33){
         color(14,0);
         printf("    %c",435);color(15,0);printf(" %c",189);color(14,0);printf("%c%c%c%c",474,452,452,452);
     }
-    if (case33l3==9.2){
+    if (case33l3==9.1 && (posJ1==33||posJ2==33||posJ3==33||posJ4==33)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,189);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case33l3==9.2 && posJ1!=33 && posJ2!=33 && posJ3!=33 && posJ4!=33){
         color(14,0);
         printf("    %c",435);color(15,0);printf(" %c",157);color(14,0);printf("%c%c%c%c",474,452,452,452);
     }
-    if (case33l3==9.3){
+    if (case33l3==9.2 && (posJ1==33||posJ2==33||posJ3==33||posJ4==33)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,157);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case33l3==9.3 && posJ1!=33 && posJ2!=33 && posJ3!=33 && posJ4!=33){
         color(14,0);
         printf("    %c",435);color(15,0);printf(" %c",143);color(14,0);printf("%c%c%c%c",474,452,452,452);
     }
-    if (case33l3==9.4){
+    if (case33l3==9.3 && (posJ1==33||posJ2==33||posJ3==33||posJ4==33)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,143);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case33l3==9.4 && posJ1!=33 && posJ2!=33 && posJ3!=33 && posJ4!=33){
         color(14,0);
         printf("    %c",435);color(15,0);printf(" %c",37);color(14,0);printf("%c%c%c%c",474,452,452,452);
     }
-    if (case33l3==9.5){
+    if (case33l3==9.4 && (posJ1==33||posJ2==33||posJ3==33||posJ4==33)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,37);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case33l3==9.5 && posJ1!=33 && posJ2!=33 && posJ3!=33 && posJ4!=33){
         color(14,0);
         printf("    %c",435);color(15,0);printf(" %c",31);color(14,0);printf("%c%c%c%c",474,452,452,452);
     }
-    if (case33l3==9.6){
+    if (case33l3==9.5 && (posJ1==33||posJ2==33||posJ3==33||posJ4==33)){
         color(14,0);
-        printf("    %c",435);color(15,0);printf(" %c",15);color(14,0);printf("%c%c%c%c",474,452,452,452);
+        printf("    %c",435);color(15,0);printf("%c%c",f,31);color(14,0);printf("%c%c%c%c",474,452,452,452);
     }
-    if (case33l3==10) {
+    if (case33l3==9.6 && posJ1!=33 && posJ2!=33 && posJ3!=33 && posJ4!=33){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",459);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case33l3==9.6 && (posJ1==33||posJ2==33||posJ3==33||posJ4==33)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,459);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case33l3==10 && (posJ1==33||posJ2==33||posJ3==33||posJ4==33)) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c ",f);color(14,0);printf("%c   ",435);
+    }
+    if (case33l3==10 && posJ1!=33 && posJ2!=33 && posJ3!=33 && posJ4!=33) {
         color(14, 0);
         printf("%c%c%c%c%c  %c   ",452, 452,452,452, 447,435);
     }
-    if (case33l3==10.1) {
+    if (case33l3==10.1 && posJ1!=33 && posJ2!=33 && posJ3!=33 && posJ4!=33) {
         color(14, 0);
         printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c ",189);color(14,0);printf("%c   ",435);
     }
-    if (case33l3==10.2) {
+    if (case33l3==10.1 && (posJ1==33||posJ2==33||posJ3==33||posJ4==33)) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c%c",189,f);color(14,0);printf("%c   ",435);
+    }
+    if (case33l3==10.2 && posJ1!=33 && posJ2!=33 && posJ3!=33 && posJ4!=33) {
         color(14, 0);
         printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c ",157);color(14,0);printf("%c   ",435);
     }
-    if (case33l3==10.3) {
+    if (case33l3==10.2 && (posJ1==33||posJ2==33||posJ3==33||posJ4==33)) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c%c",157,f);color(14,0);printf("%c   ",435);
+    }
+    if (case33l3==10.3 && posJ1!=33 && posJ2!=33 && posJ3!=33 && posJ4!=33) {
         color(14, 0);
         printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c ",143);color(14,0);printf("%c   ",435);
     }
-    if (case33l3==10.4) {
+    if (case33l3==10.3 && (posJ1==33||posJ2==33||posJ3==33||posJ4==33)) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c%c",143,f);color(14,0);printf("%c   ",435);
+    }
+    if (case33l3==10.4 && posJ1!=33 && posJ2!=33 && posJ3!=33 && posJ4!=33) {
         color(14, 0);
         printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c ",37);color(14,0);printf("%c   ",435);
     }
-    if (case33l3==10.5) {
+    if (case33l3==10.4 && (posJ1==33||posJ2==33||posJ3==33||posJ4==33)) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c%c",37,f);color(14,0);printf("%c   ",435);
+    }
+    if (case33l3==10.5 && posJ1!=33 && posJ2!=33 && posJ3!=33 && posJ4!=33) {
         color(14, 0);
         printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c ",31);color(14,0);printf("%c   ",435);
     }
-    if (case33l3==10.6) {
+    if (case33l3==10.5 && (posJ1==33||posJ2==33||posJ3==33||posJ4==33)) {
         color(14, 0);
-        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c ",15);color(14,0);printf("%c   ",435);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c%c",31,f);color(14,0);printf("%c   ",435);
     }
+    if (case33l3==10.6 && posJ1!=33 && posJ2!=33 && posJ3!=33 && posJ4!=33) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c ",459);color(14,0);printf("%c   ",435);
+    }
+    if (case33l3==10.6 && (posJ1==33||posJ2==33||posJ3==33||posJ4==33)) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c%c",459,f);color(14,0);printf("%c   ",435);
+    }
+    f=testposition(posJ1,posJ2,posJ3,posJ4,34,p1,p2,p3,p4);
     if (case34l3==0){
         printf("              ");
     }
-    if (case34l3==1.1){
+    if (case34l3==1.1 && posJ1!=34 && posJ2!=34 && posJ3!=34 && posJ4!=34){
         color(14,0);
         printf("%c%c%c%c%c%c",452,452,452,452,452,447);color(15,0);printf(" %c",292);color(14,0);
         printf("%c%c%c%c%c%c",474,452,452,452,452,452);
     }
-    if (case34l3==1.2){
+    if (case34l3==1.1 && (posJ1==34||posJ2==34||posJ3==34||posJ4==34)){
+        color(14,0);
+        printf("%c%c%c%c%c%c",452,452,452,452,452,447);color(15,0);printf("%c%c",f,292);color(14,0);
+        printf("%c%c%c%c%c%c",474,452,452,452,452,452);
+    }
+    if (case34l3==1.2 && posJ1!=34 && posJ2!=34 && posJ3!=34 && posJ4!=34){
         color(14,0);
         printf("%c%c%c%c%c%c",452,452,452,452,452,447);color(15,0);printf(" %c",291);color(14,0);
         printf("%c%c%c%c%c%c",474,452,452,452,452,452);
     }
-    if (case34l3==1.3){
+    if (case34l3==1.2 && (posJ1==34||posJ2==34||posJ3==34||posJ4==34)){
+        color(14,0);
+        printf("%c%c%c%c%c%c",452,452,452,452,452,447);color(15,0);printf("%c%c",f,291);color(14,0);
+        printf("%c%c%c%c%c%c",474,452,452,452,452,452);
+    }
+    if (case34l3==1.3 && posJ1!=34 && posJ2!=34 && posJ3!=34 && posJ4!=34){
         color(14,0);
         printf("%c%c%c%c%c%c",452,452,452,452,452,447);color(15,0);printf(" %c",285);color(14,0);
         printf("%c%c%c%c%c%c",474,452,452,452,452,452);
     }
-    if (case34l3==1.4){
+    if (case34l3==1.3 && (posJ1==34||posJ2==34||posJ3==34||posJ4==34)){
         color(14,0);
-        printf("%c%c%c%c%c%c",452,452,452,452,452,447);color(15,0);printf(" %c",279);color(14,0);
+        printf("%c%c%c%c%c%c",452,452,452,452,452,447);color(15,0);printf("%c%c",f,285);color(14,0);
         printf("%c%c%c%c%c%c",474,452,452,452,452,452);
     }
-    if (case34l3==1.5){
+    if (case34l3==1.4 && posJ1!=34 && posJ2!=34 && posJ3!=34 && posJ4!=34){
+        color(14,0);
+        printf("%c%c%c%c%c%c",452,452,452,452,452,447);color(15,0);printf(" %c",428);color(14,0);
+        printf("%c%c%c%c%c%c",474,452,452,452,452,452);
+    }
+    if (case34l3==1.4 && (posJ1==34||posJ2==34||posJ3==34||posJ4==34)){
+        color(14,0);
+        printf("%c%c%c%c%c%c",452,452,452,452,452,447);color(15,0);printf("%c%c",f,428);color(14,0);
+        printf("%c%c%c%c%c%c",474,452,452,452,452,452);
+    }
+    if (case34l3==1.5 && posJ1!=34 && posJ2!=34 && posJ3!=34 && posJ4!=34){
         color(14,0);
         printf("%c%c%c%c%c%c",452,452,452,452,452,447);color(15,0);printf(" %c",277);color(14,0);
         printf("%c%c%c%c%c%c",474,452,452,452,452,452);
     }
-    if (case34l3==1.6){
+    if (case34l3==1.5 && (posJ1==34||posJ2==34||posJ3==34||posJ4==34)){
+        color(14,0);
+        printf("%c%c%c%c%c%c",452,452,452,452,452,447);color(15,0);printf("%c%c",f,277);color(14,0);
+        printf("%c%c%c%c%c%c",474,452,452,452,452,452);
+    }
+    if (case34l3==1.6 && posJ1!=34 && posJ2!=34 && posJ3!=34 && posJ4!=34){
         color(14,0);
         printf("%c%c%c%c%c%c",452,452,452,452,452,447);color(15,0);printf(" %c",225);color(14,0);
+        printf("%c%c%c%c%c%c",474,452,452,452,452,452);
+    }
+    if (case34l3==1.6 && (posJ1==34||posJ2==34||posJ3==34||posJ4==34)){
+        color(14,0);
+        printf("%c%c%c%c%c%c",452,452,452,452,452,447);color(15,0);printf("%c%c",f,225);color(14,0);
         printf("%c%c%c%c%c%c",474,452,452,452,452,452);
     }
     if (case34l3>2 && case34l3<3){
@@ -6927,13 +11572,21 @@ int test(double case01,double case03,double case05,double case10,double case11,d
         color(14,0);
         printf("%c%c%c%c%c%c  %c     ",452,452,452,452,452,447,435);
     }
-    if (case34l3==5){
+    if (case34l3==5 && posJ1!=34 && posJ2!=34 && posJ3!=34 && posJ4!=34){
         color(14,0);
         printf("     %c  %c     ",435,435);
     }
-    if (case34l3==6){
+    if (case34l3==5 && (posJ1==34||posJ2==34||posJ3==34||posJ4==34)){
+        color(14,0);
+        printf("     %c",435);color(15,0);printf("%c ",f);color(14,0);printf("%c     ",435);
+    }
+    if (case34l3==6 && posJ1!=34 && posJ2!=34 && posJ3!=34 && posJ4!=34){
         color(14,0);
         printf("%c%c%c%c%c%c%c%c%c%c%c%c%c%c",452,452,452,452,452,452,452,452,452,452,452,452,452,452);
+    }
+    if (case34l3==6 && (posJ1==34||posJ2==34||posJ3==34||posJ4==34)){
+        color(14,0);
+        printf("%c%c%c%c%c%c",452,452,452,452,452,452);color(15,0);printf("%c",f);color(14,0);printf("%c%c%c%c%c%c%c",452,452,452,452,452,452,452);
     }
     if (case34l3>=7 && case34l3<8){
         color(14,0);
@@ -6943,93 +11596,180 @@ int test(double case01,double case03,double case05,double case10,double case11,d
         color(14,0);
         printf("%c%c%c%c%c%c%c%c%c     ",452,452,452,452,452,452,452,452,473);
     }
-    if (case34l3==9){
+    if (case34l3==9 && posJ1!=34 && posJ2!=34 && posJ3!=34 && posJ4!=34){
         color(14,0);
         printf("     %c  %c%c%c%c%c%c",435,474,452,452,452,452,452);
     }
-    if (case34l3==9.1){
+    if (case34l3==9 && (posJ1==34||posJ2==34||posJ3==34||posJ4==34)){
+        color(14,0);
+        printf("     %c",435);color(15,0);printf(" %c",f);color(14,0);printf("%c%c%c%c%c%c",474,452,452,452,452,452);
+    }
+    if (case34l3==9.1 && posJ1!=34 && posJ2!=34 && posJ3!=34 && posJ4!=34){
         color(14,0);
         printf("     %c",435);color(15,0);printf(" %c",189);color(14,0);printf("%c%c%c%c%c%c",474,452,452,452,452,452);
     }
-    if (case34l3==9.2){
+    if (case34l3==9.1 && (posJ1==34||posJ2==34||posJ3==34||posJ4==34)){
+        color(14,0);
+        printf("     %c",435);color(15,0);printf("%c%c",f,189);color(14,0);printf("%c%c%c%c%c%c",474,452,452,452,452,452);
+    }
+    if (case34l3==9.2 && posJ1!=34 && posJ2!=34 && posJ3!=34 && posJ4!=34){
         color(14,0);
         printf("     %c",435);color(15,0);printf(" %c",157);color(14,0);printf("%c%c%c%c%c%c",474,452,452,452,452,452);
     }
-    if (case34l3==9.3){
+    if (case34l3==9.2 && (posJ1==34||posJ2==34||posJ3==34||posJ4==34)){
+        color(14,0);
+        printf("     %c",435);color(15,0);printf("%c%c",f,157);color(14,0);printf("%c%c%c%c%c%c",474,452,452,452,452,452);
+    }
+    if (case34l3==9.3 && posJ1!=34 && posJ2!=34 && posJ3!=34 && posJ4!=34){
         color(14,0);
         printf("     %c",435);color(15,0);printf(" %c",143);color(14,0);printf("%c%c%c%c%c%c",474,452,452,452,452,452);
     }
-    if (case34l3==9.4){
+    if (case34l3==9.3 && (posJ1==34||posJ2==34||posJ3==34||posJ4==34)){
+        color(14,0);
+        printf("     %c",435);color(15,0);printf("%c%c",f,143);color(14,0);printf("%c%c%c%c%c%c",474,452,452,452,452,452);
+    }
+    if (case34l3==9.4 && posJ1!=34 && posJ2!=34 && posJ3!=34 && posJ4!=34){
         color(14,0);
         printf("     %c",435);color(15,0);printf(" %c",37);color(14,0);printf("%c%c%c%c%c%c",474,452,452,452,452,452);
     }
-    if (case34l3==9.5){
+    if (case34l3==9.4 && (posJ1==34||posJ2==34||posJ3==34||posJ4==34)){
+        color(14,0);
+        printf("     %c",435);color(15,0);printf("%c%c",f,37);color(14,0);printf("%c%c%c%c%c%c",474,452,452,452,452,452);
+    }
+    if (case34l3==9.5 && posJ1!=34 && posJ2!=34 && posJ3!=34 && posJ4!=34){
         color(14,0);
         printf("     %c",435);color(15,0);printf(" %c",31);color(14,0);printf("%c%c%c%c%c%c",474,452,452,452,452,452);
     }
-    if (case34l3==9.6){
+    if (case34l3==9.5 && (posJ1==34||posJ2==34||posJ3==34||posJ4==34)){
         color(14,0);
-        printf("     %c",435);color(15,0);printf(" %c",15);color(14,0);printf("%c%c%c%c%c%c",474,452,452,452,452,452);
+        printf("     %c",435);color(15,0);printf("%c%c",f,31);color(14,0);printf("%c%c%c%c%c%c",474,452,452,452,452,452);
     }
-    if (case34l3==10) {
+    if (case34l3==9.6 && posJ1!=34 && posJ2!=34 && posJ3!=34 && posJ4!=34){
+        color(14,0);
+        printf("     %c",435);color(15,0);printf(" %c",459);color(14,0);printf("%c%c%c%c%c%c",474,452,452,452,452,452);
+    }
+    if (case34l3==9.6 && (posJ1==34||posJ2==34||posJ3==34||posJ4==34)){
+        color(14,0);
+        printf("     %c",435);color(15,0);printf("%c%c",f,459);color(14,0);printf("%c%c%c%c%c%c",474,452,452,452,452,452);
+    }
+    if (case34l3==10 && (posJ1==34||posJ2==34||posJ3==34||posJ4==34)) {
         color(14, 0);
-        printf("%c%c%c%c%c%c  %c     ", 452, 452, 452,452,452, 447,435);
+        printf("%c%c%c%c%c%c",452,452, 452,452,452, 447);color(15,0);printf("%c ",f);color(14,0);printf("%c     ",435);
     }
-    if (case34l3==10.1) {
+    if (case34l3==10 && posJ1!=34 && posJ2!=34 && posJ3!=34 && posJ4!=34) {
         color(14, 0);
-        printf("%c%c%c%c%c%c", 452, 452, 452,452,452, 447);color(15,0);printf("%c ",189);color(14,0);printf("%c     ",435);
+        printf("%c%c%c%c%c%c  %c     ",452,452, 452,452,452, 447,435);
     }
-    if (case34l3==10.2) {
+    if (case34l3==10.1 && posJ1!=34 && posJ2!=34 && posJ3!=34 && posJ4!=34) {
         color(14, 0);
-        printf("%c%c%c%c%c%c", 452, 452, 452,452,452, 447);color(15,0);printf("%c ",157);color(14,0);printf("%c     ",435);
+        printf("%c%c%c%c%c%c",452,452, 452,452,452, 447);color(15,0);printf("%c ",189);color(14,0);printf("%c     ",435);
     }
-    if (case34l3==10.3) {
+    if (case34l3==10.1 && (posJ1==34||posJ2==34||posJ3==34||posJ4==34)) {
         color(14, 0);
-        printf("%c%c%c%c%c%c", 452, 452, 452,452,452, 447);color(15,0);printf("%c ",143);color(14,0);printf("%c     ",435);
+        printf("%c%c%c%c%c%c",452,452, 452,452,452, 447);color(15,0);printf("%c%c",189,f);color(14,0);printf("%c     ",435);
     }
-    if (case34l3==10.4) {
+    if (case34l3==10.2 && posJ1!=34 && posJ2!=34 && posJ3!=34 && posJ4!=34) {
         color(14, 0);
-        printf("%c%c%c%c%c%c", 452, 452, 452,452,452, 447);color(15,0);printf("%c ",37);color(14,0);printf("%c     ",435);
+        printf("%c%c%c%c%c%c",452,452, 452,452,452, 447);color(15,0);printf("%c ",157);color(14,0);printf("%c     ",435);
     }
-    if (case34l3==10.5) {
+    if (case34l3==10.2 && (posJ1==34||posJ2==34||posJ3==34||posJ4==34)) {
         color(14, 0);
-        printf("%c%c%c%c%c%c", 452, 452, 452,452,452, 447);color(15,0);printf("%c ",31);color(14,0);printf("%c     ",435);
+        printf("%c%c%c%c%c%c",452,452, 452,452,452, 447);color(15,0);printf("%c%c",157,f);color(14,0);printf("%c     ",435);
     }
-    if (case34l3==10.6) {
+    if (case34l3==10.3 && posJ1!=34 && posJ2!=34 && posJ3!=34 && posJ4!=34) {
         color(14, 0);
-        printf("%c%c%c%c%c%c", 452, 452, 452,452,452, 447);color(15,0);printf("%c ",15);color(14,0);printf("%c     ",435);
+        printf("%c%c%c%c%c%c",452,452, 452,452,452, 447);color(15,0);printf("%c ",143);color(14,0);printf("%c     ",435);
     }
+    if (case34l3==10.3 && (posJ1==34||posJ2==34||posJ3==34||posJ4==34)) {
+        color(14, 0);
+        printf("%c%c%c%c%c%c",452, 452,452,452,452, 447);color(15,0);printf("%c%c",143,f);color(14,0);printf("%c     ",435);
+    }
+    if (case34l3==10.4 && posJ1!=34 && posJ2!=34 && posJ3!=34 && posJ4!=34) {
+        color(14, 0);
+        printf("%c%c%c%c%c%c",452,452, 452,452,452, 447);color(15,0);printf("%c ",37);color(14,0);printf("%c     ",435);
+    }
+    if (case34l3==10.4 && (posJ1==34||posJ2==34||posJ3==34||posJ4==34)) {
+        color(14, 0);
+        printf("%c%c%c%c%c%c",452,452, 452,452,452, 447);color(15,0);printf("%c%c",37,f);color(14,0);printf("%c     ",435);
+    }
+    if (case34l3==10.5 && posJ1!=34 && posJ2!=34 && posJ3!=34 && posJ4!=34) {
+        color(14, 0);
+        printf("%c%c%c%c%c%c",452,452, 452,452,452, 447);color(15,0);printf("%c ",31);color(14,0);printf("%c     ",435);
+    }
+    if (case34l3==10.5 && (posJ1==34||posJ2==34||posJ3==34||posJ4==34)) {
+        color(14, 0);
+        printf("%c%c%c%c%c%c",452,452, 452,452,452, 447);color(15,0);printf("%c%c",31,f);color(14,0);printf("%c     ",435);
+    }
+    if (case34l3==10.6 && posJ1!=34 && posJ2!=34 && posJ3!=34 && posJ4!=34) {
+        color(14, 0);
+        printf("%c%c%c%c%c%c",452,452, 452,452,452, 447);color(15,0);printf("%c ",459);color(14,0);printf("%c     ",435);
+    }
+    if (case34l3==10.6 && (posJ1==34||posJ2==34||posJ3==34||posJ4==34)) {
+        color(14, 0);
+        printf("%c%c%c%c%c%c",452,452, 452,452,452, 447);color(15,0);printf("%c%c",459,f);color(14,0);printf("%c     ",435);
+    }
+    f=testposition(posJ1,posJ2,posJ3,posJ4,35,p1,p2,p3,p4);
     if (case35l3==0){
         printf("           ");
     }
-    if (case35l3==1.1){
+    if (case35l3==1.1 && posJ1!=35 && posJ2!=35 && posJ3!=35 && posJ4!=35){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf(" %c",292);color(14,0);
         printf("%c%c%c%c",474,452,452,452);
     }
-    if (case35l3==1.2){
+    if (case35l3==1.1 && (posJ1==35||posJ2==35||posJ3==35||posJ4==35)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c%c",f,292);color(14,0);
+        printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case35l3==1.2 && posJ1!=35 && posJ2!=35 && posJ3!=35 && posJ4!=35){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf(" %c",291);color(14,0);
         printf("%c%c%c%c",474,452,452,452);
     }
-    if (case35l3==1.3){
+    if (case35l3==1.2 && (posJ1==35||posJ2==35||posJ3==35||posJ4==35)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c%c",f,291);color(14,0);
+        printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case35l3==1.3 && posJ1!=35 && posJ2!=35 && posJ3!=35 && posJ4!=35){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf(" %c",285);color(14,0);
         printf("%c%c%c%c",474,452,452,452);
     }
-    if (case35l3==1.4){
+    if (case35l3==1.3 && (posJ1==35||posJ2==35||posJ3==35||posJ4==35)){
         color(14,0);
-        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf(" %c",279);color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c%c",f,285);color(14,0);
         printf("%c%c%c%c",474,452,452,452);
     }
-    if (case35l3==1.5){
+    if (case35l3==1.4 && posJ1!=35 && posJ2!=35 && posJ3!=35 && posJ4!=35){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf(" %c",428);color(14,0);
+        printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case35l3==1.4 && (posJ1==35||posJ2==35||posJ3==35||posJ4==35)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c%c",f,428);color(14,0);
+        printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case35l3==1.5 && posJ1!=35 && posJ2!=35 && posJ3!=35 && posJ4!=35){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf(" %c",277);color(14,0);
         printf("%c%c%c%c",474,452,452,452);
     }
-    if (case35l3==1.6){
+    if (case35l3==1.5 && (posJ1==35||posJ2==35||posJ3==35||posJ4==35)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c%c",f,277);color(14,0);
+        printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case35l3==1.6 && posJ1!=35 && posJ2!=35 && posJ3!=35 && posJ4!=35){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf(" %c",225);color(14,0);
+        printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case35l3==1.6 && (posJ1==35||posJ2==35||posJ3==35||posJ4==35)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c%c",f,225);color(14,0);
         printf("%c%c%c%c",474,452,452,452);
     }
     if (case35l3>2 && case35l3<3){
@@ -7044,13 +11784,21 @@ int test(double case01,double case03,double case05,double case10,double case11,d
         color(14,0);
         printf("%c%c%c%c%c  %c   ",452,452,452,452,447,435);
     }
-    if (case35l3==5){
+    if (case35l3==5 && posJ1!=35 && posJ2!=35 && posJ3!=35 && posJ4!=35){
         color(14,0);
         piece5bout2();
     }
-    if (case35l3==6){
+    if (case35l3==5 && (posJ1==35||posJ2==35||posJ3==35||posJ4==35)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c ",f);color(14,0);printf("%c   ",435);
+    }
+    if (case35l3==6 && posJ1!=35 && posJ2!=35 && posJ3!=35 && posJ4!=35){
         color(14,0);
         printf("%c%c%c%c%c%c%c%c%c%c%c",452,452,452,452,452,452,452,452,452,452,452);
+    }
+    if (case35l3==6 && (posJ1==35||posJ2==35||posJ3==35||posJ4==35)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,452);color(15,0);printf("%c",f);color(14,0);printf("%c%c%c%c%c",452,452,452,452,452);
     }
     if (case35l3>=7 && case35l3<8){
         color(14,0);
@@ -7060,87 +11808,168 @@ int test(double case01,double case03,double case05,double case10,double case11,d
         color(14,0);
         printf("%c%c%c%c%c%c%c%c   ",452,452,452,452,452,452,452,473);
     }
-    if (case35l3==9){
+    if (case35l3==9 && posJ1!=35 && posJ2!=35 && posJ3!=35 && posJ4!=35){
         color(14,0);
         printf("    %c  %c%c%c%c",435,474,452,452,452);
     }
-    if (case35l3==9.1){
+    if (case35l3==9 && (posJ1==35||posJ2==35||posJ3==35||posJ4==35)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",f);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case35l3==9.1 && posJ1!=35 && posJ2!=35 && posJ3!=35 && posJ4!=35){
         color(14,0);
         printf("    %c",435);color(15,0);printf(" %c",189);color(14,0);printf("%c%c%c%c",474,452,452,452);
     }
-    if (case35l3==9.2){
+    if (case35l3==9.1 && (posJ1==35||posJ2==35||posJ3==35||posJ4==35)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,189);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case35l3==9.2 && posJ1!=35 && posJ2!=35 && posJ3!=35 && posJ4!=35){
         color(14,0);
         printf("    %c",435);color(15,0);printf(" %c",157);color(14,0);printf("%c%c%c%c",474,452,452,452);
     }
-    if (case35l3==9.3){
+    if (case35l3==9.2 && (posJ1==35||posJ2==35||posJ3==35||posJ4==35)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,157);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case35l3==9.3 && posJ1!=35 && posJ2!=35 && posJ3!=35 && posJ4!=35){
         color(14,0);
         printf("    %c",435);color(15,0);printf(" %c",143);color(14,0);printf("%c%c%c%c",474,452,452,452);
     }
-    if (case35l3==9.4){
+    if (case35l3==9.3 && (posJ1==35||posJ2==35||posJ3==35||posJ4==35)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,143);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case35l3==9.4 && posJ1!=35 && posJ2!=35 && posJ3!=35 && posJ4!=35){
         color(14,0);
         printf("    %c",435);color(15,0);printf(" %c",37);color(14,0);printf("%c%c%c%c",474,452,452,452);
     }
-    if (case35l3==9.5){
+    if (case35l3==9.4 && (posJ1==35||posJ2==35||posJ3==35||posJ4==35)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,37);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case35l3==9.5 && posJ1!=35 && posJ2!=35 && posJ3!=35 && posJ4!=35){
         color(14,0);
         printf("    %c",435);color(15,0);printf(" %c",31);color(14,0);printf("%c%c%c%c",474,452,452,452);
     }
-    if (case35l3==9.6){
+    if (case35l3==9.5 && (posJ1==35||posJ2==35||posJ3==35||posJ4==35)){
         color(14,0);
-        printf("    %c",435);color(15,0);printf(" %c",15);color(14,0);printf("%c%c%c%c",474,452,452,452);
+        printf("    %c",435);color(15,0);printf("%c%c",f,31);color(14,0);printf("%c%c%c%c",474,452,452,452);
     }
-    if (case35l3==10) {
+    if (case35l3==9.6 && posJ1!=35 && posJ2!=35 && posJ3!=35 && posJ4!=35){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",459);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case35l3==9.6 && (posJ1==35||posJ2==35||posJ3==35||posJ4==35)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,459);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case35l3==10 && (posJ1==35||posJ2==35||posJ3==35||posJ4==35)) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c ",f);color(14,0);printf("%c   ",435);
+    }
+    if (case35l3==10 && posJ1!=35 && posJ2!=35 && posJ3!=35 && posJ4!=35) {
         color(14, 0);
         printf("%c%c%c%c%c  %c   ",452, 452,452,452, 447,435);
     }
-    if (case35l3==10.1) {
+    if (case35l3==10.1 && posJ1!=35 && posJ2!=35 && posJ3!=35 && posJ4!=35) {
         color(14, 0);
         printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c ",189);color(14,0);printf("%c   ",435);
     }
-    if (case35l3==10.2) {
+    if (case35l3==10.1 && (posJ1==35||posJ2==35||posJ3==35||posJ4==35)) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c%c",189,f);color(14,0);printf("%c   ",435);
+    }
+    if (case35l3==10.2 && posJ1!=35 && posJ2!=35 && posJ3!=35 && posJ4!=35) {
         color(14, 0);
         printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c ",157);color(14,0);printf("%c   ",435);
     }
-    if (case35l3==10.3) {
+    if (case35l3==10.2 && (posJ1==35||posJ2==35||posJ3==35||posJ4==35)) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c%c",157,f);color(14,0);printf("%c   ",435);
+    }
+    if (case35l3==10.3 && posJ1!=35 && posJ2!=35 && posJ3!=35 && posJ4!=35) {
         color(14, 0);
         printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c ",143);color(14,0);printf("%c   ",435);
     }
-    if (case35l3==10.4) {
+    if (case35l3==10.3 && (posJ1==35||posJ2==35||posJ3==35||posJ4==35)) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c%c",143,f);color(14,0);printf("%c   ",435);
+    }
+    if (case35l3==10.4 && posJ1!=35 && posJ2!=35 && posJ3!=35 && posJ4!=35) {
         color(14, 0);
         printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c ",37);color(14,0);printf("%c   ",435);
     }
-    if (case35l3==10.5) {
+    if (case35l3==10.4 && (posJ1==35||posJ2==35||posJ3==35||posJ4==35)) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c%c",37,f);color(14,0);printf("%c   ",435);
+    }
+    if (case35l3==10.5 && posJ1!=35 && posJ2!=35 && posJ3!=35 && posJ4!=35) {
         color(14, 0);
         printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c ",31);color(14,0);printf("%c   ",435);
     }
-    if (case35l3==10.6) {
+    if (case35l3==10.5 && (posJ1==35||posJ2==35||posJ3==35||posJ4==35)) {
         color(14, 0);
-        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c ",15);color(14,0);printf("%c   ",435);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c%c",31,f);color(14,0);printf("%c   ",435);
     }
+    if (case35l3==10.6 && posJ1!=35 && posJ2!=35 && posJ3!=35 && posJ4!=35) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c ",459);color(14,0);printf("%c   ",435);
+    }
+    if (case35l3==10.6 && (posJ1==35||posJ2==35||posJ3==35||posJ4==35)) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c%c",459,f);color(14,0);printf("%c   ",435);
+    }
+    f=testposition(posJ1,posJ2,posJ3,posJ4,36,p1,p2,p3,p4);
     if (case36l3==0){
         printf("         ");
     }
-    if (case36l3==1.1){
+    if (case36l3==1.1 && posJ1!=36 && posJ2!=36 && posJ3!=36 && posJ4!=36){
         printf("%c%c%c%c%c%c",452,452,452,452,452,447);color(15,0),printf("%c ",292);color(14,0);
         printf("%c",474);
     }
-    if (case36l3==1.2){
+    if (case36l3==1.1 && (posJ1==36||posJ2==36||posJ3==36||posJ4==36)){
+        printf("%c%c%c%c%c%c",452,452,452,452,452,447);color(15,0),printf("%c%c",292,f);color(14,0);
+        printf("%c",474);
+    }
+    if (case36l3==1.2 && posJ1!=36 && posJ2!=36 && posJ3!=36 && posJ4!=36){
         printf("%c%c%c%c%c%c",452,452,452,452,452,447);color(15,0),printf("%c ",291);color(14,0);
         printf("%c",474);
     }
-    if (case36l3==1.3){
+    if (case36l3==1.2 && (posJ1==36||posJ2==36||posJ3==36||posJ4==36)){
+        printf("%c%c%c%c%c%c",452,452,452,452,452,447);color(15,0),printf("%c%c",291,f);color(14,0);
+        printf("%c",474);
+    }
+    if (case36l3==1.3 && posJ1!=36 && posJ2!=36 && posJ3!=36 && posJ4!=36){
         printf("%c%c%c%c%c%c",452,452,452,452,452,447);color(15,0),printf("%c ",285);color(14,0);
         printf("%c",474);
     }
-    if (case36l3==1.4){
-        printf("%c%c%c%c%c%c",452,452,452,452,452,447);color(15,0),printf("%c ",279);color(14,0);
+    if (case36l3==1.3 && (posJ1==36||posJ2==36||posJ3==36||posJ4==36)){
+        printf("%c%c%c%c%c%c",452,452,452,452,452,447);color(15,0),printf("%c%c",285,f);color(14,0);
         printf("%c",474);
     }
-    if (case36l3==1.5){
+    if (case36l3==1.4 && posJ1!=36 && posJ2!=36 && posJ3!=36 && posJ4!=36){
+        printf("%c%c%c%c%c%c",452,452,452,452,452,447);color(15,0),printf("%c ",428);color(14,0);
+        printf("%c",474);
+    }
+    if (case36l3==1.4 && (posJ1==36||posJ2==36||posJ3==36||posJ4==36)){
+        printf("%c%c%c%c%c%c",452,452,452,452,452,447);color(15,0),printf("%c%c",428,f);color(14,0);
+        printf("%c",474);
+    }
+    if (case36l3==1.5 && posJ1!=36 && posJ2!=36 && posJ3!=36 && posJ4!=36){
         printf("%c%c%c%c%c%c",452,452,452,452,452,447);color(15,0),printf("%c ",277);color(14,0);
         printf("%c",474);
     }
-    if (case36l3==1.6){
+    if (case36l3==1.5 && (posJ1==36||posJ2==36||posJ3==36||posJ4==36)){
+        printf("%c%c%c%c%c%c",452,452,452,452,452,447);color(15,0),printf("%c%c",277,f);color(14,0);
+        printf("%c",474);
+    }
+    if (case36l3==1.6 && posJ1!=36 && posJ2!=36 && posJ3!=36 && posJ4!=36){
         printf("%c%c%c%c%c%c",452,452,452,452,452,447);color(15,0),printf("%c ",225);color(14,0);
+        printf("%c",474);
+    }
+    if (case36l3==1.6 && (posJ1==36||posJ2==36||posJ3==36||posJ4==36)){
+        printf("%c%c%c%c%c%c",452,452,452,452,452,447);color(15,0),printf("%c%c",225,f);color(14,0);
         printf("%c",474);
     }
     if (case36l3>2 && case36l3<3){
@@ -7152,11 +11981,17 @@ int test(double case01,double case03,double case05,double case10,double case11,d
     if (case36l3>4 && case36l3<5){
         printf("%c%c%c%c%c%c  %c",452,452,452,452,452,447,435);
     }
-    if (case36l3==5){
+    if (case36l3==5 && posJ1!=36 && posJ2!=36 && posJ3!=36 && posJ4!=36){
         printf("     %c  %c",435,435);
     }
-    if (case36l3==6){
+    if (case36l3==5 && (posJ1==36||posJ2==36||posJ3==36||posJ4==36)){
+        printf("     %c",435);color(15,0);printf("%c ",f);color(14,0);printf("%c",435);
+    }
+    if (case36l3==6 && posJ1!=36 && posJ2!=36 && posJ3!=36 && posJ4!=36){
         printf("%c%c%c%c%c%c%c%c%c",452,452,452,452,452,452,452,452,452);
+    }
+    if (case36l3==6 && (posJ1==36||posJ2==36||posJ3==36||posJ4==36)){
+        printf("%c%c%c%c",452,452,452,452);color(15,0);printf("%c",f);color(14,0);printf("%c%c%c%c",452,452,452,452);
     }
     if (case36l3>=7 && case36l3<8){
         printf("     %c%c%c%c",448,452,452,452);
@@ -7164,47 +11999,89 @@ int test(double case01,double case03,double case05,double case10,double case11,d
     if (case36l3>=8 && case36l3<9){
         printf("%c%c%c%c%c%c%c%c%c",452,452,452,452,452,452,452,452,473);
     }
-    if (case36l3==9){
+    if (case36l3==9 && posJ1!=36 && posJ2!=36 && posJ3!=36 && posJ4!=36){
         printf("     %c  %c",435,474);
     }
-    if (case36l3==9.1){
+    if (case36l3==9 && (posJ1==36||posJ2==36||posJ3==36||posJ4==36)){
+        printf("     %c",435);color(15,0);printf(" %c",f);color(14,0);printf("%c",474);
+    }
+    if (case36l3==9.1 && posJ1!=36 && posJ2!=36 && posJ3!=36 && posJ4!=36){
         printf("     %c",435);color(15,0);printf(" %c",189);color(14,0);printf("%c",474);
     }
-    if (case36l3==9.2){
+    if (case36l3==9.1 && (posJ1==36||posJ2==36||posJ3==36||posJ4==36)){
+        printf("     %c",435);color(15,0);printf("%c%c",f,189);color(14,0);printf("%c",474);
+    }
+    if (case36l3==9.2 && posJ1!=36 && posJ2!=36 && posJ3!=36 && posJ4!=36){
         printf("     %c",435);color(15,0);printf(" %c",157);color(14,0);printf("%c",474);
     }
-    if (case36l3==9.3){
+    if (case36l3==9.2 && (posJ1==36||posJ2==36||posJ3==36||posJ4==36)){
+        printf("     %c",435);color(15,0);printf("%c%c",f,157);color(14,0);printf("%c",474);
+    }
+    if (case36l3==9.3 && posJ1!=36 && posJ2!=36 && posJ3!=36 && posJ4!=36){
         printf("     %c",435);color(15,0);printf(" %c",143);color(14,0);printf("%c",474);
     }
-    if (case36l3==9.4){
+    if (case36l3==9.3 && (posJ1==36||posJ2==36||posJ3==36||posJ4==36)){
+        printf("     %c",435);color(15,0);printf("%c%c",f,143);color(14,0);printf("%c",474);
+    }
+    if (case36l3==9.4 && posJ1!=36 && posJ2!=36 && posJ3!=36 && posJ4!=36){
         printf("     %c",435);color(15,0);printf(" %c",37);color(14,0);printf("%c",474);
     }
-    if (case36l3==9.5){
+    if (case36l3==9.4 && (posJ1==36||posJ2==36||posJ3==36||posJ4==36)){
+        printf("     %c",435);color(15,0);printf("%c%c",f,37);color(14,0);printf("%c",474);
+    }
+    if (case36l3==9.5 && posJ1!=36 && posJ2!=36 && posJ3!=36 && posJ4!=36){
         printf("     %c",435);color(15,0);printf(" %c",31);color(14,0);printf("%c",474);
     }
-    if (case36l3==9.6){
-        printf("     %c",435);color(15,0);printf(" %c",15);color(14,0);printf("%c",474);
+    if (case36l3==9.5 && (posJ1==36||posJ2==36||posJ3==36||posJ4==36)){
+        printf("     %c",435);color(15,0);printf("%c%c",f,31);color(14,0);printf("%c",474);
     }
-    if (case36l3==10){
+    if (case36l3==9.6 && posJ1!=36 && posJ2!=36 && posJ3!=36 && posJ4!=36){
+        printf("     %c",435);color(15,0);printf(" %c",459);color(14,0);printf("%c",474);
+    }
+    if (case36l3==9.6 && (posJ1==36||posJ2==36||posJ3==36||posJ4==36)){
+        printf("     %c",435);color(15,0);printf("%c%c",f,459);color(14,0);printf("%c",474);
+    }
+    if (case36l3==10 && posJ1!=36 && posJ2!=36 && posJ3!=36 && posJ4!=36){
         printf("%c%c%c%c%c%c  %c",452,452,452,452,452,447,435);
     }
-    if (case36l3==10.1){
+    if (case36l3==10 && (posJ1==36||posJ2==36||posJ3==36||posJ4==36)){
+        printf("%c%c%c%c%c%c",452,452,452,452,452,447);color(15,0);printf("%c ",f);color(14,0);printf("%c",435);
+    }
+    if (case36l3==10.1 && posJ1!=36 && posJ2!=36 && posJ3!=36 && posJ4!=36){
         printf("%c%c%c%c%c%c",452,452,452,452,452,447);color(15,0);printf("%c ",189);color(14,0);printf("%c",435);
     }
-    if (case36l3==10.2){
+    if (case36l3==10.1 && (posJ1==36||posJ2==36||posJ3==36||posJ4==36)){
+        printf("%c%c%c%c%c%c",452,452,452,452,452,447);color(15,0);printf("%c%c",189,f);color(14,0);printf("%c",435);
+    }
+    if (case36l3==10.2 && posJ1!=36 && posJ2!=36 && posJ3!=36 && posJ4!=36){
         printf("%c%c%c%c%c%c",452,452,452,452,452,447);color(15,0);printf("%c ",157);color(14,0);printf("%c",435);
     }
-    if (case36l3==10.3){
+    if (case36l3==10.2 && (posJ1==36||posJ2==36||posJ3==36||posJ4==36)){
+        printf("%c%c%c%c%c%c",452,452,452,452,452,447);color(15,0);printf("%c%c",157,f);color(14,0);printf("%c",435);
+    }
+    if (case36l3==10.3 && posJ1!=36 && posJ2!=36 && posJ3!=36 && posJ4!=36){
         printf("%c%c%c%c%c%c",452,452,452,452,452,447);color(15,0);printf("%c ",143);color(14,0);printf("%c",435);
     }
-    if (case36l3==10.4){
+    if (case36l3==10.3 && (posJ1==36||posJ2==36||posJ3==36||posJ4==36)){
+        printf("%c%c%c%c%c%c",452,452,452,452,452,447);color(15,0);printf("%c%c",143,f);color(14,0);printf("%c",435);
+    }
+    if (case36l3==10.4 && posJ1!=36 && posJ2!=36 && posJ3!=36 && posJ4!=36){
         printf("%c%c%c%c%c%c",452,452,452,452,452,447);color(15,0);printf("%c ",37);color(14,0);printf("%c",435);
     }
-    if (case36l3==10.5){
+    if (case36l3==10.4 && (posJ1==36||posJ2==36||posJ3==36||posJ4==36)){
+        printf("%c%c%c%c%c%c",452,452,452,452,452,447);color(15,0);printf("%c%c",37,f);color(14,0);printf("%c",435);
+    }
+    if (case36l3==10.5 && posJ1!=36 && posJ2!=36 && posJ3!=36 && posJ4!=36){
         printf("%c%c%c%c%c%c",452,452,452,452,452,447);color(15,0);printf("%c ",31);color(14,0);printf("%c",435);
     }
-    if (case36l3==10.6){
-        printf("%c%c%c%c%c%c",452,452,452,452,452,447);color(15,0);printf("%c ",15);color(14,0);printf("%c",435);
+    if (case36l3==10.5 && (posJ1==36||posJ2==36||posJ3==36||posJ4==36)){
+        printf("%c%c%c%c%c%c",452,452,452,452,452,447);color(15,0);printf("%c%c",31,f);color(14,0);printf("%c",435);
+    }
+    if (case36l3==10.6 && posJ1!=36 && posJ2!=36 && posJ3!=36 && posJ4!=36){
+        printf("%c%c%c%c%c%c",452,452,452,452,452,447);color(15,0);printf("%c ",459);color(14,0);printf("%c",435);
+    }
+    if (case36l3==10.6 && (posJ1==36||posJ2==36||posJ3==36||posJ4==36)){
+        printf("%c%c%c%c%c%c",452,452,452,452,452,447);color(15,0);printf("%c%c",459,f);color(14,0);printf("%c",435);
     }
     a();printf("                                 ");
     if (case30l4==0){
@@ -7531,19 +12408,19 @@ int test(double case01,double case03,double case05,double case10,double case11,d
         color(14,0);
         printf("           ");
     }
-    if (case41l1==7){
+    if (case41l1>=7 && case41l1<8){
         color(14,0);
         p7bout1();
     }
-    if (case41l1==8){
+    if (case41l1>=8 && case41l1<9){
         color(14,0);
         p8bout1();
     }
-    if (case41l1==9){
+    if (case41l1>=9 && case41l1<10){
         color(14,0);
         printf("           ");
     }
-    if (case41l1==10){
+    if (case41l1>=10 && case41l1<11){
         color(14,0);
         printf("           ");
     }
@@ -7578,19 +12455,19 @@ int test(double case01,double case03,double case05,double case10,double case11,d
         color(14,0);
         printf("           ");
     }
-    if (case43l1==7){
+    if (case43l1>=7 && case43l1<8){
         color(14,0);
         p7bout1();
     }
-    if (case43l1==8){
+    if (case43l1>=8 && case43l1<9){
         color(14,0);
         p8bout1();
     }
-    if (case43l1==9){
+    if (case43l1>=9 && case43l1<10){
         color(14,0);
         printf("           ");
     }
-    if (case43l1==10){
+    if (case43l1>=10 && case43l1<11){
         color(14,0);
         printf("           ");
     }
@@ -7625,27 +12502,35 @@ int test(double case01,double case03,double case05,double case10,double case11,d
         color(14,0);
         printf("           ");
     }
-    if (case45l1==7){
+    if (case45l1>=7 && case45l1<8){
         color(14,0);
         p7bout1();
     }
-    if (case45l1==8){
+    if (case45l1>=8 && case45l1<9){
         color(14,0);
         p8bout1();
     }
-    if (case45l1==9){
+    if (case45l1>=9 && case45l1<10){
         color(14,0);
         printf("           ");
     }
-    if (case45l1==10){
+    if (case45l1>=10 && case45l1<11){
         color(14,0);
         printf("           ");
     }
     color(9,0);
     printf("     %c  %c",435,435);a();color(15,0);
-    printf("                     5   %c       ",282);color(9,0);printf("%c",435);color(5,0);printf(" %c",383);color(9,0);
-    printf("%c%c%c%c%c",448,452,452,452,452);
+    f=testposition(posJ1,posJ2,posJ3,posJ4,40,p1,p2,p3,p4);
+    if (posJ1!=40 && posJ2!=40 && posJ3!=40 && posJ4!=40){
+        printf("                     5   %c       ",282);color(9,0);printf("%c",435);color(5,0);printf(" %c",383);color(9,0);
+        printf("%c%c%c%c%c",448,452,452,452,452);
+    }
+    if (posJ1==40||posJ2==40||posJ3==40||posJ4==40){
+        printf("                     5   %c       ",282);color(9,0);printf("%c",435);color(5,0);printf("%c%c",f,383);color(9,0);
+        printf("%c%c%c%c%c",448,452,452,452,452);
+    }
     color(14,0);
+    f=testposition(posJ1,posJ2,posJ3,posJ4,41,p1,p2,p3,p4);
     if (case41l2==0){
         printf("           ");
     }
@@ -7653,37 +12538,185 @@ int test(double case01,double case03,double case05,double case10,double case11,d
         color(14,0);
         printf("%c%c%c%c%c%c%c%c%c%c%c",452,452,452,452,452,452,452,452,452,452,452);
     }
-    if (case41l2==2.1){
+    if (case41l2==2.1 && posJ1!=41 && posJ2!=41 && posJ3!=41 && posJ4!=41){
         color(14,0);
-        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf(" %c",292);color(14,0);printf("%c%c%c%c",448,452,452,452);
+        printf("%c%c%c%c%c", 452, 452, 452, 452, 473);color(15,0);printf(" %c",292);color(14,0);
+        printf("%c%c%c%c", 448, 452, 452, 452);
     }
-    if (case41l2==2.2){
+    if (case41l2==2.1 && (posJ1==41||posJ2==41||posJ3==41||posJ4==41)){
         color(14,0);
-        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf(" %c",291);color(14,0);printf("%c%c%c%c",448,452,452,452);
+        printf("%c%c%c%c%c", 452, 452, 452, 452, 473);color(15,0);printf("%c%c",f,292);color(14,0);
+        printf("%c%c%c%c", 448, 452, 452, 452);
     }
-    if (case41l2==2.3){
+    if (case41l2==2.2 && posJ1!=41 && posJ2!=41 && posJ3!=41 && posJ4!=41){
         color(14,0);
-        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf(" %c",285);color(14,0);printf("%c%c%c%c",448,452,452,452);
+        printf("%c%c%c%c%c", 452, 452, 452, 452, 473);color(15,0);printf(" %c",291);color(14,0);
+        printf("%c%c%c%c", 448, 452, 452, 452);
     }
-    if (case41l2==2.4){
+    if (case41l2==2.2 && (posJ1==41||posJ2==41||posJ3==41||posJ4==41)){
         color(14,0);
-        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf(" %c",279);color(14,0);printf("%c%c%c%c",448,452,452,452);
+        printf("%c%c%c%c%c", 452, 452, 452, 452, 473);color(15,0);printf("%c%c",f,291);color(14,0);
+        printf("%c%c%c%c", 448, 452, 452, 452);
     }
-    if (case41l2==2.5){
+    if (case41l2==2.3 && posJ1!=41 && posJ2!=41 && posJ3!=41 && posJ4!=41){
         color(14,0);
-        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf(" %c",277);color(14,0);printf("%c%c%c%c",448,452,452,452);
+        printf("%c%c%c%c%c", 452, 452, 452, 452, 473);color(15,0);printf(" %c",285);color(14,0);
+        printf("%c%c%c%c", 448, 452, 452, 452);
     }
-    if (case41l2==2.6){
+    if (case41l2==2.3 && (posJ1==41||posJ2==41||posJ3==41||posJ4==41)){
         color(14,0);
-        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf(" %c",225);color(14,0);printf("%c%c%c%c",448,452,452,452);
+        printf("%c%c%c%c%c", 452, 452, 452, 452, 473);color(15,0);printf("%c%c",f,285);color(14,0);
+        printf("%c%c%c%c", 448, 452, 452, 452);
     }
-    if (case41l2>3 && case41l2<4){
+    if (case41l2==2.4 && posJ1!=41 && posJ2!=41 && posJ3!=41 && posJ4!=41){
         color(14,0);
-        piece3bout1l1();
+        printf("%c%c%c%c%c", 452, 452, 452, 452, 473);color(15,0);printf(" %c",428);color(14,0);
+        printf("%c%c%c%c", 448, 452, 452, 452);
     }
-    if (case41l2>4 && case41l2<5){
+    if (case41l2==2.4 && (posJ1==41||posJ2==41||posJ3==41||posJ4==41)){
         color(14,0);
-        piece4bout1l1();
+        printf("%c%c%c%c%c", 452, 452, 452, 452, 473);color(15,0);printf("%c%c",f,428);color(14,0);
+        printf("%c%c%c%c", 448, 452, 452, 452);
+    }
+    if (case41l2==2.5 && posJ1!=41 && posJ2!=41 && posJ3!=41 && posJ4!=41){
+        color(14,0);
+        printf("%c%c%c%c%c", 452, 452, 452, 452, 473);color(15,0);printf(" %c",277);color(14,0);
+        printf("%c%c%c%c", 448, 452, 452, 452);
+    }
+    if (case41l2==2.5 && (posJ1==41||posJ2==41||posJ3==41||posJ4==41)){
+        color(14,0);
+        printf("%c%c%c%c%c", 452, 452, 452, 452, 473);color(15,0);printf("%c%c",f,277);color(14,0);
+        printf("%c%c%c%c", 448, 452, 452, 452);
+    }
+    if (case41l2==2.6 && posJ1!=41 && posJ2!=41 && posJ3!=41 && posJ4!=41){
+        color(14,0);
+        printf("%c%c%c%c%c", 452, 452, 452, 452, 473);color(15,0);printf(" %c",225);color(14,0);
+        printf("%c%c%c%c", 448, 452, 452, 452);
+    }
+    if (case41l2==2.6 && (posJ1==41||posJ2==41||posJ3==41||posJ4==41)){
+        color(14,0);
+        printf("%c%c%c%c%c", 452, 452, 452, 452, 473);color(15,0);printf("%c%c",f,225);color(14,0);
+        printf("%c%c%c%c", 448, 452, 452, 452);
+    }
+    if (case41l2==3.1 && posJ1!=41 && posJ2!=41 && posJ3!=41 && posJ4!=41){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",292);color(14,0);
+        printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case41l2==3.1 && (posJ1==41||posJ2==41||posJ3==41||posJ4==41)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,292);color(14,0);
+        printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case41l2==3.2 && posJ1!=41 && posJ2!=41 && posJ3!=41 && posJ4!=41){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",291);color(14,0);
+        printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case41l2==3.2 && (posJ1==41||posJ2==41||posJ3==41||posJ4==41)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,291);color(14,0);
+        printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case41l2==3.3 && posJ1!=41 && posJ2!=41 && posJ3!=41 && posJ4!=41){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",285);color(14,0);
+        printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case41l2==3.3 && (posJ1==41||posJ2==41||posJ3==41||posJ4==41)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,285);color(14,0);
+        printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case41l2==3.4 && posJ1!=41 && posJ2!=41 && posJ3!=41 && posJ4!=41){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",428);color(14,0);
+        printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case41l2==3.4 && (posJ1==41||posJ2==41||posJ3==41||posJ4==41)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,428);color(14,0);
+        printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case41l2==3.5 && posJ1!=41 && posJ2!=41 && posJ3!=41 && posJ4!=41){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",277);color(14,0);
+        printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case41l2==3.5 && (posJ1==41||posJ2==41||posJ3==41||posJ4==41)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,277);color(14,0);
+        printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case41l2==3.6 && posJ1!=41 && posJ2!=41 && posJ3!=41 && posJ4!=41){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",225);color(14,0);
+        printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case41l2==3.6 && (posJ1==41||posJ2==41||posJ3==41||posJ4==41)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,225);color(14,0);
+        printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case41l2==4.1 && posJ1!=41 && posJ2!=41 && posJ3!=41 && posJ4!=41){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",292);color(14,0);
+        printf("%c   ",435);
+    }
+    if (case41l2==4.1 && (posJ1==41||posJ2==41||posJ3==41||posJ4==41)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",292,f);color(14,0);
+        printf("%c   ",435);
+    }
+    if (case41l2==4.2 && posJ1!=41 && posJ2!=41 && posJ3!=41 && posJ4!=41){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",291);color(14,0);
+        printf("%c   ",435);
+    }
+    if (case41l2==4.2 && (posJ1==41||posJ2==41||posJ3==41||posJ4==41)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",291,f);color(14,0);
+        printf("%c   ",435);
+    }
+    if (case41l2==4.3 && posJ1!=41 && posJ2!=41 && posJ3!=41 && posJ4!=41){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",285);color(14,0);
+        printf("%c   ",435);
+    }
+    if (case41l2==4.3 && (posJ1==41||posJ2==41||posJ3==41||posJ4==41)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",285,f);color(14,0);
+        printf("%c   ",435);
+    }
+    if (case41l2==4.4 && posJ1!=41 && posJ2!=41 && posJ3!=41 && posJ4!=41){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",428);color(14,0);
+        printf("%c   ",435);
+    }
+    if (case41l2==4.4 && (posJ1==41||posJ2==41||posJ3==41||posJ4==41)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",428,f);color(14,0);
+        printf("%c   ",435);
+    }
+    if (case41l2==4.5 && posJ1!=41 && posJ2!=41 && posJ3!=41 && posJ4!=41){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",277);color(14,0);
+        printf("%c   ",435);
+    }
+    if (case41l2==4.5 && (posJ1==41||posJ2==41||posJ3==41||posJ4==41)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",277,f);color(14,0);
+        printf("%c   ",435);
+    }
+    if (case41l2==4.6 && posJ1!=41 && posJ2!=41 && posJ3!=41 && posJ4!=41){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",225);color(14,0);
+        printf("%c   ",435);
+    }
+    if (case41l2==4.6 && (posJ1==41||posJ2==41||posJ3==41||posJ4==41)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",225,f);color(14,0);
+        printf("%c   ",435);
     }
     if (case41l2==5){
         color(14,0);
@@ -7693,26 +12726,138 @@ int test(double case01,double case03,double case05,double case10,double case11,d
         color(14,0);
         printf("%c%c%c%c%c%c%c%c%c%c%c",452,452,452,452,452,452,452,452,452,452,452);
     }
-    if (case41l2==7){
+    if (case41l2==7 && posJ1!=41 && posJ2!=41 && posJ3!=41 && posJ4!=41){
         color(14,0);
         printf("    %c  %c%c%c%c",435,448,452,452,452);
     }
-    if (case41l2==8){
+    if (case41l2==7 && (posJ1==41||posJ2==41||posJ3==41||posJ4==41)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",f);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case41l2==7.1 && posJ1!=41 && posJ2!=41 && posJ3!=41 && posJ4!=41){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",189);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case41l2==7.1 && (posJ1==41||posJ2==41||posJ3==41||posJ4==41)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,189);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case41l2==7.2 && posJ1!=41 && posJ2!=41 && posJ3!=41 && posJ4!=41){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",157);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case41l2==7.2 && (posJ1==41||posJ2==41||posJ3==41||posJ4==41)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,157);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case41l2==7.3 && posJ1!=41 && posJ2!=41 && posJ3!=41 && posJ4!=41){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",143);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case41l2==7.3 && (posJ1==41||posJ2==41||posJ3==41||posJ4==41)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,143);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case41l2==7.4 && posJ1!=41 && posJ2!=41 && posJ3!=41 && posJ4!=41){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",37);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case41l2==7.4 && (posJ1==41||posJ2==41||posJ3==41||posJ4==41)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,37);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case41l2==7.5 && posJ1!=41 && posJ2!=41 && posJ3!=41 && posJ4!=41){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",31);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case41l2==7.5 && (posJ1==41||posJ2==41||posJ3==41||posJ4==41)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,31);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case41l2==7.6 && posJ1!=41 && posJ2!=41 && posJ3!=41 && posJ4!=41){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",459);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case41l2==7.6 && (posJ1==41||posJ2==41||posJ3==41||posJ4==41)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,459);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case41l2==8 && posJ1!=41 && posJ2!=41 && posJ3!=41 && posJ4!=41){
         color(14,0);
         printf("%c%c%c%c%c  %c   ",452,452,452,452,473,435);
     }
-    if (case41l2==9){
+    if (case41l2==8 && (posJ1==41||posJ2==41||posJ3==41||posJ4==41)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",f);color(14,0);printf("%c   ",435);
+    }
+    if (case41l2==8.1 && posJ1!=41 && posJ2!=41 && posJ3!=41 && posJ4!=41){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",189);color(14,0);printf("%c   ",435);
+    }
+    if (case41l2==8.1 && (posJ1==41||posJ2==41||posJ3==41||posJ4==41)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",189,f);color(14,0);printf("%c   ",435);
+    }
+    if (case41l2==8.2 && posJ1!=41 && posJ2!=41 && posJ3!=41 && posJ4!=41){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",157);color(14,0);printf("%c   ",435);
+    }
+    if (case41l2==8.2 && (posJ1==41||posJ2==41||posJ3==41||posJ4==41)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",157,f);color(14,0);printf("%c   ",435);
+    }
+    if (case41l2==8.3 && posJ1!=41 && posJ2!=41 && posJ3!=41 && posJ4!=41){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",143);color(14,0);printf("%c   ",435);
+    }
+    if (case41l2==8.3 && (posJ1==41||posJ2==41||posJ3==41||posJ4==41)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",143,f);color(14,0);printf("%c   ",435);
+    }
+    if (case41l2==8.4 && posJ1!=41 && posJ2!=41 && posJ3!=41 && posJ4!=41){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",37);color(14,0);printf("%c   ",435);
+    }
+    if (case41l2==8.4 && (posJ1==41||posJ2==41||posJ3==41||posJ4==41)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",37,f);color(14,0);printf("%c   ",435);
+    }
+    if (case41l2==8.5 && posJ1!=41 && posJ2!=41 && posJ3!=41 && posJ4!=41){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",31);color(14,0);printf("%c   ",435);
+    }
+    if (case41l2==8.5 && (posJ1==41||posJ2==41||posJ3==41||posJ4==41)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",31,f);color(14,0);printf("%c   ",435);
+    }
+    if (case41l2==8.6 && posJ1!=41 && posJ2!=41 && posJ3!=41 && posJ4!=41){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",459);color(14,0);printf("%c   ",435);
+    }
+    if (case41l2==8.6 && (posJ1==41||posJ2==41||posJ3==41||posJ4==41)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",459,f);color(14,0);printf("%c   ",435);
+    }
+    if (case41l2>=9 && case41l2<10){
         color(14,0);
         printf("    %c%c%c%c%c%c%c",474,452,452,452,452,452,452);
     }
-    if (case41l2==10){
+    if (case41l2>=10 && case41l2<11){
         color(14,0);
         printf("%c%c%c%c%c%c%c%c   ",452,452,452,452,452,452,452,447);
     }
     color(9,0);
-    printf("%c%c%c%c%c",452,452,452,452,473);color(8,0);printf(" %c",320);color(9,0);
-    printf("%c%c%c%c%c",448,452,452,452,452);
+    f=testposition(posJ1,posJ2,posJ3,posJ4,42,p1,p2,p3,p4);
+    if (posJ1!=42 && posJ2!=42 && posJ3!=42 && posJ4!=42){
+        printf("%c%c%c%c%c",452,452,452,452,473);color(8,0);printf(" %c",320);color(9,0);
+        printf("%c%c%c%c%c",448,452,452,452,452);
+    }
+    if (posJ1==42||posJ2==42||posJ3==42||posJ4==42){
+        printf("%c%c%c%c%c",452,452,452,452,473);color(8,0);printf("%c%c",f,320);color(9,0);
+        printf("%c%c%c%c%c",448,452,452,452,452);
+    }
     color(14,0);
+    f=testposition(posJ1,posJ2,posJ3,posJ4,43,p1,p2,p3,p4);
     if (case43l2==0){
         printf("           ");
     }
@@ -7720,37 +12865,185 @@ int test(double case01,double case03,double case05,double case10,double case11,d
         color(14,0);
         printf("%c%c%c%c%c%c%c%c%c%c%c",452,452,452,452,452,452,452,452,452,452,452);
     }
-    if (case43l2==2.1){
+    if (case43l2==2.1 && posJ1!=43 && posJ2!=43 && posJ3!=43 && posJ4!=43){
         color(14,0);
-        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf(" %c",292);color(14,0);printf("%c%c%c%c",448,452,452,452);
+        printf("%c%c%c%c%c", 452, 452, 452, 452, 473);color(15,0);printf(" %c",292);color(14,0);
+        printf("%c%c%c%c", 448, 452, 452, 452);
     }
-    if (case43l2==2.2){
+    if (case43l2==2.1 && (posJ1==43||posJ2==43||posJ3==43||posJ4==43)){
         color(14,0);
-        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf(" %c",291);color(14,0);printf("%c%c%c%c",448,452,452,452);
+        printf("%c%c%c%c%c", 452, 452, 452, 452, 473);color(15,0);printf("%c%c",f,292);color(14,0);
+        printf("%c%c%c%c", 448, 452, 452, 452);
     }
-    if (case43l2==2.3){
+    if (case43l2==2.2 && posJ1!=43 && posJ2!=43 && posJ3!=43 && posJ4!=43){
         color(14,0);
-        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf(" %c",285);color(14,0);printf("%c%c%c%c",448,452,452,452);
+        printf("%c%c%c%c%c", 452, 452, 452, 452, 473);color(15,0);printf(" %c",291);color(14,0);
+        printf("%c%c%c%c", 448, 452, 452, 452);
     }
-    if (case43l2==2.4){
+    if (case43l2==2.2 && (posJ1==43||posJ2==43||posJ3==43||posJ4==43)){
         color(14,0);
-        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf(" %c",279);color(14,0);printf("%c%c%c%c",448,452,452,452);
+        printf("%c%c%c%c%c", 452, 452, 452, 452, 473);color(15,0);printf("%c%c",f,291);color(14,0);
+        printf("%c%c%c%c", 448, 452, 452, 452);
     }
-    if (case43l2==2.5){
+    if (case43l2==2.3 && posJ1!=43 && posJ2!=43 && posJ3!=43 && posJ4!=43){
         color(14,0);
-        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf(" %c",277);color(14,0);printf("%c%c%c%c",448,452,452,452);
+        printf("%c%c%c%c%c", 452, 452, 452, 452, 473);color(15,0);printf(" %c",285);color(14,0);
+        printf("%c%c%c%c", 448, 452, 452, 452);
     }
-    if (case43l2==2.6){
+    if (case43l2==2.3 && (posJ1==43||posJ2==43||posJ3==43||posJ4==43)){
         color(14,0);
-        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf(" %c",225);color(14,0);printf("%c%c%c%c",448,452,452,452);
+        printf("%c%c%c%c%c", 452, 452, 452, 452, 473);color(15,0);printf("%c%c",f,285);color(14,0);
+        printf("%c%c%c%c", 448, 452, 452, 452);
     }
-    if (case43l2>3 && case43l2<4){
+    if (case43l2==2.4 && posJ1!=43 && posJ2!=43 && posJ3!=43 && posJ4!=43){
         color(14,0);
-        piece3bout1l1();
+        printf("%c%c%c%c%c", 452, 452, 452, 452, 473);color(15,0);printf(" %c",428);color(14,0);
+        printf("%c%c%c%c", 448, 452, 452, 452);
     }
-    if (case43l2>4 && case43l2<5){
+    if (case43l2==2.4 && (posJ1==43||posJ2==43||posJ3==43||posJ4==43)){
         color(14,0);
-        piece4bout1l1();
+        printf("%c%c%c%c%c", 452, 452, 452, 452, 473);color(15,0);printf("%c%c",f,428);color(14,0);
+        printf("%c%c%c%c", 448, 452, 452, 452);
+    }
+    if (case43l2==2.5 && posJ1!=43 && posJ2!=43 && posJ3!=43 && posJ4!=43){
+        color(14,0);
+        printf("%c%c%c%c%c", 452, 452, 452, 452, 473);color(15,0);printf(" %c",277);color(14,0);
+        printf("%c%c%c%c", 448, 452, 452, 452);
+    }
+    if (case43l2==2.5 && (posJ1==43||posJ2==43||posJ3==43||posJ4==43)){
+        color(14,0);
+        printf("%c%c%c%c%c", 452, 452, 452, 452, 473);color(15,0);printf("%c%c",f,277);color(14,0);
+        printf("%c%c%c%c", 448, 452, 452, 452);
+    }
+    if (case43l2==2.6 && posJ1!=43 && posJ2!=43 && posJ3!=43 && posJ4!=43){
+        color(14,0);
+        printf("%c%c%c%c%c", 452, 452, 452, 452, 473);color(15,0);printf(" %c",225);color(14,0);
+        printf("%c%c%c%c", 448, 452, 452, 452);
+    }
+    if (case43l2==2.6 && (posJ1==43||posJ2==43||posJ3==43||posJ4==43)){
+        color(14,0);
+        printf("%c%c%c%c%c", 452, 452, 452, 452, 473);color(15,0);printf("%c%c",f,225);color(14,0);
+        printf("%c%c%c%c", 448, 452, 452, 452);
+    }
+    if (case43l2==3.1 && posJ1!=43 && posJ2!=43 && posJ3!=43 && posJ4!=43){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",292);color(14,0);
+        printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case43l2==3.1 && (posJ1==43||posJ2==43||posJ3==43||posJ4==43)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,292);color(14,0);
+        printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case43l2==3.2 && posJ1!=43 && posJ2!=43 && posJ3!=43 && posJ4!=43){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",291);color(14,0);
+        printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case43l2==3.2 && (posJ1==43||posJ2==43||posJ3==43||posJ4==43)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,291);color(14,0);
+        printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case43l2==3.3 && posJ1!=43 && posJ2!=43 && posJ3!=43 && posJ4!=43){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",285);color(14,0);
+        printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case43l2==3.3 && (posJ1==43||posJ2==43||posJ3==43||posJ4==43)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,285);color(14,0);
+        printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case43l2==3.4 && posJ1!=43 && posJ2!=43 && posJ3!=43 && posJ4!=43){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",428);color(14,0);
+        printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case43l2==3.4 && (posJ1==43||posJ2==43||posJ3==43||posJ4==43)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,428);color(14,0);
+        printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case43l2==3.5 && posJ1!=43 && posJ2!=43 && posJ3!=43 && posJ4!=43){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",277);color(14,0);
+        printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case43l2==3.5 && (posJ1==43||posJ2==43||posJ3==43||posJ4==43)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,277);color(14,0);
+        printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case43l2==3.6 && posJ1!=43 && posJ2!=43 && posJ3!=43 && posJ4!=43){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",225);color(14,0);
+        printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case43l2==3.6 && (posJ1==43||posJ2==43||posJ3==43||posJ4==43)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,225);color(14,0);
+        printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case43l2==4.1 && posJ1!=43 && posJ2!=43 && posJ3!=43 && posJ4!=43){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",292);color(14,0);
+        printf("%c   ",435);
+    }
+    if (case43l2==4.1 && (posJ1==43||posJ2==43||posJ3==43||posJ4==43)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",292,f);color(14,0);
+        printf("%c   ",435);
+    }
+    if (case43l2==4.2 && posJ1!=43 && posJ2!=43 && posJ3!=43 && posJ4!=43){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",291);color(14,0);
+        printf("%c   ",435);
+    }
+    if (case43l2==4.2 && (posJ1==43||posJ2==43||posJ3==43||posJ4==43)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",291,f);color(14,0);
+        printf("%c   ",435);
+    }
+    if (case43l2==4.3 && posJ1!=43 && posJ2!=43 && posJ3!=43 && posJ4!=43){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",285);color(14,0);
+        printf("%c   ",435);
+    }
+    if (case43l2==4.3 && (posJ1==43||posJ2==43||posJ3==43||posJ4==43)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",285,f);color(14,0);
+        printf("%c   ",435);
+    }
+    if (case43l2==4.4 && posJ1!=43 && posJ2!=43 && posJ3!=43 && posJ4!=43){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",428);color(14,0);
+        printf("%c   ",435);
+    }
+    if (case43l2==4.4 && (posJ1==43||posJ2==43||posJ3==43||posJ4==43)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",428,f);color(14,0);
+        printf("%c   ",435);
+    }
+    if (case43l2==4.5 && posJ1!=43 && posJ2!=43 && posJ3!=43 && posJ4!=43){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",277);color(14,0);
+        printf("%c   ",435);
+    }
+    if (case43l2==4.5 && (posJ1==43||posJ2==43||posJ3==43||posJ4==43)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",277,f);color(14,0);
+        printf("%c   ",435);
+    }
+    if (case43l2==4.6 && posJ1!=43 && posJ2!=43 && posJ3!=43 && posJ4!=43){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",225);color(14,0);
+        printf("%c   ",435);
+    }
+    if (case43l2==4.6 && (posJ1==43||posJ2==43||posJ3==43||posJ4==43)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",225,f);color(14,0);
+        printf("%c   ",435);
     }
     if (case43l2==5){
         color(14,0);
@@ -7760,25 +13053,130 @@ int test(double case01,double case03,double case05,double case10,double case11,d
         color(14,0);
         printf("%c%c%c%c%c%c%c%c%c%c%c",452,452,452,452,452,452,452,452,452,452,452);
     }
-    if (case43l2==7){
+    if (case43l2==7 && posJ1!=43 && posJ2!=43 && posJ3!=43 && posJ4!=43){
         color(14,0);
         printf("    %c  %c%c%c%c",435,448,452,452,452);
     }
-    if (case43l2==8){
+    if (case43l2==7 && (posJ1==43||posJ2==43||posJ3==43||posJ4==43)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",f);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case43l2==7.1 && posJ1!=43 && posJ2!=43 && posJ3!=43 && posJ4!=43){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",189);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case43l2==7.1 && (posJ1==43||posJ2==43||posJ3==43||posJ4==43)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,189);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case43l2==7.2 && posJ1!=43 && posJ2!=43 && posJ3!=43 && posJ4!=43){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",157);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case43l2==7.2 && (posJ1==43||posJ2==43||posJ3==43||posJ4==43)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,157);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case43l2==7.3 && posJ1!=43 && posJ2!=43 && posJ3!=43 && posJ4!=43){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",143);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case43l2==7.3 && (posJ1==43||posJ2==43||posJ3==43||posJ4==43)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,143);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case43l2==7.4 && posJ1!=43 && posJ2!=43 && posJ3!=43 && posJ4!=43){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",37);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case43l2==7.4 && (posJ1==43||posJ2==43||posJ3==43||posJ4==43)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,37);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case43l2==7.5 && posJ1!=43 && posJ2!=43 && posJ3!=43 && posJ4!=43){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",31);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case43l2==7.5 && (posJ1==43||posJ2==43||posJ3==43||posJ4==43)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,31);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case43l2==7.6 && posJ1!=43 && posJ2!=43 && posJ3!=43 && posJ4!=43){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",459);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case43l2==7.6 && (posJ1==43||posJ2==43||posJ3==43||posJ4==43)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,459);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case43l2==8 && posJ1!=43 && posJ2!=43 && posJ3!=43 && posJ4!=43){
         color(14,0);
         printf("%c%c%c%c%c  %c   ",452,452,452,452,473,435);
     }
-    if (case43l2==9){
+    if (case43l2==8 && (posJ1==43||posJ2==43||posJ3==43||posJ4==43)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",f);color(14,0);printf("%c   ",435);
+    }
+    if (case43l2==8.1 && posJ1!=43 && posJ2!=43 && posJ3!=43 && posJ4!=43){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",189);color(14,0);printf("%c   ",435);
+    }
+    if (case43l2==8.1 && (posJ1==43||posJ2==43||posJ3==43||posJ4==43)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",189,f);color(14,0);printf("%c   ",435);
+    }
+    if (case43l2==8.2 && posJ1!=43 && posJ2!=43 && posJ3!=43 && posJ4!=43){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",157);color(14,0);printf("%c   ",435);
+    }
+    if (case43l2==8.2 && (posJ1==43||posJ2==43||posJ3==43||posJ4==43)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",157,f);color(14,0);printf("%c   ",435);
+    }
+    if (case43l2==8.3 && posJ1!=43 && posJ2!=43 && posJ3!=43 && posJ4!=43){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",143);color(14,0);printf("%c   ",435);
+    }
+    if (case43l2==8.3 && (posJ1==43||posJ2==43||posJ3==43||posJ4==43)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",143,f);color(14,0);printf("%c   ",435);
+    }
+    if (case43l2==8.4 && posJ1!=43 && posJ2!=43 && posJ3!=43 && posJ4!=43){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",37);color(14,0);printf("%c   ",435);
+    }
+    if (case43l2==8.4 && (posJ1==43||posJ2==43||posJ3==43||posJ4==43)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",37,f);color(14,0);printf("%c   ",435);
+    }
+    if (case43l2==8.5 && posJ1!=43 && posJ2!=43 && posJ3!=43 && posJ4!=43){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",31);color(14,0);printf("%c   ",435);
+    }
+    if (case43l2==8.5 && (posJ1==43||posJ2==43||posJ3==43||posJ4==43)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",31,f);color(14,0);printf("%c   ",435);
+    }
+    if (case43l2==8.6 && posJ1!=43 && posJ2!=43 && posJ3!=43 && posJ4!=43){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",459);color(14,0);printf("%c   ",435);
+    }
+    if (case43l2==8.6 && (posJ1==43||posJ2==43||posJ3==43||posJ4==43)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",459,f);color(14,0);printf("%c   ",435);
+    }
+    if (case43l2>=9 && case43l2<10){
         color(14,0);
         printf("    %c%c%c%c%c%c%c",474,452,452,452,452,452,452);
     }
-    if (case43l2==10){
+    if (case43l2>=10 && case43l2<11){
         color(14,0);
         printf("%c%c%c%c%c%c%c%c   ",452,452,452,452,452,452,452,447);
     }
     color(9,0);
     printf("%c%c%c%c%c%c%c%c%c%c%c%c%c%c",452,452,452,452,452,452,452,452,452,452,452,452,452,452);
     color(14,0);
+    f=testposition(posJ1,posJ2,posJ3,posJ4,45,p1,p2,p3,p4);
     if (case45l2==0){
         printf("           ");
     }
@@ -7786,37 +13184,185 @@ int test(double case01,double case03,double case05,double case10,double case11,d
         color(14,0);
         printf("%c%c%c%c%c%c%c%c%c%c%c",452,452,452,452,452,452,452,452,452,452,452);
     }
-    if (case45l2==2.1){
+    if (case45l2==2.1 && posJ1!=45 && posJ2!=45 && posJ3!=45 && posJ4!=45){
         color(14,0);
-        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf(" %c",292);color(14,0);printf("%c%c%c%c",448,452,452,452);
+        printf("%c%c%c%c%c", 452, 452, 452, 452, 473);color(15,0);printf(" %c",292);color(14,0);
+        printf("%c%c%c%c", 448, 452, 452, 452);
     }
-    if (case45l2==2.2){
+    if (case45l2==2.1 && (posJ1==45||posJ2==45||posJ3==45||posJ4==45)){
         color(14,0);
-        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf(" %c",291);color(14,0);printf("%c%c%c%c",448,452,452,452);
+        printf("%c%c%c%c%c", 452, 452, 452, 452, 473);color(15,0);printf("%c%c",f,292);color(14,0);
+        printf("%c%c%c%c", 448, 452, 452, 452);
     }
-    if (case45l2==2.3){
+    if (case45l2==2.2 && posJ1!=45 && posJ2!=45 && posJ3!=45 && posJ4!=45){
         color(14,0);
-        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf(" %c",285);color(14,0);printf("%c%c%c%c",448,452,452,452);
+        printf("%c%c%c%c%c", 452, 452, 452, 452, 473);color(15,0);printf(" %c",291);color(14,0);
+        printf("%c%c%c%c", 448, 452, 452, 452);
     }
-    if (case45l2==2.4){
+    if (case45l2==2.2 && (posJ1==45||posJ2==45||posJ3==45||posJ4==45)){
         color(14,0);
-        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf(" %c",279);color(14,0);printf("%c%c%c%c",448,452,452,452);
+        printf("%c%c%c%c%c", 452, 452, 452, 452, 473);color(15,0);printf("%c%c",f,291);color(14,0);
+        printf("%c%c%c%c", 448, 452, 452, 452);
     }
-    if (case45l2==2.5){
+    if (case45l2==2.3 && posJ1!=45 && posJ2!=45 && posJ3!=45 && posJ4!=45){
         color(14,0);
-        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf(" %c",277);color(14,0);printf("%c%c%c%c",448,452,452,452);
+        printf("%c%c%c%c%c", 452, 452, 452, 452, 473);color(15,0);printf(" %c",285);color(14,0);
+        printf("%c%c%c%c", 448, 452, 452, 452);
     }
-    if (case45l2==2.6){
+    if (case45l2==2.3 && (posJ1==45||posJ2==45||posJ3==45||posJ4==45)){
         color(14,0);
-        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf(" %c",225);color(14,0);printf("%c%c%c%c",448,452,452,452);
+        printf("%c%c%c%c%c", 452, 452, 452, 452, 473);color(15,0);printf("%c%c",f,285);color(14,0);
+        printf("%c%c%c%c", 448, 452, 452, 452);
     }
-    if (case45l2>3 && case45l2<4){
+    if (case45l2==2.4 && posJ1!=45 && posJ2!=45 && posJ3!=45 && posJ4!=45){
         color(14,0);
-        piece3bout1l1();
+        printf("%c%c%c%c%c", 452, 452, 452, 452, 473);color(15,0);printf(" %c",428);color(14,0);
+        printf("%c%c%c%c", 448, 452, 452, 452);
     }
-    if (case45l2>4 && case45l2<5){
+    if (case45l2==2.4 && (posJ1==45||posJ2==45||posJ3==45||posJ4==45)){
         color(14,0);
-        piece4bout1l1();
+        printf("%c%c%c%c%c", 452, 452, 452, 452, 473);color(15,0);printf("%c%c",f,428);color(14,0);
+        printf("%c%c%c%c", 448, 452, 452, 452);
+    }
+    if (case45l2==2.5 && posJ1!=45 && posJ2!=45 && posJ3!=45 && posJ4!=45){
+        color(14,0);
+        printf("%c%c%c%c%c", 452, 452, 452, 452, 473);color(15,0);printf(" %c",277);color(14,0);
+        printf("%c%c%c%c", 448, 452, 452, 452);
+    }
+    if (case45l2==2.5 && (posJ1==45||posJ2==45||posJ3==45||posJ4==45)){
+        color(14,0);
+        printf("%c%c%c%c%c", 452, 452, 452, 452, 473);color(15,0);printf("%c%c",f,277);color(14,0);
+        printf("%c%c%c%c", 448, 452, 452, 452);
+    }
+    if (case45l2==2.6 && posJ1!=45 && posJ2!=45 && posJ3!=45 && posJ4!=45){
+        color(14,0);
+        printf("%c%c%c%c%c", 452, 452, 452, 452, 473);color(15,0);printf(" %c",245);color(14,0);
+        printf("%c%c%c%c", 448, 452, 452, 452);
+    }
+    if (case45l2==2.6 && (posJ1==45||posJ2==45||posJ3==45||posJ4==45)){
+        color(14,0);
+        printf("%c%c%c%c%c", 452, 452, 452, 452, 473);color(15,0);printf("%c%c",f,245);color(14,0);
+        printf("%c%c%c%c", 448, 452, 452, 452);
+    }
+    if (case45l2==3.1 && posJ1!=45 && posJ2!=45 && posJ3!=45 && posJ4!=45){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",292);color(14,0);
+        printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case45l2==3.1 && (posJ1==45||posJ2==45||posJ3==45||posJ4==45)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,292);color(14,0);
+        printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case45l2==3.2 && posJ1!=45 && posJ2!=45 && posJ3!=45 && posJ4!=45){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",291);color(14,0);
+        printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case45l2==3.2 && (posJ1==45||posJ2==45||posJ3==45||posJ4==45)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,291);color(14,0);
+        printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case45l2==3.3 && posJ1!=45 && posJ2!=45 && posJ3!=45 && posJ4!=45){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",285);color(14,0);
+        printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case45l2==3.3 && (posJ1==45||posJ2==45||posJ3==45||posJ4==45)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,285);color(14,0);
+        printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case45l2==3.4 && posJ1!=45 && posJ2!=45 && posJ3!=45 && posJ4!=45){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",428);color(14,0);
+        printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case45l2==3.4 && (posJ1==45||posJ2==45||posJ3==45||posJ4==45)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,428);color(14,0);
+        printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case45l2==3.5 && posJ1!=45 && posJ2!=45 && posJ3!=45 && posJ4!=45){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",277);color(14,0);
+        printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case45l2==3.5 && (posJ1==45||posJ2==45||posJ3==45||posJ4==45)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,277);color(14,0);
+        printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case45l2==3.6 && posJ1!=45 && posJ2!=45 && posJ3!=45 && posJ4!=45){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",245);color(14,0);
+        printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case45l2==3.6 && (posJ1==45||posJ2==45||posJ3==45||posJ4==45)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,245);color(14,0);
+        printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case45l2==4.1 && posJ1!=45 && posJ2!=45 && posJ3!=45 && posJ4!=45){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",292);color(14,0);
+        printf("%c   ",435);
+    }
+    if (case45l2==4.1 && (posJ1==45||posJ2==45||posJ3==45||posJ4==45)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",292,f);color(14,0);
+        printf("%c   ",435);
+    }
+    if (case45l2==4.2 && posJ1!=45 && posJ2!=45 && posJ3!=45 && posJ4!=45){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",291);color(14,0);
+        printf("%c   ",435);
+    }
+    if (case45l2==4.2 && (posJ1==45||posJ2==45||posJ3==45||posJ4==45)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",291,f);color(14,0);
+        printf("%c   ",435);
+    }
+    if (case45l2==4.3 && posJ1!=45 && posJ2!=45 && posJ3!=45 && posJ4!=45){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",285);color(14,0);
+        printf("%c   ",435);
+    }
+    if (case45l2==4.3 && (posJ1==45||posJ2==45||posJ3==45||posJ4==45)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",285,f);color(14,0);
+        printf("%c   ",435);
+    }
+    if (case45l2==4.4 && posJ1!=45 && posJ2!=45 && posJ3!=45 && posJ4!=45){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",428);color(14,0);
+        printf("%c   ",435);
+    }
+    if (case45l2==4.4 && (posJ1==45||posJ2==45||posJ3==45||posJ4==45)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",428,f);color(14,0);
+        printf("%c   ",435);
+    }
+    if (case45l2==4.5 && posJ1!=45 && posJ2!=45 && posJ3!=45 && posJ4!=45){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",277);color(14,0);
+        printf("%c   ",435);
+    }
+    if (case45l2==4.5 && (posJ1==45||posJ2==45||posJ3==45||posJ4==45)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",277,f);color(14,0);
+        printf("%c   ",435);
+    }
+    if (case45l2==4.6 && posJ1!=45 && posJ2!=45 && posJ3!=45 && posJ4!=45){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",245);color(14,0);
+        printf("%c   ",435);
+    }
+    if (case45l2==4.6 && (posJ1==45||posJ2==45||posJ3==45||posJ4==45)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",245,f);color(14,0);
+        printf("%c   ",435);
     }
     if (case45l2==5){
         color(14,0);
@@ -7826,19 +13372,123 @@ int test(double case01,double case03,double case05,double case10,double case11,d
         color(14,0);
         printf("%c%c%c%c%c%c%c%c%c%c%c",452,452,452,452,452,452,452,452,452,452,452);
     }
-    if (case45l2==7){
+    if (case45l2==7 && posJ1!=45 && posJ2!=45 && posJ3!=45 && posJ4!=45){
         color(14,0);
         printf("    %c  %c%c%c%c",435,448,452,452,452);
     }
-    if (case45l2==8){
+    if (case45l2==7 && (posJ1==45||posJ2==45||posJ3==45||posJ4==45)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",f);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case45l2==7.1 && posJ1!=45 && posJ2!=45 && posJ3!=45 && posJ4!=45){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",189);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case45l2==7.1 && (posJ1==45||posJ2==45||posJ3==45||posJ4==45)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,189);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case45l2==7.2 && posJ1!=45 && posJ2!=45 && posJ3!=45 && posJ4!=45){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",457);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case45l2==7.2 && (posJ1==45||posJ2==45||posJ3==45||posJ4==45)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,457);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case45l2==7.3 && posJ1!=45 && posJ2!=45 && posJ3!=45 && posJ4!=45){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",143);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case45l2==7.3 && (posJ1==45||posJ2==45||posJ3==45||posJ4==45)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,143);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case45l2==7.4 && posJ1!=45 && posJ2!=45 && posJ3!=45 && posJ4!=45){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",37);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case45l2==7.4 && (posJ1==45||posJ2==45||posJ3==45||posJ4==45)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,37);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case45l2==7.5 && posJ1!=45 && posJ2!=45 && posJ3!=45 && posJ4!=45){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",31);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case45l2==7.5 && (posJ1==45||posJ2==45||posJ3==45||posJ4==45)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,31);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case45l2==7.6 && posJ1!=45 && posJ2!=45 && posJ3!=45 && posJ4!=45){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",459);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case45l2==7.6 && (posJ1==45||posJ2==45||posJ3==45||posJ4==45)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,459);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case45l2==8 && posJ1!=45 && posJ2!=45 && posJ3!=45 && posJ4!=45){
         color(14,0);
         printf("%c%c%c%c%c  %c   ",452,452,452,452,473,435);
     }
-    if (case45l2==9){
+    if (case45l2==8 && (posJ1==45||posJ2==45||posJ3==45||posJ4==45)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",f);color(14,0);printf("%c   ",435);
+    }
+    if (case45l2==8.1 && posJ1!=45 && posJ2!=45 && posJ3!=45 && posJ4!=45){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",189);color(14,0);printf("%c   ",435);
+    }
+    if (case45l2==8.1 && (posJ1==45||posJ2==45||posJ3==45||posJ4==45)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",189,f);color(14,0);printf("%c   ",435);
+    }
+    if (case45l2==8.2 && posJ1!=45 && posJ2!=45 && posJ3!=45 && posJ4!=45){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",457);color(14,0);printf("%c   ",435);
+    }
+    if (case45l2==8.2 && (posJ1==45||posJ2==45||posJ3==45||posJ4==45)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",457,f);color(14,0);printf("%c   ",435);
+    }
+    if (case45l2==8.3 && posJ1!=45 && posJ2!=45 && posJ3!=45 && posJ4!=45){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",143);color(14,0);printf("%c   ",435);
+    }
+    if (case45l2==8.3 && (posJ1==45||posJ2==45||posJ3==45||posJ4==45)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",143,f);color(14,0);printf("%c   ",435);
+    }
+    if (case45l2==8.4 && posJ1!=45 && posJ2!=45 && posJ3!=45 && posJ4!=45){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",37);color(14,0);printf("%c   ",435);
+    }
+    if (case45l2==8.4 && (posJ1==45||posJ2==45||posJ3==45||posJ4==45)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",37,f);color(14,0);printf("%c   ",435);
+    }
+    if (case45l2==8.5 && posJ1!=45 && posJ2!=45 && posJ3!=45 && posJ4!=45){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",31);color(14,0);printf("%c   ",435);
+    }
+    if (case45l2==8.5 && (posJ1==45||posJ2==45||posJ3==45||posJ4==45)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",31,f);color(14,0);printf("%c   ",435);
+    }
+    if (case45l2==8.6 && posJ1!=45 && posJ2!=45 && posJ3!=45 && posJ4!=45){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",459);color(14,0);printf("%c   ",435);
+    }
+    if (case45l2==8.6 && (posJ1==45||posJ2==45||posJ3==45||posJ4==45)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",459,f);color(14,0);printf("%c   ",435);
+    }
+    if (case45l2>=9 && case45l2<10){
         color(14,0);
         printf("    %c%c%c%c%c%c%c",474,452,452,452,452,452,452);
     }
-    if (case45l2==10){
+    if (case45l2>=10 && case45l2<11){
         color(14,0);
         printf("%c%c%c%c%c%c%c%c   ",452,452,452,452,452,452,452,447);
     }
@@ -7847,321 +13497,655 @@ int test(double case01,double case03,double case05,double case10,double case11,d
     printf("%c",435);a();
     printf("                                 ");printf("%c  %c%c%c%c%c",435,474,452,452,452,452);
     color(14,0);
+    f=testposition(posJ1,posJ2,posJ3,posJ4,41,p1,p2,p3,p4);
     if (case41l3==0){
         printf("           ");
     }
-    if (case41l3==1.1){
+    if (case41l3==1.1 && posJ1!=41 && posJ2!=41 && posJ3!=41 && posJ4!=41){
         color(14,0);
-        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf(" %c",292);color(14,0);printf("%c%c%c%c",474,452,452,452);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf(" %c",292);color(14,0);
+        printf("%c%c%c%c",474,452,452,452);
     }
-    if (case41l3==1.2){
+    if (case41l3==1.1 && (posJ1==41||posJ2==41||posJ3==41||posJ4==41)){
         color(14,0);
-        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf(" %c",291);color(14,0);printf("%c%c%c%c",474,452,452,452);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c%c",f,292);color(14,0);
+        printf("%c%c%c%c",474,452,452,452);
     }
-    if (case41l3==1.3){
+    if (case41l3==1.2 && posJ1!=41 && posJ2!=41 && posJ3!=41 && posJ4!=41){
         color(14,0);
-        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf(" %c",285);color(14,0);printf("%c%c%c%c",474,452,452,452);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf(" %c",291);color(14,0);
+        printf("%c%c%c%c",474,452,452,452);
     }
-    if (case41l3==1.4){
+    if (case41l3==1.2 && (posJ1==41||posJ2==41||posJ3==41||posJ4==41)){
         color(14,0);
-        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf(" %c",279);color(14,0);printf("%c%c%c%c",474,452,452,452);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c%c",f,291);color(14,0);
+        printf("%c%c%c%c",474,452,452,452);
     }
-    if (case41l3==1.5){
+    if (case41l3==1.3 && posJ1!=41 && posJ2!=41 && posJ3!=41 && posJ4!=41){
         color(14,0);
-        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf(" %c",277);color(14,0);printf("%c%c%c%c",474,452,452,452);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf(" %c",285);color(14,0);
+        printf("%c%c%c%c",474,452,452,452);
     }
-    if (case41l3==1.6){
+    if (case41l3==1.3 && (posJ1==41||posJ2==41||posJ3==41||posJ4==41)){
         color(14,0);
-        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf(" %c",225);color(14,0);printf("%c%c%c%c",474,452,452,452);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c%c",f,285);color(14,0);
+        printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case41l3==1.4 && posJ1!=41 && posJ2!=41 && posJ3!=41 && posJ4!=41){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf(" %c",428);color(14,0);
+        printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case41l3==1.4 && (posJ1==41||posJ2==41||posJ3==41||posJ4==41)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c%c",f,428);color(14,0);
+        printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case41l3==1.5 && posJ1!=41 && posJ2!=41 && posJ3!=41 && posJ4!=41){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf(" %c",277);color(14,0);
+        printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case41l3==1.5 && (posJ1==41||posJ2==41||posJ3==41||posJ4==41)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c%c",f,277);color(14,0);
+        printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case41l3==1.6 && posJ1!=41 && posJ2!=41 && posJ3!=41 && posJ4!=41){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf(" %c",225);color(14,0);
+        printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case41l3==1.6 && (posJ1==41||posJ2==41||posJ3==41||posJ4==41)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c%c",f,225);color(14,0);
+        printf("%c%c%c%c",474,452,452,452);
     }
     if (case41l3>2 && case41l3<3){
         color(14,0);
         printf("%c%c%c%c%c%c%c%c%c%c%c",452,452,452,452,452,452,452,452,452,452,452);
     }
-    if (case41l3==3.1){
-        color(14,0);
-        printf("    %c",435);color(15,0);printf(" %c",292);color(14,0);printf("%c%c%c%c",474,452,452,452);
-    }
-    if (case41l3==3.2){
-        color(14,0);
-        printf("    %c",435);color(15,0);printf(" %c",291);color(14,0);printf("%c%c%c%c",474,452,452,452);
-    }
-    if (case41l3==3.3){
-        color(14,0);
-        printf("    %c",435);color(15,0);printf(" %c",285);color(14,0);printf("%c%c%c%c",474,452,452,452);
-    }
-    if (case41l3==3.4){
-        color(14,0);
-        printf("    %c",435);color(15,0);printf(" %c",279);color(14,0);printf("%c%c%c%c",474,452,452,452);
-    }
-    if (case41l3==3.5){
-        color(14,0);
-        printf("    %c",435);color(15,0);printf(" %c",277);color(14,0);printf("%c%c%c%c",474,452,452,452);
-    }
-    if (case41l3==3.6){
-        color(14,0);
-        printf("    %c",435);color(15,0);printf(" %c",225);color(14,0);printf("%c%c%c%c",474,452,452,452);
-    }
-    if (case41l3==4.1){
-        color(14,0);
-        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c ",292);color(14,0);printf("%c   ",435);
-    }
-    if (case41l3==4.2){
-        color(14,0);
-        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c ",291);color(14,0);printf("%c   ",435);
-    }
-    if (case41l3==4.3){
-        color(14,0);
-        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c ",285);color(14,0);printf("%c   ",435);
-    }
-    if (case41l3==4.4){
-        color(14,0);
-        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c ",279);color(14,0);printf("%c   ",435);
-    }
-    if (case41l3==4.5){
-        color(14,0);
-        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c ",277);color(14,0);printf("%c   ",435);
-    }
-    if (case41l3==4.6){
-        color(14,0);
-        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c ",225);color(14,0);printf("%c   ",435);
-    }
-    if (case41l3==5){
-        color(14,0);
-        piece5bout2();
-    }
-    if (case41l3==6){
-        color(14,0);
-        printf("%c%c%c%c%c%c%c%c%c%c%c",452,452,452,452,452,452,452,452,452,452,452);
-    }
-    if (case41l3==7){
-        color(14,0);
-        printf("    %c%c%c%c%c%c%c",448,452,452,452,452,452,452);
-    }
-    if (case41l3==8){
-        color(14,0);
-        printf("%c%c%c%c%c%c%c%c   ",452,452,452,452,452,452,452,473);
-    }
-    if (case41l3==9){
+    if (case41l3>3 && case41l3<4){
         color(14,0);
         printf("    %c  %c%c%c%c",435,474,452,452,452);
     }
-    if (case41l3==10) {
+    if (case41l3>4 && case41l3<5){
+        color(14,0);
+        printf("%c%c%c%c%c  %c   ",452,452,452,452,447,435);
+    }
+    if (case41l3==5 && posJ1!=41 && posJ2!=41 && posJ3!=41 && posJ4!=41){
+        color(14,0);
+        piece5bout2();
+    }
+    if (case41l3==5 && (posJ1==41||posJ2==41||posJ3==41||posJ4==41)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c ",f);color(14,0);printf("%c   ",435);
+    }
+    if (case41l3==6 && posJ1!=41 && posJ2!=41 && posJ3!=41 && posJ4!=41){
+        color(14,0);
+        printf("%c%c%c%c%c%c%c%c%c%c%c",452,452,452,452,452,452,452,452,452,452,452);
+    }
+    if (case41l3==6 && (posJ1==41||posJ2==41||posJ3==41||posJ4==41)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,452);color(15,0);printf("%c",f);color(14,0);printf("%c%c%c%c%c",452,452,452,452,452);
+    }
+    if (case41l3>=7 && case41l3<8){
+        color(14,0);
+        printf("    %c%c%c%c%c%c%c",448,452,452,452,452,452,452);
+    }
+    if (case41l3>=8 && case41l3<9){
+        color(14,0);
+        printf("%c%c%c%c%c%c%c%c   ",452,452,452,452,452,452,452,473);
+    }
+    if (case41l3==9 && posJ1!=41 && posJ2!=41 && posJ3!=41 && posJ4!=41){
+        color(14,0);
+        printf("    %c  %c%c%c%c",435,474,452,452,452);
+    }
+    if (case41l3==9 && (posJ1==41||posJ2==41||posJ3==41||posJ4==41)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",f);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case41l3==9.1 && posJ1!=41 && posJ2!=41 && posJ3!=41 && posJ4!=41){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",189);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case41l3==9.1 && (posJ1==41||posJ2==41||posJ3==41||posJ4==41)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,189);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case41l3==9.2 && posJ1!=41 && posJ2!=41 && posJ3!=41 && posJ4!=41){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",157);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case41l3==9.2 && (posJ1==41||posJ2==41||posJ3==41||posJ4==41)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,157);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case41l3==9.3 && posJ1!=41 && posJ2!=41 && posJ3!=41 && posJ4!=41){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",143);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case41l3==9.3 && (posJ1==41||posJ2==41||posJ3==41||posJ4==41)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,143);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case41l3==9.4 && posJ1!=41 && posJ2!=41 && posJ3!=41 && posJ4!=41){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",37);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case41l3==9.4 && (posJ1==41||posJ2==41||posJ3==41||posJ4==41)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,37);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case41l3==9.5 && posJ1!=41 && posJ2!=41 && posJ3!=41 && posJ4!=41){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",31);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case41l3==9.5 && (posJ1==41||posJ2==41||posJ3==41||posJ4==41)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,31);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case41l3==9.6 && posJ1!=41 && posJ2!=41 && posJ3!=41 && posJ4!=41){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",459);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case41l3==9.6 && (posJ1==41||posJ2==41||posJ3==41||posJ4==41)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,459);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case41l3==10 && (posJ1==41||posJ2==41||posJ3==41||posJ4==41)) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c ",f);color(14,0);printf("%c   ",435);
+    }
+    if (case41l3==10 && posJ1!=41 && posJ2!=41 && posJ3!=41 && posJ4!=41) {
         color(14, 0);
         printf("%c%c%c%c%c  %c   ",452, 452,452,452, 447,435);
+    }
+    if (case41l3==10.1 && posJ1!=41 && posJ2!=41 && posJ3!=41 && posJ4!=41) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c ",189);color(14,0);printf("%c   ",435);
+    }
+    if (case41l3==10.1 && (posJ1==41||posJ2==41||posJ3==41||posJ4==41)) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c%c",189,f);color(14,0);printf("%c   ",435);
+    }
+    if (case41l3==10.2 && posJ1!=41 && posJ2!=41 && posJ3!=41 && posJ4!=41) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c ",157);color(14,0);printf("%c   ",435);
+    }
+    if (case41l3==10.2 && (posJ1==41||posJ2==41||posJ3==41||posJ4==41)) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c%c",157,f);color(14,0);printf("%c   ",435);
+    }
+    if (case41l3==10.3 && posJ1!=41 && posJ2!=41 && posJ3!=41 && posJ4!=41) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c ",143);color(14,0);printf("%c   ",435);
+    }
+    if (case41l3==10.3 && (posJ1==41||posJ2==41||posJ3==41||posJ4==41)) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c%c",143,f);color(14,0);printf("%c   ",435);
+    }
+    if (case41l3==10.4 && posJ1!=41 && posJ2!=41 && posJ3!=41 && posJ4!=41) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c ",37);color(14,0);printf("%c   ",435);
+    }
+    if (case41l3==10.4 && (posJ1==41||posJ2==41||posJ3==41||posJ4==41)) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c%c",37,f);color(14,0);printf("%c   ",435);
+    }
+    if (case41l3==10.5 && posJ1!=41 && posJ2!=41 && posJ3!=41 && posJ4!=41) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c ",31);color(14,0);printf("%c   ",435);
+    }
+    if (case41l3==10.5 && (posJ1==41||posJ2==41||posJ3==41||posJ4==41)) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c%c",31,f);color(14,0);printf("%c   ",435);
+    }
+    if (case41l3==10.6 && posJ1!=41 && posJ2!=41 && posJ3!=41 && posJ4!=41) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c ",459);color(14,0);printf("%c   ",435);
+    }
+    if (case41l3==10.6 && (posJ1==41||posJ2==41||posJ3==41||posJ4==41)) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c%c",459,f);color(14,0);printf("%c   ",435);
     }
     color(9,0);
     printf("%c%c%c%c%c%c%c%c%c%c%c%c",452,452,452,452,452,452,452,452,452,452,452,452);
     color(14,0);
+    f=testposition(posJ1,posJ2,posJ3,posJ4,43,p1,p2,p3,p4);
     if (case43l3==0){
         printf("           ");
     }
-    if (case43l3==1.1){
+    if (case43l3==1.1 && posJ1!=43 && posJ2!=43 && posJ3!=43 && posJ4!=43){
         color(14,0);
-        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf(" %c",292);color(14,0);printf("%c%c%c%c",474,452,452,452);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf(" %c",292);color(14,0);
+        printf("%c%c%c%c",474,452,452,452);
     }
-    if (case43l3==1.2){
+    if (case43l3==1.1 && (posJ1==43||posJ2==43||posJ3==43||posJ4==43)){
         color(14,0);
-        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf(" %c",291);color(14,0);printf("%c%c%c%c",474,452,452,452);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c%c",f,292);color(14,0);
+        printf("%c%c%c%c",474,452,452,452);
     }
-    if (case43l3==1.3){
+    if (case43l3==1.2 && posJ1!=43 && posJ2!=43 && posJ3!=43 && posJ4!=43){
         color(14,0);
-        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf(" %c",285);color(14,0);printf("%c%c%c%c",474,452,452,452);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf(" %c",291);color(14,0);
+        printf("%c%c%c%c",474,452,452,452);
     }
-    if (case43l3==1.4){
+    if (case43l3==1.2 && (posJ1==43||posJ2==43||posJ3==43||posJ4==43)){
         color(14,0);
-        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf(" %c",279);color(14,0);printf("%c%c%c%c",474,452,452,452);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c%c",f,291);color(14,0);
+        printf("%c%c%c%c",474,452,452,452);
     }
-    if (case43l3==1.5){
+    if (case43l3==1.3 && posJ1!=43 && posJ2!=43 && posJ3!=43 && posJ4!=43){
         color(14,0);
-        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf(" %c",277);color(14,0);printf("%c%c%c%c",474,452,452,452);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf(" %c",285);color(14,0);
+        printf("%c%c%c%c",474,452,452,452);
     }
-    if (case43l3==1.6){
+    if (case43l3==1.3 && (posJ1==43||posJ2==43||posJ3==43||posJ4==43)){
         color(14,0);
-        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf(" %c",225);color(14,0);printf("%c%c%c%c",474,452,452,452);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c%c",f,285);color(14,0);
+        printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case43l3==1.4 && posJ1!=43 && posJ2!=43 && posJ3!=43 && posJ4!=43){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf(" %c",428);color(14,0);
+        printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case43l3==1.4 && (posJ1==43||posJ2==43||posJ3==43||posJ4==43)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c%c",f,428);color(14,0);
+        printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case43l3==1.5 && posJ1!=43 && posJ2!=43 && posJ3!=43 && posJ4!=43){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf(" %c",277);color(14,0);
+        printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case43l3==1.5 && (posJ1==43||posJ2==43||posJ3==43||posJ4==43)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c%c",f,277);color(14,0);
+        printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case43l3==1.6 && posJ1!=43 && posJ2!=43 && posJ3!=43 && posJ4!=43){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf(" %c",225);color(14,0);
+        printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case43l3==1.6 && (posJ1==43||posJ2==43||posJ3==43||posJ4==43)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c%c",f,225);color(14,0);
+        printf("%c%c%c%c",474,452,452,452);
     }
     if (case43l3>2 && case43l3<3){
         color(14,0);
         printf("%c%c%c%c%c%c%c%c%c%c%c",452,452,452,452,452,452,452,452,452,452,452);
     }
-    if (case43l3==3.1){
-        color(14,0);
-        printf("    %c",435);color(15,0);printf(" %c",292);color(14,0);printf("%c%c%c%c",474,452,452,452);
-    }
-    if (case43l3==3.2){
-        color(14,0);
-        printf("    %c",435);color(15,0);printf(" %c",291);color(14,0);printf("%c%c%c%c",474,452,452,452);
-    }
-    if (case43l3==3.3){
-        color(14,0);
-        printf("    %c",435);color(15,0);printf(" %c",285);color(14,0);printf("%c%c%c%c",474,452,452,452);
-    }
-    if (case43l3==3.4){
-        color(14,0);
-        printf("    %c",435);color(15,0);printf(" %c",279);color(14,0);printf("%c%c%c%c",474,452,452,452);
-    }
-    if (case43l3==3.5){
-        color(14,0);
-        printf("    %c",435);color(15,0);printf(" %c",277);color(14,0);printf("%c%c%c%c",474,452,452,452);
-    }
-    if (case43l3==3.6){
-        color(14,0);
-        printf("    %c",435);color(15,0);printf(" %c",225);color(14,0);printf("%c%c%c%c",474,452,452,452);
-    }
-    if (case43l3==4.1){
-        color(14,0);
-        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c ",292);color(14,0);printf("%c   ",435);
-    }
-    if (case43l3==4.2){
-        color(14,0);
-        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c ",291);color(14,0);printf("%c   ",435);
-    }
-    if (case43l3==4.3){
-        color(14,0);
-        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c ",285);color(14,0);printf("%c   ",435);
-    }
-    if (case43l3==4.4){
-        color(14,0);
-        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c ",279);color(14,0);printf("%c   ",435);
-    }
-    if (case43l3==4.5){
-        color(14,0);
-        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c ",277);color(14,0);printf("%c   ",435);
-    }
-    if (case43l3==4.6){
-        color(14,0);
-        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c ",225);color(14,0);printf("%c   ",435);
-    }
-    if (case43l3==5){
-        color(14,0);
-        piece5bout2();
-    }
-    if (case43l3==6){
-        color(14,0);
-        printf("%c%c%c%c%c%c%c%c%c%c%c",452,452,452,452,452,452,452,452,452,452,452);
-    }
-    if (case43l3==7){
-        color(14,0);
-        printf("    %c%c%c%c%c%c%c",448,452,452,452,452,452,452);
-    }
-    if (case43l3==8){
-        color(14,0);
-        printf("%c%c%c%c%c%c%c%c   ",452,452,452,452,452,452,452,473);
-    }
-    if (case43l3==9){
+    if (case43l3>3 && case43l3<4){
         color(14,0);
         printf("    %c  %c%c%c%c",435,474,452,452,452);
     }
-    if (case43l3==10) {
+    if (case43l3>4 && case43l3<5){
+        color(14,0);
+        printf("%c%c%c%c%c  %c   ",452,452,452,452,447,435);
+    }
+    if (case43l3==5 && posJ1!=43 && posJ2!=43 && posJ3!=43 && posJ4!=43){
+        color(14,0);
+        piece5bout2();
+    }
+    if (case43l3==5 && (posJ1==43||posJ2==43||posJ3==43||posJ4==43)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c ",f);color(14,0);printf("%c   ",435);
+    }
+    if (case43l3==6 && posJ1!=43 && posJ2!=43 && posJ3!=43 && posJ4!=43){
+        color(14,0);
+        printf("%c%c%c%c%c%c%c%c%c%c%c",452,452,452,452,452,452,452,452,452,452,452);
+    }
+    if (case43l3==6 && (posJ1==43||posJ2==43||posJ3==43||posJ4==43)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,452);color(15,0);printf("%c",f);color(14,0);printf("%c%c%c%c%c",452,452,452,452,452);
+    }
+    if (case43l3>=7 && case43l3<8){
+        color(14,0);
+        printf("    %c%c%c%c%c%c%c",448,452,452,452,452,452,452);
+    }
+    if (case43l3>=8 && case43l3<9){
+        color(14,0);
+        printf("%c%c%c%c%c%c%c%c   ",452,452,452,452,452,452,452,473);
+    }
+    if (case43l3==9 && posJ1!=43 && posJ2!=43 && posJ3!=43 && posJ4!=43){
+        color(14,0);
+        printf("    %c  %c%c%c%c",435,474,452,452,452);
+    }
+    if (case43l3==9 && (posJ1==43||posJ2==43||posJ3==43||posJ4==43)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",f);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case43l3==9.1 && posJ1!=43 && posJ2!=43 && posJ3!=43 && posJ4!=43){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",189);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case43l3==9.1 && (posJ1==43||posJ2==43||posJ3==43||posJ4==43)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,189);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case43l3==9.2 && posJ1!=43 && posJ2!=43 && posJ3!=43 && posJ4!=43){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",157);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case43l3==9.2 && (posJ1==43||posJ2==43||posJ3==43||posJ4==43)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,157);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case43l3==9.3 && posJ1!=43 && posJ2!=43 && posJ3!=43 && posJ4!=43){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",143);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case43l3==9.3 && (posJ1==43||posJ2==43||posJ3==43||posJ4==43)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,143);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case43l3==9.4 && posJ1!=43 && posJ2!=43 && posJ3!=43 && posJ4!=43){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",37);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case43l3==9.4 && (posJ1==43||posJ2==43||posJ3==43||posJ4==43)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,37);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case43l3==9.5 && posJ1!=43 && posJ2!=43 && posJ3!=43 && posJ4!=43){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",31);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case43l3==9.5 && (posJ1==43||posJ2==43||posJ3==43||posJ4==43)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,31);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case43l3==9.6 && posJ1!=43 && posJ2!=43 && posJ3!=43 && posJ4!=43){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",459);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case43l3==9.6 && (posJ1==43||posJ2==43||posJ3==43||posJ4==43)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,459);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case43l3==10 && (posJ1==43||posJ2==43||posJ3==43||posJ4==43)) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c ",f);color(14,0);printf("%c   ",435);
+    }
+    if (case43l3==10 && posJ1!=43 && posJ2!=43 && posJ3!=43 && posJ4!=43) {
         color(14, 0);
         printf("%c%c%c%c%c  %c   ",452, 452,452,452, 447,435);
     }
+    if (case43l3==10.1 && posJ1!=43 && posJ2!=43 && posJ3!=43 && posJ4!=43) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c ",189);color(14,0);printf("%c   ",435);
+    }
+    if (case43l3==10.1 && (posJ1==43||posJ2==43||posJ3==43||posJ4==43)) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c%c",189,f);color(14,0);printf("%c   ",435);
+    }
+    if (case43l3==10.2 && posJ1!=43 && posJ2!=43 && posJ3!=43 && posJ4!=43) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c ",157);color(14,0);printf("%c   ",435);
+    }
+    if (case43l3==10.2 && (posJ1==43||posJ2==43||posJ3==43||posJ4==43)) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c%c",157,f);color(14,0);printf("%c   ",435);
+    }
+    if (case43l3==10.3 && posJ1!=43 && posJ2!=43 && posJ3!=43 && posJ4!=43) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c ",143);color(14,0);printf("%c   ",435);
+    }
+    if (case43l3==10.3 && (posJ1==43||posJ2==43||posJ3==43||posJ4==43)) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c%c",143,f);color(14,0);printf("%c   ",435);
+    }
+    if (case43l3==10.4 && posJ1!=43 && posJ2!=43 && posJ3!=43 && posJ4!=43) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c ",37);color(14,0);printf("%c   ",435);
+    }
+    if (case43l3==10.4 && (posJ1==43||posJ2==43||posJ3==43||posJ4==43)) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c%c",37,f);color(14,0);printf("%c   ",435);
+    }
+    if (case43l3==10.5 && posJ1!=43 && posJ2!=43 && posJ3!=43 && posJ4!=43) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c ",31);color(14,0);printf("%c   ",435);
+    }
+    if (case43l3==10.5 && (posJ1==43||posJ2==43||posJ3==43||posJ4==43)) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c%c",31,f);color(14,0);printf("%c   ",435);
+    }
+    if (case43l3==10.6 && posJ1!=43 && posJ2!=43 && posJ3!=43 && posJ4!=43) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c ",459);color(14,0);printf("%c   ",435);
+    }
+    if (case43l3==10.6 && (posJ1==43||posJ2==43||posJ3==43||posJ4==43)) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c%c",459,f);color(14,0);printf("%c   ",435);
+    }
     color(9,0);
-    printf("%c%c%c%c%c%c",452,452,452,452,452,447);color(11,0);printf(" %c",411);color(9,0);
-    printf("%c%c%c%c%c%c",474,452,452,452,452,452);
+    f=testposition(posJ1,posJ2,posJ3,posJ4,44,p1,p2,p3,p4);
+    if (posJ1!=44 && posJ2!=44 && posJ3!=44 && posJ4!=44){
+        printf("%c%c%c%c%c%c",452,452,452,452,452,447);color(11,0);printf(" %c",411);color(9,0);
+        printf("%c%c%c%c%c%c",474,452,452,452,452,452);
+    }
+    if (posJ1==44||posJ2==44||posJ3==44||posJ4==44){
+        printf("%c%c%c%c%c%c",452,452,452,452,452,447);color(11,0);printf("%c%c",f,411);color(9,0);
+        printf("%c%c%c%c%c%c",474,452,452,452,452,452);
+    }
     color(14,0);
+    f=testposition(posJ1,posJ2,posJ3,posJ4,45,p1,p2,p3,p4);
     if (case45l3==0){
         printf("           ");
     }
-    if (case45l3==1.1){
+    if (case45l3==1.1 && posJ1!=45 && posJ2!=45 && posJ3!=45 && posJ4!=45){
         color(14,0);
-        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf(" %c",292);color(14,0);printf("%c%c%c%c",474,452,452,452);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf(" %c",292);color(14,0);
+        printf("%c%c%c%c",474,452,452,452);
     }
-    if (case45l3==1.2){
+    if (case45l3==1.1 && (posJ1==45||posJ2==45||posJ3==45||posJ4==45)){
         color(14,0);
-        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf(" %c",291);color(14,0);printf("%c%c%c%c",474,452,452,452);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c%c",f,292);color(14,0);
+        printf("%c%c%c%c",474,452,452,452);
     }
-    if (case45l3==1.3){
+    if (case45l3==1.2 && posJ1!=45 && posJ2!=45 && posJ3!=45 && posJ4!=45){
         color(14,0);
-        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf(" %c",285);color(14,0);printf("%c%c%c%c",474,452,452,452);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf(" %c",291);color(14,0);
+        printf("%c%c%c%c",474,452,452,452);
     }
-    if (case45l3==1.4){
+    if (case45l3==1.2 && (posJ1==45||posJ2==45||posJ3==45||posJ4==45)){
         color(14,0);
-        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf(" %c",279);color(14,0);printf("%c%c%c%c",474,452,452,452);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c%c",f,291);color(14,0);
+        printf("%c%c%c%c",474,452,452,452);
     }
-    if (case45l3==1.5){
+    if (case45l3==1.3 && posJ1!=45 && posJ2!=45 && posJ3!=45 && posJ4!=45){
         color(14,0);
-        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf(" %c",277);color(14,0);printf("%c%c%c%c",474,452,452,452);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf(" %c",285);color(14,0);
+        printf("%c%c%c%c",474,452,452,452);
     }
-    if (case45l3==1.6){
+    if (case45l3==1.3 && (posJ1==45||posJ2==45||posJ3==45||posJ4==45)){
         color(14,0);
-        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf(" %c",225);color(14,0);printf("%c%c%c%c",474,452,452,452);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c%c",f,285);color(14,0);
+        printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case45l3==1.4 && posJ1!=45 && posJ2!=45 && posJ3!=45 && posJ4!=45){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf(" %c",428);color(14,0);
+        printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case45l3==1.4 && (posJ1==45||posJ2==45||posJ3==45||posJ4==45)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c%c",f,428);color(14,0);
+        printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case45l3==1.5 && posJ1!=45 && posJ2!=45 && posJ3!=45 && posJ4!=45){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf(" %c",277);color(14,0);
+        printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case45l3==1.5 && (posJ1==45||posJ2==45||posJ3==45||posJ4==45)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c%c",f,277);color(14,0);
+        printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case45l3==1.6 && posJ1!=45 && posJ2!=45 && posJ3!=45 && posJ4!=45){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf(" %c",225);color(14,0);
+        printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case45l3==1.6 && (posJ1==45||posJ2==45||posJ3==45||posJ4==45)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c%c",f,225);color(14,0);
+        printf("%c%c%c%c",474,452,452,452);
     }
     if (case45l3>2 && case45l3<3){
         color(14,0);
         printf("%c%c%c%c%c%c%c%c%c%c%c",452,452,452,452,452,452,452,452,452,452,452);
     }
-    if (case45l3==3.1){
-        color(14,0);
-        printf("    %c",435);color(15,0);printf(" %c",292);color(14,0);printf("%c%c%c%c",474,452,452,452);
-    }
-    if (case45l3==3.2){
-        color(14,0);
-        printf("    %c",435);color(15,0);printf(" %c",291);color(14,0);printf("%c%c%c%c",474,452,452,452);
-    }
-    if (case45l3==3.3){
-        color(14,0);
-        printf("    %c",435);color(15,0);printf(" %c",285);color(14,0);printf("%c%c%c%c",474,452,452,452);
-    }
-    if (case45l3==3.4){
-        color(14,0);
-        printf("    %c",435);color(15,0);printf(" %c",279);color(14,0);printf("%c%c%c%c",474,452,452,452);
-    }
-    if (case45l3==3.5){
-        color(14,0);
-        printf("    %c",435);color(15,0);printf(" %c",277);color(14,0);printf("%c%c%c%c",474,452,452,452);
-    }
-    if (case45l3==3.6){
-        color(14,0);
-        printf("    %c",435);color(15,0);printf(" %c",225);color(14,0);printf("%c%c%c%c",474,452,452,452);
-    }
-    if (case45l3==4.1){
-        color(14,0);
-        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c ",292);color(14,0);printf("%c   ",435);
-    }
-    if (case45l3==4.2){
-        color(14,0);
-        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c ",291);color(14,0);printf("%c   ",435);
-    }
-    if (case45l3==4.3){
-        color(14,0);
-        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c ",285);color(14,0);printf("%c   ",435);
-    }
-    if (case45l3==4.4){
-        color(14,0);
-        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c ",279);color(14,0);printf("%c   ",435);
-    }
-    if (case45l3==4.5){
-        color(14,0);
-        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c ",277);color(14,0);printf("%c   ",435);
-    }
-    if (case45l3==4.6){
-        color(14,0);
-        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c ",225);color(14,0);printf("%c   ",435);
-    }
-    if (case45l3==5){
-        color(14,0);
-        piece5bout2();
-    }
-    if (case45l3==6){
-        color(14,0);
-        printf("%c%c%c%c%c%c%c%c%c%c%c",452,452,452,452,452,452,452,452,452,452,452);
-    }
-    if (case45l3==7){
-        color(14,0);
-        printf("    %c%c%c%c%c%c%c",448,452,452,452,452,452,452);
-    }
-    if (case45l3==8){
-        color(14,0);
-        printf("%c%c%c%c%c%c%c%c   ",452,452,452,452,452,452,452,473);
-    }
-    if (case45l3==9){
+    if (case45l3>3 && case45l3<4){
         color(14,0);
         printf("    %c  %c%c%c%c",435,474,452,452,452);
     }
-    if (case45l3==10) {
+    if (case45l3>4 && case45l3<5){
+        color(14,0);
+        printf("%c%c%c%c%c  %c   ",452,452,452,452,447,435);
+    }
+    if (case45l3==5 && posJ1!=45 && posJ2!=45 && posJ3!=45 && posJ4!=45){
+        color(14,0);
+        piece5bout2();
+    }
+    if (case45l3==5 && (posJ1==45||posJ2==45||posJ3==45||posJ4==45)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c ",f);color(14,0);printf("%c   ",435);
+    }
+    if (case45l3==6 && posJ1!=45 && posJ2!=45 && posJ3!=45 && posJ4!=45){
+        color(14,0);
+        printf("%c%c%c%c%c%c%c%c%c%c%c",452,452,452,452,452,452,452,452,452,452,452);
+    }
+    if (case45l3==6 && (posJ1==45||posJ2==45||posJ3==45||posJ4==45)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,452);color(15,0);printf("%c",f);color(14,0);printf("%c%c%c%c%c",452,452,452,452,452);
+    }
+    if (case45l3>=7 && case45l3<8){
+        color(14,0);
+        printf("    %c%c%c%c%c%c%c",448,452,452,452,452,452,452);
+    }
+    if (case45l3>=8 && case45l3<9){
+        color(14,0);
+        printf("%c%c%c%c%c%c%c%c   ",452,452,452,452,452,452,452,473);
+    }
+    if (case45l3==9 && posJ1!=45 && posJ2!=45 && posJ3!=45 && posJ4!=45){
+        color(14,0);
+        printf("    %c  %c%c%c%c",435,474,452,452,452);
+    }
+    if (case45l3==9 && (posJ1==45||posJ2==45||posJ3==45||posJ4==45)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",f);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case45l3==9.1 && posJ1!=45 && posJ2!=45 && posJ3!=45 && posJ4!=45){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",189);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case45l3==9.1 && (posJ1==45||posJ2==45||posJ3==45||posJ4==45)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,189);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case45l3==9.2 && posJ1!=45 && posJ2!=45 && posJ3!=45 && posJ4!=45){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",257);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case45l3==9.2 && (posJ1==45||posJ2==45||posJ3==45||posJ4==45)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,257);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case45l3==9.3 && posJ1!=45 && posJ2!=45 && posJ3!=45 && posJ4!=45){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",143);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case45l3==9.3 && (posJ1==45||posJ2==45||posJ3==45||posJ4==45)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,143);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case45l3==9.4 && posJ1!=45 && posJ2!=45 && posJ3!=45 && posJ4!=45){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",37);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case45l3==9.4 && (posJ1==45||posJ2==45||posJ3==45||posJ4==45)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,37);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case45l3==9.5 && posJ1!=45 && posJ2!=45 && posJ3!=45 && posJ4!=45){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",31);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case45l3==9.5 && (posJ1==45||posJ2==45||posJ3==45||posJ4==45)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,31);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case45l3==9.6 && posJ1!=45 && posJ2!=45 && posJ3!=45 && posJ4!=45){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",459);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case45l3==9.6 && (posJ1==45||posJ2==45||posJ3==45||posJ4==45)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,459);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case45l3==10 && (posJ1==45||posJ2==45||posJ3==45||posJ4==45)) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c ",f);color(14,0);printf("%c   ",435);
+    }
+    if (case45l3==10 && posJ1!=45 && posJ2!=45 && posJ3!=45 && posJ4!=45) {
         color(14, 0);
         printf("%c%c%c%c%c  %c   ",452, 452,452,452, 447,435);
+    }
+    if (case45l3==10.1 && posJ1!=45 && posJ2!=45 && posJ3!=45 && posJ4!=45) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c ",189);color(14,0);printf("%c   ",435);
+    }
+    if (case45l3==10.1 && (posJ1==45||posJ2==45||posJ3==45||posJ4==45)) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c%c",189,f);color(14,0);printf("%c   ",435);
+    }
+    if (case45l3==10.2 && posJ1!=45 && posJ2!=45 && posJ3!=45 && posJ4!=45) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c ",257);color(14,0);printf("%c   ",435);
+    }
+    if (case45l3==10.2 && (posJ1==45||posJ2==45||posJ3==45||posJ4==45)) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c%c",257,f);color(14,0);printf("%c   ",435);
+    }
+    if (case45l3==10.3 && posJ1!=45 && posJ2!=45 && posJ3!=45 && posJ4!=45) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c ",143);color(14,0);printf("%c   ",435);
+    }
+    if (case45l3==10.3 && (posJ1==45||posJ2==45||posJ3==45||posJ4==45)) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c%c",143,f);color(14,0);printf("%c   ",435);
+    }
+    if (case45l3==10.4 && posJ1!=45 && posJ2!=45 && posJ3!=45 && posJ4!=45) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c ",37);color(14,0);printf("%c   ",435);
+    }
+    if (case45l3==10.4 && (posJ1==45||posJ2==45||posJ3==45||posJ4==45)) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c%c",37,f);color(14,0);printf("%c   ",435);
+    }
+    if (case45l3==10.5 && posJ1!=45 && posJ2!=45 && posJ3!=45 && posJ4!=45) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c ",31);color(14,0);printf("%c   ",435);
+    }
+    if (case45l3==10.5 && (posJ1==45||posJ2==45||posJ3==45||posJ4==45)) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c%c",31,f);color(14,0);printf("%c   ",435);
+    }
+    if (case45l3==10.6 && posJ1!=45 && posJ2!=45 && posJ3!=45 && posJ4!=45) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c ",459);color(14,0);printf("%c   ",435);
+    }
+    if (case45l3==10.6 && (posJ1==45||posJ2==45||posJ3==45||posJ4==45)) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c%c",459,f);color(14,0);printf("%c   ",435);
     }
     color(9,0);
     printf("%c%c%c%c%c%c  %c",452,452,452,452,452,447,435);a();
@@ -8194,19 +14178,19 @@ int test(double case01,double case03,double case05,double case10,double case11,d
         color(14,0);
         printf("           ");
     }
-    if (case41l4==7){
+    if (case41l4>=7 && case41l4<8){
         color(14,0);
         printf("           ");
     }
-    if (case41l4==8){
+    if (case41l4>=8 && case41l4<9){
         color(14,0);
         printf("           ");
     }
-    if (case41l4==9){
+    if (case41l4>=9 && case41l4<10){
         color(14,0);
         printf("    %c  %c   ",435,435);
     }
-    if (case41l4==10) {
+    if (case41l4>=10 && case41l4<11) {
         color(14, 0);
         printf("    %c  %c   ",435,435);
     }
@@ -8240,19 +14224,19 @@ int test(double case01,double case03,double case05,double case10,double case11,d
         color(14,0);
         printf("           ");
     }
-    if (case43l4==7){
+    if (case43l4>=7 && case43l4<8){
         color(14,0);
         printf("           ");
     }
-    if (case43l4==8){
+    if (case43l4>=8 && case43l4<9){
         color(14,0);
         printf("           ");
     }
-    if (case43l4==9){
+    if (case43l4>=9 && case43l4<10){
         color(14,0);
         printf("    %c  %c   ",435,435);
     }
-    if (case43l4==10) {
+    if (case43l4>=10 && case43l4<11) {
         color(14, 0);
         printf("    %c  %c   ",435,435);
     }
@@ -8286,19 +14270,19 @@ int test(double case01,double case03,double case05,double case10,double case11,d
         color(14,0);
         printf("           ");
     }
-    if (case45l4==7){
+    if (case45l4>=7 && case45l4<8){
         color(14,0);
         printf("           ");
     }
-    if (case45l4==8){
+    if (case45l4>=8 && case45l4<9){
         color(14,0);
         printf("           ");
     }
-    if (case45l4==9){
+    if (case45l4>=9 && case45l4<10){
         color(14,0);
         printf("    %c  %c   ",435,435);
     }
-    if (case45l4==10) {
+    if (case45l4>=10 && case45l4<11) {
         color(14, 0);
         printf("    %c  %c   ",435,435);
     }
@@ -8334,19 +14318,19 @@ int test(double case01,double case03,double case05,double case10,double case11,d
         color(14,0);
         printf("        ");
     }
-    if (case50l1==7){
+    if (case50l1>=7 && case50l1<8){
         color(14,0);
         printf("%c  %c    ",435,435);
     }
-    if (case50l1==8){
+    if (case50l1>=8 && case50l1<9){
         color(14,0);
         printf("%c  %c    ",435,435);
     }
-    if (case50l1==9){
+    if (case50l1>=9 && case50l1<10){
         color(14,0);
         p9bout1();
     }
-    if (case50l1==10){
+    if (case50l1>=10 && case50l1<11){
         color(14,0);
         printf("        ");
     }
@@ -8378,19 +14362,19 @@ int test(double case01,double case03,double case05,double case10,double case11,d
         color(14,0);
         printf("           ");
     }
-    if (case51l1==7){
+    if (case51l1>=7 && case51l1<8){
         color(14,0);
         p7bout1();
     }
-    if (case51l1==8){
+    if (case51l1>=8 && case51l1<9){
         color(14,0);
         p8bout1();
     }
-    if (case51l1==9){
+    if (case51l1>=9 && case51l1<10){
         color(14,0);
         printf("           ");
     }
-    if (case51l1==10){
+    if (case51l1>=10 && case51l1<11){
         color(14,0);
         printf("           ");
     }
@@ -8422,19 +14406,19 @@ int test(double case01,double case03,double case05,double case10,double case11,d
         color(14,0);
         printf("            ");
     }
-    if (case52l1==7){
+    if (case52l1>=7 && case52l1<8){
         color(14,0);
         printf("    %c  %c    ",435,435);
     }
-    if (case52l1==8){
+    if (case52l1>=8 && case52l1<9){
         color(14,0);
         printf("    %c  %c    ",435,435);
     }
-    if (case52l1==9){
+    if (case52l1>=9 && case52l1<10){
         color(14,0);
         printf("            ");
     }
-    if (case52l1==10){
+    if (case52l1==10 && case52l1<11){
         color(14,0);
         printf("            ");
     }
@@ -8466,19 +14450,19 @@ int test(double case01,double case03,double case05,double case10,double case11,d
         color(14,0);
         printf("           ");
     }
-    if (case53l1==7){
+    if (case53l1>=7 && case53l1<8){
         color(14,0);
         p7bout1();
     }
-    if (case53l1==8){
+    if (case53l1>=8 && case53l1<9){
         color(14,0);
         p8bout1();
     }
-    if (case53l1==9){
+    if (case53l1>=9 && case53l1<10){
         color(14,0);
         printf("           ");
     }
-    if (case53l1==10){
+    if (case53l1>=10 && case53l1<11){
         color(14,0);
         printf("           ");
     }
@@ -8510,19 +14494,19 @@ int test(double case01,double case03,double case05,double case10,double case11,d
         color(14,0);
         printf("              ");
     }
-    if (case54l1==7){
+    if (case54l1>=7 && case54l1<8){
         color(14,0);
         printf("     %c  %c     ",435,435);
     }
-    if (case54l1==8){
+    if (case54l1>=8 && case54l1<9){
         color(14,0);
         printf("     %c  %c     ",435,435);
     }
-    if (case54l1==9){
+    if (case54l1>=9 && case54l1<10){
         color(14,0);
         printf("              ");
     }
-    if (case54l1==10){
+    if (case54l1>=10 && case54l1<11){
         color(14,0);
         printf("              ");
     }
@@ -8554,19 +14538,19 @@ int test(double case01,double case03,double case05,double case10,double case11,d
         color(14,0);
         printf("           ");
     }
-    if (case55l1==7){
+    if (case55l1>=7 && case55l1<8){
         color(14,0);
         p7bout1();
     }
-    if (case55l1==8){
+    if (case55l1>=8 && case55l1<9){
         color(14,0);
-        p8bout1();
+        printf("    %c  %c   ",435,435);
     }
-    if (case55l1==9){
+    if (case55l1>=9 && case55l1<10){
         color(14,0);
         printf("           ");
     }
-    if (case55l1==10){
+    if (case55l1>=10 && case55l1<11){
         color(14,0);
         printf("           ");
     }
@@ -8591,95 +14575,168 @@ int test(double case01,double case03,double case05,double case10,double case11,d
     if (case56l1==6){
         printf("         ");
     }
-    if (case56l1==7){
+    if (case56l1>=7 && case56l1<8){
         printf("     %c  %c",435,435);
     }
-    if (case56l1==8){
+    if (case56l1>=8 && case56l1<9){
         printf("     %c  %c",435,435);
     }
-    if (case56l1==9){
+    if (case56l1>=9 && case56l1<10){
         printf("         ");
     }
-    if (case56l1==10){
+    if (case56l1>=10 && case56l1<11){
         printf("         ");
     }
     a();color(15,0);printf("                     6   %c       ",282);color(14,0);
+    f= testposition(posJ1,posJ2,posJ3,posJ4,50,p1,p2,p3,p4);
     if (case50l2==0){
         printf("        ");
     }
     if (case50l2>1 && case50l2<2){
         printf("%c%c%c%c%c%c%c%c",452,452,452,452,452,452,452,452);
     }
-    if (case50l2==2.1){
+    if (case50l2==2.1 && posJ1!=50 && posJ2!=50 && posJ3!=50 && posJ4!=50){
         printf("%c",473);color(15,0);printf(" %c",292);color(14,0);
         printf("%c%c%c%c%c",448,452,452,452,452);
     }
-    if (case50l2==2.2){
+    if (case50l2==2.1 && (posJ1==50||posJ2==50||posJ3==50||posJ4==50)){
+        printf("%c",473);color(15,0);printf("%c%c",f,292);color(14,0);
+        printf("%c%c%c%c%c",448,452,452,452,452);
+    }
+    if (case50l2==2.2 && posJ1!=50 && posJ2!=50 && posJ3!=50 && posJ4!=50){
         printf("%c",473);color(15,0);printf(" %c",291);color(14,0);
         printf("%c%c%c%c%c",448,452,452,452,452);
     }
-    if (case50l2==2.3){
+    if (case50l2==2.2 && (posJ1==50||posJ2==50||posJ3==50||posJ4==50)){
+        printf("%c",473);color(15,0);printf("%c%c",f,291);color(14,0);
+        printf("%c%c%c%c%c",448,452,452,452,452);
+    }
+    if (case50l2==2.3 && posJ1!=50 && posJ2!=50 && posJ3!=50 && posJ4!=50){
         printf("%c",473);color(15,0);printf(" %c",285);color(14,0);
         printf("%c%c%c%c%c",448,452,452,452,452);
     }
-    if (case50l2==2.4){
-        printf("%c",473);color(15,0);printf(" %c",279);color(14,0);
+    if (case50l2==2.3 && (posJ1==50||posJ2==50||posJ3==50||posJ4==50)){
+        printf("%c",473);color(15,0);printf("%c%c",f,285);color(14,0);
         printf("%c%c%c%c%c",448,452,452,452,452);
     }
-    if (case50l2==2.5){
+    if (case50l2==2.4 && posJ1!=50 && posJ2!=50 && posJ3!=50 && posJ4!=50){
+        printf("%c",473);color(15,0);printf(" %c",428);color(14,0);
+        printf("%c%c%c%c%c",448,452,452,452,452);
+    }
+    if (case50l2==2.4 && (posJ1==50||posJ2==50||posJ3==50||posJ4==50)){
+        printf("%c",473);color(15,0);printf("%c%c",f,428);color(14,0);
+        printf("%c%c%c%c%c",448,452,452,452,452);
+    }
+    if (case50l2==2.5 && posJ1!=50 && posJ2!=50 && posJ3!=50 && posJ4!=50){
         printf("%c",473);color(15,0);printf(" %c",277);color(14,0);
         printf("%c%c%c%c%c",448,452,452,452,452);
     }
-    if (case50l2==2.6){
+    if (case50l2==2.5 && (posJ1==50||posJ2==50||posJ3==50||posJ4==50)){
+        printf("%c",473);color(15,0);printf("%c%c",f,277);color(14,0);
+        printf("%c%c%c%c%c",448,452,452,452,452);
+    }
+    if (case50l2==2.6 && posJ1!=50 && posJ2!=50 && posJ3!=50 && posJ4!=50){
         printf("%c",473);color(15,0);printf(" %c",225);color(14,0);
         printf("%c%c%c%c%c",448,452,452,452,452);
     }
-    if (case50l2==3.1){
+    if (case50l2==2.6 && (posJ1==50||posJ2==50||posJ3==50||posJ4==50)){
+        printf("%c",473);color(15,0);printf("%c%c",f,225);color(14,0);
+        printf("%c%c%c%c%c",448,452,452,452,452);
+    }
+    if (case50l2==3.1 && posJ1!=50 && posJ2!=50 && posJ3!=50 && posJ4!=50){
         printf("%c",435);color(15,0);printf(" %c",292);color(14,0);
         printf("%c%c%c%c%c",448,452,452,452,452);
     }
-    if (case50l2==3.2){
+    if (case50l2==3.1 && (posJ1==50||posJ2==50||posJ3==50||posJ4==50)){
+        printf("%c",435);color(15,0);printf("%c%c",f,292);color(14,0);
+        printf("%c%c%c%c%c",448,452,452,452,452);
+    }
+    if (case50l2==3.2 && posJ1!=50 && posJ2!=50 && posJ3!=50 && posJ4!=50){
         printf("%c",435);color(15,0);printf(" %c",291);color(14,0);
         printf("%c%c%c%c%c",448,452,452,452,452);
     }
-    if (case50l2==3.3){
+    if (case50l2==3.2 && (posJ1==50||posJ2==50||posJ3==50||posJ4==50)){
+        printf("%c",435);color(15,0);printf("%c%c",f,291);color(14,0);
+        printf("%c%c%c%c%c",448,452,452,452,452);
+    }
+    if (case50l2==3.3 && posJ1!=50 && posJ2!=50 && posJ3!=50 && posJ4!=50){
         printf("%c",435);color(15,0);printf(" %c",285);color(14,0);
         printf("%c%c%c%c%c",448,452,452,452,452);
     }
-    if (case50l2==3.4){
-        printf("%c",435);color(15,0);printf(" %c",279);color(14,0);
+    if (case50l2==3.3 && (posJ1==50||posJ2==50||posJ3==50||posJ4==50)){
+        printf("%c",435);color(15,0);printf("%c%c",f,285);color(14,0);
         printf("%c%c%c%c%c",448,452,452,452,452);
     }
-    if (case50l2==3.5){
+    if (case50l2==3.4 && posJ1!=50 && posJ2!=50 && posJ3!=50 && posJ4!=50){
+        printf("%c",435);color(15,0);printf(" %c",428);color(14,0);
+        printf("%c%c%c%c%c",448,452,452,452,452);
+    }
+    if (case50l2==3.4 && (posJ1==50||posJ2==50||posJ3==50||posJ4==50)){
+        printf("%c",435);color(15,0);printf("%c%c",f,428);color(14,0);
+        printf("%c%c%c%c%c",448,452,452,452,452);
+    }
+    if (case50l2==3.5 && posJ1!=50 && posJ2!=50 && posJ3!=50 && posJ4!=50){
         printf("%c",435);color(15,0);printf(" %c",277);color(14,0);
         printf("%c%c%c%c%c",448,452,452,452,452);
     }
-    if (case50l2==3.6){
+    if (case50l2==3.5 && (posJ1==50||posJ2==50||posJ3==50||posJ4==50)){
+        printf("%c",435);color(15,0);printf("%c%c",f,277);color(14,0);
+        printf("%c%c%c%c%c",448,452,452,452,452);
+    }
+    if (case50l2==3.6 && posJ1!=50 && posJ2!=50 && posJ3!=50 && posJ4!=50){
         printf("%c",435);color(15,0);printf(" %c",225);color(14,0);
         printf("%c%c%c%c%c",448,452,452,452,452);
     }
-    if (case50l2==4.1){
+    if (case50l2==3.6 && (posJ1==50||posJ2==50||posJ3==50||posJ4==50)){
+        printf("%c",435);color(15,0);printf("%c%c",f,225);color(14,0);
+        printf("%c%c%c%c%c",448,452,452,452,452);
+    }
+    if (case50l2==4.1 && posJ1!=50 && posJ2!=50 && posJ3!=50 && posJ4!=50){
         printf("%c",473);color(15,0);printf("%c ",292);color(14,0);
         printf("%c    ",435);
     }
-    if (case50l2==4.2){
+    if (case50l2==4.1 && (posJ1==50||posJ2==50||posJ3==50||posJ4==50)){
+        printf("%c",473);color(15,0);printf("%c%c",f,292);color(14,0);
+        printf("%c    ",435);
+    }
+    if (case50l2==4.2 && posJ1!=50 && posJ2!=50 && posJ3!=50 && posJ4!=50){
         printf("%c",473);color(15,0);printf("%c ",291);color(14,0);
         printf("%c    ",435);
     }
-    if (case50l2==4.3){
+    if (case50l2==4.2 && (posJ1==50||posJ2==50||posJ3==50||posJ4==50)){
+        printf("%c",473);color(15,0);printf("%c%c",f,291);color(14,0);
+        printf("%c    ",435);
+    }
+    if (case50l2==4.3 && posJ1!=50 && posJ2!=50 && posJ3!=50 && posJ4!=50){
         printf("%c",473);color(15,0);printf("%c ",285);color(14,0);
         printf("%c    ",435);
     }
-    if (case50l2==4.4){
-        printf("%c",473);color(15,0);printf("%c ",279);color(14,0);
+    if (case50l2==4.3 && (posJ1==50||posJ2==50||posJ3==50||posJ4==50)){
+        printf("%c",473);color(15,0);printf("%c%c",f,285);color(14,0);
         printf("%c    ",435);
     }
-    if (case50l2==4.5){
+    if (case50l2==4.4 && posJ1!=50 && posJ2!=50 && posJ3!=50 && posJ4!=50){
+        printf("%c",473);color(15,0);printf("%c ",428);color(14,0);
+        printf("%c    ",435);
+    }
+    if (case50l2==4.4 && (posJ1==50||posJ2==50||posJ3==50||posJ4==50)){
+        printf("%c",473);color(15,0);printf("%c%c",f,428);color(14,0);
+        printf("%c    ",435);
+    }
+    if (case50l2==4.5 && posJ1!=50 && posJ2!=50 && posJ3!=50 && posJ4!=50){
         printf("%c",473);color(15,0);printf("%c ",277);color(14,0);
         printf("%c    ",435);
     }
-    if (case50l2==4.6){
-        printf("%c",473);color(15,0);printf("%c ",225);color(15,0);
+    if (case50l2==4.5 && (posJ1==50||posJ2==50||posJ3==50||posJ4==50)){
+        printf("%c",473);color(15,0);printf("%c%c",f,277);color(14,0);
+        printf("%c    ",435);
+    }
+    if (case50l2==4.6 && posJ1!=50 && posJ2!=50 && posJ3!=50 && posJ4!=50){
+        printf("%c",473);color(15,0);printf("%c ",225);color(14,0);
+        printf("%c    ",435);
+    }
+    if (case50l2==4.6 && (posJ1==50||posJ2==50||posJ3==50||posJ4==50)){
+        printf("%c",473);color(15,0);printf("%c%c",f,225);color(14,0);
         printf("%c    ",435);
     }
     if (case50l2==5){
@@ -8688,18 +14745,109 @@ int test(double case01,double case03,double case05,double case10,double case11,d
     if (case50l2==6){
         printf("%c%c%c%c%c%c%c%c",452,452,452,452,452,452,452,452);
     }
-    if (case50l2==7){
+    if (case50l2==7 && posJ1!=50 && posJ2!=50 && posJ3!=50 && posJ4!=50){
         printf("%c  %c%c%c%c%c",435,448,452,452,452,452);
     }
-    if (case50l2==8){
+    if (case50l2==7 && (posJ1==50||posJ2==50||posJ3==50||posJ4==50)){
+        printf("%c",435);color(15,0);printf(" %c",f);color(14,0);printf("%c%c%c%c%c",448,452,452,452,452);
+    }
+    if (case50l2==7.1 && posJ1!=50 && posJ2!=50 && posJ3!=50 && posJ4!=50){
+        printf("%c",435);color(15,0);printf(" %c",189);color(14,0);
+        printf("%c%c%c%c%c",448,452,452,452,452);
+    }
+    if (case50l2==7.1 && (posJ1==50||posJ2==50||posJ3==50||posJ4==50)){
+        printf("%c",435);color(15,0);printf("%c%c",f,189);color(14,0);
+        printf("%c%c%c%c%c",448,452,452,452,452);
+    }
+    if (case50l2==7.2 && posJ1!=50 && posJ2!=50 && posJ3!=50 && posJ4!=50){
+        printf("%c",435);color(15,0);printf(" %c",157);color(14,0);
+        printf("%c%c%c%c%c",448,452,452,452,452);
+    }
+    if (case50l2==7.2 && (posJ1==50||posJ2==50||posJ3==50||posJ4==50)){
+        printf("%c",435);color(15,0);printf("%c%c",f,157);color(14,0);
+        printf("%c%c%c%c%c",448,452,452,452,452);
+    }
+    if (case50l2==7.3 && posJ1!=50 && posJ2!=50 && posJ3!=50 && posJ4!=50){
+        printf("%c",435);color(15,0);printf(" %c",143);color(14,0);
+        printf("%c%c%c%c%c",448,452,452,452,452);
+    }
+    if (case50l2==7.3 && (posJ1==50||posJ2==50||posJ3==50||posJ4==50)){
+        printf("%c",435);color(15,0);printf("%c%c",f,143);color(14,0);
+        printf("%c%c%c%c%c",448,452,452,452,452);
+    }
+    if (case50l2==7.4 && posJ1!=50 && posJ2!=50 && posJ3!=50 && posJ4!=50){
+        printf("%c",435);color(15,0);printf(" %c",37);color(14,0);
+        printf("%c%c%c%c%c",448,452,452,452,452);
+    }
+    if (case50l2==7.4 && (posJ1==50||posJ2==50||posJ3==50||posJ4==50)){
+        printf("%c",435);color(15,0);printf("%c%c",f,37);color(14,0);
+        printf("%c%c%c%c%c",448,452,452,452,452);
+    }
+    if (case50l2==7.5 && posJ1!=50 && posJ2!=50 && posJ3!=50 && posJ4!=50){
+        printf("%c",435);color(15,0);printf(" %c",31);color(14,0);
+        printf("%c%c%c%c%c",448,452,452,452,452);
+    }
+    if (case50l2==7.5 && (posJ1==50||posJ2==50||posJ3==50||posJ4==50)){
+        printf("%c",435);color(15,0);printf("%c%c",f,31);color(14,0);
+        printf("%c%c%c%c%c",448,452,452,452,452);
+    }
+    if (case50l2==7.6 && posJ1!=50 && posJ2!=50 && posJ3!=50 && posJ4!=50){
+        printf("%c",435);color(15,0);printf(" %c",459);color(14,0);
+        printf("%c%c%c%c%c",448,452,452,452,452);
+    }
+    if (case50l2==7.6 && (posJ1==50||posJ2==50||posJ3==50||posJ4==50)){
+        printf("%c",435);color(15,0);printf("%c%c",f,459);color(14,0);
+        printf("%c%c%c%c%c",448,452,452,452,452);
+    }
+    if (case50l2==8 && posJ1!=50 && posJ2!=50 && posJ3!=50 && posJ4!=50){
         printf("%c  %c    ",473,435);
     }
-    if (case50l2==9){
+    if (case50l2==8 && (posJ1==50||posJ2==50||posJ3==50||posJ4==50)){
+        printf("%c",473);color(15,0);printf("%c ",f);color(14,0);printf("%c    ",435);
+    }
+    if (case50l2==8.1 && posJ1!=50 && posJ2!=50 && posJ3!=50 && posJ4!=50){
+        printf("%c",473);color(15,0);printf("%c ",189);color(14,0);printf("%c    ",435);
+    }
+    if (case50l2==8.1 && (posJ1==50||posJ2==50||posJ3==50||posJ4==50)){
+        printf("%c",473);color(15,0);printf("%c%c",189,f);color(14,0);printf("%c    ",435);
+    }
+    if (case50l2==8.2 && posJ1!=50 && posJ2!=50 && posJ3!=50 && posJ4!=50){
+        printf("%c",473);color(15,0);printf("%c ",157);color(14,0);printf("%c    ",435);
+    }
+    if (case50l2==8.2 && (posJ1==50||posJ2==50||posJ3==50||posJ4==50)){
+        printf("%c",473);color(15,0);printf("%c%c",157,f);color(14,0);printf("%c    ",435);
+    }
+    if (case50l2==8.3 && posJ1!=50 && posJ2!=50 && posJ3!=50 && posJ4!=50){
+        printf("%c",473);color(15,0);printf("%c ",143);color(14,0);printf("%c    ",435);
+    }
+    if (case50l2==8.3 && (posJ1==50||posJ2==50||posJ3==50||posJ4==50)){
+        printf("%c",473);color(15,0);printf("%c%c",143,f);color(14,0);printf("%c    ",435);
+    }
+    if (case50l2==8.4 && posJ1!=50 && posJ2!=50 && posJ3!=50 && posJ4!=50){
+        printf("%c",473);color(15,0);printf("%c ",37);color(14,0);printf("%c    ",435);
+    }
+    if (case50l2==8.4 && (posJ1==50||posJ2==50||posJ3==50||posJ4==50)){
+        printf("%c",473);color(15,0);printf("%c%c",37,f);color(14,0);printf("%c    ",435);
+    }
+    if (case50l2==8.5 && posJ1!=50 && posJ2!=50 && posJ3!=50 && posJ4!=50){
+        printf("%c",473);color(15,0);printf("%c ",31);color(14,0);printf("%c    ",435);
+    }
+    if (case50l2==8.5 && (posJ1==50||posJ2==50||posJ3==50||posJ4==50)){
+        printf("%c",473);color(15,0);printf("%c%c",31,f);color(14,0);printf("%c    ",435);
+    }
+    if (case50l2==8.6 && posJ1!=50 && posJ2!=50 && posJ3!=50 && posJ4!=50){
+        printf("%c",473);color(15,0);printf("%c ",459);color(14,0);printf("%c    ",435);
+    }
+    if (case50l2==8.6 && (posJ1==50||posJ2==50||posJ3==50||posJ4==50)){
+        printf("%c",473);color(15,0);printf("%c%c",459,f);color(14,0);printf("%c    ",435);
+    }
+    if (case50l2>=9 && case50l2<10){
         printf("%c%c%c%c%c%c%c%c",474,452,452,452,452,452,452,452);
     }
-    if (case50l2==10){
+    if (case50l2>=10 && case50l2<11){
         printf("%c%c%c%c    ",452,452,452,447);
     }
+    f=testposition(posJ1,posJ2,posJ3,posJ4,51,p1,p2,p3,p4);
     if (case51l2==0){
         printf("           ");
     }
@@ -8707,94 +14855,184 @@ int test(double case01,double case03,double case05,double case10,double case11,d
         color(14,0);
         printf("%c%c%c%c%c%c%c%c%c%c%c",452,452,452,452,452,452,452,452,452,452,452);
     }
-    if (case51l2==2.1){
+    if (case51l2==2.1 && posJ1!=51 && posJ2!=51 && posJ3!=51 && posJ4!=51){
         color(14,0);
         printf("%c%c%c%c%c", 452, 452, 452, 452, 473);color(15,0);printf(" %c",292);color(14,0);
         printf("%c%c%c%c", 448, 452, 452, 452);
     }
-    if (case51l2==2.2){
+    if (case51l2==2.1 && (posJ1==51||posJ2==51||posJ3==51||posJ4==51)){
+        color(14,0);
+        printf("%c%c%c%c%c", 452, 452, 452, 452, 473);color(15,0);printf("%c%c",f,292);color(14,0);
+        printf("%c%c%c%c", 448, 452, 452, 452);
+    }
+    if (case51l2==2.2 && posJ1!=51 && posJ2!=51 && posJ3!=51 && posJ4!=51){
         color(14,0);
         printf("%c%c%c%c%c", 452, 452, 452, 452, 473);color(15,0);printf(" %c",291);color(14,0);
         printf("%c%c%c%c", 448, 452, 452, 452);
     }
-    if (case51l2==2.3){
+    if (case51l2==2.2 && (posJ1==51||posJ2==51||posJ3==51||posJ4==51)){
+        color(14,0);
+        printf("%c%c%c%c%c", 452, 452, 452, 452, 473);color(15,0);printf("%c%c",f,291);color(14,0);
+        printf("%c%c%c%c", 448, 452, 452, 452);
+    }
+    if (case51l2==2.3 && posJ1!=51 && posJ2!=51 && posJ3!=51 && posJ4!=51){
         color(14,0);
         printf("%c%c%c%c%c", 452, 452, 452, 452, 473);color(15,0);printf(" %c",285);color(14,0);
         printf("%c%c%c%c", 448, 452, 452, 452);
     }
-    if (case51l2==2.4){
+    if (case51l2==2.3 && (posJ1==51||posJ2==51||posJ3==51||posJ4==51)){
         color(14,0);
-        printf("%c%c%c%c%c", 452, 452, 452, 452, 473);color(15,0);printf(" %c",279);color(14,0);
+        printf("%c%c%c%c%c", 452, 452, 452, 452, 473);color(15,0);printf("%c%c",f,285);color(14,0);
         printf("%c%c%c%c", 448, 452, 452, 452);
     }
-    if (case51l2==2.5){
+    if (case51l2==2.4 && posJ1!=51 && posJ2!=51 && posJ3!=51 && posJ4!=51){
+        color(14,0);
+        printf("%c%c%c%c%c", 452, 452, 452, 452, 473);color(15,0);printf(" %c",428);color(14,0);
+        printf("%c%c%c%c", 448, 452, 452, 452);
+    }
+    if (case51l2==2.4 && (posJ1==51||posJ2==51||posJ3==51||posJ4==51)){
+        color(14,0);
+        printf("%c%c%c%c%c", 452, 452, 452, 452, 473);color(15,0);printf("%c%c",f,428);color(14,0);
+        printf("%c%c%c%c", 448, 452, 452, 452);
+    }
+    if (case51l2==2.5 && posJ1!=51 && posJ2!=51 && posJ3!=51 && posJ4!=51){
         color(14,0);
         printf("%c%c%c%c%c", 452, 452, 452, 452, 473);color(15,0);printf(" %c",277);color(14,0);
         printf("%c%c%c%c", 448, 452, 452, 452);
     }
-    if (case51l2==2.6){
+    if (case51l2==2.5 && (posJ1==51||posJ2==51||posJ3==51||posJ4==51)){
+        color(14,0);
+        printf("%c%c%c%c%c", 452, 452, 452, 452, 473);color(15,0);printf("%c%c",f,277);color(14,0);
+        printf("%c%c%c%c", 448, 452, 452, 452);
+    }
+    if (case51l2==2.6 && posJ1!=51 && posJ2!=51 && posJ3!=51 && posJ4!=51){
         color(14,0);
         printf("%c%c%c%c%c", 452, 452, 452, 452, 473);color(15,0);printf(" %c",225);color(14,0);
         printf("%c%c%c%c", 448, 452, 452, 452);
     }
-    if (case51l2==3.1){
+    if (case51l2==2.6 && (posJ1==51||posJ2==51||posJ3==51||posJ4==51)){
+        color(14,0);
+        printf("%c%c%c%c%c", 452, 452, 452, 452, 473);color(15,0);printf("%c%c",f,225);color(14,0);
+        printf("%c%c%c%c", 448, 452, 452, 452);
+    }
+    if (case51l2==3.1 && posJ1!=51 && posJ2!=51 && posJ3!=51 && posJ4!=51){
         color(14,0);
         printf("    %c",435);color(15,0);printf(" %c",292);color(14,0);
         printf("%c%c%c%c",448,452,452,452);
     }
-    if (case51l2==3.2){
+    if (case51l2==3.1 && (posJ1==51||posJ2==51||posJ3==51||posJ4==51)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,292);color(14,0);
+        printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case51l2==3.2 && posJ1!=51 && posJ2!=51 && posJ3!=51 && posJ4!=51){
         color(14,0);
         printf("    %c",435);color(15,0);printf(" %c",291);color(14,0);
         printf("%c%c%c%c",448,452,452,452);
     }
-    if (case51l2==3.3){
+    if (case51l2==3.2 && (posJ1==51||posJ2==51||posJ3==51||posJ4==51)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,291);color(14,0);
+        printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case51l2==3.3 && posJ1!=51 && posJ2!=51 && posJ3!=51 && posJ4!=51){
         color(14,0);
         printf("    %c",435);color(15,0);printf(" %c",285);color(14,0);
         printf("%c%c%c%c",448,452,452,452);
     }
-    if (case51l2==3.4){
+    if (case51l2==3.3 && (posJ1==51||posJ2==51||posJ3==51||posJ4==51)){
         color(14,0);
-        printf("    %c",435);color(15,0);printf(" %c",279);color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,285);color(14,0);
         printf("%c%c%c%c",448,452,452,452);
     }
-    if (case51l2==3.5){
+    if (case51l2==3.4 && posJ1!=51 && posJ2!=51 && posJ3!=51 && posJ4!=51){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",428);color(14,0);
+        printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case51l2==3.4 && (posJ1==51||posJ2==51||posJ3==51||posJ4==51)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,428);color(14,0);
+        printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case51l2==3.5 && posJ1!=51 && posJ2!=51 && posJ3!=51 && posJ4!=51){
         color(14,0);
         printf("    %c",435);color(15,0);printf(" %c",277);color(14,0);
         printf("%c%c%c%c",448,452,452,452);
     }
-    if (case51l2==3.6){
+    if (case51l2==3.5 && (posJ1==51||posJ2==51||posJ3==51||posJ4==51)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,277);color(14,0);
+        printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case51l2==3.6 && posJ1!=51 && posJ2!=51 && posJ3!=51 && posJ4!=51){
         color(14,0);
         printf("    %c",435);color(15,0);printf(" %c",225);color(14,0);
         printf("%c%c%c%c",448,452,452,452);
     }
-    if (case51l2==4.1){
+    if (case51l2==3.6 && (posJ1==51||posJ2==51||posJ3==51||posJ4==51)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,225);color(14,0);
+        printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case51l2==4.1 && posJ1!=51 && posJ2!=51 && posJ3!=51 && posJ4!=51){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",292);color(14,0);
         printf("%c   ",435);
     }
-    if (case51l2==4.2){
+    if (case51l2==4.1 && (posJ1==51||posJ2==51||posJ3==51||posJ4==51)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",292,f);color(14,0);
+        printf("%c   ",435);
+    }
+    if (case51l2==4.2 && posJ1!=51 && posJ2!=51 && posJ3!=51 && posJ4!=51){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",291);color(14,0);
         printf("%c   ",435);
     }
-    if (case51l2==4.3){
+    if (case51l2==4.2 && (posJ1==51||posJ2==51||posJ3==51||posJ4==51)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",291,f);color(14,0);
+        printf("%c   ",435);
+    }
+    if (case51l2==4.3 && posJ1!=51 && posJ2!=51 && posJ3!=51 && posJ4!=51){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",285);color(14,0);
         printf("%c   ",435);
     }
-    if (case51l2==4.4){
+    if (case51l2==4.3 && (posJ1==51||posJ2==51||posJ3==51||posJ4==51)){
         color(14,0);
-        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",279);color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",285,f);color(14,0);
         printf("%c   ",435);
     }
-    if (case51l2==4.5){
+    if (case51l2==4.4 && posJ1!=51 && posJ2!=51 && posJ3!=51 && posJ4!=51){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",428);color(14,0);
+        printf("%c   ",435);
+    }
+    if (case51l2==4.4 && (posJ1==51||posJ2==51||posJ3==51||posJ4==51)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",428,f);color(14,0);
+        printf("%c   ",435);
+    }
+    if (case51l2==4.5 && posJ1!=51 && posJ2!=51 && posJ3!=51 && posJ4!=51){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",277);color(14,0);
         printf("%c   ",435);
     }
-    if (case51l2==4.6){
+    if (case51l2==4.5 && (posJ1==51||posJ2==51||posJ3==51||posJ4==51)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",277,f);color(14,0);
+        printf("%c   ",435);
+    }
+    if (case51l2==4.6 && posJ1!=51 && posJ2!=51 && posJ3!=51 && posJ4!=51){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",225);color(14,0);
+        printf("%c   ",435);
+    }
+    if (case51l2==4.6 && (posJ1==51||posJ2==51||posJ3==51||posJ4==51)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",225,f);color(14,0);
         printf("%c   ",435);
     }
     if (case51l2==5){
@@ -8805,22 +15043,127 @@ int test(double case01,double case03,double case05,double case10,double case11,d
         color(14,0);
         printf("%c%c%c%c%c%c%c%c%c%c%c",452,452,452,452,452,452,452,452,452,452,452);
     }
-    if (case51l2==7){
+    if (case51l2==7 && posJ1!=51 && posJ2!=51 && posJ3!=51 && posJ4!=51){
         color(14,0);
         printf("    %c  %c%c%c%c",435,448,452,452,452);
     }
-    if (case51l2==8){
+    if (case51l2==7 && (posJ1==51||posJ2==51||posJ3==51||posJ4==51)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",f);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case51l2==7.1 && posJ1!=51 && posJ2!=51 && posJ3!=51 && posJ4!=51){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",189);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case51l2==7.1 && (posJ1==51||posJ2==51||posJ3==51||posJ4==51)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,189);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case51l2==7.2 && posJ1!=51 && posJ2!=51 && posJ3!=51 && posJ4!=51){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",157);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case51l2==7.2 && (posJ1==51||posJ2==51||posJ3==51||posJ4==51)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,157);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case51l2==7.3 && posJ1!=51 && posJ2!=51 && posJ3!=51 && posJ4!=51){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",143);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case51l2==7.3 && (posJ1==51||posJ2==51||posJ3==51||posJ4==51)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,143);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case51l2==7.4 && posJ1!=51 && posJ2!=51 && posJ3!=51 && posJ4!=51){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",37);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case51l2==7.4 && (posJ1==51||posJ2==51||posJ3==51||posJ4==51)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,37);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case51l2==7.5 && posJ1!=51 && posJ2!=51 && posJ3!=51 && posJ4!=51){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",31);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case51l2==7.5 && (posJ1==51||posJ2==51||posJ3==51||posJ4==51)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,31);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case51l2==7.6 && posJ1!=51 && posJ2!=51 && posJ3!=51 && posJ4!=51){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",459);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case51l2==7.6 && (posJ1==51||posJ2==51||posJ3==51||posJ4==51)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,459);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case51l2==8 && posJ1!=51 && posJ2!=51 && posJ3!=51 && posJ4!=51){
         color(14,0);
         printf("%c%c%c%c%c  %c   ",452,452,452,452,473,435);
     }
-    if (case51l2==9){
+    if (case51l2==8 && (posJ1==51||posJ2==51||posJ3==51||posJ4==51)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",f);color(14,0);printf("%c   ",435);
+    }
+    if (case51l2==8.1 && posJ1!=51 && posJ2!=51 && posJ3!=51 && posJ4!=51){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",189);color(14,0);printf("%c   ",435);
+    }
+    if (case51l2==8.1 && (posJ1==51||posJ2==51||posJ3==51||posJ4==51)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",189,f);color(14,0);printf("%c   ",435);
+    }
+    if (case51l2==8.2 && posJ1!=51 && posJ2!=51 && posJ3!=51 && posJ4!=51){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",157);color(14,0);printf("%c   ",435);
+    }
+    if (case51l2==8.2 && (posJ1==51||posJ2==51||posJ3==51||posJ4==51)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",157,f);color(14,0);printf("%c   ",435);
+    }
+    if (case51l2==8.3 && posJ1!=51 && posJ2!=51 && posJ3!=51 && posJ4!=51){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",143);color(14,0);printf("%c   ",435);
+    }
+    if (case51l2==8.3 && (posJ1==51||posJ2==51||posJ3==51||posJ4==51)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",143,f);color(14,0);printf("%c   ",435);
+    }
+    if (case51l2==8.4 && posJ1!=51 && posJ2!=51 && posJ3!=51 && posJ4!=51){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",37);color(14,0);printf("%c   ",435);
+    }
+    if (case51l2==8.4 && (posJ1==51||posJ2==51||posJ3==51||posJ4==51)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",37,f);color(14,0);printf("%c   ",435);
+    }
+    if (case51l2==8.5 && posJ1!=51 && posJ2!=51 && posJ3!=51 && posJ4!=51){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",31);color(14,0);printf("%c   ",435);
+    }
+    if (case51l2==8.5 && (posJ1==51||posJ2==51||posJ3==51||posJ4==51)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",31,f);color(14,0);printf("%c   ",435);
+    }
+    if (case51l2==8.6 && posJ1!=51 && posJ2!=51 && posJ3!=51 && posJ4!=51){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",459);color(14,0);printf("%c   ",435);
+    }
+    if (case51l2==8.6 && (posJ1==51||posJ2==51||posJ3==51||posJ4==51)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",459,f);color(14,0);printf("%c   ",435);
+    }
+    if (case51l2>=9 && case51l2<10){
         color(14,0);
         printf("    %c%c%c%c%c%c%c",474,452,452,452,452,452,452);
     }
-    if (case51l2==10){
+    if (case51l2>=10 && case51l2<11){
         color(14,0);
         printf("%c%c%c%c%c%c%c%c   ",452,452,452,452,452,452,452,447);
     }
+    f=testposition(posJ1,posJ2,posJ3,posJ4,52,p1,p2,p3,p4);
     if (case52l2==0){
         color(14,0);
         printf("            ");
@@ -8829,94 +15172,184 @@ int test(double case01,double case03,double case05,double case10,double case11,d
         color(14,0);
         printf("%c%c%c%c%c%c%c%c%c%c%c%c",452,452,452,452,452,452,452,452,452,452,452,452);
     }
-    if (case52l2==2.1){
+    if (case52l2==2.1 && posJ1!=52 && posJ2!=52 && posJ3!=52 && posJ4!=52){
         color(14,0);
         printf("%c%c%c%c%c", 452, 452, 452, 452, 473);color(15,0);printf(" %c",292);color(14,0);
-        printf("%c%c%c%c%c", 448, 452, 452, 452,452);
+        printf("%c%c%c%c%c", 448,452, 452, 452, 452);
     }
-    if (case52l2==2.2){
+    if (case52l2==2.1 && (posJ1==52||posJ2==52||posJ3==52||posJ4==52)){
+        color(14,0);
+        printf("%c%c%c%c%c", 452, 452, 452, 452, 473);color(15,0);printf("%c%c",f,292);color(14,0);
+        printf("%c%c%c%c%c", 448,452, 452, 452, 452);
+    }
+    if (case52l2==2.2 && posJ1!=52 && posJ2!=52 && posJ3!=52 && posJ4!=52){
         color(14,0);
         printf("%c%c%c%c%c", 452, 452, 452, 452, 473);color(15,0);printf(" %c",291);color(14,0);
-        printf("%c%c%c%c%c", 448, 452, 452, 452,452);
+        printf("%c%c%c%c%c", 448,452, 452, 452, 452);
     }
-    if (case52l2==2.3){
+    if (case52l2==2.2 && (posJ1==52||posJ2==52||posJ3==52||posJ4==52)){
+        color(14,0);
+        printf("%c%c%c%c%c", 452, 452, 452, 452, 473);color(15,0);printf("%c%c",f,291);color(14,0);
+        printf("%c%c%c%c%c", 448,452, 452, 452, 452);
+    }
+    if (case52l2==2.3 && posJ1!=52 && posJ2!=52 && posJ3!=52 && posJ4!=52){
         color(14,0);
         printf("%c%c%c%c%c", 452, 452, 452, 452, 473);color(15,0);printf(" %c",285);color(14,0);
-        printf("%c%c%c%c%c", 448, 452, 452, 452,452);
+        printf("%c%c%c%c%c", 448,452, 452, 452, 452);
     }
-    if (case52l2==2.4){
+    if (case52l2==2.3 && (posJ1==52||posJ2==52||posJ3==52||posJ4==52)){
         color(14,0);
-        printf("%c%c%c%c%c", 452, 452, 452, 452, 473);color(15,0);printf(" %c",279);color(14,0);
-        printf("%c%c%c%c%c", 448, 452, 452, 452,452);
+        printf("%c%c%c%c%c", 452, 452, 452, 452, 473);color(15,0);printf("%c%c",f,285);color(14,0);
+        printf("%c%c%c%c%c", 448,452, 452, 452, 452);
     }
-    if (case52l2==2.5){
+    if (case52l2==2.4 && posJ1!=52 && posJ2!=52 && posJ3!=52 && posJ4!=52){
+        color(14,0);
+        printf("%c%c%c%c%c", 452, 452, 452, 452, 473);color(15,0);printf(" %c",428);color(14,0);
+        printf("%c%c%c%c%c", 448,452, 452, 452, 452);
+    }
+    if (case52l2==2.4 && (posJ1==52||posJ2==52||posJ3==52||posJ4==52)){
+        color(14,0);
+        printf("%c%c%c%c%c", 452, 452, 452, 452, 473);color(15,0);printf("%c%c",f,428);color(14,0);
+        printf("%c%c%c%c%c", 448,452, 452, 452, 452);
+    }
+    if (case52l2==2.5 && posJ1!=52 && posJ2!=52 && posJ3!=52 && posJ4!=52){
         color(14,0);
         printf("%c%c%c%c%c", 452, 452, 452, 452, 473);color(15,0);printf(" %c",277);color(14,0);
-        printf("%c%c%c%c%c", 448, 452, 452, 452,452);
+        printf("%c%c%c%c%c", 448,452, 452, 452, 452);
     }
-    if (case52l2==2.6){
+    if (case52l2==2.5 && (posJ1==52||posJ2==52||posJ3==52||posJ4==52)){
+        color(14,0);
+        printf("%c%c%c%c%c", 452, 452, 452, 452, 473);color(15,0);printf("%c%c",f,277);color(14,0);
+        printf("%c%c%c%c%c", 448,452, 452, 452, 452);
+    }
+    if (case52l2==2.6 && posJ1!=52 && posJ2!=52 && posJ3!=52 && posJ4!=52){
         color(14,0);
         printf("%c%c%c%c%c", 452, 452, 452, 452, 473);color(15,0);printf(" %c",225);color(14,0);
-        printf("%c%c%c%c%c", 448, 452, 452, 452,452);
+        printf("%c%c%c%c%c", 448,452, 452, 452, 452);
     }
-    if (case52l2==3.1){
+    if (case52l2==2.6 && (posJ1==52||posJ2==52||posJ3==52||posJ4==52)){
+        color(14,0);
+        printf("%c%c%c%c%c", 452, 452, 452, 452, 473);color(15,0);printf("%c%c",f,225);color(14,0);
+        printf("%c%c%c%c%c", 448,452, 452, 452, 452);
+    }
+    if (case52l2==3.1 && posJ1!=52 && posJ2!=52 && posJ3!=52 && posJ4!=52){
         color(14,0);
         printf("    %c",435);color(15,0);printf(" %c",292);color(14,0);
         printf("%c%c%c%c%c",448,452,452,452,452);
     }
-    if (case52l2==3.2){
+    if (case52l2==3.1 && (posJ1==52||posJ2==52||posJ3==52||posJ4==52)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,292);color(14,0);
+        printf("%c%c%c%c%c",448,452,452,452,452);
+    }
+    if (case52l2==3.2 && posJ1!=52 && posJ2!=52 && posJ3!=52 && posJ4!=52){
         color(14,0);
         printf("    %c",435);color(15,0);printf(" %c",291);color(14,0);
         printf("%c%c%c%c%c",448,452,452,452,452);
     }
-    if (case52l2==3.3){
+    if (case52l2==3.2 && (posJ1==52||posJ2==52||posJ3==52||posJ4==52)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,291);color(14,0);
+        printf("%c%c%c%c%c",448,452,452,452,452);
+    }
+    if (case52l2==3.3 && posJ1!=52 && posJ2!=52 && posJ3!=52 && posJ4!=52){
         color(14,0);
         printf("    %c",435);color(15,0);printf(" %c",285);color(14,0);
         printf("%c%c%c%c%c",448,452,452,452,452);
     }
-    if (case52l2==3.4){
+    if (case52l2==3.3 && (posJ1==52||posJ2==52||posJ3==52||posJ4==52)){
         color(14,0);
-        printf("    %c",435);color(15,0);printf(" %c",279);color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,285);color(14,0);
         printf("%c%c%c%c%c",448,452,452,452,452);
     }
-    if (case52l2==3.5){
+    if (case52l2==3.4 && posJ1!=52 && posJ2!=52 && posJ3!=52 && posJ4!=52){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",428);color(14,0);
+        printf("%c%c%c%c%c",448,452,452,452,452);
+    }
+    if (case52l2==3.4 && (posJ1==52||posJ2==52||posJ3==52||posJ4==52)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,428);color(14,0);
+        printf("%c%c%c%c%c",448,452,452,452,452);
+    }
+    if (case52l2==3.5 && posJ1!=52 && posJ2!=52 && posJ3!=52 && posJ4!=52){
         color(14,0);
         printf("    %c",435);color(15,0);printf(" %c",277);color(14,0);
         printf("%c%c%c%c%c",448,452,452,452,452);
     }
-    if (case52l2==3.6){
+    if (case52l2==3.5 && (posJ1==52||posJ2==52||posJ3==52||posJ4==52)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,277);color(14,0);
+        printf("%c%c%c%c%c",448,452,452,452,452);
+    }
+    if (case52l2==3.6 && posJ1!=52 && posJ2!=52 && posJ3!=52 && posJ4!=52){
         color(14,0);
         printf("    %c",435);color(15,0);printf(" %c",225);color(14,0);
         printf("%c%c%c%c%c",448,452,452,452,452);
     }
-    if (case52l2==4.1){
+    if (case52l2==3.6 && (posJ1==52||posJ2==52||posJ3==52||posJ4==52)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,225);color(14,0);
+        printf("%c%c%c%c%c",448,452,452,452,452);
+    }
+    if (case52l2==4.1 && posJ1!=52 && posJ2!=52 && posJ3!=52 && posJ4!=52){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",292);color(14,0);
         printf("%c    ",435);
     }
-    if (case52l2==4.2){
+    if (case52l2==4.1 && (posJ1==52||posJ2==52||posJ3==52||posJ4==52)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",292,f);color(14,0);
+        printf("%c    ",435);
+    }
+    if (case52l2==4.2 && posJ1!=52 && posJ2!=52 && posJ3!=52 && posJ4!=52){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",291);color(14,0);
         printf("%c    ",435);
     }
-    if (case52l2==4.3){
+    if (case52l2==4.2 && (posJ1==52||posJ2==52||posJ3==52||posJ4==52)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",291,f);color(14,0);
+        printf("%c    ",435);
+    }
+    if (case52l2==4.3 && posJ1!=52 && posJ2!=52 && posJ3!=52 && posJ4!=52){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",285);color(14,0);
         printf("%c    ",435);
     }
-    if (case52l2==4.4){
+    if (case52l2==4.3 && (posJ1==52||posJ2==52||posJ3==52||posJ4==52)){
         color(14,0);
-        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",279);color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",285,f);color(14,0);
         printf("%c    ",435);
     }
-    if (case52l2==4.5){
+    if (case52l2==4.4 && posJ1!=52 && posJ2!=52 && posJ3!=52 && posJ4!=52){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",428);color(14,0);
+        printf("%c    ",435);
+    }
+    if (case52l2==4.4 && (posJ1==52||posJ2==52||posJ3==52||posJ4==52)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",428,f);color(14,0);
+        printf("%c    ",435);
+    }
+    if (case52l2==4.5 && posJ1!=52 && posJ2!=52 && posJ3!=52 && posJ4!=52){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",277);color(14,0);
         printf("%c    ",435);
     }
-    if (case52l2==4.6){
+    if (case52l2==4.5 && (posJ1==52||posJ2==52||posJ3==52||posJ4==52)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",277,f);color(14,0);
+        printf("%c    ",435);
+    }
+    if (case52l2==4.6 && posJ1!=52 && posJ2!=52 && posJ3!=52 && posJ4!=52){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",225);color(14,0);
+        printf("%c    ",435);
+    }
+    if (case52l2==4.6 && (posJ1==52||posJ2==52||posJ3==52||posJ4==52)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",225,f);color(14,0);
         printf("%c    ",435);
     }
     if (case52l2==5){
@@ -8927,22 +15360,127 @@ int test(double case01,double case03,double case05,double case10,double case11,d
         color(14,0);
         printf("%c%c%c%c%c%c%c%c%c%c%c%c",452,452,452,452,452,452,452,452,452,452,452,452);
     }
-    if (case52l2==7){
+    if (case52l2==7 && posJ1!=52 && posJ2!=52 && posJ3!=52 && posJ4!=52){
         color(14,0);
         printf("    %c  %c%c%c%c%c",435,448,452,452,452,452);
     }
-    if (case52l2==8){
+    if (case52l2==7 && (posJ1==52||posJ2==52||posJ3==52||posJ4==52)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",f);color(14,0);printf("%c%c%c%c%c",448,452,452,452,452);
+    }
+    if (case52l2==7.1 && posJ1!=52 && posJ2!=52 && posJ3!=52 && posJ4!=52){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",189);color(14,0);printf("%c%c%c%c%c",448,452,452,452,452);
+    }
+    if (case52l2==7.1 && (posJ1==52||posJ2==52||posJ3==52||posJ4==52)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,189);color(14,0);printf("%c%c%c%c%c",448,452,452,452,452);
+    }
+    if (case52l2==7.2 && posJ1!=52 && posJ2!=52 && posJ3!=52 && posJ4!=52){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",157);color(14,0);printf("%c%c%c%c%c",448,452,452,452,452);
+    }
+    if (case52l2==7.2 && (posJ1==52||posJ2==52||posJ3==52||posJ4==52)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,157);color(14,0);printf("%c%c%c%c%c",448,452,452,452,452);
+    }
+    if (case52l2==7.3 && posJ1!=52 && posJ2!=52 && posJ3!=52 && posJ4!=52){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",143);color(14,0);printf("%c%c%c%c%c",448,452,452,452,452);
+    }
+    if (case52l2==7.3 && (posJ1==52||posJ2==52||posJ3==52||posJ4==52)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,143);color(14,0);printf("%c%c%c%c%c",448,452,452,452,452);
+    }
+    if (case52l2==7.4 && posJ1!=52 && posJ2!=52 && posJ3!=52 && posJ4!=52){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",37);color(14,0);printf("%c%c%c%c%c",448,452,452,452,452);
+    }
+    if (case52l2==7.4 && (posJ1==52||posJ2==52||posJ3==52||posJ4==52)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,37);color(14,0);printf("%c%c%c%c%c",448,452,452,452,452);
+    }
+    if (case52l2==7.5 && posJ1!=52 && posJ2!=52 && posJ3!=52 && posJ4!=52){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",31);color(14,0);printf("%c%c%c%c%c",448,452,452,452,452);
+    }
+    if (case52l2==7.5 && (posJ1==52||posJ2==52||posJ3==52||posJ4==52)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,31);color(14,0);printf("%c%c%c%c%c",448,452,452,452,452);
+    }
+    if (case52l2==7.6 && posJ1!=52 && posJ2!=52 && posJ3!=52 && posJ4!=52){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",459);color(14,0);printf("%c%c%c%c%c",448,452,452,452,452);
+    }
+    if (case52l2==7.6 && (posJ1==52||posJ2==52||posJ3==52||posJ4==52)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,459);color(14,0);printf("%c%c%c%c%c",448,452,452,452,452);
+    }
+    if (case52l2==8 && posJ1!=52 && posJ2!=52 && posJ3!=52 && posJ4!=52){
         color(14,0);
         printf("%c%c%c%c%c  %c    ",452,452,452,452,473,435);
     }
-    if (case52l2==9){
+    if (case52l2==8 && (posJ1==52||posJ2==52||posJ3==52||posJ4==52)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",f);color(14,0);printf("%c    ",435);
+    }
+    if (case52l2==8.1 && posJ1!=52 && posJ2!=52 && posJ3!=52 && posJ4!=52){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",189);color(14,0);printf("%c    ",435);
+    }
+    if (case52l2==8.1 && (posJ1==52||posJ2==52||posJ3==52||posJ4==52)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",189);color(14,0);printf("%c    ",435);
+    }
+    if (case52l2==8.2 && posJ1!=52 && posJ2!=52 && posJ3!=52 && posJ4!=52){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",157);color(14,0);printf("%c    ",435);
+    }
+    if (case52l2==8.2 && (posJ1==52||posJ2==52||posJ3==52||posJ4==52)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",157);color(14,0);printf("%c    ",435);
+    }
+    if (case52l2==8.3 && posJ1!=52 && posJ2!=52 && posJ3!=52 && posJ4!=52){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",143);color(14,0);printf("%c    ",435);
+    }
+    if (case52l2==8.3 && (posJ1==52||posJ2==52||posJ3==52||posJ4==52)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",143);color(14,0);printf("%c    ",435);
+    }
+    if (case52l2==8.4 && posJ1!=52 && posJ2!=52 && posJ3!=52 && posJ4!=52){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",37);color(14,0);printf("%c    ",435);
+    }
+    if (case52l2==8.4 && (posJ1==52||posJ2==52||posJ3==52||posJ4==52)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",37);color(14,0);printf("%c    ",435);
+    }
+    if (case52l2==8.5 && posJ1!=52 && posJ2!=52 && posJ3!=52 && posJ4!=52){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",31);color(14,0);printf("%c    ",435);
+    }
+    if (case52l2==8.5 && (posJ1==52||posJ2==52||posJ3==52||posJ4==52)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",31,f);color(14,0);printf("%c    ",435);
+    }
+    if (case52l2==8.6 && posJ1!=52 && posJ2!=52 && posJ3!=52 && posJ4!=52){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",459);color(14,0);printf("%c    ",435);
+    }
+    if (case52l2==8.6 && (posJ1==52||posJ2==52||posJ3==52||posJ4==52)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",459,f);color(14,0);printf("%c    ",435);
+    }
+    if (case52l2>=9 && case52l2<10){
         color(14,0);
         printf("    %c%c%c%c%c%c%c%c",474,452,452,452,452,452,452,452);
     }
-    if (case52l2==10){
+    if (case52l2>=10 && case52l2<11){
         color(14,0);
         printf("%c%c%c%c%c%c%c%c    ",452,452,452,452,452,452,452,447);
     }
+    f=testposition(posJ1,posJ2,posJ3,posJ4,53,p1,p2,p3,p4);
     if (case53l2==0){
         printf("           ");
     }
@@ -8950,94 +15488,184 @@ int test(double case01,double case03,double case05,double case10,double case11,d
         color(14,0);
         printf("%c%c%c%c%c%c%c%c%c%c%c",452,452,452,452,452,452,452,452,452,452,452);
     }
-    if (case53l2==2.1){
+    if (case53l2==2.1 && posJ1!=53 && posJ2!=53 && posJ3!=53 && posJ4!=53){
         color(14,0);
         printf("%c%c%c%c%c", 452, 452, 452, 452, 473);color(15,0);printf(" %c",292);color(14,0);
         printf("%c%c%c%c", 448, 452, 452, 452);
     }
-    if (case53l2==2.2){
+    if (case53l2==2.1 && (posJ1==53||posJ2==53||posJ3==53||posJ4==53)){
+        color(14,0);
+        printf("%c%c%c%c%c", 452, 452, 452, 452, 473);color(15,0);printf("%c%c",f,292);color(14,0);
+        printf("%c%c%c%c", 448, 452, 452, 452);
+    }
+    if (case53l2==2.2 && posJ1!=53 && posJ2!=53 && posJ3!=53 && posJ4!=53){
         color(14,0);
         printf("%c%c%c%c%c", 452, 452, 452, 452, 473);color(15,0);printf(" %c",291);color(14,0);
         printf("%c%c%c%c", 448, 452, 452, 452);
     }
-    if (case53l2==2.3){
+    if (case53l2==2.2 && (posJ1==53||posJ2==53||posJ3==53||posJ4==53)){
+        color(14,0);
+        printf("%c%c%c%c%c", 452, 452, 452, 452, 473);color(15,0);printf("%c%c",f,291);color(14,0);
+        printf("%c%c%c%c", 448, 452, 452, 452);
+    }
+    if (case53l2==2.3 && posJ1!=53 && posJ2!=53 && posJ3!=53 && posJ4!=53){
         color(14,0);
         printf("%c%c%c%c%c", 452, 452, 452, 452, 473);color(15,0);printf(" %c",285);color(14,0);
         printf("%c%c%c%c", 448, 452, 452, 452);
     }
-    if (case53l2==2.4){
+    if (case53l2==2.3 && (posJ1==53||posJ2==53||posJ3==53||posJ4==53)){
         color(14,0);
-        printf("%c%c%c%c%c", 452, 452, 452, 452, 473);color(15,0);printf(" %c",279);color(14,0);
+        printf("%c%c%c%c%c", 452, 452, 452, 452, 473);color(15,0);printf("%c%c",f,285);color(14,0);
         printf("%c%c%c%c", 448, 452, 452, 452);
     }
-    if (case53l2==2.5){
+    if (case53l2==2.4 && posJ1!=53 && posJ2!=53 && posJ3!=53 && posJ4!=53){
+        color(14,0);
+        printf("%c%c%c%c%c", 452, 452, 452, 452, 473);color(15,0);printf(" %c",428);color(14,0);
+        printf("%c%c%c%c", 448, 452, 452, 452);
+    }
+    if (case53l2==2.4 && (posJ1==53||posJ2==53||posJ3==53||posJ4==53)){
+        color(14,0);
+        printf("%c%c%c%c%c", 452, 452, 452, 452, 473);color(15,0);printf("%c%c",f,428);color(14,0);
+        printf("%c%c%c%c", 448, 452, 452, 452);
+    }
+    if (case53l2==2.5 && posJ1!=53 && posJ2!=53 && posJ3!=53 && posJ4!=53){
         color(14,0);
         printf("%c%c%c%c%c", 452, 452, 452, 452, 473);color(15,0);printf(" %c",277);color(14,0);
         printf("%c%c%c%c", 448, 452, 452, 452);
     }
-    if (case53l2==2.6){
+    if (case53l2==2.5 && (posJ1==53||posJ2==53||posJ3==53||posJ4==53)){
+        color(14,0);
+        printf("%c%c%c%c%c", 452, 452, 452, 452, 473);color(15,0);printf("%c%c",f,277);color(14,0);
+        printf("%c%c%c%c", 448, 452, 452, 452);
+    }
+    if (case53l2==2.6 && posJ1!=53 && posJ2!=53 && posJ3!=53 && posJ4!=53){
         color(14,0);
         printf("%c%c%c%c%c", 452, 452, 452, 452, 473);color(15,0);printf(" %c",225);color(14,0);
         printf("%c%c%c%c", 448, 452, 452, 452);
     }
-    if (case53l2==3.1){
+    if (case53l2==2.6 && (posJ1==53||posJ2==53||posJ3==53||posJ4==53)){
+        color(14,0);
+        printf("%c%c%c%c%c", 452, 452, 452, 452, 473);color(15,0);printf("%c%c",f,225);color(14,0);
+        printf("%c%c%c%c", 448, 452, 452, 452);
+    }
+    if (case53l2==3.1 && posJ1!=53 && posJ2!=53 && posJ3!=53 && posJ4!=53){
         color(14,0);
         printf("    %c",435);color(15,0);printf(" %c",292);color(14,0);
         printf("%c%c%c%c",448,452,452,452);
     }
-    if (case53l2==3.2){
+    if (case53l2==3.1 && (posJ1==53||posJ2==53||posJ3==53||posJ4==53)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,292);color(14,0);
+        printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case53l2==3.2 && posJ1!=53 && posJ2!=53 && posJ3!=53 && posJ4!=53){
         color(14,0);
         printf("    %c",435);color(15,0);printf(" %c",291);color(14,0);
         printf("%c%c%c%c",448,452,452,452);
     }
-    if (case53l2==3.3){
+    if (case53l2==3.2 && (posJ1==53||posJ2==53||posJ3==53||posJ4==53)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,291);color(14,0);
+        printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case53l2==3.3 && posJ1!=53 && posJ2!=53 && posJ3!=53 && posJ4!=53){
         color(14,0);
         printf("    %c",435);color(15,0);printf(" %c",285);color(14,0);
         printf("%c%c%c%c",448,452,452,452);
     }
-    if (case53l2==3.4){
+    if (case53l2==3.3 && (posJ1==53||posJ2==53||posJ3==53||posJ4==53)){
         color(14,0);
-        printf("    %c",435);color(15,0);printf(" %c",279);color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,285);color(14,0);
         printf("%c%c%c%c",448,452,452,452);
     }
-    if (case53l2==3.5){
+    if (case53l2==3.4 && posJ1!=53 && posJ2!=53 && posJ3!=53 && posJ4!=53){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",428);color(14,0);
+        printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case53l2==3.4 && (posJ1==53||posJ2==53||posJ3==53||posJ4==53)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,428);color(14,0);
+        printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case53l2==3.5 && posJ1!=53 && posJ2!=53 && posJ3!=53 && posJ4!=53){
         color(14,0);
         printf("    %c",435);color(15,0);printf(" %c",277);color(14,0);
         printf("%c%c%c%c",448,452,452,452);
     }
-    if (case53l2==3.6){
+    if (case53l2==3.5 && (posJ1==53||posJ2==53||posJ3==53||posJ4==53)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,277);color(14,0);
+        printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case53l2==3.6 && posJ1!=53 && posJ2!=53 && posJ3!=53 && posJ4!=53){
         color(14,0);
         printf("    %c",435);color(15,0);printf(" %c",225);color(14,0);
         printf("%c%c%c%c",448,452,452,452);
     }
-    if (case53l2==4.1){
+    if (case53l2==3.6 && (posJ1==53||posJ2==53||posJ3==53||posJ4==53)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,225);color(14,0);
+        printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case53l2==4.1 && posJ1!=53 && posJ2!=53 && posJ3!=53 && posJ4!=53){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",292);color(14,0);
         printf("%c   ",435);
     }
-    if (case53l2==4.2){
+    if (case53l2==4.1 && (posJ1==53||posJ2==53||posJ3==53||posJ4==53)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",292,f);color(14,0);
+        printf("%c   ",435);
+    }
+    if (case53l2==4.2 && posJ1!=53 && posJ2!=53 && posJ3!=53 && posJ4!=53){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",291);color(14,0);
         printf("%c   ",435);
     }
-    if (case53l2==4.3){
+    if (case53l2==4.2 && (posJ1==53||posJ2==53||posJ3==53||posJ4==53)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",291,f);color(14,0);
+        printf("%c   ",435);
+    }
+    if (case53l2==4.3 && posJ1!=53 && posJ2!=53 && posJ3!=53 && posJ4!=53){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",285);color(14,0);
         printf("%c   ",435);
     }
-    if (case53l2==4.4){
+    if (case53l2==4.3 && (posJ1==53||posJ2==53||posJ3==53||posJ4==53)){
         color(14,0);
-        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",279);color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",285,f);color(14,0);
         printf("%c   ",435);
     }
-    if (case53l2==4.5){
+    if (case53l2==4.4 && posJ1!=53 && posJ2!=53 && posJ3!=53 && posJ4!=53){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",428);color(14,0);
+        printf("%c   ",435);
+    }
+    if (case53l2==4.4 && (posJ1==53||posJ2==53||posJ3==53||posJ4==53)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",428,f);color(14,0);
+        printf("%c   ",435);
+    }
+    if (case53l2==4.5 && posJ1!=53 && posJ2!=53 && posJ3!=53 && posJ4!=53){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",277);color(14,0);
         printf("%c   ",435);
     }
-    if (case53l2==4.6){
+    if (case53l2==4.5 && (posJ1==53||posJ2==53||posJ3==53||posJ4==53)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",277,f);color(14,0);
+        printf("%c   ",435);
+    }
+    if (case53l2==4.6 && posJ1!=53 && posJ2!=53 && posJ3!=53 && posJ4!=53){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",225);color(14,0);
+        printf("%c   ",435);
+    }
+    if (case53l2==4.6 && (posJ1==53||posJ2==53||posJ3==53||posJ4==53)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",225,f);color(14,0);
         printf("%c   ",435);
     }
     if (case53l2==5){
@@ -9048,22 +15676,127 @@ int test(double case01,double case03,double case05,double case10,double case11,d
         color(14,0);
         printf("%c%c%c%c%c%c%c%c%c%c%c",452,452,452,452,452,452,452,452,452,452,452);
     }
-    if (case53l2==7){
+    if (case53l2==7 && posJ1!=53 && posJ2!=53 && posJ3!=53 && posJ4!=53){
         color(14,0);
         printf("    %c  %c%c%c%c",435,448,452,452,452);
     }
-    if (case53l2==8){
+    if (case53l2==7 && (posJ1==53||posJ2==53||posJ3==53||posJ4==53)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",f);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case53l2==7.1 && posJ1!=53 && posJ2!=53 && posJ3!=53 && posJ4!=53){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",189);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case53l2==7.1 && (posJ1==53||posJ2==53||posJ3==53||posJ4==53)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,189);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case53l2==7.2 && posJ1!=53 && posJ2!=53 && posJ3!=53 && posJ4!=53){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",157);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case53l2==7.2 && (posJ1==53||posJ2==53||posJ3==53||posJ4==53)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,157);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case53l2==7.3 && posJ1!=53 && posJ2!=53 && posJ3!=53 && posJ4!=53){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",143);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case53l2==7.3 && (posJ1==53||posJ2==53||posJ3==53||posJ4==53)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,143);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case53l2==7.4 && posJ1!=53 && posJ2!=53 && posJ3!=53 && posJ4!=53){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",37);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case53l2==7.4 && (posJ1==53||posJ2==53||posJ3==53||posJ4==53)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,37);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case53l2==7.5 && posJ1!=53 && posJ2!=53 && posJ3!=53 && posJ4!=53){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",31);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case53l2==7.5 && (posJ1==53||posJ2==53||posJ3==53||posJ4==53)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,31);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case53l2==7.6 && posJ1!=53 && posJ2!=53 && posJ3!=53 && posJ4!=53){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",459);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case53l2==7.6 && (posJ1==53||posJ2==53||posJ3==53||posJ4==53)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,459);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case53l2==8 && posJ1!=53 && posJ2!=53 && posJ3!=53 && posJ4!=53){
         color(14,0);
         printf("%c%c%c%c%c  %c   ",452,452,452,452,473,435);
     }
-    if (case53l2==9){
+    if (case53l2==8 && (posJ1==53||posJ2==53||posJ3==53||posJ4==53)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",f);color(14,0);printf("%c   ",435);
+    }
+    if (case53l2==8.1 && posJ1!=53 && posJ2!=53 && posJ3!=53 && posJ4!=53){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",189);color(14,0);printf("%c   ",435);
+    }
+    if (case53l2==8.1 && (posJ1==53||posJ2==53||posJ3==53||posJ4==53)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",189,f);color(14,0);printf("%c   ",435);
+    }
+    if (case53l2==8.2 && posJ1!=53 && posJ2!=53 && posJ3!=53 && posJ4!=53){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",157);color(14,0);printf("%c   ",435);
+    }
+    if (case53l2==8.2 && (posJ1==53||posJ2==53||posJ3==53||posJ4==53)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",157,f);color(14,0);printf("%c   ",435);
+    }
+    if (case53l2==8.3 && posJ1!=53 && posJ2!=53 && posJ3!=53 && posJ4!=53){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",143);color(14,0);printf("%c   ",435);
+    }
+    if (case53l2==8.3 && (posJ1==53||posJ2==53||posJ3==53||posJ4==53)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",143,f);color(14,0);printf("%c   ",435);
+    }
+    if (case53l2==8.4 && posJ1!=53 && posJ2!=53 && posJ3!=53 && posJ4!=53){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",37);color(14,0);printf("%c   ",435);
+    }
+    if (case53l2==8.4 && (posJ1==53||posJ2==53||posJ3==53||posJ4==53)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",37,f);color(14,0);printf("%c   ",435);
+    }
+    if (case53l2==8.5 && posJ1!=53 && posJ2!=53 && posJ3!=53 && posJ4!=53){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",31);color(14,0);printf("%c   ",435);
+    }
+    if (case53l2==8.5 && (posJ1==53||posJ2==53||posJ3==53||posJ4==53)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",31,f);color(14,0);printf("%c   ",435);
+    }
+    if (case53l2==8.6 && posJ1!=53 && posJ2!=53 && posJ3!=53 && posJ4!=53){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",459);color(14,0);printf("%c   ",435);
+    }
+    if (case53l2==8.6 && (posJ1==53||posJ2==53||posJ3==53||posJ4==53)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",459,f);color(14,0);printf("%c   ",435);
+    }
+    if (case53l2>=9 && case53l2<10){
         color(14,0);
         printf("    %c%c%c%c%c%c%c",474,452,452,452,452,452,452);
     }
-    if (case53l2==10){
+    if (case53l2>=10 && case53l2<11){
         color(14,0);
         printf("%c%c%c%c%c%c%c%c   ",452,452,452,452,452,452,452,447);
     }
+    f=testposition(posJ1,posJ2,posJ3,posJ4,54,p1,p2,p3,p4);
     if (case54l2==0){
         color(14,0);
         printf("              ");
@@ -9072,94 +15805,184 @@ int test(double case01,double case03,double case05,double case10,double case11,d
         color(14,0);
         printf("%c%c%c%c%c%c%c%c%c%c%c%c%c%c",452,452,452,452,452,452,452,452,452,452,452,452,452,452);
     }
-    if (case54l2==2.1){
+    if (case54l2==2.1 && posJ1!=54 && posJ2!=54 && posJ3!=54 && posJ4!=54){
         color(14,0);
-        printf("%c%c%c%c%c%c",452,452, 452, 452, 452, 473);color(15,0);printf(" %c",292);color(14,0);
-        printf("%c%c%c%c%c%c", 448, 452, 452, 452,452,452);
+        printf("%c%c%c%c%c%c",452, 452, 452, 452, 452, 473);color(15,0);printf(" %c",292);color(14,0);
+        printf("%c%c%c%c%c%c", 448,452,452, 452, 452, 452);
     }
-    if (case54l2==2.2){
+    if (case54l2==2.1 && (posJ1==54||posJ2==54||posJ3==54||posJ4==54)){
+        color(14,0);
+        printf("%c%c%c%c%c%c",452, 452, 452, 452, 452, 473);color(15,0);printf("%c%c",f,292);color(14,0);
+        printf("%c%c%c%c%c%c", 448,452,452, 452, 452, 452);
+    }
+    if (case54l2==2.2 && posJ1!=54 && posJ2!=54 && posJ3!=54 && posJ4!=54){
         color(14,0);
         printf("%c%c%c%c%c%c",452, 452, 452, 452, 452, 473);color(15,0);printf(" %c",291);color(14,0);
-        printf("%c%c%c%c%c%c", 448, 452, 452, 452,452,452);
+        printf("%c%c%c%c%c%c", 448,452,452, 452, 452, 452);
     }
-    if (case54l2==2.3){
+    if (case54l2==2.2 && (posJ1==54||posJ2==54||posJ3==54||posJ4==54)){
         color(14,0);
-        printf("%c%c%c%c%c%c",452, 452, 452, 452, 452, 473);color(15,0);printf(" %c",285);color(14,0);
-        printf("%c%c%c%c%c%c", 448, 452, 452, 452,452,452);
+        printf("%c%c%c%c%c%c",452, 452, 452, 452, 452, 473);color(15,0);printf("%c%c",f,291);color(14,0);
+        printf("%c%c%c%c%c%c", 448,452,452, 452, 452, 452);
     }
-    if (case54l2==2.4){
+    if (case54l2==2.3 && posJ1!=54 && posJ2!=54 && posJ3!=54 && posJ4!=54){
         color(14,0);
-        printf("%c%c%c%c%c%c",452, 452, 452, 452, 452, 473);color(15,0);printf(" %c",279);color(14,0);
-        printf("%c%c%c%c%c%c", 448, 452, 452, 452,452,452);
+        printf("%c%c%c%c%c", 452, 452, 452, 452, 473);color(15,0);printf(" %c",285);color(14,0);
+        printf("%c%c%c%c%c", 448,452, 452, 452, 452);
     }
-    if (case54l2==2.5){
+    if (case54l2==2.3 && (posJ1==54||posJ2==54||posJ3==54||posJ4==54)){
         color(14,0);
-        printf("%c%c%c%c%c%c", 452,452, 452, 452, 452, 473);color(15,0);printf(" %c",277);color(14,0);
-        printf("%c%c%c%c%c%c", 448, 452, 452, 452,452,452);
+        printf("%c%c%c%c%c%c",452, 452, 452, 452, 452, 473);color(15,0);printf("%c%c",f,285);color(14,0);
+        printf("%c%c%c%c%c%c", 448,452,452, 452, 452, 452);
     }
-    if (case54l2==2.6){
+    if (case54l2==2.4 && posJ1!=54 && posJ2!=54 && posJ3!=54 && posJ4!=54){
+        color(14,0);
+        printf("%c%c%c%c%c%c",452, 452, 452, 452, 452, 473);color(15,0);printf(" %c",428);color(14,0);
+        printf("%c%c%c%c%c%c", 448,452,452, 452, 452, 452);
+    }
+    if (case54l2==2.4 && (posJ1==54||posJ2==54||posJ3==54||posJ4==54)){
+        color(14,0);
+        printf("%c%c%c%c%c%c",452, 452, 452, 452, 452, 473);color(15,0);printf("%c%c",f,428);color(14,0);
+        printf("%c%c%c%c%c%c", 448,452,452, 452, 452, 452);
+    }
+    if (case54l2==2.5 && posJ1!=54 && posJ2!=54 && posJ3!=54 && posJ4!=54){
+        color(14,0);
+        printf("%c%c%c%c%c%c",452, 452, 452, 452, 452, 473);color(15,0);printf(" %c",277);color(14,0);
+        printf("%c%c%c%c%c%c", 448,452,452, 452, 452, 452);
+    }
+    if (case54l2==2.5 && (posJ1==54||posJ2==54||posJ3==54||posJ4==54)){
+        color(14,0);
+        printf("%c%c%c%c%c%c",452, 452, 452, 452, 452, 473);color(15,0);printf("%c%c",f,277);color(14,0);
+        printf("%c%c%c%c%c%c", 448,452,452, 452, 452, 452);
+    }
+    if (case54l2==2.6 && posJ1!=54 && posJ2!=54 && posJ3!=54 && posJ4!=54){
         color(14,0);
         printf("%c%c%c%c%c%c",452, 452, 452, 452, 452, 473);color(15,0);printf(" %c",225);color(14,0);
-        printf("%c%c%c%c%c%c", 448, 452, 452, 452,452,452);
+        printf("%c%c%c%c%c%c", 448,452,452, 452, 452, 452);
     }
-    if (case54l2==3.1){
+    if (case54l2==2.6 && (posJ1==54||posJ2==54||posJ3==54||posJ4==54)){
+        color(14,0);
+        printf("%c%c%c%c%c%c",452, 452, 452, 452, 452, 473);color(15,0);printf("%c%c",f,225);color(14,0);
+        printf("%c%c%c%c%c%c", 448,452, 452, 452, 452,452);
+    }
+    if (case54l2==3.1 && posJ1!=54 && posJ2!=54 && posJ3!=54 && posJ4!=54){
         color(14,0);
         printf("     %c",435);color(15,0);printf(" %c",292);color(14,0);
         printf("%c%c%c%c%c%c",448,452,452,452,452,452);
     }
-    if (case54l2==3.2){
+    if (case54l2==3.1 && (posJ1==54||posJ2==54||posJ3==54||posJ4==54)){
+        color(14,0);
+        printf("     %c",435);color(15,0);printf("%c%c",f,292);color(14,0);
+        printf("%c%c%c%c%c%c",448,452,452,452,452,452);
+    }
+    if (case54l2==3.2 && posJ1!=54 && posJ2!=54 && posJ3!=54 && posJ4!=54){
         color(14,0);
         printf("     %c",435);color(15,0);printf(" %c",291);color(14,0);
         printf("%c%c%c%c%c%c",448,452,452,452,452,452);
     }
-    if (case54l2==3.3){
+    if (case54l2==3.2 && (posJ1==54||posJ2==54||posJ3==54||posJ4==54)){
+        color(14,0);
+        printf("     %c",435);color(15,0);printf("%c%c",f,291);color(14,0);
+        printf("%c%c%c%c%c%c",448,452,452,452,452,452);
+    }
+    if (case54l2==3.3 && posJ1!=54 && posJ2!=54 && posJ3!=54 && posJ4!=54){
         color(14,0);
         printf("     %c",435);color(15,0);printf(" %c",285);color(14,0);
         printf("%c%c%c%c%c%c",448,452,452,452,452,452);
     }
-    if (case54l2==3.4){
+    if (case54l2==3.3 && (posJ1==54||posJ2==54||posJ3==54||posJ4==54)){
         color(14,0);
-        printf("     %c",435);color(15,0);printf(" %c",279);color(14,0);
+        printf("     %c",435);color(15,0);printf("%c%c",f,285);color(14,0);
         printf("%c%c%c%c%c%c",448,452,452,452,452,452);
     }
-    if (case54l2==3.5){
+    if (case54l2==3.4 && posJ1!=54 && posJ2!=54 && posJ3!=54 && posJ4!=54){
+        color(14,0);
+        printf("     %c",435);color(15,0);printf(" %c",428);color(14,0);
+        printf("%c%c%c%c%c%c",448,452,452,452,452,452);
+    }
+    if (case54l2==3.4 && (posJ1==54||posJ2==54||posJ3==54||posJ4==54)){
+        color(14,0);
+        printf("     %c",435);color(15,0);printf("%c%c",f,428);color(14,0);
+        printf("%c%c%c%c%c%c",448,452,452,452,452,452);
+    }
+    if (case54l2==3.5 && posJ1!=54 && posJ2!=54 && posJ3!=54 && posJ4!=54){
         color(14,0);
         printf("     %c",435);color(15,0);printf(" %c",277);color(14,0);
         printf("%c%c%c%c%c%c",448,452,452,452,452,452);
     }
-    if (case54l2==3.6){
+    if (case54l2==3.5 && (posJ1==54||posJ2==54||posJ3==54||posJ4==54)){
+        color(14,0);
+        printf("     %c",435);color(15,0);printf("%c%c",f,277);color(14,0);
+        printf("%c%c%c%c%c%c",448,452,452,452,452,452);
+    }
+    if (case54l2==3.6 && posJ1!=54 && posJ2!=54 && posJ3!=54 && posJ4!=54){
         color(14,0);
         printf("     %c",435);color(15,0);printf(" %c",225);color(14,0);
         printf("%c%c%c%c%c%c",448,452,452,452,452,452);
     }
-    if (case54l2==4.1){
+    if (case54l2==3.6 && (posJ1==54||posJ2==54||posJ3==54||posJ4==54)){
+        color(14,0);
+        printf("     %c",435);color(15,0);printf("%c%c",f,225);color(14,0);
+        printf("%c%c%c%c%c%c",448,452,452,452,452,452);
+    }
+    if (case54l2==4.1 && posJ1!=54 && posJ2!=54 && posJ3!=54 && posJ4!=54){
         color(14,0);
         printf("%c%c%c%c%c%c",452,452,452,452,452,473);color(15,0);printf("%c ",292);color(14,0);
         printf("%c     ",435);
     }
-    if (case54l2==4.2){
+    if (case54l2==4.1 && (posJ1==54||posJ2==54||posJ3==54||posJ4==54)){
+        color(14,0);
+        printf("%c%c%c%c%c%c",452,452,452,452,452,473);color(15,0);printf("%c%c",292,f);color(14,0);
+        printf("%c     ",435);
+    }
+    if (case54l2==4.2 && posJ1!=54 && posJ2!=54 && posJ3!=54 && posJ4!=54){
         color(14,0);
         printf("%c%c%c%c%c%c",452,452,452,452,452,473);color(15,0);printf("%c ",291);color(14,0);
         printf("%c     ",435);
     }
-    if (case54l2==4.3){
+    if (case54l2==4.2 && (posJ1==54||posJ2==54||posJ3==54||posJ4==54)){
+        color(14,0);
+        printf("%c%c%c%c%c%c",452,452,452,452,452,473);color(15,0);printf("%c%c",291,f);color(14,0);
+        printf("%c     ",435);
+    }
+    if (case54l2==4.3 && posJ1!=54 && posJ2!=54 && posJ3!=54 && posJ4!=54){
         color(14,0);
         printf("%c%c%c%c%c%c",452,452,452,452,452,473);color(15,0);printf("%c ",285);color(14,0);
         printf("%c     ",435);
     }
-    if (case54l2==4.4){
+    if (case54l2==4.3 && (posJ1==54||posJ2==54||posJ3==54||posJ4==54)){
         color(14,0);
-        printf("%c%c%c%c%c%c",452,452,452,452,452,473);color(15,0);printf("%c ",279);color(14,0);
+        printf("%c%c%c%c%c%c",452,452,452,452,452,473);color(15,0);printf("%c%c",285,f);color(14,0);
         printf("%c     ",435);
     }
-    if (case54l2==4.5){
+    if (case54l2==4.4 && posJ1!=54 && posJ2!=54 && posJ3!=54 && posJ4!=54){
+        color(14,0);
+        printf("%c%c%c%c%c%c",452,452,452,452,452,473);color(15,0);printf("%c ",428);color(14,0);
+        printf("%c     ",435);
+    }
+    if (case54l2==4.4 && (posJ1==54||posJ2==54||posJ3==54||posJ4==54)){
+        color(14,0);
+        printf("%c%c%c%c%c%c",452,452,452,452,452,473);color(15,0);printf("%c%c",428,f);color(14,0);
+        printf("%c     ",435);
+    }
+    if (case54l2==4.5 && posJ1!=54 && posJ2!=54 && posJ3!=54 && posJ4!=54){
         color(14,0);
         printf("%c%c%c%c%c%c",452,452,452,452,452,473);color(15,0);printf("%c ",277);color(14,0);
         printf("%c     ",435);
     }
-    if (case54l2==4.6){
+    if (case54l2==4.5 && (posJ1==54||posJ2==54||posJ3==54||posJ4==54)){
+        color(14,0);
+        printf("%c%c%c%c%c%c",452,452,452,452,452,473);color(15,0);printf("%c%c",277,f);color(14,0);
+        printf("%c     ",435);
+    }
+    if (case54l2==4.6 && posJ1!=54 && posJ2!=54 && posJ3!=54 && posJ4!=54){
         color(14,0);
         printf("%c%c%c%c%c%c",452,452,452,452,452,473);color(15,0);printf("%c ",225);color(14,0);
+        printf("%c     ",435);
+    }
+    if (case54l2==4.6 && (posJ1==54||posJ2==54||posJ3==54||posJ4==54)){
+        color(14,0);
+        printf("%c%c%c%c%c%c",452,452,452,452,452,473);color(15,0);printf("%c%c",225,f);color(14,0);
         printf("%c     ",435);
     }
     if (case54l2==5){
@@ -9170,22 +15993,127 @@ int test(double case01,double case03,double case05,double case10,double case11,d
         color(14,0);
         printf("%c%c%c%c%c%c%c%c%c%c%c%c%c%c",452,452,452,452,452,452,452,452,452,452,452,452,452,452);
     }
-    if (case54l2==7){
+    if (case54l2==7 && posJ1!=54 && posJ2!=54 && posJ3!=54 && posJ4!=54){
         color(14,0);
         printf("     %c  %c%c%c%c%c%c",435,448,452,452,452,452,452);
     }
-    if (case54l2==8){
+    if (case54l2==7 && (posJ1==54||posJ2==54||posJ3==54||posJ4==54)){
+        color(14,0);
+        printf("     %c",435);color(15,0);printf(" %c",f);color(14,0);printf("%c%c%c%c%c%c",448,452,452,452,452,452);
+    }
+    if (case54l2==7.1 && posJ1!=54 && posJ2!=54 && posJ3!=54 && posJ4!=54){
+        color(14,0);
+        printf("     %c",435);color(15,0);printf(" %c",189);color(14,0);printf("%c%c%c%c%c%c",452,448,452,452,452,452);
+    }
+    if (case54l2==7.1 && (posJ1==54||posJ2==54||posJ3==54||posJ4==54)){
+        color(14,0);
+        printf("     %c",435);color(15,0);printf("%c%c",f,189);color(14,0);printf("%c%c%c%c%c%c",452,448,452,452,452,452);
+    }
+    if (case54l2==7.2 && posJ1!=54 && posJ2!=54 && posJ3!=54 && posJ4!=54){
+        color(14,0);
+        printf("     %c",435);color(15,0);printf(" %c",157);color(14,0);printf("%c%c%c%c%c%c",452,448,452,452,452,452);
+    }
+    if (case54l2==7.2 && (posJ1==54||posJ2==54||posJ3==54||posJ4==54)){
+        color(14,0);
+        printf("     %c",435);color(15,0);printf("%c%c",f,157);color(14,0);printf("%c%c%c%c%c%c",452,448,452,452,452,452);
+    }
+    if (case54l2==7.3 && posJ1!=54 && posJ2!=54 && posJ3!=54 && posJ4!=54){
+        color(14,0);
+        printf("     %c",435);color(15,0);printf(" %c",143);color(14,0);printf("%c%c%c%c%c%c",448,452,452,452,452,452);
+    }
+    if (case54l2==7.3 && (posJ1==54||posJ2==54||posJ3==54||posJ4==54)){
+        color(14,0);
+        printf("     %c",435);color(15,0);printf("%c%c",f,143);color(14,0);printf("%c%c%c%c%c%c",452,448,452,452,452,452);
+    }
+    if (case54l2==7.4 && posJ1!=54 && posJ2!=54 && posJ3!=54 && posJ4!=54){
+        color(14,0);
+        printf("     %c",435);color(15,0);printf(" %c",37);color(14,0);printf("%c%c%c%c%c%c",452,448,452,452,452,452);
+    }
+    if (case54l2==7.4 && (posJ1==54||posJ2==54||posJ3==54||posJ4==54)){
+        color(14,0);
+        printf("     %c",435);color(15,0);printf("%c%c",f,37);color(14,0);printf("%c%c%c%c%c%c",452,448,452,452,452,452);
+    }
+    if (case54l2==7.5 && posJ1!=54 && posJ2!=54 && posJ3!=54 && posJ4!=54){
+        color(14,0);
+        printf("     %c",435);color(15,0);printf(" %c",31);color(14,0);printf("%c%c%c%c%c%c",448,452,452,452,452,452);
+    }
+    if (case54l2==7.5 && (posJ1==54||posJ2==54||posJ3==54||posJ4==54)){
+        color(14,0);
+        printf("     %c",435);color(15,0);printf("%c%c",f,31);color(14,0);printf("%c%c%c%c%c%c",448,452,452,452,452,452);
+    }
+    if (case54l2==7.6 && posJ1!=54 && posJ2!=54 && posJ3!=54 && posJ4!=54){
+        color(14,0);
+        printf("     %c",435);color(15,0);printf(" %c",459);color(14,0);printf("%c%c%c%c%c%c",448,452,452,452,452,452);
+    }
+    if (case54l2==7.6 && (posJ1==54||posJ2==54||posJ3==54||posJ4==54)){
+        color(14,0);
+        printf("     %c",435);color(15,0);printf("%c%c",f,459);color(14,0);printf("%c%c%c%c%c%c",448,452,452,452,452,452);
+    }
+    if (case54l2==8 && posJ1!=54 && posJ2!=54 && posJ3!=54 && posJ4!=54){
         color(14,0);
         printf("%c%c%c%c%c%c  %c     ",452,452,452,452,452,473,435);
     }
-    if (case54l2==9){
+    if (case54l2==8 && (posJ1==54||posJ2==54||posJ3==54||posJ4==54)){
+        color(14,0);
+        printf("%c%c%c%c%c%c",452,452,452,452,452,473);color(15,0);printf("%c ",f);color(14,0);printf("%c     ",435);
+    }
+    if (case54l2==8.1 && posJ1!=54 && posJ2!=54 && posJ3!=54 && posJ4!=54){
+        color(14,0);
+        printf("%c%c%c%c%c%c",452,452,452,452,452,473);color(15,0);printf("%c ",189);color(14,0);printf("%c     ",435);
+    }
+    if (case54l2==8.1 && (posJ1==54||posJ2==54||posJ3==54||posJ4==54)){
+        color(14,0);
+        printf("%c%c%c%c%c%c",452,452,452,452,452,473);color(15,0);printf("%c ",189);color(14,0);printf("%c     ",435);
+    }
+    if (case54l2==8.2 && posJ1!=54 && posJ2!=54 && posJ3!=54 && posJ4!=54){
+        color(14,0);
+        printf("%c%c%c%c%c%c",452,452,452,452,452,473);color(15,0);printf("%c ",157);color(14,0);printf("%c     ",435);
+    }
+    if (case54l2==8.2 && (posJ1==54||posJ2==54||posJ3==54||posJ4==54)){
+        color(14,0);
+        printf("%c%c%c%c%c%c",452,452,452,452,452,473);color(15,0);printf("%c ",157);color(14,0);printf("%c     ",435);
+    }
+    if (case54l2==8.3 && posJ1!=54 && posJ2!=54 && posJ3!=54 && posJ4!=54){
+        color(14,0);
+        printf("%c%c%c%c%c%c",452,452,452,452,452,473);color(15,0);printf("%c ",143);color(14,0);printf("%c     ",435);
+    }
+    if (case54l2==8.3 && (posJ1==54||posJ2==54||posJ3==54||posJ4==54)){
+        color(14,0);
+        printf("%c%c%c%c%c%c",452,452,452,452,452,473);color(15,0);printf("%c ",143);color(14,0);printf("%c     ",435);
+    }
+    if (case54l2==8.4 && posJ1!=54 && posJ2!=54 && posJ3!=54 && posJ4!=54){
+        color(14,0);
+        printf("%c%c%c%c%c%c",452,452,452,452,452,473);color(15,0);printf("%c ",37);color(14,0);printf("%c     ",435);
+    }
+    if (case54l2==8.4 && (posJ1==54||posJ2==54||posJ3==54||posJ4==54)){
+        color(14,0);
+        printf("%c%c%c%c%c%c",452,452,452,452,452,473);color(15,0);printf("%c ",37);color(14,0);printf("%c     ",435);
+    }
+    if (case54l2==8.5 && posJ1!=54 && posJ2!=54 && posJ3!=54 && posJ4!=54){
+        color(14,0);
+        printf("%c%c%c%c%c%c",452,452,452,452,452,473);color(15,0);printf("%c ",31);color(14,0);printf("%c     ",435);
+    }
+    if (case54l2==8.5 && (posJ1==54||posJ2==54||posJ3==54||posJ4==54)){
+        color(14,0);
+        printf("%c%c%c%c%c%c",452,452,452,452,452,473);color(15,0);printf("%c%c",31,f);color(14,0);printf("%c     ",435);
+    }
+    if (case54l2==8.6 && posJ1!=54 && posJ2!=54 && posJ3!=54 && posJ4!=54){
+        color(14,0);
+        printf("%c%c%c%c%c%c",452,452,452,452,452,473);color(15,0);printf("%c ",459);color(14,0);printf("%c     ",435);
+    }
+    if (case54l2==8.6 && (posJ1==54||posJ2==54||posJ3==54||posJ4==54)){
+        color(14,0);
+        printf("%c%c%c%c%c%c",452,452,452,452,452,473);color(15,0);printf("%c%c",459,f);color(14,0);printf("%c     ",435);
+    }
+    if (case54l2>=9 && case54l2<10){
         color(14,0);
         printf("     %c%c%c%c%c%c%c%c%c",474,452,452,452,452,452,452,452,452);
     }
-    if (case54l2==10){
+    if (case54l2>=10 && case54l2<14){
         color(14,0);
         printf("%c%c%c%c%c%c%c%c%c     ",452,452,452,452,452,452,452,452,447);
     }
+    f=testposition(posJ1,posJ2,posJ3,posJ4,55,p1,p2,p3,p4);
     if (case55l2==0){
         printf("           ");
     }
@@ -9193,94 +16121,184 @@ int test(double case01,double case03,double case05,double case10,double case11,d
         color(14,0);
         printf("%c%c%c%c%c%c%c%c%c%c%c",452,452,452,452,452,452,452,452,452,452,452);
     }
-    if (case55l2==2.1){
+    if (case55l2==2.1 && posJ1!=55 && posJ2!=55 && posJ3!=55 && posJ4!=55){
         color(14,0);
         printf("%c%c%c%c%c", 452, 452, 452, 452, 473);color(15,0);printf(" %c",292);color(14,0);
         printf("%c%c%c%c", 448, 452, 452, 452);
     }
-    if (case55l2==2.2){
+    if (case55l2==2.1 && (posJ1==55||posJ2==55||posJ3==55||posJ4==55)){
+        color(14,0);
+        printf("%c%c%c%c%c", 452, 452, 452, 452, 473);color(15,0);printf("%c%c",f,292);color(14,0);
+        printf("%c%c%c%c", 448, 452, 452, 452);
+    }
+    if (case55l2==2.2 && posJ1!=55 && posJ2!=55 && posJ3!=55 && posJ4!=55){
         color(14,0);
         printf("%c%c%c%c%c", 452, 452, 452, 452, 473);color(15,0);printf(" %c",291);color(14,0);
         printf("%c%c%c%c", 448, 452, 452, 452);
     }
-    if (case55l2==2.3){
+    if (case55l2==2.2 && (posJ1==55||posJ2==55||posJ3==55||posJ4==55)){
+        color(14,0);
+        printf("%c%c%c%c%c", 452, 452, 452, 452, 473);color(15,0);printf("%c%c",f,291);color(14,0);
+        printf("%c%c%c%c", 448, 452, 452, 452);
+    }
+    if (case55l2==2.3 && posJ1!=55 && posJ2!=55 && posJ3!=55 && posJ4!=55){
         color(14,0);
         printf("%c%c%c%c%c", 452, 452, 452, 452, 473);color(15,0);printf(" %c",285);color(14,0);
         printf("%c%c%c%c", 448, 452, 452, 452);
     }
-    if (case55l2==2.4){
+    if (case55l2==2.3 && (posJ1==55||posJ2==55||posJ3==55||posJ4==55)){
         color(14,0);
-        printf("%c%c%c%c%c", 452, 452, 452, 452, 473);color(15,0);printf(" %c",279);color(14,0);
+        printf("%c%c%c%c%c", 452, 452, 452, 452, 473);color(15,0);printf("%c%c",f,285);color(14,0);
         printf("%c%c%c%c", 448, 452, 452, 452);
     }
-    if (case55l2==2.5){
+    if (case55l2==2.4 && posJ1!=55 && posJ2!=55 && posJ3!=55 && posJ4!=55){
+        color(14,0);
+        printf("%c%c%c%c%c", 452, 452, 452, 452, 473);color(15,0);printf(" %c",428);color(14,0);
+        printf("%c%c%c%c", 448, 452, 452, 452);
+    }
+    if (case55l2==2.4 && (posJ1==55||posJ2==55||posJ3==55||posJ4==55)){
+        color(14,0);
+        printf("%c%c%c%c%c", 452, 452, 452, 452, 473);color(15,0);printf("%c%c",f,428);color(14,0);
+        printf("%c%c%c%c", 448, 452, 452, 452);
+    }
+    if (case55l2==2.5 && posJ1!=55 && posJ2!=55 && posJ3!=55 && posJ4!=55){
         color(14,0);
         printf("%c%c%c%c%c", 452, 452, 452, 452, 473);color(15,0);printf(" %c",277);color(14,0);
         printf("%c%c%c%c", 448, 452, 452, 452);
     }
-    if (case55l2==2.6){
+    if (case55l2==2.5 && (posJ1==55||posJ2==55||posJ3==55||posJ4==55)){
+        color(14,0);
+        printf("%c%c%c%c%c", 452, 452, 452, 452, 473);color(15,0);printf("%c%c",f,277);color(14,0);
+        printf("%c%c%c%c", 448, 452, 452, 452);
+    }
+    if (case55l2==2.6 && posJ1!=55 && posJ2!=55 && posJ3!=55 && posJ4!=55){
         color(14,0);
         printf("%c%c%c%c%c", 452, 452, 452, 452, 473);color(15,0);printf(" %c",225);color(14,0);
         printf("%c%c%c%c", 448, 452, 452, 452);
     }
-    if (case55l2==3.1){
+    if (case55l2==2.6 && (posJ1==55||posJ2==55||posJ3==55||posJ4==55)){
+        color(14,0);
+        printf("%c%c%c%c%c", 452, 452, 452, 452, 473);color(15,0);printf("%c%c",f,225);color(14,0);
+        printf("%c%c%c%c", 448, 452, 452, 452);
+    }
+    if (case55l2==3.1 && posJ1!=55 && posJ2!=55 && posJ3!=55 && posJ4!=55){
         color(14,0);
         printf("    %c",435);color(15,0);printf(" %c",292);color(14,0);
         printf("%c%c%c%c",448,452,452,452);
     }
-    if (case55l2==3.2){
+    if (case55l2==3.1 && (posJ1==55||posJ2==55||posJ3==55||posJ4==55)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,292);color(14,0);
+        printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case55l2==3.2 && posJ1!=55 && posJ2!=55 && posJ3!=55 && posJ4!=55){
         color(14,0);
         printf("    %c",435);color(15,0);printf(" %c",291);color(14,0);
         printf("%c%c%c%c",448,452,452,452);
     }
-    if (case55l2==3.3){
+    if (case55l2==3.2 && (posJ1==55||posJ2==55||posJ3==55||posJ4==55)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,291);color(14,0);
+        printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case55l2==3.3 && posJ1!=55 && posJ2!=55 && posJ3!=55 && posJ4!=55){
         color(14,0);
         printf("    %c",435);color(15,0);printf(" %c",285);color(14,0);
         printf("%c%c%c%c",448,452,452,452);
     }
-    if (case55l2==3.4){
+    if (case55l2==3.3 && (posJ1==55||posJ2==55||posJ3==55||posJ4==55)){
         color(14,0);
-        printf("    %c",435);color(15,0);printf(" %c",279);color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,285);color(14,0);
         printf("%c%c%c%c",448,452,452,452);
     }
-    if (case55l2==3.5){
+    if (case55l2==3.4 && posJ1!=55 && posJ2!=55 && posJ3!=55 && posJ4!=55){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",428);color(14,0);
+        printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case55l2==3.4 && (posJ1==55||posJ2==55||posJ3==55||posJ4==55)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,428);color(14,0);
+        printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case55l2==3.5 && posJ1!=55 && posJ2!=55 && posJ3!=55 && posJ4!=55){
         color(14,0);
         printf("    %c",435);color(15,0);printf(" %c",277);color(14,0);
         printf("%c%c%c%c",448,452,452,452);
     }
-    if (case55l2==3.6){
+    if (case55l2==3.5 && (posJ1==55||posJ2==55||posJ3==55||posJ4==55)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,277);color(14,0);
+        printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case55l2==3.6 && posJ1!=55 && posJ2!=55 && posJ3!=55 && posJ4!=55){
         color(14,0);
         printf("    %c",435);color(15,0);printf(" %c",225);color(14,0);
         printf("%c%c%c%c",448,452,452,452);
     }
-    if (case55l2==4.1){
+    if (case55l2==3.6 && (posJ1==55||posJ2==55||posJ3==55||posJ4==55)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,225);color(14,0);
+        printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case55l2==4.1 && posJ1!=55 && posJ2!=55 && posJ3!=55 && posJ4!=55){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",292);color(14,0);
         printf("%c   ",435);
     }
-    if (case55l2==4.2){
+    if (case55l2==4.1 && (posJ1==55||posJ2==55||posJ3==55||posJ4==55)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",292,f);color(14,0);
+        printf("%c   ",435);
+    }
+    if (case55l2==4.2 && posJ1!=55 && posJ2!=55 && posJ3!=55 && posJ4!=55){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",291);color(14,0);
         printf("%c   ",435);
     }
-    if (case55l2==4.3){
+    if (case55l2==4.2 && (posJ1==55||posJ2==55||posJ3==55||posJ4==55)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",291,f);color(14,0);
+        printf("%c   ",435);
+    }
+    if (case55l2==4.3 && posJ1!=55 && posJ2!=55 && posJ3!=55 && posJ4!=55){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",285);color(14,0);
         printf("%c   ",435);
     }
-    if (case55l2==4.4){
+    if (case55l2==4.3 && (posJ1==55||posJ2==55||posJ3==55||posJ4==55)){
         color(14,0);
-        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",279);color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",285,f);color(14,0);
         printf("%c   ",435);
     }
-    if (case55l2==4.5){
+    if (case55l2==4.4 && posJ1!=55 && posJ2!=55 && posJ3!=55 && posJ4!=55){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",428);color(14,0);
+        printf("%c   ",435);
+    }
+    if (case55l2==4.4 && (posJ1==55||posJ2==55||posJ3==55||posJ4==55)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",428,f);color(14,0);
+        printf("%c   ",435);
+    }
+    if (case55l2==4.5 && posJ1!=55 && posJ2!=55 && posJ3!=55 && posJ4!=55){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",277);color(14,0);
         printf("%c   ",435);
     }
-    if (case55l2==4.6){
+    if (case55l2==4.5 && (posJ1==55||posJ2==55||posJ3==55||posJ4==55)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",277,f);color(14,0);
+        printf("%c   ",435);
+    }
+    if (case55l2==4.6 && posJ1!=55 && posJ2!=55 && posJ3!=55 && posJ4!=55){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",225);color(14,0);
+        printf("%c   ",435);
+    }
+    if (case55l2==4.6 && (posJ1==55||posJ2==55||posJ3==55||posJ4==55)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",225,f);color(14,0);
         printf("%c   ",435);
     }
     if (case55l2==5){
@@ -9291,98 +16309,275 @@ int test(double case01,double case03,double case05,double case10,double case11,d
         color(14,0);
         printf("%c%c%c%c%c%c%c%c%c%c%c",452,452,452,452,452,452,452,452,452,452,452);
     }
-    if (case55l2==7){
+    if (case55l2==7 && posJ1!=55 && posJ2!=55 && posJ3!=55 && posJ4!=55){
         color(14,0);
         printf("    %c  %c%c%c%c",435,448,452,452,452);
     }
-    if (case55l2==8){
+    if (case55l2==7 && (posJ1==55||posJ2==55||posJ3==55||posJ4==55)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",f);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case55l2==7.1 && posJ1!=55 && posJ2!=55 && posJ3!=55 && posJ4!=55){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",189);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case55l2==7.1 && (posJ1==55||posJ2==55||posJ3==55||posJ4==55)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,189);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case55l2==7.2 && posJ1!=55 && posJ2!=55 && posJ3!=55 && posJ4!=55){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",157);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case55l2==7.2 && (posJ1==55||posJ2==55||posJ3==55||posJ4==55)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,157);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case55l2==7.3 && posJ1!=55 && posJ2!=55 && posJ3!=55 && posJ4!=55){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",143);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case55l2==7.3 && (posJ1==55||posJ2==55||posJ3==55||posJ4==55)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,143);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case55l2==7.4 && posJ1!=55 && posJ2!=55 && posJ3!=55 && posJ4!=55){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",37);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case55l2==7.4 && (posJ1==55||posJ2==55||posJ3==55||posJ4==55)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,37);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case55l2==7.5 && posJ1!=55 && posJ2!=55 && posJ3!=55 && posJ4!=55){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",31);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case55l2==7.5 && (posJ1==55||posJ2==55||posJ3==55||posJ4==55)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,31);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case55l2==7.6 && posJ1!=55 && posJ2!=55 && posJ3!=55 && posJ4!=55){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",459);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case55l2==7.6 && (posJ1==55||posJ2==55||posJ3==55||posJ4==55)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,459);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case55l2==8 && posJ1!=55 && posJ2!=55 && posJ3!=55 && posJ4!=55){
         color(14,0);
         printf("%c%c%c%c%c  %c   ",452,452,452,452,473,435);
     }
-    if (case55l2==9){
+    if (case55l2==8 && (posJ1==55||posJ2==55||posJ3==55||posJ4==55)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",f);color(14,0);printf("%c   ",435);
+    }
+    if (case55l2==8.1 && posJ1!=55 && posJ2!=55 && posJ3!=55 && posJ4!=55){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",189);color(14,0);printf("%c   ",435);
+    }
+    if (case55l2==8.1 && (posJ1==55||posJ2==55||posJ3==55||posJ4==55)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",189,f);color(14,0);printf("%c   ",435);
+    }
+    if (case55l2==8.2 && posJ1!=55 && posJ2!=55 && posJ3!=55 && posJ4!=55){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",157);color(14,0);printf("%c   ",435);
+    }
+    if (case55l2==8.2 && (posJ1==55||posJ2==55||posJ3==55||posJ4==55)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",157,f);color(14,0);printf("%c   ",435);
+    }
+    if (case55l2==8.3 && posJ1!=55 && posJ2!=55 && posJ3!=55 && posJ4!=55){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",143);color(14,0);printf("%c   ",435);
+    }
+    if (case55l2==8.3 && (posJ1==55||posJ2==55||posJ3==55||posJ4==55)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",143,f);color(14,0);printf("%c   ",435);
+    }
+    if (case55l2==8.4 && posJ1!=55 && posJ2!=55 && posJ3!=55 && posJ4!=55){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",37);color(14,0);printf("%c   ",435);
+    }
+    if (case55l2==8.4 && (posJ1==55||posJ2==55||posJ3==55||posJ4==55)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",37,f);color(14,0);printf("%c   ",435);
+    }
+    if (case55l2==8.5 && posJ1!=55 && posJ2!=55 && posJ3!=55 && posJ4!=55){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",31);color(14,0);printf("%c   ",435);
+    }
+    if (case55l2==8.5 && (posJ1==55||posJ2==55||posJ3==55||posJ4==55)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",31,f);color(14,0);printf("%c   ",435);
+    }
+    if (case55l2==8.6 && posJ1!=55 && posJ2!=55 && posJ3!=55 && posJ4!=55){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",459);color(14,0);printf("%c   ",435);
+    }
+    if (case55l2==8.6 && (posJ1==55||posJ2==55||posJ3==55||posJ4==55)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",459,f);color(14,0);printf("%c   ",435);
+    }
+    if (case55l2>=9 && case55l2<10){
         color(14,0);
         printf("    %c%c%c%c%c%c%c",474,452,452,452,452,452,452);
     }
-    if (case55l2==10){
+    if (case55l2>=10 && case55l2<11){
         color(14,0);
         printf("%c%c%c%c%c%c%c%c   ",452,452,452,452,452,452,452,447);
     }
+    f=testposition(posJ1,posJ2,posJ3,posJ4,56,p1,p2,p3,p4);
     if (case56l2==0){
         printf("         ");
     }
     if (case56l2>1 && case56l2<2){
         printf("%c%c%c%c%c%c%c%c%c",452,452,452,452,452,452,452,452,452);
     }
-    if (case56l2==2.1){
+    if (case56l2==2.1 && posJ1!=56 && posJ2!=56 && posJ3!=56 && posJ4!=56){
         printf("%c%c%c%c%c%c",452,452,452,452,452,473);color(15,0);printf("%c ",292);color(14,0);
         printf("%c",448);
     }
-    if (case56l2==2.2){
+    if (case56l2==2.1 && (posJ1==56||posJ2==56||posJ3==56||posJ4==56)){
+        printf("%c%c%c%c%c%c",452,452,452,452,452,473);color(15,0);printf("%c%c",292,f);color(14,0);
+        printf("%c",448);
+    }
+    if (case56l2==2.2 && posJ1!=56 && posJ2!=56 && posJ3!=56 && posJ4!=56){
         printf("%c%c%c%c%c%c",452,452,452,452,452,473);color(15,0);printf("%c ",291);color(14,0);
         printf("%c",448);
     }
-    if (case56l2==2.3){
+    if (case56l2==2.2 && (posJ1==56||posJ2==56||posJ3==56||posJ4==56)){
+        printf("%c%c%c%c%c%c",452,452,452,452,452,473);color(15,0);printf("%c%c",291,f);color(14,0);
+        printf("%c",448);
+    }
+    if (case56l2==2.3 && posJ1!=56 && posJ2!=56 && posJ3!=56 && posJ4!=56){
         printf("%c%c%c%c%c%c",452,452,452,452,452,473);color(15,0);printf("%c ",285);color(14,0);
         printf("%c",448);
     }
-    if (case56l2==2.4){
-        printf("%c%c%c%c%c%c",452,452,452,452,452,473);color(15,0);printf("%c ",279);color(14,0);
+    if (case56l2==2.3 && (posJ1==56||posJ2==56||posJ3==56||posJ4==56)){
+        printf("%c%c%c%c%c%c",452,452,452,452,452,473);color(15,0);printf("%c%c",285,f);color(14,0);
         printf("%c",448);
     }
-    if (case56l2==2.5){
+    if (case56l2==2.4 && posJ1!=56 && posJ2!=56 && posJ3!=56 && posJ4!=56){
+        printf("%c%c%c%c%c%c",452,452,452,452,452,473);color(15,0);printf("%c ",428);color(14,0);
+        printf("%c",448);
+    }
+    if (case56l2==2.4 && (posJ1==56||posJ2==56||posJ3==56||posJ4==56)){
+        printf("%c%c%c%c%c%c",452,452,452,452,452,473);color(15,0);printf("%c%c",428,f);color(14,0);
+        printf("%c",448);
+    }
+    if (case56l2==2.5 && posJ1!=56 && posJ2!=56 && posJ3!=56 && posJ4!=56){
         printf("%c%c%c%c%c%c",452,452,452,452,452,473);color(15,0);printf("%c ",277);color(14,0);
         printf("%c",448);
     }
-    if (case56l2==2.6){
+    if (case56l2==2.5 && (posJ1==56||posJ2==56||posJ3==56||posJ4==56)){
+        printf("%c%c%c%c%c%c",452,452,452,452,452,473);color(15,0);printf("%c%c",277,f);color(14,0);
+        printf("%c",448);
+    }
+    if (case56l2==2.6 && posJ1!=56 && posJ2!=56 && posJ3!=56 && posJ4!=56){
         printf("%c%c%c%c%c%c",452,452,452,452,452,473);color(15,0);printf("%c ",225);color(14,0);
         printf("%c",448);
     }
-    if (case56l2==3.1){
+    if (case56l2==2.6 && (posJ1==56||posJ2==56||posJ3==56||posJ4==56)){
+        printf("%c%c%c%c%c%c",452,452,452,452,452,473);color(15,0);printf("%c%c",225,f);color(14,0);
+        printf("%c",448);
+    }
+    if (case56l2==3.1 && posJ1!=56 && posJ2!=56 && posJ3!=56 && posJ4!=56){
         printf("     %c",435);color(15,0);printf(" %c",292);color(14,0);
         printf("%c",448);
     }
-    if (case56l2==3.2){
+    if (case56l2==3.1 && (posJ1==56||posJ2==56||posJ3==56||posJ4==56)){
+        printf("     %c",435);color(15,0);printf("%c%c",f,292);color(14,0);
+        printf("%c",448);
+    }
+    if (case56l2==3.2 && posJ1!=56 && posJ2!=56 && posJ3!=56 && posJ4!=56){
         printf("     %c",435);color(15,0);printf(" %c",291);color(14,0);
         printf("%c",448);
     }
-    if (case56l2==3.3){
+    if (case56l2==3.2 && (posJ1==56||posJ2==56||posJ3==56||posJ4==56)){
+        printf("     %c",435);color(15,0);printf("%c%c",f,291);color(14,0);
+        printf("%c",448);
+    }
+    if (case56l2==3.3 && posJ1!=56 && posJ2!=56 && posJ3!=56 && posJ4!=56){
         printf("     %c",435);color(15,0);printf(" %c",285);color(14,0);
         printf("%c",448);
     }
-    if (case56l2==3.4){
-        printf("     %c",435);color(15,0);printf(" %c",279);color(14,0);
+    if (case56l2==3.3 && (posJ1==56||posJ2==56||posJ3==56||posJ4==56)){
+        printf("     %c",435);color(15,0);printf("%c%c",f,285);color(14,0);
         printf("%c",448);
     }
-    if (case56l2==3.5){
+    if (case56l2==3.4 && posJ1!=56 && posJ2!=56 && posJ3!=56 && posJ4!=56){
+        printf("     %c",435);color(15,0);printf(" %c",428);color(14,0);
+        printf("%c",448);
+    }
+    if (case56l2==3.4 && (posJ1==56||posJ2==56||posJ3==56||posJ4==56)){
+        printf("     %c",435);color(15,0);printf("%c%c",f,428);color(14,0);
+        printf("%c",448);
+    }
+    if (case56l2==3.5 && posJ1!=56 && posJ2!=56 && posJ3!=56 && posJ4!=56){
         printf("     %c",435);color(15,0);printf(" %c",277);color(14,0);
         printf("%c",448);
     }
-    if (case56l2==3.6){
+    if (case56l2==3.5 && (posJ1==56||posJ2==56||posJ3==56||posJ4==56)){
+        printf("     %c",435);color(15,0);printf("%c%c",f,277);color(14,0);
+        printf("%c",448);
+    }
+    if (case56l2==3.6 && posJ1!=56 && posJ2!=56 && posJ3!=56 && posJ4!=56){
         printf("     %c",435);color(15,0);printf(" %c",225);color(14,0);
         printf("%c",448);
     }
-    if (case56l2==4.1){
+    if (case56l2==3.6 && (posJ1==56||posJ2==56||posJ3==56||posJ4==56)){
+        printf("     %c",435);color(15,0);printf("%c%c",f,225);color(14,0);
+        printf("%c",448);
+    }
+    if (case56l2==4.1 && posJ1!=56 && posJ2!=56 && posJ3!=56 && posJ4!=56){
         printf("%c%c%c%c%c%c",452,452,452,452,452,473);color(15,0);printf("%c ",292);color(14,0);
         printf("%c",435);
     }
-    if (case56l2==4.2){
+    if (case56l2==4.1 && (posJ1==56||posJ2==56||posJ3==56||posJ4==56)){
+        printf("%c%c%c%c%c%c",452,452,452,452,452,473);color(15,0);printf("%c%c",292,f);color(14,0);
+        printf("%c",435);
+    }
+    if (case56l2==4.2 && posJ1!=56 && posJ2!=56 && posJ3!=56 && posJ4!=56){
         printf("%c%c%c%c%c%c",452,452,452,452,452,473);color(15,0);printf("%c ",291);color(14,0);
         printf("%c",435);
     }
-    if (case56l2==4.3){
+    if (case56l2==4.2 && (posJ1==56||posJ2==56||posJ3==56||posJ4==56)){
+        printf("%c%c%c%c%c%c",452,452,452,452,452,473);color(15,0);printf("%c%c",291,f);color(14,0);
+        printf("%c",435);
+    }
+    if (case56l2==4.3 && posJ1!=56 && posJ2!=56 && posJ3!=56 && posJ4!=56){
         printf("%c%c%c%c%c%c",452,452,452,452,452,473);color(15,0);printf("%c ",285);color(14,0);
         printf("%c",435);
     }
-    if (case56l2==4.4){
-        printf("%c%c%c%c%c%c",452,452,452,452,452,473);color(15,0);printf("%c ",279);color(14,0);
+    if (case56l2==4.3 && (posJ1==56||posJ2==56||posJ3==56||posJ4==56)){
+        printf("%c%c%c%c%c%c",452,452,452,452,452,473);color(15,0);printf("%c%c",285,f);color(14,0);
         printf("%c",435);
     }
-    if (case56l2==4.5){
+    if (case56l2==4.4 && posJ1!=56 && posJ2!=56 && posJ3!=56 && posJ4!=56){
+        printf("%c%c%c%c%c%c",452,452,452,452,452,473);color(15,0);printf("%c ",428);color(14,0);
+        printf("%c",435);
+    }
+    if (case56l2==4.4 && (posJ1==56||posJ2==56||posJ3==56||posJ4==56)){
+        printf("%c%c%c%c%c%c",452,452,452,452,452,473);color(15,0);printf("%c%c",428,f);color(14,0);
+        printf("%c",435);
+    }
+    if (case56l2==4.5 && posJ1!=56 && posJ2!=56 && posJ3!=56 && posJ4!=56){
         printf("%c%c%c%c%c%c",452,452,452,452,452,473);color(15,0);printf("%c ",277);color(14,0);
         printf("%c",435);
     }
-    if (case56l2==4.6){
+    if (case56l2==4.5 && (posJ1==56||posJ2==56||posJ3==56||posJ4==56)){
+        printf("%c%c%c%c%c%c",452,452,452,452,452,473);color(15,0);printf("%c%c",277,f);color(14,0);
+        printf("%c",435);
+    }
+    if (case56l2==4.6 && posJ1!=56 && posJ2!=56 && posJ3!=56 && posJ4!=56){
         printf("%c%c%c%c%c%c",452,452,452,452,452,473);color(15,0);printf("%c ",225);color(14,0);
+        printf("%c",435);
+    }
+    if (case56l2==4.6 && (posJ1==56||posJ2==56||posJ3==56||posJ4==56)){
+        printf("%c%c%c%c%c%c",452,452,452,452,452,473);color(15,0);printf("%c%c",225,f);color(14,0);
         printf("%c",435);
     }
     if (case56l2==5){
@@ -9391,44 +16586,147 @@ int test(double case01,double case03,double case05,double case10,double case11,d
     if (case56l2==6){
         printf("%c%c%c%c%c%c%c%c%c",452,452,452,452,452,452,452,452,452);
     }
-    if (case56l2==7){
+    if (case56l2==7 && posJ1!=56 && posJ2!=56 && posJ3!=56 && posJ4!=56){
         printf("     %c  %c",435,448);
     }
-    if (case56l2==8){
+    if (case56l2==7 && (posJ1==56||posJ2==56||posJ3==56||posJ4==56)){
+        printf("     %c",435);color(15,0);printf(" %c",f);color(14,0);printf("%c",448);
+    }
+    if (case56l2==7.1 && posJ1!=56 && posJ2!=56 && posJ3!=56 && posJ4!=56){
+        printf("     %c",435);color(15,0);printf(" %c",189);color(14,0);printf("%c",448);
+    }
+    if (case56l2==7.1 && (posJ1==56||posJ2==56||posJ3==56||posJ4==56)){
+        printf("     %c",435);color(15,0);printf("%c%c",f,189);color(14,0);printf("%c",448);
+    }
+    if (case56l2==7.2 && posJ1!=56 && posJ2!=56 && posJ3!=56 && posJ4!=56){
+        printf("     %c",435);color(15,0);printf(" %c",157);color(14,0);printf("%c",448);
+    }
+    if (case56l2==7.2 && (posJ1==56||posJ2==56||posJ3==56||posJ4==56)){
+        printf("     %c",435);color(15,0);printf("%c%c",f,157);color(14,0);printf("%c",448);
+    }
+    if (case56l2==7.3 && posJ1!=56 && posJ2!=56 && posJ3!=56 && posJ4!=56){
+        printf("     %c",435);color(15,0);printf(" %c",143);color(14,0);printf("%c",448);
+    }
+    if (case56l2==7.3 && (posJ1==56||posJ2==56||posJ3==56||posJ4==56)){
+        printf("     %c",435);color(15,0);printf("%c%c",f,143);color(14,0);printf("%c",448);
+    }
+    if (case56l2==7.4 && posJ1!=56 && posJ2!=56 && posJ3!=56 && posJ4!=56){
+        printf("     %c",435);color(15,0);printf(" %c",37);color(14,0);printf("%c",448);
+    }
+    if (case56l2==7.4 && (posJ1==56||posJ2==56||posJ3==56||posJ4==56)){
+        printf("     %c",435);color(15,0);printf("%c%c",f,37);color(14,0);printf("%c",448);
+    }
+    if (case56l2==7.5 && posJ1!=56 && posJ2!=56 && posJ3!=56 && posJ4!=56){
+        printf("     %c",435);color(15,0);printf(" %c",31);color(14,0);printf("%c",448);
+    }
+    if (case56l2==7.5 && (posJ1==56||posJ2==56||posJ3==56||posJ4==56)){
+        printf("     %c",435);color(15,0);printf("%c%c",f,31);color(14,0);printf("%c",448);
+    }
+    if (case56l2==7.6 && posJ1!=56 && posJ2!=56 && posJ3!=56 && posJ4!=56){
+        printf("     %c",435);color(15,0);printf(" %c",459);color(14,0);printf("%c",448);
+    }
+    if (case56l2==7.6 && (posJ1==56||posJ2==56||posJ3==56||posJ4==56)){
+        printf("     %c",435);color(15,0);printf("%c%c",f,459);color(14,0);printf("%c",448);
+    }
+    if (case56l2==8 && posJ1!=56 && posJ2!=56 && posJ3!=56 && posJ4!=56){
         printf("%c%c%c%c%c%c  %c",452,452,452,452,452,473,435);
     }
-    if (case56l2==9){
+    if (case56l2==8 && (posJ1==56||posJ2==56||posJ3==56||posJ4==56)){
+        printf("%c%c%c%c%c%c",452,452,452,452,452,473);color(15,0);printf("%c ",f);color(14,0);printf("%c",435);
+    }
+    if (case56l2==8.1 && posJ1!=56 && posJ2!=56 && posJ3!=56 && posJ4!=56){
+        printf("%c%c%c%c%c%c",452,452,452,452,452,473);color(15,0);printf("%c ",189);color(14,0);printf("%c",435);
+    }
+    if (case56l2==8.1 && (posJ1==56||posJ2==56||posJ3==56||posJ4==56)){
+        printf("%c%c%c%c%c%c",452,452,452,452,452,473);color(15,0);printf("%c%c",189,f);color(14,0);printf("%c",435);
+    }
+    if (case56l2==8.2 && posJ1!=56 && posJ2!=56 && posJ3!=56 && posJ4!=56){
+        printf("%c%c%c%c%c%c",452,452,452,452,452,473);color(15,0);printf("%c ",157);color(14,0);printf("%c",435);
+    }
+    if (case56l2==8.2 && (posJ1==56||posJ2==56||posJ3==56||posJ4==56)){
+        printf("%c%c%c%c%c%c",452,452,452,452,452,473);color(15,0);printf("%c%c",157,f);color(14,0);printf("%c",435);
+    }
+    if (case56l2==8.3 && posJ1!=56 && posJ2!=56 && posJ3!=56 && posJ4!=56){
+        printf("%c%c%c%c%c%c",452,452,452,452,452,473);color(15,0);printf("%c ",143);color(14,0);printf("%c",435);
+    }
+    if (case56l2==8.3 && (posJ1==56||posJ2==56||posJ3==56||posJ4==56)){
+        printf("%c%c%c%c%c%c",452,452,452,452,452,473);color(15,0);printf("%c%c",143,f);color(14,0);printf("%c",435);
+    }
+    if (case56l2==8.4 && posJ1!=56 && posJ2!=56 && posJ3!=56 && posJ4!=56){
+        printf("%c%c%c%c%c%c",452,452,452,452,452,473);color(15,0);printf("%c ",37);color(14,0);printf("%c",435);
+    }
+    if (case56l2==8.4 && (posJ1==56||posJ2==56||posJ3==56||posJ4==56)){
+        printf("%c%c%c%c%c%c",452,452,452,452,452,473);color(15,0);printf("%c%c",37,f);color(14,0);printf("%c",435);
+    }
+    if (case56l2==8.5 && posJ1!=56 && posJ2!=56 && posJ3!=56 && posJ4!=56){
+        printf("%c%c%c%c%c%c",452,452,452,452,452,473);color(15,0);printf("%c ",31);color(14,0);printf("%c",435);
+    }
+    if (case56l2==8.5 && (posJ1==56||posJ2==56||posJ3==56||posJ4==56)){
+        printf("%c%c%c%c%c%c",452,452,452,452,452,473);color(15,0);printf("%c%c",31,f);color(14,0);printf("%c",435);
+    }
+    if (case56l2==8.6 && posJ1!=56 && posJ2!=56 && posJ3!=56 && posJ4!=56){
+        printf("%c%c%c%c%c%c",452,452,452,452,452,473);color(15,0);printf("%c ",459);color(14,0);printf("%c",435);
+    }
+    if (case56l2==8.6 && (posJ1==56||posJ2==56||posJ3==56||posJ4==56)){
+        printf("%c%c%c%c%c%c",452,452,452,452,452,473);color(15,0);printf("%c%c",459,f);color(14,0);printf("%c",435);
+    }
+    if (case56l2>=9 && case56l2<10){
         printf("     %c%c%c%c",474,452,452,452);
     }
-    if (case56l2==10){
+    if (case56l2>=10 && case56l2<11){
         printf("%c%c%c%c%c%c%c%c%c",452,452,452,452,452,452,452,452,447);
     }
     a();printf("                                 ");
+    f=testposition(posJ1,posJ2,posJ3,posJ4,50,p1,p2,p3,p4);
     if (case50l3==0){
         printf("        ");
     }
-    if (case50l3==1.1){
+    if (case50l3==1.1 && posJ1!=50 && posJ2!=50 && posJ3!=50 && posJ4!=50){
         printf("%c",447);color(15,0);printf(" %c",292);color(14,0);
         printf("%c%c%c%c%c",474,452,452,452,452);
     }
-    if (case50l3==1.2){
+    if (case50l3==1.1 && (posJ1==50||posJ2==50||posJ3==50||posJ4==50)){
+        printf("%c",447);color(15,0);printf("%c%c",f,292);color(14,0);
+        printf("%c%c%c%c%c",474,452,452,452,452);
+    }
+    if (case50l3==1.2 && posJ1!=50 && posJ2!=50 && posJ3!=50 && posJ4!=50){
         printf("%c",447);color(15,0);printf(" %c",291);color(14,0);
         printf("%c%c%c%c%c",474,452,452,452,452);
     }
-    if (case50l3==1.3){
+    if (case50l3==1.2 && (posJ1==50||posJ2==50||posJ3==50||posJ4==50)){
+        printf("%c",447);color(15,0);printf("%c%c",f,291);color(14,0);
+        printf("%c%c%c%c%c",474,452,452,452,452);
+    }
+    if (case50l3==1.3 && posJ1!=50 && posJ2!=50 && posJ3!=50 && posJ4!=50){
         printf("%c",447);color(15,0);printf(" %c",285);color(14,0);
         printf("%c%c%c%c%c",474,452,452,452,452);
     }
-    if (case50l3==1.4){
-        printf("%c",447);color(15,0);printf(" %c",279);color(14,0);
+    if (case50l3==1.3 && (posJ1==50||posJ2==50||posJ3==50||posJ4==50)){
+        printf("%c",447);color(15,0);printf("%c%c",f,285);color(14,0);
         printf("%c%c%c%c%c",474,452,452,452,452);
     }
-    if (case50l3==1.5){
+    if (case50l3==1.4 && posJ1!=50 && posJ2!=50 && posJ3!=50 && posJ4!=50){
+        printf("%c",447);color(15,0);printf(" %c",428);color(14,0);
+        printf("%c%c%c%c%c",474,452,452,452,452);
+    }
+    if (case50l3==1.4 && (posJ1==50||posJ2==50||posJ3==50||posJ4==50)){
+        printf("%c",447);color(15,0);printf("%c%c",f,428);color(14,0);
+        printf("%c%c%c%c%c",474,452,452,452,452);
+    }
+    if (case50l3==1.5 && posJ1!=50 && posJ2!=50 && posJ3!=50 && posJ4!=50){
         printf("%c",447);color(15,0);printf(" %c",277);color(14,0);
         printf("%c%c%c%c%c",474,452,452,452,452);
     }
-    if (case50l3==1.6){
+    if (case50l3==1.5 && (posJ1==50||posJ2==50||posJ3==50||posJ4==50)){
+        printf("%c",447);color(15,0);printf("%c%c",f,277);color(14,0);
+        printf("%c%c%c%c%c",474,452,452,452,452);
+    }
+    if (case50l3==1.6 && posJ1!=50 && posJ2!=50 && posJ3!=50 && posJ4!=50){
         printf("%c",447);color(15,0);printf(" %c",225);color(14,0);
+        printf("%c%c%c%c%c",474,452,452,452,452);
+    }
+    if (case50l3==1.6 && (posJ1==50||posJ2==50||posJ3==50||posJ4==50)){
+        printf("%c",447);color(15,0);printf("%c%c",f,225);color(14,0);
         printf("%c%c%c%c%c",474,452,452,452,452);
     }
     if (case50l3>2 && case50l3<3){
@@ -9440,55 +16738,170 @@ int test(double case01,double case03,double case05,double case10,double case11,d
     if (case50l3>4 && case50l3<5){
         printf("%c  %c    ",447,435);
     }
-    if (case50l3==5){
+    if (case50l3==5 && posJ1!=50 && posJ2!=50 && posJ3!=50 && posJ4!=50){
         printf("%c  %c    ",435,435);
     }
-    if (case50l3==6){
+    if (case50l3==5 && (posJ1==50||posJ2==50||posJ3==50||posJ4==50)){
+        printf("%c",435);color(15,0);printf(" %c",f);color(14,0);printf("%c    ",435);
+    }
+    if (case50l3==6 && posJ1!=50 && posJ2!=50 && posJ3!=50 && posJ4!=50){
         printf("%c%c%c%c%c%c%c%c",452,452,452,452,452,452,452,452);
     }
-    if (case50l3==7){
+    if (case50l3==6 && (posJ1==50||posJ2==50||posJ3==50||posJ4==50)){
+        printf("%c%c%c",452,452,452);color(15,0);printf("%c",f);color(14,0);printf("%c%c%c%c",452,452,452,452);
+    }
+    if (case50l3>=7 && case50l3<8){
         printf("%c%c%c%c%c%c%c%c",448,452,452,452,452,452,452,452);
     }
-    if (case50l3==8){
+    if (case50l3>=8 && case50l3<9){
         printf("%c%c%c%c    ",452,452,452,473);
     }
-    if (case50l3==9){
+    if (case50l3==9 && posJ1!=50 && posJ2!=50 && posJ3!=50 && posJ4!=50){
         printf("%c  %c%c%c%c%c",435,474,452,452,452,452);
     }
-    if (case50l3==10){
+    if (case50l3==9 && (posJ1==50||posJ2==50||posJ3==50||posJ4==50)){
+        printf("%c",435);color(15,0);printf(" %c",f);color(14,0);printf("%c%c%c%c%c",474,452,452,452,452);
+    }
+    if (case50l3==9.1 && posJ1!=50 && posJ2!=50 && posJ3!=50 && posJ4!=50){
+        printf("%c",435);color(15,0);printf(" %c",189);color(14,0);printf("%c%c%c%c%c",474,452,452,452,452);
+    }
+    if (case50l3==9.1 && (posJ1==50||posJ2==50||posJ3==50||posJ4==50)){
+        printf("%c",435);color(15,0);printf("%c%c",f,189);color(14,0);printf("%c%c%c%c%c",474,452,452,452,452);
+    }
+    if (case50l3==9.2 && posJ1!=50 && posJ2!=50 && posJ3!=50 && posJ4!=50){
+        printf("%c",435);color(15,0);printf(" %c",157);color(14,0);printf("%c%c%c%c%c",474,452,452,452,452);
+    }
+    if (case50l3==9.2 && (posJ1==50||posJ2==50||posJ3==50||posJ4==50)){
+        printf("%c",435);color(15,0);printf("%c%c",f,157);color(14,0);printf("%c%c%c%c%c",474,452,452,452,452);
+    }
+    if (case50l3==9.3 && posJ1!=50 && posJ2!=50 && posJ3!=50 && posJ4!=50){
+        printf("%c",435);color(15,0);printf(" %c",143);color(14,0);printf("%c%c%c%c%c",474,452,452,452,452);
+    }
+    if (case50l3==9.3 && (posJ1==50||posJ2==50||posJ3==50||posJ4==50)){
+        printf("%c",435);color(15,0);printf("%c%c",f,143);color(14,0);printf("%c%c%c%c%c",474,452,452,452,452);
+    }
+    if (case50l3==9.4 && posJ1!=50 && posJ2!=50 && posJ3!=50 && posJ4!=50){
+        printf("%c",435);color(15,0);printf(" %c",37);color(14,0);printf("%c%c%c%c%c",474,452,452,452,452);
+    }
+    if (case50l3==9.4 && (posJ1==50||posJ2==50||posJ3==50||posJ4==50)){
+        printf("%c",435);color(15,0);printf("%c%c",f,37);color(14,0);printf("%c%c%c%c%c",474,452,452,452,452);
+    }
+    if (case50l3==9.5 && posJ1!=50 && posJ2!=50 && posJ3!=50 && posJ4!=50){
+        printf("%c",435);color(15,0);printf(" %c",31);color(14,0);printf("%c%c%c%c%c",474,452,452,452,452);
+    }
+    if (case50l3==9.5 && (posJ1==50||posJ2==50||posJ3==50||posJ4==50)){
+        printf("%c",435);color(15,0);printf("%c%c",f,31);color(14,0);printf("%c%c%c%c%c",474,452,452,452,452);
+    }
+    if (case50l3==9.6 && posJ1!=50 && posJ2!=50 && posJ3!=50 && posJ4!=50){
+        printf("%c",435);color(15,0);printf(" %c",459);color(14,0);printf("%c%c%c%c%c",474,452,452,452,452);
+    }
+    if (case50l3==9.6 && (posJ1==50||posJ2==50||posJ3==50||posJ4==50)){
+        printf("%c",435);color(15,0);printf("%c%c",f,459);color(14,0);printf("%c%c%c%c%c",474,452,452,452,452);
+    }
+    if (case50l3==10 && posJ1!=50 && posJ2!=50 && posJ3!=50 && posJ4!=50){
         printf("%c  %c    ",447,435);
     }
+    if (case50l3==10 && (posJ1==50||posJ2==50||posJ3==50||posJ4==50)){
+        printf("%c",447);color(15,0);printf("%c ",f);color(14,0);printf("%c    ",435);
+    }
+    if (case50l3==10.1 && posJ1!=50 && posJ2!=50 && posJ3!=50 && posJ4!=50){
+        printf("%c",447);color(15,0);printf("%c ",189);color(14,0);printf("%c    ",435);
+    }
+    if (case50l3==10.1 && (posJ1==50||posJ2==50||posJ3==50||posJ4==50)){
+        printf("%c",447);color(15,0);printf("%c%c",189,f);color(14,0);printf("%c    ",435);
+    }
+    if (case50l3==10.2 && posJ1!=50 && posJ2!=50 && posJ3!=50 && posJ4!=50){
+        printf("%c",447);color(15,0);printf("%c ",157);color(14,0);printf("%c    ",435);
+    }
+    if (case50l3==10.2 && (posJ1==50||posJ2==50||posJ3==50||posJ4==50)){
+        printf("%c",447);color(15,0);printf("%c%c",157,f);color(14,0);printf("%c    ",435);
+    }
+    if (case50l3==10.3 && posJ1!=50 && posJ2!=50 && posJ3!=50 && posJ4!=50){
+        printf("%c",447);color(15,0);printf("%c ",143);color(14,0);printf("%c    ",435);
+    }
+    if (case50l3==10.3 && (posJ1==50||posJ2==50||posJ3==50||posJ4==50)){
+        printf("%c",447);color(15,0);printf("%c%c",143,f);color(14,0);printf("%c    ",435);
+    }
+    if (case50l3==10.4 && posJ1!=50 && posJ2!=50 && posJ3!=50 && posJ4!=50){
+        printf("%c",447);color(15,0);printf("%c ",37);color(14,0);printf("%c    ",435);
+    }
+    if (case50l3==10.4 && (posJ1==50||posJ2==50||posJ3==50||posJ4==50)){
+        printf("%c",447);color(15,0);printf("%c%c",37,f);color(14,0);printf("%c    ",435);
+    }
+    if (case50l3==10.5 && posJ1!=50 && posJ2!=50 && posJ3!=50 && posJ4!=50){
+        printf("%c",447);color(15,0);printf("%c ",31);color(14,0);printf("%c    ",435);
+    }
+    if (case50l3==10.5 && (posJ1==50||posJ2==50||posJ3==50||posJ4==50)){
+        printf("%c",447);color(15,0);printf("%c%c",31,f);color(14,0);printf("%c    ",435);
+    }
+    if (case50l3==10.6 && posJ1!=50 && posJ2!=50 && posJ3!=50 && posJ4!=50){
+        printf("%c",447);color(15,0);printf("%c ",459);color(14,0);printf("%c    ",435);
+    }
+    if (case50l3==10.6 && (posJ1==50||posJ2==50||posJ3==50||posJ4==50)){
+        printf("%c",447);color(15,0);printf("%c%c",459,f);color(14,0);printf("%c    ",435);
+    }
+    f=testposition(posJ1,posJ2,posJ3,posJ4,51,p1,p2,p3,p4);
     if (case51l3==0){
         printf("           ");
     }
-    if (case51l3==1.1){
+    if (case51l3==1.1 && posJ1!=51 && posJ2!=51 && posJ3!=51 && posJ4!=51){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf(" %c",292);color(14,0);
         printf("%c%c%c%c",474,452,452,452);
     }
-    if (case51l3==1.2){
+    if (case51l3==1.1 && (posJ1==51||posJ2==51||posJ3==51||posJ4==51)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c%c",f,292);color(14,0);
+        printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case51l3==1.2 && posJ1!=51 && posJ2!=51 && posJ3!=51 && posJ4!=51){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf(" %c",291);color(14,0);
         printf("%c%c%c%c",474,452,452,452);
     }
-    if (case51l3==1.3){
+    if (case51l3==1.2 && (posJ1==51||posJ2==51||posJ3==51||posJ4==51)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c%c",f,291);color(14,0);
+        printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case51l3==1.3 && posJ1!=51 && posJ2!=51 && posJ3!=51 && posJ4!=51){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf(" %c",285);color(14,0);
         printf("%c%c%c%c",474,452,452,452);
     }
-    if (case51l3==1.4){
+    if (case51l3==1.3 && (posJ1==51||posJ2==51||posJ3==51||posJ4==51)){
         color(14,0);
-        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf(" %c",279);color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c%c",f,285);color(14,0);
         printf("%c%c%c%c",474,452,452,452);
     }
-    if (case51l3==1.5){
+    if (case51l3==1.4 && posJ1!=51 && posJ2!=51 && posJ3!=51 && posJ4!=51){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf(" %c",428);color(14,0);
+        printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case51l3==1.4 && (posJ1==51||posJ2==51||posJ3==51||posJ4==51)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c%c",f,428);color(14,0);
+        printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case51l3==1.5 && posJ1!=51 && posJ2!=51 && posJ3!=51 && posJ4!=51){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf(" %c",277);color(14,0);
         printf("%c%c%c%c",474,452,452,452);
     }
-    if (case51l3==1.6){
+    if (case51l3==1.5 && (posJ1==51||posJ2==51||posJ3==51||posJ4==51)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c%c",f,277);color(14,0);
+        printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case51l3==1.6 && posJ1!=51 && posJ2!=51 && posJ3!=51 && posJ4!=51){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf(" %c",225);color(14,0);
+        printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case51l3==1.6 && (posJ1==51||posJ2==51||posJ3==51||posJ4==51)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c%c",f,225);color(14,0);
         printf("%c%c%c%c",474,452,452,452);
     }
     if (case51l3>2 && case51l3<3){
@@ -9503,61 +16916,204 @@ int test(double case01,double case03,double case05,double case10,double case11,d
         color(14,0);
         printf("%c%c%c%c%c  %c   ",452,452,452,452,447,435);
     }
-    if (case51l3==5){
+    if (case51l3==5 && posJ1!=51 && posJ2!=51 && posJ3!=51 && posJ4!=51){
         color(14,0);
         piece5bout2();
     }
-    if (case51l3==6){
+    if (case51l3==5 && (posJ1==51||posJ2==51||posJ3==51||posJ4==51)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c ",f);color(14,0);printf("%c   ",435);
+    }
+    if (case51l3==6 && posJ1!=51 && posJ2!=51 && posJ3!=51 && posJ4!=51){
         color(14,0);
         printf("%c%c%c%c%c%c%c%c%c%c%c",452,452,452,452,452,452,452,452,452,452,452);
     }
-    if (case51l3==7){
+    if (case51l3==6 && (posJ1==51||posJ2==51||posJ3==51||posJ4==51)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,452);color(15,0);printf("%c",f);color(14,0);printf("%c%c%c%c%c",452,452,452,452,452);
+    }
+    if (case51l3>=7 && case51l3<8){
         color(14,0);
         printf("    %c%c%c%c%c%c%c",448,452,452,452,452,452,452);
     }
-    if (case51l3==8){
+    if (case51l3>=8 && case51l3<9){
         color(14,0);
         printf("%c%c%c%c%c%c%c%c   ",452,452,452,452,452,452,452,473);
     }
-    if (case51l3==9){
+    if (case51l3==9 && posJ1!=51 && posJ2!=51 && posJ3!=51 && posJ4!=51){
         color(14,0);
         printf("    %c  %c%c%c%c",435,474,452,452,452);
     }
-    if (case51l3==10) {
+    if (case51l3==9 && (posJ1==51||posJ2==51||posJ3==51||posJ4==51)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",f);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case51l3==9.1 && posJ1!=51 && posJ2!=51 && posJ3!=51 && posJ4!=51){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",189);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case51l3==9.1 && (posJ1==51||posJ2==51||posJ3==51||posJ4==51)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,189);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case51l3==9.2 && posJ1!=51 && posJ2!=51 && posJ3!=51 && posJ4!=51){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",157);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case51l3==9.2 && (posJ1==51||posJ2==51||posJ3==51||posJ4==51)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,157);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case51l3==9.3 && posJ1!=51 && posJ2!=51 && posJ3!=51 && posJ4!=51){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",143);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case51l3==9.3 && (posJ1==51||posJ2==51||posJ3==51||posJ4==51)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,143);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case51l3==9.4 && posJ1!=51 && posJ2!=51 && posJ3!=51 && posJ4!=51){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",37);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case51l3==9.4 && (posJ1==51||posJ2==51||posJ3==51||posJ4==51)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,37);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case51l3==9.5 && posJ1!=51 && posJ2!=51 && posJ3!=51 && posJ4!=51){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",31);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case51l3==9.5 && (posJ1==51||posJ2==51||posJ3==51||posJ4==51)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,31);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case51l3==9.6 && posJ1!=51 && posJ2!=51 && posJ3!=51 && posJ4!=51){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",459);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case51l3==9.6 && (posJ1==51||posJ2==51||posJ3==51||posJ4==51)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,459);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case51l3==10 && (posJ1==51||posJ2==51||posJ3==51||posJ4==51)) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c ",f);color(14,0);printf("%c   ",435);
+    }
+    if (case51l3==10 && posJ1!=51 && posJ2!=51 && posJ3!=51 && posJ4!=51) {
         color(14, 0);
         printf("%c%c%c%c%c  %c   ",452, 452,452,452, 447,435);
     }
+    if (case51l3==10.1 && posJ1!=51 && posJ2!=51 && posJ3!=51 && posJ4!=51) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c ",189);color(14,0);printf("%c   ",435);
+    }
+    if (case51l3==10.1 && (posJ1==51||posJ2==51||posJ3==51||posJ4==51)) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c%c",189,f);color(14,0);printf("%c   ",435);
+    }
+    if (case51l3==10.2 && posJ1!=51 && posJ2!=51 && posJ3!=51 && posJ4!=51) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c ",157);color(14,0);printf("%c   ",435);
+    }
+    if (case51l3==10.2 && (posJ1==51||posJ2==51||posJ3==51||posJ4==51)) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c%c",157,f);color(14,0);printf("%c   ",435);
+    }
+    if (case51l3==10.3 && posJ1!=51 && posJ2!=51 && posJ3!=51 && posJ4!=51) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c ",143);color(14,0);printf("%c   ",435);
+    }
+    if (case51l3==10.3 && (posJ1==51||posJ2==51||posJ3==51||posJ4==51)) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c%c",143,f);color(14,0);printf("%c   ",435);
+    }
+    if (case51l3==10.4 && posJ1!=51 && posJ2!=51 && posJ3!=51 && posJ4!=51) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c ",37);color(14,0);printf("%c   ",435);
+    }
+    if (case51l3==10.4 && (posJ1==51||posJ2==51||posJ3==51||posJ4==51)) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c%c",37,f);color(14,0);printf("%c   ",435);
+    }
+    if (case51l3==10.5 && posJ1!=51 && posJ2!=51 && posJ3!=51 && posJ4!=51) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c ",31);color(14,0);printf("%c   ",435);
+    }
+    if (case51l3==10.5 && (posJ1==51||posJ2==51||posJ3==51||posJ4==51)) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c%c",31,f);color(14,0);printf("%c   ",435);
+    }
+    if (case51l3==10.6 && posJ1!=51 && posJ2!=51 && posJ3!=51 && posJ4!=51) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c ",459);color(14,0);printf("%c   ",435);
+    }
+    if (case51l3==10.6 && (posJ1==51||posJ2==51||posJ3==51||posJ4==51)) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c%c",459,f);color(14,0);printf("%c   ",435);
+    }
+    f=testposition(posJ1,posJ2,posJ3,posJ4,52,p1,p2,p3,p4);
     if (case52l3==0){
         printf("            ");
     }
-    if (case52l3==1.1){
+    if (case52l3==1.1 && posJ1!=52 && posJ2!=52 && posJ3!=52 && posJ4!=52){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf(" %c",292);color(14,0);
         printf("%c%c%c%c%c",474,452,452,452,452);
     }
-    if (case52l3==1.2){
+    if (case52l3==1.1 && (posJ1==52||posJ2==52||posJ3==52||posJ4==52)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c%c",f,292);color(14,0);
+        printf("%c%c%c%c%c",474,452,452,452,452);
+    }
+    if (case52l3==1.2 && posJ1!=52 && posJ2!=52 && posJ3!=52 && posJ4!=52){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf(" %c",291);color(14,0);
         printf("%c%c%c%c%c",474,452,452,452,452);
     }
-    if (case52l3==1.3){
+    if (case52l3==1.2 && (posJ1==52||posJ2==52||posJ3==52||posJ4==52)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c%c",f,291);color(14,0);
+        printf("%c%c%c%c%c",474,452,452,452,452);
+    }
+    if (case52l3==1.3 && posJ1!=52 && posJ2!=52 && posJ3!=52 && posJ4!=52){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf(" %c",285);color(14,0);
         printf("%c%c%c%c%c",474,452,452,452,452);
     }
-    if (case52l3==1.4){
+    if (case52l3==1.3 && (posJ1==52||posJ2==52||posJ3==52||posJ4==52)){
         color(14,0);
-        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf(" %c",279);color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c%c",f,285);color(14,0);
         printf("%c%c%c%c%c",474,452,452,452,452);
     }
-    if (case52l3==1.5){
+    if (case52l3==1.4 && posJ1!=52 && posJ2!=52 && posJ3!=52 && posJ4!=52){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf(" %c",428);color(14,0);
+        printf("%c%c%c%c%c",474,452,452,452,452);
+    }
+    if (case52l3==1.4 && (posJ1==52||posJ2==52||posJ3==52||posJ4==52)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c%c",f,428);color(14,0);
+        printf("%c%c%c%c%c",474,452,452,452,452);
+    }
+    if (case52l3==1.5 && posJ1!=52 && posJ2!=52 && posJ3!=52 && posJ4!=52){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf(" %c",277);color(14,0);
         printf("%c%c%c%c%c",474,452,452,452,452);
     }
-    if (case52l3==1.6){
+    if (case52l3==1.5 && (posJ1==52||posJ2==52||posJ3==52||posJ4==52)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c%c",f,277);color(14,0);
+        printf("%c%c%c%c%c",474,452,452,452,452);
+    }
+    if (case52l3==1.6 && posJ1!=52 && posJ2!=52 && posJ3!=52 && posJ4!=52){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf(" %c",225);color(14,0);
+        printf("%c%c%c%c%c",474,452,452,452,452);
+    }
+    if (case52l3==1.6 && (posJ1==52||posJ2==52||posJ3==52||posJ4==52)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c%c",f,225);color(14,0);
         printf("%c%c%c%c%c",474,452,452,452,452);
     }
     if (case52l3>2 && case52l3<3){
@@ -9572,64 +17128,207 @@ int test(double case01,double case03,double case05,double case10,double case11,d
         color(14,0);
         printf("%c%c%c%c%c  %c    ",452,452,452,452,447,435);
     }
-    if (case52l3==5){
+    if (case52l3==5 && posJ1!=52 && posJ2!=52 && posJ3!=52 && posJ4!=52){
         color(14,0);
         printf("    %c  %c    ",435,435);
     }
-    if (case52l3==6){
+    if (case52l3==5 && (posJ1==52||posJ2==52||posJ3==52||posJ4==52)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c ",f);color(14,0);printf("%c    ",435);
+    }
+    if (case52l3==6 && posJ1!=52 && posJ2!=52 && posJ3!=52 && posJ4!=52){
         color(14,0);
         printf("%c%c%c%c%c%c%c%c%c%c%c%c",452,452,452,452,452,452,452,452,452,452,452,452);
     }
-    if (case52l3==7){
+    if (case52l3==6 && (posJ1==52||posJ2==52||posJ3==52||posJ4==52)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,452);color(15,0);printf("%c",f);color(14,0);printf("%c%c%c%c%c%c",452,452,452,452,452,452);
+    }
+    if (case52l3>=7 && case52l3<8){
         color(14,0);
         printf("    %c%c%c%c%c%c%c%c",448,452,452,452,452,452,452,452);
     }
-    if (case52l3==8){
+    if (case52l3>=8 && case52l3<9){
         color(14,0);
         printf("%c%c%c%c%c%c%c%c    ",452,452,452,452,452,452,452,473);
     }
-    if (case52l3==9){
+    if (case52l3==9 && posJ1!=52 && posJ2!=52 && posJ3!=52 && posJ4!=52){
         color(14,0);
         printf("    %c  %c%c%c%c%c",435,474,452,452,452,452);
     }
-    if (case52l3==10) {
-        color(14, 0);
-        printf("%c%c%c%c%c  %c    ", 452, 452,452,452, 447,435);
+    if (case52l3==9 && (posJ1==52||posJ2==52||posJ3==52||posJ4==52)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",f);color(14,0);printf("%c%c%c%c%c",474,452,452,452,452);
     }
+    if (case52l3==9.1 && posJ1!=52 && posJ2!=52 && posJ3!=52 && posJ4!=52){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",189);color(14,0);printf("%c%c%c%c%c",474,452,452,452,452);
+    }
+    if (case52l3==9.1 && (posJ1==52||posJ2==52||posJ3==52||posJ4==52)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,189);color(14,0);printf("%c%c%c%c%c",474,452,452,452,452);
+    }
+    if (case52l3==9.2 && posJ1!=52 && posJ2!=52 && posJ3!=52 && posJ4!=52){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",157);color(14,0);printf("%c%c%c%c%c",474,452,452,452,452);
+    }
+    if (case52l3==9.2 && (posJ1==52||posJ2==52||posJ3==52||posJ4==52)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,157);color(14,0);printf("%c%c%c%c%c",474,452,452,452,452);
+    }
+    if (case52l3==9.3 && posJ1!=52 && posJ2!=52 && posJ3!=52 && posJ4!=52){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",143);color(14,0);printf("%c%c%c%c%c",474,452,452,452,452);
+    }
+    if (case52l3==9.3 && (posJ1==52||posJ2==52||posJ3==52||posJ4==52)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,143);color(14,0);printf("%c%c%c%c%c",474,452,452,452,452);
+    }
+    if (case52l3==9.4 && posJ1!=52 && posJ2!=52 && posJ3!=52 && posJ4!=52){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",37);color(14,0);printf("%c%c%c%c%c",474,452,452,452,452);
+    }
+    if (case52l3==9.4 && (posJ1==52||posJ2==52||posJ3==52||posJ4==52)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,37);color(14,0);printf("%c%c%c%c%c",474,452,452,452,452);
+    }
+    if (case52l3==9.5 && posJ1!=52 && posJ2!=52 && posJ3!=52 && posJ4!=52){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",31);color(14,0);printf("%c%c%c%c%c",474,452,452,452,452);
+    }
+    if (case52l3==9.5 && (posJ1==52||posJ2==52||posJ3==52||posJ4==52)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,31);color(14,0);printf("%c%c%c%c%c",474,452,452,452,452);
+    }
+    if (case52l3==9.6 && posJ1!=52 && posJ2!=52 && posJ3!=52 && posJ4!=52){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",459);color(14,0);printf("%c%c%c%c%c",474,452,452,452,452);
+    }
+    if (case52l3==9.6 && (posJ1==52||posJ2==52||posJ3==52||posJ4==52)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,459);color(14,0);printf("%c%c%c%c%c",474,452,452,452,452);
+    }
+    if (case52l3==10 && (posJ1==52||posJ2==52||posJ3==52||posJ4==52)) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c ",f);color(14,0);printf("%c    ",435);
+    }
+    if (case52l3==10 && posJ1!=52 && posJ2!=52 && posJ3!=52 && posJ4!=52) {
+        color(14, 0);
+        printf("%c%c%c%c%c  %c    ",452, 452,452,452, 447,435);
+    }
+    if (case52l3==10.1 && posJ1!=52 && posJ2!=52 && posJ3!=52 && posJ4!=52) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c ",189);color(14,0);printf("%c    ",435);
+    }
+    if (case52l3==10.1 && (posJ1==52||posJ2==52||posJ3==52||posJ4==52)) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c%c",189,f);color(14,0);printf("%c    ",435);
+    }
+    if (case52l3==10.2 && posJ1!=52 && posJ2!=52 && posJ3!=52 && posJ4!=52) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c ",157);color(14,0);printf("%c    ",435);
+    }
+    if (case52l3==10.2 && (posJ1==52||posJ2==52||posJ3==52||posJ4==52)) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c%c",157,f);color(14,0);printf("%c    ",435);
+    }
+    if (case52l3==10.3 && posJ1!=52 && posJ2!=52 && posJ3!=52 && posJ4!=52) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c ",143);color(14,0);printf("%c    ",435);
+    }
+    if (case52l3==10.3 && (posJ1==52||posJ2==52||posJ3==52||posJ4==52)) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c%c",143,f);color(14,0);printf("%c    ",435);
+    }
+    if (case52l3==10.4 && posJ1!=52 && posJ2!=52 && posJ3!=52 && posJ4!=52) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c ",37);color(14,0);printf("%c    ",435);
+    }
+    if (case52l3==10.4 && (posJ1==52||posJ2==52||posJ3==52||posJ4==52)) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c%c",37,f);color(14,0);printf("%c    ",435);
+    }
+    if (case52l3==10.5 && posJ1!=52 && posJ2!=52 && posJ3!=52 && posJ4!=52) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c ",31);color(14,0);printf("%c    ",435);
+    }
+    if (case52l3==10.5 && (posJ1==52||posJ2==52||posJ3==52||posJ4==52)) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c%c",31,f);color(14,0);printf("%c    ",435);
+    }
+    if (case52l3==10.6 && posJ1!=52 && posJ2!=52 && posJ3!=52 && posJ4!=52) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c ",459);color(14,0);printf("%c    ",435);
+    }
+    if (case52l3==10.6 && (posJ1==52||posJ2==52||posJ3==52||posJ4==52)) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c%c",459,f);color(14,0);printf("%c    ",435);
+    }
+    f=testposition(posJ1,posJ2,posJ3,posJ4,53,p1,p2,p3,p4);
     if (case53l3==0){
         printf("           ");
     }
-    if (case53l3==1.1){
+    if (case53l3==1.1 && posJ1!=53 && posJ2!=53 && posJ3!=53 && posJ4!=53){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf(" %c",292);color(14,0);
         printf("%c%c%c%c",474,452,452,452);
     }
-    if (case53l3==1.2){
+    if (case53l3==1.1 && (posJ1==53||posJ2==53||posJ3==53||posJ4==53)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c%c",f,292);color(14,0);
+        printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case53l3==1.2 && posJ1!=53 && posJ2!=53 && posJ3!=53 && posJ4!=53){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf(" %c",291);color(14,0);
         printf("%c%c%c%c",474,452,452,452);
     }
-    if (case53l3==1.3){
+    if (case53l3==1.2 && (posJ1==53||posJ2==53||posJ3==53||posJ4==53)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c%c",f,291);color(14,0);
+        printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case53l3==1.3 && posJ1!=53 && posJ2!=53 && posJ3!=53 && posJ4!=53){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf(" %c",285);color(14,0);
         printf("%c%c%c%c",474,452,452,452);
     }
-    if (case53l3==1.4){
+    if (case53l3==1.3 && (posJ1==53||posJ2==53||posJ3==53||posJ4==53)){
         color(14,0);
-        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf(" %c",279);color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c%c",f,285);color(14,0);
         printf("%c%c%c%c",474,452,452,452);
     }
-    if (case53l3==1.5){
+    if (case53l3==1.4 && posJ1!=53 && posJ2!=53 && posJ3!=53 && posJ4!=53){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf(" %c",428);color(14,0);
+        printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case53l3==1.4 && (posJ1==53||posJ2==53||posJ3==53||posJ4==53)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c%c",f,428);color(14,0);
+        printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case53l3==1.5 && posJ1!=53 && posJ2!=53 && posJ3!=53 && posJ4!=53){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf(" %c",277);color(14,0);
         printf("%c%c%c%c",474,452,452,452);
     }
-    if (case53l3==1.6){
+    if (case53l3==1.5 && (posJ1==53||posJ2==53||posJ3==53||posJ4==53)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c%c",f,277);color(14,0);
+        printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case53l3==1.6 && posJ1!=53 && posJ2!=53 && posJ3!=53 && posJ4!=53){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf(" %c",225);color(14,0);
         printf("%c%c%c%c",474,452,452,452);
     }
-    if (case53l3>2 && case53l2<3){
+    if (case53l3==1.6 && (posJ1==53||posJ2==53||posJ3==53||posJ4==53)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c%c",f,225);color(14,0);
+        printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case53l3>2 && case53l3<3){
         color(14,0);
         printf("%c%c%c%c%c%c%c%c%c%c%c",452,452,452,452,452,452,452,452,452,452,452);
     }
@@ -9641,61 +17340,204 @@ int test(double case01,double case03,double case05,double case10,double case11,d
         color(14,0);
         printf("%c%c%c%c%c  %c   ",452,452,452,452,447,435);
     }
-    if (case53l3==5){
+    if (case53l3==5 && posJ1!=53 && posJ2!=53 && posJ3!=53 && posJ4!=53){
         color(14,0);
         piece5bout2();
     }
-    if (case53l3==6){
+    if (case53l3==5 && (posJ1==53||posJ2==53||posJ3==53||posJ4==53)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c ",f);color(14,0);printf("%c   ",435);
+    }
+    if (case53l3==6 && posJ1!=53 && posJ2!=53 && posJ3!=53 && posJ4!=53){
         color(14,0);
         printf("%c%c%c%c%c%c%c%c%c%c%c",452,452,452,452,452,452,452,452,452,452,452);
     }
-    if (case53l3==7){
+    if (case53l3==6 && (posJ1==53||posJ2==53||posJ3==53||posJ4==53)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,452);color(15,0);printf("%c",f);color(14,0);printf("%c%c%c%c%c",452,452,452,452,452);
+    }
+    if (case53l3>=7 && case53l3<8){
         color(14,0);
         printf("    %c%c%c%c%c%c%c",448,452,452,452,452,452,452);
     }
-    if (case53l3==8){
+    if (case53l3>=8 && case53l3<9){
         color(14,0);
         printf("%c%c%c%c%c%c%c%c   ",452,452,452,452,452,452,452,473);
     }
-    if (case53l3==9){
+    if (case53l3==9 && posJ1!=53 && posJ2!=53 && posJ3!=53 && posJ4!=53){
         color(14,0);
         printf("    %c  %c%c%c%c",435,474,452,452,452);
     }
-    if (case53l3==10) {
+    if (case53l3==9 && (posJ1==53||posJ2==53||posJ3==53||posJ4==53)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",f);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case53l3==9.1 && posJ1!=53 && posJ2!=53 && posJ3!=53 && posJ4!=53){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",189);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case53l3==9.1 && (posJ1==53||posJ2==53||posJ3==53||posJ4==53)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,189);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case53l3==9.2 && posJ1!=53 && posJ2!=53 && posJ3!=53 && posJ4!=53){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",157);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case53l3==9.2 && (posJ1==53||posJ2==53||posJ3==53||posJ4==53)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,157);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case53l3==9.3 && posJ1!=53 && posJ2!=53 && posJ3!=53 && posJ4!=53){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",143);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case53l3==9.3 && (posJ1==53||posJ2==53||posJ3==53||posJ4==53)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,143);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case53l3==9.4 && posJ1!=53 && posJ2!=53 && posJ3!=53 && posJ4!=53){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",37);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case53l3==9.4 && (posJ1==53||posJ2==53||posJ3==53||posJ4==53)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,37);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case53l3==9.5 && posJ1!=53 && posJ2!=53 && posJ3!=53 && posJ4!=53){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",31);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case53l3==9.5 && (posJ1==53||posJ2==53||posJ3==53||posJ4==53)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,31);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case53l3==9.6 && posJ1!=53 && posJ2!=53 && posJ3!=53 && posJ4!=53){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",459);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case53l3==9.6 && (posJ1==53||posJ2==53||posJ3==53||posJ4==53)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,459);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case53l3==10 && (posJ1==53||posJ2==53||posJ3==53||posJ4==53)) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c ",f);color(14,0);printf("%c   ",435);
+    }
+    if (case53l3==10 && posJ1!=53 && posJ2!=53 && posJ3!=53 && posJ4!=53) {
         color(14, 0);
         printf("%c%c%c%c%c  %c   ",452, 452,452,452, 447,435);
     }
+    if (case53l3==10.1 && posJ1!=53 && posJ2!=53 && posJ3!=53 && posJ4!=53) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c ",189);color(14,0);printf("%c   ",435);
+    }
+    if (case53l3==10.1 && (posJ1==53||posJ2==53||posJ3==53||posJ4==53)) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c%c",189,f);color(14,0);printf("%c   ",435);
+    }
+    if (case53l3==10.2 && posJ1!=53 && posJ2!=53 && posJ3!=53 && posJ4!=53) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c ",157);color(14,0);printf("%c   ",435);
+    }
+    if (case53l3==10.2 && (posJ1==53||posJ2==53||posJ3==53||posJ4==53)) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c%c",157,f);color(14,0);printf("%c   ",435);
+    }
+    if (case53l3==10.3 && posJ1!=53 && posJ2!=53 && posJ3!=53 && posJ4!=53) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c ",143);color(14,0);printf("%c   ",435);
+    }
+    if (case53l3==10.3 && (posJ1==53||posJ2==53||posJ3==53||posJ4==53)) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c%c",143,f);color(14,0);printf("%c   ",435);
+    }
+    if (case53l3==10.4 && posJ1!=53 && posJ2!=53 && posJ3!=53 && posJ4!=53) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c ",37);color(14,0);printf("%c   ",435);
+    }
+    if (case53l3==10.4 && (posJ1==53||posJ2==53||posJ3==53||posJ4==53)) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c%c",37,f);color(14,0);printf("%c   ",435);
+    }
+    if (case53l3==10.5 && posJ1!=53 && posJ2!=53 && posJ3!=53 && posJ4!=53) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c ",31);color(14,0);printf("%c   ",435);
+    }
+    if (case53l3==10.5 && (posJ1==53||posJ2==53||posJ3==53||posJ4==53)) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c%c",31,f);color(14,0);printf("%c   ",435);
+    }
+    if (case53l3==10.6 && posJ1!=53 && posJ2!=53 && posJ3!=53 && posJ4!=53) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c ",459);color(14,0);printf("%c   ",435);
+    }
+    if (case53l3==10.6 && (posJ1==53||posJ2==53||posJ3==53||posJ4==53)) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c%c",459,f);color(14,0);printf("%c   ",435);
+    }
+    f=testposition(posJ1,posJ2,posJ3,posJ4,54,p1,p2,p3,p4);
     if (case54l3==0){
         printf("              ");
     }
-    if (case54l3==1.1){
+    if (case54l3==1.1 && posJ1!=54 && posJ2!=54 && posJ3!=54 && posJ4!=54){
         color(14,0);
         printf("%c%c%c%c%c%c",452,452,452,452,452,447);color(15,0);printf(" %c",292);color(14,0);
         printf("%c%c%c%c%c%c",474,452,452,452,452,452);
     }
-    if (case54l3==1.2){
+    if (case54l3==1.1 && (posJ1==54||posJ2==54||posJ3==54||posJ4==54)){
+        color(14,0);
+        printf("%c%c%c%c%c%c",452,452,452,452,452,447);color(15,0);printf("%c%c",f,292);color(14,0);
+        printf("%c%c%c%c%c%c",474,452,452,452,452,452);
+    }
+    if (case54l3==1.2 && posJ1!=54 && posJ2!=54 && posJ3!=54 && posJ4!=54){
         color(14,0);
         printf("%c%c%c%c%c%c",452,452,452,452,452,447);color(15,0);printf(" %c",291);color(14,0);
         printf("%c%c%c%c%c%c",474,452,452,452,452,452);
     }
-    if (case54l3==1.3){
+    if (case54l3==1.2 && (posJ1==54||posJ2==54||posJ3==54||posJ4==54)){
+        color(14,0);
+        printf("%c%c%c%c%c%c",452,452,452,452,452,447);color(15,0);printf("%c%c",f,291);color(14,0);
+        printf("%c%c%c%c%c%c",474,452,452,452,452,452);
+    }
+    if (case54l3==1.3 && posJ1!=54 && posJ2!=54 && posJ3!=54 && posJ4!=54){
         color(14,0);
         printf("%c%c%c%c%c%c",452,452,452,452,452,447);color(15,0);printf(" %c",285);color(14,0);
         printf("%c%c%c%c%c%c",474,452,452,452,452,452);
     }
-    if (case54l3==1.4){
+    if (case54l3==1.3 && (posJ1==54||posJ2==54||posJ3==54||posJ4==54)){
         color(14,0);
-        printf("%c%c%c%c%c%c",452,452,452,452,452,447);color(15,0);printf(" %c",279);color(14,0);
+        printf("%c%c%c%c%c%c",452,452,452,452,452,447);color(15,0);printf("%c%c",f,285);color(14,0);
         printf("%c%c%c%c%c%c",474,452,452,452,452,452);
     }
-    if (case54l3==1.5){
+    if (case54l3==1.4 && posJ1!=54 && posJ2!=54 && posJ3!=54 && posJ4!=54){
+        color(14,0);
+        printf("%c%c%c%c%c%c",452,452,452,452,452,447);color(15,0);printf(" %c",428);color(14,0);
+        printf("%c%c%c%c%c%c",474,452,452,452,452,452);
+    }
+    if (case54l3==1.4 && (posJ1==54||posJ2==54||posJ3==54||posJ4==54)){
+        color(14,0);
+        printf("%c%c%c%c%c%c",452,452,452,452,452,447);color(15,0);printf("%c%c",f,428);color(14,0);
+        printf("%c%c%c%c%c%c",474,452,452,452,452,452);
+    }
+    if (case54l3==1.5 && posJ1!=54 && posJ2!=54 && posJ3!=54 && posJ4!=54){
         color(14,0);
         printf("%c%c%c%c%c%c",452,452,452,452,452,447);color(15,0);printf(" %c",277);color(14,0);
         printf("%c%c%c%c%c%c",474,452,452,452,452,452);
     }
-    if (case54l3==1.6){
+    if (case54l3==1.5 && (posJ1==54||posJ2==54||posJ3==54||posJ4==54)){
+        color(14,0);
+        printf("%c%c%c%c%c%c",452,452,452,452,452,447);color(15,0);printf("%c%c",f,277);color(14,0);
+        printf("%c%c%c%c%c%c",474,452,452,452,452,452);
+    }
+    if (case54l3==1.6 && posJ1!=54 && posJ2!=54 && posJ3!=54 && posJ4!=54){
         color(14,0);
         printf("%c%c%c%c%c%c",452,452,452,452,452,447);color(15,0);printf(" %c",225);color(14,0);
+        printf("%c%c%c%c%c%c",474,452,452,452,452,452);
+    }
+    if (case54l3==1.6 && (posJ1==54||posJ2==54||posJ3==54||posJ4==54)){
+        color(14,0);
+        printf("%c%c%c%c%c%c",452,452,452,452,452,447);color(15,0);printf("%c%c",f,225);color(14,0);
         printf("%c%c%c%c%c%c",474,452,452,452,452,452);
     }
     if (case54l3>2 && case54l3<3){
@@ -9710,61 +17552,204 @@ int test(double case01,double case03,double case05,double case10,double case11,d
         color(14,0);
         printf("%c%c%c%c%c%c  %c     ",452,452,452,452,452,447,435);
     }
-    if (case54l3==5){
+    if (case54l3==5 && posJ1!=54 && posJ2!=54 && posJ3!=54 && posJ4!=54){
         color(14,0);
         printf("     %c  %c     ",435,435);
     }
-    if (case54l3==6){
+    if (case54l3==5 && (posJ1==54||posJ2==54||posJ3==54||posJ4==54)){
+        color(14,0);
+        printf("     %c",435);color(15,0);printf("%c ",f);color(14,0);printf("%c     ",435);
+    }
+    if (case54l3==6 && posJ1!=54 && posJ2!=54 && posJ3!=54 && posJ4!=54){
         color(14,0);
         printf("%c%c%c%c%c%c%c%c%c%c%c%c%c%c",452,452,452,452,452,452,452,452,452,452,452,452,452,452);
     }
-    if (case54l3==7){
+    if (case54l3==6 && (posJ1==54||posJ2==54||posJ3==54||posJ4==54)){
+        color(14,0);
+        printf("%c%c%c%c%c%c",452,452,452,452,452,452);color(15,0);printf("%c",f);color(14,0);printf("%c%c%c%c%c%c%c",452,452,452,452,452,452,452);
+    }
+    if (case54l3>=7 && case54l3<8){
         color(14,0);
         printf("     %c%c%c%c%c%c%c%c%c",448,452,452,452,452,452,452,452,452);
     }
-    if (case54l3==8){
+    if (case54l3>=8 && case54l3<9){
         color(14,0);
         printf("%c%c%c%c%c%c%c%c%c     ",452,452,452,452,452,452,452,452,473);
     }
-    if (case54l3==9){
+    if (case54l3==9 && posJ1!=54 && posJ2!=54 && posJ3!=54 && posJ4!=54){
         color(14,0);
         printf("     %c  %c%c%c%c%c%c",435,474,452,452,452,452,452);
     }
-    if (case54l3==10) {
-        color(14, 0);
-        printf("%c%c%c%c%c%c  %c     ", 452, 452, 452,452,452, 447,435);
+    if (case54l3==9 && (posJ1==54||posJ2==54||posJ3==54||posJ4==54)){
+        color(14,0);
+        printf("     %c",435);color(15,0);printf(" %c",f);color(14,0);printf("%c%c%c%c%c%c",474,452,452,452,452,452);
     }
+    if (case54l3==9.1 && posJ1!=54 && posJ2!=54 && posJ3!=54 && posJ4!=54){
+        color(14,0);
+        printf("     %c",435);color(15,0);printf(" %c",189);color(14,0);printf("%c%c%c%c%c%c",474,452,452,452,452,452);
+    }
+    if (case54l3==9.1 && (posJ1==54||posJ2==54||posJ3==54||posJ4==54)){
+        color(14,0);
+        printf("     %c",435);color(15,0);printf("%c%c",f,189);color(14,0);printf("%c%c%c%c%c%c",474,452,452,452,452,452);
+    }
+    if (case54l3==9.2 && posJ1!=54 && posJ2!=54 && posJ3!=54 && posJ4!=54){
+        color(14,0);
+        printf("     %c",435);color(15,0);printf(" %c",157);color(14,0);printf("%c%c%c%c%c%c",474,452,452,452,452,452);
+    }
+    if (case54l3==9.2 && (posJ1==54||posJ2==54||posJ3==54||posJ4==54)){
+        color(14,0);
+        printf("     %c",435);color(15,0);printf("%c%c",f,157);color(14,0);printf("%c%c%c%c%c%c",474,452,452,452,452,452);
+    }
+    if (case54l3==9.3 && posJ1!=54 && posJ2!=54 && posJ3!=54 && posJ4!=54){
+        color(14,0);
+        printf("     %c",435);color(15,0);printf(" %c",143);color(14,0);printf("%c%c%c%c%c%c",474,452,452,452,452,452);
+    }
+    if (case54l3==9.3 && (posJ1==54||posJ2==54||posJ3==54||posJ4==54)){
+        color(14,0);
+        printf("     %c",435);color(15,0);printf("%c%c",f,143);color(14,0);printf("%c%c%c%c%c%c",474,452,452,452,452,452);
+    }
+    if (case54l3==9.4 && posJ1!=54 && posJ2!=54 && posJ3!=54 && posJ4!=54){
+        color(14,0);
+        printf("     %c",435);color(15,0);printf(" %c",37);color(14,0);printf("%c%c%c%c%c%c",474,452,452,452,452,452);
+    }
+    if (case54l3==9.4 && (posJ1==54||posJ2==54||posJ3==54||posJ4==54)){
+        color(14,0);
+        printf("     %c",435);color(15,0);printf("%c%c",f,37);color(14,0);printf("%c%c%c%c%c%c",474,452,452,452,452,452);
+    }
+    if (case54l3==9.5 && posJ1!=54 && posJ2!=54 && posJ3!=54 && posJ4!=54){
+        color(14,0);
+        printf("     %c",435);color(15,0);printf(" %c",31);color(14,0);printf("%c%c%c%c%c%c",474,452,452,452,452,452);
+    }
+    if (case54l3==9.5 && (posJ1==54||posJ2==54||posJ3==54||posJ4==54)){
+        color(14,0);
+        printf("     %c",435);color(15,0);printf("%c%c",f,31);color(14,0);printf("%c%c%c%c%c%c",474,452,452,452,452,452);
+    }
+    if (case54l3==9.6 && posJ1!=54 && posJ2!=54 && posJ3!=54 && posJ4!=54){
+        color(14,0);
+        printf("     %c",435);color(15,0);printf(" %c",459);color(14,0);printf("%c%c%c%c%c%c",474,452,452,452,452,452);
+    }
+    if (case54l3==9.6 && (posJ1==54||posJ2==54||posJ3==54||posJ4==54)){
+        color(14,0);
+        printf("     %c",435);color(15,0);printf("%c%c",f,459);color(14,0);printf("%c%c%c%c%c%c",474,452,452,452,452,452);
+    }
+    if (case54l3==10 && (posJ1==54||posJ2==54||posJ3==54||posJ4==54)) {
+        color(14, 0);
+        printf("%c%c%c%c%c%c",452,452, 452,452,452, 447);color(15,0);printf("%c ",f);color(14,0);printf("%c     ",435);
+    }
+    if (case54l3==10 && posJ1!=54 && posJ2!=54 && posJ3!=54 && posJ4!=54) {
+        color(14, 0);
+        printf("%c%c%c%c%c%c  %c     ",452,452, 452,452,452, 447,435);
+    }
+    if (case54l3==10.1 && posJ1!=54 && posJ2!=54 && posJ3!=54 && posJ4!=54) {
+        color(14, 0);
+        printf("%c%c%c%c%c%c",452,452, 452,452,452, 447);color(15,0);printf("%c ",189);color(14,0);printf("%c     ",435);
+    }
+    if (case54l3==10.1 && (posJ1==54||posJ2==54||posJ3==54||posJ4==54)) {
+        color(14, 0);
+        printf("%c%c%c%c%c%c",452,452, 452,452,452, 447);color(15,0);printf("%c%c",189,f);color(14,0);printf("%c     ",435);
+    }
+    if (case54l3==10.2 && posJ1!=54 && posJ2!=54 && posJ3!=54 && posJ4!=54) {
+        color(14, 0);
+        printf("%c%c%c%c%c%c",452,452, 452,452,452, 447);color(15,0);printf("%c ",157);color(14,0);printf("%c     ",435);
+    }
+    if (case54l3==10.2 && (posJ1==54||posJ2==54||posJ3==54||posJ4==54)) {
+        color(14, 0);
+        printf("%c%c%c%c%c%c",452,452, 452,452,452, 447);color(15,0);printf("%c%c",157,f);color(14,0);printf("%c     ",435);
+    }
+    if (case54l3==10.3 && posJ1!=54 && posJ2!=54 && posJ3!=54 && posJ4!=54) {
+        color(14, 0);
+        printf("%c%c%c%c%c%c",452,452, 452,452,452, 447);color(15,0);printf("%c ",143);color(14,0);printf("%c     ",435);
+    }
+    if (case54l3==10.3 && (posJ1==54||posJ2==54||posJ3==54||posJ4==54)) {
+        color(14, 0);
+        printf("%c%c%c%c%c%c",452, 452,452,452,452, 447);color(15,0);printf("%c%c",143,f);color(14,0);printf("%c     ",435);
+    }
+    if (case54l3==10.4 && posJ1!=54 && posJ2!=54 && posJ3!=54 && posJ4!=54) {
+        color(14, 0);
+        printf("%c%c%c%c%c%c",452,452, 452,452,452, 447);color(15,0);printf("%c ",37);color(14,0);printf("%c     ",435);
+    }
+    if (case54l3==10.4 && (posJ1==54||posJ2==54||posJ3==54||posJ4==54)) {
+        color(14, 0);
+        printf("%c%c%c%c%c%c",452,452, 452,452,452, 447);color(15,0);printf("%c%c",37,f);color(14,0);printf("%c     ",435);
+    }
+    if (case54l3==10.5 && posJ1!=54 && posJ2!=54 && posJ3!=54 && posJ4!=54) {
+        color(14, 0);
+        printf("%c%c%c%c%c%c",452,452, 452,452,452, 447);color(15,0);printf("%c ",31);color(14,0);printf("%c     ",435);
+    }
+    if (case54l3==10.5 && (posJ1==54||posJ2==54||posJ3==54||posJ4==54)) {
+        color(14, 0);
+        printf("%c%c%c%c%c%c",452,452, 452,452,452, 447);color(15,0);printf("%c%c",31,f);color(14,0);printf("%c     ",435);
+    }
+    if (case54l3==10.6 && posJ1!=54 && posJ2!=54 && posJ3!=54 && posJ4!=54) {
+        color(14, 0);
+        printf("%c%c%c%c%c%c",452,452, 452,452,452, 447);color(15,0);printf("%c ",459);color(14,0);printf("%c     ",435);
+    }
+    if (case54l3==10.6 && (posJ1==54||posJ2==54||posJ3==54||posJ4==54)) {
+        color(14, 0);
+        printf("%c%c%c%c%c%c",452,452, 452,452,452, 447);color(15,0);printf("%c%c",459,f);color(14,0);printf("%c     ",435);
+    }
+    f=testposition(posJ1,posJ2,posJ3,posJ4,55,p1,p2,p3,p4);
     if (case55l3==0){
         printf("           ");
     }
-    if (case55l3==1.1){
+    if (case55l3==1.1 && posJ1!=55 && posJ2!=55 && posJ3!=55 && posJ4!=55){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf(" %c",292);color(14,0);
         printf("%c%c%c%c",474,452,452,452);
     }
-    if (case55l3==1.2){
+    if (case55l3==1.1 && (posJ1==55||posJ2==55||posJ3==55||posJ4==55)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c%c",f,292);color(14,0);
+        printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case55l3==1.2 && posJ1!=55 && posJ2!=55 && posJ3!=55 && posJ4!=55){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf(" %c",291);color(14,0);
         printf("%c%c%c%c",474,452,452,452);
     }
-    if (case55l3==1.3){
+    if (case55l3==1.2 && (posJ1==55||posJ2==55||posJ3==55||posJ4==55)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c%c",f,291);color(14,0);
+        printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case55l3==1.3 && posJ1!=55 && posJ2!=55 && posJ3!=55 && posJ4!=55){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf(" %c",285);color(14,0);
         printf("%c%c%c%c",474,452,452,452);
     }
-    if (case55l3==1.4){
+    if (case55l3==1.3 && (posJ1==55||posJ2==55||posJ3==55||posJ4==55)){
         color(14,0);
-        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf(" %c",279);color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c%c",f,285);color(14,0);
         printf("%c%c%c%c",474,452,452,452);
     }
-    if (case55l3==1.5){
+    if (case55l3==1.4 && posJ1!=55 && posJ2!=55 && posJ3!=55 && posJ4!=55){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf(" %c",428);color(14,0);
+        printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case55l3==1.4 && (posJ1==55||posJ2==55||posJ3==55||posJ4==55)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c%c",f,428);color(14,0);
+        printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case55l3==1.5 && posJ1!=55 && posJ2!=55 && posJ3!=55 && posJ4!=55){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf(" %c",277);color(14,0);
         printf("%c%c%c%c",474,452,452,452);
     }
-    if (case55l3==1.6){
+    if (case55l3==1.5 && (posJ1==55||posJ2==55||posJ3==55||posJ4==55)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c%c",f,277);color(14,0);
+        printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case55l3==1.6 && posJ1!=55 && posJ2!=55 && posJ3!=55 && posJ4!=55){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf(" %c",225);color(14,0);
+        printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case55l3==1.6 && (posJ1==55||posJ2==55||posJ3==55||posJ4==55)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c%c",f,225);color(14,0);
         printf("%c%c%c%c",474,452,452,452);
     }
     if (case55l3>2 && case55l3<3){
@@ -9779,55 +17764,189 @@ int test(double case01,double case03,double case05,double case10,double case11,d
         color(14,0);
         printf("%c%c%c%c%c  %c   ",452,452,452,452,447,435);
     }
-    if (case55l3==5){
+    if (case55l3==5 && posJ1!=55 && posJ2!=55 && posJ3!=55 && posJ4!=55){
         color(14,0);
         piece5bout2();
     }
-    if (case55l3==6){
+    if (case55l3==5 && (posJ1==55||posJ2==55||posJ3==55||posJ4==55)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c ",f);color(14,0);printf("%c   ",435);
+    }
+    if (case55l3==6 && posJ1!=55 && posJ2!=55 && posJ3!=55 && posJ4!=55){
         color(14,0);
         printf("%c%c%c%c%c%c%c%c%c%c%c",452,452,452,452,452,452,452,452,452,452,452);
     }
-    if (case55l3==7){
+    if (case55l3==6 && (posJ1==55||posJ2==55||posJ3==55||posJ4==55)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,452);color(15,0);printf("%c",f);color(14,0);printf("%c%c%c%c%c",452,452,452,452,452);
+    }
+    if (case55l3>=7 && case55l3<8){
         color(14,0);
         printf("    %c%c%c%c%c%c%c",448,452,452,452,452,452,452);
     }
-    if (case55l3==8){
+    if (case55l3>=8 && case55l3<9){
         color(14,0);
         printf("%c%c%c%c%c%c%c%c   ",452,452,452,452,452,452,452,473);
     }
-    if (case55l3==9){
+    if (case55l3==9 && posJ1!=55 && posJ2!=55 && posJ3!=55 && posJ4!=55){
         color(14,0);
         printf("    %c  %c%c%c%c",435,474,452,452,452);
     }
-    if (case55l3==10) {
+    if (case55l3==9 && (posJ1==55||posJ2==55||posJ3==55||posJ4==55)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",f);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case55l3==9.1 && posJ1!=55 && posJ2!=55 && posJ3!=55 && posJ4!=55){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",189);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case55l3==9.1 && (posJ1==55||posJ2==55||posJ3==55||posJ4==55)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,189);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case55l3==9.2 && posJ1!=55 && posJ2!=55 && posJ3!=55 && posJ4!=55){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",157);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case55l3==9.2 && (posJ1==55||posJ2==55||posJ3==55||posJ4==55)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,157);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case55l3==9.3 && posJ1!=55 && posJ2!=55 && posJ3!=55 && posJ4!=55){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",143);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case55l3==9.3 && (posJ1==55||posJ2==55||posJ3==55||posJ4==55)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,143);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case55l3==9.4 && posJ1!=55 && posJ2!=55 && posJ3!=55 && posJ4!=55){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",37);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case55l3==9.4 && (posJ1==55||posJ2==55||posJ3==55||posJ4==55)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,37);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case55l3==9.5 && posJ1!=55 && posJ2!=55 && posJ3!=55 && posJ4!=55){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",31);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case55l3==9.5 && (posJ1==55||posJ2==55||posJ3==55||posJ4==55)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,31);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case55l3==9.6 && posJ1!=55 && posJ2!=55 && posJ3!=55 && posJ4!=55){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",459);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case55l3==9.6 && (posJ1==55||posJ2==55||posJ3==55||posJ4==55)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,459);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case55l3==10 && (posJ1==55||posJ2==55||posJ3==55||posJ4==55)) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c ",f);color(14,0);printf("%c   ",435);
+    }
+    if (case55l3==10 && posJ1!=55 && posJ2!=55 && posJ3!=55 && posJ4!=55) {
         color(14, 0);
         printf("%c%c%c%c%c  %c   ",452, 452,452,452, 447,435);
     }
-    if (case56l3==0){
-        printf("         ");
+    if (case55l3==10.1 && posJ1!=55 && posJ2!=55 && posJ3!=55 && posJ4!=55) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c ",189);color(14,0);printf("%c   ",435);
     }
-    if (case56l3==1.1){
+    if (case55l3==10.1 && (posJ1==55||posJ2==55||posJ3==55||posJ4==55)) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c%c",189,f);color(14,0);printf("%c   ",435);
+    }
+    if (case55l3==10.2 && posJ1!=55 && posJ2!=55 && posJ3!=55 && posJ4!=55) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c ",157);color(14,0);printf("%c   ",435);
+    }
+    if (case55l3==10.2 && (posJ1==55||posJ2==55||posJ3==55||posJ4==55)) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c%c",157,f);color(14,0);printf("%c   ",435);
+    }
+    if (case55l3==10.3 && posJ1!=55 && posJ2!=55 && posJ3!=55 && posJ4!=55) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c ",143);color(14,0);printf("%c   ",435);
+    }
+    if (case55l3==10.3 && (posJ1==55||posJ2==55||posJ3==55||posJ4==55)) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c%c",143,f);color(14,0);printf("%c   ",435);
+    }
+    if (case55l3==10.4 && posJ1!=55 && posJ2!=55 && posJ3!=55 && posJ4!=55) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c ",37);color(14,0);printf("%c   ",435);
+    }
+    if (case55l3==10.4 && (posJ1==55||posJ2==55||posJ3==55||posJ4==55)) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c%c",37,f);color(14,0);printf("%c   ",435);
+    }
+    if (case55l3==10.5 && posJ1!=55 && posJ2!=55 && posJ3!=55 && posJ4!=55) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c ",31);color(14,0);printf("%c   ",435);
+    }
+    if (case55l3==10.5 && (posJ1==55||posJ2==55||posJ3==55||posJ4==55)) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c%c",31,f);color(14,0);printf("%c   ",435);
+    }
+    if (case55l3==10.6 && posJ1!=55 && posJ2!=55 && posJ3!=55 && posJ4!=55) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c ",459);color(14,0);printf("%c   ",435);
+    }
+    if (case55l3==10.6 && (posJ1==55||posJ2==55||posJ3==55||posJ4==55)) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452, 452,452,452, 447);color(15,0);printf("%c%c",459,f);color(14,0);printf("%c   ",435);
+    }
+    f= testposition(posJ1,posJ2,posJ3,posJ4,56,p1,p2,p3,p4);
+    if (case56l3==1.1 && posJ1!=56 && posJ2!=56 && posJ3!=56 && posJ4!=56){
         printf("%c%c%c%c%c%c",452,452,452,452,452,447);color(15,0),printf("%c ",292);color(14,0);
         printf("%c",474);
     }
-    if (case56l3==1.2){
+    if (case56l3==1.1 && (posJ1==56||posJ2==56||posJ3==56||posJ4==56)){
+        printf("%c%c%c%c%c%c",452,452,452,452,452,447);color(15,0),printf("%c%c",292,f);color(14,0);
+        printf("%c",474);
+    }
+    if (case56l3==1.2 && posJ1!=56 && posJ2!=56 && posJ3!=56 && posJ4!=56){
         printf("%c%c%c%c%c%c",452,452,452,452,452,447);color(15,0),printf("%c ",291);color(14,0);
         printf("%c",474);
     }
-    if (case56l3==1.3){
+    if (case56l3==1.2 && (posJ1==56||posJ2==56||posJ3==56||posJ4==56)){
+        printf("%c%c%c%c%c%c",452,452,452,452,452,447);color(15,0),printf("%c%c",291,f);color(14,0);
+        printf("%c",474);
+    }
+    if (case56l3==1.3 && posJ1!=56 && posJ2!=56 && posJ3!=56 && posJ4!=56){
         printf("%c%c%c%c%c%c",452,452,452,452,452,447);color(15,0),printf("%c ",285);color(14,0);
         printf("%c",474);
     }
-    if (case56l3==1.4){
-        printf("%c%c%c%c%c%c",452,452,452,452,452,447);color(15,0),printf("%c ",279);color(14,0);
+    if (case56l3==1.3 && (posJ1==56||posJ2==56||posJ3==56||posJ4==56)){
+        printf("%c%c%c%c%c%c",452,452,452,452,452,447);color(15,0),printf("%c%c",285,f);color(14,0);
         printf("%c",474);
     }
-    if (case56l3==1.5){
+    if (case56l3==1.4 && posJ1!=56 && posJ2!=56 && posJ3!=56 && posJ4!=56){
+        printf("%c%c%c%c%c%c",452,452,452,452,452,447);color(15,0),printf("%c ",428);color(14,0);
+        printf("%c",474);
+    }
+    if (case56l3==1.4 && (posJ1==56||posJ2==56||posJ3==56||posJ4==56)){
+        printf("%c%c%c%c%c%c",452,452,452,452,452,447);color(15,0),printf("%c%c",428,f);color(14,0);
+        printf("%c",474);
+    }
+    if (case56l3==1.5 && posJ1!=56 && posJ2!=56 && posJ3!=56 && posJ4!=56){
         printf("%c%c%c%c%c%c",452,452,452,452,452,447);color(15,0),printf("%c ",277);color(14,0);
         printf("%c",474);
     }
-    if (case56l3==1.6){
+    if (case56l3==1.5 && (posJ1==56||posJ2==56||posJ3==56||posJ4==56)){
+        printf("%c%c%c%c%c%c",452,452,452,452,452,447);color(15,0),printf("%c%c",277,f);color(14,0);
+        printf("%c",474);
+    }
+    if (case56l3==1.6 && posJ1!=56 && posJ2!=56 && posJ3!=56 && posJ4!=56){
         printf("%c%c%c%c%c%c",452,452,452,452,452,447);color(15,0),printf("%c ",225);color(14,0);
+        printf("%c",474);
+    }
+    if (case56l3==1.6 && (posJ1==56||posJ2==56||posJ3==56||posJ4==56)){
+        printf("%c%c%c%c%c%c",452,452,452,452,452,447);color(15,0),printf("%c%c",225,f);color(14,0);
         printf("%c",474);
     }
     if (case56l3>2 && case56l3<3){
@@ -9839,23 +17958,107 @@ int test(double case01,double case03,double case05,double case10,double case11,d
     if (case56l3>4 && case56l3<5){
         printf("%c%c%c%c%c%c  %c",452,452,452,452,452,447,435);
     }
-    if (case56l3==5){
+    if (case56l3==5 && posJ1!=56 && posJ2!=56 && posJ3!=56 && posJ4!=56){
         printf("     %c  %c",435,435);
     }
-    if (case56l3==6){
+    if (case56l3==5 && (posJ1==56||posJ2==56||posJ3==56||posJ4==56)){
+        printf("     %c",435);color(15,0);printf("%c ",f);color(14,0);printf("%c",435);
+    }
+    if (case56l3==6 && posJ1!=56 && posJ2!=56 && posJ3!=56 && posJ4!=56){
         printf("%c%c%c%c%c%c%c%c%c",452,452,452,452,452,452,452,452,452);
     }
-    if (case56l3==7){
+    if (case56l3==6 && (posJ1==56||posJ2==56||posJ3==56||posJ4==56)){
+        printf("%c%c%c%c",452,452,452,452);color(15,0);printf("%c",f);color(14,0);printf("%c%c%c%c",452,452,452,452);
+    }
+    if (case56l3>=7 && case56l3<8){
         printf("     %c%c%c%c",448,452,452,452);
     }
-    if (case56l3==8){
+    if (case56l3>=8 && case56l3<9){
         printf("%c%c%c%c%c%c%c%c%c",452,452,452,452,452,452,452,452,473);
     }
-    if (case56l3==9){
+    if (case56l3==9 && posJ1!=56 && posJ2!=56 && posJ3!=56 && posJ4!=56){
         printf("     %c  %c",435,474);
     }
-    if (case56l3==10){
+    if (case56l3==9 && (posJ1==56||posJ2==56||posJ3==56||posJ4==56)){
+        printf("     %c",435);color(15,0);printf(" %c",f);color(14,0);printf("%c",474);
+    }
+    if (case56l3==9.1 && posJ1!=56 && posJ2!=56 && posJ3!=56 && posJ4!=56){
+        printf("     %c",435);color(15,0);printf(" %c",189);color(14,0);printf("%c",474);
+    }
+    if (case56l3==9.1 && (posJ1==56||posJ2==56||posJ3==56||posJ4==56)){
+        printf("     %c",435);color(15,0);printf("%c%c",f,189);color(14,0);printf("%c",474);
+    }
+    if (case56l3==9.2 && posJ1!=56 && posJ2!=56 && posJ3!=56 && posJ4!=56){
+        printf("     %c",435);color(15,0);printf(" %c",157);color(14,0);printf("%c",474);
+    }
+    if (case56l3==9.2 && (posJ1==56||posJ2==56||posJ3==56||posJ4==56)){
+        printf("     %c",435);color(15,0);printf("%c%c",f,157);color(14,0);printf("%c",474);
+    }
+    if (case56l3==9.3 && posJ1!=56 && posJ2!=56 && posJ3!=56 && posJ4!=56){
+        printf("     %c",435);color(15,0);printf(" %c",143);color(14,0);printf("%c",474);
+    }
+    if (case56l3==9.3 && (posJ1==56||posJ2==56||posJ3==56||posJ4==56)){
+        printf("     %c",435);color(15,0);printf("%c%c",f,143);color(14,0);printf("%c",474);
+    }
+    if (case56l3==9.4 && posJ1!=56 && posJ2!=56 && posJ3!=56 && posJ4!=56){
+        printf("     %c",435);color(15,0);printf(" %c",37);color(14,0);printf("%c",474);
+    }
+    if (case56l3==9.4 && (posJ1==56||posJ2==56||posJ3==56||posJ4==56)){
+        printf("     %c",435);color(15,0);printf("%c%c",f,37);color(14,0);printf("%c",474);
+    }
+    if (case56l3==9.5 && posJ1!=56 && posJ2!=56 && posJ3!=56 && posJ4!=56){
+        printf("     %c",435);color(15,0);printf(" %c",31);color(14,0);printf("%c",474);
+    }
+    if (case56l3==9.5 && (posJ1==56||posJ2==56||posJ3==56||posJ4==56)){
+        printf("     %c",435);color(15,0);printf("%c%c",f,31);color(14,0);printf("%c",474);
+    }
+    if (case56l3==9.6 && posJ1!=56 && posJ2!=56 && posJ3!=56 && posJ4!=56){
+        printf("     %c",435);color(15,0);printf(" %c",459);color(14,0);printf("%c",474);
+    }
+    if (case56l3==9.6 && (posJ1==56||posJ2==56||posJ3==56||posJ4==56)){
+        printf("     %c",435);color(15,0);printf("%c%c",f,459);color(14,0);printf("%c",474);
+    }
+    if (case56l3==10 && posJ1!=56 && posJ2!=56 && posJ3!=56 && posJ4!=56){
         printf("%c%c%c%c%c%c  %c",452,452,452,452,452,447,435);
+    }
+    if (case56l3==10 && (posJ1==56||posJ2==56||posJ3==56||posJ4==56)){
+        printf("%c%c%c%c%c%c",452,452,452,452,452,447);color(15,0);printf("%c ",f);color(14,0);printf("%c",435);
+    }
+    if (case56l3==10.1 && posJ1!=56 && posJ2!=56 && posJ3!=56 && posJ4!=56){
+        printf("%c%c%c%c%c%c",452,452,452,452,452,447);color(15,0);printf("%c ",189);color(14,0);printf("%c",435);
+    }
+    if (case56l3==10.1 && (posJ1==56||posJ2==56||posJ3==56||posJ4==56)){
+        printf("%c%c%c%c%c%c",452,452,452,452,452,447);color(15,0);printf("%c%c",189,f);color(14,0);printf("%c",435);
+    }
+    if (case56l3==10.2 && posJ1!=56 && posJ2!=56 && posJ3!=56 && posJ4!=56){
+        printf("%c%c%c%c%c%c",452,452,452,452,452,447);color(15,0);printf("%c ",157);color(14,0);printf("%c",435);
+    }
+    if (case56l3==10.2 && (posJ1==56||posJ2==56||posJ3==56||posJ4==56)){
+        printf("%c%c%c%c%c%c",452,452,452,452,452,447);color(15,0);printf("%c%c",157,f);color(14,0);printf("%c",435);
+    }
+    if (case56l3==10.3 && posJ1!=56 && posJ2!=56 && posJ3!=56 && posJ4!=56){
+        printf("%c%c%c%c%c%c",452,452,452,452,452,447);color(15,0);printf("%c ",143);color(14,0);printf("%c",435);
+    }
+    if (case56l3==10.3 && (posJ1==56||posJ2==56||posJ3==56||posJ4==56)){
+        printf("%c%c%c%c%c%c",452,452,452,452,452,447);color(15,0);printf("%c%c",143,f);color(14,0);printf("%c",435);
+    }
+    if (case56l3==10.4 && posJ1!=56 && posJ2!=56 && posJ3!=56 && posJ4!=56){
+        printf("%c%c%c%c%c%c",452,452,452,452,452,447);color(15,0);printf("%c ",37);color(14,0);printf("%c",435);
+    }
+    if (case56l3==10.4 && (posJ1==56||posJ2==56||posJ3==56||posJ4==56)){
+        printf("%c%c%c%c%c%c",452,452,452,452,452,447);color(15,0);printf("%c%c",37,f);color(14,0);printf("%c",435);
+    }
+    if (case56l3==10.5 && posJ1!=56 && posJ2!=56 && posJ3!=56 && posJ4!=56){
+        printf("%c%c%c%c%c%c",452,452,452,452,452,447);color(15,0);printf("%c ",31);color(14,0);printf("%c",435);
+    }
+    if (case56l3==10.5 && (posJ1==56||posJ2==56||posJ3==56||posJ4==56)){
+        printf("%c%c%c%c%c%c",452,452,452,452,452,447);color(15,0);printf("%c%c",31,f);color(14,0);printf("%c",435);
+    }
+    if (case56l3==10.6 && posJ1!=56 && posJ2!=56 && posJ3!=56 && posJ4!=56){
+        printf("%c%c%c%c%c%c",452,452,452,452,452,447);color(15,0);printf("%c ",459);color(14,0);printf("%c",435);
+    }
+    if (case56l3==10.6 && (posJ1==56||posJ2==56||posJ3==56||posJ4==56)){
+        printf("%c%c%c%c%c%c",452,452,452,452,452,447);color(15,0);printf("%c%c",459,f);color(14,0);printf("%c",435);
     }
     a();printf("                                 ");
     if (case50l4==0){
@@ -9886,19 +18089,19 @@ int test(double case01,double case03,double case05,double case10,double case11,d
         color(14,0);
         printf("        ");
     }
-    if (case50l4==7){
+    if (case50l4>=7 && case50l4<8){
         color(14,0);
         printf("        ");
     }
-    if (case50l4==8){
+    if (case50l4>=8 && case50l4<9){
         color(14,0);
         printf("        ");
     }
-    if (case50l4==9){
+    if (case50l4>=9 && case50l4<10){
         color(14,0);
         printf("%c  %c    ",435,435);
     }
-    if (case50l4==10){
+    if (case50l4>=10 && case50l4<11){
         color(14,0);
         printf("%c  %c    ",435,435);
     }
@@ -9929,19 +18132,19 @@ int test(double case01,double case03,double case05,double case10,double case11,d
         color(14,0);
         printf("           ");
     }
-    if (case51l4==7){
+    if (case51l4>=7 && case51l4<8){
         color(14,0);
         printf("           ");
     }
-    if (case51l4==8){
+    if (case51l4>=8 && case51l4<9){
         color(14,0);
         printf("           ");
     }
-    if (case51l4==9){
+    if (case51l4>=9 && case51l4<10){
         color(14,0);
         printf("    %c  %c   ",435,435);
     }
-    if (case51l4==10) {
+    if (case51l4>=10 && case51l4<11) {
         color(14, 0);
         printf("    %c  %c   ",435,435);
     }
@@ -9972,19 +18175,19 @@ int test(double case01,double case03,double case05,double case10,double case11,d
         color(14,0);
         printf("            ");
     }
-    if (case52l4==7){
+    if (case52l4>=7 && case52l4<8){
         color(14,0);
         printf("            ");
     }
-    if (case52l4==8){
+    if (case52l4>=8 && case52l4<9){
         color(14,0);
         printf("            ");
     }
-    if (case52l4==9){
+    if (case52l4>=9 && case52l4<10){
         color(14,0);
         printf("    %c  %c    ",435,435);
     }
-    if (case52l4==10) {
+    if (case52l4>=10 && case52l4<11) {
         color(14, 0);
         printf("    %c  %c    ",435,435);
     }
@@ -10015,19 +18218,19 @@ int test(double case01,double case03,double case05,double case10,double case11,d
         color(14,0);
         printf("           ");
     }
-    if (case53l4==7){
+    if (case53l4>=7 && case53l4<8){
         color(14,0);
         printf("           ");
     }
-    if (case53l4==8){
+    if (case53l4>=8 && case53l4<9){
         color(14,0);
         printf("           ");
     }
-    if (case53l4==9){
+    if (case53l4>=9 && case53l4<10){
         color(14,0);
         printf("    %c  %c   ",435,435);
     }
-    if (case53l4==10) {
+    if (case53l4>=10 && case53l4<11) {
         color(14, 0);
         printf("    %c  %c   ",435,435);
     }
@@ -10058,19 +18261,19 @@ int test(double case01,double case03,double case05,double case10,double case11,d
         color(14,0);
         printf("              ");
     }
-    if (case54l4==7){
+    if (case54l4>=7 && case54l4<8){
         color(14,0);
         printf("              ");
     }
-    if (case54l4==8){
+    if (case54l4>=8 && case54l4<9){
         color(14,0);
         printf("              ");
     }
-    if (case54l4==9){
+    if (case54l4>=9 && case54l4<10){
         color(14,0);
         printf("     %c  %c     ",435,435);
     }
-    if (case54l4==10) {
+    if (case54l4>=10 && case54l4<11) {
         color(14, 0);
         printf("     %c  %c     ",435,435);
     }
@@ -10101,19 +18304,19 @@ int test(double case01,double case03,double case05,double case10,double case11,d
         color(14,0);
         printf("           ");
     }
-    if (case55l4==7){
+    if (case55l4>=7 && case55l4<8){
         color(14,0);
         printf("           ");
     }
-    if (case55l4==8){
+    if (case55l4>=8 && case55l4<9){
         color(14,0);
         printf("           ");
     }
-    if (case55l4==9){
+    if (case55l4>=9 && case55l4<10){
         color(14,0);
         printf("    %c  %c   ",435,435);
     }
-    if (case55l4==10) {
+    if (case55l4>=10 && case55l4<11) {
         color(14, 0);
         printf("    %c  %c   ",435,435);
     }
@@ -10138,16 +18341,16 @@ int test(double case01,double case03,double case05,double case10,double case11,d
     if (case56l4==6){
         printf("         ");
     }
-    if (case56l4==7){
+    if (case56l4>=7 && case56l4<8){
         printf("         ");
     }
-    if (case56l4==8){
+    if (case56l4>=8 && case56l4<9){
         printf("         ");
     }
-    if (case56l4==9){
+    if (case56l4>=9 && case56l4<10){
         printf("     %c  %c",435,435);
     }
-    if (case56l4==10){
+    if (case56l4>=10 && case56l4<11){
         printf("     %c  %c",435,435);
     }
     color(9,0);
@@ -10181,19 +18384,19 @@ int test(double case01,double case03,double case05,double case10,double case11,d
         color(14,0);
         printf("           ");
     }
-    if (case61l1==7){
+    if (case61l1>=7 && case61l1<8){
         color(14,0);
         printf("    %c  %c   ",435,435);
     }
-    if (case61l1==8){
+    if (case61l1>=8 && case61l1<9){
         color(14,0);
         printf("    %c  %c   ",435,435);
     }
-    if (case61l1==9){
+    if (case61l1>=9 && case61l1<10){
         color(14,0);
         printf("           ");
     }
-    if (case61l1==10){
+    if (case61l1>=10 && case61l1<11){
         color(14,0);
         printf("           ");
     }
@@ -10227,19 +18430,19 @@ int test(double case01,double case03,double case05,double case10,double case11,d
         color(14,0);
         printf("           ");
     }
-    if (case63l1==7){
+    if (case63l1>=7 && case63l1<8){
         color(14,0);
         printf("    %c  %c   ",435,435);
     }
-    if (case63l1==8){
+    if (case63l1>=8 && case63l1<9){
         color(14,0);
         printf("    %c  %c   ",435,435);
     }
-    if (case63l1==9){
+    if (case63l1>=9 && case63l1<10){
         color(14,0);
         printf("           ");
     }
-    if (case63l1==10){
+    if (case63l1>=10 && case63l1<11){
         color(14,0);
         printf("           ");
     }
@@ -10273,19 +18476,19 @@ int test(double case01,double case03,double case05,double case10,double case11,d
         color(14,0);
         printf("           ");
     }
-    if (case65l1==7){
+    if (case65l1>=7 && case65l1<8){
         color(14,0);
         printf("    %c  %c   ",435,435);
     }
-    if (case65l1==8){
+    if (case65l1>=8 && case65l1<9){
         color(14,0);
         printf("    %c  %c   ",435,435);
     }
-    if (case65l1==9){
+    if (case65l1>=9 && case65l1<10){
         color(14,0);
         printf("           ");
     }
-    if (case65l1==10){
+    if (case65l1>=10 && case65l1<11){
         color(14,0);
         printf("           ");
     }
@@ -10320,19 +18523,19 @@ int test(double case01,double case03,double case05,double case10,double case11,d
         color(14,0);
         printf("           ");
     }
-    if (case61l2==7){
+    if (case61l2>=7 && case61l2<8){
         color(14,0);
         printf("    %c  %c   ",435,435);
     }
-    if (case61l2==8){
+    if (case61l2>=8 && case61l1<9){
         color(14,0);
         printf("    %c  %c   ",435,435);
     }
-    if (case61l2==9){
+    if (case61l2>=9 && case61l2<10){
         color(14,0);
         printf("           ");
     }
-    if (case61l2==10){
+    if (case61l2>=10 && case61l2<11){
         color(14,0);
         printf("           ");
     }
@@ -10366,19 +18569,19 @@ int test(double case01,double case03,double case05,double case10,double case11,d
         color(14,0);
         printf("           ");
     }
-    if (case63l2==7){
+    if (case63l2>=7 && case63l2<8){
         color(14,0);
         printf("    %c  %c   ",435,435);
     }
-    if (case63l2==8){
+    if (case63l2>=8 && case63l2<9){
         color(14,0);
         printf("    %c  %c   ",435,435);
     }
-    if (case63l2==9){
+    if (case63l2>=9 && case63l2<10){
         color(14,0);
         printf("           ");
     }
-    if (case63l2==10){
+    if (case63l2>=10 && case63l2<11){
         color(14,0);
         printf("           ");
     }
@@ -10412,30 +18615,41 @@ int test(double case01,double case03,double case05,double case10,double case11,d
         color(14,0);
         printf("           ");
     }
-    if (case65l2==7){
+    if (case65l2>=7 && case65l2<8){
         color(14,0);
         printf("    %c  %c   ",435,435);
     }
-    if (case65l2==8){
+    if (case65l2>=8 && case65l2<9){
         color(14,0);
         printf("    %c  %c   ",435,435);
     }
-    if (case65l2==9){
+    if (case65l2>=9 && case65l2<10){
         color(14,0);
         printf("           ");
     }
-    if (case65l2==10){
+    if (case65l2>=10 && case65l2<11){
         color(14,0);
         printf("           ");
     }
     color(9,0);
     printf("     %c  %c",435,435);a();
-    printf("                                 %c",435);
-    color(5,0);
-    printf(" %c",479);
-    color(9,0);
-    printf("%c%c%c%c%c",448,452,452,452,452);
+    f= testposition(posJ1,posJ2,posJ3,posJ4,60,p1,p2,p3,p4);
+    if (posJ1!=60 && posJ2!=60 && posJ3!=60 && posJ4!=60) {
+        printf("                                 %c", 435);
+        color(5, 0);
+        printf(" %c", 479);
+        color(9, 0);
+        printf("%c%c%c%c%c", 448, 452, 452, 452, 452);
+    }
+    if (posJ1==60||posJ2==60||posJ3==60||posJ4==60){
+        printf("                                 %c", 435);
+        color(5, 0);
+        printf("%c%c",f, 479);
+        color(9, 0);
+        printf("%c%c%c%c%c", 448, 452, 452, 452, 452);
+    }
     color(14,0);
+    f= testposition(posJ1,posJ2,posJ3,posJ4,61,p1,p2,p3,p4);
     if (case61l3==0){
         printf("           ");
     }
@@ -10443,124 +18657,330 @@ int test(double case01,double case03,double case05,double case10,double case11,d
         color(14,0);
         printf("%c%c%c%c%c%c%c%c%c%c%c",452,452,452,452,452,452,452,452,452,452,452);
     }
-    if (case61l3==2.1){
+    if (case61l3==2.1 && posJ1!=61 && posJ2!=61 && posJ3!=61 && posJ4!=61){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf(" %c",292);color(14,0);
         printf("%c%c%c%c",448,452,452,452);
     }
-    if (case61l3==2.2){
+    if (case61l3==2.1 && (posJ1==61||posJ2==61||posJ3==61||posJ4==61)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",f,292);color(14,0);
+        printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case61l3==2.2 && posJ1!=61 && posJ2!=61 && posJ3!=61 && posJ4!=61){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf(" %c",291);color(14,0);
         printf("%c%c%c%c",448,452,452,452);
     }
-    if (case61l3==2.3){
+    if (case61l3==2.2 && (posJ1==61||posJ2==61||posJ3==61||posJ4==61)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",f,291);color(14,0);
+        printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case61l3==2.3 && posJ1!=61 && posJ2!=61 && posJ3!=61 && posJ4!=61){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf(" %c",285);color(14,0);
         printf("%c%c%c%c",448,452,452,452);
     }
-    if (case61l3==2.4){
+    if (case61l3==2.3 && (posJ1==61||posJ2==61||posJ3==61||posJ4==61)){
         color(14,0);
-        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf(" %c",279);color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",f,285);color(14,0);
         printf("%c%c%c%c",448,452,452,452);
     }
-    if (case61l3==2.5){
+    if (case61l3==2.4 && posJ1!=61 && posJ2!=61 && posJ3!=61 && posJ4!=61){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf(" %c",428);color(14,0);
+        printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case61l3==2.4 && (posJ1==61||posJ2==61||posJ3==61||posJ4==61)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",f,428);color(14,0);
+        printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case61l3==2.5 && posJ1!=61 && posJ2!=61 && posJ3!=61 && posJ4!=61){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf(" %c",277);color(14,0);
         printf("%c%c%c%c",448,452,452,452);
     }
-    if (case61l3==2.6){
+    if (case61l3==2.5 && (posJ1==61||posJ2==61||posJ3==61||posJ4==61)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",f,277);color(14,0);
+        printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case61l3==2.6 && posJ1!=61 && posJ2!=61 && posJ3!=61 && posJ4!=61){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf(" %c",225);color(14,0);
         printf("%c%c%c%c",448,452,452,452);
     }
-    if (case61l3==3.1){
+    if (case61l3==2.6 && (posJ1==61||posJ2==61||posJ3==61||posJ4==61)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",f,225);color(14,0);
+        printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case61l3==3.1 && posJ1!=61 && posJ2!=61 && posJ3!=61 && posJ4!=61){
         color(14,0);
         printf("    %c",435);color(15,0);printf(" %c",292);color(14,0);
         printf("%c%c%c%c",448,452,452,452);
     }
-    if (case61l3==3.2){
+    if (case61l3==3.1 && (posJ1==61||posJ2==61||posJ3==61||posJ4==61)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,292);color(14,0);
+        printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case61l3==3.2 && posJ1!=61 && posJ2!=61 && posJ3!=61 && posJ4!=61){
         color(14,0);
         printf("    %c",435);color(15,0);printf(" %c",291);color(14,0);
         printf("%c%c%c%c",448,452,452,452);
     }
-    if (case61l3==3.3){
+    if (case61l3==3.2 && (posJ1==61||posJ2==61||posJ3==61||posJ4==61)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,291);color(14,0);
+        printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case61l3==3.3 && posJ1!=61 && posJ2!=61 && posJ3!=61 && posJ4!=61){
         color(14,0);
         printf("    %c",435);color(15,0);printf(" %c",285);color(14,0);
         printf("%c%c%c%c",448,452,452,452);
     }
-    if (case61l3==3.4){
+    if (case61l3==3.3 && (posJ1==61||posJ2==61||posJ3==61||posJ4==61)){
         color(14,0);
-        printf("    %c",435);color(15,0);printf(" %c",279);color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,285);color(14,0);
         printf("%c%c%c%c",448,452,452,452);
     }
-    if (case61l3==3.5){
+    if (case61l3==3.4 && posJ1!=61 && posJ2!=61 && posJ3!=61 && posJ4!=61){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",428);color(14,0);
+        printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case61l3==3.4 && (posJ1==61||posJ2==61||posJ3==61||posJ4==61)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,428);color(14,0);
+        printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case61l3==3.5 && posJ1!=61 && posJ2!=61 && posJ3!=61 && posJ4!=61){
         color(14,0);
         printf("    %c",435);color(15,0);printf(" %c",277);color(14,0);
         printf("%c%c%c%c",448,452,452,452);
     }
-    if (case61l3==3.6){
+    if (case61l3==3.5 && (posJ1==61||posJ2==61||posJ3==61||posJ4==61)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,277);color(14,0);
+        printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case61l3==3.6 && posJ1!=61 && posJ2!=61 && posJ3!=61 && posJ4!=61){
         color(14,0);
         printf("    %c",435);color(15,0);printf(" %c",225);color(14,0);
         printf("%c%c%c%c",448,452,452,452);
     }
-    if (case61l3==4.1){
+    if (case61l3==3.6 && (posJ1==61||posJ2==61||posJ3==61||posJ4==61)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,225);color(14,0);
+        printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case61l3==4.1 && posJ1!=61 && posJ2!=61 && posJ3!=61 && posJ4!=61){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",292);color(14,0);
         printf("%c   ",435);
     }
-    if (case61l3==4.2){
+    if (case61l3==4.1 && (posJ1==61||posJ2==61||posJ3==61||posJ4==61)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",292,f);color(14,0);
+        printf("%c   ",435);
+    }
+    if (case61l3==4.2 && posJ1!=61 && posJ2!=61 && posJ3!=61 && posJ4!=61){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",291);color(14,0);
         printf("%c   ",435);
     }
-    if (case61l3==4.3){
+    if (case61l3==4.2 && (posJ1==61||posJ2==61||posJ3==61||posJ4==61)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",291,f);color(14,0);
+        printf("%c   ",435);
+    }
+    if (case61l3==4.3 && posJ1!=61 && posJ2!=61 && posJ3!=61 && posJ4!=61){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",285);color(14,0);
         printf("%c   ",435);
     }
-    if (case61l3==4.4){
+    if (case61l3==4.3 && (posJ1==61||posJ2==61||posJ3==61||posJ4==61)){
         color(14,0);
-        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",279);color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",285,f);color(14,0);
         printf("%c   ",435);
     }
-    if (case61l3==4.5){
+    if (case61l3==4.4 && posJ1!=61 && posJ2!=61 && posJ3!=61 && posJ4!=61){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",428);color(14,0);
+        printf("%c   ",435);
+    }
+    if (case61l3==4.4 && (posJ1==61||posJ2==61||posJ3==61||posJ4==61)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",428,f);color(14,0);
+        printf("%c   ",435);
+    }
+    if (case61l3==4.5 && posJ1!=61 && posJ2!=61 && posJ3!=61 && posJ4!=61){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",277);color(14,0);
         printf("%c   ",435);
     }
-    if (case61l3==4.6){
+    if (case61l3==4.5 && (posJ1==61||posJ2==61||posJ3==61||posJ4==61)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",277,f);color(14,0);
+        printf("%c   ",435);
+    }
+    if (case61l3==4.6 && posJ1!=61 && posJ2!=61 && posJ3!=61 && posJ4!=61){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",225);color(14,0);
         printf("%c   ",435);
     }
-    if (case61l3==5){
+    if (case61l3==4.6 && (posJ1==61||posJ2==61||posJ3==61||posJ4==61)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",225,f);color(14,0);
+        printf("%c   ",435);
+    }
+    if (case61l3==5 && posJ1!=61 && posJ2!=61 && posJ3!=61 && posJ4!=61){
         color(14,0);
         piece5bout2();
+    }
+    if (case61l3==5 && (posJ1==61||posJ2==61||posJ3==61||posJ4==61)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",f);color(14,0);printf("%c   ",435);
     }
     if (case61l3==6){
         color(14,0);
         printf("%c%c%c%c%c%c%c%c%c%c%c",452,452,452,452,452,452,452,452,452,452,452);
     }
-    if (case61l3==7){
+    if (case61l3==7 && posJ1!=61 && posJ2!=61 && posJ3!=61 && posJ4!=61){
         color(14,0);
         printf("    %c  %c%c%c%c",435,448,452,452,452);
     }
-    if (case61l3==8){
+    if (case61l3==7 && (posJ1==61||posJ2==61||posJ3==61||posJ4==61)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",f);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case61l3==7.1 && posJ1!=61 && posJ2!=61 && posJ3!=61 && posJ4!=61){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",189);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case61l3==7.1 && (posJ1==61||posJ2==61||posJ3==61||posJ4==61)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,189);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case61l3==7.2 && posJ1!=61 && posJ2!=61 && posJ3!=61 && posJ4!=61){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",157);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case61l3==7.2 && (posJ1==61||posJ2==61||posJ3==61||posJ4==61)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,157);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case61l3==7.3 && posJ1!=61 && posJ2!=61 && posJ3!=61 && posJ4!=61){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",143);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case61l3==7.3 && (posJ1==61||posJ2==61||posJ3==61||posJ4==61)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,143);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case61l3==7.4 && posJ1!=61 && posJ2!=61 && posJ3!=61 && posJ4!=61){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",37);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case61l3==7.4 && (posJ1==61||posJ2==61||posJ3==61||posJ4==61)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,37);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case61l3==7.5 && posJ1!=61 && posJ2!=61 && posJ3!=61 && posJ4!=61){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",31);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case61l3==7.5 && (posJ1==61||posJ2==61||posJ3==61||posJ4==61)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,31);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case61l3==7.6 && posJ1!=61 && posJ2!=61 && posJ3!=61 && posJ4!=61){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",15);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case61l3==7.6 && (posJ1==61||posJ2==61||posJ3==61||posJ4==61)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,15);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case61l3==8 && posJ1!=61 && posJ2!=61 && posJ3!=61 && posJ4!=61){
         color(14,0);
         printf("%c%c%c%c%c  %c   ",452,452,452,452,473,435);
     }
-    if (case61l3==9){
+    if (case61l3==8 && (posJ1==61||posJ2==61||posJ3==61||posJ4==61)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",f);color(14,0);printf("%c   ",435);
+    }
+    if (case61l3==8.1 && posJ1!=61 && posJ2!=61 && posJ3!=61 && posJ4!=61){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",189);color(14,0);printf("%c   ",435);
+    }
+    if (case61l3==8.1 && (posJ1==61||posJ2==61||posJ3==61||posJ4==61)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",189,f);color(14,0);printf("%c   ",435);
+    }
+    if (case61l3==8.2 && posJ1!=61 && posJ2!=61 && posJ3!=61 && posJ4!=61){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",157);color(14,0);printf("%c   ",435);
+    }
+    if (case61l3==8.2 && (posJ1==61||posJ2==61||posJ3==61||posJ4==61)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",157,f);color(14,0);printf("%c   ",435);
+    }
+    if (case61l3==8.3 && posJ1!=61 && posJ2!=61 && posJ3!=61 && posJ4!=61){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",143);color(14,0);printf("%c   ",435);
+    }
+    if (case61l3==8.3 && (posJ1==61||posJ2==61||posJ3==61||posJ4==61)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",143,f);color(14,0);printf("%c   ",435);
+    }
+    if (case61l3==8.4 && posJ1!=61 && posJ2!=61 && posJ3!=61 && posJ4!=61){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",37);color(14,0);printf("%c   ",435);
+    }
+    if (case61l3==8.4 && (posJ1==61||posJ2==61||posJ3==61||posJ4==61)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",37,f);color(14,0);printf("%c   ",435);
+    }
+    if (case61l3==8.5 && posJ1!=61 && posJ2!=61 && posJ3!=61 && posJ4!=61){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",31);color(14,0);printf("%c   ",435);
+    }
+    if (case61l3==8.5 && (posJ1==61||posJ2==61||posJ3==61||posJ4==61)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",31,f);color(14,0);printf("%c   ",435);
+    }
+    if (case61l3==8.6 && posJ1!=61 && posJ2!=61 && posJ3!=61 && posJ4!=61){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",459);color(14,0);printf("%c   ",435);
+    }
+    if (case61l3==8.6 && (posJ1==61||posJ2==61||posJ3==61||posJ4==61)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",459,f);color(14,0);printf("%c   ",435);
+    }
+    if (case61l3>=9 && case61l3<10){
         color(14,0);
         printf("    %c%c%c%c%c%c%c",474,452,452,452,452,452,452);
     }
-    if (case61l3==10) {
+    if (case61l3>=10 && case61l3<11) {
         color(14, 0);
         printf("%c%c%c%c%c%c%c%c   ",452,452,452,452,452,452,452,447);
     }
     color(9,0);
-    printf("%c%c%c%c%c",452,452,452,452,473);color(4,0);printf(" %c",298);color(9,0);
-    printf("%c%c%c%c%c",448,452,452,452,452);
+    f= testposition(posJ1,posJ2,posJ3,posJ4,62,p1,p2,p3,p4);
+    if (posJ1!=62 && posJ2!=62 && posJ3!=62 && posJ4!=62){
+        printf("%c%c%c%c%c",452,452,452,452,473);color(4,0);printf(" %c",298);color(9,0);
+        printf("%c%c%c%c%c",448,452,452,452,452);
+    }
+    if (posJ1==62||posJ2==62||posJ3==62||posJ4==62){
+        printf("%c%c%c%c%c",452,452,452,452,473);color(4,0);printf("%c%c",f,298);color(9,0);
+        printf("%c%c%c%c%c",448,452,452,452,452);
+    }
     color(14,0);
+    f= testposition(posJ1,posJ2,posJ3,posJ4,63,p1,p2,p3,p4);
     if (case63l3==0){
         printf("           ");
     }
@@ -10568,124 +18988,330 @@ int test(double case01,double case03,double case05,double case10,double case11,d
         color(14,0);
         printf("%c%c%c%c%c%c%c%c%c%c%c",452,452,452,452,452,452,452,452,452,452,452);
     }
-    if (case63l3==2.1){
+    if (case63l3==2.1 && posJ1!=63 && posJ2!=63 && posJ3!=63 && posJ4!=63){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf(" %c",292);color(14,0);
         printf("%c%c%c%c",448,452,452,452);
     }
-    if (case63l3==2.2){
+    if (case63l3==2.1 && (posJ1==63||posJ2==63||posJ3==63||posJ4==63)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",f,292);color(14,0);
+        printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case63l3==2.2 && posJ1!=63 && posJ2!=63 && posJ3!=63 && posJ4!=63){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf(" %c",291);color(14,0);
         printf("%c%c%c%c",448,452,452,452);
     }
-    if (case63l3==2.3){
+    if (case63l3==2.2 && (posJ1==63||posJ2==63||posJ3==63||posJ4==63)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",f,291);color(14,0);
+        printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case63l3==2.3 && posJ1!=63 && posJ2!=63 && posJ3!=63 && posJ4!=63){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf(" %c",285);color(14,0);
         printf("%c%c%c%c",448,452,452,452);
     }
-    if (case63l3==2.4){
+    if (case63l3==2.3 && (posJ1==63||posJ2==63||posJ3==63||posJ4==63)){
         color(14,0);
-        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf(" %c",279);color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",f,285);color(14,0);
         printf("%c%c%c%c",448,452,452,452);
     }
-    if (case63l3==2.5){
+    if (case63l3==2.4 && posJ1!=63 && posJ2!=63 && posJ3!=63 && posJ4!=63){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf(" %c",428);color(14,0);
+        printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case63l3==2.4 && (posJ1==63||posJ2==63||posJ3==63||posJ4==63)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",f,428);color(14,0);
+        printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case63l3==2.5 && posJ1!=63 && posJ2!=63 && posJ3!=63 && posJ4!=63){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf(" %c",277);color(14,0);
         printf("%c%c%c%c",448,452,452,452);
     }
-    if (case63l3==2.6){
+    if (case63l3==2.5 && (posJ1==63||posJ2==63||posJ3==63||posJ4==63)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",f,277);color(14,0);
+        printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case63l3==2.6 && posJ1!=63 && posJ2!=63 && posJ3!=63 && posJ4!=63){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf(" %c",225);color(14,0);
         printf("%c%c%c%c",448,452,452,452);
     }
-    if (case63l3==3.1){
+    if (case63l3==2.6 && (posJ1==63||posJ2==63||posJ3==63||posJ4==63)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",f,225);color(14,0);
+        printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case63l3==3.1 && posJ1!=63 && posJ2!=63 && posJ3!=63 && posJ4!=63){
         color(14,0);
         printf("    %c",435);color(15,0);printf(" %c",292);color(14,0);
         printf("%c%c%c%c",448,452,452,452);
     }
-    if (case63l3==3.2){
+    if (case63l3==3.1 && (posJ1==63||posJ2==63||posJ3==63||posJ4==63)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,292);color(14,0);
+        printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case63l3==3.2 && posJ1!=63 && posJ2!=63 && posJ3!=63 && posJ4!=63){
         color(14,0);
         printf("    %c",435);color(15,0);printf(" %c",291);color(14,0);
         printf("%c%c%c%c",448,452,452,452);
     }
-    if (case63l3==3.3){
+    if (case63l3==3.2 && (posJ1==63||posJ2==63||posJ3==63||posJ4==63)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,291);color(14,0);
+        printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case63l3==3.3 && posJ1!=63 && posJ2!=63 && posJ3!=63 && posJ4!=63){
         color(14,0);
         printf("    %c",435);color(15,0);printf(" %c",285);color(14,0);
         printf("%c%c%c%c",448,452,452,452);
     }
-    if (case63l3==3.4){
+    if (case63l3==3.3 && (posJ1==63||posJ2==63||posJ3==63||posJ4==63)){
         color(14,0);
-        printf("    %c",435);color(15,0);printf(" %c",279);color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,285);color(14,0);
         printf("%c%c%c%c",448,452,452,452);
     }
-    if (case63l3==3.5){
+    if (case63l3==3.4 && posJ1!=63 && posJ2!=63 && posJ3!=63 && posJ4!=63){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",428);color(14,0);
+        printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case63l3==3.4 && (posJ1==63||posJ2==63||posJ3==63||posJ4==63)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,428);color(14,0);
+        printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case63l3==3.5 && posJ1!=63 && posJ2!=63 && posJ3!=63 && posJ4!=63){
         color(14,0);
         printf("    %c",435);color(15,0);printf(" %c",277);color(14,0);
         printf("%c%c%c%c",448,452,452,452);
     }
-    if (case63l3==3.6){
+    if (case63l3==3.5 && (posJ1==63||posJ2==63||posJ3==63||posJ4==63)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,277);color(14,0);
+        printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case63l3==3.6 && posJ1!=63 && posJ2!=63 && posJ3!=63 && posJ4!=63){
         color(14,0);
         printf("    %c",435);color(15,0);printf(" %c",225);color(14,0);
         printf("%c%c%c%c",448,452,452,452);
     }
-    if (case63l3==4.1){
+    if (case63l3==3.6 && (posJ1==63||posJ2==63||posJ3==63||posJ4==63)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,225);color(14,0);
+        printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case63l3==4.1 && posJ1!=63 && posJ2!=63 && posJ3!=63 && posJ4!=63){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",292);color(14,0);
         printf("%c   ",435);
     }
-    if (case63l3==4.2){
+    if (case63l3==4.1 && (posJ1==63||posJ2==63||posJ3==63||posJ4==63)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",292,f);color(14,0);
+        printf("%c   ",435);
+    }
+    if (case63l3==4.2 && posJ1!=63 && posJ2!=63 && posJ3!=63 && posJ4!=63){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",291);color(14,0);
         printf("%c   ",435);
     }
-    if (case63l3==4.3){
+    if (case63l3==4.2 && (posJ1==63||posJ2==63||posJ3==63||posJ4==63)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",291,f);color(14,0);
+        printf("%c   ",435);
+    }
+    if (case63l3==4.3 && posJ1!=63 && posJ2!=63 && posJ3!=63 && posJ4!=63){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",285);color(14,0);
         printf("%c   ",435);
     }
-    if (case63l3==4.4){
+    if (case63l3==4.3 && (posJ1==63||posJ2==63||posJ3==63||posJ4==63)){
         color(14,0);
-        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",279);color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",285,f);color(14,0);
         printf("%c   ",435);
     }
-    if (case63l3==4.5){
+    if (case63l3==4.4 && posJ1!=63 && posJ2!=63 && posJ3!=63 && posJ4!=63){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",428);color(14,0);
+        printf("%c   ",435);
+    }
+    if (case63l3==4.4 && (posJ1==63||posJ2==63||posJ3==63||posJ4==63)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",428,f);color(14,0);
+        printf("%c   ",435);
+    }
+    if (case63l3==4.5 && posJ1!=63 && posJ2!=63 && posJ3!=63 && posJ4!=63){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",277);color(14,0);
         printf("%c   ",435);
     }
-    if (case63l3==4.6){
+    if (case63l3==4.5 && (posJ1==63||posJ2==63||posJ3==63||posJ4==63)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",277,f);color(14,0);
+        printf("%c   ",435);
+    }
+    if (case63l3==4.6 && posJ1!=63 && posJ2!=63 && posJ3!=63 && posJ4!=63){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",225);color(14,0);
         printf("%c   ",435);
     }
-    if (case63l3==5){
+    if (case63l3==4.6 && (posJ1==63||posJ2==63||posJ3==63||posJ4==63)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",225,f);color(14,0);
+        printf("%c   ",435);
+    }
+    if (case63l3==5 && posJ1!=63 && posJ2!=63 && posJ3!=63 && posJ4!=63){
         color(14,0);
         piece5bout2();
+    }
+    if (case63l3==5 && (posJ1==63||posJ2==63||posJ3==63||posJ4==63)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",f);color(14,0);printf("%c   ",435);
     }
     if (case63l3==6){
         color(14,0);
         printf("%c%c%c%c%c%c%c%c%c%c%c",452,452,452,452,452,452,452,452,452,452,452);
     }
-    if (case63l3==7){
+    if (case63l3==7 && posJ1!=63 && posJ2!=63 && posJ3!=63 && posJ4!=63){
         color(14,0);
         printf("    %c  %c%c%c%c",435,448,452,452,452);
     }
-    if (case63l3==8){
+    if (case63l3==7 && (posJ1==63||posJ2==63||posJ3==63||posJ4==63)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",f);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case63l3==7.1 && posJ1!=63 && posJ2!=63 && posJ3!=63 && posJ4!=63){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",189);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case63l3==7.1 && (posJ1==63||posJ2==63||posJ3==63||posJ4==63)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,189);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case63l3==7.2 && posJ1!=63 && posJ2!=63 && posJ3!=63 && posJ4!=63){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",157);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case63l3==7.2 && (posJ1==63||posJ2==63||posJ3==63||posJ4==63)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,157);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case63l3==7.3 && posJ1!=63 && posJ2!=63 && posJ3!=63 && posJ4!=63){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",143);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case63l3==7.3 && (posJ1==63||posJ2==63||posJ3==63||posJ4==63)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,143);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case63l3==7.4 && posJ1!=63 && posJ2!=63 && posJ3!=63 && posJ4!=63){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",37);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case63l3==7.4 && (posJ1==63||posJ2==63||posJ3==63||posJ4==63)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,37);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case63l3==7.5 && posJ1!=63 && posJ2!=63 && posJ3!=63 && posJ4!=63){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",31);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case63l3==7.5 && (posJ1==63||posJ2==63||posJ3==63||posJ4==63)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,31);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case63l3==7.6 && posJ1!=63 && posJ2!=63 && posJ3!=63 && posJ4!=63){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",15);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case63l3==7.6 && (posJ1==63||posJ2==63||posJ3==63||posJ4==63)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,15);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case63l3==8 && posJ1!=63 && posJ2!=63 && posJ3!=63 && posJ4!=63){
         color(14,0);
         printf("%c%c%c%c%c  %c   ",452,452,452,452,473,435);
     }
-    if (case63l3==9){
+    if (case63l3==8 && (posJ1==63||posJ2==63||posJ3==63||posJ4==63)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",f);color(14,0);printf("%c   ",435);
+    }
+    if (case63l3==8.1 && posJ1!=63 && posJ2!=63 && posJ3!=63 && posJ4!=63){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",189);color(14,0);printf("%c   ",435);
+    }
+    if (case63l3==8.1 && (posJ1==63||posJ2==63||posJ3==63||posJ4==63)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",189,f);color(14,0);printf("%c   ",435);
+    }
+    if (case63l3==8.2 && posJ1!=63 && posJ2!=63 && posJ3!=63 && posJ4!=63){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",157);color(14,0);printf("%c   ",435);
+    }
+    if (case63l3==8.2 && (posJ1==63||posJ2==63||posJ3==63||posJ4==63)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",157,f);color(14,0);printf("%c   ",435);
+    }
+    if (case63l3==8.3 && posJ1!=63 && posJ2!=63 && posJ3!=63 && posJ4!=63){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",143);color(14,0);printf("%c   ",435);
+    }
+    if (case63l3==8.3 && (posJ1==63||posJ2==63||posJ3==63||posJ4==63)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",143,f);color(14,0);printf("%c   ",435);
+    }
+    if (case63l3==8.4 && posJ1!=63 && posJ2!=63 && posJ3!=63 && posJ4!=63){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",37);color(14,0);printf("%c   ",435);
+    }
+    if (case63l3==8.4 && (posJ1==63||posJ2==63||posJ3==63||posJ4==63)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",37,f);color(14,0);printf("%c   ",435);
+    }
+    if (case63l3==8.5 && posJ1!=63 && posJ2!=63 && posJ3!=63 && posJ4!=63){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",31);color(14,0);printf("%c   ",435);
+    }
+    if (case63l3==8.5 && (posJ1==63||posJ2==63||posJ3==63||posJ4==63)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",31,f);color(14,0);printf("%c   ",435);
+    }
+    if (case63l3==8.6 && posJ1!=63 && posJ2!=63 && posJ3!=63 && posJ4!=63){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",459);color(14,0);printf("%c   ",435);
+    }
+    if (case63l3==8.6 && (posJ1==63||posJ2==63||posJ3==63||posJ4==63)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",459,f);color(14,0);printf("%c   ",435);
+    }
+    if (case63l3>=9 && case63l3<10){
         color(14,0);
         printf("    %c%c%c%c%c%c%c",474,452,452,452,452,452,452);
     }
-    if (case63l3==10) {
+    if (case63l3>=10 && case63l3<11) {
         color(14, 0);
         printf("%c%c%c%c%c%c%c%c   ",452,452,452,452,452,452,452,447);
     }
+    f= testposition(posJ1,posJ2,posJ3,posJ4,64,p1,p2,p3,p4);
     color(9,0);
-    printf("%c%c%c%c%c%c",452,452,452,452,452,473);color(12,0);printf(" %c",294);color(9,0);
-    printf("%c%c%c%c%c%c",448,452,452,452,452,452);
+    if (posJ1!=64 && posJ2!=64 && posJ3!=64 && posJ4!=64){
+        printf("%c%c%c%c%c%c",452,452,452,452,452,473);color(12,0);printf(" %c",294);color(9,0);
+        printf("%c%c%c%c%c%c",448,452,452,452,452,452);
+    }
+    if (posJ1==64||posJ2==64||posJ3==64||posJ4==64){
+        printf("%c%c%c%c%c%c",452,452,452,452,452,473);color(12,0);printf("%c%c",f,294);color(9,0);
+        printf("%c%c%c%c%c%c",448,452,452,452,452,452);
+    }
     color(14,0);
+    f= testposition(posJ1,posJ2,posJ3,posJ4,65,p1,p2,p3,p4);
     if (case65l3==0){
         printf("           ");
     }
@@ -10693,157 +19319,395 @@ int test(double case01,double case03,double case05,double case10,double case11,d
         color(14,0);
         printf("%c%c%c%c%c%c%c%c%c%c%c",452,452,452,452,452,452,452,452,452,452,452);
     }
-    if (case65l3==2.1){
+    if (case65l3==2.1 && posJ1!=65 && posJ2!=65 && posJ3!=65 && posJ4!=65){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf(" %c",292);color(14,0);
         printf("%c%c%c%c",448,452,452,452);
     }
-    if (case65l3==2.2){
+    if (case65l3==2.1 && (posJ1==65||posJ2==65||posJ3==65||posJ4==65)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",f,292);color(14,0);
+        printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case65l3==2.2 && posJ1!=65 && posJ2!=65 && posJ3!=65 && posJ4!=65){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf(" %c",291);color(14,0);
         printf("%c%c%c%c",448,452,452,452);
     }
-    if (case65l3==2.3){
+    if (case65l3==2.2 && (posJ1==65||posJ2==65||posJ3==65||posJ4==65)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",f,291);color(14,0);
+        printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case65l3==2.3 && posJ1!=65 && posJ2!=65 && posJ3!=65 && posJ4!=65){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf(" %c",285);color(14,0);
         printf("%c%c%c%c",448,452,452,452);
     }
-    if (case65l3==2.4){
+    if (case65l3==2.3 && (posJ1==65||posJ2==65||posJ3==65||posJ4==65)){
         color(14,0);
-        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf(" %c",279);color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",f,285);color(14,0);
         printf("%c%c%c%c",448,452,452,452);
     }
-    if (case65l3==2.5){
+    if (case65l3==2.4 && posJ1!=65 && posJ2!=65 && posJ3!=65 && posJ4!=65){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf(" %c",428);color(14,0);
+        printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case65l3==2.4 && (posJ1==65||posJ2==65||posJ3==65||posJ4==65)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",f,428);color(14,0);
+        printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case65l3==2.5 && posJ1!=65 && posJ2!=65 && posJ3!=65 && posJ4!=65){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf(" %c",277);color(14,0);
         printf("%c%c%c%c",448,452,452,452);
     }
-    if (case65l3==2.6){
+    if (case65l3==2.5 && (posJ1==65||posJ2==65||posJ3==65||posJ4==65)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",f,277);color(14,0);
+        printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case65l3==2.6 && posJ1!=65 && posJ2!=65 && posJ3!=65 && posJ4!=65){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf(" %c",225);color(14,0);
         printf("%c%c%c%c",448,452,452,452);
     }
-    if (case65l3==3.1){
+    if (case65l3==2.6 && (posJ1==65||posJ2==65||posJ3==65||posJ4==65)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",f,225);color(14,0);
+        printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case65l3==3.1 && posJ1!=65 && posJ2!=65 && posJ3!=65 && posJ4!=65){
         color(14,0);
         printf("    %c",435);color(15,0);printf(" %c",292);color(14,0);
         printf("%c%c%c%c",448,452,452,452);
     }
-    if (case65l3==3.2){
+    if (case65l3==3.1 && (posJ1==65||posJ2==65||posJ3==65||posJ4==65)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,292);color(14,0);
+        printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case65l3==3.2 && posJ1!=65 && posJ2!=65 && posJ3!=65 && posJ4!=65){
         color(14,0);
         printf("    %c",435);color(15,0);printf(" %c",291);color(14,0);
         printf("%c%c%c%c",448,452,452,452);
     }
-    if (case65l3==3.3){
+    if (case65l3==3.2 && (posJ1==65||posJ2==65||posJ3==65||posJ4==65)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,291);color(14,0);
+        printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case65l3==3.3 && posJ1!=65 && posJ2!=65 && posJ3!=65 && posJ4!=65){
         color(14,0);
         printf("    %c",435);color(15,0);printf(" %c",285);color(14,0);
         printf("%c%c%c%c",448,452,452,452);
     }
-    if (case65l3==3.4){
+    if (case65l3==3.3 && (posJ1==65||posJ2==65||posJ3==65||posJ4==65)){
         color(14,0);
-        printf("    %c",435);color(15,0);printf(" %c",279);color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,285);color(14,0);
         printf("%c%c%c%c",448,452,452,452);
     }
-    if (case65l3==3.5){
+    if (case65l3==3.4 && posJ1!=65 && posJ2!=65 && posJ3!=65 && posJ4!=65){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",428);color(14,0);
+        printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case65l3==3.4 && (posJ1==65||posJ2==65||posJ3==65||posJ4==65)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,428);color(14,0);
+        printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case65l3==3.5 && posJ1!=65 && posJ2!=65 && posJ3!=65 && posJ4!=65){
         color(14,0);
         printf("    %c",435);color(15,0);printf(" %c",277);color(14,0);
         printf("%c%c%c%c",448,452,452,452);
     }
-    if (case65l3==3.6){
+    if (case65l3==3.5 && (posJ1==65||posJ2==65||posJ3==65||posJ4==65)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,277);color(14,0);
+        printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case65l3==3.6 && posJ1!=65 && posJ2!=65 && posJ3!=65 && posJ4!=65){
         color(14,0);
         printf("    %c",435);color(15,0);printf(" %c",225);color(14,0);
         printf("%c%c%c%c",448,452,452,452);
     }
-    if (case65l3==4.1){
+    if (case65l3==3.6 && (posJ1==65||posJ2==65||posJ3==65||posJ4==65)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,225);color(14,0);
+        printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case65l3==4.1 && posJ1!=65 && posJ2!=65 && posJ3!=65 && posJ4!=65){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",292);color(14,0);
         printf("%c   ",435);
     }
-    if (case65l3==4.2){
+    if (case65l3==4.1 && (posJ1==65||posJ2==65||posJ3==65||posJ4==65)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",292,f);color(14,0);
+        printf("%c   ",435);
+    }
+    if (case65l3==4.2 && posJ1!=65 && posJ2!=65 && posJ3!=65 && posJ4!=65){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",291);color(14,0);
         printf("%c   ",435);
     }
-    if (case65l3==4.3){
+    if (case65l3==4.2 && (posJ1==65||posJ2==65||posJ3==65||posJ4==65)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",291,f);color(14,0);
+        printf("%c   ",435);
+    }
+    if (case65l3==4.3 && posJ1!=65 && posJ2!=65 && posJ3!=65 && posJ4!=65){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",285);color(14,0);
         printf("%c   ",435);
     }
-    if (case65l3==4.4){
+    if (case65l3==4.3 && (posJ1==65||posJ2==65||posJ3==65||posJ4==65)){
         color(14,0);
-        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",279);color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",285,f);color(14,0);
         printf("%c   ",435);
     }
-    if (case65l3==4.5){
+    if (case65l3==4.4 && posJ1!=65 && posJ2!=65 && posJ3!=65 && posJ4!=65){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",428);color(14,0);
+        printf("%c   ",435);
+    }
+    if (case65l3==4.4 && (posJ1==65||posJ2==65||posJ3==65||posJ4==65)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",428,f);color(14,0);
+        printf("%c   ",435);
+    }
+    if (case65l3==4.5 && posJ1!=65 && posJ2!=65 && posJ3!=65 && posJ4!=65){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",277);color(14,0);
         printf("%c   ",435);
     }
-    if (case65l3==4.6){
+    if (case65l3==4.5 && (posJ1==65||posJ2==65||posJ3==65||posJ4==65)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",277,f);color(14,0);
+        printf("%c   ",435);
+    }
+    if (case65l3==4.6 && posJ1!=65 && posJ2!=65 && posJ3!=65 && posJ4!=65){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",225);color(14,0);
         printf("%c   ",435);
     }
-    if (case65l3==5){
+    if (case65l3==4.6 && (posJ1==65||posJ2==65||posJ3==65||posJ4==65)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",225,f);color(14,0);
+        printf("%c   ",435);
+    }
+    if (case65l3==5 && posJ1!=65 && posJ2!=65 && posJ3!=65 && posJ4!=65){
         color(14,0);
         piece5bout2();
+    }
+    if (case65l3==5 && (posJ1==65||posJ2==65||posJ3==65||posJ4==65)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",f);color(14,0);printf("%c   ",435);
     }
     if (case65l3==6){
         color(14,0);
         printf("%c%c%c%c%c%c%c%c%c%c%c",452,452,452,452,452,452,452,452,452,452,452);
     }
-    if (case65l3==7){
+    if (case65l3==7 && posJ1!=65 && posJ2!=65 && posJ3!=65 && posJ4!=65){
         color(14,0);
         printf("    %c  %c%c%c%c",435,448,452,452,452);
     }
-    if (case65l3==8){
+    if (case65l3==7 && (posJ1==65||posJ2==65||posJ3==65||posJ4==65)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",f);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case65l3==7.1 && posJ1!=65 && posJ2!=65 && posJ3!=65 && posJ4!=65){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",189);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case65l3==7.1 && (posJ1==65||posJ2==65||posJ3==65||posJ4==65)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,189);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case65l3==7.2 && posJ1!=65 && posJ2!=65 && posJ3!=65 && posJ4!=65){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",157);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case65l3==7.2 && (posJ1==65||posJ2==65||posJ3==65||posJ4==65)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,157);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case65l3==7.3 && posJ1!=65 && posJ2!=65 && posJ3!=65 && posJ4!=65){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",143);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case65l3==7.3 && (posJ1==65||posJ2==65||posJ3==65||posJ4==65)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,143);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case65l3==7.4 && posJ1!=65 && posJ2!=65 && posJ3!=65 && posJ4!=65){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",37);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case65l3==7.4 && (posJ1==65||posJ2==65||posJ3==65||posJ4==65)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,37);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case65l3==7.5 && posJ1!=65 && posJ2!=65 && posJ3!=65 && posJ4!=65){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",31);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case65l3==7.5 && (posJ1==65||posJ2==65||posJ3==65||posJ4==65)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,31);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case65l3==7.6 && posJ1!=65 && posJ2!=65 && posJ3!=65 && posJ4!=65){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",15);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case65l3==7.6 && (posJ1==65||posJ2==65||posJ3==65||posJ4==65)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,15);color(14,0);printf("%c%c%c%c",448,452,452,452);
+    }
+    if (case65l3==8 && posJ1!=65 && posJ2!=65 && posJ3!=65 && posJ4!=65){
         color(14,0);
         printf("%c%c%c%c%c  %c   ",452,452,452,452,473,435);
     }
-    if (case65l3==9){
+    if (case65l3==8 && (posJ1==65||posJ2==65||posJ3==65||posJ4==65)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",f);color(14,0);printf("%c   ",435);
+    }
+    if (case65l3==8.1 && posJ1!=65 && posJ2!=65 && posJ3!=65 && posJ4!=65){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",189);color(14,0);printf("%c   ",435);
+    }
+    if (case65l3==8.1 && (posJ1==65||posJ2==65||posJ3==65||posJ4==65)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",189,f);color(14,0);printf("%c   ",435);
+    }
+    if (case65l3==8.2 && posJ1!=65 && posJ2!=65 && posJ3!=65 && posJ4!=65){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",157);color(14,0);printf("%c   ",435);
+    }
+    if (case65l3==8.2 && (posJ1==65||posJ2==65||posJ3==65||posJ4==65)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",157,f);color(14,0);printf("%c   ",435);
+    }
+    if (case65l3==8.3 && posJ1!=65 && posJ2!=65 && posJ3!=65 && posJ4!=65){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",143);color(14,0);printf("%c   ",435);
+    }
+    if (case65l3==8.3 && (posJ1==65||posJ2==65||posJ3==65||posJ4==65)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",143,f);color(14,0);printf("%c   ",435);
+    }
+    if (case65l3==8.4 && posJ1!=65 && posJ2!=65 && posJ3!=65 && posJ4!=65){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",37);color(14,0);printf("%c   ",435);
+    }
+    if (case65l3==8.4 && (posJ1==65||posJ2==65||posJ3==65||posJ4==65)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",37,f);color(14,0);printf("%c   ",435);
+    }
+    if (case65l3==8.5 && posJ1!=65 && posJ2!=65 && posJ3!=65 && posJ4!=65){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",31);color(14,0);printf("%c   ",435);
+    }
+    if (case65l3==8.5 && (posJ1==65||posJ2==65||posJ3==65||posJ4==65)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",31,f);color(14,0);printf("%c   ",435);
+    }
+    if (case65l3==8.6 && posJ1!=65 && posJ2!=65 && posJ3!=65 && posJ4!=65){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c ",459);color(14,0);printf("%c   ",435);
+    }
+    if (case65l3==8.6 && (posJ1==65||posJ2==65||posJ3==65||posJ4==65)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",459,f);color(14,0);printf("%c   ",435);
+    }
+    if (case65l3>=9 && case65l3<10){
         color(14,0);
         printf("    %c%c%c%c%c%c%c",474,452,452,452,452,452,452);
     }
-    if (case65l3==10) {
+    if (case65l3>=10 && case65l3<11) {
         color(14, 0);
         printf("%c%c%c%c%c%c%c%c   ",452,452,452,452,452,452,452,447);
     }
+    f= testposition(posJ1,posJ2,posJ3,posJ4,66,p1,p2,p3,p4);
     color(9,0);
-    printf("%c%c%c%c%c%c",452,452,452,452,452,473);
-    printf("%c ",479);
-    printf("%c",435);a();
+    if (posJ1!=66 && posJ2!=66 && posJ3!=66 && posJ4!=66){
+        printf("%c%c%c%c%c%c",452,452,452,452,452,473);
+        printf("%c ",479);
+        printf("%c",435);
+    }
+    if (posJ1==66||posJ2==66||posJ3==66||posJ4==66){
+        printf("%c%c%c%c%c%c",452,452,452,452,452,473);
+        printf("%c%c",479,f);
+        printf("%c",435);
+    }
+    a();
     printf("                                 ");printf("%c%c%c%c%c%c%c%c",448,452,452,452,452,452,452,452);
     color(14,0);
+    f= testposition(posJ1,posJ2,posJ3,posJ4,61,p1,p2,p3,p4);
     if (case61l4==0){
         printf("           ");
     }
-    if (case61l4==1.1){
+    if (case61l4==1.1 && posJ1!=61 && posJ2!=61 && posJ3!=61 && posJ4!=61){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf(" %c",292);color(14,0);
         printf("%c%c%c%c",474,452,452,452);
     }
-    if (case61l4==1.2){
+    if (case61l4==1.1 && (posJ1==61||posJ2==61||posJ3==61||posJ4==61)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c%c",f,292);color(14,0);
+        printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case61l4==1.2 && posJ1!=61 && posJ2!=61 && posJ3!=61 && posJ4!=61){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf(" %c",291);color(14,0);
         printf("%c%c%c%c",474,452,452,452);
     }
-    if (case61l4==1.3){
+    if (case61l4==1.2 && (posJ1==61||posJ2==61||posJ3==61||posJ4==61)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c%c",f,291);color(14,0);
+        printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case61l4==1.3 && posJ1!=61 && posJ2!=61 && posJ3!=61 && posJ4!=61){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf(" %c",285);color(14,0);
         printf("%c%c%c%c",474,452,452,452);
     }
-    if (case61l4==1.4){
+    if (case61l4==1.3 && (posJ1==61||posJ2==61||posJ3==61||posJ4==61)){
         color(14,0);
-        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf(" %c",279);color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c%c",f,285);color(14,0);
         printf("%c%c%c%c",474,452,452,452);
     }
-    if (case61l4==1.5){
+    if (case61l4==1.4 && posJ1!=61 && posJ2!=61 && posJ3!=61 && posJ4!=61){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf(" %c",428);color(14,0);
+        printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case61l4==1.4 && (posJ1==61||posJ2==61||posJ3==61||posJ4==61)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c%c",f,428);color(14,0);
+        printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case61l4==1.5 && posJ1!=61 && posJ2!=61 && posJ3!=61 && posJ4!=61){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf(" %c",277);color(14,0);
         printf("%c%c%c%c",474,452,452,452);
     }
-    if (case61l4==1.6){
+    if (case61l4==1.5 && (posJ1==61||posJ2==61||posJ3==61||posJ4==61)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c%c",f,277);color(14,0);
+        printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case61l4==1.6 && posJ1!=61 && posJ2!=61 && posJ3!=61 && posJ4!=61){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf(" %c",225);color(14,0);
+        printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case61l4==1.6 && (posJ1==61||posJ2==61||posJ3==61||posJ4==61)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c%c",f,225);color(14,0);
         printf("%c%c%c%c",474,452,452,452);
     }
     if (case61l4>2 && case61l4<3){
@@ -10862,60 +19726,199 @@ int test(double case01,double case03,double case05,double case10,double case11,d
         color(14,0);
         printf("    %c  %c   ",435,435);
     }
-    if (case61l4==6){
+    if (case61l4==6 && posJ1!=61 && posJ2!=61 && posJ3!=61 && posJ4!=61){
         color(14,0);
         printf("%c%c%c%c%c%c%c%c%c%c%c",452,452,452,452,452,452,452,452,452,452,452);
     }
-    if (case61l4==7){
+    if (case61l4==6 && (posJ1==61||posJ2==61||posJ3==61||posJ4==61)){
+        color(14,0);
+        printf("%c%c%c%c",452,452,452,452);color(15,0);printf("%c",f);color(14,0);printf("%c%c%c%c%c%c",452,452,452,452,452,452);
+    }
+    if (case61l4>=7 && case61l4<8){
         color(14,0);
         printf("    %c%c%c%c%c%c%c",448,452,452,452,452,452,452);
     }
-    if (case61l4==8){
+    if (case61l4>=8 && case61l4<9){
         color(14,0);
         printf("%c%c%c%c%c%c%c%c   ",452,452,452,452,452,452,452,473);
     }
-    if (case61l4==9){
+    if (case61l4==9 && posJ1!=61 && posJ2!=61 && posJ3!=61 && posJ4!=61){
         color(14,0);
         printf("    %c  %c%c%c%c",435,474,452,452,452);
     }
-    if (case61l4==10) {
+    if (case61l4==9 && (posJ1==61||posJ2==61||posJ3==61||posJ4==61)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",f);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case61l4==9.1 && posJ1!=61 && posJ2!=61 && posJ3!=61 && posJ4!=61){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",189);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case61l4==9.1 && (posJ1==61||posJ2==61||posJ3==61||posJ4==61)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,189);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case61l4==9.2 && posJ1!=61 && posJ2!=61 && posJ3!=61 && posJ4!=61){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",157);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case61l4==9.2 && (posJ1==61||posJ2==61||posJ3==61||posJ4==61)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,157);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case61l4==9.3 && posJ1!=61 && posJ2!=61 && posJ3!=61 && posJ4!=61){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",143);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case61l4==9.3 && (posJ1==61||posJ2==61||posJ3==61||posJ4==61)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,143);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case61l4==9.4 && posJ1!=61 && posJ2!=61 && posJ3!=61 && posJ4!=61){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",37);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case61l4==9.4 && (posJ1==61||posJ2==61||posJ3==61||posJ4==61)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,37);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case61l4==9.5 && posJ1!=61 && posJ2!=61 && posJ3!=61 && posJ4!=61){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",31);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case61l4==9.5 && (posJ1==61||posJ2==61||posJ3==61||posJ4==61)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,31);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case61l4==9.6 && posJ1!=61 && posJ2!=61 && posJ3!=61 && posJ4!=61){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",459);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case61l4==9.6 && (posJ1==61||posJ2==61||posJ3==61||posJ4==61)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,459);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case61l4==10 && posJ1!=61 && posJ2!=61 && posJ3!=61 && posJ4!=61) {
         color(14, 0);
         printf("%c%c%c%c%c  %c   ",452,452,452,452,447,435);
+    }
+    if (case61l4==10 && (posJ1==61||posJ2==61||posJ3==61||posJ4==61)) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c ",f);color(14,0);printf("%c   ",435);
+    }
+    if (case61l4==10.1 && posJ1!=61 && posJ2!=61 && posJ3!=61 && posJ4!=61) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c ",189);color(14,0);printf("%c   ",435);
+    }
+    if (case61l4==10.1 && (posJ1==61||posJ2==61||posJ3==61||posJ4==61)) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c%c",189,f);color(14,0);printf("%c   ",435);
+    }
+    if (case61l4==10.2 && posJ1!=61 && posJ2!=61 && posJ3!=61 && posJ4!=61) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c ",157);color(14,0);printf("%c   ",435);
+    }
+    if (case61l4==10.2 && (posJ1==61||posJ2==61||posJ3==61||posJ4==61)) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c%c",157,f);color(14,0);printf("%c   ",435);
+    }
+    if (case61l4==10.3 && posJ1!=61 && posJ2!=61 && posJ3!=61 && posJ4!=61) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c ",143);color(14,0);printf("%c   ",435);
+    }
+    if (case61l4==10.3 && (posJ1==61||posJ2==61||posJ3==61||posJ4==61)) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c%c",143,f);color(14,0);printf("%c   ",435);
+    }
+    if (case61l4==10.4 && posJ1!=61 && posJ2!=61 && posJ3!=61 && posJ4!=61) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c ",37);color(14,0);printf("%c   ",435);
+    }
+    if (case61l4==10.4 && (posJ1==61||posJ2==61||posJ3==61||posJ4==61)) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c%c",37,f);color(14,0);printf("%c   ",435);
+    }
+    if (case61l4==10.5 && posJ1!=61 && posJ2!=61 && posJ3!=61 && posJ4!=61) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c ",31);color(14,0);printf("%c   ",435);
+    }
+    if (case61l4==10.5 && (posJ1==61||posJ2==61||posJ3==61||posJ4==61)) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c%c",31,f);color(14,0);printf("%c   ",435);
+    }
+    if (case61l4==10.6 && posJ1!=61 && posJ2!=61 && posJ3!=61 && posJ4!=61) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c ",459);color(14,0);printf("%c   ",435);
+    }
+    if (case61l4==10.6 && (posJ1==61||posJ2==61||posJ3==61||posJ4==61)) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c%c",459,f);color(14,0);printf("%c   ",435);
     }
     color(9,0);
     printf("%c%c%c%c%c%c%c%c%c%c%c%c",452,452,452,452,452,452,452,452,452,452,452,452);
     color(14,0);
+    f= testposition(posJ1,posJ2,posJ3,posJ4,63,p1,p2,p3,p4);
     if (case63l4==0){
         printf("           ");
     }
-    if (case63l4==1.1){
+    if (case63l4==1.1 && posJ1!=63 && posJ2!=63 && posJ3!=63 && posJ4!=63){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf(" %c",292);color(14,0);
         printf("%c%c%c%c",474,452,452,452);
     }
-    if (case63l4==1.2){
+    if (case63l4==1.1 && (posJ1==63||posJ2==63||posJ3==63||posJ4==63)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c%c",f,292);color(14,0);
+        printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case63l4==1.2 && posJ1!=63 && posJ2!=63 && posJ3!=63 && posJ4!=63){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf(" %c",291);color(14,0);
         printf("%c%c%c%c",474,452,452,452);
     }
-    if (case63l4==1.3){
+    if (case63l4==1.2 && (posJ1==63||posJ2==63||posJ3==63||posJ4==63)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c%c",f,291);color(14,0);
+        printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case63l4==1.3 && posJ1!=63 && posJ2!=63 && posJ3!=63 && posJ4!=63){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf(" %c",285);color(14,0);
         printf("%c%c%c%c",474,452,452,452);
     }
-    if (case63l4==1.4){
+    if (case63l4==1.3 && (posJ1==63||posJ2==63||posJ3==63||posJ4==63)){
         color(14,0);
-        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf(" %c",279);color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c%c",f,285);color(14,0);
         printf("%c%c%c%c",474,452,452,452);
     }
-    if (case63l4==1.5){
+    if (case63l4==1.4 && posJ1!=63 && posJ2!=63 && posJ3!=63 && posJ4!=63){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf(" %c",428);color(14,0);
+        printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case63l4==1.4 && (posJ1==63||posJ2==63||posJ3==63||posJ4==63)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c%c",f,428);color(14,0);
+        printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case63l4==1.5 && posJ1!=63 && posJ2!=63 && posJ3!=63 && posJ4!=63){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf(" %c",277);color(14,0);
         printf("%c%c%c%c",474,452,452,452);
     }
-    if (case63l4==1.6){
+    if (case63l4==1.5 && (posJ1==63||posJ2==63||posJ3==63||posJ4==63)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c%c",f,277);color(14,0);
+        printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case63l4==1.6 && posJ1!=63 && posJ2!=63 && posJ3!=63 && posJ4!=63){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf(" %c",225);color(14,0);
+        printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case63l4==1.6 && (posJ1==63||posJ2==63||posJ3==63||posJ4==63)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c%c",f,225);color(14,0);
         printf("%c%c%c%c",474,452,452,452);
     }
     if (case63l4>2 && case63l4<3){
@@ -10934,60 +19937,199 @@ int test(double case01,double case03,double case05,double case10,double case11,d
         color(14,0);
         printf("    %c  %c   ",435,435);
     }
-    if (case63l4==6){
+    if (case63l4==6 && posJ1!=63 && posJ2!=63 && posJ3!=63 && posJ4!=63){
         color(14,0);
         printf("%c%c%c%c%c%c%c%c%c%c%c",452,452,452,452,452,452,452,452,452,452,452);
     }
-    if (case63l4==7){
+    if (case63l4==6 && (posJ1==63||posJ2==63||posJ3==63||posJ4==63)){
+        color(14,0);
+        printf("%c%c%c%c",452,452,452,452);color(15,0);printf("%c",f);color(14,0);printf("%c%c%c%c%c%c",452,452,452,452,452,452);
+    }
+    if (case63l4>=7 && case63l4<8){
         color(14,0);
         printf("    %c%c%c%c%c%c%c",448,452,452,452,452,452,452);
     }
-    if (case63l4==8){
+    if (case63l4>=8 && case63l4<9){
         color(14,0);
         printf("%c%c%c%c%c%c%c%c   ",452,452,452,452,452,452,452,473);
     }
-    if (case63l4==9){
+    if (case63l4==9 && posJ1!=63 && posJ2!=63 && posJ3!=63 && posJ4!=63){
         color(14,0);
         printf("    %c  %c%c%c%c",435,474,452,452,452);
     }
-    if (case63l4==10) {
+    if (case63l4==9 && (posJ1==63||posJ2==63||posJ3==63||posJ4==63)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",f);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case63l4==9.1 && posJ1!=63 && posJ2!=63 && posJ3!=63 && posJ4!=63){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",189);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case63l4==9.1 && (posJ1==63||posJ2==63||posJ3==63||posJ4==63)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,189);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case63l4==9.2 && posJ1!=63 && posJ2!=63 && posJ3!=63 && posJ4!=63){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",157);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case63l4==9.2 && (posJ1==63||posJ2==63||posJ3==63||posJ4==63)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,157);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case63l4==9.3 && posJ1!=63 && posJ2!=63 && posJ3!=63 && posJ4!=63){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",143);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case63l4==9.3 && (posJ1==63||posJ2==63||posJ3==63||posJ4==63)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,143);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case63l4==9.4 && posJ1!=63 && posJ2!=63 && posJ3!=63 && posJ4!=63){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",37);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case63l4==9.4 && (posJ1==63||posJ2==63||posJ3==63||posJ4==63)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,37);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case63l4==9.5 && posJ1!=63 && posJ2!=63 && posJ3!=63 && posJ4!=63){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",31);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case63l4==9.5 && (posJ1==63||posJ2==63||posJ3==63||posJ4==63)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,31);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case63l4==9.6 && posJ1!=63 && posJ2!=63 && posJ3!=63 && posJ4!=63){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",459);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case63l4==9.6 && (posJ1==63||posJ2==63||posJ3==63||posJ4==63)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,459);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case63l4==10 && posJ1!=63 && posJ2!=63 && posJ3!=63 && posJ4!=63) {
         color(14, 0);
         printf("%c%c%c%c%c  %c   ",452,452,452,452,447,435);
+    }
+    if (case63l4==10 && (posJ1==63||posJ2==63||posJ3==63||posJ4==63)) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c ",f);color(14,0);printf("%c   ",435);
+    }
+    if (case63l4==10.1 && posJ1!=63 && posJ2!=63 && posJ3!=63 && posJ4!=63) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c ",189);color(14,0);printf("%c   ",435);
+    }
+    if (case63l4==10.1 && (posJ1==63||posJ2==63||posJ3==63||posJ4==63)) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c%c",189,f);color(14,0);printf("%c   ",435);
+    }
+    if (case63l4==10.2 && posJ1!=63 && posJ2!=63 && posJ3!=63 && posJ4!=63) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c ",157);color(14,0);printf("%c   ",435);
+    }
+    if (case63l4==10.2 && (posJ1==63||posJ2==63||posJ3==63||posJ4==63)) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c%c",157,f);color(14,0);printf("%c   ",435);
+    }
+    if (case63l4==10.3 && posJ1!=63 && posJ2!=63 && posJ3!=63 && posJ4!=63) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c ",143);color(14,0);printf("%c   ",435);
+    }
+    if (case63l4==10.3 && (posJ1==63||posJ2==63||posJ3==63||posJ4==63)) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c%c",143,f);color(14,0);printf("%c   ",435);
+    }
+    if (case63l4==10.4 && posJ1!=63 && posJ2!=63 && posJ3!=63 && posJ4!=63) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c ",37);color(14,0);printf("%c   ",435);
+    }
+    if (case63l4==10.4 && (posJ1==63||posJ2==63||posJ3==63||posJ4==63)) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c%c",37,f);color(14,0);printf("%c   ",435);
+    }
+    if (case63l4==10.5 && posJ1!=63 && posJ2!=63 && posJ3!=63 && posJ4!=63) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c ",31);color(14,0);printf("%c   ",435);
+    }
+    if (case63l4==10.5 && (posJ1==63||posJ2==63||posJ3==63||posJ4==63)) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c%c",31,f);color(14,0);printf("%c   ",435);
+    }
+    if (case63l4==10.6 && posJ1!=63 && posJ2!=63 && posJ3!=63 && posJ4!=63) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c ",459);color(14,0);printf("%c   ",435);
+    }
+    if (case63l4==10.6 && (posJ1==63||posJ2==63||posJ3==63||posJ4==63)) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c%c",459,f);color(14,0);printf("%c   ",435);
     }
     color(9,0);
     printf("%c%c%c%c%c%c%c%c%c%c%c%c%c%c",452,452,452,452,452,452,452,452,452,452,452,452,452,452);
     color(14,0);
+    f= testposition(posJ1,posJ2,posJ3,posJ4,65,p1,p2,p3,p4);
     if (case65l4==0){
         printf("           ");
     }
-    if (case65l4==1.1){
+    if (case65l4==1.1 && posJ1!=65 && posJ2!=65 && posJ3!=65 && posJ4!=65){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf(" %c",292);color(14,0);
         printf("%c%c%c%c",474,452,452,452);
     }
-    if (case65l4==1.2){
+    if (case65l4==1.1 && (posJ1==65||posJ2==65||posJ3==65||posJ4==65)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c%c",f,292);color(14,0);
+        printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case65l4==1.2 && posJ1!=65 && posJ2!=65 && posJ3!=65 && posJ4!=65){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf(" %c",291);color(14,0);
         printf("%c%c%c%c",474,452,452,452);
     }
-    if (case65l4==1.3){
+    if (case65l4==1.2 && (posJ1==65||posJ2==65||posJ3==65||posJ4==65)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c%c",f,291);color(14,0);
+        printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case65l4==1.3 && posJ1!=65 && posJ2!=65 && posJ3!=65 && posJ4!=65){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf(" %c",285);color(14,0);
         printf("%c%c%c%c",474,452,452,452);
     }
-    if (case65l4==1.4){
+    if (case65l4==1.3 && (posJ1==65||posJ2==65||posJ3==65||posJ4==65)){
         color(14,0);
-        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf(" %c",279);color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c%c",f,285);color(14,0);
         printf("%c%c%c%c",474,452,452,452);
     }
-    if (case65l4==1.5){
+    if (case65l4==1.4 && posJ1!=65 && posJ2!=65 && posJ3!=65 && posJ4!=65){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf(" %c",428);color(14,0);
+        printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case65l4==1.4 && (posJ1==65||posJ2==65||posJ3==65||posJ4==65)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c%c",f,428);color(14,0);
+        printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case65l4==1.5 && posJ1!=65 && posJ2!=65 && posJ3!=65 && posJ4!=65){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf(" %c",277);color(14,0);
         printf("%c%c%c%c",474,452,452,452);
     }
-    if (case65l4==1.6){
+    if (case65l4==1.5 && (posJ1==65||posJ2==65||posJ3==65||posJ4==65)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c%c",f,277);color(14,0);
+        printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case65l4==1.6 && posJ1!=65 && posJ2!=65 && posJ3!=65 && posJ4!=65){
         color(14,0);
         printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf(" %c",225);color(14,0);
+        printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case65l4==1.6 && (posJ1==65||posJ2==65||posJ3==65||posJ4==65)){
+        color(14,0);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c%c",f,225);color(14,0);
         printf("%c%c%c%c",474,452,452,452);
     }
     if (case65l4>2 && case65l4<3){
@@ -11006,31 +20148,306 @@ int test(double case01,double case03,double case05,double case10,double case11,d
         color(14,0);
         printf("    %c  %c   ",435,435);
     }
-    if (case65l4==6){
+    if (case65l4==6 && posJ1!=65 && posJ2!=65 && posJ3!=65 && posJ4!=65){
         color(14,0);
         printf("%c%c%c%c%c%c%c%c%c%c%c",452,452,452,452,452,452,452,452,452,452,452);
     }
-    if (case65l4==7){
+    if (case65l4==6 && (posJ1==65||posJ2==65||posJ3==65||posJ4==65)){
+        color(14,0);
+        printf("%c%c%c%c",452,452,452,452);color(15,0);printf("%c",f);color(14,0);printf("%c%c%c%c%c%c",452,452,452,452,452,452);
+    }
+    if (case65l4>=7 && case65l4<8){
         color(14,0);
         printf("    %c%c%c%c%c%c%c",448,452,452,452,452,452,452);
     }
-    if (case65l4==8){
+    if (case65l4>=8 && case65l4<9){
         color(14,0);
         printf("%c%c%c%c%c%c%c%c   ",452,452,452,452,452,452,452,473);
     }
-    if (case65l4==9){
+    if (case65l4==9 && posJ1!=65 && posJ2!=65 && posJ3!=65 && posJ4!=65){
         color(14,0);
         printf("    %c  %c%c%c%c",435,474,452,452,452);
     }
-    if (case65l4==10) {
+    if (case65l4==9 && (posJ1==65||posJ2==65||posJ3==65||posJ4==65)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",f);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case65l4==9.1 && posJ1!=65 && posJ2!=65 && posJ3!=65 && posJ4!=65){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",189);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case65l4==9.1 && (posJ1==65||posJ2==65||posJ3==65||posJ4==65)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,189);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case65l4==9.2 && posJ1!=65 && posJ2!=65 && posJ3!=65 && posJ4!=65){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",157);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case65l4==9.2 && (posJ1==65||posJ2==65||posJ3==65||posJ4==65)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,157);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case65l4==9.3 && posJ1!=65 && posJ2!=65 && posJ3!=65 && posJ4!=65){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",143);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case65l4==9.3 && (posJ1==65||posJ2==65||posJ3==65||posJ4==65)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,143);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case65l4==9.4 && posJ1!=65 && posJ2!=65 && posJ3!=65 && posJ4!=65){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",37);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case65l4==9.4 && (posJ1==65||posJ2==65||posJ3==65||posJ4==65)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,37);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case65l4==9.5 && posJ1!=65 && posJ2!=65 && posJ3!=65 && posJ4!=65){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",31);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case65l4==9.5 && (posJ1==65||posJ2==65||posJ3==65||posJ4==65)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,31);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case65l4==9.6 && posJ1!=65 && posJ2!=65 && posJ3!=65 && posJ4!=65){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf(" %c",459);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case65l4==9.6 && (posJ1==65||posJ2==65||posJ3==65||posJ4==65)){
+        color(14,0);
+        printf("    %c",435);color(15,0);printf("%c%c",f,459);color(14,0);printf("%c%c%c%c",474,452,452,452);
+    }
+    if (case65l4==10 && posJ1!=65 && posJ2!=65 && posJ3!=65 && posJ4!=65) {
         color(14, 0);
         printf("%c%c%c%c%c  %c   ",452,452,452,452,447,435);
+    }
+    if (case65l4==10 && (posJ1==65||posJ2==65||posJ3==65||posJ4==65)) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c ",f);color(14,0);printf("%c   ",435);
+    }
+    if (case65l4==10.1 && posJ1!=65 && posJ2!=65 && posJ3!=65 && posJ4!=65) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c ",189);color(14,0);printf("%c   ",435);
+    }
+    if (case65l4==10.1 && (posJ1==65||posJ2==65||posJ3==65||posJ4==65)) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c%c",189,f);color(14,0);printf("%c   ",435);
+    }
+    if (case65l4==10.2 && posJ1!=65 && posJ2!=65 && posJ3!=65 && posJ4!=65) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c ",157);color(14,0);printf("%c   ",435);
+    }
+    if (case65l4==10.2 && (posJ1==65||posJ2==65||posJ3==65||posJ4==65)) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c%c",157,f);color(14,0);printf("%c   ",435);
+    }
+    if (case65l4==10.3 && posJ1!=65 && posJ2!=65 && posJ3!=65 && posJ4!=65) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c ",143);color(14,0);printf("%c   ",435);
+    }
+    if (case65l4==10.3 && (posJ1==65||posJ2==65||posJ3==65||posJ4==65)) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c%c",143,f);color(14,0);printf("%c   ",435);
+    }
+    if (case65l4==10.4 && posJ1!=65 && posJ2!=65 && posJ3!=65 && posJ4!=65) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c ",37);color(14,0);printf("%c   ",435);
+    }
+    if (case65l4==10.4 && (posJ1==65||posJ2==65||posJ3==65||posJ4==65)) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c%c",37,f);color(14,0);printf("%c   ",435);
+    }
+    if (case65l4==10.5 && posJ1!=65 && posJ2!=65 && posJ3!=65 && posJ4!=65) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c ",31);color(14,0);printf("%c   ",435);
+    }
+    if (case65l4==10.5 && (posJ1==65||posJ2==65||posJ3==65||posJ4==65)) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c%c",31,f);color(14,0);printf("%c   ",435);
+    }
+    if (case65l4==10.6 && posJ1!=65 && posJ2!=65 && posJ3!=65 && posJ4!=65) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c ",459);color(14,0);printf("%c   ",435);
+    }
+    if (case65l4==10.6 && (posJ1==65||posJ2==65||posJ3==65||posJ4==65)) {
+        color(14, 0);
+        printf("%c%c%c%c%c",452,452,452,452,447);color(15,0);printf("%c%c",459,f);color(14,0);printf("%c   ",435);
     }
     color(9,0);
     printf("%c%c%c%c%c%c%c%c%c",452,452,452,452,452,452,452,452,473);
 }
 
-int printpiece34(double b){
+
+
+
+
+int pospieceenplus(int posJ1,int posJ2,int posJ3,int posJ4,int pion1,int pion2,int pion3,int pion4){
+    int a=0;
+    if (posJ1==17 || posJ1==37 || posJ1==57 || posJ1==9 || posJ1==29 || posJ1==49 || posJ1==71 || posJ1==73 || posJ1==75 || posJ1==-9 || posJ1==-7 || posJ1==-5){
+        a=pion1;
+    }
+    if (posJ2==17 || posJ2==37 || posJ2==57 || posJ2==9 || posJ2==29 || posJ2==49 || posJ2==71 || posJ2==73 || posJ2==75 || posJ2==-9 || posJ2==-7 || posJ2==-5){
+        a=pion2;
+    }
+    if (posJ3==17 || posJ3==37 || posJ3==57 || posJ3==9 || posJ3==29 || posJ3==49 || posJ3==71 || posJ3==73 || posJ3==75 || posJ3==-9 || posJ3==-7 || posJ3==-5){
+        a=pion3;
+    }
+    if (posJ4==17 || posJ4==37 || posJ4==57 || posJ4==9 || posJ4==29 || posJ4==49 || posJ4==71 || posJ4==73 || posJ4==75 || posJ4==-9 || posJ4==-7 || posJ4==-5){
+        a=pion4;
+    }
+    return a;
+}
+
+
+double demanderinclinaison(double b){            // demander dans quel sens le joueur va incliner la carte poussante
+    double a=0;
+    int c=0;
+    if (b==5 || b==6){
+        printf("Voulez vous incliner la pi%cce de 90%c ou 180%c\n",138,423,423);
+        scanf("%d",&c);
+        if (c==90 && b==5){
+            a=6;
+        }
+        else if (c==90 && b==6){
+            a=5;
+        }
+        else if (c==180){
+            a=b;
+        }
+    }
+    else {
+        printf("De quelle inclinaison voulez vous tournez la carte poussante : 90%c - 180%c - 270%c - 360%c ?\n",423,423,423,423);
+        scanf("%d",&c);
+        if (b>1 && b<2){
+            if (c==90){
+                a=b+3;
+            }
+            if (c==180){
+                a=b+1;
+            }
+            if (c==270){
+                a=b+2;
+            }
+            if (c==360){
+                a=b;
+            }
+        }
+        if (b>2 && b<3){
+            if (c==90){
+                a=b+1;
+            }
+            if (c==180){
+                a=b-1;
+            }
+            if (c==270){
+                a=b+2;
+            }
+            if (c==360){
+                a=b;
+            }
+        }
+        if (b>3 && b<4){
+            if (c==90){
+                a=b-2;
+            }
+            if (c==180){
+                a=b+1;
+            }
+            if (c==270){
+                a=b-1;
+            }
+            if (c==360) {
+                a=b;
+            }
+        }
+        if (b>4 && b<5){
+            if (c==90){
+                a=b-2;
+            }
+            if (c==180){
+                a=b-1;
+            }
+            if (c==270){
+                a=b-3;
+            }
+            if (c==360) {
+                a=b;
+            }
+        }
+        if (b>=7 && b<8){
+            if (c==90){
+                a=b+2;
+            }
+            if (c==180){
+                a=b+3;
+            }
+            if (c==270){
+                a=b+1;
+            }
+            if (c==360) {
+                a=b;
+            }
+        }
+        if (b>=8 && b<9){
+            if (c==90){
+                a=b-1;
+            }
+            if (c==180){
+                a=b+1;
+            }
+            if (c==270){
+                a=b+2;
+            }
+            if (c==360) {
+                a=b;
+            }
+        }
+        if (b>=9 && b<10){
+            if (c==90){
+                a=b+1;
+            }
+            if (c==180){
+                a=b-1;
+            }
+            if (c==270){
+                a=b-2;
+            }
+            if (c==360) {
+                a=b;
+            }
+        }
+        if (b>=10 && b<11){
+            if (c==90){
+                a=b-2;
+            }
+            if (c==180){
+                a=b-3;
+            }
+            if (c==270){
+                a=b-1;
+            }
+            if (c==360) {
+                a=b;
+            }
+        }
+    }
+    return a;
+}
+
+
+
+
+
+
+
+
+int printpiece34(double b,int posJ1,int posJ2,int posJ3,int posJ4,int p1,int p2,int p3,int p4){
+    a();a();
+    int l=0;
+    l= pospieceenplus(posJ1,posJ2,posJ3,posJ4,p1,p2,p3,p4);
     printf("                                     La pi%cce en trop est : ",138);
     color(12,0);
     if (b==1){
@@ -11040,37 +20457,37 @@ int printpiece34(double b){
     }
     if (b==1.1){
         printf("      %c%c%c%c%c%c%c%c%c%c%c",452,452,452,452,452,452,452,452,452,452,452);a();
-        printf("                                                                  %c%c%c%c",452,452,452,447);color(15,0);printf(" %c",292);color(12,0);
+        printf("                                                                  %c%c%c%c",452,452,452,447);color(15,0);printf("%c%c",l,292);color(12,0);
         printf("%c%c%c%c%c",474,452,452,452,452);a();
         printf("                                                                     %c  %c",435,435);a();a();a();a();
     }
     if (b==1.2){
         printf("      %c%c%c%c%c%c%c%c%c%c%c",452,452,452,452,452,452,452,452,452,452,452);a();
-        printf("                                                                  %c%c%c%c",452,452,452,447);color(15,0);printf(" %c",291);color(12,0);
+        printf("                                                                  %c%c%c%c",452,452,452,447);color(15,0);printf("%c%c",l,291);color(12,0);
         printf("%c%c%c%c%c",474,452,452,452,452);a();
         printf("                                                                     %c  %c",435,435);a();a();a();a();
     }
     if (b==1.3){
         printf("      %c%c%c%c%c%c%c%c%c%c%c",452,452,452,452,452,452,452,452,452,452,452);a();
-        printf("                                                                  %c%c%c%c",452,452,452,447);color(15,0);printf(" %c",285);color(12,0);
+        printf("                                                                  %c%c%c%c",452,452,452,447);color(15,0);printf("%c%c",l,285);color(12,0);
         printf("%c%c%c%c%c",474,452,452,452,452);a();
         printf("                                                                     %c  %c",435,435);a();a();a();a();
     }
     if (b==1.4){
         printf("      %c%c%c%c%c%c%c%c%c%c%c",452,452,452,452,452,452,452,452,452,452,452);a();
-        printf("                                                                  %c%c%c%c",452,452,452,447);color(15,0);printf(" %c",279);color(12,0);
+        printf("                                                                  %c%c%c%c",452,452,452,447);color(15,0);printf("%c%c",l,428);color(12,0);
         printf("%c%c%c%c%c",474,452,452,452,452);a();
         printf("                                                                     %c  %c",435,435);a();a();a();a();
     }
     if (b==1.5){
         printf("      %c%c%c%c%c%c%c%c%c%c%c",452,452,452,452,452,452,452,452,452,452,452);a();
-        printf("                                                                  %c%c%c%c",452,452,452,447);color(15,0);printf(" %c",277);color(12,0);
+        printf("                                                                  %c%c%c%c",452,452,452,447);color(15,0);printf("%c%c",l,277);color(12,0);
         printf("%c%c%c%c%c",474,452,452,452,452);a();
         printf("                                                                     %c  %c",435,435);a();a();a();a();
     }
     if (b==1.6){
         printf("      %c%c%c%c%c%c%c%c%c%c%c",452,452,452,452,452,452,452,452,452,452,452);a();
-        printf("                                                                  %c%c%c%c",452,452,452,447);color(15,0);printf(" %c",225);color(12,0);
+        printf("                                                                  %c%c%c%c",452,452,452,447);color(15,0);printf("%c%c",l,225);color(12,0);
         printf("%c%c%c%c%c",474,452,452,452,452);a();
         printf("                                                                     %c  %c",435,435);a();a();a();a();
     }
@@ -11081,37 +20498,37 @@ int printpiece34(double b){
     }
     if (b==2.1){
         printf("     %c  %c  ",435,435);a();
-        printf("                                                             %c%c%c%c%c",452,452,452,452,473);color(15,0);printf(" %c",292);color(12,0);
+        printf("                                                             %c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",l,292);color(12,0);
         printf("%c%c%c%c",448,452,452,452);a();
         printf("                                                             %c%c%c%c%c%c%c%c%c%c%c",452,452,452,452,452,452,452,452,452,452,452);a();a();a();
     }
     if (b==2.2){
         printf("     %c  %c  ",435,435);a();
-        printf("                                                             %c%c%c%c%c",452,452,452,452,473);color(15,0);printf(" %c",291);color(12,0);
+        printf("                                                             %c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",l,291);color(12,0);
         printf("%c%c%c%c",448,452,452,452);a();
         printf("                                                             %c%c%c%c%c%c%c%c%c%c%c",452,452,452,452,452,452,452,452,452,452,452);a();a();a();
     }
     if (b==2.3){
         printf("     %c  %c  ",435,435);a();
-        printf("                                                             %c%c%c%c%c",452,452,452,452,473);color(15,0);printf(" %c",285);color(12,0);
+        printf("                                                             %c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",l,285);color(12,0);
         printf("%c%c%c%c",448,452,452,452);a();
         printf("                                                             %c%c%c%c%c%c%c%c%c%c%c",452,452,452,452,452,452,452,452,452,452,452);a();a();a();
     }
     if (b==2.4){
         printf("     %c  %c  ",435,435);a();
-        printf("                                                             %c%c%c%c%c",452,452,452,452,473);color(15,0);printf(" %c",279);color(12,0);
+        printf("                                                             %c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",l,428);color(12,0);
         printf("%c%c%c%c",448,452,452,452);a();
         printf("                                                             %c%c%c%c%c%c%c%c%c%c%c",452,452,452,452,452,452,452,452,452,452,452);a();a();a();
     }
     if (b==2.5){
         printf("     %c  %c  ",435,435);a();
-        printf("                                                             %c%c%c%c%c",452,452,452,452,473);color(15,0);printf(" %c",277);color(12,0);
+        printf("                                                             %c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",l,277);color(12,0);
         printf("%c%c%c%c",448,452,452,452);a();
         printf("                                                             %c%c%c%c%c%c%c%c%c%c%c",452,452,452,452,452,452,452,452,452,452,452);a();a();a();
     }
     if (b==2.6){
         printf("     %c  %c  ",435,435);a();
-        printf("                                                             %c%c%c%c%c",452,452,452,452,473);color(15,0);printf(" %c",225);color(12,0);
+        printf("                                                             %c%c%c%c%c",452,452,452,452,473);color(15,0);printf("%c%c",l,225);color(12,0);
         printf("%c%c%c%c",448,452,452,452);a();
         printf("                                                             %c%c%c%c%c%c%c%c%c%c%c",452,452,452,452,452,452,452,452,452,452,452);a();a();a();
     }
@@ -11122,37 +20539,37 @@ int printpiece34(double b){
     }
     if (b==3.1){
         printf("    %c  %c",435,435);a();
-        printf("                                                                %c",435);color(15,0);printf(" %c",292);color(12,0);
+        printf("                                                                %c",435);color(15,0);printf("%c%c",l,292);color(12,0);
         printf("%c%c%c%c",448,452,452,452);a();
         printf("                                                                %c  %c%c%c%c",435,474,452,452,452);a();a();a();
     }
     if (b==3.2){
         printf("    %c  %c",435,435);a();
-        printf("                                                                %c",435);color(15,0);printf(" %c",291);color(12,0);
+        printf("                                                                %c",435);color(15,0);printf("%c%c",l,291);color(12,0);
         printf("%c%c%c%c",448,452,452,452);a();
         printf("                                                                %c  %c%c%c%c",435,474,452,452,452);a();a();a();
     }
     if (b==3.3){
         printf("    %c  %c",435,435);a();
-        printf("                                                                %c",435);color(15,0);printf(" %c",285);color(12,0);
+        printf("                                                                %c",435);color(15,0);printf("%c%c",l,285);color(12,0);
         printf("%c%c%c%c",448,452,452,452);a();
         printf("                                                                %c  %c%c%c%c",435,474,452,452,452);a();a();a();
     }
     if (b==3.4){
         printf("    %c  %c",435,435);a();
-        printf("                                                                %c",435);color(15,0);printf(" %c",279);color(12,0);
+        printf("                                                                %c",435);color(15,0);printf("%c%c",l,428);color(12,0);
         printf("%c%c%c%c",448,452,452,452);a();
         printf("                                                                %c  %c%c%c%c",435,474,452,452,452);a();a();a();
     }
     if (b==3.5){
         printf("    %c  %c",435,435);a();
-        printf("                                                                %c",435);color(15,0);printf(" %c",277);color(12,0);
+        printf("                                                                %c",435);color(15,0);printf("%c%c",l,277);color(12,0);
         printf("%c%c%c%c",448,452,452,452);a();
         printf("                                                                %c  %c%c%c%c",435,474,452,452,452);a();a();a();
     }
     if (b==3.6){
         printf("    %c  %c",435,435);a();
-        printf("                                                                %c",435);color(15,0);printf(" %c",225);color(12,0);
+        printf("                                                                %c",435);color(15,0);printf("%c%c",l,225);color(12,0);
         printf("%c%c%c%c",448,452,452,452);a();
         printf("                                                                %c  %c%c%c%c",435,474,452,452,452);a();a();a();
     }
@@ -11163,250 +20580,344 @@ int printpiece34(double b){
     }
     if (b==4.1){
         printf("    %c  %c",435,435);a();
-        printf("                                                             %c%c%c%c",452,452,452,473);color(15,0);printf("%c ",292);color(12,0);
+        printf("                                                             %c%c%c%c",452,452,452,473);color(15,0);printf("%c%c",292,l);color(12,0);
         printf("%c",435);a();
         printf("                                                             %c%c%c%c  %c",452,452,452,447,435);a();a();a();
     }
     if (b==4.2){
         printf("    %c  %c",435,435);a();
-        printf("                                                             %c%c%c%c",452,452,452,473);color(15,0);printf("%c ",291);color(12,0);
+        printf("                                                             %c%c%c%c",452,452,452,473);color(15,0);printf("%c%c",291,l);color(12,0);
         printf("%c",435);a();
         printf("                                                             %c%c%c%c  %c",452,452,452,447,435);a();a();a();
     }
     if (b==4.3){
         printf("    %c  %c",435,435);a();
-        printf("                                                             %c%c%c%c",452,452,452,473);color(15,0);printf("%c ",285);color(12,0);
+        printf("                                                             %c%c%c%c",452,452,452,473);color(15,0);printf("%c%c",285,l);color(12,0);
         printf("%c",435);a();
         printf("                                                             %c%c%c%c  %c",452,452,452,447,435);a();a();a();
     }
     if (b==4.4){
         printf("    %c  %c",435,435);a();
-        printf("                                                             %c%c%c%c",452,452,452,473);color(15,0);printf("%c ",279);color(12,0);
+        printf("                                                             %c%c%c%c",452,452,452,473);color(15,0);printf("%c%c",428,l);color(12,0);
         printf("%c",435);a();
         printf("                                                             %c%c%c%c  %c",452,452,452,447,435);a();a();a();
     }
     if (b==4.5){
         printf("    %c  %c",435,435);a();
-        printf("                                                             %c%c%c%c",452,452,452,473);color(15,0);printf("%c ",277);color(12,0);
+        printf("                                                             %c%c%c%c",452,452,452,473);color(15,0);printf("%c%c",277,l);color(12,0);
         printf("%c",435);a();
         printf("                                                             %c%c%c%c  %c",452,452,452,447,435);a();a();a();
     }
     if (b==4.6){
         printf("    %c  %c",435,435);a();
-        printf("                                                             %c%c%c%c",452,452,452,473);color(15,0);printf("%c ",225);color(12,0);
+        printf("                                                             %c%c%c%c",452,452,452,473);color(15,0);printf("%c%c",225,l);color(12,0);
         printf("%c",435);a();
         printf("                                                             %c%c%c%c  %c",452,452,452,447,435);a();a();a();
     }
     if (b==5){
-        printf("    %c  %c",435,435);a();
+        printf("    %c",435);color(15,0);printf("%c ",l);color(12,0);printf("%c",435);a();
         printf("                                                                %c  %c",435,435);a();
         printf("                                                                %c  %c",435,435);a();a();a();
     }
-    if (b==6){
+    if (b==6 && l==0){
         printf("%c%c%c%c%c%c%c%c%c%c%c",452,452,452,452,452,452,452,452,452,452,452);a();
+        printf("                                                            %c%c%c%c%c%c%c%c%c%c%c",452,452,452,452,452,452,452,452,452,452,452);a();a();a();
+    }
+    if (b==6 && l!=0){
+        printf("%c%c%c%c%c",452,452,452,452,452);color(15,0),printf("%c",l);color(12,0);printf("%c%c%c%c%c",452,452,452,452,452);a();
         printf("                                                            %c%c%c%c%c%c%c%c%c%c%c",452,452,452,452,452,452,452,452,452,452,452);a();a();a();
     }
     if (b==7){
         printf("    %c  %c",435,435);a();
-        printf("                                                                %c  %c%c%c%c",435,448,452,452,452);a();
+        printf("                                                                %c",435);color(15,0);printf("%c ",l);color(12,0);printf("%c%c%c%c",448,452,452,452);a();
         printf("                                                                %c%c%c%c%c%c%c",448,452,452,452,452,452,452);a();a();a();
     }
     if (b==7.1){
         printf("    %c  %c",435,435);a();
-        printf("                                                                %c",435);color(15,0);printf(" %c",189);color(12,0);
+        printf("                                                                %c",435);color(15,0);printf("%c%c",l,189);color(12,0);
         printf("%c%c%c%c",448,452,452,452);a();
         printf("                                                                %c%c%c%c%c%c%c",448,452,452,452,452,452,452);a();a();a();
     }
     if (b==7.2){
         printf("    %c  %c",435,435);a();
-        printf("                                                                %c",435);color(15,0);printf(" %c",157);color(12,0);
+        printf("                                                                %c",435);color(15,0);printf("%c%c",l,157);color(12,0);
         printf("%c%c%c%c",448,452,452,452);a();
         printf("                                                                %c%c%c%c%c%c%c",448,452,452,452,452,452,452);a();a();a();
     }
     if (b==7.3){
         printf("    %c  %c",435,435);a();
-        printf("                                                                %c",435);color(15,0);printf(" %c",143);color(12,0);
+        printf("                                                                %c",435);color(15,0);printf("%c%c",l,143);color(12,0);
         printf("%c%c%c%c",448,452,452,452);a();
         printf("                                                                %c%c%c%c%c%c%c",448,452,452,452,452,452,452);a();a();a();
     }
     if (b==7.4){
         printf("    %c  %c",435,435);a();
-        printf("                                                                %c",435);color(15,0);printf(" %c",37);color(12,0);
+        printf("                                                                %c",435);color(15,0);printf("%c%c",l,37);color(12,0);
         printf("%c%c%c%c",448,452,452,452);a();
         printf("                                                                %c%c%c%c%c%c%c",448,452,452,452,452,452,452);a();a();a();
     }
     if (b==7.5){
         printf("    %c  %c",435,435);a();
-        printf("                                                                %c",435);color(15,0);printf(" %c",31);color(12,0);
+        printf("                                                                %c",435);color(15,0);printf("%c%c",l,31);color(12,0);
         printf("%c%c%c%c",448,452,452,452);a();
         printf("                                                                %c%c%c%c%c%c%c",448,452,452,452,452,452,452);a();a();a();
     }
     if (b==7.6){
         printf("    %c  %c",435,435);a();
-        printf("                                                                %c",435);color(15,0);printf(" %c",15);color(12,0);
+        printf("                                                                %c",435);color(15,0);printf("%c%c",l,459);color(12,0);
         printf("%c%c%c%c",448,452,452,452);a();
         printf("                                                                %c%c%c%c%c%c%c",448,452,452,452,452,452,452);a();a();a();
     }
     if (b==8){
         printf("      %c  %c",435,435);a();
-        printf("                                                               %c%c%c%c  %c",452,452,452,473,435);a();
+        printf("                                                               %c%c%c%c",452,452,452,473);color(15,0);printf(" %c",l);color(12,0);printf("%c",435);a();
         printf("                                                               %c%c%c%c%c%c%c",452,452,452,452,452,452,473);a();a();a();
     }
     if (b==8.1){
         printf("      %c  %c",435,435);a();
-        printf("                                                               %c%c%c%c",452,452,452,473);color(15,0);printf("%c ",189);color(12,0);
+        printf("                                                               %c%c%c%c",452,452,452,473);color(15,0);printf("%c%c",189,l);color(12,0);
         printf("%c",435);a();
         printf("                                                               %c%c%c%c%c%c%c",452,452,452,452,452,452,473);a();a();a();
     }
     if (b==8.2){
         printf("      %c  %c",435,435);a();
-        printf("                                                               %c%c%c%c",452,452,452,473);color(15,0);printf("%c ",157);color(12,0);
+        printf("                                                               %c%c%c%c",452,452,452,473);color(15,0);printf("%c%c",157,l);color(12,0);
         printf("%c",435);a();
         printf("                                                               %c%c%c%c%c%c%c",452,452,452,452,452,452,473);a();a();a();
     }
     if (b==8.3){
         printf("      %c  %c",435,435);a();
-        printf("                                                               %c%c%c%c",452,452,452,473);color(15,0);printf("%c ",143);color(12,0);
+        printf("                                                               %c%c%c%c",452,452,452,473);color(15,0);printf("%c%c",143,l);color(12,0);
         printf("%c",435);a();
         printf("                                                               %c%c%c%c%c%c%c",452,452,452,452,452,452,473);a();a();a();
     }
     if (b==8.4){
         printf("      %c  %c",435,435);a();
-        printf("                                                               %c%c%c%c",452,452,452,473);color(15,0);printf("%c ",37);color(12,0);
+        printf("                                                               %c%c%c%c",452,452,452,473);color(15,0);printf("%c%c",37,l);color(12,0);
         printf("%c",435);a();
         printf("                                                               %c%c%c%c%c%c%c",452,452,452,452,452,452,473);a();a();a();
     }
     if (b==8.5){
         printf("      %c  %c",435,435);a();
-        printf("                                                               %c%c%c%c",452,452,452,473);color(15,0);printf("%c ",31);color(12,0);
+        printf("                                                               %c%c%c%c",452,452,452,473);color(15,0);printf("%c%c",31,l);color(12,0);
         printf("%c",435);a();
         printf("                                                               %c%c%c%c%c%c%c",452,452,452,452,452,452,473);a();a();a();
     }
     if (b==8.6){
         printf("      %c  %c",435,435);a();
-        printf("                                                               %c%c%c%c",452,452,452,473);color(15,0);printf("%c ",15);color(12,0);
+        printf("                                                               %c%c%c%c",452,452,452,473);color(15,0);printf("%c%c",459,l);color(12,0);
         printf("%c",435);a();
         printf("                                                               %c%c%c%c%c%c%c",452,452,452,452,452,452,473);a();a();a();
     }
     if (b==9){
         printf("    %c%c%c%c%c%c%c%c%c%c%c",474,452,452,452,452,452,452,452,452,452,452);a();
-        printf("                                                                %c  %c%c%c%c%c%c%c%c%c",435,474,452,452,452,452,452,452,452,452);a();
+        printf("                                                                %c",435);color(15,0);printf("%c ",l);color(12,0);printf("%c%c%c%c%c%c%c%c",474,452,452,452,452,452,452,452);a();
         printf("                                                                %c  %c",435,435);a();a();a();
     }
     if (b==9.1){
         printf("    %c%c%c%c%c%c%c%c%c%c%c",474,452,452,452,452,452,452,452,452,452,452);a();
-        printf("                                                                %c",435);color(15,0);printf("%c ",189);color(12,0);
+        printf("                                                                %c",435);color(15,0);printf("%c%c",189,l);color(12,0);
         printf("%c%c%c%c%c%c%c%c%c",474,452,452,452,452,452,452,452,452);a();
         printf("                                                                %c  %c",435,435);a();a();a();
     }
     if (b==9.2){
         printf("    %c%c%c%c%c%c%c%c%c%c%c",474,452,452,452,452,452,452,452,452,452,452);a();
-        printf("                                                                %c",435);color(15,0);printf("%c ",157);color(12,0);
+        printf("                                                                %c",435);color(15,0);printf("%c%c",157,l);color(12,0);
         printf("%c%c%c%c%c%c%c%c%c",474,452,452,452,452,452,452,452,452);a();
         printf("                                                                %c  %c",435,435);a();a();a();
     }
     if (b==9.3){
         printf("    %c%c%c%c%c%c%c%c%c%c%c",474,452,452,452,452,452,452,452,452,452,452);a();
-        printf("                                                                %c",435);color(15,0);printf("%c ",143);color(12,0);
+        printf("                                                                %c",435);color(15,0);printf("%c%c",143,l);color(12,0);
         printf("%c%c%c%c%c%c%c%c%c",474,452,452,452,452,452,452,452,452);a();
         printf("                                                                %c  %c",435,435);a();a();a();
     }
     if (b==9.4){
         printf("    %c%c%c%c%c%c%c%c%c%c%c",474,452,452,452,452,452,452,452,452,452,452);a();
-        printf("                                                                %c",435);color(15,0);printf("%c ",37);color(12,0);
+        printf("                                                                %c",435);color(15,0);printf("%c%c",37,l);color(12,0);
         printf("%c%c%c%c%c%c%c%c%c",474,452,452,452,452,452,452,452,452);a();
         printf("                                                                %c  %c",435,435);a();a();a();
     }
     if (b==9.5){
         printf("    %c%c%c%c%c%c%c%c%c%c%c",474,452,452,452,452,452,452,452,452,452,452);a();
-        printf("                                                                %c",435);color(15,0);printf("%c ",31);color(12,0);
+        printf("                                                                %c",435);color(15,0);printf("%c%c",31,l);color(12,0);
         printf("%c%c%c%c%c%c%c%c%c",474,452,452,452,452,452,452,452,452);a();
         printf("                                                                %c  %c",435,435);a();a();a();
     }
     if (b==9.6){
         printf("    %c%c%c%c%c%c%c%c%c%c%c",474,452,452,452,452,452,452,452,452,452,452);a();
-        printf("                                                                %c",435);color(15,0);printf("%c ",15);color(12,0);
+        printf("                                                                %c",435);color(15,0);printf("%c%c",459,l);color(12,0);
         printf("%c%c%c%c%c%c%c%c%c",474,452,452,452,452,452,452,452,452);a();
         printf("                                                                %c  %c",435,435);a();a();a();
     }
     if (b==10){
         printf("    %c%c%c%c%c%c%c%c%c%c%c",452,452,452,452,452,452,452,452,452,452,447);a();
-        printf("                                                                %c%c%c%c%c%c%c%c  %c",452,452,452,452,452,452,452,447,435);a();
+        printf("                                                                %c%c%c%c%c%c%c%c",452,452,452,452,452,452,452,447);color(15,0);printf("%c ",l);color(12,0);printf("%c",435);a();
         printf("                                                                       %c  %c",435,435);a();a();a();
     }
     if (b==10.1){
         printf("    %c%c%c%c%c%c%c%c%c%c%c",452,452,452,452,452,452,452,452,452,452,447);a();
-        printf("                                                                %c%c%c%c%c%c%c%c",452,452,452,452,452,452,452,447);color(15,0);printf("%c ",189);color(12,0);
+        printf("                                                                %c%c%c%c%c%c%c%c",452,452,452,452,452,452,452,447);color(15,0);printf("%c%c",189,l);color(12,0);
         printf("%c",435);a();
         printf("                                                                       %c  %c",435,435);a();a();a();
     }
     if (b==10.2){
         printf("    %c%c%c%c%c%c%c%c%c%c%c",452,452,452,452,452,452,452,452,452,452,447);a();
-        printf("                                                                %c%c%c%c%c%c%c%c",452,452,452,452,452,452,452,447);color(15,0);printf("%c ",157);color(12,0);
+        printf("                                                                %c%c%c%c%c%c%c%c",452,452,452,452,452,452,452,447);color(15,0);printf("%c%c",157,l);color(12,0);
         printf("%c",435);a();
         printf("                                                                       %c  %c",435,435);a();a();a();
     }
     if (b==10.3){
         printf("    %c%c%c%c%c%c%c%c%c%c%c",452,452,452,452,452,452,452,452,452,452,447);a();
-        printf("                                                                %c%c%c%c%c%c%c%c",452,452,452,452,452,452,452,447);color(15,0);printf("%c ",143);color(12,0);
+        printf("                                                                %c%c%c%c%c%c%c%c",452,452,452,452,452,452,452,447);color(15,0);printf("%c%c",143,l);color(12,0);
         printf("%c",435);a();
         printf("                                                                       %c  %c",435,435);a();a();a();
     }
     if (b==10.4){
         printf("    %c%c%c%c%c%c%c%c%c%c%c",452,452,452,452,452,452,452,452,452,452,447);a();
-        printf("                                                                %c%c%c%c%c%c%c%c",452,452,452,452,452,452,452,447);color(15,0);printf("%c ",37);color(12,0);
+        printf("                                                                %c%c%c%c%c%c%c%c",452,452,452,452,452,452,452,447);color(15,0);printf("%c%c",37,l);color(12,0);
         printf("%c",435);a();
         printf("                                                                       %c  %c",435,435);a();a();a();
     }
     if (b==10.5){
         printf("    %c%c%c%c%c%c%c%c%c%c%c",452,452,452,452,452,452,452,452,452,452,447);a();
-        printf("                                                                %c%c%c%c%c%c%c%c",452,452,452,452,452,452,452,447);color(15,0);printf("%c ",31);color(12,0);
+        printf("                                                                %c%c%c%c%c%c%c%c",452,452,452,452,452,452,452,447);color(15,0);printf("%c%c",31,l);color(12,0);
         printf("%c",435);a();
         printf("                                                                       %c  %c",435,435);a();a();a();
     }
     if (b==10.6){
         printf("    %c%c%c%c%c%c%c%c%c%c%c",452,452,452,452,452,452,452,452,452,452,447);a();
-        printf("                                                                %c%c%c%c%c%c%c%c",452,452,452,452,452,452,452,447);color(15,0);printf("%c ",15);color(12,0);
+        printf("                                                                %c%c%c%c%c%c%c%c",452,452,452,452,452,452,452,447);color(15,0);printf("%c%c",459,l);color(12,0);
         printf("%c",435);a();
         printf("                                                                       %c  %c",435,435);a();a();a();
     }
     color(15,0);
+    printf("                                                                   %c%c%c%c\n",474,452,452,447);
+    printf("                                                                   %c  %c\n",435,435);
+    printf("                                                                   %c  %c\n",435,435);
+    printf("                                                                %c%c%c%c%c%c%c%c%c%c\n",474,452,452,449,452,452,449,452,452,447);
+    printf("                                                                %c%c%c%c  %c%c%c%c\n",448,452,452,447,474,452,452,473);
+    printf("                                                                   %c  %c\n",435,435);
+    printf("                                                                   %c%c%c%c\n",448,452,452,473);
 }
 
-int demanderinclinaison(int b){            // demander dans quel sens le joueur va incliner la carte poussante // ERREUR INCLINAISON PAS +1 +2 VERIFIER
-    int a=0;
-    int c=0;
-    if (b==5 || b==6){
-        printf("Voulez vous incliner la pi%cce de 90° ou 180°\n",138);
-        scanf("%d",&c);
-        if (c==90 && b==5){
-            a=6;
-        }
-        if (c==90 && b==6){
-            a=6;
-        }
-        else{
-            a=b;
-        }
-    }
-    else {
-        printf("De quelle inclinaison voulez vous tournez la carte poussante : 90° - 180° - 270° - 360° ?\n");
-        scanf("%d",&c);
-        if (c==90){
-            a=b+1;
-        }
-        if (c==180){
-            a=b+2;
-        }
-        if (c==270){
-            a=b+3;
-        }
-        else {
-            a=b;
-        }
-    }
-    return a;
+
+int direction(char nom[100],int lig,int col){
+    int pos;
+    printf("                                                  %s o%c veux-tu aller ? ( Ligne Colonne )",nom,407);
+    scanf("%d %d",&lig,&col);
+    pos= convert(lig,col);
+    return pos;
 }
+
+int nvpos(int pos,int r){
+    if (r==1 && (pos==10 || pos==11 || pos==12 || pos==13 ||pos==14 ||pos==15 ||pos==16)){
+        pos=pos+1;
+    }
+    else if (r==2 && (pos==30 ||pos==31 || pos==32 || pos==33 ||pos==34 || pos==35 ||pos==36)){
+        pos=pos+1;
+    }
+    else if (r==3 && (pos==50 || pos==51 || pos==52 || pos==53 ||pos==54 ||pos==55 || pos==56)){
+        pos=pos+1;
+    }
+    else if (r==4 && (pos==16 || pos==15 || pos==14 || pos==13 ||pos==12 ||pos==11 ||pos==10)){
+        pos=pos-1;
+    }
+    else if (r==5 && (pos==36 || pos==35 || pos==34 || pos==33 || pos==32 ||pos==31 || pos==30)){
+        pos=pos-1;
+    }
+    else if (r==6 && (pos==56 || pos==55 || pos==54 || pos==53 || pos==52 || pos==51 || pos==50)){
+        pos=pos-1;
+    }
+    else if (r==7 && (pos==01 || pos==11 || pos==21 || pos==31 || pos==41 || pos==51 || pos==61)){
+        pos=pos+10;
+    }
+    else if (r==8 && (pos==03 || pos==13 || pos==23 || pos==33 || pos==43 || pos==53 || pos==63)){
+        pos=pos+10;
+    }
+    else if (r==9 && (pos==05 || pos==15 || pos==25 || pos==35 || pos==45 || pos==55 || pos==65)){
+        pos=pos+10;
+    }
+    else if (r==10 && (pos==61 || pos==51 || pos==41 || pos==31 || pos==21 || pos==11 || pos==01)){
+        pos=pos-10;
+    }
+    else if (r==11 && (pos==63 || pos==53 || pos==43 || pos==33 || pos==23 || pos==13 || pos==03)){
+        pos=pos-10;
+    }
+    else if (r==12 && (pos==65 || pos==55 || pos==45 || pos==35 || pos==25 || pos==15 || pos==05)){
+        pos=pos-10;
+    }
+    return pos;
+}
+
+int redonnerpos(int pos,int r){
+    if ((pos==17 || pos==37 || pos==57 || pos==9 || pos==29 || pos==49 || pos==71 || pos==73 || pos==75 || pos==-9 || pos==-7 || pos==-5) && r==1){
+        pos=10;
+    }
+    if ((pos==17 || pos==37 || pos==57 || pos==9 || pos==29 || pos==49 || pos==71 || pos==73 || pos==75 || pos==-9 || pos==-7 || pos==-5) && r==2){
+        pos=30;
+    }
+    if ((pos==17 || pos==37 || pos==57 || pos==9 || pos==29 || pos==49 || pos==71 || pos==73 || pos==75 || pos==-9 || pos==-7 || pos==-5) && r==3){
+        pos=50;
+    }
+    if ((pos==17 || pos==37 || pos==57 || pos==9 || pos==29 || pos==49 || pos==71 || pos==73 || pos==75 || pos==-9 || pos==-7 || pos==-5) && r==4){
+        pos=16;
+    }
+    if ((pos==17 || pos==37 || pos==57 || pos==9 || pos==29 || pos==49 || pos==71 || pos==73 || pos==75 || pos==-9 || pos==-7 || pos==-5) && r==5){
+        pos=36;
+    }
+    if ((pos==17 || pos==37 || pos==57 || pos==9 || pos==29 || pos==49 || pos==71 || pos==73 || pos==75 || pos==-9 || pos==-7 || pos==-5) && r==6){
+        pos=56;
+    }
+    if ((pos==17 || pos==37 || pos==57 || pos==9 || pos==29 || pos==49 || pos==71 || pos==73 || pos==75 || pos==-9 || pos==-7 || pos==-5) && r==7){
+        pos=01;
+    }
+    if ((pos==17 || pos==37 || pos==57 || pos==9 || pos==29 || pos==49 || pos==71 || pos==73 || pos==75 || pos==-9 || pos==-7 || pos==-5) && r==8){
+        pos=03;
+    }
+    if ((pos==17 || pos==37 || pos==57 || pos==9 || pos==29 || pos==49 || pos==71 || pos==73 || pos==75 || pos==-9 || pos==-7 || pos==-5) && r==9){
+        pos=05;
+    }
+    if ((pos==17 || pos==37 || pos==57 || pos==9 || pos==29 || pos==49 || pos==71 || pos==73 || pos==75 || pos==-9 || pos==-7 || pos==-5) && r==10){
+        pos=61;
+    }
+    if ((pos==17 || pos==37 || pos==57 || pos==9 || pos==29 || pos==49 || pos==71 || pos==73 || pos==75 || pos==-9 || pos==-7 || pos==-5) && r==11){
+        pos=63;
+    }
+    if ((pos==17 || pos==37 || pos==57 || pos==9 || pos==29 || pos==49 || pos==71 || pos==73 || pos==75 || pos==-9 || pos==-7 || pos==-5) && r==12){
+        pos=65;
+    }
+    return pos;
+}
+
+int avancetresor(int nbjoueur,char nom[100],int compteur1,int tres1,int tres2,int tres3,int tres4,int tres5,int tres6,int tres7,int tres8,int tres9,int tres10,int tres11,int tres12){
+    int compteur=0;char rep[100]={0};char oui[100]="oui";int a=0;int tresor[12]={0};
+    tresor[0]=tres1;tresor[1]=tres2;tresor[2]=tres3;tresor[3]=tres4;tresor[4]=tres5;tresor[5]=tres6;tresor[6]=tres7;tresor[7]=tres8;tresor[8]=tres9;tresor[9]=tres10;tresor[10]=tres11;tresor[11]=tres12;
+    a=compteur1+1;
+    compteur1=(24/nbjoueur)-compteur1-1;
+    printf("%s Es-tu sur la case de ton tr%csor actuel ?\n",nom,130);
+    scanf("%s",rep);
+    if (strcmp(rep,oui)==0){
+        printf("                                                        Tu vas donc avoir ton nouveau tr%csor, il t'en reste donc %d.\n",130,compteur1);sleep(1);
+        printf("                                                        Ton nouveau tr%csor est le tr%csor %c. Bonne chance. \n\n\n",130,130,tresor[a]);
+        compteur=1;
+    }
+    else  {
+        compteur=0;
+    }
+    return compteur;
+}
+
+void testfin(int compteur,int nbjoueur,char nom[100]){
+    int a=0;
+    int b=0;
+    b=24/nbjoueur;
+    if (compteur==b){
+        printf("\n\n\n                                                        %s a trouv%c tout ses tr%csors. %s A DONC GAGN%c !!!!!!!!!!! Bravo %c tous !! %c bient%ct dans le Labyrinthe Gaulois .\n",nom,130,130,nom,400,389,389,403);
+    }
+    sleep(3);
+}
+
 
 
 
