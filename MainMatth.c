@@ -68,3 +68,25 @@ int main()
 
     GC_MANAGER_DESTROY(&manager);
 }/**/
+
+
+
+/* Exemple d'affichage de texte formaté 
+
+int main()
+{
+    GC_MANAGER manager;
+    GC_MANAGER_CREATE(&manager, 640, 420);
+    
+    char* text_out = "TITRE\n\n1)Première partie\n\tblablabla";
+
+    GC_TEXT gc_text;
+    GC_TEXT_INIT(&gc_text, text_out);
+
+    GC_TEXT_DRAW_F(gc_text);
+
+    al_flip_display();
+    al_rest(10);
+
+    GC_MANAGER_DESTROY(&manager);
+}/**/
