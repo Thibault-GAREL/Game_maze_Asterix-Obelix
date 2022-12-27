@@ -1,24 +1,15 @@
 //
-// Created by RobinK on 27/12/2022.
+// Created by RobinK on 25/12/2022.
 //
-#include <allegro5/allegro.h>
-#include <allegro5/allegro_native_dialog.h>
-#include <allegro5/allegro_primitives.h>
+
+#include "MainMouv.h"
 
 #define NOIR al_map_rgb(0,0,0)
 #define BLEU al_map_rgb(128,0,255)
 
-void erreur(const char*txt)
-{
-    ALLEGRO_DISPLAY*d;
-    d = al_is_system_installed() ? al_get_current_display() : NULL;
-    al_show_native_message_box(d, "ERREUR", txt, NULL, NULL, 0);
-    exit(EXIT_FAILURE);
-}
-/*****************************************************************
-*****************************************************************/
-int main()
-{
+void error(const char*txt);
+
+int main() {
     ALLEGRO_DISPLAY*display;
     ALLEGRO_EVENT_QUEUE*queue;
     const int screenx = 800; // dimension fenêtre
@@ -28,27 +19,24 @@ int main()
     int y = screeny / 2;
 
     if (!al_init())
-        erreur("al_init()");
+        error("al_init()");
 
     // initialisation opérations de dessin
     if (!al_init_primitives_addon())
-        erreur("al_init_primitives_addon()");
+        error("al_init_primitives_addon()");
 
     if (!al_install_keyboard())
-        erreur("install_keyboard()");
+        error("install_keyboard()");
 
     display = al_create_display(screenx, screeny);
     if (!display)
-        erreur("al_create_display()");
+        error("al_create_display()");
 
     queue = al_create_event_queue();
     if (!queue)
-        erreur("al_create_event_queue()");
-
-    al_register_event_source(queue,
-                             al_get_display_event_source(display));
-    al_register_event_source(queue,
-                             al_get_keyboard_event_source());
+        error("al_create_event_queue()");
+    al_register_event_source(queue, al_get_display_event_source(display));
+    al_register_event_source(queue, al_get_keyboard_event_source());
 
     while (!fin){
 
@@ -86,5 +74,4 @@ int main()
     }
     al_destroy_event_queue(queue);
     al_destroy_display(display);
-    return 0;
 }
