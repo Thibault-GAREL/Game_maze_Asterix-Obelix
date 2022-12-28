@@ -20918,6 +20918,80 @@ void testfin(int compteur,int nbjoueur,char nom[100]){
     sleep(3);
 }
 
+int colonne(int pos){
+    int col=0;int a=0;
+    for (int i=0;i<8;i++){
+        a=pos-i;
+        if (a%10==0){
+            col=i+1;
+        }
+    }
+    return col;
+}
+int lignejoueur(int pos){
+    int lig=0;int a=0;
+    a=pos/10;lig=a+1;
+    return lig;
+}
+
+
+int menu(){
+    int a=0;
+    printf("\n\n                                                             Que voulez vous faire ? \n");
+    printf("                                                             1 - Nouvelle partie \n");
+    printf("                                                             2 - Reprendre la deni%cre partie \n",138);
+    printf("                                                             3 - R%cgles et Cr%cdits \n",138,130);
+    printf("                                                             4 - Quitter \n");
+    scanf("                                                             %d",&a);
+    if (a==3){
+        printf("\n\n\n\n                                                          R%cgles du jeu Labyrinthe sp%ccial Ast%crix et Ob%clix : \n",138,130,130,130);
+        printf("\n    %c%c%c%c                 %c Le plateau de jeu est constitu%c de 49 cases + 1 case %ctant en dehors du plateau\n",474,452,452,447,282,130,130);
+        printf("    %c  %c                 %c Dans le plateau il y a 33 cases mouvantes (les jaunes) et 16 cases immobiles (les bleues)\n",435,435,282);
+        printf("    %c  %c                 %c Chaque joueur doit trouver tout ses tr%csors pour gagner (les caract%cres sp%cciaux) \n",435,435,282,130,138,130);
+        printf(" %c%c%c%c%c%c%c%c%c%c              %c Un tour se d%croule en 2 parties : Vous bougez une colonne ou une ligne avec la case en trop\n",474,452,452,449,452,452,449,452,452,447,282,130,138);
+        printf(" %c%c%c%c  %c%c%c%c                                 puis vous vous d%cplacez sur le plateau avec votre pion\n",448,452,452,447,474,452,452,473,130);
+        printf("    %c  %c                 %c Quand vous rentrez la case en trop vous pouvez l'incliner %c souhait\n",435,435,282,389);
+        printf("    %c%c%c%c                 %c Que le meilleur gagne !!\n\n\n\n",448,452,452,473,282);sleep(10);
+        printf("                                                          Cr%cdits :\n\n",130);
+        asterix();
+        printf("\n\n\n                                                          L'%cquipe de codage : \n",130);
+        printf("                                                                   <Matthieu Gros>\n");
+        printf("                                                                   <Antoine Goudedranche>\n");
+        printf("                                                                   <Thibault Garel>\n");
+        printf("                                                                   <Robin Koenig>\n\n");
+        printf("                                                          Et bien s%cr... Hasbro \n\n\n\n\n\n\n",406);
+        sleep(3);
+        printf("\n\n                                                             Que voulez vous faire ? \n");
+        printf("                                                             1 - Nouvelle partie \n");
+        printf("                                                             2 - Reprendre la deni%cre partie \n",138);
+        printf("                                                             3 - Quitter \n");
+        scanf("                                                             %d",&a);if(a==3){a=4;}
+    }
+    if (a==4){
+        printf("                                                             %c Bient%ct ! \n",439,403);
+        exit(0);
+    }
+    if (a==1){
+        return 1;
+    }
+    if (a==2){
+        return a;
+    }
+    return a;
+}
+
+int continuer(){
+    int a=0;
+    color(15,0);printf("\n\n\n\n                                                  1 - Continuer la partie \n");
+    printf("                                                  2 - Sauvegarder et Quitter \n\n\n\n");
+    scanf("%d",&a);
+    if (a==2){
+        exit(0);
+    }
+}
+
+
+
 
 
 

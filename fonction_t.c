@@ -3,7 +3,7 @@
 //
 
 #include "fonction_t.h"
-
+/*
 char adresse_tuile_fixe[50][50] = {".\\Import\\tuile_1.png",
                                    ".\\Import\\tuile_3.png",
                                    ".\\Import\\tuile_5.png",
@@ -54,9 +54,9 @@ char adresse_tuile_mobile[50][50] = {".\\Import\\tuile_2.png",
                                      ".\\Import\\tuile_44.png",
                                      ".\\Import\\tuile_46.png",
                                      ".\\Import\\tuile_48.png",
-                                     ".\\Import\\tuile_50.png"};
+                                     ".\\Import\\tuile_50.png"};*/
 
-/*char adresse_tuile_fixe[50][50] = {"..\\Import\\tuile_1.png",
+char adresse_tuile_fixe[50][50] = {"..\\Import\\tuile_1.png",
                                    "..\\Import\\tuile_3.png",
                                    "..\\Import\\tuile_5.png",
                                    "..\\Import\\tuile_7.png",
@@ -108,7 +108,7 @@ char adresse_tuile_mobile[50][50] = {"..\\Import\\tuile_2.png",
                                      "..\\Import\\tuile_46.png",
                                      "..\\Import\\tuile_48.png",
                                      "..\\Import\\tuile_50.png"
-};*/
+};
 
 int* random_sans_remise(int tab_index[MOVABLE_PARTS])
 {
@@ -161,8 +161,7 @@ void initalisation_affichage_plateau(int tab_index[MOVABLE_PARTS], GC_SPRITE tab
     }
 
     GC_SPRITE_INIT(pExtra_piece, adresse_tuile_mobile[tab_index[MOVABLE_PARTS - 1]]);
-    pExtra_piece->gc_properties.gc_space.POSITION_X = EXTRA_PART_POS_X;
-    pExtra_piece->gc_properties.gc_space.POSITION_Y = EXTRA_PART_POS_Y;
+    pExtra_piece->gc_properties.gc_space.POSITION_Y = PART_H * 8;
     GC_SPRITE_DRAW(pExtra_piece);
 }
 
@@ -254,7 +253,8 @@ void Init_list_button_decal(BUTTON_DECAL list_button_decal[6], GC_MANAGER* manag
 
     for (int i = 0; i < 6; i++)
     {
-        GC_SPRITE_INIT(&list_button_decal[i].gc_sprite, BUTTON_PATH);
+        //GC_SPRITE_INIT(&list_button_decal[i].gc_sprite, "..\\Import\\Fleche_1.PNG");
+        GC_SPRITE_INIT(&list_button_decal[i].gc_sprite, "..\\Import\\Fleche_1.PNG");
         list_button_decal[i].gc_sprite.gc_properties.gc_space.POSITION_X = PART_W *x*2*j + (PART_W * PLATEAU_W + PLATEAU_OFFSET_X) * !sens_direct * !x;
         list_button_decal[i].gc_sprite.gc_properties.gc_space.POSITION_Y = PART_H *y*2*j + (PART_H * PLATEAU_H + PLATEAU_OFFSET_Y) * !sens_direct * !y;
         list_button_decal[i].gc_sprite.gc_properties.gc_space.ROTATION_Z = (PI)*!sens_direct + -(PI/2) * y;

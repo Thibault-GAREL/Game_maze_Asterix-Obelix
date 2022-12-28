@@ -15,11 +15,11 @@ int main() {
     int compteur1=0;
     int compteur2=0;
     int compteur3=0;
-    int compteur4=0;
+    int compteur4=0;int compteursave=0;
     int compteurJ1=0;int compteurJ2=0;int compteurJ3=0;int compteurJ4=0;
     int a=0;int r=0;double t=0;
     int partie=1;
-    double c,d,e,f,g,h;
+    double c,d,e,f,g,h;int y=0;
     int posJ1,posJ2,posJ3,posJ4;
     struct position{
         int col,lig;
@@ -33,6 +33,17 @@ int main() {
     double compteurtresor1=0;
     double compteurtresor2=0;
     introduction();
+    y=menu();
+    if(y==2){
+        char nomJ1;char nomJ2;char nomJ3;char nomJ4;int pion1,pion2,pion3,pion4,posJ1,posJ2,posJ3,posJ4;double tab[35]={0};
+        int nbjoueur,aa,bb,cc,dd,compteur1,compteur2,compteur3,compteur4,compteurJ1,compteurJ2,compteurJ3,compteurJ4;
+        int tresJ1[12];int tresJ2[12];int tresJ3[12];int tresJ4[12];
+        FILE* fichier = fopen("C:\\Users\\antoi\\Documents\\COURS\\INFO\\sauvegarde.txt","r");
+        fscanf(fichier, "%d\n%d\n%d\n%d\n%2f\n%2f\n%2f\n%2f\n%2f\n%2f\n%2f\n%2f\n%2f\n%2f\n%2f\n%2f\n%2f\n%2f\n%2f\n%2f\n%2f\n%2f\n%2f\n%2f\n%2f\n%2f\n%2f\n%2f\n%2f\n%2f\n%2f\n%2f\n%2f\n%2f\n%2f\n%2f\n%2f\n%2f\n%2f\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%s\n%s\n%s\n%s", &pion1, &pion2, &pion3, &pion4, &tab[0], &tab[1], &tab[2], &tab[3], &tab[4], &tab[5], &tab[6], &tab[7], &tab[8], &tab[9], &tab[10], &tab[11], &tab[12], &tab[13], &tab[14], &tab[15], &tab[16], &tab[17], &tab[18], &tab[19], &tab[20], &tab[21], &tab[22], &tab[23], &tab[24], &tab[25], &tab[26], &tab[27], &tab[28], &tab[29], &tab[30], &tab[31], &tab[32], &tab[33], &tab[34], &nbjoueur, &aa, &bb, &cc, &dd, &compteur1, &compteur2, &compteur3, &compteur4, &compteurJ1, &compteurJ2, &compteurJ3, &compteurJ4,&tresJ1[0],&tresJ1[1],&tresJ1[2],&tresJ1[3],&tresJ1[4],&tresJ1[5],&tresJ1[6],&tresJ1[7],&tresJ1[8],&tresJ1[9],&tresJ1[10],&tresJ1[11],&tresJ2[0],&tresJ2[1],&tresJ2[2],&tresJ2[3],&tresJ2[4],&tresJ2[5],&tresJ2[6],&tresJ2[7],&tresJ2[8],&tresJ2[9],&tresJ2[10],&tresJ2[11],&tresJ3[0],&tresJ3[1],&tresJ3[2],&tresJ3[3],&tresJ3[4],&tresJ3[5],&tresJ3[6],&tresJ3[7],&tresJ3[8],&tresJ3[9],&tresJ3[10],&tresJ3[11],&tresJ4[0],&tresJ4[1],&tresJ4[2],&tresJ4[3],&tresJ4[4],&tresJ4[5],&tresJ4[6],&tresJ4[7],&tresJ4[8],&tresJ4[9],&tresJ4[10],&tresJ4[11],nomJ1,nomJ2,nomJ3,nomJ4);
+        fclose(fichier);
+        fichier=NULL;
+        goto skip_step;
+    }
     demandenbjoueur();
     scanf("%d",&nbjoueur);
     while (nbjoueur<2 || nbjoueur>4){
@@ -286,6 +297,7 @@ int main() {
     printf("\n\n\n");
     ecripos(nbjoueur,nomJ1,nomJ2,nomJ3,nomJ4,j1.lig,j1.col,j2.lig,j2.col,j3.lig,j3.col,j4.lig,j4.col);color(0,0);
     int aa=0;int bb=0;int cc=0;int dd=0;
+    skip_step:
     while (compteurJ1!=24/nbjoueur || compteurJ2!=24/nbjoueur || compteurJ3!=24/nbjoueur || compteurJ4!=24/nbjoueur){
         if (a==1){
             compteur1=1;
@@ -332,6 +344,7 @@ int main() {
             aa= avancetresor(nbjoueur,nomJ1,compteurJ1,tresJ1[0],tresJ1[1],tresJ1[2],tresJ1[3],tresJ1[4],tresJ1[5],tresJ1[6],tresJ1[7],tresJ1[8],tresJ1[9],tresJ1[10],tresJ1[11]);
             compteurJ1=compteurJ1+aa;
             testfin(compteurJ1,nbjoueur,nomJ1);
+            j1.lig=lignejoueur(posJ1);j1.col=colonne(posJ1);
             color(15,0);ecripos(nbjoueur,nomJ1,nomJ2,nomJ3,nomJ4,j1.lig,j1.col,j2.lig,j2.col,j3.lig,j3.col,j4.lig,j4.col);color(0,0);
         }
         compteur2= toursuivant(compteur1,compteur2);
@@ -368,6 +381,7 @@ int main() {
             bb= avancetresor(nbjoueur,nomJ2,compteurJ2,tresJ2[0],tresJ2[1],tresJ2[2],tresJ2[3],tresJ2[4],tresJ2[5],tresJ2[6],tresJ2[7],tresJ2[8],tresJ2[9],tresJ2[10],tresJ2[11]);
             compteurJ2=compteurJ2+bb;
             testfin(compteurJ2,nbjoueur,nomJ2);
+            j2.lig= lignejoueur(posJ2);j2.col= colonne(posJ2);
             color(15,0);ecripos(nbjoueur,nomJ1,nomJ2,nomJ3,nomJ4,j1.lig,j1.col,j2.lig,j2.col,j3.lig,j3.col,j4.lig,j4.col);color(0,0);
         }
         compteur3= toursuivant(compteur2,compteur3);
@@ -404,6 +418,7 @@ int main() {
             cc= avancetresor(nbjoueur,nomJ3,compteurJ3,tresJ3[0],tresJ3[1],tresJ3[2],tresJ3[3],tresJ3[4],tresJ3[5],tresJ3[6],tresJ3[7],tresJ3[8],tresJ3[9],tresJ3[10],tresJ3[11]);
             compteurJ3=compteurJ3+cc;
             testfin(compteurJ3,nbjoueur,nomJ3);
+            j3.lig=lignejoueur(posJ3);j3.col= colonne(posJ3);
             color(15,0);ecripos(nbjoueur,nomJ1,nomJ2,nomJ3,nomJ4,j1.lig,j1.col,j2.lig,j2.col,j3.lig,j3.col,j4.lig,j4.col);color(0,0);
         }
         compteur4= toursuivant(compteur3,compteur4);
@@ -441,9 +456,18 @@ int main() {
             dd= avancetresor(nbjoueur,nomJ4,compteurJ4,tresJ4[0],tresJ4[1],tresJ4[2],tresJ4[3],tresJ4[4],tresJ4[5],tresJ4[6],tresJ4[7],tresJ4[8],tresJ4[9],tresJ4[10],tresJ4[11]);
             compteurJ4=compteurJ4+dd;
             testfin(compteurJ4,nbjoueur,nomJ4);
+            j4.lig=lignejoueur(posJ4);j4.col= colonne(posJ4);
             color(15,0);ecripos(nbjoueur,nomJ1,nomJ2,nomJ3,nomJ4,j1.lig,j1.col,j2.lig,j2.col,j3.lig,j3.col,j4.lig,j4.col);color(0,0);
         }
         compteur1= toursuivant(compteur4,compteur1);
+        FILE *fichier = fopen("C:\\Users\\antoi\\Documents\\COURS\\INFO\\sauvegarde.txt", "w");
+        fprintf(fichier,"%d\n%d\n%d\n%d\n%2f\n%2f\n%2f\n%2f\n%2f\n%2f\n%2f\n%2f\n%2f\n%2f\n%2f\n%2f\n%2f\n%2f\n%2f\n%2f\n%2f\n%2f\n%2f\n%2f\n%2f\n%2f\n%2f\n%2f\n%2f\n%2f\n%2f\n%2f\n%2f\n%2f\n%2f\n%2f\n%2f\n%2f\n%2f\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%s\n%s\n%s\n%s", pion1, pion2, pion3, pion4, tab[0], tab[1], tab[2], tab[3], tab[4], tab[5], tab[6], tab[7], tab[8], tab[9], tab[10], tab[11], tab[12], tab[13], tab[14], tab[15], tab[16], tab[17], tab[18], tab[19], tab[20], tab[21], tab[22], tab[23], tab[24], tab[25], tab[26], tab[27], tab[28], tab[29], tab[30], tab[31], tab[32], tab[33], tab[34], nbjoueur, aa, bb, cc, dd, compteur1, compteur2, compteur3, compteur4, compteurJ1, compteurJ2, compteurJ3, compteurJ4,tresJ1[0],tresJ1[1],tresJ1[2],tresJ1[3],tresJ1[4],tresJ1[5],tresJ1[6],tresJ1[7],tresJ1[8],tresJ1[9],tresJ1[10],tresJ1[11],tresJ2[0],tresJ2[1],tresJ2[2],tresJ2[3],tresJ2[4],tresJ2[5],tresJ2[6],tresJ2[7],tresJ2[8],tresJ2[9],tresJ2[10],tresJ2[11],tresJ3[0],tresJ3[1],tresJ3[2],tresJ3[3],tresJ3[4],tresJ3[5],tresJ3[6],tresJ3[7],tresJ3[8],tresJ3[9],tresJ3[10],tresJ3[11],tresJ4[0],tresJ4[1],tresJ4[2],tresJ4[3],tresJ4[4],tresJ4[5],tresJ4[6],tresJ4[7],tresJ4[8],tresJ4[9],tresJ4[10],tresJ4[11],nomJ1,nomJ2,nomJ3,nomJ4);
+        fclose(fichier);
+        fichier=NULL;
+        compteursave=compteursave+1;
+        if (compteursave%2==0){
+            continuer();
+        }
     }
     return 0;
 }

@@ -22,7 +22,7 @@
 #define MOVABLE_PARTS 34
 #define TAB_BUTTONS_SIDE 3
 #define PI 3.14
-#define BUTTON_PATH ".\\Import\\Fleche_1.PNG"
+#define BUTTON_PATH "..\\Import\\Fleche_1.PNG"
 
 typedef struct 
 {
