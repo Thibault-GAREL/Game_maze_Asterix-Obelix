@@ -19,6 +19,7 @@ int main()
 
     GC_BUTTON button_rotation_posi, button_rotation_nega;
     GC_SPRITE sprite_rotation_posi, sprite_rotation_nega;
+    GC_SPRITE Pion_position, PionRotation;
     GC_BUTTON_INIT(&button_rotation_posi, &manager.event);
     GC_BUTTON_INIT(&button_rotation_nega, &manager.event);
     GC_SPRITE_INIT(&sprite_rotation_posi, BUTTON_PATH);
@@ -46,6 +47,8 @@ int main()
 
         GC_BUTTON_UPDATE_EVENT(&button_rotation_posi);
         GC_BUTTON_UPDATE_EVENT(&button_rotation_nega);
+
+
 
         if (button_rotation_posi.state == 2)
         {
@@ -89,10 +92,12 @@ int main()
         GC_SPRITE_DRAW(&sprite_rotation_posi);
         GC_SPRITE_DRAW(&sprite_rotation_nega);
 
+        MoveCharacter(Pion_position, &PionRotation);
+
         al_flip_display();
     }
 
-    GC_MANAGER_DESTROY(&manager);
+    //GC_MANAGER_DESTROY(&manager);
 
     return 0;
 }

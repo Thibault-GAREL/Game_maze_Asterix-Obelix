@@ -287,3 +287,11 @@ void List_button_decal_draw(BUTTON_DECAL list_button_decal[6])
         GC_SPRITE_DRAW(&list_button_decal[i].gc_sprite);
     }
 }
+
+void MoveCharacter(GC_SPRITE PionSprite, GC_SPRITE* const Asterix)
+{
+    GC_SPRITE_INIT(&PionSprite, "..\\Import\\Dessin_asterix_Image_Centre.png");
+    PionSprite.gc_properties.gc_space.POSITION_X = PART_W * 2;
+    PionSprite.gc_properties.gc_space.POSITION_Y = PART_H * 2;
+    GC_SPRITE_DRAW(&PionSprite);
+}
