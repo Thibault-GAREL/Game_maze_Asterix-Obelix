@@ -4,7 +4,6 @@
 #include <string.h>
 #include <time.h>
 #include <math.h>
-
 int main() {
     char nomJ1[100],nomJ2[100],nomJ3[100],nomJ4[100];
     int nbjoueur=0;
