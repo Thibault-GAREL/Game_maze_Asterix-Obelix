@@ -192,7 +192,6 @@ void decal_ligne(GC_SPRITE tab_plateau[PLATEAU_H][PLATEAU_W], GC_SPRITE* const p
 
         tab_plateau[ln][PLATEAU_H-1] = buffer_part;
     }
-    
 }
 
 void decal_colonne(GC_SPRITE tab_plateau[PLATEAU_H][PLATEAU_W], GC_SPRITE* const pExtra_piece, const int col, const bool direct_sens)
@@ -288,9 +287,9 @@ void List_button_decal_draw(BUTTON_DECAL list_button_decal[6])
     }
 }
 
-void InitCharacter(GC_SPRITE PionSprite, GC_SPRITE* const Pion)
+void InitCharacter(GC_SPRITE PionSprite, GC_SPRITE* const Pion, int x, int y) //les x et y correspondent aux cordonnées de chaques pions défnies dans le main_t.c
 {
-    PionSprite.gc_properties.gc_space.POSITION_X = 90;
-    PionSprite.gc_properties.gc_space.POSITION_Y = 650;
+    PionSprite.gc_properties.gc_space.POSITION_X = x;
+    PionSprite.gc_properties.gc_space.POSITION_Y = y;
     GC_SPRITE_DRAW(&PionSprite);
 }
