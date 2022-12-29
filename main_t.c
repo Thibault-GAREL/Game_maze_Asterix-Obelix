@@ -19,9 +19,20 @@ int main()
 
     GC_BUTTON button_rotation_posi, button_rotation_nega;
     GC_SPRITE sprite_rotation_posi, sprite_rotation_nega;
-    GC_SPRITE Pion_position, PionRotation;
+
+    GC_SPRITE Pion_position1, PionRotation1;
+    GC_SPRITE Pion_position2, PionRotation2;
+    GC_SPRITE Pion_position3, PionRotation3;
+    GC_SPRITE Pion_position4, PionRotation4;
+
     GC_BUTTON_INIT(&button_rotation_posi, &manager.event);
     GC_BUTTON_INIT(&button_rotation_nega, &manager.event);
+
+    GC_SPRITE_INIT(&Pion_position1, "..\\Import\\Dessin_asterix_Image_Centre_Small.png");
+    GC_SPRITE_INIT(&Pion_position2, "..\\Import\\Dessin_asterix_Image_Centre_Small.png");
+    GC_SPRITE_INIT(&Pion_position3, "..\\Import\\Dessin_asterix_Image_Centre_Small.png");
+    GC_SPRITE_INIT(&Pion_position4, "..\\Import\\Dessin_asterix_Image_Centre_Small.png");
+
     GC_SPRITE_INIT(&sprite_rotation_posi, BUTTON_PATH);
     GC_SPRITE_INIT(&sprite_rotation_nega, BUTTON_PATH);
 
@@ -92,12 +103,12 @@ int main()
         GC_SPRITE_DRAW(&sprite_rotation_posi);
         GC_SPRITE_DRAW(&sprite_rotation_nega);
 
-        MoveCharacter(Pion_position, &PionRotation);
+        InitCharacter(Pion_position1, &PionRotation1);
 
         al_flip_display();
     }
 
-    //GC_MANAGER_DESTROY(&manager);
+    GC_MANAGER_DESTROY(&manager);
 
     return 0;
 }

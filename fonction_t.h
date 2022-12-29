@@ -41,6 +41,6 @@ void Clear_Diplay();
 void Init_list_button_decal(BUTTON_DECAL list_button_decal[6], GC_MANAGER* manager, bool y, bool x);
 void List_button_decal_update_event(BUTTON_DECAL list_button_decal_colonne[6]);
 void List_button_decal_draw(BUTTON_DECAL list_button_decal_colonne[6]);
-void MoveCharacter(GC_SPRITE PionSprite, GC_SPRITE* const Asterix);
+void InitCharacter(GC_SPRITE PionSprite, GC_SPRITE* const Pion);
 
 #endif //PROJET_FONCTION_T_H
