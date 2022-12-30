@@ -93,11 +93,12 @@ int main() {
         GC_SPRITE_DRAW(&sprite_rotation_posi);
         GC_SPRITE_DRAW(&sprite_rotation_nega);
 
-
-        InitCharacter(Pion_position1, &PionRotation1, x1, y1);
-        InitCharacter(Pion_position2, &PionRotation2, x2, y2);
-        InitCharacter(Pion_position3, &PionRotation3, x3, y3);
-        InitCharacter(Pion_position4, &PionRotation4, x4, y4);
+        switch (nbrJoueur){ //initialise les textures en fonction du nombre de joueurs jouant au jeu
+            case 1: InitCharacter(Pion_position1, &PionRotation1, x1, y1); break;
+            case 2 : { InitCharacter(Pion_position1, &PionRotation1, x1, y1); InitCharacter(Pion_position2, &PionRotation2, x2, y2); break; }
+            case 3 : { InitCharacter(Pion_position1, &PionRotation1, x1, y1); InitCharacter(Pion_position2, &PionRotation2, x2, y2); InitCharacter(Pion_position3, &PionRotation3, x3, y3); break; }
+            case 4 : {InitCharacter(Pion_position1, &PionRotation1, x1, y1); InitCharacter(Pion_position2, &PionRotation2, x2, y2); InitCharacter(Pion_position3, &PionRotation3, x3, y3); InitCharacter(Pion_position4, &PionRotation4, x4, y4); break; }
+        }
 
         // fin de l'intialisation des positions des pièces et du plateau
 
@@ -143,9 +144,7 @@ int main() {
                             GC_SPRITE_DRAW(&sprite_rotation_nega);
 
                             InitCharacter(Pion_position1, &PionRotation1, x1, y1);
-                            InitCharacter(Pion_position2, &PionRotation2, x2, y2);
-                            InitCharacter(Pion_position3, &PionRotation3, x3, y3);
-                            InitCharacter(Pion_position4, &PionRotation4, x4, y4);
+
 
                             al_flip_display();
                         }
@@ -188,10 +187,7 @@ int main() {
                             GC_SPRITE_DRAW(&sprite_rotation_posi);
                             GC_SPRITE_DRAW(&sprite_rotation_nega);
 
-                            InitCharacter(Pion_position1, &PionRotation1, x1, y1);
                             InitCharacter(Pion_position2, &PionRotation2, x2, y2);
-                            InitCharacter(Pion_position3, &PionRotation3, x3, y3);
-                            InitCharacter(Pion_position4, &PionRotation4, x4, y4);
 
                             al_flip_display();
                         }
@@ -234,10 +230,7 @@ int main() {
                             GC_SPRITE_DRAW(&sprite_rotation_posi);
                             GC_SPRITE_DRAW(&sprite_rotation_nega);
 
-                            InitCharacter(Pion_position1, &PionRotation1, x1, y1);
-                            InitCharacter(Pion_position2, &PionRotation2, x2, y2);
                             InitCharacter(Pion_position3, &PionRotation3, x3, y3);
-                            InitCharacter(Pion_position4, &PionRotation4, x4, y4);
 
                             al_flip_display();
                         }
@@ -280,9 +273,6 @@ int main() {
                             GC_SPRITE_DRAW(&sprite_rotation_posi);
                             GC_SPRITE_DRAW(&sprite_rotation_nega);
 
-                            InitCharacter(Pion_position1, &PionRotation1, x1, y1);
-                            InitCharacter(Pion_position2, &PionRotation2, x2, y2);
-                            InitCharacter(Pion_position3, &PionRotation3, x3, y3);
                             InitCharacter(Pion_position4, &PionRotation4, x4, y4);
 
                             al_flip_display();
@@ -290,7 +280,7 @@ int main() {
                     }
                 }
             JoueurPlay++;
-                if (JoueurPlay==5){
+                if (JoueurPlay==nbrJoueur+1){
                     JoueurPlay=1;
                 }
         }
