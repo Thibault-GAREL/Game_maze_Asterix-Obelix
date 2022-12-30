@@ -105,7 +105,6 @@ int main() {
 
         fin = 0; //Permet au joueur de finir son tour si il appuye sur entrée
 
-
             switch (JoueurPlay){
                 case 1:{
                     while (fin != 1) {
@@ -144,8 +143,11 @@ int main() {
                             GC_SPRITE_DRAW(&sprite_rotation_nega);
 
                             InitCharacter(Pion_position1, &PionRotation1, x1, y1);
+                            InitCharacter(Pion_position2, &PionRotation2, x2, y2);
+                            InitCharacter(Pion_position3, &PionRotation3, x3, y3);
+                            InitCharacter(Pion_position4, &PionRotation4, x4, y4);
+
                             al_flip_display();
-                            JoueurPlay++;
                         }
                     }
                 }
@@ -186,7 +188,11 @@ int main() {
                             GC_SPRITE_DRAW(&sprite_rotation_posi);
                             GC_SPRITE_DRAW(&sprite_rotation_nega);
 
+                            InitCharacter(Pion_position1, &PionRotation1, x1, y1);
                             InitCharacter(Pion_position2, &PionRotation2, x2, y2);
+                            InitCharacter(Pion_position3, &PionRotation3, x3, y3);
+                            InitCharacter(Pion_position4, &PionRotation4, x4, y4);
+
                             al_flip_display();
                         }
                     }
@@ -228,9 +234,12 @@ int main() {
                             GC_SPRITE_DRAW(&sprite_rotation_posi);
                             GC_SPRITE_DRAW(&sprite_rotation_nega);
 
+                            InitCharacter(Pion_position1, &PionRotation1, x1, y1);
+                            InitCharacter(Pion_position2, &PionRotation2, x2, y2);
                             InitCharacter(Pion_position3, &PionRotation3, x3, y3);
+                            InitCharacter(Pion_position4, &PionRotation4, x4, y4);
+
                             al_flip_display();
-                            JoueurPlay++;
                         }
                     }
                 }
@@ -271,12 +280,19 @@ int main() {
                             GC_SPRITE_DRAW(&sprite_rotation_posi);
                             GC_SPRITE_DRAW(&sprite_rotation_nega);
 
+                            InitCharacter(Pion_position1, &PionRotation1, x1, y1);
+                            InitCharacter(Pion_position2, &PionRotation2, x2, y2);
+                            InitCharacter(Pion_position3, &PionRotation3, x3, y3);
                             InitCharacter(Pion_position4, &PionRotation4, x4, y4);
+
                             al_flip_display();
-                            JoueurPlay++;
                         }
                     }
-            }
+                }
+            JoueurPlay++;
+                if (JoueurPlay==5){
+                    JoueurPlay=1;
+                }
         }
     }
             GC_MANAGER_DESTROY(&manager);
