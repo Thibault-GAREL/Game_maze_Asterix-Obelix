@@ -1,9 +1,10 @@
 #include "fonction_t.h"
-
+#include "MainMouv.h"
 // gcc -g -Wall .\main_t.c .\Gc.c .\fonction_t.c  -lallegro -lallegro_image -lallegro_font -oProject; .\Project.exe
 
-int main()
-{
+
+
+int main() {
     GC_MANAGER manager;
     GC_MANAGER_CREATE(&manager, 1000, 1000);
 
@@ -47,12 +48,10 @@ int main()
     button_rotation_posi.gc_properties.gc_space = sprite_rotation_posi.gc_properties.gc_space;
     button_rotation_nega.gc_properties.gc_space = sprite_rotation_nega.gc_properties.gc_space;
 
-    while (1)
-    {
+    while (1) {
         GC_MANAGER_UPDATE_EVENT(&manager);
 
-        if (manager.event.display.type == ALLEGRO_EVENT_DISPLAY_CLOSE)
-        {
+        if (manager.event.display.type == ALLEGRO_EVENT_DISPLAY_CLOSE) {
             break;
         }
 
@@ -60,13 +59,9 @@ int main()
         GC_BUTTON_UPDATE_EVENT(&button_rotation_nega);
 
 
-
-        if (button_rotation_posi.state == 2)
-        {
+        if (button_rotation_posi.state == 2) {
             extra_piece.gc_properties.gc_space.ROTATION_Z += PI / 2;
-        }
-        else if (button_rotation_nega.state == 2)
-        {
+        } else if (button_rotation_nega.state == 2) {
             extra_piece.gc_properties.gc_space.ROTATION_Z -= PI / 2;
         }
 
@@ -74,26 +69,21 @@ int main()
         List_button_decal_update_event(list_button_decal_ligne);
 
         int j = 0;
-        for (int i = 0; i < 6; i++)
-        {
-            if (list_button_decal_colonne[i].gc_button.state == 2)
-            {
+        for (int i = 0; i < 6; i++) {
+            if (list_button_decal_colonne[i].gc_button.state == 2) {
                 decal_colonne(tab_plateau, &extra_piece, j * 2 + 1, list_button_decal_colonne[i].sens_direct);
                 break;
-            }
-            else if (list_button_decal_ligne[i].gc_button.state == 2)
-            {
+            } else if (list_button_decal_ligne[i].gc_button.state == 2) {
                 decal_ligne(tab_plateau, &extra_piece, j * 2 + 1, list_button_decal_ligne[i].sens_direct);
                 break;
             }
 
-            if (j++ >= 2)
-            {
+            if (j++ >= 2) {
                 j = 0;
             }
         }
 
-        Clear_Diplay();
+        Clear_Diplay(); // Initialisation du plateau de base (pièces à leurs positions d'origine)
 
         UPDATE_Part_Position_DRAW_Plateau(tab_plateau, &extra_piece);
 
@@ -103,15 +93,63 @@ int main()
         GC_SPRITE_DRAW(&sprite_rotation_posi);
         GC_SPRITE_DRAW(&sprite_rotation_nega);
 
-        InitCharacter(Pion_position1, &PionRotation1, 90, 650);
-        InitCharacter(Pion_position2, &PionRotation2, 670, 650);
-        InitCharacter(Pion_position3, &PionRotation3, 90 , 90);
-        InitCharacter(Pion_position4, &PionRotation4, 670, 90);
 
-        al_flip_display();
+        InitCharacter(Pion_position1, &PionRotation1, x1, y1);
+        InitCharacter(Pion_position2, &PionRotation2, x2, y2);
+        InitCharacter(Pion_position3, &PionRotation3, x3, y3);
+        InitCharacter(Pion_position4, &PionRotation4, x4, y4);
+
+        // fin de l'intialisation des positions des pièces et du plateau
+
+        al_flip_display(); //affichage du plateau de base
+
+        fin=0; //Permet au joueur de finir son tour si il appuye sur entrée
+
+
+                while (fin != 1) {
+                    ALLEGRO_EVENT_QUEUE *queue;
+                    queue = al_create_event_queue();
+                    al_register_event_source(queue, al_get_keyboard_event_source());
+                    ALLEGRO_EVENT event;
+                    al_wait_for_event(queue, &event);
+                    if (event.type == ALLEGRO_EVENT_KEY_DOWN) {
+                        // si clavier selon touche appuyée,
+                        switch (event.keyboard.keycode) {
+                            case ALLEGRO_KEY_UP:
+                                y1 -= 95;
+                                break;
+                            case ALLEGRO_KEY_RIGHT:
+                                x1 += 95;
+                                break;
+                            case ALLEGRO_KEY_DOWN:
+                                y1 += 95;
+                                break;
+                            case ALLEGRO_KEY_LEFT:
+                                x1 -= 95;
+                                break;
+                            case ALLEGRO_KEY_ENTER :
+                                fin = 1;
+                                break;
+                        }
+                        Clear_Diplay();
+
+                        UPDATE_Part_Position_DRAW_Plateau(tab_plateau, &extra_piece);
+
+                        List_button_decal_draw(list_button_decal_colonne);
+                        List_button_decal_draw(list_button_decal_ligne);
+
+                        GC_SPRITE_DRAW(&sprite_rotation_posi);
+                        GC_SPRITE_DRAW(&sprite_rotation_nega);
+
+                        InitCharacter(Pion_position1, &PionRotation1, x1, y1);
+                        al_flip_display();
+                    }
+                }
+
+
     }
 
-    GC_MANAGER_DESTROY(&manager);
+            GC_MANAGER_DESTROY(&manager);
 
-    return 0;
+            return 0;
 }

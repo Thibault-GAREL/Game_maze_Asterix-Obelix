@@ -311,7 +311,6 @@ void GC_TEXT_DRAW_F(GC_TEXT gc_text)
     al_draw_textf(gc_text.police, gc_text.color, gc_text.gc_properties.gc_space.POSITION_X, gc_text.gc_properties.gc_space.POSITION_Y, 0, gc_text.text);
 }
 
-
 /*
  *
  * Gc by Matthieu Gros

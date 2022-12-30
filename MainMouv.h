@@ -5,68 +5,21 @@
 #ifndef PROJET_MAINMOUV_H
 #define PROJET_MAINMOUV_H
 
-#include <allegro5/allegro.h>
-#include <allegro5/allegro_native_dialog.h>
-#include <allegro5/allegro_primitives.h>
-#include <allegro5/allegro_image.h>
-
 #endif //PROJET_MAINMOUV_H
 
+int x1 = 90; // coordonnées x et y du premier joueur
+int y1 = 650;
 
-void error(const char*txt)
-{
-    ALLEGRO_DISPLAY*d;
-    d = al_is_system_installed() ? al_get_current_display() : NULL;
-    al_show_native_message_box(d, "error", txt, NULL, NULL, 0);
-    exit(EXIT_FAILURE);
-}
+int *x2 = 670; // ... deuxième joueur
+int *y2 = 650;
+
+int *x3 = 90; // ... troisième joueur
+int *y3 = 90;
+
+int *x4 = 670; // ... Quatrième joueur
+int *y4 = 90;
 
 
-#include <allegro5/allegro.h>
-#include <allegro5/allegro_image.h>
-#include <stdio.h>
-/*
-int main(int argc, char **argv) {
-    ALLEGRO_DISPLAY *display = NULL;
-    ALLEGRO_BITMAP *image = NULL;
-    ALLEGRO_EVENT_QUEUE *event_queue = NULL;
-    ALLEGRO_EVENT event;
-
-    // Initialisation d'Allegro et du module d'images
-    al_init();
-    al_init_image_addon();
-
-    // Création de la fenêtre d'affichage
-    display = al_create_display(640, 480);
-    if (!display) {
-        fprintf(stderr, "failed to create display!\n");
-        return -1;
-    }
-
-    // Chargement de l'image
-    image = al_load_bitmap("..\\Import\\tuile_1.png");
-    if (!image) {
-        fprintf(stderr, "failed to load image!\n");
-        al_destroy_display(display);
-        return -1;
-    }
-
-    // Dessin de l'image sur l'écran
-    al_draw_bitmap(image, 0, 0, 0);
-
-    // Mise à jour de l'affichage
-    al_flip_display();
-
-    // Création de la file d'événements
-    event_queue = al_create_event_queue();
-
-    // Attente de la fermeture de la fenêtre
-    al_wait_for_event(event_queue, &event);
-
-    // Nettoyage
-    al_destroy_bitmap(image);
-    al_destroy_display(display);
-
-    return 0;
-}
-*/
+int JoueurPlay=1; //définit quel joueur doit jouer
+int tour =1; //définit à quel tour du jeu nous sommes
+int fin =0; //Permet au joueur de finir son touche en appuyant sur entrée

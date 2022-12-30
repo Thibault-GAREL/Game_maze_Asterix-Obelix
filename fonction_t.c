@@ -289,7 +289,34 @@ void List_button_decal_draw(BUTTON_DECAL list_button_decal[6])
 
 void InitCharacter(GC_SPRITE PionSprite, GC_SPRITE* const Pion, int x, int y) //les x et y correspondent aux cordonnées de chaques pions défnies dans le main_t.c
 {
-    PionSprite.gc_properties.gc_space.POSITION_X = x;
-    PionSprite.gc_properties.gc_space.POSITION_Y = y;
-    GC_SPRITE_DRAW(&PionSprite);
+        PionSprite.gc_properties.gc_space.POSITION_X = x;
+        PionSprite.gc_properties.gc_space.POSITION_Y = y;
+        GC_SPRITE_DRAW(&PionSprite);
 }
+
+int MoveCharacter(int x, int y ){
+    ALLEGRO_EVENT_QUEUE*queue;
+    queue = al_create_event_queue();
+    al_register_event_source(queue, al_get_keyboard_event_source());
+    ALLEGRO_EVENT event;
+    al_wait_for_event(queue, &event);
+
+    if (event.type == ALLEGRO_EVENT_KEY_DOWN) {
+        // si clavier selon touche appuyée,
+        switch (event.keyboard.keycode) {
+            case ALLEGRO_KEY_UP:
+                y -= 10;
+                return y;
+            case ALLEGRO_KEY_RIGHT:
+                x += 10;
+                return x;
+            case ALLEGRO_KEY_DOWN:
+                y += 10;
+                return y;
+            case ALLEGRO_KEY_LEFT:
+                x -= 10;
+                return x;
+        }
+    }
+}
+
