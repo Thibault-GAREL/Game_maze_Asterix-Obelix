@@ -103,52 +103,182 @@ int main() {
 
         al_flip_display(); //affichage du plateau de base
 
-        fin=0; //Permet au joueur de finir son tour si il appuye sur entrée
+        fin = 0; //Permet au joueur de finir son tour si il appuye sur entrée
 
 
-                while (fin != 1) {
-                    ALLEGRO_EVENT_QUEUE *queue;
-                    queue = al_create_event_queue();
-                    al_register_event_source(queue, al_get_keyboard_event_source());
-                    ALLEGRO_EVENT event;
-                    al_wait_for_event(queue, &event);
-                    if (event.type == ALLEGRO_EVENT_KEY_DOWN) {
-                        // si clavier selon touche appuyée,
-                        switch (event.keyboard.keycode) {
-                            case ALLEGRO_KEY_UP:
-                                y1 -= 95;
-                                break;
-                            case ALLEGRO_KEY_RIGHT:
-                                x1 += 95;
-                                break;
-                            case ALLEGRO_KEY_DOWN:
-                                y1 += 95;
-                                break;
-                            case ALLEGRO_KEY_LEFT:
-                                x1 -= 95;
-                                break;
-                            case ALLEGRO_KEY_ENTER :
-                                fin = 1;
-                                break;
+            switch (JoueurPlay){
+                case 1:{
+                    while (fin != 1) {
+                        ALLEGRO_EVENT_QUEUE *queue;
+                        queue = al_create_event_queue();
+                        al_register_event_source(queue, al_get_keyboard_event_source());
+                        ALLEGRO_EVENT event;
+                        al_wait_for_event(queue, &event);
+                        if (event.type == ALLEGRO_EVENT_KEY_DOWN) {
+                            // si clavier selon touche appuyée,
+                            switch (event.keyboard.keycode) {
+                                case ALLEGRO_KEY_UP:
+                                    y1 -= 95;
+                                    break;
+                                case ALLEGRO_KEY_RIGHT:
+                                    x1 += 95;
+                                    break;
+                                case ALLEGRO_KEY_DOWN:
+                                    y1 += 95;
+                                    break;
+                                case ALLEGRO_KEY_LEFT:
+                                    x1 -= 95;
+                                    break;
+                                case ALLEGRO_KEY_ENTER :
+                                    fin = 1;
+                                    break;
+                            }
+                            Clear_Diplay();
+
+                            UPDATE_Part_Position_DRAW_Plateau(tab_plateau, &extra_piece);
+
+                            List_button_decal_draw(list_button_decal_colonne);
+                            List_button_decal_draw(list_button_decal_ligne);
+
+                            GC_SPRITE_DRAW(&sprite_rotation_posi);
+                            GC_SPRITE_DRAW(&sprite_rotation_nega);
+
+                            InitCharacter(Pion_position1, &PionRotation1, x1, y1);
+                            al_flip_display();
+                            JoueurPlay++;
                         }
-                        Clear_Diplay();
-
-                        UPDATE_Part_Position_DRAW_Plateau(tab_plateau, &extra_piece);
-
-                        List_button_decal_draw(list_button_decal_colonne);
-                        List_button_decal_draw(list_button_decal_ligne);
-
-                        GC_SPRITE_DRAW(&sprite_rotation_posi);
-                        GC_SPRITE_DRAW(&sprite_rotation_nega);
-
-                        InitCharacter(Pion_position1, &PionRotation1, x1, y1);
-                        al_flip_display();
                     }
                 }
 
+                case 2: {
+                    while (fin != 1) {
+                        ALLEGRO_EVENT_QUEUE *queue;
+                        queue = al_create_event_queue();
+                        al_register_event_source(queue, al_get_keyboard_event_source());
+                        ALLEGRO_EVENT event;
+                        al_wait_for_event(queue, &event);
+                        if (event.type == ALLEGRO_EVENT_KEY_DOWN) {
+                            // si clavier selon touche appuyée,
+                            switch (event.keyboard.keycode) {
+                                case ALLEGRO_KEY_UP:
+                                    y2 -= 95;
+                                    break;
+                                case ALLEGRO_KEY_RIGHT:
+                                    x2 += 95;
+                                    break;
+                                case ALLEGRO_KEY_DOWN:
+                                    y2 += 95;
+                                    break;
+                                case ALLEGRO_KEY_LEFT:
+                                    x2 -= 95;
+                                    break;
+                                case ALLEGRO_KEY_ENTER :
+                                    fin = 1;
+                                    break;
+                            }
+                            Clear_Diplay();
 
+                            UPDATE_Part_Position_DRAW_Plateau(tab_plateau, &extra_piece);
+
+                            List_button_decal_draw(list_button_decal_colonne);
+                            List_button_decal_draw(list_button_decal_ligne);
+
+                            GC_SPRITE_DRAW(&sprite_rotation_posi);
+                            GC_SPRITE_DRAW(&sprite_rotation_nega);
+
+                            InitCharacter(Pion_position2, &PionRotation2, x2, y2);
+                            al_flip_display();
+                        }
+                    }
+                }
+
+                case 3: {
+                    while (fin != 1) {
+                        ALLEGRO_EVENT_QUEUE *queue;
+                        queue = al_create_event_queue();
+                        al_register_event_source(queue, al_get_keyboard_event_source());
+                        ALLEGRO_EVENT event;
+                        al_wait_for_event(queue, &event);
+                        if (event.type == ALLEGRO_EVENT_KEY_DOWN) {
+                            // si clavier selon touche appuyée,
+                            switch (event.keyboard.keycode) {
+                                case ALLEGRO_KEY_UP:
+                                    y3 -= 95;
+                                    break;
+                                case ALLEGRO_KEY_RIGHT:
+                                    x3 += 95;
+                                    break;
+                                case ALLEGRO_KEY_DOWN:
+                                    y3 += 95;
+                                    break;
+                                case ALLEGRO_KEY_LEFT:
+                                    x3 -= 95;
+                                    break;
+                                case ALLEGRO_KEY_ENTER :
+                                    fin = 1;
+                                    break;
+                            }
+                            Clear_Diplay();
+
+                            UPDATE_Part_Position_DRAW_Plateau(tab_plateau, &extra_piece);
+
+                            List_button_decal_draw(list_button_decal_colonne);
+                            List_button_decal_draw(list_button_decal_ligne);
+
+                            GC_SPRITE_DRAW(&sprite_rotation_posi);
+                            GC_SPRITE_DRAW(&sprite_rotation_nega);
+
+                            InitCharacter(Pion_position3, &PionRotation3, x3, y3);
+                            al_flip_display();
+                            JoueurPlay++;
+                        }
+                    }
+                }
+
+                case 4: {
+                    while (fin != 1) {
+                        ALLEGRO_EVENT_QUEUE *queue;
+                        queue = al_create_event_queue();
+                        al_register_event_source(queue, al_get_keyboard_event_source());
+                        ALLEGRO_EVENT event;
+                        al_wait_for_event(queue, &event);
+                        if (event.type == ALLEGRO_EVENT_KEY_DOWN) {
+                            // si clavier selon touche appuyée,
+                            switch (event.keyboard.keycode) {
+                                case ALLEGRO_KEY_UP:
+                                    y4 -= 95;
+                                    break;
+                                case ALLEGRO_KEY_RIGHT:
+                                    x4 += 95;
+                                    break;
+                                case ALLEGRO_KEY_DOWN:
+                                    y4 += 95;
+                                    break;
+                                case ALLEGRO_KEY_LEFT:
+                                    x4 -= 95;
+                                    break;
+                                case ALLEGRO_KEY_ENTER :
+                                    fin = 1;
+                                    break;
+                            }
+                            Clear_Diplay();
+
+                            UPDATE_Part_Position_DRAW_Plateau(tab_plateau, &extra_piece);
+
+                            List_button_decal_draw(list_button_decal_colonne);
+                            List_button_decal_draw(list_button_decal_ligne);
+
+                            GC_SPRITE_DRAW(&sprite_rotation_posi);
+                            GC_SPRITE_DRAW(&sprite_rotation_nega);
+
+                            InitCharacter(Pion_position4, &PionRotation4, x4, y4);
+                            al_flip_display();
+                            JoueurPlay++;
+                        }
+                    }
+            }
+        }
     }
-
             GC_MANAGER_DESTROY(&manager);
 
             return 0;
