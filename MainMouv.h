@@ -20,7 +20,8 @@ int x4 = 670; // ... Quatrième joueur
 int y4 = 90;
 
 
-int nbrJoueur=3; //définiti le nombre de joueurs
+int nbrJoueur=1; //définiti le nombre de joueurs
 int JoueurPlay=1; //définit quel joueur doit jouer
 int tour =1; //définit à quel tour du jeu nous sommes
-int fin =0; //Permet au joueur de finir son touche en appuyant sur entrée
+int finM =0; //Permet au joueur de finir ses déplacements en appuyant sur entrée
+int finP =0; //Permet au joueur de terminer ses déplacements du plateau

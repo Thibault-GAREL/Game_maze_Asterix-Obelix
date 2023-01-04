@@ -104,19 +104,20 @@ int main() {
 
         al_flip_display(); //affichage du plateau de base
 
-        fin = 0; //Permet au joueur de finir son tour si il appuye sur entrée
+        finM = 0; //Permet au joueur de finir son tour si il appuye sur entrée
 
             switch (JoueurPlay){
                 case 1:{
-                    while (fin != 1) {
-                        ALLEGRO_EVENT_QUEUE *queue;
+                    while (finM != 1) {
+                        /*ALLEGRO_EVENT_QUEUE *queue;
                         queue = al_create_event_queue();
                         al_register_event_source(queue, al_get_keyboard_event_source());
                         ALLEGRO_EVENT event;
-                        al_wait_for_event(queue, &event);
-                        if (event.type == ALLEGRO_EVENT_KEY_DOWN) {
+                        al_wait_for_event(queue, &event);*/
+                        GC_MANAGER_UPDATE_EVENT(&manager);
+                        if (manager.event.type == ALLEGRO_EVENT_KEY_DOWN) {
                             // si clavier selon touche appuyée,
-                            switch (event.keyboard.keycode) {
+                            switch (manager.event.keyboard.keycode) {
                                 case ALLEGRO_KEY_UP:
                                     y1 -= 95;
                                     break;
@@ -130,7 +131,7 @@ int main() {
                                     x1 -= 95;
                                     break;
                                 case ALLEGRO_KEY_ENTER :
-                                    fin = 1;
+                                    finM = 1;
                                     break;
                             }
                             Clear_Diplay();
@@ -145,22 +146,17 @@ int main() {
 
                             InitCharacter(Pion_position1, &PionRotation1, x1, y1);
 
-
                             al_flip_display();
                         }
                     }
                 }
 
                 case 2: {
-                    while (fin != 1) {
-                        ALLEGRO_EVENT_QUEUE *queue;
-                        queue = al_create_event_queue();
-                        al_register_event_source(queue, al_get_keyboard_event_source());
-                        ALLEGRO_EVENT event;
-                        al_wait_for_event(queue, &event);
-                        if (event.type == ALLEGRO_EVENT_KEY_DOWN) {
+                    while (finM != 1) {
+                        GC_MANAGER_UPDATE_EVENT(&manager);
+                        if (manager.event.type == ALLEGRO_EVENT_KEY_DOWN) {
                             // si clavier selon touche appuyée,
-                            switch (event.keyboard.keycode) {
+                            switch (manager.event.keyboard.keycode) {
                                 case ALLEGRO_KEY_UP:
                                     y2 -= 95;
                                     break;
@@ -174,7 +170,7 @@ int main() {
                                     x2 -= 95;
                                     break;
                                 case ALLEGRO_KEY_ENTER :
-                                    fin = 1;
+                                    finM = 1;
                                     break;
                             }
                             Clear_Diplay();
@@ -195,15 +191,11 @@ int main() {
                 }
 
                 case 3: {
-                    while (fin != 1) {
-                        ALLEGRO_EVENT_QUEUE *queue;
-                        queue = al_create_event_queue();
-                        al_register_event_source(queue, al_get_keyboard_event_source());
-                        ALLEGRO_EVENT event;
-                        al_wait_for_event(queue, &event);
-                        if (event.type == ALLEGRO_EVENT_KEY_DOWN) {
+                    while (finM != 1) {
+                        GC_MANAGER_UPDATE_EVENT(&manager);
+                        if (manager.event.type == ALLEGRO_EVENT_KEY_DOWN) {
                             // si clavier selon touche appuyée,
-                            switch (event.keyboard.keycode) {
+                            switch (manager.event.keyboard.keycode) {
                                 case ALLEGRO_KEY_UP:
                                     y3 -= 95;
                                     break;
@@ -217,7 +209,7 @@ int main() {
                                     x3 -= 95;
                                     break;
                                 case ALLEGRO_KEY_ENTER :
-                                    fin = 1;
+                                    finM = 1;
                                     break;
                             }
                             Clear_Diplay();
@@ -238,15 +230,11 @@ int main() {
                 }
 
                 case 4: {
-                    while (fin != 1) {
-                        ALLEGRO_EVENT_QUEUE *queue;
-                        queue = al_create_event_queue();
-                        al_register_event_source(queue, al_get_keyboard_event_source());
-                        ALLEGRO_EVENT event;
-                        al_wait_for_event(queue, &event);
-                        if (event.type == ALLEGRO_EVENT_KEY_DOWN) {
+                    while (finM != 1) {
+                        GC_MANAGER_UPDATE_EVENT(&manager);
+                        if (manager.event.type == ALLEGRO_EVENT_KEY_DOWN) {
                             // si clavier selon touche appuyée,
-                            switch (event.keyboard.keycode) {
+                            switch (manager.event.keyboard.keycode) {
                                 case ALLEGRO_KEY_UP:
                                     y4 -= 95;
                                     break;
@@ -260,7 +248,7 @@ int main() {
                                     x4 -= 95;
                                     break;
                                 case ALLEGRO_KEY_ENTER :
-                                    fin = 1;
+                                    finM = 1;
                                     break;
                             }
                             Clear_Diplay();
@@ -283,7 +271,10 @@ int main() {
                 if (JoueurPlay==nbrJoueur+1){
                     JoueurPlay=1;
                 }
+
         }
+
+
     }
             GC_MANAGER_DESTROY(&manager);
 

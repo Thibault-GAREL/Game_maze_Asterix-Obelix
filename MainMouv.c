@@ -67,7 +67,6 @@ int main() {
                 case ALLEGRO_KEY_LEFT: x -= 10; break;
                 case ALLEGRO_KEY_ESCAPE: fin = 1; break;
             }
-
         }
         else if (event.type == ALLEGRO_EVENT_DISPLAY_CLOSE)
             fin = 1;
