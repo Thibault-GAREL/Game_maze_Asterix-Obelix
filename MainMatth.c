@@ -46,7 +46,7 @@ int main()
     GC_INPUT_FIELD_INIT(&gc_input_field, &manager.event);
     
     GC_TEXT gc_text;
-    GC_TEXT_INIT(&gc_text, gc_input_field.text);
+    GC_TEXT_INIT(&gc_text);
 
     while (!gc_input_field.isValidated)
     {
@@ -58,9 +58,10 @@ int main()
         }
 
         GC_INPUT_FIELD_UPDATE_EVENT(&gc_input_field);
+        GC_TEXT_SET(&gc_text, gc_input_field.text);
         printf("\n<DEBUG> [GC_INPUT_FIELD_UPDATE_EVENT] INPUT: [%d] --> \'%c\'", gc_input_field.event->keyboard.unichar, gc_input_field.event->keyboard.unichar);
         al_clear_to_color(al_map_rgb(0,0,0));
-        GC_TEXT_DRAW_F(gc_text);
+        GC_TEXT_DRAW(gc_text); 
 
         al_flip_display();
     }
@@ -71,22 +72,31 @@ int main()
 
 
 
-/* Exemple d'affichage de texte formaté 
+/* Exemple d'affichage de texte
 
 int main()
 {
     GC_MANAGER manager;
     GC_MANAGER_CREATE(&manager, 640, 420);
     
-    char* text_out = "TITRE\n\n1)Première partie\n\tblablabla";
-
+    char* text_out = "Texte 1";
+    //al_load_font()
     GC_TEXT gc_text;
-    GC_TEXT_INIT(&gc_text, text_out);
-
-    GC_TEXT_DRAW_F(gc_text);
+    GC_TEXT_INIT(&gc_text);
+    GC_TEXT_SET(&gc_text, text_out);
+    GC_TEXT_DRAW(gc_text);
 
     al_flip_display();
-    al_rest(10);
+    al_rest(2);
+
+    al_clear_to_color(al_map_rgb(0,0,0));
+
+    text_out = "Texte 2";
+    GC_TEXT_SET(&gc_text, text_out);
+    GC_TEXT_DRAW(gc_text);
+
+    al_flip_display();
+    al_rest(2);
 
     GC_MANAGER_DESTROY(&manager);
 }/**/

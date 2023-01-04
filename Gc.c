@@ -308,10 +308,8 @@ void GC_SPRITE_DRAW(GC_SPRITE* gc_sprite)
 }
 
 
-void GC_TEXT_INIT(GC_TEXT* gc_text, char* text)
+void GC_TEXT_INIT(GC_TEXT* gc_text)
 {
-    gc_text->text = text;
-
     gc_text->police = al_create_builtin_font();
 
     gc_text->color = al_map_rgb(255,255,255);
@@ -319,9 +317,14 @@ void GC_TEXT_INIT(GC_TEXT* gc_text, char* text)
     GC_PROPERTIES_INIT(&gc_text->gc_properties);
 }
 
-void GC_TEXT_DRAW_F(GC_TEXT gc_text)
+void GC_TEXT_SET(GC_TEXT* gc_text, char* text)
 {
-    al_draw_textf(gc_text.police, gc_text.color, gc_text.gc_properties.gc_space.POSITION_X, gc_text.gc_properties.gc_space.POSITION_Y, 0, gc_text.text);
+        gc_text->text = text;
+}
+
+void GC_TEXT_DRAW(GC_TEXT gc_text)
+{
+    al_draw_text(gc_text.police, gc_text.color, gc_text.gc_properties.gc_space.POSITION_X, gc_text.gc_properties.gc_space.POSITION_Y, 0, gc_text.text);
 }
 
 /*

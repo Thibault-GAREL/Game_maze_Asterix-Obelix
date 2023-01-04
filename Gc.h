@@ -119,8 +119,9 @@
         GC_PROPERTIES gc_properties;
     }GC_TEXT;
 
-    void GC_TEXT_INIT(GC_TEXT* gc_text, char* text);
-    void GC_TEXT_DRAW_F(GC_TEXT gc_text);
+    void GC_TEXT_INIT(GC_TEXT* gc_text);
+    void GC_TEXT_SET(GC_TEXT* gc_text, char* text);
+    void GC_TEXT_DRAW(GC_TEXT gc_text);
 
 #endif
 
