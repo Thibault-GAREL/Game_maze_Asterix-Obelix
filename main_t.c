@@ -55,18 +55,7 @@ int main() {
             break;
         }
 
-        GC_BUTTON_UPDATE_EVENT(&button_rotation_posi);
-        GC_BUTTON_UPDATE_EVENT(&button_rotation_nega);
-
-
-        if (button_rotation_posi.state == 2) {
-            extra_piece.gc_properties.gc_space.ROTATION_Z += PI / 2;
-        } else if (button_rotation_nega.state == 2) {
-            extra_piece.gc_properties.gc_space.ROTATION_Z -= PI / 2;
-        }
-
-        List_button_decal_update_event(list_button_decal_colonne);
-        List_button_decal_update_event(list_button_decal_ligne);
+        New_Part_Deplacement(&extra_piece, &button_rotation_posi, &button_rotation_nega, &list_button_decal_colonne, &list_button_decal_ligne);
 
         int j = 0;
         for (int i = 0; i < 6; i++) {

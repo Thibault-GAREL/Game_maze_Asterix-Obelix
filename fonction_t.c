@@ -320,3 +320,19 @@ int MoveCharacter(int x, int y ){
     }
 }
 
+void New_Part_Deplacement(GC_SPRITE* pExtra_piece, GC_BUTTON* pButton_rotation_posi, GC_BUTTON* pButton_rotation_nega, BUTTON_DECAL* pList_button_decal_colonne, BUTTON_DECAL* pList_button_decal_ligne)
+{
+        GC_BUTTON_UPDATE_EVENT(pButton_rotation_posi);
+        GC_BUTTON_UPDATE_EVENT(pButton_rotation_nega);
+
+
+        if (pButton_rotation_posi->state == 2) {
+            pExtra_piece->gc_properties.gc_space.ROTATION_Z += PI / 2;
+        } else if (pButton_rotation_nega->state == 2) {
+            pExtra_piece->gc_properties.gc_space.ROTATION_Z -= PI / 2;
+        }
+
+        List_button_decal_update_event(pList_button_decal_colonne);
+        List_button_decal_update_event(pList_button_decal_ligne);
+}
+

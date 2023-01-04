@@ -44,5 +44,7 @@ void List_button_decal_draw(BUTTON_DECAL list_button_decal_colonne[6]);
 
 void InitCharacter(GC_SPRITE PionSprite, GC_SPRITE* const Pion, int x , int y);
 
+void New_Part_Deplacement(GC_SPRITE* pExtra_piece, GC_BUTTON* pButton_rotation_posi, GC_BUTTON* pButton_rotation_nega, BUTTON_DECAL* pList_button_decal_colonne, BUTTON_DECAL* pList_button_decal_ligne);
+
 
 #endif //PROJET_FONCTION_T_H
