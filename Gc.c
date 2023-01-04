@@ -82,13 +82,26 @@ void GC_MANAGER_CREATE(GC_MANAGER* pManager, int width, int height)
 
     ALLEGRO_EVENT emptyEvent = {0};
     pManager->event = emptyEvent;
+    pManager->event_time = 0;
 }
 
 void GC_MANAGER_UPDATE_EVENT(GC_MANAGER* pManager)
 {
     ALLEGRO_EVENT emptyEvent = {0};
     pManager->event = emptyEvent;
-    al_wait_for_event(pManager->events, &pManager->event);
+
+    if (pManager->event_time == 0)
+    {
+        al_wait_for_event(pManager->events, &pManager->event);
+    }
+    else if (pManager->event_time > 0)
+    {
+        al_wait_for_event_timed(pManager->events, &pManager->event, pManager->event_time);
+    }
+    else
+    {
+        fprintf(stderr, "\n<ERROR> event_time doit être positif");
+    }
 }
 
 void GC_MANAGER_DESTROY(GC_MANAGER* pManger)

@@ -26,6 +26,7 @@
         ALLEGRO_DISPLAY* display;
         ALLEGRO_EVENT_QUEUE* events;
         ALLEGRO_EVENT event;
+        float event_time;
     }GC_MANAGER;
 
     //Retourne l'addresse du nouveau manager si l'initialisation réussie sinon 0 
