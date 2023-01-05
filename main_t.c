@@ -1,5 +1,4 @@
 #include "fonction_t.h"
-#include "MainMouv.h"
 // gcc -g -Wall .\main_t.c .\Gc.c .\fonction_t.c  -lallegro -lallegro_image -lallegro_font -oProject; .\Project.exe
 
 
