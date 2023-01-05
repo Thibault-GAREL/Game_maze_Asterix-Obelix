@@ -75,9 +75,8 @@ int main() {
         Clear_Diplay(); // Initialisation du plateau de base (pièces à leurs positions d'origine)
 
 
-
-
-
+        while (SelectMenu==0) {
+            MenuDisplay(size1, size2, size3);
 
 
             if (manager.event.type == ALLEGRO_EVENT_KEY_DOWN) {
@@ -88,12 +87,11 @@ int main() {
                     case ALLEGRO_KEY_PAD_3 : {size1=24; size2=24; size3=28;} break;
                 }
             }
-            MenuDisplay(size1, size2, size3);
             switch (SelectMenu) {
                 case 0: break;
                 case 1 : al_clear_to_color(al_map_rgb(0,0,0)); break;
             }
-
+        }
 
         UPDATE_Part_Position_DRAW_Plateau(tab_plateau, &extra_piece);
 
