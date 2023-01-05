@@ -9,7 +9,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-#include "Gc.h"
 #include "Menu.h"
 
 #define PART_H 95
@@ -23,9 +22,7 @@
 #define MOVABLE_PARTS 34
 #define TAB_BUTTONS_SIDE 3
 #define PI 3.14
-#define FILE_ACCESS ""
-#define BUTTON_PATH FILE_ACCESS ".\\Import\\Fleche_1.PNG"
-#define FONT_PATH FILE_ACCESS ".\\Import\\BruceForeverRegular.ttf"
+
 
 typedef struct 
 {

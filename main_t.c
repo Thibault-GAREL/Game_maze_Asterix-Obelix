@@ -47,8 +47,13 @@ int main() {
     GC_SPRITE_INIT(&Pion_position3, FILE_ACCESS ".\\Import\\Dessin_obelix_Image_Small.png");
     GC_SPRITE_INIT(&Pion_position4, FILE_ACCESS ".\\Import\\Dessin_Panoramix_Small.png");
 
+
+    TextMenu textMenu;
+    MenuInit(&textMenu);
+
     while (SelectMenu==0) {
-        MenuDisplay(size1, size2, size3);
+
+        MenuDisplay(&textMenu);
 
 
         if (manager.event.type == ALLEGRO_EVENT_KEY_DOWN) {

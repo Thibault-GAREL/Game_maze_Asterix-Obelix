@@ -7,7 +7,11 @@
 
 #endif //PROJET_MAINMOUV_H
 
-#include "fonction_t.h"
+#include "Gc.h"
+
+#define FILE_ACCESS "."
+#define BUTTON_PATH FILE_ACCESS ".\\Import\\Fleche_1.PNG"
+#define FONT_PATH FILE_ACCESS ".\\Import\\BruceForeverRegular.ttf"
 
 #define TextOffsetX 500     //définit la position en X du texte du menu
 
@@ -43,9 +47,11 @@ const char TableauText[][6]={"Bienvenue Dans Le Labyrinthe ! ", "Récupérez tou
 const int TableauTextOffsetY[6]={200,300,475,650,700,750};  //définit les positions en Y du texte du menu
 
 
-void MenuDisplay(int s1, int s2, int s3);   //déclaration de la fonction permettant d'afficher le Menu
-
-
 typedef struct{                             //Structure permettant de stocker les textes au complet
     GC_TEXT tableauTextes[6];
 }TextMenu;
+
+void MenuInit(TextMenu* pTextmenu);          //déclaration de la fonction permettant d'intialiser le menu
+void MenuDisplay(TextMenu* pTextMenu);      //déclaration de la fonction permettant d'afficher le Menu
+
+
