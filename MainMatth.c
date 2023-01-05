@@ -71,7 +71,7 @@ int main()
 
 
 
-/* Exemple d'affichage de texte 
+/* Exemple d'affichage de texte */
 
 int main()
 {

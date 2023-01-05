@@ -56,6 +56,7 @@ char adresse_tuile_mobile[50][50] = {FILE_ACCESS ".\\Import\\tuile_2.png",
                                      FILE_ACCESS ".\\Import\\tuile_48.png",
                                      FILE_ACCESS ".\\Import\\tuile_50.png"};
 
+
 int* random_sans_remise(int tab_index[MOVABLE_PARTS])
 {
     int k, j, a = 0;

@@ -1,9 +1,29 @@
 #include "fonction_t.h"
-// gcc -g -Wall .\main_t.c .\Gc.c .\fonction_t.c  -lallegro -lallegro_image -lallegro_font -oProject; .\Project.exe
+#include "Menu.h"
+// gcc -g -Wall .\main_t.c .\Gc.c .\fonction_t.c .\Menu.c -lallegro -lallegro_image -lallegro_font -oProject; .\Project.exe
+
+int nbrJoueur=4; //définiti le nombre de joueurs
+int JoueurPlay=1; //définit quel joueur doit jouer
+int tour =1; //définit à quel tour du jeu nous sommes
+int finM =0; //Permet au joueur de finir ses déplacements en appuyant sur entrée
+int finP =0; //Permet au joueur de terminer ses déplacements du plateau
 
 
+int SelectMenu=0; //permet de valider la sélection dans le menu
 
 int main() {
+    int x1 = 90;                // coordonnées x et y du premier joueur
+    int y1 = 650;
+
+    int x2 = 670;               // ... deuxième joueur
+    int y2 = 650;
+
+    int x3 = 90;               // ... troisième joueur
+    int y3 = 90;
+
+    int x4 = 670;              // ... Quatrième joueur
+    int y4 = 90;
+
     GC_MANAGER manager;
     GC_MANAGER_CREATE(&manager, 1000, 1000);
 
@@ -56,14 +76,14 @@ int main() {
         MenuDisplay(&textMenu);
 
 
-        if (manager.event.type == ALLEGRO_EVENT_KEY_DOWN) {
+        /*if (manager.event.type == ALLEGRO_EVENT_KEY_DOWN) {
             // si clavier selon touche appuyée,
             switch (manager.event.keyboard.keycode) {
                 case ALLEGRO_KEY_A : {size1=28; size2=24; size3=24;} break;
                 case ALLEGRO_KEY_PAD_2 : {size1=24; size2=28; size3=24;} break;
                 case ALLEGRO_KEY_PAD_3 : {size1=24; size2=24; size3=28;} break;
             }
-        }
+        }*/
         switch (SelectMenu) {
             case 0: break;
             case 1 : al_clear_to_color(al_map_rgb(0,0,0)); break;

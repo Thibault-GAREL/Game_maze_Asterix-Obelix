@@ -2,6 +2,10 @@
 // Created by garel on 21/12/2022.
 //
 
+#ifndef MENU
+#define MENU
+
+#endif
 
 #ifndef PROJET_FONCTION_T_H
 #define PROJET_FONCTION_T_H
@@ -9,7 +13,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-#include "Menu.h"
+#include "Gc.h"
+#include "Path.h"
 
 #define PART_H 95
 #define PART_W 95
