@@ -8,6 +8,7 @@
     #include <allegro5/allegro.h>
     #include <allegro5/allegro_image.h>
     #include <allegro5/allegro_font.h>
+    #include <allegro5/allegro_ttf.h>
 #endif
 
 #ifndef GCINITALLEGRO
@@ -119,7 +120,7 @@
         GC_PROPERTIES gc_properties;
     }GC_TEXT;
 
-    void GC_TEXT_INIT(GC_TEXT* gc_text);
+    void GC_TEXT_INIT(GC_TEXT* gc_text, int size);
     void GC_TEXT_SET(GC_TEXT* gc_text, char* text);
     void GC_TEXT_DRAW(GC_TEXT gc_text);
 

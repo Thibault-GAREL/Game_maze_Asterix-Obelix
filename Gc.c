@@ -308,9 +308,10 @@ void GC_SPRITE_DRAW(GC_SPRITE* gc_sprite)
 }
 
 
-void GC_TEXT_INIT(GC_TEXT* gc_text)
+void GC_TEXT_INIT(GC_TEXT* gc_text, int size)
 {
-    gc_text->police = al_create_builtin_font();
+    al_init_ttf_addon();
+    gc_text->police = al_load_ttf_font("..\\Import\\BruceForeverRegular.ttf",  size , 0);
 
     gc_text->color = al_map_rgb(255,255,255);
 
@@ -324,7 +325,7 @@ void GC_TEXT_SET(GC_TEXT* gc_text, char* text)
 
 void GC_TEXT_DRAW(GC_TEXT gc_text)
 {
-    al_draw_text(gc_text.police, gc_text.color, gc_text.gc_properties.gc_space.POSITION_X, gc_text.gc_properties.gc_space.POSITION_Y, 0, gc_text.text);
+    al_draw_text(gc_text.police, gc_text.color, gc_text.gc_properties.gc_space.POSITION_X, gc_text.gc_properties.gc_space.POSITION_Y, ALLEGRO_ALIGN_CENTRE, gc_text.text);
 }
 
 /*

@@ -74,6 +74,27 @@ int main() {
 
         Clear_Diplay(); // Initialisation du plateau de base (pièces à leurs positions d'origine)
 
+
+
+
+
+
+
+            if (manager.event.type == ALLEGRO_EVENT_KEY_DOWN) {
+                // si clavier selon touche appuyée,
+                switch (manager.event.keyboard.keycode) {
+                    case ALLEGRO_KEY_A : {size1=28; size2=24; size3=24;} break;
+                    case ALLEGRO_KEY_PAD_2 : {size1=24; size2=28; size3=24;} break;
+                    case ALLEGRO_KEY_PAD_3 : {size1=24; size2=24; size3=28;} break;
+                }
+            }
+            MenuDisplay(size1, size2, size3);
+            switch (SelectMenu) {
+                case 0: break;
+                case 1 : al_clear_to_color(al_map_rgb(0,0,0)); break;
+            }
+
+
         UPDATE_Part_Position_DRAW_Plateau(tab_plateau, &extra_piece);
 
         List_button_decal_draw(list_button_decal_colonne);
@@ -83,189 +104,112 @@ int main() {
         GC_SPRITE_DRAW(&sprite_rotation_nega);
 
         switch (nbrJoueur){ //initialise les textures en fonction du nombre de joueurs jouant au jeu
-            case 1: InitCharacter(Pion_position1, &PionRotation1, x1, y1); break;
-            case 2 : { InitCharacter(Pion_position1, &PionRotation1, x1, y1); InitCharacter(Pion_position2, &PionRotation2, x2, y2); break; }
-            case 3 : { InitCharacter(Pion_position1, &PionRotation1, x1, y1); InitCharacter(Pion_position2, &PionRotation2, x2, y2); InitCharacter(Pion_position3, &PionRotation3, x3, y3); break; }
-            case 4 : {InitCharacter(Pion_position1, &PionRotation1, x1, y1); InitCharacter(Pion_position2, &PionRotation2, x2, y2); InitCharacter(Pion_position3, &PionRotation3, x3, y3); InitCharacter(Pion_position4, &PionRotation4, x4, y4); break; }
+            case 1: InitCharacter(Pion_position1, x1, y1); break;
+            case 2 : { InitCharacter(Pion_position1, x1, y1); InitCharacter(Pion_position2, x2, y2); break; }
+            case 3 : { InitCharacter(Pion_position1, x1, y1); InitCharacter(Pion_position2, x2, y2); InitCharacter(Pion_position3, x3, y3); break; }
+            case 4 : {InitCharacter(Pion_position1, x1, y1); InitCharacter(Pion_position2, x2, y2); InitCharacter(Pion_position3, x3, y3); InitCharacter(Pion_position4, x4, y4); break; }
         }
 
         // fin de l'intialisation des positions des pièces et du plateau
 
-        al_flip_display(); //affichage du plateau de base
 
-        finM = 0; //Permet au joueur de finir son tour si il appuye sur entrée
 
-            switch (JoueurPlay){
-                case 1:{
-                    while (finM != 1) {
-                        /*ALLEGRO_EVENT_QUEUE *queue;
-                        queue = al_create_event_queue();
-                        al_register_event_source(queue, al_get_keyboard_event_source());
-                        ALLEGRO_EVENT event;
-                        al_wait_for_event(queue, &event);*/
-                        GC_MANAGER_UPDATE_EVENT(&manager);
-                        if (manager.event.type == ALLEGRO_EVENT_KEY_DOWN) {
-                            // si clavier selon touche appuyée,
-                            switch (manager.event.keyboard.keycode) {
-                                case ALLEGRO_KEY_UP:
-                                    y1 -= 95;
-                                    break;
-                                case ALLEGRO_KEY_RIGHT:
-                                    x1 += 95;
-                                    break;
-                                case ALLEGRO_KEY_DOWN:
-                                    y1 += 95;
-                                    break;
-                                case ALLEGRO_KEY_LEFT:
-                                    x1 -= 95;
-                                    break;
-                                case ALLEGRO_KEY_ENTER :
-                                    finM = 1;
-                                    break;
-                            }
-                            Clear_Diplay();
-
-                            UPDATE_Part_Position_DRAW_Plateau(tab_plateau, &extra_piece);
-
-                            List_button_decal_draw(list_button_decal_colonne);
-                            List_button_decal_draw(list_button_decal_ligne);
-
-                            GC_SPRITE_DRAW(&sprite_rotation_posi);
-                            GC_SPRITE_DRAW(&sprite_rotation_nega);
-
-                            InitCharacter(Pion_position1, &PionRotation1, x1, y1);
-
-                            al_flip_display();
+        switch (JoueurPlay){
+            case 1:{
+                    if (manager.event.type == ALLEGRO_EVENT_KEY_DOWN) {
+                        // si clavier selon touche appuyée,
+                        switch (manager.event.keyboard.keycode) {
+                            case ALLEGRO_KEY_UP:
+                                y1 -= PART_H;
+                                break;
+                            case ALLEGRO_KEY_RIGHT:
+                                x1 += PART_W;
+                                break;
+                            case ALLEGRO_KEY_DOWN:
+                                y1 += PART_H;
+                                break;
+                            case ALLEGRO_KEY_LEFT:
+                                x1 -= PART_W;
+                                break;
+                            case ALLEGRO_KEY_ENTER :
+                                finM = 1;
+                                break;
                         }
                     }
-                }
+                    break;
+            }
 
-                case 2: {
-                    while (finM != 1) {
-                        GC_MANAGER_UPDATE_EVENT(&manager);
-                        if (manager.event.type == ALLEGRO_EVENT_KEY_DOWN) {
-                            // si clavier selon touche appuyée,
-                            switch (manager.event.keyboard.keycode) {
-                                case ALLEGRO_KEY_UP:
-                                    y2 -= 95;
-                                    break;
-                                case ALLEGRO_KEY_RIGHT:
-                                    x2 += 95;
-                                    break;
-                                case ALLEGRO_KEY_DOWN:
-                                    y2 += 95;
-                                    break;
-                                case ALLEGRO_KEY_LEFT:
-                                    x2 -= 95;
-                                    break;
-                                case ALLEGRO_KEY_ENTER :
-                                    finM = 1;
-                                    break;
-                            }
-                            Clear_Diplay();
-
-                            UPDATE_Part_Position_DRAW_Plateau(tab_plateau, &extra_piece);
-
-                            List_button_decal_draw(list_button_decal_colonne);
-                            List_button_decal_draw(list_button_decal_ligne);
-
-                            GC_SPRITE_DRAW(&sprite_rotation_posi);
-                            GC_SPRITE_DRAW(&sprite_rotation_nega);
-
-                            InitCharacter(Pion_position2, &PionRotation2, x2, y2);
-
-                            al_flip_display();
+            case 2: {
+                    if (manager.event.type == ALLEGRO_EVENT_KEY_DOWN) {
+                        // si clavier selon touche appuyée,
+                        switch (manager.event.keyboard.keycode) {
+                            case ALLEGRO_KEY_UP:
+                                y2 -= PART_H;
+                                break;
+                            case ALLEGRO_KEY_RIGHT:
+                                x2 += PART_W;
+                                break;
+                            case ALLEGRO_KEY_DOWN:
+                                y2 += PART_H;
+                                break;
+                            case ALLEGRO_KEY_LEFT:
+                                x2 -= PART_W;
+                                break;
+                            case ALLEGRO_KEY_ENTER :
+                                finM = 1;
+                                break;
                         }
                     }
-                }
+            }
 
-                case 3: {
-                    while (finM != 1) {
-                        GC_MANAGER_UPDATE_EVENT(&manager);
-                        if (manager.event.type == ALLEGRO_EVENT_KEY_DOWN) {
-                            // si clavier selon touche appuyée,
-                            switch (manager.event.keyboard.keycode) {
-                                case ALLEGRO_KEY_UP:
-                                    y3 -= 95;
-                                    break;
-                                case ALLEGRO_KEY_RIGHT:
-                                    x3 += 95;
-                                    break;
-                                case ALLEGRO_KEY_DOWN:
-                                    y3 += 95;
-                                    break;
-                                case ALLEGRO_KEY_LEFT:
-                                    x3 -= 95;
-                                    break;
-                                case ALLEGRO_KEY_ENTER :
-                                    finM = 1;
-                                    break;
-                            }
-                            Clear_Diplay();
-
-                            UPDATE_Part_Position_DRAW_Plateau(tab_plateau, &extra_piece);
-
-                            List_button_decal_draw(list_button_decal_colonne);
-                            List_button_decal_draw(list_button_decal_ligne);
-
-                            GC_SPRITE_DRAW(&sprite_rotation_posi);
-                            GC_SPRITE_DRAW(&sprite_rotation_nega);
-
-                            InitCharacter(Pion_position3, &PionRotation3, x3, y3);
-
-                            al_flip_display();
+            case 3: {
+                    if (manager.event.type == ALLEGRO_EVENT_KEY_DOWN) {
+                        // si clavier selon touche appuyée,
+                        switch (manager.event.keyboard.keycode) {
+                            case ALLEGRO_KEY_UP:
+                                y3 -= PART_H;
+                                break;
+                            case ALLEGRO_KEY_RIGHT:
+                                x3 += PART_W;
+                                break;
+                            case ALLEGRO_KEY_DOWN:
+                                y3 += PART_W;
+                                break;
+                            case ALLEGRO_KEY_LEFT:
+                                x3 -= PART_H;
+                                break;
+                            case ALLEGRO_KEY_ENTER :
+                                finM = 1;
+                                break;
                         }
                     }
-                }
+            }
 
-                case 4: {
-                    while (finM != 1) {
-                        GC_MANAGER_UPDATE_EVENT(&manager);
-                        if (manager.event.type == ALLEGRO_EVENT_KEY_DOWN) {
-                            // si clavier selon touche appuyée,
-                            switch (manager.event.keyboard.keycode) {
-                                case ALLEGRO_KEY_UP:
-                                    y4 -= 95;
-                                    break;
-                                case ALLEGRO_KEY_RIGHT:
-                                    x4 += 95;
-                                    break;
-                                case ALLEGRO_KEY_DOWN:
-                                    y4 += 95;
-                                    break;
-                                case ALLEGRO_KEY_LEFT:
-                                    x4 -= 95;
-                                    break;
-                                case ALLEGRO_KEY_ENTER :
-                                    finM = 1;
-                                    break;
-                            }
-                            Clear_Diplay();
-
-                            UPDATE_Part_Position_DRAW_Plateau(tab_plateau, &extra_piece);
-
-                            List_button_decal_draw(list_button_decal_colonne);
-                            List_button_decal_draw(list_button_decal_ligne);
-
-                            GC_SPRITE_DRAW(&sprite_rotation_posi);
-                            GC_SPRITE_DRAW(&sprite_rotation_nega);
-
-                            InitCharacter(Pion_position4, &PionRotation4, x4, y4);
-
-                            al_flip_display();
+            case 4: {
+                    if (manager.event.type == ALLEGRO_EVENT_KEY_DOWN) {
+                        // si clavier selon touche appuyée,
+                        switch (manager.event.keyboard.keycode) {
+                            case ALLEGRO_KEY_UP:
+                                y4 -= PART_H;
+                                break;
+                            case ALLEGRO_KEY_RIGHT:
+                                x4 += PART_W;
+                                break;
+                            case ALLEGRO_KEY_DOWN:
+                                y4 += PART_H;
+                                break;
+                            case ALLEGRO_KEY_LEFT:
+                                x4 -= PART_W;
+                                break;
+                            case ALLEGRO_KEY_ENTER :
+                                finM = 1;
+                                break;
                         }
                     }
-                }
-            JoueurPlay++;
-                if (JoueurPlay==nbrJoueur+1){
-                    JoueurPlay=1;
-                }
-
+            }
         }
-
-
+        al_flip_display(); //affichage du plateau de base
     }
             GC_MANAGER_DESTROY(&manager);
-
             return 0;
 }
