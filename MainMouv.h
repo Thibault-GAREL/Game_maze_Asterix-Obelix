@@ -7,6 +7,8 @@
 
 #endif //PROJET_MAINMOUV_H
 
+#include "fonction_t.h"
+
 int x1 = 90; // coordonnées x et y du premier joueur
 int y1 = 650;
 
@@ -46,43 +48,56 @@ int MenuDisplay(int s1, int s2, int s3){ //fonction permettant d'afficher le men
     
     GC_TEXT gc_text1;
     GC_TEXT_INIT(&gc_text1, text_out1);
-    GC_TEXT_SET_FONT(&gc_text1, "..\\Import\\BruceForeverRegular.ttf",32);
+    GC_TEXT_SET_FONT(&gc_text1, FONT_PATH,32);
     gc_text1.al_flag = ALLEGRO_ALIGN_CENTER;
 
     GC_TEXT gc_text2;
     GC_TEXT_INIT(&gc_text2, text_out2);
-    GC_TEXT_SET_FONT(&gc_text1, "..\\Import\\BruceForeverRegular.ttf",24);
+    GC_TEXT_SET_FONT(&gc_text1, FONT_PATH,24);
     gc_text2.al_flag = ALLEGRO_ALIGN_CENTER;
 
     GC_TEXT gc_text3;
     GC_TEXT_INIT(&gc_text3, text_out3);
-    GC_TEXT_SET_FONT(&gc_text1, "..\\Import\\BruceForeverRegular.ttf",32);
+    GC_TEXT_SET_FONT(&gc_text1, FONT_PATH,32);
     gc_text3.al_flag = ALLEGRO_ALIGN_CENTER;
 
     GC_TEXT gc_text4;
     GC_TEXT_INIT(&gc_text4, text_out4);
-    GC_TEXT_SET_FONT(&gc_text1, "..\\Import\\BruceForeverRegular.ttf",24);
+    GC_TEXT_SET_FONT(&gc_text1, FONT_PATH,24);
     gc_text4.al_flag = ALLEGRO_ALIGN_CENTER;
 
     GC_TEXT gc_text5;
     GC_TEXT_INIT(&gc_text5, text_out5);
-    GC_TEXT_SET_FONT(&gc_text1, "..\\Import\\BruceForeverRegular.ttf",24);
+    GC_TEXT_SET_FONT(&gc_text1, FONT_PATH,24);
     gc_text5.al_flag = ALLEGRO_ALIGN_CENTER;
 
     GC_TEXT gc_text6;
     GC_TEXT_INIT(&gc_text6, text_out6);
-    GC_TEXT_SET_FONT(&gc_text1, "..\\Import\\BruceForeverRegular.ttf",24);
+    GC_TEXT_SET_FONT(&gc_text1, FONT_PATH,24);
     gc_text6.al_flag = ALLEGRO_ALIGN_CENTER;
 
-    gc_text1.gc_properties.gc_space.POSITION_X = 500;            gc_text1.gc_properties.gc_space.POSITION_Y = 200; //définit la position en X et Y des différentes lignes de la page d'accueil
-    gc_text2.gc_properties.gc_space.POSITION_X = 500;            gc_text2.gc_properties.gc_space.POSITION_Y = 300; // Toutes les lignes possèdent comme point de référence leur centre
-    gc_text3.gc_properties.gc_space.POSITION_X = 500;            gc_text3.gc_properties.gc_space.POSITION_Y = 475; //définit avec un flag dans le fichier Gc.c
-    gc_text4.gc_properties.gc_space.POSITION_X = 500;            gc_text4.gc_properties.gc_space.POSITION_Y = 650;
-    gc_text5.gc_properties.gc_space.POSITION_X = 500;            gc_text5.gc_properties.gc_space.POSITION_Y = 700;
-    gc_text6.gc_properties.gc_space.POSITION_X = 500;            gc_text6.gc_properties.gc_space.POSITION_Y = 750;
+    gc_text1.gc_properties.gc_space.POSITION_X = 500;           
+    gc_text1.gc_properties.gc_space.POSITION_Y = 200; //définit la position en X et Y des différentes lignes de la page d'accueil
+
+    gc_text2.gc_properties.gc_space.POSITION_X = 500;           
+    gc_text2.gc_properties.gc_space.POSITION_Y = 300; // Toutes les lignes possèdent comme point de référence leur centre
+
+    gc_text3.gc_properties.gc_space.POSITION_X = 500;           
+    gc_text3.gc_properties.gc_space.POSITION_Y = 475; //définit avec un flag dans le fichier Gc.c
+
+    gc_text4.gc_properties.gc_space.POSITION_X = 500;           
+    gc_text4.gc_properties.gc_space.POSITION_Y = 650;
+
+    gc_text5.gc_properties.gc_space.POSITION_X = 500;           
+    gc_text5.gc_properties.gc_space.POSITION_Y = 700;
+
+    gc_text6.gc_properties.gc_space.POSITION_X = 500;           
+    gc_text6.gc_properties.gc_space.POSITION_Y = 750;
 
     GC_TEXT_DRAW(&gc_text1);            GC_TEXT_DRAW(&gc_text2);            GC_TEXT_DRAW(&gc_text3);
     GC_TEXT_DRAW(&gc_text4);            GC_TEXT_DRAW(&gc_text5);            GC_TEXT_DRAW(&gc_text6);
-    al_rest(0.2);
+
+    //al_rest(0.2);
+    printf("\nTEST");
     al_flip_display();
 }

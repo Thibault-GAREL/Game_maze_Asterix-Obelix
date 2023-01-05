@@ -323,9 +323,15 @@ void GC_TEXT_INIT(GC_TEXT* gc_text, char* text_out)
     GC_PROPERTIES_INIT(&gc_text->gc_properties);
 }
 
-void GC_TEXT_SET_FONT(GC_TEXT* gc_text, char* filePath, int size)
+void GC_TEXT_SET_FONT(GC_TEXT* gc_text, char* fontPath, int size)
 {
-    gc_text->police = al_load_ttf_font("..\\Import\\BruceForeverRegular.ttf",  size , 0);
+    gc_text->police = al_load_ttf_font(fontPath, size , 0);
+
+    if (!gc_text->police)
+    {
+        printf("\n<ERROR> [GC_TEXT_SET_FONT] Can't load font file: \'%s\'", fontPath);
+        gc_text->gc_properties.error = 2;
+    }
 }
 
 void GC_TEXT_DRAW(GC_TEXT* gc_text)

@@ -3,112 +3,58 @@
 //
 
 #include "fonction_t.h"
-/*
-char adresse_tuile_fixe[50][50] = {".\\Import\\tuile_1.png",
-                                   ".\\Import\\tuile_3.png",
-                                   ".\\Import\\tuile_5.png",
-                                   ".\\Import\\tuile_7.png",
-                                   ".\\Import\\tuile_15.png",
-                                   ".\\Import\\tuile_17.png",
-                                   ".\\Import\\tuile_19.png",
-                                   ".\\Import\\tuile_21.png",
-                                   ".\\Import\\tuile_29.png",
-                                   ".\\Import\\tuile_31.png",
-                                   ".\\Import\\tuile_33.png",
-                                   ".\\Import\\tuile_35.png",
-                                   ".\\Import\\tuile_43.png",
-                                   ".\\Import\\tuile_45.png",
-                                   ".\\Import\\tuile_47.png",
-                                   ".\\Import\\tuile_49.png"};
 
-char adresse_tuile_mobile[50][50] = {".\\Import\\tuile_2.png",
-                                     ".\\Import\\tuile_4.png",
-                                     ".\\Import\\tuile_6.png",
-                                     ".\\Import\\tuile_8.png",
-                                     ".\\Import\\tuile_9.png",
-                                     ".\\Import\\tuile_10.png",
-                                     ".\\Import\\tuile_11.png",
-                                     ".\\Import\\tuile_12.png",
-                                     ".\\Import\\tuile_13.png",
-                                     ".\\Import\\tuile_14.png",
-                                     ".\\Import\\tuile_16.png",
-                                     ".\\Import\\tuile_18.png",
-                                     ".\\Import\\tuile_20.png",
-                                     ".\\Import\\tuile_22.png",
-                                     ".\\Import\\tuile_23.png",
-                                     ".\\Import\\tuile_24.png",
-                                     ".\\Import\\tuile_25.png",
-                                     ".\\Import\\tuile_26.png",
-                                     ".\\Import\\tuile_27.png",
-                                     ".\\Import\\tuile_28.png",
-                                     ".\\Import\\tuile_30.png",
-                                     ".\\Import\\tuile_32.png",
-                                     ".\\Import\\tuile_34.png",
-                                     ".\\Import\\tuile_36.png",
-                                     ".\\Import\\tuile_37.png",
-                                     ".\\Import\\tuile_38.png",
-                                     ".\\Import\\tuile_39.png",
-                                     ".\\Import\\tuile_40.png",
-                                     ".\\Import\\tuile_41.png",
-                                     ".\\Import\\tuile_42.png",
-                                     ".\\Import\\tuile_44.png",
-                                     ".\\Import\\tuile_46.png",
-                                     ".\\Import\\tuile_48.png",
-                                     ".\\Import\\tuile_50.png"};*/
+char adresse_tuile_fixe[50][50] = {FILE_ACCESS ".\\Import\\tuile_1.png",
+                                   FILE_ACCESS ".\\Import\\tuile_3.png",
+                                   FILE_ACCESS ".\\Import\\tuile_5.png",
+                                   FILE_ACCESS ".\\Import\\tuile_7.png",
+                                   FILE_ACCESS ".\\Import\\tuile_15.png",
+                                   FILE_ACCESS ".\\Import\\tuile_17.png",
+                                   FILE_ACCESS ".\\Import\\tuile_19.png",
+                                   FILE_ACCESS ".\\Import\\tuile_21.png",
+                                   FILE_ACCESS ".\\Import\\tuile_29.png",
+                                   FILE_ACCESS ".\\Import\\tuile_31.png",
+                                   FILE_ACCESS ".\\Import\\tuile_33.png",
+                                   FILE_ACCESS ".\\Import\\tuile_35.png",
+                                   FILE_ACCESS ".\\Import\\tuile_43.png",
+                                   FILE_ACCESS ".\\Import\\tuile_45.png",
+                                   FILE_ACCESS ".\\Import\\tuile_47.png",
+                                   FILE_ACCESS ".\\Import\\tuile_49.png"};
 
-char adresse_tuile_fixe[50][50] = {"..\\Import\\tuile_1.png",
-                                   "..\\Import\\tuile_3.png",
-                                   "..\\Import\\tuile_5.png",
-                                   "..\\Import\\tuile_7.png",
-                                   "..\\Import\\tuile_15.png",
-                                   "..\\Import\\tuile_17.png",
-                                   "..\\Import\\tuile_19.png",
-                                   "..\\Import\\tuile_21.png",
-                                   "..\\Import\\tuile_29.png",
-                                   "..\\Import\\tuile_31.png",
-                                   "..\\Import\\tuile_33.png",
-                                   "..\\Import\\tuile_35.png",
-                                   "..\\Import\\tuile_43.png",
-                                   "..\\Import\\tuile_45.png",
-                                   "..\\Import\\tuile_47.png",
-                                   "..\\Import\\tuile_49.png"
-};
-
-char adresse_tuile_mobile[50][50] = {"..\\Import\\tuile_2.png",
-                                     "..\\Import\\tuile_4.png",
-                                     "..\\Import\\tuile_6.png",
-                                     "..\\Import\\tuile_8.png",
-                                     "..\\Import\\tuile_9.png",
-                                     "..\\Import\\tuile_10.png",
-                                     "..\\Import\\tuile_11.png",
-                                     "..\\Import\\tuile_12.png",
-                                     "..\\Import\\tuile_13.png",
-                                     "..\\Import\\tuile_14.png",
-                                     "..\\Import\\tuile_16.png",
-                                     "..\\Import\\tuile_18.png",
-                                     "..\\Import\\tuile_20.png",
-                                     "..\\Import\\tuile_22.png",
-                                     "..\\Import\\tuile_23.png",
-                                     "..\\Import\\tuile_24.png",
-                                     "..\\Import\\tuile_25.png",
-                                     "..\\Import\\tuile_26.png",
-                                     "..\\Import\\tuile_27.png",
-                                     "..\\Import\\tuile_28.png",
-                                     "..\\Import\\tuile_30.png",
-                                     "..\\Import\\tuile_32.png",
-                                     "..\\Import\\tuile_34.png",
-                                     "..\\Import\\tuile_36.png",
-                                     "..\\Import\\tuile_37.png",
-                                     "..\\Import\\tuile_38.png",
-                                     "..\\Import\\tuile_39.png",
-                                     "..\\Import\\tuile_40.png",
-                                     "..\\Import\\tuile_41.png",
-                                     "..\\Import\\tuile_42.png",
-                                     "..\\Import\\tuile_44.png",
-                                     "..\\Import\\tuile_46.png",
-                                     "..\\Import\\tuile_48.png",
-                                     "..\\Import\\tuile_50.png"
-};
+char adresse_tuile_mobile[50][50] = {FILE_ACCESS ".\\Import\\tuile_2.png",
+                                     FILE_ACCESS ".\\Import\\tuile_4.png",
+                                     FILE_ACCESS ".\\Import\\tuile_6.png",
+                                     FILE_ACCESS ".\\Import\\tuile_8.png",
+                                     FILE_ACCESS ".\\Import\\tuile_9.png",
+                                     FILE_ACCESS ".\\Import\\tuile_10.png",
+                                     FILE_ACCESS ".\\Import\\tuile_11.png",
+                                     FILE_ACCESS ".\\Import\\tuile_12.png",
+                                     FILE_ACCESS ".\\Import\\tuile_13.png",
+                                     FILE_ACCESS ".\\Import\\tuile_14.png",
+                                     FILE_ACCESS ".\\Import\\tuile_16.png",
+                                     FILE_ACCESS ".\\Import\\tuile_18.png",
+                                     FILE_ACCESS ".\\Import\\tuile_20.png",
+                                     FILE_ACCESS ".\\Import\\tuile_22.png",
+                                     FILE_ACCESS ".\\Import\\tuile_23.png",
+                                     FILE_ACCESS ".\\Import\\tuile_24.png",
+                                     FILE_ACCESS ".\\Import\\tuile_25.png",
+                                     FILE_ACCESS ".\\Import\\tuile_26.png",
+                                     FILE_ACCESS ".\\Import\\tuile_27.png",
+                                     FILE_ACCESS ".\\Import\\tuile_28.png",
+                                     FILE_ACCESS ".\\Import\\tuile_30.png",
+                                     FILE_ACCESS ".\\Import\\tuile_32.png",
+                                     FILE_ACCESS ".\\Import\\tuile_34.png",
+                                     FILE_ACCESS ".\\Import\\tuile_36.png",
+                                     FILE_ACCESS ".\\Import\\tuile_37.png",
+                                     FILE_ACCESS ".\\Import\\tuile_38.png",
+                                     FILE_ACCESS ".\\Import\\tuile_39.png",
+                                     FILE_ACCESS ".\\Import\\tuile_40.png",
+                                     FILE_ACCESS ".\\Import\\tuile_41.png",
+                                     FILE_ACCESS ".\\Import\\tuile_42.png",
+                                     FILE_ACCESS ".\\Import\\tuile_44.png",
+                                     FILE_ACCESS ".\\Import\\tuile_46.png",
+                                     FILE_ACCESS ".\\Import\\tuile_48.png",
+                                     FILE_ACCESS ".\\Import\\tuile_50.png"};
 
 int* random_sans_remise(int tab_index[MOVABLE_PARTS])
 {
@@ -253,7 +199,7 @@ void Init_list_button_decal(BUTTON_DECAL list_button_decal[6], GC_MANAGER* manag
     for (int i = 0; i < 6; i++)
     {
         //GC_SPRITE_INIT(&list_button_decal[i].gc_sprite, "..\\Import\\Fleche_1.PNG");
-        GC_SPRITE_INIT(&list_button_decal[i].gc_sprite, "..\\Import\\Fleche_1.PNG");
+        GC_SPRITE_INIT(&list_button_decal[i].gc_sprite, BUTTON_PATH);
         list_button_decal[i].gc_sprite.gc_properties.gc_space.POSITION_X = PART_W *x*2*j + (PART_W * PLATEAU_W + PLATEAU_OFFSET_X) * !sens_direct * !x;
         list_button_decal[i].gc_sprite.gc_properties.gc_space.POSITION_Y = PART_H *y*2*j + (PART_H * PLATEAU_H + PLATEAU_OFFSET_Y) * !sens_direct * !y;
         list_button_decal[i].gc_sprite.gc_properties.gc_space.ROTATION_Z = (PI)*!sens_direct + -(PI/2) * y;
@@ -314,7 +260,7 @@ void InitCharacter(GC_SPRITE PionSprite, int x, int y) //les x et y corresponden
     }
 }*/
 
-void New_Part_Deplacement(GC_SPRITE* pExtra_piece, GC_BUTTON* pButton_rotation_posi, GC_BUTTON* pButton_rotation_nega, BUTTON_DECAL* pList_button_decal_colonne, BUTTON_DECAL* pList_button_decal_ligne)
+void New_Part_Deplacement(GC_SPRITE* pExtra_piece, GC_BUTTON* pButton_rotation_posi, GC_BUTTON* pButton_rotation_nega, BUTTON_DECAL* list_button_decal_colonne, BUTTON_DECAL* list_button_decal_ligne)
 {
         GC_BUTTON_UPDATE_EVENT(pButton_rotation_posi);
         GC_BUTTON_UPDATE_EVENT(pButton_rotation_nega);
@@ -326,7 +272,7 @@ void New_Part_Deplacement(GC_SPRITE* pExtra_piece, GC_BUTTON* pButton_rotation_p
             pExtra_piece->gc_properties.gc_space.ROTATION_Z -= PI / 2;
         }
 
-        List_button_decal_update_event(pList_button_decal_colonne);
-        List_button_decal_update_event(pList_button_decal_ligne);
+        List_button_decal_update_event(list_button_decal_colonne);
+        List_button_decal_update_event(list_button_decal_ligne);
 }
 

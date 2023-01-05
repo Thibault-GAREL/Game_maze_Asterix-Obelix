@@ -21,18 +21,18 @@ int main() {
     GC_BUTTON button_rotation_posi, button_rotation_nega;
     GC_SPRITE sprite_rotation_posi, sprite_rotation_nega;
 
-    GC_SPRITE Pion_position1, PionRotation1;
-    GC_SPRITE Pion_position2, PionRotation2;
-    GC_SPRITE Pion_position3, PionRotation3;
-    GC_SPRITE Pion_position4, PionRotation4;
+    GC_SPRITE Pion_position1;
+    GC_SPRITE Pion_position2;
+    GC_SPRITE Pion_position3;
+    GC_SPRITE Pion_position4;
 
     GC_BUTTON_INIT(&button_rotation_posi, &manager.event);
     GC_BUTTON_INIT(&button_rotation_nega, &manager.event);
 
-    GC_SPRITE_INIT(&Pion_position1, "..\\Import\\Dessin_asterix_Image_Centre_Small.png");
-    GC_SPRITE_INIT(&Pion_position2, "..\\Import\\Dessin_Idefix_Image_Small.png");
-    GC_SPRITE_INIT(&Pion_position3, "..\\Import\\Dessin_obelix_Image_Small.png");
-    GC_SPRITE_INIT(&Pion_position4, "..\\Import\\Dessin_Panoramix_Small.png");
+    GC_SPRITE_INIT(&Pion_position1, FILE_ACCESS ".\\Import\\Dessin_asterix_Image_Centre_Small.png");
+    GC_SPRITE_INIT(&Pion_position2, FILE_ACCESS ".\\Import\\Dessin_Idefix_Image_Small.png");
+    GC_SPRITE_INIT(&Pion_position3, FILE_ACCESS ".\\Import\\Dessin_obelix_Image_Small.png");
+    GC_SPRITE_INIT(&Pion_position4, FILE_ACCESS ".\\Import\\Dessin_Panoramix_Small.png");
 
     GC_SPRITE_INIT(&sprite_rotation_posi, BUTTON_PATH);
     GC_SPRITE_INIT(&sprite_rotation_nega, BUTTON_PATH);
@@ -55,7 +55,7 @@ int main() {
             break;
         }
 
-        New_Part_Deplacement(&extra_piece, &button_rotation_posi, &button_rotation_nega, &list_button_decal_colonne, &list_button_decal_ligne);
+        New_Part_Deplacement(&extra_piece, &button_rotation_posi, &button_rotation_nega, list_button_decal_colonne, list_button_decal_ligne);
 
         int j = 0;
         for (int i = 0; i < 6; i++) {
