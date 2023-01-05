@@ -21,18 +21,8 @@ int main() {
     GC_BUTTON button_rotation_posi, button_rotation_nega;
     GC_SPRITE sprite_rotation_posi, sprite_rotation_nega;
 
-    GC_SPRITE Pion_position1;
-    GC_SPRITE Pion_position2;
-    GC_SPRITE Pion_position3;
-    GC_SPRITE Pion_position4;
-
     GC_BUTTON_INIT(&button_rotation_posi, &manager.event);
     GC_BUTTON_INIT(&button_rotation_nega, &manager.event);
-
-    GC_SPRITE_INIT(&Pion_position1, FILE_ACCESS ".\\Import\\Dessin_asterix_Image_Centre_Small.png");
-    GC_SPRITE_INIT(&Pion_position2, FILE_ACCESS ".\\Import\\Dessin_Idefix_Image_Small.png");
-    GC_SPRITE_INIT(&Pion_position3, FILE_ACCESS ".\\Import\\Dessin_obelix_Image_Small.png");
-    GC_SPRITE_INIT(&Pion_position4, FILE_ACCESS ".\\Import\\Dessin_Panoramix_Small.png");
 
     GC_SPRITE_INIT(&sprite_rotation_posi, BUTTON_PATH);
     GC_SPRITE_INIT(&sprite_rotation_nega, BUTTON_PATH);
@@ -47,6 +37,34 @@ int main() {
 
     button_rotation_posi.gc_properties.gc_space = sprite_rotation_posi.gc_properties.gc_space;
     button_rotation_nega.gc_properties.gc_space = sprite_rotation_nega.gc_properties.gc_space;
+
+    GC_SPRITE Pion_position1;
+    GC_SPRITE Pion_position2;
+    GC_SPRITE Pion_position3;
+    GC_SPRITE Pion_position4;
+
+    GC_SPRITE_INIT(&Pion_position1, FILE_ACCESS ".\\Import\\Dessin_asterix_Image_Centre_Small.png");
+    GC_SPRITE_INIT(&Pion_position2, FILE_ACCESS ".\\Import\\Dessin_Idefix_Image_Small.png");
+    GC_SPRITE_INIT(&Pion_position3, FILE_ACCESS ".\\Import\\Dessin_obelix_Image_Small.png");
+    GC_SPRITE_INIT(&Pion_position4, FILE_ACCESS ".\\Import\\Dessin_Panoramix_Small.png");
+
+    while (SelectMenu==0) {
+        MenuDisplay(size1, size2, size3);
+
+
+        if (manager.event.type == ALLEGRO_EVENT_KEY_DOWN) {
+            // si clavier selon touche appuyée,
+            switch (manager.event.keyboard.keycode) {
+                case ALLEGRO_KEY_A : {size1=28; size2=24; size3=24;} break;
+                case ALLEGRO_KEY_PAD_2 : {size1=24; size2=28; size3=24;} break;
+                case ALLEGRO_KEY_PAD_3 : {size1=24; size2=24; size3=28;} break;
+            }
+        }
+        switch (SelectMenu) {
+            case 0: break;
+            case 1 : al_clear_to_color(al_map_rgb(0,0,0)); break;
+        }
+    }
 
     while (1) {
         GC_MANAGER_UPDATE_EVENT(&manager);
@@ -72,26 +90,7 @@ int main() {
             }
         }
 
-        Clear_Diplay(); // Initialisation du plateau de base (pièces à leurs positions d'origine)
-
-
-        while (SelectMenu==0) {
-            MenuDisplay(size1, size2, size3);
-
-
-            if (manager.event.type == ALLEGRO_EVENT_KEY_DOWN) {
-                // si clavier selon touche appuyée,
-                switch (manager.event.keyboard.keycode) {
-                    case ALLEGRO_KEY_A : {size1=28; size2=24; size3=24;} break;
-                    case ALLEGRO_KEY_PAD_2 : {size1=24; size2=28; size3=24;} break;
-                    case ALLEGRO_KEY_PAD_3 : {size1=24; size2=24; size3=28;} break;
-                }
-            }
-            switch (SelectMenu) {
-                case 0: break;
-                case 1 : al_clear_to_color(al_map_rgb(0,0,0)); break;
-            }
-        }
+        Clear_Diplay(); // Ecran noir
 
         UPDATE_Part_Position_DRAW_Plateau(tab_plateau, &extra_piece);
 
@@ -102,10 +101,22 @@ int main() {
         GC_SPRITE_DRAW(&sprite_rotation_nega);
 
         switch (nbrJoueur){ //initialise les textures en fonction du nombre de joueurs jouant au jeu
-            case 1: InitCharacter(Pion_position1, x1, y1); break;
-            case 2 : { InitCharacter(Pion_position1, x1, y1); InitCharacter(Pion_position2, x2, y2); break; }
-            case 3 : { InitCharacter(Pion_position1, x1, y1); InitCharacter(Pion_position2, x2, y2); InitCharacter(Pion_position3, x3, y3); break; }
-            case 4 : {InitCharacter(Pion_position1, x1, y1); InitCharacter(Pion_position2, x2, y2); InitCharacter(Pion_position3, x3, y3); InitCharacter(Pion_position4, x4, y4); break; }
+            case 1: 
+                InitCharacter(Pion_position1, x1, y1); 
+                break;
+            case 2 : 
+                { InitCharacter(Pion_position1, x1, y1); InitCharacter(Pion_position2, x2, y2); 
+                break; }
+            case 3 : 
+                { InitCharacter(Pion_position1, x1, y1); 
+                InitCharacter(Pion_position2, x2, y2); InitCharacter(Pion_position3, x3, y3); 
+                break; }
+            case 4 : 
+                {InitCharacter(Pion_position1, x1, y1); 
+                InitCharacter(Pion_position2, x2, y2); 
+                InitCharacter(Pion_position3, x3, y3); 
+                InitCharacter(Pion_position4, x4, y4); 
+                break; }
         }
 
         // fin de l'intialisation des positions des pièces et du plateau
@@ -204,10 +215,12 @@ int main() {
                                 break;
                         }
                     }
-            }
+                }
         }
+
         al_flip_display(); //affichage du plateau de base
     }
-            GC_MANAGER_DESTROY(&manager);
-            return 0;
+
+    GC_MANAGER_DESTROY(&manager);
+    return 0;
 }

@@ -48,32 +48,32 @@ int MenuDisplay(int s1, int s2, int s3){ //fonction permettant d'afficher le men
     
     GC_TEXT gc_text1;
     GC_TEXT_INIT(&gc_text1, text_out1);
-    GC_TEXT_SET_FONT(&gc_text1, FONT_PATH,32);
+    GC_TEXT_SET_FONT(&gc_text1, FONT_PATH, 32);
     gc_text1.al_flag = ALLEGRO_ALIGN_CENTER;
 
     GC_TEXT gc_text2;
     GC_TEXT_INIT(&gc_text2, text_out2);
-    GC_TEXT_SET_FONT(&gc_text1, FONT_PATH,24);
+    GC_TEXT_SET_FONT(&gc_text2, FONT_PATH,24);
     gc_text2.al_flag = ALLEGRO_ALIGN_CENTER;
 
     GC_TEXT gc_text3;
     GC_TEXT_INIT(&gc_text3, text_out3);
-    GC_TEXT_SET_FONT(&gc_text1, FONT_PATH,32);
+    GC_TEXT_SET_FONT(&gc_text3, FONT_PATH,32);
     gc_text3.al_flag = ALLEGRO_ALIGN_CENTER;
 
     GC_TEXT gc_text4;
     GC_TEXT_INIT(&gc_text4, text_out4);
-    GC_TEXT_SET_FONT(&gc_text1, FONT_PATH,24);
+    GC_TEXT_SET_FONT(&gc_text4, FONT_PATH,24);
     gc_text4.al_flag = ALLEGRO_ALIGN_CENTER;
 
     GC_TEXT gc_text5;
     GC_TEXT_INIT(&gc_text5, text_out5);
-    GC_TEXT_SET_FONT(&gc_text1, FONT_PATH,24);
+    GC_TEXT_SET_FONT(&gc_text5, FONT_PATH,24);
     gc_text5.al_flag = ALLEGRO_ALIGN_CENTER;
 
     GC_TEXT gc_text6;
     GC_TEXT_INIT(&gc_text6, text_out6);
-    GC_TEXT_SET_FONT(&gc_text1, FONT_PATH,24);
+    GC_TEXT_SET_FONT(&gc_text6, FONT_PATH,24);
     gc_text6.al_flag = ALLEGRO_ALIGN_CENTER;
 
     gc_text1.gc_properties.gc_space.POSITION_X = 500;           
@@ -94,8 +94,12 @@ int MenuDisplay(int s1, int s2, int s3){ //fonction permettant d'afficher le men
     gc_text6.gc_properties.gc_space.POSITION_X = 500;           
     gc_text6.gc_properties.gc_space.POSITION_Y = 750;
 
-    GC_TEXT_DRAW(&gc_text1);            GC_TEXT_DRAW(&gc_text2);            GC_TEXT_DRAW(&gc_text3);
-    GC_TEXT_DRAW(&gc_text4);            GC_TEXT_DRAW(&gc_text5);            GC_TEXT_DRAW(&gc_text6);
+    GC_TEXT_DRAW(&gc_text1);            
+    GC_TEXT_DRAW(&gc_text2);            
+    GC_TEXT_DRAW(&gc_text3);
+    GC_TEXT_DRAW(&gc_text4);            
+    GC_TEXT_DRAW(&gc_text5);            
+    GC_TEXT_DRAW(&gc_text6);
 
     //al_rest(0.2);
     printf("\nTEST");
