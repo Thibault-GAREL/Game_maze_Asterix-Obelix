@@ -2,7 +2,7 @@
 // Created by RobinK on 25/12/2022.
 //
 
-#include "Menu.h"
+#include "../.h/Menu.h"
 
 char text_0[] = " Bienvenue Dans Le Labyrinthe ! ";
 char text_1[] = " Récupérez tous les trésors afin de compléter le jeu ! ";

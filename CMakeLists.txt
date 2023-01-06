@@ -3,6 +3,6 @@ project(PROJET C)
 
 set(CMAKE_C_STANDARD 99)
 
-add_executable(PROJET ALLEGRO/Allegro_Main.c ALLEGRO/Gc.c ALLEGRO/Gc.h ALLEGRO/Menu.c ALLEGRO/fonction_t.h ALLEGRO/fonction_t.c)
+add_executable(PROJET ALLEGRO/.c/Allegro_Main.c ALLEGRO/.c/Gc.c ALLEGRO/.h/Gc.h ALLEGRO/.c/Menu.c ALLEGRO/.h/fonction_t.h ALLEGRO/.c/fonction_t.c)
 
 target_link_libraries(PROJET -lmingw32 -lallegro-5.0.10-monolith-md-debug)

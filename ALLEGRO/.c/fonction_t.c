@@ -2,7 +2,7 @@
 // Created by garel on 21/12/2022.
 //
 
-#include "fonction_t.h"
+#include "../.h/fonction_t.h"
 
 char adresse_tuile_fixe[50][50] = {FILE_ACCESS ".\\Import\\tuile_1.png",
                                    FILE_ACCESS ".\\Import\\tuile_3.png",

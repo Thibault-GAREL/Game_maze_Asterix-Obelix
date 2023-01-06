@@ -1,5 +1,5 @@
-#include "fonction_t.h"
-#include "Menu.h"
+#include "../.h/fonction_t.h"
+#include "../.h/Menu.h"
 // gcc -g -Wall .\main_t.c .\Gc.c .\fonction_t.c .\Menu.c -lallegro -lallegro_image -lallegro_font -oProject; .\Project.exe
 
 int nbrJoueur=4; //définiti le nombre de joueurs

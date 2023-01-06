@@ -1,4 +1,4 @@
-#include "Gc.h"
+#include "../.h/Gc.h"
 //gcc -g -Wall .\MainMatth.c .\Gc.c .\fonction_t.c  -lallegro -lallegro_image -lallegro_font -lallegro_ttf -oProject; .\Project.exe
 /* Exemple d'utilisation d'un Boutton 
 

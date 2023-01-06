@@ -1,4 +1,4 @@
-#include "Gc.h"
+#include "../.h/Gc.h"
 
 
 bool GC_INIT_ALLEGRO()
