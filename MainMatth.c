@@ -1,6 +1,6 @@
 #include "Gc.h"
 //gcc -g -Wall .\MainMatth.c .\Gc.c .\fonction_t.c  -lallegro -lallegro_image -lallegro_font -lallegro_ttf -oProject; .\Project.exe
-/* Exemple d'utilisation d'un Boutton 
+/* Exemple d'utilisation d'un Boutton */
 
 int main()
 {
@@ -71,7 +71,7 @@ int main()
 
 
 
-/* Exemple d'affichage de texte */
+/* Exemple d'affichage de texte 
 
 int main()
 {

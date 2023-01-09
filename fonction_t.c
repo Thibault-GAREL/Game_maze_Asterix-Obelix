@@ -4,83 +4,8 @@
 
 #include "fonction_t.h"
 
-char adresse_tuile_fixe[50][50] = {FILE_ACCESS ".\\Import\\tuile_1.png",
-                                   FILE_ACCESS ".\\Import\\tuile_3.png",
-                                   FILE_ACCESS ".\\Import\\tuile_5.png",
-                                   FILE_ACCESS ".\\Import\\tuile_7.png",
-                                   FILE_ACCESS ".\\Import\\tuile_15.png",
-                                   FILE_ACCESS ".\\Import\\tuile_17.png",
-                                   FILE_ACCESS ".\\Import\\tuile_19.png",
-                                   FILE_ACCESS ".\\Import\\tuile_21.png",
-                                   FILE_ACCESS ".\\Import\\tuile_29.png",
-                                   FILE_ACCESS ".\\Import\\tuile_31.png",
-                                   FILE_ACCESS ".\\Import\\tuile_33.png",
-                                   FILE_ACCESS ".\\Import\\tuile_35.png",
-                                   FILE_ACCESS ".\\Import\\tuile_43.png",
-                                   FILE_ACCESS ".\\Import\\tuile_45.png",
-                                   FILE_ACCESS ".\\Import\\tuile_47.png",
-                                   FILE_ACCESS ".\\Import\\tuile_49.png"};
 
-char adresse_tuile_mobile[50][50] = {FILE_ACCESS ".\\Import\\tuile_2.png",
-                                     FILE_ACCESS ".\\Import\\tuile_4.png",
-                                     FILE_ACCESS ".\\Import\\tuile_6.png",
-                                     FILE_ACCESS ".\\Import\\tuile_8.png",
-                                     FILE_ACCESS ".\\Import\\tuile_9.png",
-                                     FILE_ACCESS ".\\Import\\tuile_10.png",
-                                     FILE_ACCESS ".\\Import\\tuile_11.png",
-                                     FILE_ACCESS ".\\Import\\tuile_12.png",
-                                     FILE_ACCESS ".\\Import\\tuile_13.png",
-                                     FILE_ACCESS ".\\Import\\tuile_14.png",
-                                     FILE_ACCESS ".\\Import\\tuile_16.png",
-                                     FILE_ACCESS ".\\Import\\tuile_18.png",
-                                     FILE_ACCESS ".\\Import\\tuile_20.png",
-                                     FILE_ACCESS ".\\Import\\tuile_22.png",
-                                     FILE_ACCESS ".\\Import\\tuile_23.png",
-                                     FILE_ACCESS ".\\Import\\tuile_24.png",
-                                     FILE_ACCESS ".\\Import\\tuile_25.png",
-                                     FILE_ACCESS ".\\Import\\tuile_26.png",
-                                     FILE_ACCESS ".\\Import\\tuile_27.png",
-                                     FILE_ACCESS ".\\Import\\tuile_28.png",
-                                     FILE_ACCESS ".\\Import\\tuile_30.png",
-                                     FILE_ACCESS ".\\Import\\tuile_32.png",
-                                     FILE_ACCESS ".\\Import\\tuile_34.png",
-                                     FILE_ACCESS ".\\Import\\tuile_36.png",
-                                     FILE_ACCESS ".\\Import\\tuile_37.png",
-                                     FILE_ACCESS ".\\Import\\tuile_38.png",
-                                     FILE_ACCESS ".\\Import\\tuile_39.png",
-                                     FILE_ACCESS ".\\Import\\tuile_40.png",
-                                     FILE_ACCESS ".\\Import\\tuile_41.png",
-                                     FILE_ACCESS ".\\Import\\tuile_42.png",
-                                     FILE_ACCESS ".\\Import\\tuile_44.png",
-                                     FILE_ACCESS ".\\Import\\tuile_46.png",
-                                     FILE_ACCESS ".\\Import\\tuile_48.png",
-                                     FILE_ACCESS ".\\Import\\tuile_50.png"};
-
-
-int* random_sans_remise(int tab_index[MOVABLE_PARTS])
-{
-    int k, j, a = 0;
-
-    for (int i = 0; i < MOVABLE_PARTS; i++)
-    {
-        tab_index[i] = i;
-    }
-
-    srand(time(NULL));
-
-    for (int i = 0; i < 50; ++i)
-    {
-        k = rand() % MOVABLE_PARTS;
-        j = rand() % MOVABLE_PARTS;
-        a = tab_index[k];
-        tab_index[k] = tab_index[j];
-        tab_index[j] = a;
-    }
-
-    return tab_index;
-}
-
-void initalisation_affichage_plateau(int tab_index[MOVABLE_PARTS], GC_SPRITE tab_plateau[PLATEAU_H][PLATEAU_W], GC_SPRITE* const pExtra_piece)
+/*void initalisation_affichage_plateau(int tab_index[MOVABLE_PARTS], GC_SPRITE tab_plateau[PLATEAU_H][PLATEAU_W], GC_SPRITE* const pExtra_piece)
 {
     int compteur_1 = 0;
     int compteur_2 = 0;
@@ -110,7 +35,7 @@ void initalisation_affichage_plateau(int tab_index[MOVABLE_PARTS], GC_SPRITE tab
     GC_SPRITE_INIT(pExtra_piece, adresse_tuile_mobile[tab_index[MOVABLE_PARTS - 1]]);
     pExtra_piece->gc_properties.gc_space.POSITION_Y = PART_H * 8;
     GC_SPRITE_DRAW(pExtra_piece);
-}
+}*/
 
 
 void decal_ligne(GC_SPRITE tab_plateau[PLATEAU_H][PLATEAU_W], GC_SPRITE* const pExtra_piece, const int ln, bool direct_sens)
@@ -167,7 +92,6 @@ void decal_colonne(GC_SPRITE tab_plateau[PLATEAU_H][PLATEAU_W], GC_SPRITE* const
 
         tab_plateau[PLATEAU_W-1][col] = buffer_part;
     }
-    
 }
 
 void UPDATE_Part_Position_DRAW_Plateau(GC_SPRITE tab_plateau[PLATEAU_H][PLATEAU_W], GC_SPRITE* const pExtra_piece)

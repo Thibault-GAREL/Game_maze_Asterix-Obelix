@@ -41,6 +41,5 @@ void MenuDisplay(TextMenu* pTextMenu){                                          
         GC_TEXT_DRAW(&pTextMenu->tableauTextes[i]);
     }
 
-    //printf("\nTEST");
     al_flip_display();
 }

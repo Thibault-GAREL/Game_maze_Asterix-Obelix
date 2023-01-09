@@ -1,250 +1,108 @@
 #include "fonction_t.h"
-#include "Menu.h"
-// gcc -g -Wall .\main_t.c .\Gc.c .\fonction_t.c .\Menu.c -lallegro -lallegro_image -lallegro_font -oProject; .\Project.exe
-
-int nbrJoueur=4; //définiti le nombre de joueurs
-int JoueurPlay=1; //définit quel joueur doit jouer
-int tour =1; //définit à quel tour du jeu nous sommes
-int finM =0; //Permet au joueur de finir ses déplacements en appuyant sur entrée
-int finP =0; //Permet au joueur de terminer ses déplacements du plateau
-
+#include "Party.h"
+// gcc -g -Wall main_t.c Gc.c fonction_t.c Menu.c Plateau.c Player.c Part.c -lallegro -lallegro_image -lallegro_font -oProject; .\Project.exe
+//gcc -g -Wall main_t.c Gc.c fonction_t.c Menu.c Plateau.c Player.c Part.c utils.c Party.c -lallegro -lallegro_image -lallegro_font -lallegro_ttf -oProject
 
 int SelectMenu=0; //permet de valider la sélection dans le menu
 
+void Switch_Part_Loop(GC_MANAGER* pManager, PARTY* pParty);
+void Deplacement_Player_Loop(GC_MANAGER* pManager, PARTY* pParty);
+void Draw_Clear_Plateau_Player(PARTY* pParty);
+void Update_Event(GC_MANAGER* pManager);
+
 int main() {
-    int x1 = 90;                // coordonnées x et y du premier joueur
-    int y1 = 650;
-
-    int x2 = 670;               // ... deuxième joueur
-    int y2 = 650;
-
-    int x3 = 90;               // ... troisième joueur
-    int y3 = 90;
-
-    int x4 = 670;              // ... Quatrième joueur
-    int y4 = 90;
 
     GC_MANAGER manager;
     GC_MANAGER_CREATE(&manager, 1000, 1000);
-
-    GC_SPRITE tab_plateau[PLATEAU_H][PLATEAU_W] = {0};
-    GC_SPRITE extra_piece;
-    int tab_index[MOVABLE_PARTS];
-    initalisation_affichage_plateau(random_sans_remise(tab_index), tab_plateau, &extra_piece);
-
-    BUTTON_DECAL list_button_decal_colonne[6];
-    Init_list_button_decal(list_button_decal_colonne, &manager, 0, 1);
-    BUTTON_DECAL list_button_decal_ligne[6];
-    Init_list_button_decal(list_button_decal_ligne, &manager, 1, 0);
-
-    GC_BUTTON button_rotation_posi, button_rotation_nega;
-    GC_SPRITE sprite_rotation_posi, sprite_rotation_nega;
-
-    GC_BUTTON_INIT(&button_rotation_posi, &manager.event);
-    GC_BUTTON_INIT(&button_rotation_nega, &manager.event);
-
-    GC_SPRITE_INIT(&sprite_rotation_posi, BUTTON_PATH);
-    GC_SPRITE_INIT(&sprite_rotation_nega, BUTTON_PATH);
-
-    sprite_rotation_posi.gc_properties.gc_space.POSITION_X = EXTRA_PART_POS_X - 95;
-    sprite_rotation_posi.gc_properties.gc_space.POSITION_Y = EXTRA_PART_POS_Y;
-    sprite_rotation_posi.gc_properties.gc_space.ROTATION_Z = PI;
-
-    sprite_rotation_nega.gc_properties.gc_space.POSITION_X = EXTRA_PART_POS_X + 95;
-    sprite_rotation_nega.gc_properties.gc_space.POSITION_Y = EXTRA_PART_POS_Y;
-    sprite_rotation_nega.gc_properties.gc_space.ROTATION_Z = PI;
-
-    button_rotation_posi.gc_properties.gc_space = sprite_rotation_posi.gc_properties.gc_space;
-    button_rotation_nega.gc_properties.gc_space = sprite_rotation_nega.gc_properties.gc_space;
-
-    GC_SPRITE Pion_position1;
-    GC_SPRITE Pion_position2;
-    GC_SPRITE Pion_position3;
-    GC_SPRITE Pion_position4;
-
-    GC_SPRITE_INIT(&Pion_position1, FILE_ACCESS ".\\Import\\Dessin_asterix_Image_Centre_Small.png");
-    GC_SPRITE_INIT(&Pion_position2, FILE_ACCESS ".\\Import\\Dessin_Idefix_Image_Small.png");
-    GC_SPRITE_INIT(&Pion_position3, FILE_ACCESS ".\\Import\\Dessin_obelix_Image_Small.png");
-    GC_SPRITE_INIT(&Pion_position4, FILE_ACCESS ".\\Import\\Dessin_Panoramix_Small.png");
-
 
     TextMenu textMenu;
     MenuInit(&textMenu);
 
     while (SelectMenu==0) {
-
+        Update_Event(&manager);
+         
         MenuDisplay(&textMenu);
 
-
-        /*if (manager.event.type == ALLEGRO_EVENT_KEY_DOWN) {
-            // si clavier selon touche appuyée,
+        if (manager.event.type == ALLEGRO_EVENT_KEY_DOWN) // si clavier selon touche appuyée,
+        { 
             switch (manager.event.keyboard.keycode) {
-                case ALLEGRO_KEY_A : {size1=28; size2=24; size3=24;} break;
-                case ALLEGRO_KEY_PAD_2 : {size1=24; size2=28; size3=24;} break;
-                case ALLEGRO_KEY_PAD_3 : {size1=24; size2=24; size3=28;} break;
+                case ALLEGRO_KEY_PAD_1 : 
+                SelectMenu = 1;
+                break;
+                case ALLEGRO_KEY_PAD_2 : 
+                SelectMenu = 2;
+                break;
+                case ALLEGRO_KEY_PAD_3 : 
+                SelectMenu = 3;
+                break;
             }
-        }*/
-        switch (SelectMenu) {
-            case 0: break;
-            case 1 : al_clear_to_color(al_map_rgb(0,0,0)); break;
         }
     }
+    
+    printf("\nSelMenu=%d", SelectMenu);    
+    
+    PARTY party;
+    Party_Init(&party, 4, &manager);
 
-    while (1) {
-        GC_MANAGER_UPDATE_EVENT(&manager);
-
-        if (manager.event.display.type == ALLEGRO_EVENT_DISPLAY_CLOSE) {
-            break;
-        }
-
-        New_Part_Deplacement(&extra_piece, &button_rotation_posi, &button_rotation_nega, list_button_decal_colonne, list_button_decal_ligne);
-
-        int j = 0;
-        for (int i = 0; i < 6; i++) {
-            if (list_button_decal_colonne[i].gc_button.state == 2) {
-                decal_colonne(tab_plateau, &extra_piece, j * 2 + 1, list_button_decal_colonne[i].sens_direct);
-                break;
-            } else if (list_button_decal_ligne[i].gc_button.state == 2) {
-                decal_ligne(tab_plateau, &extra_piece, j * 2 + 1, list_button_decal_ligne[i].sens_direct);
-                break;
-            }
-
-            if (j++ >= 2) {
-                j = 0;
-            }
-        }
-
-        Clear_Diplay(); // Ecran noir
-
-        UPDATE_Part_Position_DRAW_Plateau(tab_plateau, &extra_piece);
-
-        List_button_decal_draw(list_button_decal_colonne);
-        List_button_decal_draw(list_button_decal_ligne);
-
-        GC_SPRITE_DRAW(&sprite_rotation_posi);
-        GC_SPRITE_DRAW(&sprite_rotation_nega);
-
-        switch (nbrJoueur){ //initialise les textures en fonction du nombre de joueurs jouant au jeu
-            case 1: 
-                InitCharacter(Pion_position1, x1, y1); 
-                break;
-            case 2 : 
-                { InitCharacter(Pion_position1, x1, y1); InitCharacter(Pion_position2, x2, y2); 
-                break; }
-            case 3 : 
-                { InitCharacter(Pion_position1, x1, y1); 
-                InitCharacter(Pion_position2, x2, y2); InitCharacter(Pion_position3, x3, y3); 
-                break; }
-            case 4 : 
-                {InitCharacter(Pion_position1, x1, y1); 
-                InitCharacter(Pion_position2, x2, y2); 
-                InitCharacter(Pion_position3, x3, y3); 
-                InitCharacter(Pion_position4, x4, y4); 
-                break; }
-        }
-
-        // fin de l'intialisation des positions des pièces et du plateau
-
-
-
-        switch (JoueurPlay){
-            case 1:{
-                    if (manager.event.type == ALLEGRO_EVENT_KEY_DOWN) {
-                        // si clavier selon touche appuyée,
-                        switch (manager.event.keyboard.keycode) {
-                            case ALLEGRO_KEY_UP:
-                                y1 -= PART_H;
-                                break;
-                            case ALLEGRO_KEY_RIGHT:
-                                x1 += PART_W;
-                                break;
-                            case ALLEGRO_KEY_DOWN:
-                                y1 += PART_H;
-                                break;
-                            case ALLEGRO_KEY_LEFT:
-                                x1 -= PART_W;
-                                break;
-                            case ALLEGRO_KEY_ENTER :
-                                finM = 1;
-                                break;
-                        }
-                    }
-                    break;
-            }
-
-            case 2: {
-                    if (manager.event.type == ALLEGRO_EVENT_KEY_DOWN) {
-                        // si clavier selon touche appuyée,
-                        switch (manager.event.keyboard.keycode) {
-                            case ALLEGRO_KEY_UP:
-                                y2 -= PART_H;
-                                break;
-                            case ALLEGRO_KEY_RIGHT:
-                                x2 += PART_W;
-                                break;
-                            case ALLEGRO_KEY_DOWN:
-                                y2 += PART_H;
-                                break;
-                            case ALLEGRO_KEY_LEFT:
-                                x2 -= PART_W;
-                                break;
-                            case ALLEGRO_KEY_ENTER :
-                                finM = 1;
-                                break;
-                        }
-                    }
-            }
-
-            case 3: {
-                    if (manager.event.type == ALLEGRO_EVENT_KEY_DOWN) {
-                        // si clavier selon touche appuyée,
-                        switch (manager.event.keyboard.keycode) {
-                            case ALLEGRO_KEY_UP:
-                                y3 -= PART_H;
-                                break;
-                            case ALLEGRO_KEY_RIGHT:
-                                x3 += PART_W;
-                                break;
-                            case ALLEGRO_KEY_DOWN:
-                                y3 += PART_W;
-                                break;
-                            case ALLEGRO_KEY_LEFT:
-                                x3 -= PART_H;
-                                break;
-                            case ALLEGRO_KEY_ENTER :
-                                finM = 1;
-                                break;
-                        }
-                    }
-            }
-
-            case 4: {
-                    if (manager.event.type == ALLEGRO_EVENT_KEY_DOWN) {
-                        // si clavier selon touche appuyée,
-                        switch (manager.event.keyboard.keycode) {
-                            case ALLEGRO_KEY_UP:
-                                y4 -= PART_H;
-                                break;
-                            case ALLEGRO_KEY_RIGHT:
-                                x4 += PART_W;
-                                break;
-                            case ALLEGRO_KEY_DOWN:
-                                y4 += PART_H;
-                                break;
-                            case ALLEGRO_KEY_LEFT:
-                                x4 -= PART_W;
-                                break;
-                            case ALLEGRO_KEY_ENTER :
-                                finM = 1;
-                                break;
-                        }
-                    }
-                }
-        }
-
-        al_flip_display(); //affichage du plateau de base
+    while (1)
+    {           
+        Switch_Part_Loop(&manager, &party);
+        Deplacement_Player_Loop(&manager, &party);
     }
 
     GC_MANAGER_DESTROY(&manager);
     return 0;
+}
+
+void Switch_Part_Loop(GC_MANAGER* pManager, PARTY* pParty)
+{
+    while (!pParty->player_turn_step)
+    {
+        Update_Event(pManager);
+
+        Party_Buttons_Update_Event(pParty);
+        Party_Buttons_Exe(pParty);
+
+        Draw_Clear_Plateau_Player(pParty);
+        Party_Buttons_Draw(pParty);
+        al_flip_display();
+    }
+    pParty->player_turn_step = 0;
+}
+
+void Deplacement_Player_Loop(GC_MANAGER* pManager, PARTY* pParty)
+{
+    PART* pPart_target = 0;
+    while (!pPart_target || &pParty->plateau.parts[pParty->players[pParty->player_turn].position_on_plateau.x][pParty->players[pParty->player_turn].position_on_plateau.y] == pPart_target)
+    {
+        Update_Event(pManager);
+        pPart_target = Plateau_Get_Part_Click(&pParty->plateau);
+
+        /*if (pPart_target->position_on_plateau.x == pParty->players[pParty->player_turn].position_on_plateau.x && pPart_target->position_on_plateau.y == pParty->players[pParty->player_turn].position_on_plateau.y)
+        {
+            pPart_target = 0;
+        }*/
+    }
+
+    Player_Deplacement(&pParty->players[pParty->player_turn], pPart_target);
+    Party_Next_Turn(pParty);
+    Draw_Clear_Plateau_Player(pParty);
+}
+
+void Draw_Clear_Plateau_Player(PARTY* pParty)
+{
+    ALLEGRO_COLOR blk = al_map_rgb(0,0,0);
+    al_clear_to_color(blk);
+    Party_Plateau_Draw(pParty);
+    Party_Player_Draw(pParty);
+}
+
+void Update_Event(GC_MANAGER* pManager)
+{
+    GC_MANAGER_UPDATE_EVENT(pManager);
+
+    if (pManager->event.display.type == ALLEGRO_EVENT_DISPLAY_CLOSE)
+    {
+        exit(0);
+    }
 }
