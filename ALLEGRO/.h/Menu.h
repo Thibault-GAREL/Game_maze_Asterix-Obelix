@@ -17,7 +17,7 @@ typedef struct{                             //Structure permettant de stocker le
 }TextMenu;
 
 void MenuInit(TextMenu* pTextmenu);          //déclaration de la fonction permettant d'intialiser le menu
-void MenuDisplay(TextMenu* pTextMenu);      //déclaration de la fonction permettant d'afficher le Menu
+void MenuDisplay(TextMenu* pTextMenu, int* pBACKGROUNDPATH);      //déclaration de la fonction permettant d'afficher le Menu
 
 #endif //PROJET_MAINMOUV_H
 

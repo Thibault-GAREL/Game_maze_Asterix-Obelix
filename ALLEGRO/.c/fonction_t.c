@@ -241,6 +241,8 @@ void InitCharacter(GC_SPRITE PionSprite, int x, int y) //les x et y corresponden
         GC_SPRITE_DRAW(&PionSprite);
 }
 
+
+
 /*int MoveCharacter(int x, int y ){
     if (manager.event.type == ALLEGRO_EVENT_KEY_DOWN) {
         // si clavier selon touche appuyée,
