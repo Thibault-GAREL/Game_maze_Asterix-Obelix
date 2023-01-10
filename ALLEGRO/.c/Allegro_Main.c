@@ -146,6 +146,7 @@ int main() {
         }
 
         while (SelectMenu == 3) {
+            Clear_Diplay();
             GC_SPRITE_DRAW(&Credits);
             al_flip_display();
             if (manager.event.type == ALLEGRO_EVENT_KEY_DOWN) {
@@ -162,190 +163,190 @@ int main() {
                 }
 
             }
+        }
+        while (1) {
+            GC_MANAGER_UPDATE_EVENT(&manager);
 
-            while (1) {
-                GC_MANAGER_UPDATE_EVENT(&manager);
+            if (manager.event.display.type == ALLEGRO_EVENT_DISPLAY_CLOSE) {
+                break;
+            }
 
-                if (manager.event.display.type == ALLEGRO_EVENT_DISPLAY_CLOSE) {
+            New_Part_Deplacement(&extra_piece, &button_rotation_posi, &button_rotation_nega,
+                                 list_button_decal_colonne,
+                                 list_button_decal_ligne);
+
+            int j = 0;
+            for (int i = 0; i < 6; i++) {
+                if (list_button_decal_colonne[i].gc_button.state == 2) {
+                    decal_colonne(tab_plateau, &extra_piece, j * 2 + 1, list_button_decal_colonne[i].sens_direct);
+                    break;
+                } else if (list_button_decal_ligne[i].gc_button.state == 2) {
+                    decal_ligne(tab_plateau, &extra_piece, j * 2 + 1, list_button_decal_ligne[i].sens_direct);
                     break;
                 }
 
-                New_Part_Deplacement(&extra_piece, &button_rotation_posi, &button_rotation_nega,
-                                     list_button_decal_colonne,
-                                     list_button_decal_ligne);
-
-                int j = 0;
-                for (int i = 0; i < 6; i++) {
-                    if (list_button_decal_colonne[i].gc_button.state == 2) {
-                        decal_colonne(tab_plateau, &extra_piece, j * 2 + 1, list_button_decal_colonne[i].sens_direct);
-                        break;
-                    } else if (list_button_decal_ligne[i].gc_button.state == 2) {
-                        decal_ligne(tab_plateau, &extra_piece, j * 2 + 1, list_button_decal_ligne[i].sens_direct);
-                        break;
-                    }
-
-                    if (j++ >= 2) {
-                        j = 0;
-                    }
+                if (j++ >= 2) {
+                    j = 0;
                 }
+            }
 
-                Clear_Diplay(); // Ecran noir
+            Clear_Diplay(); // Ecran noir
 
-                UPDATE_Part_Position_DRAW_Plateau(tab_plateau, &extra_piece);
+            UPDATE_Part_Position_DRAW_Plateau(tab_plateau, &extra_piece);
 
-                List_button_decal_draw(list_button_decal_colonne);
-                List_button_decal_draw(list_button_decal_ligne);
+            List_button_decal_draw(list_button_decal_colonne);
+            List_button_decal_draw(list_button_decal_ligne);
 
-                GC_SPRITE_DRAW(&sprite_rotation_posi);
-                GC_SPRITE_DRAW(&sprite_rotation_nega);
+            GC_SPRITE_DRAW(&sprite_rotation_posi);
+            GC_SPRITE_DRAW(&sprite_rotation_nega);
 
-                switch (nbrJoueur) {                                                                                             //initialise les textures en fonction du nombre de joueurs jouant au jeu
-                    case 1:
-                        InitCharacter(Pion_position1, x1, y1);
-                        break;
-                    case 2 : {
-                        InitCharacter(Pion_position1, x1, y1);
-                        InitCharacter(Pion_position2, x2, y2);
-                        break;
-                    }
-                    case 3 : {
-                        InitCharacter(Pion_position1, x1, y1);
-                        InitCharacter(Pion_position2, x2, y2);
-                        InitCharacter(Pion_position3, x3, y3);
-                        break;
-                    }
-                    case 4 : {
-                        InitCharacter(Pion_position1, x1, y1);
-                        InitCharacter(Pion_position2, x2, y2);
-                        InitCharacter(Pion_position3, x3, y3);
-                        InitCharacter(Pion_position4, x4, y4);
-                        break;
-                    }
+            switch (nbrJoueur) {                                                                                             //initialise les textures en fonction du nombre de joueurs jouant au jeu
+                case 1:
+                    InitCharacter(Pion_position1, x1, y1);
+                    break;
+                case 2 : {
+                    InitCharacter(Pion_position1, x1, y1);
+                    InitCharacter(Pion_position2, x2, y2);
+                    break;
                 }
-
-                // fin de l'intialisation des positions des pièces et du plateau
-
-
-
-                switch (JoueurPlay) {
-                    case 1: {
-                        if (manager.event.type == ALLEGRO_EVENT_KEY_DOWN) {
-                            // si clavier selon touche appuyée,
-                            switch (manager.event.keyboard.keycode) {
-                                case ALLEGRO_KEY_UP:
-                                    y1 -= PART_H;
-                                    break;
-                                case ALLEGRO_KEY_RIGHT:
-                                    x1 += PART_W;
-                                    break;
-                                case ALLEGRO_KEY_DOWN:
-                                    y1 += PART_H;
-                                    break;
-                                case ALLEGRO_KEY_LEFT:
-                                    x1 -= PART_W;
-                                    break;
-                                case ALLEGRO_KEY_ENTER :
-                                    finM = 1;
-                                    break;
-                                case ALLEGRO_KEY_ESCAPE :
-                                    escape = 1;
-                                    SelectMenu = 0;
-                                    break;
-                            }
-                        }
-                        break;
-                    }
-
-                    case 2: {
-                        if (manager.event.type == ALLEGRO_EVENT_KEY_DOWN) {
-                            // si clavier selon touche appuyée,
-                            switch (manager.event.keyboard.keycode) {
-                                case ALLEGRO_KEY_UP:
-                                    y2 -= PART_H;
-                                    break;
-                                case ALLEGRO_KEY_RIGHT:
-                                    x2 += PART_W;
-                                    break;
-                                case ALLEGRO_KEY_DOWN:
-                                    y2 += PART_H;
-                                    break;
-                                case ALLEGRO_KEY_LEFT:
-                                    x2 -= PART_W;
-                                    break;
-                                case ALLEGRO_KEY_ENTER :
-                                    finM = 1;
-                                    break;
-                                case ALLEGRO_KEY_ESCAPE :
-                                    escape = 1;
-                                    SelectMenu = 0;
-                                    break;
-                            }
-                        }
-                    }
-
-                    case 3: {
-                        if (manager.event.type == ALLEGRO_EVENT_KEY_DOWN) {
-                            // si clavier selon touche appuyée,
-                            switch (manager.event.keyboard.keycode) {
-                                case ALLEGRO_KEY_UP:
-                                    y3 -= PART_H;
-                                    break;
-                                case ALLEGRO_KEY_RIGHT:
-                                    x3 += PART_W;
-                                    break;
-                                case ALLEGRO_KEY_DOWN:
-                                    y3 += PART_W;
-                                    break;
-                                case ALLEGRO_KEY_LEFT:
-                                    x3 -= PART_H;
-                                    break;
-                                case ALLEGRO_KEY_ENTER :
-                                    finM = 1;
-                                    break;
-                                case ALLEGRO_KEY_ESCAPE :
-                                    escape = 1;
-                                    SelectMenu = 0;
-                                    break;
-                            }
-                        }
-                    }
-
-                    case 4: {
-                        if (manager.event.type == ALLEGRO_EVENT_KEY_DOWN) {
-                            // si clavier selon touche appuyée,
-                            switch (manager.event.keyboard.keycode) {
-                                case ALLEGRO_KEY_UP:
-                                    y4 -= PART_H;
-                                    break;
-                                case ALLEGRO_KEY_RIGHT:
-                                    x4 += PART_W;
-                                    break;
-                                case ALLEGRO_KEY_DOWN:
-                                    y4 += PART_H;
-                                    break;
-                                case ALLEGRO_KEY_LEFT:
-                                    x4 -= PART_W;
-                                    break;
-                                case ALLEGRO_KEY_ENTER :
-                                    finM = 1;
-                                    break;
-                                case ALLEGRO_KEY_ESCAPE :
-                                    escape = 1;
-                                    SelectMenu = 0;
-                                    break;
-                            }
-                        }
-                    }
+                case 3 : {
+                    InitCharacter(Pion_position1, x1, y1);
+                    InitCharacter(Pion_position2, x2, y2);
+                    InitCharacter(Pion_position3, x3, y3);
+                    break;
                 }
-
-                al_flip_display(); //affichage du plateau de base
-
-                if (escape == 1) {
+                case 4 : {
+                    InitCharacter(Pion_position1, x1, y1);
+                    InitCharacter(Pion_position2, x2, y2);
+                    InitCharacter(Pion_position3, x3, y3);
+                    InitCharacter(Pion_position4, x4, y4);
                     break;
                 }
             }
+
+            // fin de l'intialisation des positions des pièces et du plateau
+
+
+
+            switch (JoueurPlay) {
+                case 1: {
+                    if (manager.event.type == ALLEGRO_EVENT_KEY_DOWN) {
+                        // si clavier selon touche appuyée,
+                        switch (manager.event.keyboard.keycode) {
+                            case ALLEGRO_KEY_UP:
+                                y1 -= PART_H;
+                                break;
+                            case ALLEGRO_KEY_RIGHT:
+                                x1 += PART_W;
+                                break;
+                            case ALLEGRO_KEY_DOWN:
+                                y1 += PART_H;
+                                break;
+                            case ALLEGRO_KEY_LEFT:
+                                x1 -= PART_W;
+                                break;
+                            case ALLEGRO_KEY_ENTER :
+                                finM = 1;
+                                break;
+                            case ALLEGRO_KEY_ESCAPE :
+                                escape = 1;
+                                SelectMenu = 0;
+                                break;
+                        }
+                    }
+                    break;
+                }
+
+                case 2: {
+                    if (manager.event.type == ALLEGRO_EVENT_KEY_DOWN) {
+                        // si clavier selon touche appuyée,
+                        switch (manager.event.keyboard.keycode) {
+                            case ALLEGRO_KEY_UP:
+                                y2 -= PART_H;
+                                break;
+                            case ALLEGRO_KEY_RIGHT:
+                                x2 += PART_W;
+                                break;
+                            case ALLEGRO_KEY_DOWN:
+                                y2 += PART_H;
+                                break;
+                            case ALLEGRO_KEY_LEFT:
+                                x2 -= PART_W;
+                                break;
+                            case ALLEGRO_KEY_ENTER :
+                                finM = 1;
+                                break;
+                            case ALLEGRO_KEY_ESCAPE :
+                                escape = 1;
+                                SelectMenu = 0;
+                                break;
+                        }
+                    }
+                }
+
+                case 3: {
+                    if (manager.event.type == ALLEGRO_EVENT_KEY_DOWN) {
+                        // si clavier selon touche appuyée,
+                        switch (manager.event.keyboard.keycode) {
+                            case ALLEGRO_KEY_UP:
+                                y3 -= PART_H;
+                                break;
+                            case ALLEGRO_KEY_RIGHT:
+                                x3 += PART_W;
+                                break;
+                            case ALLEGRO_KEY_DOWN:
+                                y3 += PART_W;
+                                break;
+                            case ALLEGRO_KEY_LEFT:
+                                x3 -= PART_H;
+                                break;
+                            case ALLEGRO_KEY_ENTER :
+                                finM = 1;
+                                break;
+                            case ALLEGRO_KEY_ESCAPE :
+                                escape = 1;
+                                SelectMenu = 0;
+                                break;
+                        }
+                    }
+                }
+
+                case 4: {
+                    if (manager.event.type == ALLEGRO_EVENT_KEY_DOWN) {
+                        // si clavier selon touche appuyée,
+                        switch (manager.event.keyboard.keycode) {
+                            case ALLEGRO_KEY_UP:
+                                y4 -= PART_H;
+                                break;
+                            case ALLEGRO_KEY_RIGHT:
+                                x4 += PART_W;
+                                break;
+                            case ALLEGRO_KEY_DOWN:
+                                y4 += PART_H;
+                                break;
+                            case ALLEGRO_KEY_LEFT:
+                                x4 -= PART_W;
+                                break;
+                            case ALLEGRO_KEY_ENTER :
+                                finM = 1;
+                                break;
+                            case ALLEGRO_KEY_ESCAPE :
+                                escape = 1;
+                                SelectMenu = 0;
+                                break;
+                        }
+                    }
+                }
+            }
+
+            al_flip_display(); //affichage du plateau de base
+
+            if (escape == 1) {
+                break;
+            }
         }
+    }
+
         //GC_MANAGER_DESTROY(&manager);
         //return 0;
     }
-}
