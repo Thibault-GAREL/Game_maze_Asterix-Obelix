@@ -140,10 +140,14 @@ int main() {
             }
             if (Button_Menu_3.state == 2) {
                 SelectMenu = 3;
-                printf("select Menu = 3");
                 break;
             }
             al_flip_display();
+
+            if (manager.event.display.type == ALLEGRO_EVENT_DISPLAY_CLOSE) {
+                GC_MANAGER_DESTROY(&manager);
+                return 0;
+            }
         }
 
         while (SelectMenu == 3) {
@@ -151,7 +155,6 @@ int main() {
             Clear_Diplay();
             GC_SPRITE_DRAW(&Credits);
             if (manager.event.type == ALLEGRO_EVENT_KEY_DOWN) {
-                printf("ça fonctionne");
                 // si clavier selon touche appuyée,
                 switch (manager.event.keyboard.keycode) {
                     case ALLEGRO_KEY_ESCAPE :
@@ -166,13 +169,19 @@ int main() {
                 break;
             }
             al_flip_display();
+
+            if (manager.event.display.type == ALLEGRO_EVENT_DISPLAY_CLOSE) {
+                GC_MANAGER_DESTROY(&manager);
+                return 0;
+            }
         }
 
         while (SelectMenu == 1) {
             GC_MANAGER_UPDATE_EVENT(&manager);
 
             if (manager.event.display.type == ALLEGRO_EVENT_DISPLAY_CLOSE) {
-                break;
+                GC_MANAGER_DESTROY(&manager);
+                return 0;
             }
 
             New_Part_Deplacement(&extra_piece, &button_rotation_posi, &button_rotation_nega,
@@ -351,6 +360,4 @@ int main() {
         }
     }
 
-        //GC_MANAGER_DESTROY(&manager);
-        //return 0;
     }
