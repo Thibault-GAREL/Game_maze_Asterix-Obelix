@@ -140,16 +140,18 @@ int main() {
             }
             if (Button_Menu_3.state == 2) {
                 SelectMenu = 3;
+                printf("select Menu = 3");
                 break;
             }
             al_flip_display();
         }
 
         while (SelectMenu == 3) {
+            GC_MANAGER_UPDATE_EVENT(&manager);
             Clear_Diplay();
             GC_SPRITE_DRAW(&Credits);
-            al_flip_display();
             if (manager.event.type == ALLEGRO_EVENT_KEY_DOWN) {
+                printf("ça fonctionne");
                 // si clavier selon touche appuyée,
                 switch (manager.event.keyboard.keycode) {
                     case ALLEGRO_KEY_ESCAPE :
@@ -157,14 +159,16 @@ int main() {
                         SelectMenu = 0;
                         break;
                 }
-
-                if (escape == 1) {
-                    break;
-                }
-
             }
+
+            if (escape == 1) {
+                Clear_Diplay();
+                break;
+            }
+            al_flip_display();
         }
-        while (1) {
+
+        while (SelectMenu == 1) {
             GC_MANAGER_UPDATE_EVENT(&manager);
 
             if (manager.event.display.type == ALLEGRO_EVENT_DISPLAY_CLOSE) {
@@ -286,7 +290,7 @@ int main() {
 
                 case 3: {
                     if (manager.event.type == ALLEGRO_EVENT_KEY_DOWN) {
-                        // si clavier selon touche appuyée,
+                        // si clavier selon touche appuyée
                         switch (manager.event.keyboard.keycode) {
                             case ALLEGRO_KEY_UP:
                                 y3 -= PART_H;
