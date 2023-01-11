@@ -1,0 +1,14 @@
+{
+    "files.associations": {
+        "stdio.h": "c",
+        "allegro_ttf.h": "c",
+        "part.h": "c",
+        "player.h": "c",
+        "global.h": "c",
+        "fonction_t.h": "c",
+        "utils.h": "c",
+        "button.h": "c",
+        "party.h": "c",
+        "*.ttf": "c"
+    }
+}

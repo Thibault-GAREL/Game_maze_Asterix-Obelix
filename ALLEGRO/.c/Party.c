@@ -1,4 +1,4 @@
-#include "Party.h"
+#include "../.h/Party.h"
 
 int players_start_pos[4][2] = {{0, 0}, {PLATEAU_W_MAX_I, PLATEAU_H_MAX_I}, {0, PLATEAU_H_MAX_I}, {PLATEAU_W_MAX_I, 0}};
 

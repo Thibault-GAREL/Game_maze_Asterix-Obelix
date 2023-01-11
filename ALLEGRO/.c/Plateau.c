@@ -1,4 +1,4 @@
-#include "Plateau.h"
+#include "../.h/Plateau.h"
 
 char parts_filePath[50][50] = {     FILE_ACCESS ".\\Import\\tuile_2.png",
                                     FILE_ACCESS ".\\Import\\tuile_4.png",

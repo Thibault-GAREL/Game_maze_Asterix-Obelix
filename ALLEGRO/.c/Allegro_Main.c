@@ -2,7 +2,8 @@
 #include "../.h/Menu.h"
 // gcc -g -Wall .\main_t.c .\Gc.c .\fonction_t.c .\Menu.c -lallegro -lallegro_image -lallegro_font -oProject; .\Project.exe
 
-int nbrJoueur=4; //définiti le nombre de joueurs
+
+/*int nbrJoueur=4; //définiti le nombre de joueurs
 int JoueurPlay=1; //définit quel joueur doit jouer
 int tour =1; //définit à quel tour du jeu nous sommes
 int finM =0; //Permet au joueur de finir ses déplacements en appuyant sur entrée
@@ -29,7 +30,7 @@ int main() {
 
     GC_SPRITE tab_plateau[PLATEAU_H][PLATEAU_W] = {0};
     GC_SPRITE extra_piece;
-    int tab_index[MOVABLE_PARTS];
+    int tab_index[PART_MOVABLE_COUNT];
     initalisation_affichage_plateau(random_sans_remise(tab_index), tab_plateau, &extra_piece);
 
     BUTTON_DECAL list_button_decal_colonne[6];
@@ -41,15 +42,18 @@ int main() {
     GC_BUTTON Button_Menu_1, Button_Menu_2, Button_Menu_3;                          //déclaration des boutons du menu
 
     GC_SPRITE sprite_rotation_posi, sprite_rotation_nega;
+    
     GC_SPRITE MenuChoice1;
     GC_SPRITE MenuChoice2;
     GC_SPRITE MenuChoice3;
-    GC_SPRITE Credits;                                                              // Initialisation de la page des crédits
+    GC_SPRITE Credits;        
+    GC_SPRITE MENU_BACKGRD;                                                       // Initialisation de la page des crédits
+    
     GC_SPRITE Pion_position1;                                                       // Initialisation des textures des quatre pions
     GC_SPRITE Pion_position2;                                                       // 2ème
     GC_SPRITE Pion_position3;                                                       // 3ème
     GC_SPRITE Pion_position4;                                                       // 4ème
-    GC_SPRITE MENU_BACKGRD;                                                         // Initialisation de la texture de fond du menu (avec le titre du jeu)
+                                                        // Initialisation de la texture de fond du menu (avec le titre du jeu)
 
 
     GC_BUTTON_INIT(&button_rotation_posi,
@@ -70,6 +74,9 @@ int main() {
     GC_SPRITE_INIT(&MenuChoice3, MENUCHOICE3_PATH);                                                      // Choix 3
     GC_SPRITE_INIT(&Credits,
                    FILE_ACCESS ".\\Import\\Labyrinthe_Credits.png");                            // Initialisation de la texture des crédits
+    GC_SPRITE_INIT(&MENU_BACKGRD,
+                   FILE_ACCESS ".\\Import\\MENU_BACKGROUND.png");                          // import du fichier du fond d'écran du menu
+    
     GC_SPRITE_INIT(&Pion_position1,
                    FILE_ACCESS ".\\Import\\Dessin_asterix_Image_Centre_Small.png");      // Import du premier joueur
     GC_SPRITE_INIT(&Pion_position2,
@@ -78,8 +85,6 @@ int main() {
                    FILE_ACCESS ".\\Import\\Dessin_obelix_Image_Small.png");              // Import du troisième joueur
     GC_SPRITE_INIT(&Pion_position4,
                    FILE_ACCESS ".\\Import\\Dessin_Panoramix_Small.png");                 //Import du quatrième joueur
-    GC_SPRITE_INIT(&MENU_BACKGRD,
-                   FILE_ACCESS ".\\Import\\MENU_BACKGROUND.png");                          // import du fichier du fond d'écran du menu
 
     sprite_rotation_posi.gc_properties.gc_space.POSITION_X = EXTRA_PART_POS_X - 95;
     sprite_rotation_posi.gc_properties.gc_space.POSITION_Y = EXTRA_PART_POS_Y;
@@ -106,12 +111,12 @@ int main() {
     Button_Menu_3.gc_properties.gc_space = MenuChoice3.gc_properties.gc_space;
 
     //TextMenu textMenu;
-    //MenuInit(&textMenu);
+    //TMenuInit(&textMenu);
 
 
 
 
-    //MenuDisplay(&textMenu, &MENU_BACKGRD);
+    //TMenuDisplay(&textMenu, &MENU_BACKGRD);
 
 
 
@@ -359,5 +364,4 @@ int main() {
             }
         }
     }
-
-    }
+}/**/

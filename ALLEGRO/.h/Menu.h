@@ -6,18 +6,38 @@
 #define PROJET_MAINMOUV_H
 #include "Gc.h"
 #include "Global.h"
+#include "Button.h"
 
 #define TextOffsetX 500     //définit la position en X du texte du menu
 
 
 
 
-typedef struct{                             //Structure permettant de stocker les textes au complet
+typedef struct
+{                             //Structure permettant de stocker les textes au complet
     GC_TEXT tableauTextes[6];
 }TextMenu;
 
-void MenuInit(TextMenu* pTextmenu);          //déclaration de la fonction permettant d'intialiser le menu
-void MenuDisplay(TextMenu* pTextMenu, int* pBACKGROUNDPATH);      //déclaration de la fonction permettant d'afficher le Menu
+typedef struct
+{
+    GC_SPRITE Credits;
+    GC_SPRITE MENU_BACKGRD;
+
+    BUTTON Button_Menu_1;
+    BUTTON Button_Menu_2;
+    BUTTON Button_Menu_3;
+
+    int menu_Selected;
+}MENU;
+
+
+void TMenuInit(TextMenu* pTextmenu);          //déclaration de la fonction permettant d'intialiser le menu
+void TMenuDisplay(TextMenu* pTextMenu, int* pBACKGROUNDPATH);      //déclaration de la fonction permettant d'afficher le Menu
+
+void Menu_Init(MENU* pMenu, GC_MANAGER* pManager);
+void Menu_Draw(MENU* pMenu);
+void Menu_Update_Event(MENU* pMenu);
+void Menu_Button_exe(MENU* pMenu);
 
 #endif //PROJET_MAINMOUV_H
 

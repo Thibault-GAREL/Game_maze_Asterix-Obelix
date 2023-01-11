@@ -1,4 +1,4 @@
-#include "Player.h"
+#include "../.h/Player.h"
 
 char* players_sprite_filePath[PLAYER_MAX_COUNT] = {FILE_ACCESS ".\\Import\\Dessin_asterix_Image_Centre_Small.png", 
                             FILE_ACCESS ".\\Import\\Dessin_Idefix_Image_Small.png",

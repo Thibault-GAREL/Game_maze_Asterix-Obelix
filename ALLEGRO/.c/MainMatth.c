@@ -2,7 +2,7 @@
 //gcc -g -Wall .\MainMatth.c .\Gc.c .\fonction_t.c  -lallegro -lallegro_image -lallegro_font -lallegro_ttf -oProject; .\Project.exe
 /* Exemple d'utilisation d'un Boutton */
 
-int main()
+/*int main()
 {
     GC_MANAGER manager;
     GC_MANAGER_CREATE(&manager, 640, 420);

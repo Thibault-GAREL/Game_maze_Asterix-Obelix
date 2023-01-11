@@ -1,10 +1,10 @@
-#include "fonction_t.h"
-#include "Party.h"
+#include "../.h/fonction_t.h"
+#include "../.h/Party.h"
 
 // gcc -g -Wall main_t.c Gc.c fonction_t.c Menu.c Plateau.c Player.c Part.c -lallegro -lallegro_image -lallegro_font -oProject; .\Project.exe
 //gcc -g -Wall main_t.c Gc.c fonction_t.c Menu.c Plateau.c Player.c Part.c utils.c Party.c -lallegro -lallegro_image -lallegro_font -lallegro_ttf -oProject
 
-int SelectMenu=0; //permet de valider la sélection dans le menu
+//int SelectMenu=0; //permet de valider la sélection dans le menu
 
 void Switch_Part_Loop(GC_MANAGER* pManager, PARTY* pParty);
 void Deplacement_Player_Loop(GC_MANAGER* pManager, PARTY* pParty);
@@ -16,32 +16,21 @@ int main() {
     GC_MANAGER manager;
     GC_MANAGER_CREATE(&manager, 1000, 1000);
 
-    TextMenu textMenu;
-    MenuInit(&textMenu);
+    MENU menu;
+    Menu_Init(&menu, &manager);
 
-    while (SelectMenu==0) {
+    while (menu.menu_Selected != 1)
+    {
         Update_Event(&manager);
-         
-        //MenuDisplay(&textMenu);
+        Menu_Update_Event(&menu);
+        Menu_Button_exe(&menu);
 
-        if (manager.event.type == ALLEGRO_EVENT_KEY_DOWN) // si clavier selon touche appuyée,
-        { 
-            switch (manager.event.keyboard.keycode) {
-                case ALLEGRO_KEY_PAD_1 : 
-                SelectMenu = 1;
-                break;
-                case ALLEGRO_KEY_PAD_2 : 
-                SelectMenu = 2;
-                break;
-                case ALLEGRO_KEY_PAD_3 : 
-                SelectMenu = 3;
-                break;
-            }
-        }
+        ALLEGRO_COLOR blk = al_map_rgb(0,0,0);
+        al_clear_to_color(blk);
+        Menu_Draw(&menu);
+        al_flip_display();
     }
-    
-    printf("\nSelMenu=%d", SelectMenu);
-    
+        
     PARTY party;
     Party_Init(&party, 4, &manager);
 
@@ -73,6 +62,9 @@ void Switch_Part_Loop(GC_MANAGER* pManager, PARTY* pParty)
 
 void Deplacement_Player_Loop(GC_MANAGER* pManager, PARTY* pParty)
 {
+    Draw_Clear_Plateau_Player(pParty);
+    al_flip_display();
+
     PART* pPart_target = 0;
     while (!pPart_target || &pParty->plateau.parts[pParty->players[pParty->player_turn].position_on_plateau.x][pParty->players[pParty->player_turn].position_on_plateau.y] == pPart_target)
     {
@@ -88,6 +80,8 @@ void Deplacement_Player_Loop(GC_MANAGER* pManager, PARTY* pParty)
     Player_Deplacement(&pParty->players[pParty->player_turn], pPart_target);
     Party_Next_Turn(pParty);
     Draw_Clear_Plateau_Player(pParty);
+    Party_Buttons_Draw(pParty);
+    al_flip_display();
 }
 
 void Draw_Clear_Plateau_Player(PARTY* pParty)
@@ -104,6 +98,7 @@ void Update_Event(GC_MANAGER* pManager)
 
     if (pManager->event.display.type == ALLEGRO_EVENT_DISPLAY_CLOSE)
     {
+        GC_MANAGER_DESTROY(pManager);
         exit(0);
     }
 }

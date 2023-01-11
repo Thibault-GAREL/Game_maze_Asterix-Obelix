@@ -15,7 +15,7 @@ const int TableauTailleTypo[6]={48,40,48,36,36,36}; //Définit les tailles de po
 const int TableauTextOffsetY[6]={300,400,575,750,825,900};  //définit les positions en Y du texte du menu
 
 
-void MenuInit(TextMenu* pTextMenu){
+void TMenuInit(TextMenu* pTextMenu){
 
     GC_TEXT_INIT(&pTextMenu->tableauTextes[0], text_0);
     GC_TEXT_INIT(&pTextMenu->tableauTextes[1], text_1);
@@ -34,7 +34,68 @@ void MenuInit(TextMenu* pTextMenu){
     }
 }
 
-void MenuDisplay(TextMenu* pTextMenu, int* pMENU_BACKGRD){                                               //fonction permettant d'afficher le menu
+void Menu_Init(MENU* pMenu, GC_MANAGER* pManager)
+{
+    GC_SPRITE_INIT(&pMenu->Credits, FILE_ACCESS ".\\Import\\Labyrinthe_Credits.png");                            // Initialisation de la texture des crédits
+    GC_SPRITE_INIT(&pMenu->MENU_BACKGRD, FILE_ACCESS ".\\Import\\MENU_BACKGROUND.png");
+
+    Button_Init(&pMenu->Button_Menu_1, 0, pManager, MENUCHOICE1_PATH);
+    Button_Init(&pMenu->Button_Menu_2, 0, pManager, MENUCHOICE2_PATH);
+    Button_Init(&pMenu->Button_Menu_3, 0, pManager, MENUCHOICE3_PATH);
+
+    Button_Set_Space(&pMenu->Button_Menu_1, 250, 400, 0);
+    Button_Set_Space(&pMenu->Button_Menu_2, 300, 525, 0);
+    Button_Set_Space(&pMenu->Button_Menu_3, 400, 650, 0);
+
+    pMenu->menu_Selected = 0;
+}
+
+
+
+void Menu_Draw(MENU* pMenu)
+{
+    if (pMenu->menu_Selected == 0)
+    {
+        GC_SPRITE_DRAW(&pMenu->MENU_BACKGRD);
+
+        Button_Draw(&pMenu->Button_Menu_1);
+        Button_Draw(&pMenu->Button_Menu_2);
+        Button_Draw(&pMenu->Button_Menu_3);
+    }
+    else if (pMenu->menu_Selected == 3)
+    {
+        GC_SPRITE_DRAW(&pMenu->Credits);
+    }
+}
+
+void Menu_Update_Event(MENU* pMenu)
+{
+    if (pMenu->menu_Selected == 0)
+    {
+        Button_Update_Event(&pMenu->Button_Menu_1);
+        Button_Update_Event(&pMenu->Button_Menu_2);
+        Button_Update_Event(&pMenu->Button_Menu_3);
+    }
+}
+
+void Menu_Button_exe(MENU* pMenu)
+{
+    if (pMenu->Button_Menu_1.gc_button.state == GC_BUTTON_STATE_RELEASED)
+    {
+        pMenu->menu_Selected = 1;
+    }
+    else if (pMenu->Button_Menu_2.gc_button.state == GC_BUTTON_STATE_RELEASED)
+    {
+        pMenu->menu_Selected = 2;
+    }
+    else if (pMenu->Button_Menu_3.gc_button.state == GC_BUTTON_STATE_RELEASED)
+    {
+        pMenu->menu_Selected = 3;
+    }
+}
+
+
+/*void TMenuDisplay(TextMenu* pTextMenu, int* pMENU_BACKGRD){                                               //fonction permettant d'afficher le menu
 
     al_clear_to_color(al_map_rgb(0,0,0));
 
@@ -45,7 +106,7 @@ void MenuDisplay(TextMenu* pTextMenu, int* pMENU_BACKGRD){                      
     }
 
     al_flip_display();
-}
+}*/
 
 /*void ButtonMenu(){
     GC_BUTTON Button_Menu1;
