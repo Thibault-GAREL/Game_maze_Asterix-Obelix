@@ -2,7 +2,7 @@
 // Created by garel on 21/12/2022.
 //
 
-#include "fonction_t.h"
+#include "../.h/fonction_t.h"
 
 
 /*void initalisation_affichage_plateau(int tab_index[MOVABLE_PARTS], GC_SPRITE tab_plateau[PLATEAU_H][PLATEAU_W], GC_SPRITE* const pExtra_piece)
@@ -164,6 +164,8 @@ void InitCharacter(GC_SPRITE PionSprite, int x, int y) //les x et y corresponden
         PionSprite.gc_properties.gc_space.POSITION_Y = y;
         GC_SPRITE_DRAW(&PionSprite);
 }
+
+
 
 /*int MoveCharacter(int x, int y ){
     if (manager.event.type == ALLEGRO_EVENT_KEY_DOWN) {

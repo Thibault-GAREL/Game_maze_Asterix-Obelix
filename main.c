@@ -22,7 +22,7 @@ int main() {
     while (SelectMenu==0) {
         Update_Event(&manager);
          
-        MenuDisplay(&textMenu);
+        //MenuDisplay(&textMenu);
 
         if (manager.event.type == ALLEGRO_EVENT_KEY_DOWN) // si clavier selon touche appuyée,
         { 

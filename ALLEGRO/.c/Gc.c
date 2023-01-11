@@ -1,4 +1,4 @@
-#include "Gc.h"
+#include "../.h/Gc.h"
 
 
 bool GC_INIT_ALLEGRO()
@@ -318,7 +318,7 @@ void GC_TEXT_INIT(GC_TEXT* gc_text, char* text_out)
 
     gc_text->police = al_create_builtin_font();
 
-    gc_text->color = al_map_rgb(255,255,255);
+    gc_text->color = al_map_rgb(0,0,0);
 
     GC_PROPERTIES_INIT(&gc_text->gc_properties);
 }
