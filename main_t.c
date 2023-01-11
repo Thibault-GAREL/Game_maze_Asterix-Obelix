@@ -19,7 +19,7 @@ int main() {
     TextMenu textMenu;
     MenuInit(&textMenu);
 
-    /*while (SelectMenu==0) {
+    while (SelectMenu==0) {
         Update_Event(&manager);
          
         MenuDisplay(&textMenu);
@@ -40,7 +40,7 @@ int main() {
         }
     }
     
-    printf("\nSelMenu=%d", SelectMenu); */   
+    printf("\nSelMenu=%d", SelectMenu);
     
     PARTY party;
     Party_Init(&party, 4, &manager);
