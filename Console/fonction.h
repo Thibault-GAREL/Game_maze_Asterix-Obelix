@@ -20991,6 +20991,2640 @@ int continuer(){
 }
 
 
+int change(int a){
+    if(a==00){a=0;}
+    if(a==01){a=1;}
+    if(a==02){a=2;}
+    if(a==03){a=3;}
+    if(a==04){a=4;}
+    if(a==05){a=5;}
+    if(a==06){a=6;}
+    if(a==10){a=7;}
+    if(a==11){a=8;}
+    if(a==12){a=9;}
+    if(a==13){a=10;}
+    if(a==14){a=11;}
+    if(a==15){a=12;}
+    if(a==16){a=13;}
+    if(a==20){a=14;}
+    if(a==21){a=15;}
+    if(a==22){a=16;}
+    if(a==23){a=17;}
+    if(a==24){a=18;}
+    if(a==25){a=19;}
+    if(a==26){a=20;}
+    if(a==30){a=21;}
+    if(a==31){a=22;}
+    if(a==32){a=23;}
+    if(a==33){a=24;}
+    if(a==34){a=25;}
+    if(a==35){a=26;}
+    if(a==36){a=27;}
+    if(a==40){a=28;}
+    if(a==41){a=29;}
+    if(a==42){a=30;}
+    if(a==43){a=31;}
+    if(a==44){a=32;}
+    if(a==45){a=33;}
+    if(a==46){a=34;}
+    if(a==50){a=35;}
+    if(a==51){a=36;}
+    if(a==52){a=37;}
+    if(a==53){a=38;}
+    if(a==54){a=39;}
+    if(a==55){a=40;}
+    if(a==56){a=41;}
+    if(a==60){a=42;}
+    if(a==61){a=43;}
+    if(a==62){a=44;}
+    if(a==63){a=45;}
+    if(a==64){a=46;}
+    if(a==65){a=47;}
+    if(a==66){a=48;}
+    return a;
+}
+
+
+int fonctiontest(int posdemand,int posactuel,double valeurposactuel,double valeurposdemand,double tab0,double tab1,double tab2,double tab3,double tab4,double tab5,double tab6,double tab7,double tab8,double tab9,double tab10,double tab11,double tab12,double tab13,double tab14,double tab15,double tab16,double tab17,double tab18,double tab19,double tab20,double tab21,double tab22,double tab23,double tab24,double tab25,double tab26,double tab27,double tab28,double tab29,double tab30,double tab31,double tab32,double tab33,double tab34,double tab35,double tab36,double tab37,double tab38,double tab39,double tab40,double tab41,double tab42,double tab43,double tab44,double tab45,double tab46,double tab47,double tab48){
+    int solu=0;
+    int casepossible[100000]={0};int compteur=0;
+    double valtab[49]={0};
+    valtab[0]=tab0;valtab[1]=tab1;valtab[2]=tab2;valtab[3]=tab3;valtab[4]=tab4;valtab[5]=tab5;valtab[6]=tab6;valtab[7]=tab7;valtab[8]=tab8;valtab[9]=tab9;valtab[10]=tab10;valtab[11]=tab11;valtab[12]=tab12;valtab[13]=tab13;valtab[14]=tab14;valtab[15]=tab15;valtab[16]=tab16;valtab[17]=tab17;valtab[18]=tab18;valtab[19]=tab19;valtab[20]=tab20;valtab[21]=tab21;valtab[22]=tab22;valtab[23]=tab23;valtab[24]=tab24;valtab[25]=tab25;valtab[26]=tab26;valtab[27]=tab27;valtab[28]=tab28;valtab[29]=tab29;valtab[30]=tab30;valtab[31]=tab31;valtab[32]=tab32;valtab[33]=tab33;valtab[34]=tab34;valtab[35]=tab35;valtab[36]=tab36;valtab[37]=tab37;valtab[38]=tab38;valtab[39]=tab39;valtab[40]=tab40;valtab[41]=tab41;valtab[42]=tab42;valtab[43]=tab43;valtab[44]=tab44;valtab[45]=tab45;valtab[46]=tab46;valtab[47]=tab47;valtab[48]=tab48;
+    int coordtab[49]={0};
+    coordtab[0]=0;coordtab[1]=1;coordtab[2]=2;coordtab[3]=3;coordtab[4]=4;coordtab[5]=5;coordtab[6]=6;coordtab[7]=10;coordtab[8]=11;coordtab[9] = 12;coordtab[10] = 13;coordtab[11] = 14;coordtab[12] = 15;coordtab[13] = 16;coordtab[14]=20;coordtab[15]=21;coordtab[16] = 22;coordtab[17] = 23;coordtab[18] = 24;coordtab[19] = 25;coordtab[20] = 26;coordtab[21]=30;coordtab[22]=31;coordtab[23]=32;coordtab[24]=33;coordtab[25]=34;coordtab[26]=35;coordtab[27]=36;coordtab[28]=40;coordtab[29]=41;coordtab[30]=42;coordtab[31]=43;coordtab[32]=44;coordtab[33]=45;coordtab[34]=46;coordtab[35]=50;coordtab[36]=51;coordtab[37]=52;coordtab[38]=53;coordtab[39]=54;coordtab[40]=55;coordtab[41]=56;coordtab[42]=60;coordtab[43]=61;coordtab[44]=62;coordtab[45]=63;coordtab[46]=64;coordtab[47]=65;coordtab[48]=66;
+    int nvcase=0;nvcase=valeurposactuel;
+    int a=change(posactuel);
+    switch (nvcase){
+        case 1:
+            if (((valtab[a+1]>=2 && valtab[a+1]<3 )|| (valtab[a+1]>=4 && valtab[a+1]<5) || (valtab[a+1]>=6 && valtab[a+1]<7) || (valtab[a+1]>=8 && valtab[a+1]<9) || (valtab[a+1]>=10 && valtab[a+1]<11) || (valtab[a+1]>=1 && valtab[a+1]<2)) && a!=6 && a!=13 && a!=20 && a!=27 && a!=34 && a!=41 && a!=48){
+                casepossible[compteur]=coordtab[a+1];
+                compteur=compteur+1;
+            } // DROITE
+            if (((valtab[a-1]>=2 && valtab[a-1]<3) || (valtab[a-1]>=3 && valtab[a-1]<4) || (valtab[a-1]>=7 && valtab[a-1]<8) || (valtab[a-1]>=9 && valtab[a-1]<10) || (valtab[a-1]>=6 && valtab[a-1]<7) || (valtab[a-1]>=1 && valtab[a-1]<2)) && a!=0 && a!=7 && a!=14 && a!=21 && a!=28 && a!=35 && a!=42){
+                casepossible[compteur]=coordtab[a+1];
+                compteur=compteur+1;
+            } //GAUCHE
+            if (((valtab[a+7]>=2 && valtab[a+7]<3) || (valtab[a+7]>=3 && valtab[a+7]<4) || (valtab[a+7]>=4 && valtab[a+7]<5) || (valtab[a+7]>=5 && valtab[a+7]<6) || (valtab[a+7]>=7 && valtab[a+7]<8) || (valtab[a+7]>=8 && valtab[a+7]<9)) && a!=42 && a!=43 && a!=44 && a!=45 && a!=46 && a!=47 && a!=48){
+                casepossible[compteur]=coordtab[a+7];
+                compteur=compteur+1;
+            } //BAS
+            break;
+        case 2:
+            if (((valtab[a+1]>=2 && valtab[a+1]<3 )|| (valtab[a+1]>=4 && valtab[a+1]<5) || (valtab[a+1]>=6 && valtab[a+1]<7) || (valtab[a+1]>=8 && valtab[a+1]<9) || (valtab[a+1]>=10 && valtab[a+1]<11) || (valtab[a+1]>=1 && valtab[a+1]<2)) && a!=6 && a!=13 && a!=20 && a!=27 && a!=34 && a!=41 && a!=48){
+                casepossible[compteur]=coordtab[a+1];
+                compteur=compteur+1;
+            } // DROITE
+            if (((valtab[a-1]>=2 && valtab[a-1]<3) || (valtab[a-1]>=3 && valtab[a-1]<4) || (valtab[a-1]>=7 && valtab[a-1]<8) || (valtab[a-1]>=9 && valtab[a-1]<10) || (valtab[a-1]>=6 && valtab[a-1]<7) || (valtab[a-1]>=1 && valtab[a-1]<2)) && a!=0 && a!=7 && a!=14 && a!=21 && a!=28 && a!=35 && a!=42){
+                casepossible[compteur]=coordtab[a+1];
+                compteur=compteur+1;
+            } //GAUCHE
+            if (((valtab[a-7]>=1 && valtab[a-7]<2) || (valtab[a-7]>=3 && valtab[a-7]<4) || (valtab[a-7]>=4 && valtab[a-7]<5) || (valtab[a-7]>=5 && valtab[a-7]<6) || (valtab[a-7]>=9 && valtab[a-7]<10) || (valtab[a-7]>=10 && valtab[a-7]<11)) && a!=0 && a!=1 && a!=2 && a!=3 && a!=4 && a!=5 && a!=6){
+                casepossible[compteur]=coordtab[a-7];
+                compteur=compteur+1;
+            } //HAUT
+            break;
+        case 3:
+            if (((valtab[a-7]>=1 && valtab[a-7]<2) || (valtab[a-7]>=3 && valtab[a-7]<4) || (valtab[a-7]>=4 && valtab[a-7]<5) || (valtab[a-7]>=5 && valtab[a-7]<6) || (valtab[a-7]>=9 && valtab[a-7]<10) || (valtab[a-7]>=10 && valtab[a-7]<11)) && a!=0 && a!=1 && a!=2 && a!=3 && a!=4 && a!=5 && a!=6){
+                casepossible[compteur]=coordtab[a-7];
+                compteur=compteur+1;
+            } //HAUT
+            if (((valtab[a+7]>=2 && valtab[a+7]<3) || (valtab[a+7]>=3 && valtab[a+7]<4) || (valtab[a+7]>=4 && valtab[a+7]<5) || (valtab[a+7]>=5 && valtab[a+7]<6) || (valtab[a+7]>=7 && valtab[a+7]<8) || (valtab[a+7]>=8 && valtab[a+7]<9)) && a!=42 && a!=43 && a!=44 && a!=45 && a!=46 && a!=47 && a!=48){
+                casepossible[compteur]=coordtab[a+7];
+                compteur=compteur+1;
+            } //BAS
+            if (((valtab[a+1]>=2 && valtab[a+1]<3 )|| (valtab[a+1]>=4 && valtab[a+1]<5) || (valtab[a+1]>=6 && valtab[a+1]<7) || (valtab[a+1]>=8 && valtab[a+1]<9) || (valtab[a+1]>=10 && valtab[a+1]<11) || (valtab[a+1]>=1 && valtab[a+1]<2)) && a!=6 && a!=13 && a!=20 && a!=27 && a!=34 && a!=41 && a!=48){
+                casepossible[compteur]=coordtab[a+1];
+                compteur=compteur+1;
+            } // DROITE
+            break;
+        case 4:
+            if (((valtab[a-7]>=1 && valtab[a-7]<2) || (valtab[a-7]>=3 && valtab[a-7]<4) || (valtab[a-7]>=4 && valtab[a-7]<5) || (valtab[a-7]>=5 && valtab[a-7]<6) || (valtab[a-7]>=9 && valtab[a-7]<10) || (valtab[a-7]>=10 && valtab[a-7]<11)) && a!=0 && a!=1 && a!=2 && a!=3 && a!=4 && a!=5 && a!=6){
+                casepossible[compteur]=coordtab[a-7];
+                compteur=compteur+1;
+            } //HAUT
+            if (((valtab[a+7]>=2 && valtab[a+7]<3) || (valtab[a+7]>=3 && valtab[a+7]<4) || (valtab[a+7]>=4 && valtab[a+7]<5) || (valtab[a+7]>=5 && valtab[a+7]<6) || (valtab[a+7]>=7 && valtab[a+7]<8) || (valtab[a+7]>=8 && valtab[a+7]<9)) && a!=42 && a!=43 && a!=44 && a!=45 && a!=46 && a!=47 && a!=48){
+                casepossible[compteur]=coordtab[a+7];
+                compteur=compteur+1;
+            } //BAS
+            if (((valtab[a-1]>=2 && valtab[a-1]<3) || (valtab[a-1]>=3 && valtab[a-1]<4) || (valtab[a-1]>=7 && valtab[a-1]<8) || (valtab[a-1]>=9 && valtab[a-1]<10) || (valtab[a-1]>=6 && valtab[a-1]<7) || (valtab[a-1]>=1 && valtab[a-1]<2)) && a!=0 && a!=7 && a!=14 && a!=21 && a!=28 && a!=35 && a!=42){
+                casepossible[compteur]=coordtab[a+1];
+                compteur=compteur+1;
+            } //GAUCHE
+            break;
+        case 5:
+            if (((valtab[a-7]>=1 && valtab[a-7]<2) || (valtab[a-7]>=3 && valtab[a-7]<4) || (valtab[a-7]>=4 && valtab[a-7]<5) || (valtab[a-7]>=5 && valtab[a-7]<6) || (valtab[a-7]>=9 && valtab[a-7]<10) || (valtab[a-7]>=10 && valtab[a-7]<11)) && a!=0 && a!=1 && a!=2 && a!=3 && a!=4 && a!=5 && a!=6){
+                casepossible[compteur]=coordtab[a-7];
+                compteur=compteur+1;
+            } //HAUT
+            if (((valtab[a+7]>=2 && valtab[a+7]<3) || (valtab[a+7]>=3 && valtab[a+7]<4) || (valtab[a+7]>=4 && valtab[a+7]<5) || (valtab[a+7]>=5 && valtab[a+7]<6) || (valtab[a+7]>=7 && valtab[a+7]<8) || (valtab[a+7]>=8 && valtab[a+7]<9)) && a!=42 && a!=43 && a!=44 && a!=45 && a!=46 && a!=47 && a!=48){
+                casepossible[compteur]=coordtab[a+7];
+                compteur=compteur+1;
+            } //BAS
+            break;
+        case 6:
+            if (((valtab[a-1]>=2 && valtab[a-1]<3) || (valtab[a-1]>=3 && valtab[a-1]<4) || (valtab[a-1]>=7 && valtab[a-1]<8) || (valtab[a-1]>=9 && valtab[a-1]<10) || (valtab[a-1]>=6 && valtab[a-1]<7) || (valtab[a-1]>=1 && valtab[a-1]<2)) && a!=0 && a!=7 && a!=14 && a!=21 && a!=28 && a!=35 && a!=42){
+                casepossible[compteur]=coordtab[a+1];
+                compteur=compteur+1;
+            } //GAUCHE
+            if (((valtab[a+1]>=2 && valtab[a+1]<3 )|| (valtab[a+1]>=4 && valtab[a+1]<5) || (valtab[a+1]>=6 && valtab[a+1]<7) || (valtab[a+1]>=8 && valtab[a+1]<9) || (valtab[a+1]>=10 && valtab[a+1]<11) || (valtab[a+1]>=1 && valtab[a+1]<2)) && a!=6 && a!=13 && a!=20 && a!=27 && a!=34 && a!=41 && a!=48){
+                casepossible[compteur]=coordtab[a+1];
+                compteur=compteur+1;
+            } // DROITE
+            break;
+        case 7:
+            if (((valtab[a-7]>=1 && valtab[a-7]<2) || (valtab[a-7]>=3 && valtab[a-7]<4) || (valtab[a-7]>=4 && valtab[a-7]<5) || (valtab[a-7]>=5 && valtab[a-7]<6) || (valtab[a-7]>=9 && valtab[a-7]<10) || (valtab[a-7]>=10 && valtab[a-7]<11)) && a!=0 && a!=1 && a!=2 && a!=3 && a!=4 && a!=5 && a!=6){
+                casepossible[compteur]=coordtab[a-7];
+                compteur=compteur+1;
+            } //HAUT
+            if (((valtab[a+1]>=2 && valtab[a+1]<3 )|| (valtab[a+1]>=4 && valtab[a+1]<5) || (valtab[a+1]>=6 && valtab[a+1]<7) || (valtab[a+1]>=8 && valtab[a+1]<9) || (valtab[a+1]>=10 && valtab[a+1]<11) || (valtab[a+1]>=1 && valtab[a+1]<2)) && a!=6 && a!=13 && a!=20 && a!=27 && a!=34 && a!=41 && a!=48){
+                casepossible[compteur]=coordtab[a+1];
+                compteur=compteur+1;
+            } // DROITE
+            break;
+        case 8:
+            if (((valtab[a-1]>=2 && valtab[a-1]<3) || (valtab[a-1]>=3 && valtab[a-1]<4) || (valtab[a-1]>=7 && valtab[a-1]<8) || (valtab[a-1]>=9 && valtab[a-1]<10) || (valtab[a-1]>=6 && valtab[a-1]<7) || (valtab[a-1]>=1 && valtab[a-1]<2)) && a!=0 && a!=7 && a!=14 && a!=21 && a!=28 && a!=35 && a!=42){
+                casepossible[compteur]=coordtab[a+1];
+                compteur=compteur+1;
+            } //GAUCHE
+            if (((valtab[a-7]>=1 && valtab[a-7]<2) || (valtab[a-7]>=3 && valtab[a-7]<4) || (valtab[a-7]>=4 && valtab[a-7]<5) || (valtab[a-7]>=5 && valtab[a-7]<6) || (valtab[a-7]>=9 && valtab[a-7]<10) || (valtab[a-7]>=10 && valtab[a-7]<11)) && a!=0 && a!=1 && a!=2 && a!=3 && a!=4 && a!=5 && a!=6){
+                casepossible[compteur]=coordtab[a-7];
+                compteur=compteur+1;
+            } //HAUT
+            break;
+        case 9:
+            if (((valtab[a+1]>=2 && valtab[a+1]<3 )|| (valtab[a+1]>=4 && valtab[a+1]<5) || (valtab[a+1]>=6 && valtab[a+1]<7) || (valtab[a+1]>=8 && valtab[a+1]<9) || (valtab[a+1]>=10 && valtab[a+1]<11) || (valtab[a+1]>=1 && valtab[a+1]<2)) && a!=6 && a!=13 && a!=20 && a!=27 && a!=34 && a!=41 && a!=48){
+                casepossible[compteur]=coordtab[a+1];
+                compteur=compteur+1;
+            } // DROITE
+            if (((valtab[a+7]>=2 && valtab[a+7]<3) || (valtab[a+7]>=3 && valtab[a+7]<4) || (valtab[a+7]>=4 && valtab[a+7]<5) || (valtab[a+7]>=5 && valtab[a+7]<6) || (valtab[a+7]>=7 && valtab[a+7]<8) || (valtab[a+7]>=8 && valtab[a+7]<9)) && a!=42 && a!=43 && a!=44 && a!=45 && a!=46 && a!=47 && a!=48){
+                casepossible[compteur]=coordtab[a+7];
+                compteur=compteur+1;
+            } //BAS
+            break;
+        case 10:
+            if (((valtab[a+7]>=2 && valtab[a+7]<3) || (valtab[a+7]>=3 && valtab[a+7]<4) || (valtab[a+7]>=4 && valtab[a+7]<5) || (valtab[a+7]>=5 && valtab[a+7]<6) || (valtab[a+7]>=7 && valtab[a+7]<8) || (valtab[a+7]>=8 && valtab[a+7]<9)) && a!=42 && a!=43 && a!=44 && a!=45 && a!=46 && a!=47 && a!=48){
+                casepossible[compteur]=coordtab[a+7];
+                compteur=compteur+1;
+            } //BAS
+            if (((valtab[a-1]>=2 && valtab[a-1]<3) || (valtab[a-1]>=3 && valtab[a-1]<4) || (valtab[a-1]>=7 && valtab[a-1]<8) || (valtab[a-1]>=9 && valtab[a-1]<10) || (valtab[a-1]>=6 && valtab[a-1]<7) || (valtab[a-1]>=1 && valtab[a-1]<2)) && a!=0 && a!=7 && a!=14 && a!=21 && a!=28 && a!=35 && a!=42){
+                casepossible[compteur]=coordtab[a+1];
+                compteur=compteur+1;
+            } //GAUCHE
+            break;
+        default:
+            printf("ERROR \n");
+    }
+    int lglglg=0;
+    if (compteur==0){
+        lglglg=1;
+    }
+    int prout=compteur;
+    for (int i=0;i<prout;i++){
+        a=change(casepossible[i]);
+        int c=0;int xyz=0;xyz=change(casepossible[i]);
+        c=valtab[xyz];
+        switch (c){
+            case 1:
+                if (((valtab[a+1]>=2 && valtab[a+1]<3 )|| (valtab[a+1]>=4 && valtab[a+1]<5) || (valtab[a+1]>=6 && valtab[a+1]<7) || (valtab[a+1]>=8 && valtab[a+1]<9) || (valtab[a+1]>=10 && valtab[a+1]<11) || (valtab[a+1]>=1 && valtab[a+1]<2)) && a!=6 && a!=13 && a!=20 && a!=27 && a!=34 && a!=41 && a!=48){
+                    casepossible[compteur]=coordtab[a+1];
+                    compteur=compteur+1;
+                } // DROITE
+                if (((valtab[a-1]>=2 && valtab[a-1]<3) || (valtab[a-1]>=3 && valtab[a-1]<4) || (valtab[a-1]>=7 && valtab[a-1]<8) || (valtab[a-1]>=9 && valtab[a-1]<10) || (valtab[a-1]>=6 && valtab[a-1]<7) || (valtab[a-1]>=1 && valtab[a-1]<2)) && a!=0 && a!=7 && a!=14 && a!=21 && a!=28 && a!=35 && a!=42){
+                    casepossible[compteur]=coordtab[a-1];
+                    compteur=compteur+1;
+                } //GAUCHE
+                if (((valtab[a+7]>=2 && valtab[a+7]<3) || (valtab[a+7]>=3 && valtab[a+7]<4) || (valtab[a+7]>=4 && valtab[a+7]<5) || (valtab[a+7]>=5 && valtab[a+7]<6) || (valtab[a+7]>=7 && valtab[a+7]<8) || (valtab[a+7]>=8 && valtab[a+7]<9)) && a!=42 && a!=43 && a!=44 && a!=45 && a!=46 && a!=47 && a!=48){
+                    casepossible[compteur]=coordtab[a+7];
+                    compteur=compteur+1;
+                } //BAS
+                break;
+            case 2:
+                if (((valtab[a+1]>=2 && valtab[a+1]<3 )|| (valtab[a+1]>=4 && valtab[a+1]<5) || (valtab[a+1]>=6 && valtab[a+1]<7) || (valtab[a+1]>=8 && valtab[a+1]<9) || (valtab[a+1]>=10 && valtab[a+1]<11) || (valtab[a+1]>=1 && valtab[a+1]<2)) && a!=6 && a!=13 && a!=20 && a!=27 && a!=34 && a!=41 && a!=48){
+                    casepossible[compteur]=coordtab[a+1];
+                    compteur=compteur+1;
+                } // DROITE
+                if (((valtab[a-1]>=2 && valtab[a-1]<3) || (valtab[a-1]>=3 && valtab[a-1]<4) || (valtab[a-1]>=7 && valtab[a-1]<8) || (valtab[a-1]>=9 && valtab[a-1]<10) || (valtab[a-1]>=6 && valtab[a-1]<7) || (valtab[a-1]>=1 && valtab[a-1]<2)) && a!=0 && a!=7 && a!=14 && a!=21 && a!=28 && a!=35 && a!=42){
+                    casepossible[compteur]=coordtab[a-1];
+                    compteur=compteur+1;
+                } //GAUCHE
+                if (((valtab[a-7]>=1 && valtab[a-7]<2) || (valtab[a-7]>=3 && valtab[a-7]<4) || (valtab[a-7]>=4 && valtab[a-7]<5) || (valtab[a-7]>=5 && valtab[a-7]<6) || (valtab[a-7]>=9 && valtab[a-7]<10) || (valtab[a-7]>=10 && valtab[a-7]<11)) && a!=0 && a!=1 && a!=2 && a!=3 && a!=4 && a!=5 && a!=6){
+                    casepossible[compteur]=coordtab[a-7];
+                    compteur=compteur+1;
+                } //HAUT
+                break;
+            case 3:
+                if (((valtab[a-7]>=1 && valtab[a-7]<2) || (valtab[a-7]>=3 && valtab[a-7]<4) || (valtab[a-7]>=4 && valtab[a-7]<5) || (valtab[a-7]>=5 && valtab[a-7]<6) || (valtab[a-7]>=9 && valtab[a-7]<10) || (valtab[a-7]>=10 && valtab[a-7]<11)) && a!=0 && a!=1 && a!=2 && a!=3 && a!=4 && a!=5 && a!=6){
+                    casepossible[compteur]=coordtab[a-7];
+                    compteur=compteur+1;
+                } //HAUT
+                if (((valtab[a+7]>=2 && valtab[a+7]<3) || (valtab[a+7]>=3 && valtab[a+7]<4) || (valtab[a+7]>=4 && valtab[a+7]<5) || (valtab[a+7]>=5 && valtab[a+7]<6) || (valtab[a+7]>=7 && valtab[a+7]<8) || (valtab[a+7]>=8 && valtab[a+7]<9)) && a!=42 && a!=43 && a!=44 && a!=45 && a!=46 && a!=47 && a!=48){
+                    casepossible[compteur]=coordtab[a+7];
+                    compteur=compteur+1;
+                } //BAS
+                if (((valtab[a+1]>=2 && valtab[a+1]<3 )|| (valtab[a+1]>=4 && valtab[a+1]<5) || (valtab[a+1]>=6 && valtab[a+1]<7) || (valtab[a+1]>=8 && valtab[a+1]<9) || (valtab[a+1]>=10 && valtab[a+1]<11) || (valtab[a+1]>=1 && valtab[a+1]<2)) && a!=6 && a!=13 && a!=20 && a!=27 && a!=34 && a!=41 && a!=48){
+                    casepossible[compteur]=coordtab[a+1];
+                    compteur=compteur+1;
+                } // DROITE
+                break;
+            case 4:
+                if (((valtab[a-7]>=1 && valtab[a-7]<2) || (valtab[a-7]>=3 && valtab[a-7]<4) || (valtab[a-7]>=4 && valtab[a-7]<5) || (valtab[a-7]>=5 && valtab[a-7]<6) || (valtab[a-7]>=9 && valtab[a-7]<10) || (valtab[a-7]>=10 && valtab[a-7]<11)) && a!=0 && a!=1 && a!=2 && a!=3 && a!=4 && a!=5 && a!=6){
+                    casepossible[compteur]=coordtab[a-7];
+                    compteur=compteur+1;
+                } //HAUT
+                if (((valtab[a+7]>=2 && valtab[a+7]<3) || (valtab[a+7]>=3 && valtab[a+7]<4) || (valtab[a+7]>=4 && valtab[a+7]<5) || (valtab[a+7]>=5 && valtab[a+7]<6) || (valtab[a+7]>=7 && valtab[a+7]<8) || (valtab[a+7]>=8 && valtab[a+7]<9)) && a!=42 && a!=43 && a!=44 && a!=45 && a!=46 && a!=47 && a!=48){
+                    casepossible[compteur]=coordtab[a+7];
+                    compteur=compteur+1;
+                } //BAS
+                if (((valtab[a-1]>=2 && valtab[a-1]<3) || (valtab[a-1]>=3 && valtab[a-1]<4) || (valtab[a-1]>=7 && valtab[a-1]<8) || (valtab[a-1]>=9 && valtab[a-1]<10) || (valtab[a-1]>=6 && valtab[a-1]<7) || (valtab[a-1]>=1 && valtab[a-1]<2)) && a!=0 && a!=7 && a!=14 && a!=21 && a!=28 && a!=35 && a!=42){
+                    casepossible[compteur]=coordtab[a-1];
+                    compteur=compteur+1;
+                } //GAUCHE
+                break;
+            case 5:
+                if (((valtab[a-7]>=1 && valtab[a-7]<2) || (valtab[a-7]>=3 && valtab[a-7]<4) || (valtab[a-7]>=4 && valtab[a-7]<5) || (valtab[a-7]>=5 && valtab[a-7]<6) || (valtab[a-7]>=9 && valtab[a-7]<10) || (valtab[a-7]>=10 && valtab[a-7]<11)) && a!=0 && a!=1 && a!=2 && a!=3 && a!=4 && a!=5 && a!=6){
+                    casepossible[compteur]=coordtab[a-7];
+                    compteur=compteur+1;
+                } //HAUT
+                if (((valtab[a+7]>=2 && valtab[a+7]<3) || (valtab[a+7]>=3 && valtab[a+7]<4) || (valtab[a+7]>=4 && valtab[a+7]<5) || (valtab[a+7]>=5 && valtab[a+7]<6) || (valtab[a+7]>=7 && valtab[a+7]<8) || (valtab[a+7]>=8 && valtab[a+7]<9)) && a!=42 && a!=43 && a!=44 && a!=45 && a!=46 && a!=47 && a!=48){
+                    casepossible[compteur]=coordtab[a+7];
+                    compteur=compteur+1;
+                } //BAS
+                break;
+            case 6:
+                if (((valtab[a-1]>=2 && valtab[a-1]<3) || (valtab[a-1]>=3 && valtab[a-1]<4) || (valtab[a-1]>=7 && valtab[a-1]<8) || (valtab[a-1]>=9 && valtab[a-1]<10) || (valtab[a-1]>=6 && valtab[a-1]<7) || (valtab[a-1]>=1 && valtab[a-1]<2)) && a!=0 && a!=7 && a!=14 && a!=21 && a!=28 && a!=35 && a!=42){
+                    casepossible[compteur]=coordtab[a-1];
+                    compteur=compteur+1;
+                } //GAUCHE
+                if (((valtab[a+1]>=2 && valtab[a+1]<3 )|| (valtab[a+1]>=4 && valtab[a+1]<5) || (valtab[a+1]>=6 && valtab[a+1]<7) || (valtab[a+1]>=8 && valtab[a+1]<9) || (valtab[a+1]>=10 && valtab[a+1]<11) || (valtab[a+1]>=1 && valtab[a+1]<2)) && a!=6 && a!=13 && a!=20 && a!=27 && a!=34 && a!=41 && a!=48){
+                    casepossible[compteur]=coordtab[a+1];
+                    compteur=compteur+1;
+                } // DROITE
+                break;
+            case 7:
+                if (((valtab[a-7]>=1 && valtab[a-7]<2) || (valtab[a-7]>=3 && valtab[a-7]<4) || (valtab[a-7]>=4 && valtab[a-7]<5) || (valtab[a-7]>=5 && valtab[a-7]<6) || (valtab[a-7]>=9 && valtab[a-7]<10) || (valtab[a-7]>=10 && valtab[a-7]<11)) && a!=0 && a!=1 && a!=2 && a!=3 && a!=4 && a!=5 && a!=6){
+                    casepossible[compteur]=coordtab[a-7];
+                    compteur=compteur+1;
+                } //HAUT
+                if (((valtab[a+1]>=2 && valtab[a+1]<3 )|| (valtab[a+1]>=4 && valtab[a+1]<5) || (valtab[a+1]>=6 && valtab[a+1]<7) || (valtab[a+1]>=8 && valtab[a+1]<9) || (valtab[a+1]>=10 && valtab[a+1]<11) || (valtab[a+1]>=1 && valtab[a+1]<2)) && a!=6 && a!=13 && a!=20 && a!=27 && a!=34 && a!=41 && a!=48){
+                    casepossible[compteur]=coordtab[a+1];
+                    compteur=compteur+1;
+                } // DROITE
+                break;
+            case 8:
+                if (((valtab[a-1]>=2 && valtab[a-1]<3) || (valtab[a-1]>=3 && valtab[a-1]<4) || (valtab[a-1]>=7 && valtab[a-1]<8) || (valtab[a-1]>=9 && valtab[a-1]<10) || (valtab[a-1]>=6 && valtab[a-1]<7) || (valtab[a-1]>=1 && valtab[a-1]<2)) && a!=0 && a!=7 && a!=14 && a!=21 && a!=28 && a!=35 && a!=42){
+                    casepossible[compteur]=coordtab[a-1];
+                    compteur=compteur+1;
+                } //GAUCHE
+                if (((valtab[a-7]>=1 && valtab[a-7]<2) || (valtab[a-7]>=3 && valtab[a-7]<4) || (valtab[a-7]>=4 && valtab[a-7]<5) || (valtab[a-7]>=5 && valtab[a-7]<6) || (valtab[a-7]>=9 && valtab[a-7]<10) || (valtab[a-7]>=10 && valtab[a-7]<11)) && a!=0 && a!=1 && a!=2 && a!=3 && a!=4 && a!=5 && a!=6){
+                    casepossible[compteur]=coordtab[a-7];
+                    compteur=compteur+1;
+                } //HAUT
+                break;
+            case 9:
+                if (((valtab[a+1]>=2 && valtab[a+1]<3 )|| (valtab[a+1]>=4 && valtab[a+1]<5) || (valtab[a+1]>=6 && valtab[a+1]<7) || (valtab[a+1]>=8 && valtab[a+1]<9) || (valtab[a+1]>=10 && valtab[a+1]<11) || (valtab[a+1]>=1 && valtab[a+1]<2)) && a!=6 && a!=13 && a!=20 && a!=27 && a!=34 && a!=41 && a!=48){
+                    casepossible[compteur]=coordtab[a+1];
+                    compteur=compteur+1;
+                } // DROITE
+                if (((valtab[a+7]>=2 && valtab[a+7]<3) || (valtab[a+7]>=3 && valtab[a+7]<4) || (valtab[a+7]>=4 && valtab[a+7]<5) || (valtab[a+7]>=5 && valtab[a+7]<6) || (valtab[a+7]>=7 && valtab[a+7]<8) || (valtab[a+7]>=8 && valtab[a+7]<9)) && a!=42 && a!=43 && a!=44 && a!=45 && a!=46 && a!=47 && a!=48){
+                    casepossible[compteur]=coordtab[a+7];
+                    compteur=compteur+1;
+                } //BAS
+                break;
+            case 10:
+                if (((valtab[a+7]>=2 && valtab[a+7]<3) || (valtab[a+7]>=3 && valtab[a+7]<4) || (valtab[a+7]>=4 && valtab[a+7]<5) || (valtab[a+7]>=5 && valtab[a+7]<6) || (valtab[a+7]>=7 && valtab[a+7]<8) || (valtab[a+7]>=8 && valtab[a+7]<9)) && a!=42 && a!=43 && a!=44 && a!=45 && a!=46 && a!=47 && a!=48){
+                    casepossible[compteur]=coordtab[a+7];
+                    compteur=compteur+1;
+                } //BAS
+                if (((valtab[a-1]>=2 && valtab[a-1]<3) || (valtab[a-1]>=3 && valtab[a-1]<4) || (valtab[a-1]>=7 && valtab[a-1]<8) || (valtab[a-1]>=9 && valtab[a-1]<10) || (valtab[a-1]>=6 && valtab[a-1]<7) || (valtab[a-1]>=1 && valtab[a-1]<2)) && a!=0 && a!=7 && a!=14 && a!=21 && a!=28 && a!=35 && a!=42){
+                    casepossible[compteur]=coordtab[a-1];
+                    compteur=compteur+1;
+                } //GAUCHE
+                break;
+            default:
+                printf("ERROR \n");
+        }
+    }
+    int zebi=compteur;
+    for (int i=0;i<zebi;i++){
+        a=change(casepossible[i]);
+        int c=0;int ghi=0;ghi=change(casepossible[i]);
+        c=valtab[ghi];
+        switch (c){
+            case 1:
+                if (((valtab[a+1]>=2 && valtab[a+1]<3 )|| (valtab[a+1]>=4 && valtab[a+1]<5) || (valtab[a+1]>=6 && valtab[a+1]<7) || (valtab[a+1]>=8 && valtab[a+1]<9) || (valtab[a+1]>=10 && valtab[a+1]<11) || (valtab[a+1]>=1 && valtab[a+1]<2)) && a!=6 && a!=13 && a!=20 && a!=27 && a!=34 && a!=41 && a!=48){
+                    casepossible[compteur]=coordtab[a+1];
+                    compteur=compteur+1;
+                } // DROITE
+                if (((valtab[a-1]>=2 && valtab[a-1]<3) || (valtab[a-1]>=3 && valtab[a-1]<4) || (valtab[a-1]>=7 && valtab[a-1]<8) || (valtab[a-1]>=9 && valtab[a-1]<10) || (valtab[a-1]>=6 && valtab[a-1]<7) || (valtab[a-1]>=1 && valtab[a-1]<2)) && a!=0 && a!=7 && a!=14 && a!=21 && a!=28 && a!=35 && a!=42){
+                    casepossible[compteur]=coordtab[a-1];
+                    compteur=compteur+1;
+                } //GAUCHE
+                if (((valtab[a+7]>=2 && valtab[a+7]<3) || (valtab[a+7]>=3 && valtab[a+7]<4) || (valtab[a+7]>=4 && valtab[a+7]<5) || (valtab[a+7]>=5 && valtab[a+7]<6) || (valtab[a+7]>=7 && valtab[a+7]<8) || (valtab[a+7]>=8 && valtab[a+7]<9)) && a!=42 && a!=43 && a!=44 && a!=45 && a!=46 && a!=47 && a!=48){
+                    casepossible[compteur]=coordtab[a+7];
+                    compteur=compteur+1;
+                } //BAS
+                break;
+            case 2:
+                if (((valtab[a+1]>=2 && valtab[a+1]<3 )|| (valtab[a+1]>=4 && valtab[a+1]<5) || (valtab[a+1]>=6 && valtab[a+1]<7) || (valtab[a+1]>=8 && valtab[a+1]<9) || (valtab[a+1]>=10 && valtab[a+1]<11) || (valtab[a+1]>=1 && valtab[a+1]<2)) && a!=6 && a!=13 && a!=20 && a!=27 && a!=34 && a!=41 && a!=48){
+                    casepossible[compteur]=coordtab[a+1];
+                    compteur=compteur+1;
+                } // DROITE
+                if (((valtab[a-1]>=2 && valtab[a-1]<3) || (valtab[a-1]>=3 && valtab[a-1]<4) || (valtab[a-1]>=7 && valtab[a-1]<8) || (valtab[a-1]>=9 && valtab[a-1]<10) || (valtab[a-1]>=6 && valtab[a-1]<7) || (valtab[a-1]>=1 && valtab[a-1]<2)) && a!=0 && a!=7 && a!=14 && a!=21 && a!=28 && a!=35 && a!=42){
+                    casepossible[compteur]=coordtab[a-1];
+                    compteur=compteur+1;
+                } //GAUCHE
+                if (((valtab[a-7]>=1 && valtab[a-7]<2) || (valtab[a-7]>=3 && valtab[a-7]<4) || (valtab[a-7]>=4 && valtab[a-7]<5) || (valtab[a-7]>=5 && valtab[a-7]<6) || (valtab[a-7]>=9 && valtab[a-7]<10) || (valtab[a-7]>=10 && valtab[a-7]<11)) && a!=0 && a!=1 && a!=2 && a!=3 && a!=4 && a!=5 && a!=6){
+                    casepossible[compteur]=coordtab[a-7];
+                    compteur=compteur+1;
+                } //HAUT
+                break;
+            case 3:
+                if (((valtab[a-7]>=1 && valtab[a-7]<2) || (valtab[a-7]>=3 && valtab[a-7]<4) || (valtab[a-7]>=4 && valtab[a-7]<5) || (valtab[a-7]>=5 && valtab[a-7]<6) || (valtab[a-7]>=9 && valtab[a-7]<10) || (valtab[a-7]>=10 && valtab[a-7]<11)) && a!=0 && a!=1 && a!=2 && a!=3 && a!=4 && a!=5 && a!=6){
+                    casepossible[compteur]=coordtab[a-7];
+                    compteur=compteur+1;
+                } //HAUT
+                if (((valtab[a+7]>=2 && valtab[a+7]<3) || (valtab[a+7]>=3 && valtab[a+7]<4) || (valtab[a+7]>=4 && valtab[a+7]<5) || (valtab[a+7]>=5 && valtab[a+7]<6) || (valtab[a+7]>=7 && valtab[a+7]<8) || (valtab[a+7]>=8 && valtab[a+7]<9)) && a!=42 && a!=43 && a!=44 && a!=45 && a!=46 && a!=47 && a!=48){
+                    casepossible[compteur]=coordtab[a+7];
+                    compteur=compteur+1;
+                } //BAS
+                if (((valtab[a+1]>=2 && valtab[a+1]<3 )|| (valtab[a+1]>=4 && valtab[a+1]<5) || (valtab[a+1]>=6 && valtab[a+1]<7) || (valtab[a+1]>=8 && valtab[a+1]<9) || (valtab[a+1]>=10 && valtab[a+1]<11) || (valtab[a+1]>=1 && valtab[a+1]<2)) && a!=6 && a!=13 && a!=20 && a!=27 && a!=34 && a!=41 && a!=48){
+                    casepossible[compteur]=coordtab[a+1];
+                    compteur=compteur+1;
+                } // DROITE
+                break;
+            case 4:
+                if (((valtab[a-7]>=1 && valtab[a-7]<2) || (valtab[a-7]>=3 && valtab[a-7]<4) || (valtab[a-7]>=4 && valtab[a-7]<5) || (valtab[a-7]>=5 && valtab[a-7]<6) || (valtab[a-7]>=9 && valtab[a-7]<10) || (valtab[a-7]>=10 && valtab[a-7]<11)) && a!=0 && a!=1 && a!=2 && a!=3 && a!=4 && a!=5 && a!=6){
+                    casepossible[compteur]=coordtab[a-7];
+                    compteur=compteur+1;
+                } //HAUT
+                if (((valtab[a+7]>=2 && valtab[a+7]<3) || (valtab[a+7]>=3 && valtab[a+7]<4) || (valtab[a+7]>=4 && valtab[a+7]<5) || (valtab[a+7]>=5 && valtab[a+7]<6) || (valtab[a+7]>=7 && valtab[a+7]<8) || (valtab[a+7]>=8 && valtab[a+7]<9)) && a!=42 && a!=43 && a!=44 && a!=45 && a!=46 && a!=47 && a!=48){
+                    casepossible[compteur]=coordtab[a+7];
+                    compteur=compteur+1;
+                } //BAS
+                if (((valtab[a-1]>=2 && valtab[a-1]<3) || (valtab[a-1]>=3 && valtab[a-1]<4) || (valtab[a-1]>=7 && valtab[a-1]<8) || (valtab[a-1]>=9 && valtab[a-1]<10) || (valtab[a-1]>=6 && valtab[a-1]<7) || (valtab[a-1]>=1 && valtab[a-1]<2)) && a!=0 && a!=7 && a!=14 && a!=21 && a!=28 && a!=35 && a!=42){
+                    casepossible[compteur]=coordtab[a-1];
+                    compteur=compteur+1;
+                } //GAUCHE
+                break;
+            case 5:
+                if (((valtab[a-7]>=1 && valtab[a-7]<2) || (valtab[a-7]>=3 && valtab[a-7]<4) || (valtab[a-7]>=4 && valtab[a-7]<5) || (valtab[a-7]>=5 && valtab[a-7]<6) || (valtab[a-7]>=9 && valtab[a-7]<10) || (valtab[a-7]>=10 && valtab[a-7]<11)) && a!=0 && a!=1 && a!=2 && a!=3 && a!=4 && a!=5 && a!=6){
+                    casepossible[compteur]=coordtab[a-7];
+                    compteur=compteur+1;
+                } //HAUT
+                if (((valtab[a+7]>=2 && valtab[a+7]<3) || (valtab[a+7]>=3 && valtab[a+7]<4) || (valtab[a+7]>=4 && valtab[a+7]<5) || (valtab[a+7]>=5 && valtab[a+7]<6) || (valtab[a+7]>=7 && valtab[a+7]<8) || (valtab[a+7]>=8 && valtab[a+7]<9)) && a!=42 && a!=43 && a!=44 && a!=45 && a!=46 && a!=47 && a!=48){
+                    casepossible[compteur]=coordtab[a+7];
+                    compteur=compteur+1;
+                } //BAS
+                break;
+            case 6:
+                if (((valtab[a-1]>=2 && valtab[a-1]<3) || (valtab[a-1]>=3 && valtab[a-1]<4) || (valtab[a-1]>=7 && valtab[a-1]<8) || (valtab[a-1]>=9 && valtab[a-1]<10) || (valtab[a-1]>=6 && valtab[a-1]<7) || (valtab[a-1]>=1 && valtab[a-1]<2)) && a!=0 && a!=7 && a!=14 && a!=21 && a!=28 && a!=35 && a!=42){
+                    casepossible[compteur]=coordtab[a-1];
+                    compteur=compteur+1;
+                } //GAUCHE
+                if (((valtab[a+1]>=2 && valtab[a+1]<3 )|| (valtab[a+1]>=4 && valtab[a+1]<5) || (valtab[a+1]>=6 && valtab[a+1]<7) || (valtab[a+1]>=8 && valtab[a+1]<9) || (valtab[a+1]>=10 && valtab[a+1]<11) || (valtab[a+1]>=1 && valtab[a+1]<2)) && a!=6 && a!=13 && a!=20 && a!=27 && a!=34 && a!=41 && a!=48){
+                    casepossible[compteur]=coordtab[a+1];
+                    compteur=compteur+1;
+                } // DROITE
+                break;
+            case 7:
+                if (((valtab[a-7]>=1 && valtab[a-7]<2) || (valtab[a-7]>=3 && valtab[a-7]<4) || (valtab[a-7]>=4 && valtab[a-7]<5) || (valtab[a-7]>=5 && valtab[a-7]<6) || (valtab[a-7]>=9 && valtab[a-7]<10) || (valtab[a-7]>=10 && valtab[a-7]<11)) && a!=0 && a!=1 && a!=2 && a!=3 && a!=4 && a!=5 && a!=6){
+                    casepossible[compteur]=coordtab[a-7];
+                    compteur=compteur+1;
+                } //HAUT
+                if (((valtab[a+1]>=2 && valtab[a+1]<3 )|| (valtab[a+1]>=4 && valtab[a+1]<5) || (valtab[a+1]>=6 && valtab[a+1]<7) || (valtab[a+1]>=8 && valtab[a+1]<9) || (valtab[a+1]>=10 && valtab[a+1]<11) || (valtab[a+1]>=1 && valtab[a+1]<2)) && a!=6 && a!=13 && a!=20 && a!=27 && a!=34 && a!=41 && a!=48){
+                    casepossible[compteur]=coordtab[a+1];
+                    compteur=compteur+1;
+                } // DROITE
+                break;
+            case 8:
+                if (((valtab[a-1]>=2 && valtab[a-1]<3) || (valtab[a-1]>=3 && valtab[a-1]<4) || (valtab[a-1]>=7 && valtab[a-1]<8) || (valtab[a-1]>=9 && valtab[a-1]<10) || (valtab[a-1]>=6 && valtab[a-1]<7) || (valtab[a-1]>=1 && valtab[a-1]<2)) && a!=0 && a!=7 && a!=14 && a!=21 && a!=28 && a!=35 && a!=42){
+                    casepossible[compteur]=coordtab[a-1];
+                    compteur=compteur+1;
+                } //GAUCHE
+                if (((valtab[a-7]>=1 && valtab[a-7]<2) || (valtab[a-7]>=3 && valtab[a-7]<4) || (valtab[a-7]>=4 && valtab[a-7]<5) || (valtab[a-7]>=5 && valtab[a-7]<6) || (valtab[a-7]>=9 && valtab[a-7]<10) || (valtab[a-7]>=10 && valtab[a-7]<11)) && a!=0 && a!=1 && a!=2 && a!=3 && a!=4 && a!=5 && a!=6){
+                    casepossible[compteur]=coordtab[a-7];
+                    compteur=compteur+1;
+                } //HAUT
+                break;
+            case 9:
+                if (((valtab[a+1]>=2 && valtab[a+1]<3 )|| (valtab[a+1]>=4 && valtab[a+1]<5) || (valtab[a+1]>=6 && valtab[a+1]<7) || (valtab[a+1]>=8 && valtab[a+1]<9) || (valtab[a+1]>=10 && valtab[a+1]<11) || (valtab[a+1]>=1 && valtab[a+1]<2)) && a!=6 && a!=13 && a!=20 && a!=27 && a!=34 && a!=41 && a!=48){
+                    casepossible[compteur]=coordtab[a+1];
+                    compteur=compteur+1;
+                } // DROITE
+                if (((valtab[a+7]>=2 && valtab[a+7]<3) || (valtab[a+7]>=3 && valtab[a+7]<4) || (valtab[a+7]>=4 && valtab[a+7]<5) || (valtab[a+7]>=5 && valtab[a+7]<6) || (valtab[a+7]>=7 && valtab[a+7]<8) || (valtab[a+7]>=8 && valtab[a+7]<9)) && a!=42 && a!=43 && a!=44 && a!=45 && a!=46 && a!=47 && a!=48){
+                    casepossible[compteur]=coordtab[a+7];
+                    compteur=compteur+1;
+                } //BAS
+                break;
+            case 10:
+                if (((valtab[a+7]>=2 && valtab[a+7]<3) || (valtab[a+7]>=3 && valtab[a+7]<4) || (valtab[a+7]>=4 && valtab[a+7]<5) || (valtab[a+7]>=5 && valtab[a+7]<6) || (valtab[a+7]>=7 && valtab[a+7]<8) || (valtab[a+7]>=8 && valtab[a+7]<9)) && a!=42 && a!=43 && a!=44 && a!=45 && a!=46 && a!=47 && a!=48){
+                    casepossible[compteur]=coordtab[a+7];
+                    compteur=compteur+1;
+                } //BAS
+                if (((valtab[a-1]>=2 && valtab[a-1]<3) || (valtab[a-1]>=3 && valtab[a-1]<4) || (valtab[a-1]>=7 && valtab[a-1]<8) || (valtab[a-1]>=9 && valtab[a-1]<10) || (valtab[a-1]>=6 && valtab[a-1]<7) || (valtab[a-1]>=1 && valtab[a-1]<2)) && a!=0 && a!=7 && a!=14 && a!=21 && a!=28 && a!=35 && a!=42){
+                    casepossible[compteur]=coordtab[a-1];
+                    compteur=compteur+1;
+                } //GAUCHE
+                break;
+            default:
+                printf("ERROR \n");
+        }
+    }
+    int allah=compteur;
+    for (int i=0;i<allah;i++){
+        a=change(casepossible[i]);
+        int c=0;int pmo=0;pmo=change(casepossible[i]);
+        c=valtab[pmo];
+        switch (c){
+            case 1:
+                if (((valtab[a+1]>=2 && valtab[a+1]<3 )|| (valtab[a+1]>=4 && valtab[a+1]<5) || (valtab[a+1]>=6 && valtab[a+1]<7) || (valtab[a+1]>=8 && valtab[a+1]<9) || (valtab[a+1]>=10 && valtab[a+1]<11) || (valtab[a+1]>=1 && valtab[a+1]<2)) && a!=6 && a!=13 && a!=20 && a!=27 && a!=34 && a!=41 && a!=48){
+                    casepossible[compteur]=coordtab[a+1];
+                    compteur=compteur+1;
+                } // DROITE
+                if (((valtab[a-1]>=2 && valtab[a-1]<3) || (valtab[a-1]>=3 && valtab[a-1]<4) || (valtab[a-1]>=7 && valtab[a-1]<8) || (valtab[a-1]>=9 && valtab[a-1]<10) || (valtab[a-1]>=6 && valtab[a-1]<7) || (valtab[a-1]>=1 && valtab[a-1]<2)) && a!=0 && a!=7 && a!=14 && a!=21 && a!=28 && a!=35 && a!=42){
+                    casepossible[compteur]=coordtab[a-1];
+                    compteur=compteur+1;
+                } //GAUCHE
+                if (((valtab[a+7]>=2 && valtab[a+7]<3) || (valtab[a+7]>=3 && valtab[a+7]<4) || (valtab[a+7]>=4 && valtab[a+7]<5) || (valtab[a+7]>=5 && valtab[a+7]<6) || (valtab[a+7]>=7 && valtab[a+7]<8) || (valtab[a+7]>=8 && valtab[a+7]<9)) && a!=42 && a!=43 && a!=44 && a!=45 && a!=46 && a!=47 && a!=48){
+                    casepossible[compteur]=coordtab[a+7];
+                    compteur=compteur+1;
+                } //BAS
+                break;
+            case 2:
+                if (((valtab[a+1]>=2 && valtab[a+1]<3 )|| (valtab[a+1]>=4 && valtab[a+1]<5) || (valtab[a+1]>=6 && valtab[a+1]<7) || (valtab[a+1]>=8 && valtab[a+1]<9) || (valtab[a+1]>=10 && valtab[a+1]<11) || (valtab[a+1]>=1 && valtab[a+1]<2)) && a!=6 && a!=13 && a!=20 && a!=27 && a!=34 && a!=41 && a!=48){
+                    casepossible[compteur]=coordtab[a+1];
+                    compteur=compteur+1;
+                } // DROITE
+                if (((valtab[a-1]>=2 && valtab[a-1]<3) || (valtab[a-1]>=3 && valtab[a-1]<4) || (valtab[a-1]>=7 && valtab[a-1]<8) || (valtab[a-1]>=9 && valtab[a-1]<10) || (valtab[a-1]>=6 && valtab[a-1]<7) || (valtab[a-1]>=1 && valtab[a-1]<2)) && a!=0 && a!=7 && a!=14 && a!=21 && a!=28 && a!=35 && a!=42){
+                    casepossible[compteur]=coordtab[a-1];
+                    compteur=compteur+1;
+                } //GAUCHE
+                if (((valtab[a-7]>=1 && valtab[a-7]<2) || (valtab[a-7]>=3 && valtab[a-7]<4) || (valtab[a-7]>=4 && valtab[a-7]<5) || (valtab[a-7]>=5 && valtab[a-7]<6) || (valtab[a-7]>=9 && valtab[a-7]<10) || (valtab[a-7]>=10 && valtab[a-7]<11)) && a!=0 && a!=1 && a!=2 && a!=3 && a!=4 && a!=5 && a!=6){
+                    casepossible[compteur]=coordtab[a-7];
+                    compteur=compteur+1;
+                } //HAUT
+                break;
+            case 3:
+                if (((valtab[a-7]>=1 && valtab[a-7]<2) || (valtab[a-7]>=3 && valtab[a-7]<4) || (valtab[a-7]>=4 && valtab[a-7]<5) || (valtab[a-7]>=5 && valtab[a-7]<6) || (valtab[a-7]>=9 && valtab[a-7]<10) || (valtab[a-7]>=10 && valtab[a-7]<11)) && a!=0 && a!=1 && a!=2 && a!=3 && a!=4 && a!=5 && a!=6){
+                    casepossible[compteur]=coordtab[a-7];
+                    compteur=compteur+1;
+                } //HAUT
+                if (((valtab[a+7]>=2 && valtab[a+7]<3) || (valtab[a+7]>=3 && valtab[a+7]<4) || (valtab[a+7]>=4 && valtab[a+7]<5) || (valtab[a+7]>=5 && valtab[a+7]<6) || (valtab[a+7]>=7 && valtab[a+7]<8) || (valtab[a+7]>=8 && valtab[a+7]<9)) && a!=42 && a!=43 && a!=44 && a!=45 && a!=46 && a!=47 && a!=48){
+                    casepossible[compteur]=coordtab[a+7];
+                    compteur=compteur+1;
+                } //BAS
+                if (((valtab[a+1]>=2 && valtab[a+1]<3 )|| (valtab[a+1]>=4 && valtab[a+1]<5) || (valtab[a+1]>=6 && valtab[a+1]<7) || (valtab[a+1]>=8 && valtab[a+1]<9) || (valtab[a+1]>=10 && valtab[a+1]<11) || (valtab[a+1]>=1 && valtab[a+1]<2)) && a!=6 && a!=13 && a!=20 && a!=27 && a!=34 && a!=41 && a!=48){
+                    casepossible[compteur]=coordtab[a+1];
+                    compteur=compteur+1;
+                } // DROITE
+                break;
+            case 4:
+                if (((valtab[a-7]>=1 && valtab[a-7]<2) || (valtab[a-7]>=3 && valtab[a-7]<4) || (valtab[a-7]>=4 && valtab[a-7]<5) || (valtab[a-7]>=5 && valtab[a-7]<6) || (valtab[a-7]>=9 && valtab[a-7]<10) || (valtab[a-7]>=10 && valtab[a-7]<11)) && a!=0 && a!=1 && a!=2 && a!=3 && a!=4 && a!=5 && a!=6){
+                    casepossible[compteur]=coordtab[a-7];
+                    compteur=compteur+1;
+                } //HAUT
+                if (((valtab[a+7]>=2 && valtab[a+7]<3) || (valtab[a+7]>=3 && valtab[a+7]<4) || (valtab[a+7]>=4 && valtab[a+7]<5) || (valtab[a+7]>=5 && valtab[a+7]<6) || (valtab[a+7]>=7 && valtab[a+7]<8) || (valtab[a+7]>=8 && valtab[a+7]<9)) && a!=42 && a!=43 && a!=44 && a!=45 && a!=46 && a!=47 && a!=48){
+                    casepossible[compteur]=coordtab[a+7];
+                    compteur=compteur+1;
+                } //BAS
+                if (((valtab[a-1]>=2 && valtab[a-1]<3) || (valtab[a-1]>=3 && valtab[a-1]<4) || (valtab[a-1]>=7 && valtab[a-1]<8) || (valtab[a-1]>=9 && valtab[a-1]<10) || (valtab[a-1]>=6 && valtab[a-1]<7) || (valtab[a-1]>=1 && valtab[a-1]<2)) && a!=0 && a!=7 && a!=14 && a!=21 && a!=28 && a!=35 && a!=42){
+                    casepossible[compteur]=coordtab[a-1];
+                    compteur=compteur+1;
+                } //GAUCHE
+                break;
+            case 5:
+                if (((valtab[a-7]>=1 && valtab[a-7]<2) || (valtab[a-7]>=3 && valtab[a-7]<4) || (valtab[a-7]>=4 && valtab[a-7]<5) || (valtab[a-7]>=5 && valtab[a-7]<6) || (valtab[a-7]>=9 && valtab[a-7]<10) || (valtab[a-7]>=10 && valtab[a-7]<11)) && a!=0 && a!=1 && a!=2 && a!=3 && a!=4 && a!=5 && a!=6){
+                    casepossible[compteur]=coordtab[a-7];
+                    compteur=compteur+1;
+                } //HAUT
+                if (((valtab[a+7]>=2 && valtab[a+7]<3) || (valtab[a+7]>=3 && valtab[a+7]<4) || (valtab[a+7]>=4 && valtab[a+7]<5) || (valtab[a+7]>=5 && valtab[a+7]<6) || (valtab[a+7]>=7 && valtab[a+7]<8) || (valtab[a+7]>=8 && valtab[a+7]<9)) && a!=42 && a!=43 && a!=44 && a!=45 && a!=46 && a!=47 && a!=48){
+                    casepossible[compteur]=coordtab[a+7];
+                    compteur=compteur+1;
+                } //BAS
+                break;
+            case 6:
+                if (((valtab[a-1]>=2 && valtab[a-1]<3) || (valtab[a-1]>=3 && valtab[a-1]<4) || (valtab[a-1]>=7 && valtab[a-1]<8) || (valtab[a-1]>=9 && valtab[a-1]<10) || (valtab[a-1]>=6 && valtab[a-1]<7) || (valtab[a-1]>=1 && valtab[a-1]<2)) && a!=0 && a!=7 && a!=14 && a!=21 && a!=28 && a!=35 && a!=42){
+                    casepossible[compteur]=coordtab[a-1];
+                    compteur=compteur+1;
+                } //GAUCHE
+                if (((valtab[a+1]>=2 && valtab[a+1]<3 )|| (valtab[a+1]>=4 && valtab[a+1]<5) || (valtab[a+1]>=6 && valtab[a+1]<7) || (valtab[a+1]>=8 && valtab[a+1]<9) || (valtab[a+1]>=10 && valtab[a+1]<11) || (valtab[a+1]>=1 && valtab[a+1]<2)) && a!=6 && a!=13 && a!=20 && a!=27 && a!=34 && a!=41 && a!=48){
+                    casepossible[compteur]=coordtab[a+1];
+                    compteur=compteur+1;
+                } // DROITE
+                break;
+            case 7:
+                if (((valtab[a-7]>=1 && valtab[a-7]<2) || (valtab[a-7]>=3 && valtab[a-7]<4) || (valtab[a-7]>=4 && valtab[a-7]<5) || (valtab[a-7]>=5 && valtab[a-7]<6) || (valtab[a-7]>=9 && valtab[a-7]<10) || (valtab[a-7]>=10 && valtab[a-7]<11)) && a!=0 && a!=1 && a!=2 && a!=3 && a!=4 && a!=5 && a!=6){
+                    casepossible[compteur]=coordtab[a-7];
+                    compteur=compteur+1;
+                } //HAUT
+                if (((valtab[a+1]>=2 && valtab[a+1]<3 )|| (valtab[a+1]>=4 && valtab[a+1]<5) || (valtab[a+1]>=6 && valtab[a+1]<7) || (valtab[a+1]>=8 && valtab[a+1]<9) || (valtab[a+1]>=10 && valtab[a+1]<11) || (valtab[a+1]>=1 && valtab[a+1]<2)) && a!=6 && a!=13 && a!=20 && a!=27 && a!=34 && a!=41 && a!=48){
+                    casepossible[compteur]=coordtab[a+1];
+                    compteur=compteur+1;
+                } // DROITE
+                break;
+            case 8:
+                if (((valtab[a-1]>=2 && valtab[a-1]<3) || (valtab[a-1]>=3 && valtab[a-1]<4) || (valtab[a-1]>=7 && valtab[a-1]<8) || (valtab[a-1]>=9 && valtab[a-1]<10) || (valtab[a-1]>=6 && valtab[a-1]<7) || (valtab[a-1]>=1 && valtab[a-1]<2)) && a!=0 && a!=7 && a!=14 && a!=21 && a!=28 && a!=35 && a!=42){
+                    casepossible[compteur]=coordtab[a-1];
+                    compteur=compteur+1;
+                } //GAUCHE
+                if (((valtab[a-7]>=1 && valtab[a-7]<2) || (valtab[a-7]>=3 && valtab[a-7]<4) || (valtab[a-7]>=4 && valtab[a-7]<5) || (valtab[a-7]>=5 && valtab[a-7]<6) || (valtab[a-7]>=9 && valtab[a-7]<10) || (valtab[a-7]>=10 && valtab[a-7]<11)) && a!=0 && a!=1 && a!=2 && a!=3 && a!=4 && a!=5 && a!=6){
+                    casepossible[compteur]=coordtab[a-7];
+                    compteur=compteur+1;
+                } //HAUT
+                break;
+            case 9:
+                if (((valtab[a+1]>=2 && valtab[a+1]<3 )|| (valtab[a+1]>=4 && valtab[a+1]<5) || (valtab[a+1]>=6 && valtab[a+1]<7) || (valtab[a+1]>=8 && valtab[a+1]<9) || (valtab[a+1]>=10 && valtab[a+1]<11) || (valtab[a+1]>=1 && valtab[a+1]<2)) && a!=6 && a!=13 && a!=20 && a!=27 && a!=34 && a!=41 && a!=48){
+                    casepossible[compteur]=coordtab[a+1];
+                    compteur=compteur+1;
+                } // DROITE
+                if (((valtab[a+7]>=2 && valtab[a+7]<3) || (valtab[a+7]>=3 && valtab[a+7]<4) || (valtab[a+7]>=4 && valtab[a+7]<5) || (valtab[a+7]>=5 && valtab[a+7]<6) || (valtab[a+7]>=7 && valtab[a+7]<8) || (valtab[a+7]>=8 && valtab[a+7]<9)) && a!=42 && a!=43 && a!=44 && a!=45 && a!=46 && a!=47 && a!=48){
+                    casepossible[compteur]=coordtab[a+7];
+                    compteur=compteur+1;
+                } //BAS
+                break;
+            case 10:
+                if (((valtab[a+7]>=2 && valtab[a+7]<3) || (valtab[a+7]>=3 && valtab[a+7]<4) || (valtab[a+7]>=4 && valtab[a+7]<5) || (valtab[a+7]>=5 && valtab[a+7]<6) || (valtab[a+7]>=7 && valtab[a+7]<8) || (valtab[a+7]>=8 && valtab[a+7]<9)) && a!=42 && a!=43 && a!=44 && a!=45 && a!=46 && a!=47 && a!=48){
+                    casepossible[compteur]=coordtab[a+7];
+                    compteur=compteur+1;
+                } //BAS
+                if (((valtab[a-1]>=2 && valtab[a-1]<3) || (valtab[a-1]>=3 && valtab[a-1]<4) || (valtab[a-1]>=7 && valtab[a-1]<8) || (valtab[a-1]>=9 && valtab[a-1]<10) || (valtab[a-1]>=6 && valtab[a-1]<7) || (valtab[a-1]>=1 && valtab[a-1]<2)) && a!=0 && a!=7 && a!=14 && a!=21 && a!=28 && a!=35 && a!=42){
+                    casepossible[compteur]=coordtab[a-1];
+                    compteur=compteur+1;
+                } //GAUCHE
+                break;
+            default:
+                printf("ERROR \n");
+        }
+    }
+    int chien=compteur;
+    for (int i=0;i<chien;i++){
+        a=change(casepossible[i]);
+        int c=0;int ojl=0;ojl=change(casepossible[i]);
+        c=valtab[ojl];
+        switch (c){
+            case 1:
+                if (((valtab[a+1]>=2 && valtab[a+1]<3 )|| (valtab[a+1]>=4 && valtab[a+1]<5) || (valtab[a+1]>=6 && valtab[a+1]<7) || (valtab[a+1]>=8 && valtab[a+1]<9) || (valtab[a+1]>=10 && valtab[a+1]<11) || (valtab[a+1]>=1 && valtab[a+1]<2)) && a!=6 && a!=13 && a!=20 && a!=27 && a!=34 && a!=41 && a!=48){
+                    casepossible[compteur]=coordtab[a+1];
+                    compteur=compteur+1;
+                } // DROITE
+                if (((valtab[a-1]>=2 && valtab[a-1]<3) || (valtab[a-1]>=3 && valtab[a-1]<4) || (valtab[a-1]>=7 && valtab[a-1]<8) || (valtab[a-1]>=9 && valtab[a-1]<10) || (valtab[a-1]>=6 && valtab[a-1]<7) || (valtab[a-1]>=1 && valtab[a-1]<2)) && a!=0 && a!=7 && a!=14 && a!=21 && a!=28 && a!=35 && a!=42){
+                    casepossible[compteur]=coordtab[a-1];
+                    compteur=compteur+1;
+                } //GAUCHE
+                if (((valtab[a+7]>=2 && valtab[a+7]<3) || (valtab[a+7]>=3 && valtab[a+7]<4) || (valtab[a+7]>=4 && valtab[a+7]<5) || (valtab[a+7]>=5 && valtab[a+7]<6) || (valtab[a+7]>=7 && valtab[a+7]<8) || (valtab[a+7]>=8 && valtab[a+7]<9)) && a!=42 && a!=43 && a!=44 && a!=45 && a!=46 && a!=47 && a!=48){
+                    casepossible[compteur]=coordtab[a+7];
+                    compteur=compteur+1;
+                } //BAS
+                break;
+            case 2:
+                if (((valtab[a+1]>=2 && valtab[a+1]<3 )|| (valtab[a+1]>=4 && valtab[a+1]<5) || (valtab[a+1]>=6 && valtab[a+1]<7) || (valtab[a+1]>=8 && valtab[a+1]<9) || (valtab[a+1]>=10 && valtab[a+1]<11) || (valtab[a+1]>=1 && valtab[a+1]<2)) && a!=6 && a!=13 && a!=20 && a!=27 && a!=34 && a!=41 && a!=48){
+                    casepossible[compteur]=coordtab[a+1];
+                    compteur=compteur+1;
+                } // DROITE
+                if (((valtab[a-1]>=2 && valtab[a-1]<3) || (valtab[a-1]>=3 && valtab[a-1]<4) || (valtab[a-1]>=7 && valtab[a-1]<8) || (valtab[a-1]>=9 && valtab[a-1]<10) || (valtab[a-1]>=6 && valtab[a-1]<7) || (valtab[a-1]>=1 && valtab[a-1]<2)) && a!=0 && a!=7 && a!=14 && a!=21 && a!=28 && a!=35 && a!=42){
+                    casepossible[compteur]=coordtab[a-1];
+                    compteur=compteur+1;
+                } //GAUCHE
+                if (((valtab[a-7]>=1 && valtab[a-7]<2) || (valtab[a-7]>=3 && valtab[a-7]<4) || (valtab[a-7]>=4 && valtab[a-7]<5) || (valtab[a-7]>=5 && valtab[a-7]<6) || (valtab[a-7]>=9 && valtab[a-7]<10) || (valtab[a-7]>=10 && valtab[a-7]<11)) && a!=0 && a!=1 && a!=2 && a!=3 && a!=4 && a!=5 && a!=6){
+                    casepossible[compteur]=coordtab[a-7];
+                    compteur=compteur+1;
+                } //HAUT
+                break;
+            case 3:
+                if (((valtab[a-7]>=1 && valtab[a-7]<2) || (valtab[a-7]>=3 && valtab[a-7]<4) || (valtab[a-7]>=4 && valtab[a-7]<5) || (valtab[a-7]>=5 && valtab[a-7]<6) || (valtab[a-7]>=9 && valtab[a-7]<10) || (valtab[a-7]>=10 && valtab[a-7]<11)) && a!=0 && a!=1 && a!=2 && a!=3 && a!=4 && a!=5 && a!=6){
+                    casepossible[compteur]=coordtab[a-7];
+                    compteur=compteur+1;
+                } //HAUT
+                if (((valtab[a+7]>=2 && valtab[a+7]<3) || (valtab[a+7]>=3 && valtab[a+7]<4) || (valtab[a+7]>=4 && valtab[a+7]<5) || (valtab[a+7]>=5 && valtab[a+7]<6) || (valtab[a+7]>=7 && valtab[a+7]<8) || (valtab[a+7]>=8 && valtab[a+7]<9)) && a!=42 && a!=43 && a!=44 && a!=45 && a!=46 && a!=47 && a!=48){
+                    casepossible[compteur]=coordtab[a+7];
+                    compteur=compteur+1;
+                } //BAS
+                if (((valtab[a+1]>=2 && valtab[a+1]<3 )|| (valtab[a+1]>=4 && valtab[a+1]<5) || (valtab[a+1]>=6 && valtab[a+1]<7) || (valtab[a+1]>=8 && valtab[a+1]<9) || (valtab[a+1]>=10 && valtab[a+1]<11) || (valtab[a+1]>=1 && valtab[a+1]<2)) && a!=6 && a!=13 && a!=20 && a!=27 && a!=34 && a!=41 && a!=48){
+                    casepossible[compteur]=coordtab[a+1];
+                    compteur=compteur+1;
+                } // DROITE
+                break;
+            case 4:
+                if (((valtab[a-7]>=1 && valtab[a-7]<2) || (valtab[a-7]>=3 && valtab[a-7]<4) || (valtab[a-7]>=4 && valtab[a-7]<5) || (valtab[a-7]>=5 && valtab[a-7]<6) || (valtab[a-7]>=9 && valtab[a-7]<10) || (valtab[a-7]>=10 && valtab[a-7]<11)) && a!=0 && a!=1 && a!=2 && a!=3 && a!=4 && a!=5 && a!=6){
+                    casepossible[compteur]=coordtab[a-7];
+                    compteur=compteur+1;
+                } //HAUT
+                if (((valtab[a+7]>=2 && valtab[a+7]<3) || (valtab[a+7]>=3 && valtab[a+7]<4) || (valtab[a+7]>=4 && valtab[a+7]<5) || (valtab[a+7]>=5 && valtab[a+7]<6) || (valtab[a+7]>=7 && valtab[a+7]<8) || (valtab[a+7]>=8 && valtab[a+7]<9)) && a!=42 && a!=43 && a!=44 && a!=45 && a!=46 && a!=47 && a!=48){
+                    casepossible[compteur]=coordtab[a+7];
+                    compteur=compteur+1;
+                } //BAS
+                if (((valtab[a-1]>=2 && valtab[a-1]<3) || (valtab[a-1]>=3 && valtab[a-1]<4) || (valtab[a-1]>=7 && valtab[a-1]<8) || (valtab[a-1]>=9 && valtab[a-1]<10) || (valtab[a-1]>=6 && valtab[a-1]<7) || (valtab[a-1]>=1 && valtab[a-1]<2)) && a!=0 && a!=7 && a!=14 && a!=21 && a!=28 && a!=35 && a!=42){
+                    casepossible[compteur]=coordtab[a-1];
+                    compteur=compteur+1;
+                } //GAUCHE
+                break;
+            case 5:
+                if (((valtab[a-7]>=1 && valtab[a-7]<2) || (valtab[a-7]>=3 && valtab[a-7]<4) || (valtab[a-7]>=4 && valtab[a-7]<5) || (valtab[a-7]>=5 && valtab[a-7]<6) || (valtab[a-7]>=9 && valtab[a-7]<10) || (valtab[a-7]>=10 && valtab[a-7]<11)) && a!=0 && a!=1 && a!=2 && a!=3 && a!=4 && a!=5 && a!=6){
+                    casepossible[compteur]=coordtab[a-7];
+                    compteur=compteur+1;
+                } //HAUT
+                if (((valtab[a+7]>=2 && valtab[a+7]<3) || (valtab[a+7]>=3 && valtab[a+7]<4) || (valtab[a+7]>=4 && valtab[a+7]<5) || (valtab[a+7]>=5 && valtab[a+7]<6) || (valtab[a+7]>=7 && valtab[a+7]<8) || (valtab[a+7]>=8 && valtab[a+7]<9)) && a!=42 && a!=43 && a!=44 && a!=45 && a!=46 && a!=47 && a!=48){
+                    casepossible[compteur]=coordtab[a+7];
+                    compteur=compteur+1;
+                } //BAS
+                break;
+            case 6:
+                if (((valtab[a-1]>=2 && valtab[a-1]<3) || (valtab[a-1]>=3 && valtab[a-1]<4) || (valtab[a-1]>=7 && valtab[a-1]<8) || (valtab[a-1]>=9 && valtab[a-1]<10) || (valtab[a-1]>=6 && valtab[a-1]<7) || (valtab[a-1]>=1 && valtab[a-1]<2)) && a!=0 && a!=7 && a!=14 && a!=21 && a!=28 && a!=35 && a!=42){
+                    casepossible[compteur]=coordtab[a-1];
+                    compteur=compteur+1;
+                } //GAUCHE
+                if (((valtab[a+1]>=2 && valtab[a+1]<3 )|| (valtab[a+1]>=4 && valtab[a+1]<5) || (valtab[a+1]>=6 && valtab[a+1]<7) || (valtab[a+1]>=8 && valtab[a+1]<9) || (valtab[a+1]>=10 && valtab[a+1]<11) || (valtab[a+1]>=1 && valtab[a+1]<2)) && a!=6 && a!=13 && a!=20 && a!=27 && a!=34 && a!=41 && a!=48){
+                    casepossible[compteur]=coordtab[a+1];
+                    compteur=compteur+1;
+                } // DROITE
+                break;
+            case 7:
+                if (((valtab[a-7]>=1 && valtab[a-7]<2) || (valtab[a-7]>=3 && valtab[a-7]<4) || (valtab[a-7]>=4 && valtab[a-7]<5) || (valtab[a-7]>=5 && valtab[a-7]<6) || (valtab[a-7]>=9 && valtab[a-7]<10) || (valtab[a-7]>=10 && valtab[a-7]<11)) && a!=0 && a!=1 && a!=2 && a!=3 && a!=4 && a!=5 && a!=6){
+                    casepossible[compteur]=coordtab[a-7];
+                    compteur=compteur+1;
+                } //HAUT
+                if (((valtab[a+1]>=2 && valtab[a+1]<3 )|| (valtab[a+1]>=4 && valtab[a+1]<5) || (valtab[a+1]>=6 && valtab[a+1]<7) || (valtab[a+1]>=8 && valtab[a+1]<9) || (valtab[a+1]>=10 && valtab[a+1]<11) || (valtab[a+1]>=1 && valtab[a+1]<2)) && a!=6 && a!=13 && a!=20 && a!=27 && a!=34 && a!=41 && a!=48){
+                    casepossible[compteur]=coordtab[a+1];
+                    compteur=compteur+1;
+                } // DROITE
+                break;
+            case 8:
+                if (((valtab[a-1]>=2 && valtab[a-1]<3) || (valtab[a-1]>=3 && valtab[a-1]<4) || (valtab[a-1]>=7 && valtab[a-1]<8) || (valtab[a-1]>=9 && valtab[a-1]<10) || (valtab[a-1]>=6 && valtab[a-1]<7) || (valtab[a-1]>=1 && valtab[a-1]<2)) && a!=0 && a!=7 && a!=14 && a!=21 && a!=28 && a!=35 && a!=42){
+                    casepossible[compteur]=coordtab[a-1];
+                    compteur=compteur+1;
+                } //GAUCHE
+                if (((valtab[a-7]>=1 && valtab[a-7]<2) || (valtab[a-7]>=3 && valtab[a-7]<4) || (valtab[a-7]>=4 && valtab[a-7]<5) || (valtab[a-7]>=5 && valtab[a-7]<6) || (valtab[a-7]>=9 && valtab[a-7]<10) || (valtab[a-7]>=10 && valtab[a-7]<11)) && a!=0 && a!=1 && a!=2 && a!=3 && a!=4 && a!=5 && a!=6){
+                    casepossible[compteur]=coordtab[a-7];
+                    compteur=compteur+1;
+                } //HAUT
+                break;
+            case 9:
+                if (((valtab[a+1]>=2 && valtab[a+1]<3 )|| (valtab[a+1]>=4 && valtab[a+1]<5) || (valtab[a+1]>=6 && valtab[a+1]<7) || (valtab[a+1]>=8 && valtab[a+1]<9) || (valtab[a+1]>=10 && valtab[a+1]<11) || (valtab[a+1]>=1 && valtab[a+1]<2)) && a!=6 && a!=13 && a!=20 && a!=27 && a!=34 && a!=41 && a!=48){
+                    casepossible[compteur]=coordtab[a+1];
+                    compteur=compteur+1;
+                } // DROITE
+                if (((valtab[a+7]>=2 && valtab[a+7]<3) || (valtab[a+7]>=3 && valtab[a+7]<4) || (valtab[a+7]>=4 && valtab[a+7]<5) || (valtab[a+7]>=5 && valtab[a+7]<6) || (valtab[a+7]>=7 && valtab[a+7]<8) || (valtab[a+7]>=8 && valtab[a+7]<9)) && a!=42 && a!=43 && a!=44 && a!=45 && a!=46 && a!=47 && a!=48){
+                    casepossible[compteur]=coordtab[a+7];
+                    compteur=compteur+1;
+                } //BAS
+                break;
+            case 10:
+                if (((valtab[a+7]>=2 && valtab[a+7]<3) || (valtab[a+7]>=3 && valtab[a+7]<4) || (valtab[a+7]>=4 && valtab[a+7]<5) || (valtab[a+7]>=5 && valtab[a+7]<6) || (valtab[a+7]>=7 && valtab[a+7]<8) || (valtab[a+7]>=8 && valtab[a+7]<9)) && a!=42 && a!=43 && a!=44 && a!=45 && a!=46 && a!=47 && a!=48){
+                    casepossible[compteur]=coordtab[a+7];
+                    compteur=compteur+1;
+                } //BAS
+                if (((valtab[a-1]>=2 && valtab[a-1]<3) || (valtab[a-1]>=3 && valtab[a-1]<4) || (valtab[a-1]>=7 && valtab[a-1]<8) || (valtab[a-1]>=9 && valtab[a-1]<10) || (valtab[a-1]>=6 && valtab[a-1]<7) || (valtab[a-1]>=1 && valtab[a-1]<2)) && a!=0 && a!=7 && a!=14 && a!=21 && a!=28 && a!=35 && a!=42){
+                    casepossible[compteur]=coordtab[a-1];
+                    compteur=compteur+1;
+                } //GAUCHE
+                break;
+            default:
+                printf("ERROR \n");
+        }
+    }
+    int clavier=compteur;
+    for (int i=0;i<clavier;i++){
+        a=change(casepossible[i]);
+        int c=0;int jhg=0;jhg=change(casepossible[i]);
+        c=valtab[jhg];
+        switch (c){
+            case 1:
+                if (((valtab[a+1]>=2 && valtab[a+1]<3 )|| (valtab[a+1]>=4 && valtab[a+1]<5) || (valtab[a+1]>=6 && valtab[a+1]<7) || (valtab[a+1]>=8 && valtab[a+1]<9) || (valtab[a+1]>=10 && valtab[a+1]<11) || (valtab[a+1]>=1 && valtab[a+1]<2)) && a!=6 && a!=13 && a!=20 && a!=27 && a!=34 && a!=41 && a!=48){
+                    casepossible[compteur]=coordtab[a+1];
+                    compteur=compteur+1;
+                } // DROITE
+                if (((valtab[a-1]>=2 && valtab[a-1]<3) || (valtab[a-1]>=3 && valtab[a-1]<4) || (valtab[a-1]>=7 && valtab[a-1]<8) || (valtab[a-1]>=9 && valtab[a-1]<10) || (valtab[a-1]>=6 && valtab[a-1]<7) || (valtab[a-1]>=1 && valtab[a-1]<2)) && a!=0 && a!=7 && a!=14 && a!=21 && a!=28 && a!=35 && a!=42){
+                    casepossible[compteur]=coordtab[a-1];
+                    compteur=compteur+1;
+                } //GAUCHE
+                if (((valtab[a+7]>=2 && valtab[a+7]<3) || (valtab[a+7]>=3 && valtab[a+7]<4) || (valtab[a+7]>=4 && valtab[a+7]<5) || (valtab[a+7]>=5 && valtab[a+7]<6) || (valtab[a+7]>=7 && valtab[a+7]<8) || (valtab[a+7]>=8 && valtab[a+7]<9)) && a!=42 && a!=43 && a!=44 && a!=45 && a!=46 && a!=47 && a!=48){
+                    casepossible[compteur]=coordtab[a+7];
+                    compteur=compteur+1;
+                } //BAS
+                break;
+            case 2:
+                if (((valtab[a+1]>=2 && valtab[a+1]<3 )|| (valtab[a+1]>=4 && valtab[a+1]<5) || (valtab[a+1]>=6 && valtab[a+1]<7) || (valtab[a+1]>=8 && valtab[a+1]<9) || (valtab[a+1]>=10 && valtab[a+1]<11) || (valtab[a+1]>=1 && valtab[a+1]<2)) && a!=6 && a!=13 && a!=20 && a!=27 && a!=34 && a!=41 && a!=48){
+                    casepossible[compteur]=coordtab[a+1];
+                    compteur=compteur+1;
+                } // DROITE
+                if (((valtab[a-1]>=2 && valtab[a-1]<3) || (valtab[a-1]>=3 && valtab[a-1]<4) || (valtab[a-1]>=7 && valtab[a-1]<8) || (valtab[a-1]>=9 && valtab[a-1]<10) || (valtab[a-1]>=6 && valtab[a-1]<7) || (valtab[a-1]>=1 && valtab[a-1]<2)) && a!=0 && a!=7 && a!=14 && a!=21 && a!=28 && a!=35 && a!=42){
+                    casepossible[compteur]=coordtab[a-1];
+                    compteur=compteur+1;
+                } //GAUCHE
+                if (((valtab[a-7]>=1 && valtab[a-7]<2) || (valtab[a-7]>=3 && valtab[a-7]<4) || (valtab[a-7]>=4 && valtab[a-7]<5) || (valtab[a-7]>=5 && valtab[a-7]<6) || (valtab[a-7]>=9 && valtab[a-7]<10) || (valtab[a-7]>=10 && valtab[a-7]<11)) && a!=0 && a!=1 && a!=2 && a!=3 && a!=4 && a!=5 && a!=6){
+                    casepossible[compteur]=coordtab[a-7];
+                    compteur=compteur+1;
+                } //HAUT
+                break;
+            case 3:
+                if (((valtab[a-7]>=1 && valtab[a-7]<2) || (valtab[a-7]>=3 && valtab[a-7]<4) || (valtab[a-7]>=4 && valtab[a-7]<5) || (valtab[a-7]>=5 && valtab[a-7]<6) || (valtab[a-7]>=9 && valtab[a-7]<10) || (valtab[a-7]>=10 && valtab[a-7]<11)) && a!=0 && a!=1 && a!=2 && a!=3 && a!=4 && a!=5 && a!=6){
+                    casepossible[compteur]=coordtab[a-7];
+                    compteur=compteur+1;
+                } //HAUT
+                if (((valtab[a+7]>=2 && valtab[a+7]<3) || (valtab[a+7]>=3 && valtab[a+7]<4) || (valtab[a+7]>=4 && valtab[a+7]<5) || (valtab[a+7]>=5 && valtab[a+7]<6) || (valtab[a+7]>=7 && valtab[a+7]<8) || (valtab[a+7]>=8 && valtab[a+7]<9)) && a!=42 && a!=43 && a!=44 && a!=45 && a!=46 && a!=47 && a!=48){
+                    casepossible[compteur]=coordtab[a+7];
+                    compteur=compteur+1;
+                } //BAS
+                if (((valtab[a+1]>=2 && valtab[a+1]<3 )|| (valtab[a+1]>=4 && valtab[a+1]<5) || (valtab[a+1]>=6 && valtab[a+1]<7) || (valtab[a+1]>=8 && valtab[a+1]<9) || (valtab[a+1]>=10 && valtab[a+1]<11) || (valtab[a+1]>=1 && valtab[a+1]<2)) && a!=6 && a!=13 && a!=20 && a!=27 && a!=34 && a!=41 && a!=48){
+                    casepossible[compteur]=coordtab[a+1];
+                    compteur=compteur+1;
+                } // DROITE
+                break;
+            case 4:
+                if (((valtab[a-7]>=1 && valtab[a-7]<2) || (valtab[a-7]>=3 && valtab[a-7]<4) || (valtab[a-7]>=4 && valtab[a-7]<5) || (valtab[a-7]>=5 && valtab[a-7]<6) || (valtab[a-7]>=9 && valtab[a-7]<10) || (valtab[a-7]>=10 && valtab[a-7]<11)) && a!=0 && a!=1 && a!=2 && a!=3 && a!=4 && a!=5 && a!=6){
+                    casepossible[compteur]=coordtab[a-7];
+                    compteur=compteur+1;
+                } //HAUT
+                if (((valtab[a+7]>=2 && valtab[a+7]<3) || (valtab[a+7]>=3 && valtab[a+7]<4) || (valtab[a+7]>=4 && valtab[a+7]<5) || (valtab[a+7]>=5 && valtab[a+7]<6) || (valtab[a+7]>=7 && valtab[a+7]<8) || (valtab[a+7]>=8 && valtab[a+7]<9)) && a!=42 && a!=43 && a!=44 && a!=45 && a!=46 && a!=47 && a!=48){
+                    casepossible[compteur]=coordtab[a+7];
+                    compteur=compteur+1;
+                } //BAS
+                if (((valtab[a-1]>=2 && valtab[a-1]<3) || (valtab[a-1]>=3 && valtab[a-1]<4) || (valtab[a-1]>=7 && valtab[a-1]<8) || (valtab[a-1]>=9 && valtab[a-1]<10) || (valtab[a-1]>=6 && valtab[a-1]<7) || (valtab[a-1]>=1 && valtab[a-1]<2)) && a!=0 && a!=7 && a!=14 && a!=21 && a!=28 && a!=35 && a!=42){
+                    casepossible[compteur]=coordtab[a-1];
+                    compteur=compteur+1;
+                } //GAUCHE
+                break;
+            case 5:
+                if (((valtab[a-7]>=1 && valtab[a-7]<2) || (valtab[a-7]>=3 && valtab[a-7]<4) || (valtab[a-7]>=4 && valtab[a-7]<5) || (valtab[a-7]>=5 && valtab[a-7]<6) || (valtab[a-7]>=9 && valtab[a-7]<10) || (valtab[a-7]>=10 && valtab[a-7]<11)) && a!=0 && a!=1 && a!=2 && a!=3 && a!=4 && a!=5 && a!=6){
+                    casepossible[compteur]=coordtab[a-7];
+                    compteur=compteur+1;
+                } //HAUT
+                if (((valtab[a+7]>=2 && valtab[a+7]<3) || (valtab[a+7]>=3 && valtab[a+7]<4) || (valtab[a+7]>=4 && valtab[a+7]<5) || (valtab[a+7]>=5 && valtab[a+7]<6) || (valtab[a+7]>=7 && valtab[a+7]<8) || (valtab[a+7]>=8 && valtab[a+7]<9)) && a!=42 && a!=43 && a!=44 && a!=45 && a!=46 && a!=47 && a!=48){
+                    casepossible[compteur]=coordtab[a+7];
+                    compteur=compteur+1;
+                } //BAS
+                break;
+            case 6:
+                if (((valtab[a-1]>=2 && valtab[a-1]<3) || (valtab[a-1]>=3 && valtab[a-1]<4) || (valtab[a-1]>=7 && valtab[a-1]<8) || (valtab[a-1]>=9 && valtab[a-1]<10) || (valtab[a-1]>=6 && valtab[a-1]<7) || (valtab[a-1]>=1 && valtab[a-1]<2)) && a!=0 && a!=7 && a!=14 && a!=21 && a!=28 && a!=35 && a!=42){
+                    casepossible[compteur]=coordtab[a-1];
+                    compteur=compteur+1;
+                } //GAUCHE
+                if (((valtab[a+1]>=2 && valtab[a+1]<3 )|| (valtab[a+1]>=4 && valtab[a+1]<5) || (valtab[a+1]>=6 && valtab[a+1]<7) || (valtab[a+1]>=8 && valtab[a+1]<9) || (valtab[a+1]>=10 && valtab[a+1]<11) || (valtab[a+1]>=1 && valtab[a+1]<2)) && a!=6 && a!=13 && a!=20 && a!=27 && a!=34 && a!=41 && a!=48){
+                    casepossible[compteur]=coordtab[a+1];
+                    compteur=compteur+1;
+                } // DROITE
+                break;
+            case 7:
+                if (((valtab[a-7]>=1 && valtab[a-7]<2) || (valtab[a-7]>=3 && valtab[a-7]<4) || (valtab[a-7]>=4 && valtab[a-7]<5) || (valtab[a-7]>=5 && valtab[a-7]<6) || (valtab[a-7]>=9 && valtab[a-7]<10) || (valtab[a-7]>=10 && valtab[a-7]<11)) && a!=0 && a!=1 && a!=2 && a!=3 && a!=4 && a!=5 && a!=6){
+                    casepossible[compteur]=coordtab[a-7];
+                    compteur=compteur+1;
+                } //HAUT
+                if (((valtab[a+1]>=2 && valtab[a+1]<3 )|| (valtab[a+1]>=4 && valtab[a+1]<5) || (valtab[a+1]>=6 && valtab[a+1]<7) || (valtab[a+1]>=8 && valtab[a+1]<9) || (valtab[a+1]>=10 && valtab[a+1]<11) || (valtab[a+1]>=1 && valtab[a+1]<2)) && a!=6 && a!=13 && a!=20 && a!=27 && a!=34 && a!=41 && a!=48){
+                    casepossible[compteur]=coordtab[a+1];
+                    compteur=compteur+1;
+                } // DROITE
+                break;
+            case 8:
+                if (((valtab[a-1]>=2 && valtab[a-1]<3) || (valtab[a-1]>=3 && valtab[a-1]<4) || (valtab[a-1]>=7 && valtab[a-1]<8) || (valtab[a-1]>=9 && valtab[a-1]<10) || (valtab[a-1]>=6 && valtab[a-1]<7) || (valtab[a-1]>=1 && valtab[a-1]<2)) && a!=0 && a!=7 && a!=14 && a!=21 && a!=28 && a!=35 && a!=42){
+                    casepossible[compteur]=coordtab[a-1];
+                    compteur=compteur+1;
+                } //GAUCHE
+                if (((valtab[a-7]>=1 && valtab[a-7]<2) || (valtab[a-7]>=3 && valtab[a-7]<4) || (valtab[a-7]>=4 && valtab[a-7]<5) || (valtab[a-7]>=5 && valtab[a-7]<6) || (valtab[a-7]>=9 && valtab[a-7]<10) || (valtab[a-7]>=10 && valtab[a-7]<11)) && a!=0 && a!=1 && a!=2 && a!=3 && a!=4 && a!=5 && a!=6){
+                    casepossible[compteur]=coordtab[a-7];
+                    compteur=compteur+1;
+                } //HAUT
+                break;
+            case 9:
+                if (((valtab[a+1]>=2 && valtab[a+1]<3 )|| (valtab[a+1]>=4 && valtab[a+1]<5) || (valtab[a+1]>=6 && valtab[a+1]<7) || (valtab[a+1]>=8 && valtab[a+1]<9) || (valtab[a+1]>=10 && valtab[a+1]<11) || (valtab[a+1]>=1 && valtab[a+1]<2)) && a!=6 && a!=13 && a!=20 && a!=27 && a!=34 && a!=41 && a!=48){
+                    casepossible[compteur]=coordtab[a+1];
+                    compteur=compteur+1;
+                } // DROITE
+                if (((valtab[a+7]>=2 && valtab[a+7]<3) || (valtab[a+7]>=3 && valtab[a+7]<4) || (valtab[a+7]>=4 && valtab[a+7]<5) || (valtab[a+7]>=5 && valtab[a+7]<6) || (valtab[a+7]>=7 && valtab[a+7]<8) || (valtab[a+7]>=8 && valtab[a+7]<9)) && a!=42 && a!=43 && a!=44 && a!=45 && a!=46 && a!=47 && a!=48){
+                    casepossible[compteur]=coordtab[a+7];
+                    compteur=compteur+1;
+                } //BAS
+                break;
+            case 10:
+                if (((valtab[a+7]>=2 && valtab[a+7]<3) || (valtab[a+7]>=3 && valtab[a+7]<4) || (valtab[a+7]>=4 && valtab[a+7]<5) || (valtab[a+7]>=5 && valtab[a+7]<6) || (valtab[a+7]>=7 && valtab[a+7]<8) || (valtab[a+7]>=8 && valtab[a+7]<9)) && a!=42 && a!=43 && a!=44 && a!=45 && a!=46 && a!=47 && a!=48){
+                    casepossible[compteur]=coordtab[a+7];
+                    compteur=compteur+1;
+                } //BAS
+                if (((valtab[a-1]>=2 && valtab[a-1]<3) || (valtab[a-1]>=3 && valtab[a-1]<4) || (valtab[a-1]>=7 && valtab[a-1]<8) || (valtab[a-1]>=9 && valtab[a-1]<10) || (valtab[a-1]>=6 && valtab[a-1]<7) || (valtab[a-1]>=1 && valtab[a-1]<2)) && a!=0 && a!=7 && a!=14 && a!=21 && a!=28 && a!=35 && a!=42){
+                    casepossible[compteur]=coordtab[a-1];
+                    compteur=compteur+1;
+                } //GAUCHE
+                break;
+            default:
+                printf("ERROR \n");
+        }
+    }
+    int bout=compteur;
+    for (int i=0;i<bout;i++){
+        a=change(casepossible[i]);
+        int c=0;int tref=0;tref=change(casepossible[i]);
+        c=valtab[tref];
+        switch (c){
+            case 1:
+                if (((valtab[a+1]>=2 && valtab[a+1]<3 )|| (valtab[a+1]>=4 && valtab[a+1]<5) || (valtab[a+1]>=6 && valtab[a+1]<7) || (valtab[a+1]>=8 && valtab[a+1]<9) || (valtab[a+1]>=10 && valtab[a+1]<11) || (valtab[a+1]>=1 && valtab[a+1]<2)) && a!=6 && a!=13 && a!=20 && a!=27 && a!=34 && a!=41 && a!=48){
+                    casepossible[compteur]=coordtab[a+1];
+                    compteur=compteur+1;
+                } // DROITE
+                if (((valtab[a-1]>=2 && valtab[a-1]<3) || (valtab[a-1]>=3 && valtab[a-1]<4) || (valtab[a-1]>=7 && valtab[a-1]<8) || (valtab[a-1]>=9 && valtab[a-1]<10) || (valtab[a-1]>=6 && valtab[a-1]<7) || (valtab[a-1]>=1 && valtab[a-1]<2)) && a!=0 && a!=7 && a!=14 && a!=21 && a!=28 && a!=35 && a!=42){
+                    casepossible[compteur]=coordtab[a-1];
+                    compteur=compteur+1;
+                } //GAUCHE
+                if (((valtab[a+7]>=2 && valtab[a+7]<3) || (valtab[a+7]>=3 && valtab[a+7]<4) || (valtab[a+7]>=4 && valtab[a+7]<5) || (valtab[a+7]>=5 && valtab[a+7]<6) || (valtab[a+7]>=7 && valtab[a+7]<8) || (valtab[a+7]>=8 && valtab[a+7]<9)) && a!=42 && a!=43 && a!=44 && a!=45 && a!=46 && a!=47 && a!=48){
+                    casepossible[compteur]=coordtab[a+7];
+                    compteur=compteur+1;
+                } //BAS
+                break;
+            case 2:
+                if (((valtab[a+1]>=2 && valtab[a+1]<3 )|| (valtab[a+1]>=4 && valtab[a+1]<5) || (valtab[a+1]>=6 && valtab[a+1]<7) || (valtab[a+1]>=8 && valtab[a+1]<9) || (valtab[a+1]>=10 && valtab[a+1]<11) || (valtab[a+1]>=1 && valtab[a+1]<2)) && a!=6 && a!=13 && a!=20 && a!=27 && a!=34 && a!=41 && a!=48){
+                    casepossible[compteur]=coordtab[a+1];
+                    compteur=compteur+1;
+                } // DROITE
+                if (((valtab[a-1]>=2 && valtab[a-1]<3) || (valtab[a-1]>=3 && valtab[a-1]<4) || (valtab[a-1]>=7 && valtab[a-1]<8) || (valtab[a-1]>=9 && valtab[a-1]<10) || (valtab[a-1]>=6 && valtab[a-1]<7) || (valtab[a-1]>=1 && valtab[a-1]<2)) && a!=0 && a!=7 && a!=14 && a!=21 && a!=28 && a!=35 && a!=42){
+                    casepossible[compteur]=coordtab[a-1];
+                    compteur=compteur+1;
+                } //GAUCHE
+                if (((valtab[a-7]>=1 && valtab[a-7]<2) || (valtab[a-7]>=3 && valtab[a-7]<4) || (valtab[a-7]>=4 && valtab[a-7]<5) || (valtab[a-7]>=5 && valtab[a-7]<6) || (valtab[a-7]>=9 && valtab[a-7]<10) || (valtab[a-7]>=10 && valtab[a-7]<11)) && a!=0 && a!=1 && a!=2 && a!=3 && a!=4 && a!=5 && a!=6){
+                    casepossible[compteur]=coordtab[a-7];
+                    compteur=compteur+1;
+                } //HAUT
+                break;
+            case 3:
+                if (((valtab[a-7]>=1 && valtab[a-7]<2) || (valtab[a-7]>=3 && valtab[a-7]<4) || (valtab[a-7]>=4 && valtab[a-7]<5) || (valtab[a-7]>=5 && valtab[a-7]<6) || (valtab[a-7]>=9 && valtab[a-7]<10) || (valtab[a-7]>=10 && valtab[a-7]<11)) && a!=0 && a!=1 && a!=2 && a!=3 && a!=4 && a!=5 && a!=6){
+                    casepossible[compteur]=coordtab[a-7];
+                    compteur=compteur+1;
+                } //HAUT
+                if (((valtab[a+7]>=2 && valtab[a+7]<3) || (valtab[a+7]>=3 && valtab[a+7]<4) || (valtab[a+7]>=4 && valtab[a+7]<5) || (valtab[a+7]>=5 && valtab[a+7]<6) || (valtab[a+7]>=7 && valtab[a+7]<8) || (valtab[a+7]>=8 && valtab[a+7]<9)) && a!=42 && a!=43 && a!=44 && a!=45 && a!=46 && a!=47 && a!=48){
+                    casepossible[compteur]=coordtab[a+7];
+                    compteur=compteur+1;
+                } //BAS
+                if (((valtab[a+1]>=2 && valtab[a+1]<3 )|| (valtab[a+1]>=4 && valtab[a+1]<5) || (valtab[a+1]>=6 && valtab[a+1]<7) || (valtab[a+1]>=8 && valtab[a+1]<9) || (valtab[a+1]>=10 && valtab[a+1]<11) || (valtab[a+1]>=1 && valtab[a+1]<2)) && a!=6 && a!=13 && a!=20 && a!=27 && a!=34 && a!=41 && a!=48){
+                    casepossible[compteur]=coordtab[a+1];
+                    compteur=compteur+1;
+                } // DROITE
+                break;
+            case 4:
+                if (((valtab[a-7]>=1 && valtab[a-7]<2) || (valtab[a-7]>=3 && valtab[a-7]<4) || (valtab[a-7]>=4 && valtab[a-7]<5) || (valtab[a-7]>=5 && valtab[a-7]<6) || (valtab[a-7]>=9 && valtab[a-7]<10) || (valtab[a-7]>=10 && valtab[a-7]<11)) && a!=0 && a!=1 && a!=2 && a!=3 && a!=4 && a!=5 && a!=6){
+                    casepossible[compteur]=coordtab[a-7];
+                    compteur=compteur+1;
+                } //HAUT
+                if (((valtab[a+7]>=2 && valtab[a+7]<3) || (valtab[a+7]>=3 && valtab[a+7]<4) || (valtab[a+7]>=4 && valtab[a+7]<5) || (valtab[a+7]>=5 && valtab[a+7]<6) || (valtab[a+7]>=7 && valtab[a+7]<8) || (valtab[a+7]>=8 && valtab[a+7]<9)) && a!=42 && a!=43 && a!=44 && a!=45 && a!=46 && a!=47 && a!=48){
+                    casepossible[compteur]=coordtab[a+7];
+                    compteur=compteur+1;
+                } //BAS
+                if (((valtab[a-1]>=2 && valtab[a-1]<3) || (valtab[a-1]>=3 && valtab[a-1]<4) || (valtab[a-1]>=7 && valtab[a-1]<8) || (valtab[a-1]>=9 && valtab[a-1]<10) || (valtab[a-1]>=6 && valtab[a-1]<7) || (valtab[a-1]>=1 && valtab[a-1]<2)) && a!=0 && a!=7 && a!=14 && a!=21 && a!=28 && a!=35 && a!=42){
+                    casepossible[compteur]=coordtab[a-1];
+                    compteur=compteur+1;
+                } //GAUCHE
+                break;
+            case 5:
+                if (((valtab[a-7]>=1 && valtab[a-7]<2) || (valtab[a-7]>=3 && valtab[a-7]<4) || (valtab[a-7]>=4 && valtab[a-7]<5) || (valtab[a-7]>=5 && valtab[a-7]<6) || (valtab[a-7]>=9 && valtab[a-7]<10) || (valtab[a-7]>=10 && valtab[a-7]<11)) && a!=0 && a!=1 && a!=2 && a!=3 && a!=4 && a!=5 && a!=6){
+                    casepossible[compteur]=coordtab[a-7];
+                    compteur=compteur+1;
+                } //HAUT
+                if (((valtab[a+7]>=2 && valtab[a+7]<3) || (valtab[a+7]>=3 && valtab[a+7]<4) || (valtab[a+7]>=4 && valtab[a+7]<5) || (valtab[a+7]>=5 && valtab[a+7]<6) || (valtab[a+7]>=7 && valtab[a+7]<8) || (valtab[a+7]>=8 && valtab[a+7]<9)) && a!=42 && a!=43 && a!=44 && a!=45 && a!=46 && a!=47 && a!=48){
+                    casepossible[compteur]=coordtab[a+7];
+                    compteur=compteur+1;
+                } //BAS
+                break;
+            case 6:
+                if (((valtab[a-1]>=2 && valtab[a-1]<3) || (valtab[a-1]>=3 && valtab[a-1]<4) || (valtab[a-1]>=7 && valtab[a-1]<8) || (valtab[a-1]>=9 && valtab[a-1]<10) || (valtab[a-1]>=6 && valtab[a-1]<7) || (valtab[a-1]>=1 && valtab[a-1]<2)) && a!=0 && a!=7 && a!=14 && a!=21 && a!=28 && a!=35 && a!=42){
+                    casepossible[compteur]=coordtab[a-1];
+                    compteur=compteur+1;
+                } //GAUCHE
+                if (((valtab[a+1]>=2 && valtab[a+1]<3 )|| (valtab[a+1]>=4 && valtab[a+1]<5) || (valtab[a+1]>=6 && valtab[a+1]<7) || (valtab[a+1]>=8 && valtab[a+1]<9) || (valtab[a+1]>=10 && valtab[a+1]<11) || (valtab[a+1]>=1 && valtab[a+1]<2)) && a!=6 && a!=13 && a!=20 && a!=27 && a!=34 && a!=41 && a!=48){
+                    casepossible[compteur]=coordtab[a+1];
+                    compteur=compteur+1;
+                } // DROITE
+                break;
+            case 7:
+                if (((valtab[a-7]>=1 && valtab[a-7]<2) || (valtab[a-7]>=3 && valtab[a-7]<4) || (valtab[a-7]>=4 && valtab[a-7]<5) || (valtab[a-7]>=5 && valtab[a-7]<6) || (valtab[a-7]>=9 && valtab[a-7]<10) || (valtab[a-7]>=10 && valtab[a-7]<11)) && a!=0 && a!=1 && a!=2 && a!=3 && a!=4 && a!=5 && a!=6){
+                    casepossible[compteur]=coordtab[a-7];
+                    compteur=compteur+1;
+                } //HAUT
+                if (((valtab[a+1]>=2 && valtab[a+1]<3 )|| (valtab[a+1]>=4 && valtab[a+1]<5) || (valtab[a+1]>=6 && valtab[a+1]<7) || (valtab[a+1]>=8 && valtab[a+1]<9) || (valtab[a+1]>=10 && valtab[a+1]<11) || (valtab[a+1]>=1 && valtab[a+1]<2)) && a!=6 && a!=13 && a!=20 && a!=27 && a!=34 && a!=41 && a!=48){
+                    casepossible[compteur]=coordtab[a+1];
+                    compteur=compteur+1;
+                } // DROITE
+                break;
+            case 8:
+                if (((valtab[a-1]>=2 && valtab[a-1]<3) || (valtab[a-1]>=3 && valtab[a-1]<4) || (valtab[a-1]>=7 && valtab[a-1]<8) || (valtab[a-1]>=9 && valtab[a-1]<10) || (valtab[a-1]>=6 && valtab[a-1]<7) || (valtab[a-1]>=1 && valtab[a-1]<2)) && a!=0 && a!=7 && a!=14 && a!=21 && a!=28 && a!=35 && a!=42){
+                    casepossible[compteur]=coordtab[a-1];
+                    compteur=compteur+1;
+                } //GAUCHE
+                if (((valtab[a-7]>=1 && valtab[a-7]<2) || (valtab[a-7]>=3 && valtab[a-7]<4) || (valtab[a-7]>=4 && valtab[a-7]<5) || (valtab[a-7]>=5 && valtab[a-7]<6) || (valtab[a-7]>=9 && valtab[a-7]<10) || (valtab[a-7]>=10 && valtab[a-7]<11)) && a!=0 && a!=1 && a!=2 && a!=3 && a!=4 && a!=5 && a!=6){
+                    casepossible[compteur]=coordtab[a-7];
+                    compteur=compteur+1;
+                } //HAUT
+                break;
+            case 9:
+                if (((valtab[a+1]>=2 && valtab[a+1]<3 )|| (valtab[a+1]>=4 && valtab[a+1]<5) || (valtab[a+1]>=6 && valtab[a+1]<7) || (valtab[a+1]>=8 && valtab[a+1]<9) || (valtab[a+1]>=10 && valtab[a+1]<11) || (valtab[a+1]>=1 && valtab[a+1]<2)) && a!=6 && a!=13 && a!=20 && a!=27 && a!=34 && a!=41 && a!=48){
+                    casepossible[compteur]=coordtab[a+1];
+                    compteur=compteur+1;
+                } // DROITE
+                if (((valtab[a+7]>=2 && valtab[a+7]<3) || (valtab[a+7]>=3 && valtab[a+7]<4) || (valtab[a+7]>=4 && valtab[a+7]<5) || (valtab[a+7]>=5 && valtab[a+7]<6) || (valtab[a+7]>=7 && valtab[a+7]<8) || (valtab[a+7]>=8 && valtab[a+7]<9)) && a!=42 && a!=43 && a!=44 && a!=45 && a!=46 && a!=47 && a!=48){
+                    casepossible[compteur]=coordtab[a+7];
+                    compteur=compteur+1;
+                } //BAS
+                break;
+            case 10:
+                if (((valtab[a+7]>=2 && valtab[a+7]<3) || (valtab[a+7]>=3 && valtab[a+7]<4) || (valtab[a+7]>=4 && valtab[a+7]<5) || (valtab[a+7]>=5 && valtab[a+7]<6) || (valtab[a+7]>=7 && valtab[a+7]<8) || (valtab[a+7]>=8 && valtab[a+7]<9)) && a!=42 && a!=43 && a!=44 && a!=45 && a!=46 && a!=47 && a!=48){
+                    casepossible[compteur]=coordtab[a+7];
+                    compteur=compteur+1;
+                } //BAS
+                if (((valtab[a-1]>=2 && valtab[a-1]<3) || (valtab[a-1]>=3 && valtab[a-1]<4) || (valtab[a-1]>=7 && valtab[a-1]<8) || (valtab[a-1]>=9 && valtab[a-1]<10) || (valtab[a-1]>=6 && valtab[a-1]<7) || (valtab[a-1]>=1 && valtab[a-1]<2)) && a!=0 && a!=7 && a!=14 && a!=21 && a!=28 && a!=35 && a!=42){
+                    casepossible[compteur]=coordtab[a-1];
+                    compteur=compteur+1;
+                } //GAUCHE
+                break;
+            default:
+                printf("ERROR \n");
+        }
+    }
+    int mange=compteur;
+    for (int i=0;i<mange;i++){
+        a=change(casepossible[i]);
+        int c=0;int ghfu=0;ghfu=change(casepossible[i]);
+        c=valtab[ghfu];
+        switch (c){
+            case 1:
+                if (((valtab[a+1]>=2 && valtab[a+1]<3 )|| (valtab[a+1]>=4 && valtab[a+1]<5) || (valtab[a+1]>=6 && valtab[a+1]<7) || (valtab[a+1]>=8 && valtab[a+1]<9) || (valtab[a+1]>=10 && valtab[a+1]<11) || (valtab[a+1]>=1 && valtab[a+1]<2)) && a!=6 && a!=13 && a!=20 && a!=27 && a!=34 && a!=41 && a!=48){
+                    casepossible[compteur]=coordtab[a+1];
+                    compteur=compteur+1;
+                } // DROITE
+                if (((valtab[a-1]>=2 && valtab[a-1]<3) || (valtab[a-1]>=3 && valtab[a-1]<4) || (valtab[a-1]>=7 && valtab[a-1]<8) || (valtab[a-1]>=9 && valtab[a-1]<10) || (valtab[a-1]>=6 && valtab[a-1]<7) || (valtab[a-1]>=1 && valtab[a-1]<2)) && a!=0 && a!=7 && a!=14 && a!=21 && a!=28 && a!=35 && a!=42){
+                    casepossible[compteur]=coordtab[a-1];
+                    compteur=compteur+1;
+                } //GAUCHE
+                if (((valtab[a+7]>=2 && valtab[a+7]<3) || (valtab[a+7]>=3 && valtab[a+7]<4) || (valtab[a+7]>=4 && valtab[a+7]<5) || (valtab[a+7]>=5 && valtab[a+7]<6) || (valtab[a+7]>=7 && valtab[a+7]<8) || (valtab[a+7]>=8 && valtab[a+7]<9)) && a!=42 && a!=43 && a!=44 && a!=45 && a!=46 && a!=47 && a!=48){
+                    casepossible[compteur]=coordtab[a+7];
+                    compteur=compteur+1;
+                } //BAS
+                break;
+            case 2:
+                if (((valtab[a+1]>=2 && valtab[a+1]<3 )|| (valtab[a+1]>=4 && valtab[a+1]<5) || (valtab[a+1]>=6 && valtab[a+1]<7) || (valtab[a+1]>=8 && valtab[a+1]<9) || (valtab[a+1]>=10 && valtab[a+1]<11) || (valtab[a+1]>=1 && valtab[a+1]<2)) && a!=6 && a!=13 && a!=20 && a!=27 && a!=34 && a!=41 && a!=48){
+                    casepossible[compteur]=coordtab[a+1];
+                    compteur=compteur+1;
+                } // DROITE
+                if (((valtab[a-1]>=2 && valtab[a-1]<3) || (valtab[a-1]>=3 && valtab[a-1]<4) || (valtab[a-1]>=7 && valtab[a-1]<8) || (valtab[a-1]>=9 && valtab[a-1]<10) || (valtab[a-1]>=6 && valtab[a-1]<7) || (valtab[a-1]>=1 && valtab[a-1]<2)) && a!=0 && a!=7 && a!=14 && a!=21 && a!=28 && a!=35 && a!=42){
+                    casepossible[compteur]=coordtab[a-1];
+                    compteur=compteur+1;
+                } //GAUCHE
+                if (((valtab[a-7]>=1 && valtab[a-7]<2) || (valtab[a-7]>=3 && valtab[a-7]<4) || (valtab[a-7]>=4 && valtab[a-7]<5) || (valtab[a-7]>=5 && valtab[a-7]<6) || (valtab[a-7]>=9 && valtab[a-7]<10) || (valtab[a-7]>=10 && valtab[a-7]<11)) && a!=0 && a!=1 && a!=2 && a!=3 && a!=4 && a!=5 && a!=6){
+                    casepossible[compteur]=coordtab[a-7];
+                    compteur=compteur+1;
+                } //HAUT
+                break;
+            case 3:
+                if (((valtab[a-7]>=1 && valtab[a-7]<2) || (valtab[a-7]>=3 && valtab[a-7]<4) || (valtab[a-7]>=4 && valtab[a-7]<5) || (valtab[a-7]>=5 && valtab[a-7]<6) || (valtab[a-7]>=9 && valtab[a-7]<10) || (valtab[a-7]>=10 && valtab[a-7]<11)) && a!=0 && a!=1 && a!=2 && a!=3 && a!=4 && a!=5 && a!=6){
+                    casepossible[compteur]=coordtab[a-7];
+                    compteur=compteur+1;
+                } //HAUT
+                if (((valtab[a+7]>=2 && valtab[a+7]<3) || (valtab[a+7]>=3 && valtab[a+7]<4) || (valtab[a+7]>=4 && valtab[a+7]<5) || (valtab[a+7]>=5 && valtab[a+7]<6) || (valtab[a+7]>=7 && valtab[a+7]<8) || (valtab[a+7]>=8 && valtab[a+7]<9)) && a!=42 && a!=43 && a!=44 && a!=45 && a!=46 && a!=47 && a!=48){
+                    casepossible[compteur]=coordtab[a+7];
+                    compteur=compteur+1;
+                } //BAS
+                if (((valtab[a+1]>=2 && valtab[a+1]<3 )|| (valtab[a+1]>=4 && valtab[a+1]<5) || (valtab[a+1]>=6 && valtab[a+1]<7) || (valtab[a+1]>=8 && valtab[a+1]<9) || (valtab[a+1]>=10 && valtab[a+1]<11) || (valtab[a+1]>=1 && valtab[a+1]<2)) && a!=6 && a!=13 && a!=20 && a!=27 && a!=34 && a!=41 && a!=48){
+                    casepossible[compteur]=coordtab[a+1];
+                    compteur=compteur+1;
+                } // DROITE
+                break;
+            case 4:
+                if (((valtab[a-7]>=1 && valtab[a-7]<2) || (valtab[a-7]>=3 && valtab[a-7]<4) || (valtab[a-7]>=4 && valtab[a-7]<5) || (valtab[a-7]>=5 && valtab[a-7]<6) || (valtab[a-7]>=9 && valtab[a-7]<10) || (valtab[a-7]>=10 && valtab[a-7]<11)) && a!=0 && a!=1 && a!=2 && a!=3 && a!=4 && a!=5 && a!=6){
+                    casepossible[compteur]=coordtab[a-7];
+                    compteur=compteur+1;
+                } //HAUT
+                if (((valtab[a+7]>=2 && valtab[a+7]<3) || (valtab[a+7]>=3 && valtab[a+7]<4) || (valtab[a+7]>=4 && valtab[a+7]<5) || (valtab[a+7]>=5 && valtab[a+7]<6) || (valtab[a+7]>=7 && valtab[a+7]<8) || (valtab[a+7]>=8 && valtab[a+7]<9)) && a!=42 && a!=43 && a!=44 && a!=45 && a!=46 && a!=47 && a!=48){
+                    casepossible[compteur]=coordtab[a+7];
+                    compteur=compteur+1;
+                } //BAS
+                if (((valtab[a-1]>=2 && valtab[a-1]<3) || (valtab[a-1]>=3 && valtab[a-1]<4) || (valtab[a-1]>=7 && valtab[a-1]<8) || (valtab[a-1]>=9 && valtab[a-1]<10) || (valtab[a-1]>=6 && valtab[a-1]<7) || (valtab[a-1]>=1 && valtab[a-1]<2)) && a!=0 && a!=7 && a!=14 && a!=21 && a!=28 && a!=35 && a!=42){
+                    casepossible[compteur]=coordtab[a-1];
+                    compteur=compteur+1;
+                } //GAUCHE
+                break;
+            case 5:
+                if (((valtab[a-7]>=1 && valtab[a-7]<2) || (valtab[a-7]>=3 && valtab[a-7]<4) || (valtab[a-7]>=4 && valtab[a-7]<5) || (valtab[a-7]>=5 && valtab[a-7]<6) || (valtab[a-7]>=9 && valtab[a-7]<10) || (valtab[a-7]>=10 && valtab[a-7]<11)) && a!=0 && a!=1 && a!=2 && a!=3 && a!=4 && a!=5 && a!=6){
+                    casepossible[compteur]=coordtab[a-7];
+                    compteur=compteur+1;
+                } //HAUT
+                if (((valtab[a+7]>=2 && valtab[a+7]<3) || (valtab[a+7]>=3 && valtab[a+7]<4) || (valtab[a+7]>=4 && valtab[a+7]<5) || (valtab[a+7]>=5 && valtab[a+7]<6) || (valtab[a+7]>=7 && valtab[a+7]<8) || (valtab[a+7]>=8 && valtab[a+7]<9)) && a!=42 && a!=43 && a!=44 && a!=45 && a!=46 && a!=47 && a!=48){
+                    casepossible[compteur]=coordtab[a+7];
+                    compteur=compteur+1;
+                } //BAS
+                break;
+            case 6:
+                if (((valtab[a-1]>=2 && valtab[a-1]<3) || (valtab[a-1]>=3 && valtab[a-1]<4) || (valtab[a-1]>=7 && valtab[a-1]<8) || (valtab[a-1]>=9 && valtab[a-1]<10) || (valtab[a-1]>=6 && valtab[a-1]<7) || (valtab[a-1]>=1 && valtab[a-1]<2)) && a!=0 && a!=7 && a!=14 && a!=21 && a!=28 && a!=35 && a!=42){
+                    casepossible[compteur]=coordtab[a-1];
+                    compteur=compteur+1;
+                } //GAUCHE
+                if (((valtab[a+1]>=2 && valtab[a+1]<3 )|| (valtab[a+1]>=4 && valtab[a+1]<5) || (valtab[a+1]>=6 && valtab[a+1]<7) || (valtab[a+1]>=8 && valtab[a+1]<9) || (valtab[a+1]>=10 && valtab[a+1]<11) || (valtab[a+1]>=1 && valtab[a+1]<2)) && a!=6 && a!=13 && a!=20 && a!=27 && a!=34 && a!=41 && a!=48){
+                    casepossible[compteur]=coordtab[a+1];
+                    compteur=compteur+1;
+                } // DROITE
+                break;
+            case 7:
+                if (((valtab[a-7]>=1 && valtab[a-7]<2) || (valtab[a-7]>=3 && valtab[a-7]<4) || (valtab[a-7]>=4 && valtab[a-7]<5) || (valtab[a-7]>=5 && valtab[a-7]<6) || (valtab[a-7]>=9 && valtab[a-7]<10) || (valtab[a-7]>=10 && valtab[a-7]<11)) && a!=0 && a!=1 && a!=2 && a!=3 && a!=4 && a!=5 && a!=6){
+                    casepossible[compteur]=coordtab[a-7];
+                    compteur=compteur+1;
+                } //HAUT
+                if (((valtab[a+1]>=2 && valtab[a+1]<3 )|| (valtab[a+1]>=4 && valtab[a+1]<5) || (valtab[a+1]>=6 && valtab[a+1]<7) || (valtab[a+1]>=8 && valtab[a+1]<9) || (valtab[a+1]>=10 && valtab[a+1]<11) || (valtab[a+1]>=1 && valtab[a+1]<2)) && a!=6 && a!=13 && a!=20 && a!=27 && a!=34 && a!=41 && a!=48){
+                    casepossible[compteur]=coordtab[a+1];
+                    compteur=compteur+1;
+                } // DROITE
+                break;
+            case 8:
+                if (((valtab[a-1]>=2 && valtab[a-1]<3) || (valtab[a-1]>=3 && valtab[a-1]<4) || (valtab[a-1]>=7 && valtab[a-1]<8) || (valtab[a-1]>=9 && valtab[a-1]<10) || (valtab[a-1]>=6 && valtab[a-1]<7) || (valtab[a-1]>=1 && valtab[a-1]<2)) && a!=0 && a!=7 && a!=14 && a!=21 && a!=28 && a!=35 && a!=42){
+                    casepossible[compteur]=coordtab[a-1];
+                    compteur=compteur+1;
+                } //GAUCHE
+                if (((valtab[a-7]>=1 && valtab[a-7]<2) || (valtab[a-7]>=3 && valtab[a-7]<4) || (valtab[a-7]>=4 && valtab[a-7]<5) || (valtab[a-7]>=5 && valtab[a-7]<6) || (valtab[a-7]>=9 && valtab[a-7]<10) || (valtab[a-7]>=10 && valtab[a-7]<11)) && a!=0 && a!=1 && a!=2 && a!=3 && a!=4 && a!=5 && a!=6){
+                    casepossible[compteur]=coordtab[a-7];
+                    compteur=compteur+1;
+                } //HAUT
+                break;
+            case 9:
+                if (((valtab[a+1]>=2 && valtab[a+1]<3 )|| (valtab[a+1]>=4 && valtab[a+1]<5) || (valtab[a+1]>=6 && valtab[a+1]<7) || (valtab[a+1]>=8 && valtab[a+1]<9) || (valtab[a+1]>=10 && valtab[a+1]<11) || (valtab[a+1]>=1 && valtab[a+1]<2)) && a!=6 && a!=13 && a!=20 && a!=27 && a!=34 && a!=41 && a!=48){
+                    casepossible[compteur]=coordtab[a+1];
+                    compteur=compteur+1;
+                } // DROITE
+                if (((valtab[a+7]>=2 && valtab[a+7]<3) || (valtab[a+7]>=3 && valtab[a+7]<4) || (valtab[a+7]>=4 && valtab[a+7]<5) || (valtab[a+7]>=5 && valtab[a+7]<6) || (valtab[a+7]>=7 && valtab[a+7]<8) || (valtab[a+7]>=8 && valtab[a+7]<9)) && a!=42 && a!=43 && a!=44 && a!=45 && a!=46 && a!=47 && a!=48){
+                    casepossible[compteur]=coordtab[a+7];
+                    compteur=compteur+1;
+                } //BAS
+                break;
+            case 10:
+                if (((valtab[a+7]>=2 && valtab[a+7]<3) || (valtab[a+7]>=3 && valtab[a+7]<4) || (valtab[a+7]>=4 && valtab[a+7]<5) || (valtab[a+7]>=5 && valtab[a+7]<6) || (valtab[a+7]>=7 && valtab[a+7]<8) || (valtab[a+7]>=8 && valtab[a+7]<9)) && a!=42 && a!=43 && a!=44 && a!=45 && a!=46 && a!=47 && a!=48){
+                    casepossible[compteur]=coordtab[a+7];
+                    compteur=compteur+1;
+                } //BAS
+                if (((valtab[a-1]>=2 && valtab[a-1]<3) || (valtab[a-1]>=3 && valtab[a-1]<4) || (valtab[a-1]>=7 && valtab[a-1]<8) || (valtab[a-1]>=9 && valtab[a-1]<10) || (valtab[a-1]>=6 && valtab[a-1]<7) || (valtab[a-1]>=1 && valtab[a-1]<2)) && a!=0 && a!=7 && a!=14 && a!=21 && a!=28 && a!=35 && a!=42){
+                    casepossible[compteur]=coordtab[a-1];
+                    compteur=compteur+1;
+                } //GAUCHE
+                break;
+            default:
+                printf("ERROR \n");
+        }
+    }
+    int nulard=compteur;
+    for (int i=0;i<nulard;i++){
+        a=change(casepossible[i]);
+        int c=0;int yttr=0;yttr=change(casepossible[i]);
+        c=valtab[yttr];
+        switch (c){
+            case 1:
+                if (((valtab[a+1]>=2 && valtab[a+1]<3 )|| (valtab[a+1]>=4 && valtab[a+1]<5) || (valtab[a+1]>=6 && valtab[a+1]<7) || (valtab[a+1]>=8 && valtab[a+1]<9) || (valtab[a+1]>=10 && valtab[a+1]<11) || (valtab[a+1]>=1 && valtab[a+1]<2)) && a!=6 && a!=13 && a!=20 && a!=27 && a!=34 && a!=41 && a!=48){
+                    casepossible[compteur]=coordtab[a+1];
+                    compteur=compteur+1;
+                } // DROITE
+                if (((valtab[a-1]>=2 && valtab[a-1]<3) || (valtab[a-1]>=3 && valtab[a-1]<4) || (valtab[a-1]>=7 && valtab[a-1]<8) || (valtab[a-1]>=9 && valtab[a-1]<10) || (valtab[a-1]>=6 && valtab[a-1]<7) || (valtab[a-1]>=1 && valtab[a-1]<2)) && a!=0 && a!=7 && a!=14 && a!=21 && a!=28 && a!=35 && a!=42){
+                    casepossible[compteur]=coordtab[a-1];
+                    compteur=compteur+1;
+                } //GAUCHE
+                if (((valtab[a+7]>=2 && valtab[a+7]<3) || (valtab[a+7]>=3 && valtab[a+7]<4) || (valtab[a+7]>=4 && valtab[a+7]<5) || (valtab[a+7]>=5 && valtab[a+7]<6) || (valtab[a+7]>=7 && valtab[a+7]<8) || (valtab[a+7]>=8 && valtab[a+7]<9)) && a!=42 && a!=43 && a!=44 && a!=45 && a!=46 && a!=47 && a!=48){
+                    casepossible[compteur]=coordtab[a+7];
+                    compteur=compteur+1;
+                } //BAS
+                break;
+            case 2:
+                if (((valtab[a+1]>=2 && valtab[a+1]<3 )|| (valtab[a+1]>=4 && valtab[a+1]<5) || (valtab[a+1]>=6 && valtab[a+1]<7) || (valtab[a+1]>=8 && valtab[a+1]<9) || (valtab[a+1]>=10 && valtab[a+1]<11) || (valtab[a+1]>=1 && valtab[a+1]<2)) && a!=6 && a!=13 && a!=20 && a!=27 && a!=34 && a!=41 && a!=48){
+                    casepossible[compteur]=coordtab[a+1];
+                    compteur=compteur+1;
+                } // DROITE
+                if (((valtab[a-1]>=2 && valtab[a-1]<3) || (valtab[a-1]>=3 && valtab[a-1]<4) || (valtab[a-1]>=7 && valtab[a-1]<8) || (valtab[a-1]>=9 && valtab[a-1]<10) || (valtab[a-1]>=6 && valtab[a-1]<7) || (valtab[a-1]>=1 && valtab[a-1]<2)) && a!=0 && a!=7 && a!=14 && a!=21 && a!=28 && a!=35 && a!=42){
+                    casepossible[compteur]=coordtab[a-1];
+                    compteur=compteur+1;
+                } //GAUCHE
+                if (((valtab[a-7]>=1 && valtab[a-7]<2) || (valtab[a-7]>=3 && valtab[a-7]<4) || (valtab[a-7]>=4 && valtab[a-7]<5) || (valtab[a-7]>=5 && valtab[a-7]<6) || (valtab[a-7]>=9 && valtab[a-7]<10) || (valtab[a-7]>=10 && valtab[a-7]<11)) && a!=0 && a!=1 && a!=2 && a!=3 && a!=4 && a!=5 && a!=6){
+                    casepossible[compteur]=coordtab[a-7];
+                    compteur=compteur+1;
+                } //HAUT
+                break;
+            case 3:
+                if (((valtab[a-7]>=1 && valtab[a-7]<2) || (valtab[a-7]>=3 && valtab[a-7]<4) || (valtab[a-7]>=4 && valtab[a-7]<5) || (valtab[a-7]>=5 && valtab[a-7]<6) || (valtab[a-7]>=9 && valtab[a-7]<10) || (valtab[a-7]>=10 && valtab[a-7]<11)) && a!=0 && a!=1 && a!=2 && a!=3 && a!=4 && a!=5 && a!=6){
+                    casepossible[compteur]=coordtab[a-7];
+                    compteur=compteur+1;
+                } //HAUT
+                if (((valtab[a+7]>=2 && valtab[a+7]<3) || (valtab[a+7]>=3 && valtab[a+7]<4) || (valtab[a+7]>=4 && valtab[a+7]<5) || (valtab[a+7]>=5 && valtab[a+7]<6) || (valtab[a+7]>=7 && valtab[a+7]<8) || (valtab[a+7]>=8 && valtab[a+7]<9)) && a!=42 && a!=43 && a!=44 && a!=45 && a!=46 && a!=47 && a!=48){
+                    casepossible[compteur]=coordtab[a+7];
+                    compteur=compteur+1;
+                } //BAS
+                if (((valtab[a+1]>=2 && valtab[a+1]<3 )|| (valtab[a+1]>=4 && valtab[a+1]<5) || (valtab[a+1]>=6 && valtab[a+1]<7) || (valtab[a+1]>=8 && valtab[a+1]<9) || (valtab[a+1]>=10 && valtab[a+1]<11) || (valtab[a+1]>=1 && valtab[a+1]<2)) && a!=6 && a!=13 && a!=20 && a!=27 && a!=34 && a!=41 && a!=48){
+                    casepossible[compteur]=coordtab[a+1];
+                    compteur=compteur+1;
+                } // DROITE
+                break;
+            case 4:
+                if (((valtab[a-7]>=1 && valtab[a-7]<2) || (valtab[a-7]>=3 && valtab[a-7]<4) || (valtab[a-7]>=4 && valtab[a-7]<5) || (valtab[a-7]>=5 && valtab[a-7]<6) || (valtab[a-7]>=9 && valtab[a-7]<10) || (valtab[a-7]>=10 && valtab[a-7]<11)) && a!=0 && a!=1 && a!=2 && a!=3 && a!=4 && a!=5 && a!=6){
+                    casepossible[compteur]=coordtab[a-7];
+                    compteur=compteur+1;
+                } //HAUT
+                if (((valtab[a+7]>=2 && valtab[a+7]<3) || (valtab[a+7]>=3 && valtab[a+7]<4) || (valtab[a+7]>=4 && valtab[a+7]<5) || (valtab[a+7]>=5 && valtab[a+7]<6) || (valtab[a+7]>=7 && valtab[a+7]<8) || (valtab[a+7]>=8 && valtab[a+7]<9)) && a!=42 && a!=43 && a!=44 && a!=45 && a!=46 && a!=47 && a!=48){
+                    casepossible[compteur]=coordtab[a+7];
+                    compteur=compteur+1;
+                } //BAS
+                if (((valtab[a-1]>=2 && valtab[a-1]<3) || (valtab[a-1]>=3 && valtab[a-1]<4) || (valtab[a-1]>=7 && valtab[a-1]<8) || (valtab[a-1]>=9 && valtab[a-1]<10) || (valtab[a-1]>=6 && valtab[a-1]<7) || (valtab[a-1]>=1 && valtab[a-1]<2)) && a!=0 && a!=7 && a!=14 && a!=21 && a!=28 && a!=35 && a!=42){
+                    casepossible[compteur]=coordtab[a-1];
+                    compteur=compteur+1;
+                } //GAUCHE
+                break;
+            case 5:
+                if (((valtab[a-7]>=1 && valtab[a-7]<2) || (valtab[a-7]>=3 && valtab[a-7]<4) || (valtab[a-7]>=4 && valtab[a-7]<5) || (valtab[a-7]>=5 && valtab[a-7]<6) || (valtab[a-7]>=9 && valtab[a-7]<10) || (valtab[a-7]>=10 && valtab[a-7]<11)) && a!=0 && a!=1 && a!=2 && a!=3 && a!=4 && a!=5 && a!=6){
+                    casepossible[compteur]=coordtab[a-7];
+                    compteur=compteur+1;
+                } //HAUT
+                if (((valtab[a+7]>=2 && valtab[a+7]<3) || (valtab[a+7]>=3 && valtab[a+7]<4) || (valtab[a+7]>=4 && valtab[a+7]<5) || (valtab[a+7]>=5 && valtab[a+7]<6) || (valtab[a+7]>=7 && valtab[a+7]<8) || (valtab[a+7]>=8 && valtab[a+7]<9)) && a!=42 && a!=43 && a!=44 && a!=45 && a!=46 && a!=47 && a!=48){
+                    casepossible[compteur]=coordtab[a+7];
+                    compteur=compteur+1;
+                } //BAS
+                break;
+            case 6:
+                if (((valtab[a-1]>=2 && valtab[a-1]<3) || (valtab[a-1]>=3 && valtab[a-1]<4) || (valtab[a-1]>=7 && valtab[a-1]<8) || (valtab[a-1]>=9 && valtab[a-1]<10) || (valtab[a-1]>=6 && valtab[a-1]<7) || (valtab[a-1]>=1 && valtab[a-1]<2)) && a!=0 && a!=7 && a!=14 && a!=21 && a!=28 && a!=35 && a!=42){
+                    casepossible[compteur]=coordtab[a-1];
+                    compteur=compteur+1;
+                } //GAUCHE
+                if (((valtab[a+1]>=2 && valtab[a+1]<3 )|| (valtab[a+1]>=4 && valtab[a+1]<5) || (valtab[a+1]>=6 && valtab[a+1]<7) || (valtab[a+1]>=8 && valtab[a+1]<9) || (valtab[a+1]>=10 && valtab[a+1]<11) || (valtab[a+1]>=1 && valtab[a+1]<2)) && a!=6 && a!=13 && a!=20 && a!=27 && a!=34 && a!=41 && a!=48){
+                    casepossible[compteur]=coordtab[a+1];
+                    compteur=compteur+1;
+                } // DROITE
+                break;
+            case 7:
+                if (((valtab[a-7]>=1 && valtab[a-7]<2) || (valtab[a-7]>=3 && valtab[a-7]<4) || (valtab[a-7]>=4 && valtab[a-7]<5) || (valtab[a-7]>=5 && valtab[a-7]<6) || (valtab[a-7]>=9 && valtab[a-7]<10) || (valtab[a-7]>=10 && valtab[a-7]<11)) && a!=0 && a!=1 && a!=2 && a!=3 && a!=4 && a!=5 && a!=6){
+                    casepossible[compteur]=coordtab[a-7];
+                    compteur=compteur+1;
+                } //HAUT
+                if (((valtab[a+1]>=2 && valtab[a+1]<3 )|| (valtab[a+1]>=4 && valtab[a+1]<5) || (valtab[a+1]>=6 && valtab[a+1]<7) || (valtab[a+1]>=8 && valtab[a+1]<9) || (valtab[a+1]>=10 && valtab[a+1]<11) || (valtab[a+1]>=1 && valtab[a+1]<2)) && a!=6 && a!=13 && a!=20 && a!=27 && a!=34 && a!=41 && a!=48){
+                    casepossible[compteur]=coordtab[a+1];
+                    compteur=compteur+1;
+                } // DROITE
+                break;
+            case 8:
+                if (((valtab[a-1]>=2 && valtab[a-1]<3) || (valtab[a-1]>=3 && valtab[a-1]<4) || (valtab[a-1]>=7 && valtab[a-1]<8) || (valtab[a-1]>=9 && valtab[a-1]<10) || (valtab[a-1]>=6 && valtab[a-1]<7) || (valtab[a-1]>=1 && valtab[a-1]<2)) && a!=0 && a!=7 && a!=14 && a!=21 && a!=28 && a!=35 && a!=42){
+                    casepossible[compteur]=coordtab[a-1];
+                    compteur=compteur+1;
+                } //GAUCHE
+                if (((valtab[a-7]>=1 && valtab[a-7]<2) || (valtab[a-7]>=3 && valtab[a-7]<4) || (valtab[a-7]>=4 && valtab[a-7]<5) || (valtab[a-7]>=5 && valtab[a-7]<6) || (valtab[a-7]>=9 && valtab[a-7]<10) || (valtab[a-7]>=10 && valtab[a-7]<11)) && a!=0 && a!=1 && a!=2 && a!=3 && a!=4 && a!=5 && a!=6){
+                    casepossible[compteur]=coordtab[a-7];
+                    compteur=compteur+1;
+                } //HAUT
+                break;
+            case 9:
+                if (((valtab[a+1]>=2 && valtab[a+1]<3 )|| (valtab[a+1]>=4 && valtab[a+1]<5) || (valtab[a+1]>=6 && valtab[a+1]<7) || (valtab[a+1]>=8 && valtab[a+1]<9) || (valtab[a+1]>=10 && valtab[a+1]<11) || (valtab[a+1]>=1 && valtab[a+1]<2)) && a!=6 && a!=13 && a!=20 && a!=27 && a!=34 && a!=41 && a!=48){
+                    casepossible[compteur]=coordtab[a+1];
+                    compteur=compteur+1;
+                } // DROITE
+                if (((valtab[a+7]>=2 && valtab[a+7]<3) || (valtab[a+7]>=3 && valtab[a+7]<4) || (valtab[a+7]>=4 && valtab[a+7]<5) || (valtab[a+7]>=5 && valtab[a+7]<6) || (valtab[a+7]>=7 && valtab[a+7]<8) || (valtab[a+7]>=8 && valtab[a+7]<9)) && a!=42 && a!=43 && a!=44 && a!=45 && a!=46 && a!=47 && a!=48){
+                    casepossible[compteur]=coordtab[a+7];
+                    compteur=compteur+1;
+                } //BAS
+                break;
+            case 10:
+                if (((valtab[a+7]>=2 && valtab[a+7]<3) || (valtab[a+7]>=3 && valtab[a+7]<4) || (valtab[a+7]>=4 && valtab[a+7]<5) || (valtab[a+7]>=5 && valtab[a+7]<6) || (valtab[a+7]>=7 && valtab[a+7]<8) || (valtab[a+7]>=8 && valtab[a+7]<9)) && a!=42 && a!=43 && a!=44 && a!=45 && a!=46 && a!=47 && a!=48){
+                    casepossible[compteur]=coordtab[a+7];
+                    compteur=compteur+1;
+                } //BAS
+                if (((valtab[a-1]>=2 && valtab[a-1]<3) || (valtab[a-1]>=3 && valtab[a-1]<4) || (valtab[a-1]>=7 && valtab[a-1]<8) || (valtab[a-1]>=9 && valtab[a-1]<10) || (valtab[a-1]>=6 && valtab[a-1]<7) || (valtab[a-1]>=1 && valtab[a-1]<2)) && a!=0 && a!=7 && a!=14 && a!=21 && a!=28 && a!=35 && a!=42){
+                    casepossible[compteur]=coordtab[a-1];
+                    compteur=compteur+1;
+                } //GAUCHE
+                break;
+            default:
+                printf("ERROR \n");
+        }
+    }
+    int troue=compteur;
+    for (int i=0;i<troue;i++){
+        a=change(casepossible[i]);
+        int c=0;int vfr=0;vfr=change(casepossible[i]);
+        c=valtab[vfr];
+        switch (c){
+            case 1:
+                if (((valtab[a+1]>=2 && valtab[a+1]<3 )|| (valtab[a+1]>=4 && valtab[a+1]<5) || (valtab[a+1]>=6 && valtab[a+1]<7) || (valtab[a+1]>=8 && valtab[a+1]<9) || (valtab[a+1]>=10 && valtab[a+1]<11) || (valtab[a+1]>=1 && valtab[a+1]<2)) && a!=6 && a!=13 && a!=20 && a!=27 && a!=34 && a!=41 && a!=48){
+                    casepossible[compteur]=coordtab[a+1];
+                    compteur=compteur+1;
+                } // DROITE
+                if (((valtab[a-1]>=2 && valtab[a-1]<3) || (valtab[a-1]>=3 && valtab[a-1]<4) || (valtab[a-1]>=7 && valtab[a-1]<8) || (valtab[a-1]>=9 && valtab[a-1]<10) || (valtab[a-1]>=6 && valtab[a-1]<7) || (valtab[a-1]>=1 && valtab[a-1]<2)) && a!=0 && a!=7 && a!=14 && a!=21 && a!=28 && a!=35 && a!=42){
+                    casepossible[compteur]=coordtab[a-1];
+                    compteur=compteur+1;
+                } //GAUCHE
+                if (((valtab[a+7]>=2 && valtab[a+7]<3) || (valtab[a+7]>=3 && valtab[a+7]<4) || (valtab[a+7]>=4 && valtab[a+7]<5) || (valtab[a+7]>=5 && valtab[a+7]<6) || (valtab[a+7]>=7 && valtab[a+7]<8) || (valtab[a+7]>=8 && valtab[a+7]<9)) && a!=42 && a!=43 && a!=44 && a!=45 && a!=46 && a!=47 && a!=48){
+                    casepossible[compteur]=coordtab[a+7];
+                    compteur=compteur+1;
+                } //BAS
+                break;
+            case 2:
+                if (((valtab[a+1]>=2 && valtab[a+1]<3 )|| (valtab[a+1]>=4 && valtab[a+1]<5) || (valtab[a+1]>=6 && valtab[a+1]<7) || (valtab[a+1]>=8 && valtab[a+1]<9) || (valtab[a+1]>=10 && valtab[a+1]<11) || (valtab[a+1]>=1 && valtab[a+1]<2)) && a!=6 && a!=13 && a!=20 && a!=27 && a!=34 && a!=41 && a!=48){
+                    casepossible[compteur]=coordtab[a+1];
+                    compteur=compteur+1;
+                } // DROITE
+                if (((valtab[a-1]>=2 && valtab[a-1]<3) || (valtab[a-1]>=3 && valtab[a-1]<4) || (valtab[a-1]>=7 && valtab[a-1]<8) || (valtab[a-1]>=9 && valtab[a-1]<10) || (valtab[a-1]>=6 && valtab[a-1]<7) || (valtab[a-1]>=1 && valtab[a-1]<2)) && a!=0 && a!=7 && a!=14 && a!=21 && a!=28 && a!=35 && a!=42){
+                    casepossible[compteur]=coordtab[a-1];
+                    compteur=compteur+1;
+                } //GAUCHE
+                if (((valtab[a-7]>=1 && valtab[a-7]<2) || (valtab[a-7]>=3 && valtab[a-7]<4) || (valtab[a-7]>=4 && valtab[a-7]<5) || (valtab[a-7]>=5 && valtab[a-7]<6) || (valtab[a-7]>=9 && valtab[a-7]<10) || (valtab[a-7]>=10 && valtab[a-7]<11)) && a!=0 && a!=1 && a!=2 && a!=3 && a!=4 && a!=5 && a!=6){
+                    casepossible[compteur]=coordtab[a-7];
+                    compteur=compteur+1;
+                } //HAUT
+                break;
+            case 3:
+                if (((valtab[a-7]>=1 && valtab[a-7]<2) || (valtab[a-7]>=3 && valtab[a-7]<4) || (valtab[a-7]>=4 && valtab[a-7]<5) || (valtab[a-7]>=5 && valtab[a-7]<6) || (valtab[a-7]>=9 && valtab[a-7]<10) || (valtab[a-7]>=10 && valtab[a-7]<11)) && a!=0 && a!=1 && a!=2 && a!=3 && a!=4 && a!=5 && a!=6){
+                    casepossible[compteur]=coordtab[a-7];
+                    compteur=compteur+1;
+                } //HAUT
+                if (((valtab[a+7]>=2 && valtab[a+7]<3) || (valtab[a+7]>=3 && valtab[a+7]<4) || (valtab[a+7]>=4 && valtab[a+7]<5) || (valtab[a+7]>=5 && valtab[a+7]<6) || (valtab[a+7]>=7 && valtab[a+7]<8) || (valtab[a+7]>=8 && valtab[a+7]<9)) && a!=42 && a!=43 && a!=44 && a!=45 && a!=46 && a!=47 && a!=48){
+                    casepossible[compteur]=coordtab[a+7];
+                    compteur=compteur+1;
+                } //BAS
+                if (((valtab[a+1]>=2 && valtab[a+1]<3 )|| (valtab[a+1]>=4 && valtab[a+1]<5) || (valtab[a+1]>=6 && valtab[a+1]<7) || (valtab[a+1]>=8 && valtab[a+1]<9) || (valtab[a+1]>=10 && valtab[a+1]<11) || (valtab[a+1]>=1 && valtab[a+1]<2)) && a!=6 && a!=13 && a!=20 && a!=27 && a!=34 && a!=41 && a!=48){
+                    casepossible[compteur]=coordtab[a+1];
+                    compteur=compteur+1;
+                } // DROITE
+                break;
+            case 4:
+                if (((valtab[a-7]>=1 && valtab[a-7]<2) || (valtab[a-7]>=3 && valtab[a-7]<4) || (valtab[a-7]>=4 && valtab[a-7]<5) || (valtab[a-7]>=5 && valtab[a-7]<6) || (valtab[a-7]>=9 && valtab[a-7]<10) || (valtab[a-7]>=10 && valtab[a-7]<11)) && a!=0 && a!=1 && a!=2 && a!=3 && a!=4 && a!=5 && a!=6){
+                    casepossible[compteur]=coordtab[a-7];
+                    compteur=compteur+1;
+                } //HAUT
+                if (((valtab[a+7]>=2 && valtab[a+7]<3) || (valtab[a+7]>=3 && valtab[a+7]<4) || (valtab[a+7]>=4 && valtab[a+7]<5) || (valtab[a+7]>=5 && valtab[a+7]<6) || (valtab[a+7]>=7 && valtab[a+7]<8) || (valtab[a+7]>=8 && valtab[a+7]<9)) && a!=42 && a!=43 && a!=44 && a!=45 && a!=46 && a!=47 && a!=48){
+                    casepossible[compteur]=coordtab[a+7];
+                    compteur=compteur+1;
+                } //BAS
+                if (((valtab[a-1]>=2 && valtab[a-1]<3) || (valtab[a-1]>=3 && valtab[a-1]<4) || (valtab[a-1]>=7 && valtab[a-1]<8) || (valtab[a-1]>=9 && valtab[a-1]<10) || (valtab[a-1]>=6 && valtab[a-1]<7) || (valtab[a-1]>=1 && valtab[a-1]<2)) && a!=0 && a!=7 && a!=14 && a!=21 && a!=28 && a!=35 && a!=42){
+                    casepossible[compteur]=coordtab[a-1];
+                    compteur=compteur+1;
+                } //GAUCHE
+                break;
+            case 5:
+                if (((valtab[a-7]>=1 && valtab[a-7]<2) || (valtab[a-7]>=3 && valtab[a-7]<4) || (valtab[a-7]>=4 && valtab[a-7]<5) || (valtab[a-7]>=5 && valtab[a-7]<6) || (valtab[a-7]>=9 && valtab[a-7]<10) || (valtab[a-7]>=10 && valtab[a-7]<11)) && a!=0 && a!=1 && a!=2 && a!=3 && a!=4 && a!=5 && a!=6){
+                    casepossible[compteur]=coordtab[a-7];
+                    compteur=compteur+1;
+                } //HAUT
+                if (((valtab[a+7]>=2 && valtab[a+7]<3) || (valtab[a+7]>=3 && valtab[a+7]<4) || (valtab[a+7]>=4 && valtab[a+7]<5) || (valtab[a+7]>=5 && valtab[a+7]<6) || (valtab[a+7]>=7 && valtab[a+7]<8) || (valtab[a+7]>=8 && valtab[a+7]<9)) && a!=42 && a!=43 && a!=44 && a!=45 && a!=46 && a!=47 && a!=48){
+                    casepossible[compteur]=coordtab[a+7];
+                    compteur=compteur+1;
+                } //BAS
+                break;
+            case 6:
+                if (((valtab[a-1]>=2 && valtab[a-1]<3) || (valtab[a-1]>=3 && valtab[a-1]<4) || (valtab[a-1]>=7 && valtab[a-1]<8) || (valtab[a-1]>=9 && valtab[a-1]<10) || (valtab[a-1]>=6 && valtab[a-1]<7) || (valtab[a-1]>=1 && valtab[a-1]<2)) && a!=0 && a!=7 && a!=14 && a!=21 && a!=28 && a!=35 && a!=42){
+                    casepossible[compteur]=coordtab[a-1];
+                    compteur=compteur+1;
+                } //GAUCHE
+                if (((valtab[a+1]>=2 && valtab[a+1]<3 )|| (valtab[a+1]>=4 && valtab[a+1]<5) || (valtab[a+1]>=6 && valtab[a+1]<7) || (valtab[a+1]>=8 && valtab[a+1]<9) || (valtab[a+1]>=10 && valtab[a+1]<11) || (valtab[a+1]>=1 && valtab[a+1]<2)) && a!=6 && a!=13 && a!=20 && a!=27 && a!=34 && a!=41 && a!=48){
+                    casepossible[compteur]=coordtab[a+1];
+                    compteur=compteur+1;
+                } // DROITE
+                break;
+            case 7:
+                if (((valtab[a-7]>=1 && valtab[a-7]<2) || (valtab[a-7]>=3 && valtab[a-7]<4) || (valtab[a-7]>=4 && valtab[a-7]<5) || (valtab[a-7]>=5 && valtab[a-7]<6) || (valtab[a-7]>=9 && valtab[a-7]<10) || (valtab[a-7]>=10 && valtab[a-7]<11)) && a!=0 && a!=1 && a!=2 && a!=3 && a!=4 && a!=5 && a!=6){
+                    casepossible[compteur]=coordtab[a-7];
+                    compteur=compteur+1;
+                } //HAUT
+                if (((valtab[a+1]>=2 && valtab[a+1]<3 )|| (valtab[a+1]>=4 && valtab[a+1]<5) || (valtab[a+1]>=6 && valtab[a+1]<7) || (valtab[a+1]>=8 && valtab[a+1]<9) || (valtab[a+1]>=10 && valtab[a+1]<11) || (valtab[a+1]>=1 && valtab[a+1]<2)) && a!=6 && a!=13 && a!=20 && a!=27 && a!=34 && a!=41 && a!=48){
+                    casepossible[compteur]=coordtab[a+1];
+                    compteur=compteur+1;
+                } // DROITE
+                break;
+            case 8:
+                if (((valtab[a-1]>=2 && valtab[a-1]<3) || (valtab[a-1]>=3 && valtab[a-1]<4) || (valtab[a-1]>=7 && valtab[a-1]<8) || (valtab[a-1]>=9 && valtab[a-1]<10) || (valtab[a-1]>=6 && valtab[a-1]<7) || (valtab[a-1]>=1 && valtab[a-1]<2)) && a!=0 && a!=7 && a!=14 && a!=21 && a!=28 && a!=35 && a!=42){
+                    casepossible[compteur]=coordtab[a-1];
+                    compteur=compteur+1;
+                } //GAUCHE
+                if (((valtab[a-7]>=1 && valtab[a-7]<2) || (valtab[a-7]>=3 && valtab[a-7]<4) || (valtab[a-7]>=4 && valtab[a-7]<5) || (valtab[a-7]>=5 && valtab[a-7]<6) || (valtab[a-7]>=9 && valtab[a-7]<10) || (valtab[a-7]>=10 && valtab[a-7]<11)) && a!=0 && a!=1 && a!=2 && a!=3 && a!=4 && a!=5 && a!=6){
+                    casepossible[compteur]=coordtab[a-7];
+                    compteur=compteur+1;
+                } //HAUT
+                break;
+            case 9:
+                if (((valtab[a+1]>=2 && valtab[a+1]<3 )|| (valtab[a+1]>=4 && valtab[a+1]<5) || (valtab[a+1]>=6 && valtab[a+1]<7) || (valtab[a+1]>=8 && valtab[a+1]<9) || (valtab[a+1]>=10 && valtab[a+1]<11) || (valtab[a+1]>=1 && valtab[a+1]<2)) && a!=6 && a!=13 && a!=20 && a!=27 && a!=34 && a!=41 && a!=48){
+                    casepossible[compteur]=coordtab[a+1];
+                    compteur=compteur+1;
+                } // DROITE
+                if (((valtab[a+7]>=2 && valtab[a+7]<3) || (valtab[a+7]>=3 && valtab[a+7]<4) || (valtab[a+7]>=4 && valtab[a+7]<5) || (valtab[a+7]>=5 && valtab[a+7]<6) || (valtab[a+7]>=7 && valtab[a+7]<8) || (valtab[a+7]>=8 && valtab[a+7]<9)) && a!=42 && a!=43 && a!=44 && a!=45 && a!=46 && a!=47 && a!=48){
+                    casepossible[compteur]=coordtab[a+7];
+                    compteur=compteur+1;
+                } //BAS
+                break;
+            case 10:
+                if (((valtab[a+7]>=2 && valtab[a+7]<3) || (valtab[a+7]>=3 && valtab[a+7]<4) || (valtab[a+7]>=4 && valtab[a+7]<5) || (valtab[a+7]>=5 && valtab[a+7]<6) || (valtab[a+7]>=7 && valtab[a+7]<8) || (valtab[a+7]>=8 && valtab[a+7]<9)) && a!=42 && a!=43 && a!=44 && a!=45 && a!=46 && a!=47 && a!=48){
+                    casepossible[compteur]=coordtab[a+7];
+                    compteur=compteur+1;
+                } //BAS
+                if (((valtab[a-1]>=2 && valtab[a-1]<3) || (valtab[a-1]>=3 && valtab[a-1]<4) || (valtab[a-1]>=7 && valtab[a-1]<8) || (valtab[a-1]>=9 && valtab[a-1]<10) || (valtab[a-1]>=6 && valtab[a-1]<7) || (valtab[a-1]>=1 && valtab[a-1]<2)) && a!=0 && a!=7 && a!=14 && a!=21 && a!=28 && a!=35 && a!=42){
+                    casepossible[compteur]=coordtab[a-1];
+                    compteur=compteur+1;
+                } //GAUCHE
+                break;
+            default:
+                printf("ERROR \n");
+        }
+    }
+    int voiture=compteur;
+    for (int i=0;i<voiture;i++){
+        a=change(casepossible[i]);
+        int c=0;int dez=0;dez=change(casepossible[i]);
+        c=valtab[dez];
+        switch (c){
+            case 1:
+                if (((valtab[a+1]>=2 && valtab[a+1]<3 )|| (valtab[a+1]>=4 && valtab[a+1]<5) || (valtab[a+1]>=6 && valtab[a+1]<7) || (valtab[a+1]>=8 && valtab[a+1]<9) || (valtab[a+1]>=10 && valtab[a+1]<11) || (valtab[a+1]>=1 && valtab[a+1]<2)) && a!=6 && a!=13 && a!=20 && a!=27 && a!=34 && a!=41 && a!=48){
+                    casepossible[compteur]=coordtab[a+1];
+                    compteur=compteur+1;
+                } // DROITE
+                if (((valtab[a-1]>=2 && valtab[a-1]<3) || (valtab[a-1]>=3 && valtab[a-1]<4) || (valtab[a-1]>=7 && valtab[a-1]<8) || (valtab[a-1]>=9 && valtab[a-1]<10) || (valtab[a-1]>=6 && valtab[a-1]<7) || (valtab[a-1]>=1 && valtab[a-1]<2)) && a!=0 && a!=7 && a!=14 && a!=21 && a!=28 && a!=35 && a!=42){
+                    casepossible[compteur]=coordtab[a-1];
+                    compteur=compteur+1;
+                } //GAUCHE
+                if (((valtab[a+7]>=2 && valtab[a+7]<3) || (valtab[a+7]>=3 && valtab[a+7]<4) || (valtab[a+7]>=4 && valtab[a+7]<5) || (valtab[a+7]>=5 && valtab[a+7]<6) || (valtab[a+7]>=7 && valtab[a+7]<8) || (valtab[a+7]>=8 && valtab[a+7]<9)) && a!=42 && a!=43 && a!=44 && a!=45 && a!=46 && a!=47 && a!=48){
+                    casepossible[compteur]=coordtab[a+7];
+                    compteur=compteur+1;
+                } //BAS
+                break;
+            case 2:
+                if (((valtab[a+1]>=2 && valtab[a+1]<3 )|| (valtab[a+1]>=4 && valtab[a+1]<5) || (valtab[a+1]>=6 && valtab[a+1]<7) || (valtab[a+1]>=8 && valtab[a+1]<9) || (valtab[a+1]>=10 && valtab[a+1]<11) || (valtab[a+1]>=1 && valtab[a+1]<2)) && a!=6 && a!=13 && a!=20 && a!=27 && a!=34 && a!=41 && a!=48){
+                    casepossible[compteur]=coordtab[a+1];
+                    compteur=compteur+1;
+                } // DROITE
+                if (((valtab[a-1]>=2 && valtab[a-1]<3) || (valtab[a-1]>=3 && valtab[a-1]<4) || (valtab[a-1]>=7 && valtab[a-1]<8) || (valtab[a-1]>=9 && valtab[a-1]<10) || (valtab[a-1]>=6 && valtab[a-1]<7) || (valtab[a-1]>=1 && valtab[a-1]<2)) && a!=0 && a!=7 && a!=14 && a!=21 && a!=28 && a!=35 && a!=42){
+                    casepossible[compteur]=coordtab[a-1];
+                    compteur=compteur+1;
+                } //GAUCHE
+                if (((valtab[a-7]>=1 && valtab[a-7]<2) || (valtab[a-7]>=3 && valtab[a-7]<4) || (valtab[a-7]>=4 && valtab[a-7]<5) || (valtab[a-7]>=5 && valtab[a-7]<6) || (valtab[a-7]>=9 && valtab[a-7]<10) || (valtab[a-7]>=10 && valtab[a-7]<11)) && a!=0 && a!=1 && a!=2 && a!=3 && a!=4 && a!=5 && a!=6){
+                    casepossible[compteur]=coordtab[a-7];
+                    compteur=compteur+1;
+                } //HAUT
+                break;
+            case 3:
+                if (((valtab[a-7]>=1 && valtab[a-7]<2) || (valtab[a-7]>=3 && valtab[a-7]<4) || (valtab[a-7]>=4 && valtab[a-7]<5) || (valtab[a-7]>=5 && valtab[a-7]<6) || (valtab[a-7]>=9 && valtab[a-7]<10) || (valtab[a-7]>=10 && valtab[a-7]<11)) && a!=0 && a!=1 && a!=2 && a!=3 && a!=4 && a!=5 && a!=6){
+                    casepossible[compteur]=coordtab[a-7];
+                    compteur=compteur+1;
+                } //HAUT
+                if (((valtab[a+7]>=2 && valtab[a+7]<3) || (valtab[a+7]>=3 && valtab[a+7]<4) || (valtab[a+7]>=4 && valtab[a+7]<5) || (valtab[a+7]>=5 && valtab[a+7]<6) || (valtab[a+7]>=7 && valtab[a+7]<8) || (valtab[a+7]>=8 && valtab[a+7]<9)) && a!=42 && a!=43 && a!=44 && a!=45 && a!=46 && a!=47 && a!=48){
+                    casepossible[compteur]=coordtab[a+7];
+                    compteur=compteur+1;
+                } //BAS
+                if (((valtab[a+1]>=2 && valtab[a+1]<3 )|| (valtab[a+1]>=4 && valtab[a+1]<5) || (valtab[a+1]>=6 && valtab[a+1]<7) || (valtab[a+1]>=8 && valtab[a+1]<9) || (valtab[a+1]>=10 && valtab[a+1]<11) || (valtab[a+1]>=1 && valtab[a+1]<2)) && a!=6 && a!=13 && a!=20 && a!=27 && a!=34 && a!=41 && a!=48){
+                    casepossible[compteur]=coordtab[a+1];
+                    compteur=compteur+1;
+                } // DROITE
+                break;
+            case 4:
+                if (((valtab[a-7]>=1 && valtab[a-7]<2) || (valtab[a-7]>=3 && valtab[a-7]<4) || (valtab[a-7]>=4 && valtab[a-7]<5) || (valtab[a-7]>=5 && valtab[a-7]<6) || (valtab[a-7]>=9 && valtab[a-7]<10) || (valtab[a-7]>=10 && valtab[a-7]<11)) && a!=0 && a!=1 && a!=2 && a!=3 && a!=4 && a!=5 && a!=6){
+                    casepossible[compteur]=coordtab[a-7];
+                    compteur=compteur+1;
+                } //HAUT
+                if (((valtab[a+7]>=2 && valtab[a+7]<3) || (valtab[a+7]>=3 && valtab[a+7]<4) || (valtab[a+7]>=4 && valtab[a+7]<5) || (valtab[a+7]>=5 && valtab[a+7]<6) || (valtab[a+7]>=7 && valtab[a+7]<8) || (valtab[a+7]>=8 && valtab[a+7]<9)) && a!=42 && a!=43 && a!=44 && a!=45 && a!=46 && a!=47 && a!=48){
+                    casepossible[compteur]=coordtab[a+7];
+                    compteur=compteur+1;
+                } //BAS
+                if (((valtab[a-1]>=2 && valtab[a-1]<3) || (valtab[a-1]>=3 && valtab[a-1]<4) || (valtab[a-1]>=7 && valtab[a-1]<8) || (valtab[a-1]>=9 && valtab[a-1]<10) || (valtab[a-1]>=6 && valtab[a-1]<7) || (valtab[a-1]>=1 && valtab[a-1]<2)) && a!=0 && a!=7 && a!=14 && a!=21 && a!=28 && a!=35 && a!=42){
+                    casepossible[compteur]=coordtab[a-1];
+                    compteur=compteur+1;
+                } //GAUCHE
+                break;
+            case 5:
+                if (((valtab[a-7]>=1 && valtab[a-7]<2) || (valtab[a-7]>=3 && valtab[a-7]<4) || (valtab[a-7]>=4 && valtab[a-7]<5) || (valtab[a-7]>=5 && valtab[a-7]<6) || (valtab[a-7]>=9 && valtab[a-7]<10) || (valtab[a-7]>=10 && valtab[a-7]<11)) && a!=0 && a!=1 && a!=2 && a!=3 && a!=4 && a!=5 && a!=6){
+                    casepossible[compteur]=coordtab[a-7];
+                    compteur=compteur+1;
+                } //HAUT
+                if (((valtab[a+7]>=2 && valtab[a+7]<3) || (valtab[a+7]>=3 && valtab[a+7]<4) || (valtab[a+7]>=4 && valtab[a+7]<5) || (valtab[a+7]>=5 && valtab[a+7]<6) || (valtab[a+7]>=7 && valtab[a+7]<8) || (valtab[a+7]>=8 && valtab[a+7]<9)) && a!=42 && a!=43 && a!=44 && a!=45 && a!=46 && a!=47 && a!=48){
+                    casepossible[compteur]=coordtab[a+7];
+                    compteur=compteur+1;
+                } //BAS
+                break;
+            case 6:
+                if (((valtab[a-1]>=2 && valtab[a-1]<3) || (valtab[a-1]>=3 && valtab[a-1]<4) || (valtab[a-1]>=7 && valtab[a-1]<8) || (valtab[a-1]>=9 && valtab[a-1]<10) || (valtab[a-1]>=6 && valtab[a-1]<7) || (valtab[a-1]>=1 && valtab[a-1]<2)) && a!=0 && a!=7 && a!=14 && a!=21 && a!=28 && a!=35 && a!=42){
+                    casepossible[compteur]=coordtab[a-1];
+                    compteur=compteur+1;
+                } //GAUCHE
+                if (((valtab[a+1]>=2 && valtab[a+1]<3 )|| (valtab[a+1]>=4 && valtab[a+1]<5) || (valtab[a+1]>=6 && valtab[a+1]<7) || (valtab[a+1]>=8 && valtab[a+1]<9) || (valtab[a+1]>=10 && valtab[a+1]<11) || (valtab[a+1]>=1 && valtab[a+1]<2)) && a!=6 && a!=13 && a!=20 && a!=27 && a!=34 && a!=41 && a!=48){
+                    casepossible[compteur]=coordtab[a+1];
+                    compteur=compteur+1;
+                } // DROITE
+                break;
+            case 7:
+                if (((valtab[a-7]>=1 && valtab[a-7]<2) || (valtab[a-7]>=3 && valtab[a-7]<4) || (valtab[a-7]>=4 && valtab[a-7]<5) || (valtab[a-7]>=5 && valtab[a-7]<6) || (valtab[a-7]>=9 && valtab[a-7]<10) || (valtab[a-7]>=10 && valtab[a-7]<11)) && a!=0 && a!=1 && a!=2 && a!=3 && a!=4 && a!=5 && a!=6){
+                    casepossible[compteur]=coordtab[a-7];
+                    compteur=compteur+1;
+                } //HAUT
+                if (((valtab[a+1]>=2 && valtab[a+1]<3 )|| (valtab[a+1]>=4 && valtab[a+1]<5) || (valtab[a+1]>=6 && valtab[a+1]<7) || (valtab[a+1]>=8 && valtab[a+1]<9) || (valtab[a+1]>=10 && valtab[a+1]<11) || (valtab[a+1]>=1 && valtab[a+1]<2)) && a!=6 && a!=13 && a!=20 && a!=27 && a!=34 && a!=41 && a!=48){
+                    casepossible[compteur]=coordtab[a+1];
+                    compteur=compteur+1;
+                } // DROITE
+                break;
+            case 8:
+                if (((valtab[a-1]>=2 && valtab[a-1]<3) || (valtab[a-1]>=3 && valtab[a-1]<4) || (valtab[a-1]>=7 && valtab[a-1]<8) || (valtab[a-1]>=9 && valtab[a-1]<10) || (valtab[a-1]>=6 && valtab[a-1]<7) || (valtab[a-1]>=1 && valtab[a-1]<2)) && a!=0 && a!=7 && a!=14 && a!=21 && a!=28 && a!=35 && a!=42){
+                    casepossible[compteur]=coordtab[a-1];
+                    compteur=compteur+1;
+                } //GAUCHE
+                if (((valtab[a-7]>=1 && valtab[a-7]<2) || (valtab[a-7]>=3 && valtab[a-7]<4) || (valtab[a-7]>=4 && valtab[a-7]<5) || (valtab[a-7]>=5 && valtab[a-7]<6) || (valtab[a-7]>=9 && valtab[a-7]<10) || (valtab[a-7]>=10 && valtab[a-7]<11)) && a!=0 && a!=1 && a!=2 && a!=3 && a!=4 && a!=5 && a!=6){
+                    casepossible[compteur]=coordtab[a-7];
+                    compteur=compteur+1;
+                } //HAUT
+                break;
+            case 9:
+                if (((valtab[a+1]>=2 && valtab[a+1]<3 )|| (valtab[a+1]>=4 && valtab[a+1]<5) || (valtab[a+1]>=6 && valtab[a+1]<7) || (valtab[a+1]>=8 && valtab[a+1]<9) || (valtab[a+1]>=10 && valtab[a+1]<11) || (valtab[a+1]>=1 && valtab[a+1]<2)) && a!=6 && a!=13 && a!=20 && a!=27 && a!=34 && a!=41 && a!=48){
+                    casepossible[compteur]=coordtab[a+1];
+                    compteur=compteur+1;
+                } // DROITE
+                if (((valtab[a+7]>=2 && valtab[a+7]<3) || (valtab[a+7]>=3 && valtab[a+7]<4) || (valtab[a+7]>=4 && valtab[a+7]<5) || (valtab[a+7]>=5 && valtab[a+7]<6) || (valtab[a+7]>=7 && valtab[a+7]<8) || (valtab[a+7]>=8 && valtab[a+7]<9)) && a!=42 && a!=43 && a!=44 && a!=45 && a!=46 && a!=47 && a!=48){
+                    casepossible[compteur]=coordtab[a+7];
+                    compteur=compteur+1;
+                } //BAS
+                break;
+            case 10:
+                if (((valtab[a+7]>=2 && valtab[a+7]<3) || (valtab[a+7]>=3 && valtab[a+7]<4) || (valtab[a+7]>=4 && valtab[a+7]<5) || (valtab[a+7]>=5 && valtab[a+7]<6) || (valtab[a+7]>=7 && valtab[a+7]<8) || (valtab[a+7]>=8 && valtab[a+7]<9)) && a!=42 && a!=43 && a!=44 && a!=45 && a!=46 && a!=47 && a!=48){
+                    casepossible[compteur]=coordtab[a+7];
+                    compteur=compteur+1;
+                } //BAS
+                if (((valtab[a-1]>=2 && valtab[a-1]<3) || (valtab[a-1]>=3 && valtab[a-1]<4) || (valtab[a-1]>=7 && valtab[a-1]<8) || (valtab[a-1]>=9 && valtab[a-1]<10) || (valtab[a-1]>=6 && valtab[a-1]<7) || (valtab[a-1]>=1 && valtab[a-1]<2)) && a!=0 && a!=7 && a!=14 && a!=21 && a!=28 && a!=35 && a!=42){
+                    casepossible[compteur]=coordtab[a-1];
+                    compteur=compteur+1;
+                } //GAUCHE
+                break;
+            default:
+                printf("ERROR \n");
+        }
+    }
+    int route=compteur;
+    for (int i=0;i<route;i++){
+        a=change(casepossible[i]);
+        int c=0;int lll=0;lll=change(casepossible[i]);
+        c=valtab[lll];
+        switch (c){
+            case 1:
+                if (((valtab[a+1]>=2 && valtab[a+1]<3 )|| (valtab[a+1]>=4 && valtab[a+1]<5) || (valtab[a+1]>=6 && valtab[a+1]<7) || (valtab[a+1]>=8 && valtab[a+1]<9) || (valtab[a+1]>=10 && valtab[a+1]<11) || (valtab[a+1]>=1 && valtab[a+1]<2)) && a!=6 && a!=13 && a!=20 && a!=27 && a!=34 && a!=41 && a!=48){
+                    casepossible[compteur]=coordtab[a+1];
+                    compteur=compteur+1;
+                } // DROITE
+                if (((valtab[a-1]>=2 && valtab[a-1]<3) || (valtab[a-1]>=3 && valtab[a-1]<4) || (valtab[a-1]>=7 && valtab[a-1]<8) || (valtab[a-1]>=9 && valtab[a-1]<10) || (valtab[a-1]>=6 && valtab[a-1]<7) || (valtab[a-1]>=1 && valtab[a-1]<2)) && a!=0 && a!=7 && a!=14 && a!=21 && a!=28 && a!=35 && a!=42){
+                    casepossible[compteur]=coordtab[a-1];
+                    compteur=compteur+1;
+                } //GAUCHE
+                if (((valtab[a+7]>=2 && valtab[a+7]<3) || (valtab[a+7]>=3 && valtab[a+7]<4) || (valtab[a+7]>=4 && valtab[a+7]<5) || (valtab[a+7]>=5 && valtab[a+7]<6) || (valtab[a+7]>=7 && valtab[a+7]<8) || (valtab[a+7]>=8 && valtab[a+7]<9)) && a!=42 && a!=43 && a!=44 && a!=45 && a!=46 && a!=47 && a!=48){
+                    casepossible[compteur]=coordtab[a+7];
+                    compteur=compteur+1;
+                } //BAS
+                break;
+            case 2:
+                if (((valtab[a+1]>=2 && valtab[a+1]<3 )|| (valtab[a+1]>=4 && valtab[a+1]<5) || (valtab[a+1]>=6 && valtab[a+1]<7) || (valtab[a+1]>=8 && valtab[a+1]<9) || (valtab[a+1]>=10 && valtab[a+1]<11) || (valtab[a+1]>=1 && valtab[a+1]<2)) && a!=6 && a!=13 && a!=20 && a!=27 && a!=34 && a!=41 && a!=48){
+                    casepossible[compteur]=coordtab[a+1];
+                    compteur=compteur+1;
+                } // DROITE
+                if (((valtab[a-1]>=2 && valtab[a-1]<3) || (valtab[a-1]>=3 && valtab[a-1]<4) || (valtab[a-1]>=7 && valtab[a-1]<8) || (valtab[a-1]>=9 && valtab[a-1]<10) || (valtab[a-1]>=6 && valtab[a-1]<7) || (valtab[a-1]>=1 && valtab[a-1]<2)) && a!=0 && a!=7 && a!=14 && a!=21 && a!=28 && a!=35 && a!=42){
+                    casepossible[compteur]=coordtab[a-1];
+                    compteur=compteur+1;
+                } //GAUCHE
+                if (((valtab[a-7]>=1 && valtab[a-7]<2) || (valtab[a-7]>=3 && valtab[a-7]<4) || (valtab[a-7]>=4 && valtab[a-7]<5) || (valtab[a-7]>=5 && valtab[a-7]<6) || (valtab[a-7]>=9 && valtab[a-7]<10) || (valtab[a-7]>=10 && valtab[a-7]<11)) && a!=0 && a!=1 && a!=2 && a!=3 && a!=4 && a!=5 && a!=6){
+                    casepossible[compteur]=coordtab[a-7];
+                    compteur=compteur+1;
+                } //HAUT
+                break;
+            case 3:
+                if (((valtab[a-7]>=1 && valtab[a-7]<2) || (valtab[a-7]>=3 && valtab[a-7]<4) || (valtab[a-7]>=4 && valtab[a-7]<5) || (valtab[a-7]>=5 && valtab[a-7]<6) || (valtab[a-7]>=9 && valtab[a-7]<10) || (valtab[a-7]>=10 && valtab[a-7]<11)) && a!=0 && a!=1 && a!=2 && a!=3 && a!=4 && a!=5 && a!=6){
+                    casepossible[compteur]=coordtab[a-7];
+                    compteur=compteur+1;
+                } //HAUT
+                if (((valtab[a+7]>=2 && valtab[a+7]<3) || (valtab[a+7]>=3 && valtab[a+7]<4) || (valtab[a+7]>=4 && valtab[a+7]<5) || (valtab[a+7]>=5 && valtab[a+7]<6) || (valtab[a+7]>=7 && valtab[a+7]<8) || (valtab[a+7]>=8 && valtab[a+7]<9)) && a!=42 && a!=43 && a!=44 && a!=45 && a!=46 && a!=47 && a!=48){
+                    casepossible[compteur]=coordtab[a+7];
+                    compteur=compteur+1;
+                } //BAS
+                if (((valtab[a+1]>=2 && valtab[a+1]<3 )|| (valtab[a+1]>=4 && valtab[a+1]<5) || (valtab[a+1]>=6 && valtab[a+1]<7) || (valtab[a+1]>=8 && valtab[a+1]<9) || (valtab[a+1]>=10 && valtab[a+1]<11) || (valtab[a+1]>=1 && valtab[a+1]<2)) && a!=6 && a!=13 && a!=20 && a!=27 && a!=34 && a!=41 && a!=48){
+                    casepossible[compteur]=coordtab[a+1];
+                    compteur=compteur+1;
+                } // DROITE
+                break;
+            case 4:
+                if (((valtab[a-7]>=1 && valtab[a-7]<2) || (valtab[a-7]>=3 && valtab[a-7]<4) || (valtab[a-7]>=4 && valtab[a-7]<5) || (valtab[a-7]>=5 && valtab[a-7]<6) || (valtab[a-7]>=9 && valtab[a-7]<10) || (valtab[a-7]>=10 && valtab[a-7]<11)) && a!=0 && a!=1 && a!=2 && a!=3 && a!=4 && a!=5 && a!=6){
+                    casepossible[compteur]=coordtab[a-7];
+                    compteur=compteur+1;
+                } //HAUT
+                if (((valtab[a+7]>=2 && valtab[a+7]<3) || (valtab[a+7]>=3 && valtab[a+7]<4) || (valtab[a+7]>=4 && valtab[a+7]<5) || (valtab[a+7]>=5 && valtab[a+7]<6) || (valtab[a+7]>=7 && valtab[a+7]<8) || (valtab[a+7]>=8 && valtab[a+7]<9)) && a!=42 && a!=43 && a!=44 && a!=45 && a!=46 && a!=47 && a!=48){
+                    casepossible[compteur]=coordtab[a+7];
+                    compteur=compteur+1;
+                } //BAS
+                if (((valtab[a-1]>=2 && valtab[a-1]<3) || (valtab[a-1]>=3 && valtab[a-1]<4) || (valtab[a-1]>=7 && valtab[a-1]<8) || (valtab[a-1]>=9 && valtab[a-1]<10) || (valtab[a-1]>=6 && valtab[a-1]<7) || (valtab[a-1]>=1 && valtab[a-1]<2)) && a!=0 && a!=7 && a!=14 && a!=21 && a!=28 && a!=35 && a!=42){
+                    casepossible[compteur]=coordtab[a-1];
+                    compteur=compteur+1;
+                } //GAUCHE
+                break;
+            case 5:
+                if (((valtab[a-7]>=1 && valtab[a-7]<2) || (valtab[a-7]>=3 && valtab[a-7]<4) || (valtab[a-7]>=4 && valtab[a-7]<5) || (valtab[a-7]>=5 && valtab[a-7]<6) || (valtab[a-7]>=9 && valtab[a-7]<10) || (valtab[a-7]>=10 && valtab[a-7]<11)) && a!=0 && a!=1 && a!=2 && a!=3 && a!=4 && a!=5 && a!=6){
+                    casepossible[compteur]=coordtab[a-7];
+                    compteur=compteur+1;
+                } //HAUT
+                if (((valtab[a+7]>=2 && valtab[a+7]<3) || (valtab[a+7]>=3 && valtab[a+7]<4) || (valtab[a+7]>=4 && valtab[a+7]<5) || (valtab[a+7]>=5 && valtab[a+7]<6) || (valtab[a+7]>=7 && valtab[a+7]<8) || (valtab[a+7]>=8 && valtab[a+7]<9)) && a!=42 && a!=43 && a!=44 && a!=45 && a!=46 && a!=47 && a!=48){
+                    casepossible[compteur]=coordtab[a+7];
+                    compteur=compteur+1;
+                } //BAS
+                break;
+            case 6:
+                if (((valtab[a-1]>=2 && valtab[a-1]<3) || (valtab[a-1]>=3 && valtab[a-1]<4) || (valtab[a-1]>=7 && valtab[a-1]<8) || (valtab[a-1]>=9 && valtab[a-1]<10) || (valtab[a-1]>=6 && valtab[a-1]<7) || (valtab[a-1]>=1 && valtab[a-1]<2)) && a!=0 && a!=7 && a!=14 && a!=21 && a!=28 && a!=35 && a!=42){
+                    casepossible[compteur]=coordtab[a-1];
+                    compteur=compteur+1;
+                } //GAUCHE
+                if (((valtab[a+1]>=2 && valtab[a+1]<3 )|| (valtab[a+1]>=4 && valtab[a+1]<5) || (valtab[a+1]>=6 && valtab[a+1]<7) || (valtab[a+1]>=8 && valtab[a+1]<9) || (valtab[a+1]>=10 && valtab[a+1]<11) || (valtab[a+1]>=1 && valtab[a+1]<2)) && a!=6 && a!=13 && a!=20 && a!=27 && a!=34 && a!=41 && a!=48){
+                    casepossible[compteur]=coordtab[a+1];
+                    compteur=compteur+1;
+                } // DROITE
+                break;
+            case 7:
+                if (((valtab[a-7]>=1 && valtab[a-7]<2) || (valtab[a-7]>=3 && valtab[a-7]<4) || (valtab[a-7]>=4 && valtab[a-7]<5) || (valtab[a-7]>=5 && valtab[a-7]<6) || (valtab[a-7]>=9 && valtab[a-7]<10) || (valtab[a-7]>=10 && valtab[a-7]<11)) && a!=0 && a!=1 && a!=2 && a!=3 && a!=4 && a!=5 && a!=6){
+                    casepossible[compteur]=coordtab[a-7];
+                    compteur=compteur+1;
+                } //HAUT
+                if (((valtab[a+1]>=2 && valtab[a+1]<3 )|| (valtab[a+1]>=4 && valtab[a+1]<5) || (valtab[a+1]>=6 && valtab[a+1]<7) || (valtab[a+1]>=8 && valtab[a+1]<9) || (valtab[a+1]>=10 && valtab[a+1]<11) || (valtab[a+1]>=1 && valtab[a+1]<2)) && a!=6 && a!=13 && a!=20 && a!=27 && a!=34 && a!=41 && a!=48){
+                    casepossible[compteur]=coordtab[a+1];
+                    compteur=compteur+1;
+                } // DROITE
+                break;
+            case 8:
+                if (((valtab[a-1]>=2 && valtab[a-1]<3) || (valtab[a-1]>=3 && valtab[a-1]<4) || (valtab[a-1]>=7 && valtab[a-1]<8) || (valtab[a-1]>=9 && valtab[a-1]<10) || (valtab[a-1]>=6 && valtab[a-1]<7) || (valtab[a-1]>=1 && valtab[a-1]<2)) && a!=0 && a!=7 && a!=14 && a!=21 && a!=28 && a!=35 && a!=42){
+                    casepossible[compteur]=coordtab[a-1];
+                    compteur=compteur+1;
+                } //GAUCHE
+                if (((valtab[a-7]>=1 && valtab[a-7]<2) || (valtab[a-7]>=3 && valtab[a-7]<4) || (valtab[a-7]>=4 && valtab[a-7]<5) || (valtab[a-7]>=5 && valtab[a-7]<6) || (valtab[a-7]>=9 && valtab[a-7]<10) || (valtab[a-7]>=10 && valtab[a-7]<11)) && a!=0 && a!=1 && a!=2 && a!=3 && a!=4 && a!=5 && a!=6){
+                    casepossible[compteur]=coordtab[a-7];
+                    compteur=compteur+1;
+                } //HAUT
+                break;
+            case 9:
+                if (((valtab[a+1]>=2 && valtab[a+1]<3 )|| (valtab[a+1]>=4 && valtab[a+1]<5) || (valtab[a+1]>=6 && valtab[a+1]<7) || (valtab[a+1]>=8 && valtab[a+1]<9) || (valtab[a+1]>=10 && valtab[a+1]<11) || (valtab[a+1]>=1 && valtab[a+1]<2)) && a!=6 && a!=13 && a!=20 && a!=27 && a!=34 && a!=41 && a!=48){
+                    casepossible[compteur]=coordtab[a+1];
+                    compteur=compteur+1;
+                } // DROITE
+                if (((valtab[a+7]>=2 && valtab[a+7]<3) || (valtab[a+7]>=3 && valtab[a+7]<4) || (valtab[a+7]>=4 && valtab[a+7]<5) || (valtab[a+7]>=5 && valtab[a+7]<6) || (valtab[a+7]>=7 && valtab[a+7]<8) || (valtab[a+7]>=8 && valtab[a+7]<9)) && a!=42 && a!=43 && a!=44 && a!=45 && a!=46 && a!=47 && a!=48){
+                    casepossible[compteur]=coordtab[a+7];
+                    compteur=compteur+1;
+                } //BAS
+                break;
+            case 10:
+                if (((valtab[a+7]>=2 && valtab[a+7]<3) || (valtab[a+7]>=3 && valtab[a+7]<4) || (valtab[a+7]>=4 && valtab[a+7]<5) || (valtab[a+7]>=5 && valtab[a+7]<6) || (valtab[a+7]>=7 && valtab[a+7]<8) || (valtab[a+7]>=8 && valtab[a+7]<9)) && a!=42 && a!=43 && a!=44 && a!=45 && a!=46 && a!=47 && a!=48){
+                    casepossible[compteur]=coordtab[a+7];
+                    compteur=compteur+1;
+                } //BAS
+                if (((valtab[a-1]>=2 && valtab[a-1]<3) || (valtab[a-1]>=3 && valtab[a-1]<4) || (valtab[a-1]>=7 && valtab[a-1]<8) || (valtab[a-1]>=9 && valtab[a-1]<10) || (valtab[a-1]>=6 && valtab[a-1]<7) || (valtab[a-1]>=1 && valtab[a-1]<2)) && a!=0 && a!=7 && a!=14 && a!=21 && a!=28 && a!=35 && a!=42){
+                    casepossible[compteur]=coordtab[a-1];
+                    compteur=compteur+1;
+                } //GAUCHE
+                break;
+            default:
+                printf("ERROR \n");
+        }
+    }
+    int drot=compteur;
+    for (int i=0;i<drot;i++){
+        a=change(casepossible[i]);
+        int c=0;int bgy=0;bgy=change(casepossible[i]);
+        c=valtab[bgy];
+        switch (c){
+            case 1:
+                if (((valtab[a+1]>=2 && valtab[a+1]<3 )|| (valtab[a+1]>=4 && valtab[a+1]<5) || (valtab[a+1]>=6 && valtab[a+1]<7) || (valtab[a+1]>=8 && valtab[a+1]<9) || (valtab[a+1]>=10 && valtab[a+1]<11) || (valtab[a+1]>=1 && valtab[a+1]<2)) && a!=6 && a!=13 && a!=20 && a!=27 && a!=34 && a!=41 && a!=48){
+                    casepossible[compteur]=coordtab[a+1];
+                    compteur=compteur+1;
+                } // DROITE
+                if (((valtab[a-1]>=2 && valtab[a-1]<3) || (valtab[a-1]>=3 && valtab[a-1]<4) || (valtab[a-1]>=7 && valtab[a-1]<8) || (valtab[a-1]>=9 && valtab[a-1]<10) || (valtab[a-1]>=6 && valtab[a-1]<7) || (valtab[a-1]>=1 && valtab[a-1]<2)) && a!=0 && a!=7 && a!=14 && a!=21 && a!=28 && a!=35 && a!=42){
+                    casepossible[compteur]=coordtab[a-1];
+                    compteur=compteur+1;
+                } //GAUCHE
+                if (((valtab[a+7]>=2 && valtab[a+7]<3) || (valtab[a+7]>=3 && valtab[a+7]<4) || (valtab[a+7]>=4 && valtab[a+7]<5) || (valtab[a+7]>=5 && valtab[a+7]<6) || (valtab[a+7]>=7 && valtab[a+7]<8) || (valtab[a+7]>=8 && valtab[a+7]<9)) && a!=42 && a!=43 && a!=44 && a!=45 && a!=46 && a!=47 && a!=48){
+                    casepossible[compteur]=coordtab[a+7];
+                    compteur=compteur+1;
+                } //BAS
+                break;
+            case 2:
+                if (((valtab[a+1]>=2 && valtab[a+1]<3 )|| (valtab[a+1]>=4 && valtab[a+1]<5) || (valtab[a+1]>=6 && valtab[a+1]<7) || (valtab[a+1]>=8 && valtab[a+1]<9) || (valtab[a+1]>=10 && valtab[a+1]<11) || (valtab[a+1]>=1 && valtab[a+1]<2)) && a!=6 && a!=13 && a!=20 && a!=27 && a!=34 && a!=41 && a!=48){
+                    casepossible[compteur]=coordtab[a+1];
+                    compteur=compteur+1;
+                } // DROITE
+                if (((valtab[a-1]>=2 && valtab[a-1]<3) || (valtab[a-1]>=3 && valtab[a-1]<4) || (valtab[a-1]>=7 && valtab[a-1]<8) || (valtab[a-1]>=9 && valtab[a-1]<10) || (valtab[a-1]>=6 && valtab[a-1]<7) || (valtab[a-1]>=1 && valtab[a-1]<2)) && a!=0 && a!=7 && a!=14 && a!=21 && a!=28 && a!=35 && a!=42){
+                    casepossible[compteur]=coordtab[a-1];
+                    compteur=compteur+1;
+                } //GAUCHE
+                if (((valtab[a-7]>=1 && valtab[a-7]<2) || (valtab[a-7]>=3 && valtab[a-7]<4) || (valtab[a-7]>=4 && valtab[a-7]<5) || (valtab[a-7]>=5 && valtab[a-7]<6) || (valtab[a-7]>=9 && valtab[a-7]<10) || (valtab[a-7]>=10 && valtab[a-7]<11)) && a!=0 && a!=1 && a!=2 && a!=3 && a!=4 && a!=5 && a!=6){
+                    casepossible[compteur]=coordtab[a-7];
+                    compteur=compteur+1;
+                } //HAUT
+                break;
+            case 3:
+                if (((valtab[a-7]>=1 && valtab[a-7]<2) || (valtab[a-7]>=3 && valtab[a-7]<4) || (valtab[a-7]>=4 && valtab[a-7]<5) || (valtab[a-7]>=5 && valtab[a-7]<6) || (valtab[a-7]>=9 && valtab[a-7]<10) || (valtab[a-7]>=10 && valtab[a-7]<11)) && a!=0 && a!=1 && a!=2 && a!=3 && a!=4 && a!=5 && a!=6){
+                    casepossible[compteur]=coordtab[a-7];
+                    compteur=compteur+1;
+                } //HAUT
+                if (((valtab[a+7]>=2 && valtab[a+7]<3) || (valtab[a+7]>=3 && valtab[a+7]<4) || (valtab[a+7]>=4 && valtab[a+7]<5) || (valtab[a+7]>=5 && valtab[a+7]<6) || (valtab[a+7]>=7 && valtab[a+7]<8) || (valtab[a+7]>=8 && valtab[a+7]<9)) && a!=42 && a!=43 && a!=44 && a!=45 && a!=46 && a!=47 && a!=48){
+                    casepossible[compteur]=coordtab[a+7];
+                    compteur=compteur+1;
+                } //BAS
+                if (((valtab[a+1]>=2 && valtab[a+1]<3 )|| (valtab[a+1]>=4 && valtab[a+1]<5) || (valtab[a+1]>=6 && valtab[a+1]<7) || (valtab[a+1]>=8 && valtab[a+1]<9) || (valtab[a+1]>=10 && valtab[a+1]<11) || (valtab[a+1]>=1 && valtab[a+1]<2)) && a!=6 && a!=13 && a!=20 && a!=27 && a!=34 && a!=41 && a!=48){
+                    casepossible[compteur]=coordtab[a+1];
+                    compteur=compteur+1;
+                } // DROITE
+                break;
+            case 4:
+                if (((valtab[a-7]>=1 && valtab[a-7]<2) || (valtab[a-7]>=3 && valtab[a-7]<4) || (valtab[a-7]>=4 && valtab[a-7]<5) || (valtab[a-7]>=5 && valtab[a-7]<6) || (valtab[a-7]>=9 && valtab[a-7]<10) || (valtab[a-7]>=10 && valtab[a-7]<11)) && a!=0 && a!=1 && a!=2 && a!=3 && a!=4 && a!=5 && a!=6){
+                    casepossible[compteur]=coordtab[a-7];
+                    compteur=compteur+1;
+                } //HAUT
+                if (((valtab[a+7]>=2 && valtab[a+7]<3) || (valtab[a+7]>=3 && valtab[a+7]<4) || (valtab[a+7]>=4 && valtab[a+7]<5) || (valtab[a+7]>=5 && valtab[a+7]<6) || (valtab[a+7]>=7 && valtab[a+7]<8) || (valtab[a+7]>=8 && valtab[a+7]<9)) && a!=42 && a!=43 && a!=44 && a!=45 && a!=46 && a!=47 && a!=48){
+                    casepossible[compteur]=coordtab[a+7];
+                    compteur=compteur+1;
+                } //BAS
+                if (((valtab[a-1]>=2 && valtab[a-1]<3) || (valtab[a-1]>=3 && valtab[a-1]<4) || (valtab[a-1]>=7 && valtab[a-1]<8) || (valtab[a-1]>=9 && valtab[a-1]<10) || (valtab[a-1]>=6 && valtab[a-1]<7) || (valtab[a-1]>=1 && valtab[a-1]<2)) && a!=0 && a!=7 && a!=14 && a!=21 && a!=28 && a!=35 && a!=42){
+                    casepossible[compteur]=coordtab[a-1];
+                    compteur=compteur+1;
+                } //GAUCHE
+                break;
+            case 5:
+                if (((valtab[a-7]>=1 && valtab[a-7]<2) || (valtab[a-7]>=3 && valtab[a-7]<4) || (valtab[a-7]>=4 && valtab[a-7]<5) || (valtab[a-7]>=5 && valtab[a-7]<6) || (valtab[a-7]>=9 && valtab[a-7]<10) || (valtab[a-7]>=10 && valtab[a-7]<11)) && a!=0 && a!=1 && a!=2 && a!=3 && a!=4 && a!=5 && a!=6){
+                    casepossible[compteur]=coordtab[a-7];
+                    compteur=compteur+1;
+                } //HAUT
+                if (((valtab[a+7]>=2 && valtab[a+7]<3) || (valtab[a+7]>=3 && valtab[a+7]<4) || (valtab[a+7]>=4 && valtab[a+7]<5) || (valtab[a+7]>=5 && valtab[a+7]<6) || (valtab[a+7]>=7 && valtab[a+7]<8) || (valtab[a+7]>=8 && valtab[a+7]<9)) && a!=42 && a!=43 && a!=44 && a!=45 && a!=46 && a!=47 && a!=48){
+                    casepossible[compteur]=coordtab[a+7];
+                    compteur=compteur+1;
+                } //BAS
+                break;
+            case 6:
+                if (((valtab[a-1]>=2 && valtab[a-1]<3) || (valtab[a-1]>=3 && valtab[a-1]<4) || (valtab[a-1]>=7 && valtab[a-1]<8) || (valtab[a-1]>=9 && valtab[a-1]<10) || (valtab[a-1]>=6 && valtab[a-1]<7) || (valtab[a-1]>=1 && valtab[a-1]<2)) && a!=0 && a!=7 && a!=14 && a!=21 && a!=28 && a!=35 && a!=42){
+                    casepossible[compteur]=coordtab[a-1];
+                    compteur=compteur+1;
+                } //GAUCHE
+                if (((valtab[a+1]>=2 && valtab[a+1]<3 )|| (valtab[a+1]>=4 && valtab[a+1]<5) || (valtab[a+1]>=6 && valtab[a+1]<7) || (valtab[a+1]>=8 && valtab[a+1]<9) || (valtab[a+1]>=10 && valtab[a+1]<11) || (valtab[a+1]>=1 && valtab[a+1]<2)) && a!=6 && a!=13 && a!=20 && a!=27 && a!=34 && a!=41 && a!=48){
+                    casepossible[compteur]=coordtab[a+1];
+                    compteur=compteur+1;
+                } // DROITE
+                break;
+            case 7:
+                if (((valtab[a-7]>=1 && valtab[a-7]<2) || (valtab[a-7]>=3 && valtab[a-7]<4) || (valtab[a-7]>=4 && valtab[a-7]<5) || (valtab[a-7]>=5 && valtab[a-7]<6) || (valtab[a-7]>=9 && valtab[a-7]<10) || (valtab[a-7]>=10 && valtab[a-7]<11)) && a!=0 && a!=1 && a!=2 && a!=3 && a!=4 && a!=5 && a!=6){
+                    casepossible[compteur]=coordtab[a-7];
+                    compteur=compteur+1;
+                } //HAUT
+                if (((valtab[a+1]>=2 && valtab[a+1]<3 )|| (valtab[a+1]>=4 && valtab[a+1]<5) || (valtab[a+1]>=6 && valtab[a+1]<7) || (valtab[a+1]>=8 && valtab[a+1]<9) || (valtab[a+1]>=10 && valtab[a+1]<11) || (valtab[a+1]>=1 && valtab[a+1]<2)) && a!=6 && a!=13 && a!=20 && a!=27 && a!=34 && a!=41 && a!=48){
+                    casepossible[compteur]=coordtab[a+1];
+                    compteur=compteur+1;
+                } // DROITE
+                break;
+            case 8:
+                if (((valtab[a-1]>=2 && valtab[a-1]<3) || (valtab[a-1]>=3 && valtab[a-1]<4) || (valtab[a-1]>=7 && valtab[a-1]<8) || (valtab[a-1]>=9 && valtab[a-1]<10) || (valtab[a-1]>=6 && valtab[a-1]<7) || (valtab[a-1]>=1 && valtab[a-1]<2)) && a!=0 && a!=7 && a!=14 && a!=21 && a!=28 && a!=35 && a!=42){
+                    casepossible[compteur]=coordtab[a-1];
+                    compteur=compteur+1;
+                } //GAUCHE
+                if (((valtab[a-7]>=1 && valtab[a-7]<2) || (valtab[a-7]>=3 && valtab[a-7]<4) || (valtab[a-7]>=4 && valtab[a-7]<5) || (valtab[a-7]>=5 && valtab[a-7]<6) || (valtab[a-7]>=9 && valtab[a-7]<10) || (valtab[a-7]>=10 && valtab[a-7]<11)) && a!=0 && a!=1 && a!=2 && a!=3 && a!=4 && a!=5 && a!=6){
+                    casepossible[compteur]=coordtab[a-7];
+                    compteur=compteur+1;
+                } //HAUT
+                break;
+            case 9:
+                if (((valtab[a+1]>=2 && valtab[a+1]<3 )|| (valtab[a+1]>=4 && valtab[a+1]<5) || (valtab[a+1]>=6 && valtab[a+1]<7) || (valtab[a+1]>=8 && valtab[a+1]<9) || (valtab[a+1]>=10 && valtab[a+1]<11) || (valtab[a+1]>=1 && valtab[a+1]<2)) && a!=6 && a!=13 && a!=20 && a!=27 && a!=34 && a!=41 && a!=48){
+                    casepossible[compteur]=coordtab[a+1];
+                    compteur=compteur+1;
+                } // DROITE
+                if (((valtab[a+7]>=2 && valtab[a+7]<3) || (valtab[a+7]>=3 && valtab[a+7]<4) || (valtab[a+7]>=4 && valtab[a+7]<5) || (valtab[a+7]>=5 && valtab[a+7]<6) || (valtab[a+7]>=7 && valtab[a+7]<8) || (valtab[a+7]>=8 && valtab[a+7]<9)) && a!=42 && a!=43 && a!=44 && a!=45 && a!=46 && a!=47 && a!=48){
+                    casepossible[compteur]=coordtab[a+7];
+                    compteur=compteur+1;
+                } //BAS
+                break;
+            case 10:
+                if (((valtab[a+7]>=2 && valtab[a+7]<3) || (valtab[a+7]>=3 && valtab[a+7]<4) || (valtab[a+7]>=4 && valtab[a+7]<5) || (valtab[a+7]>=5 && valtab[a+7]<6) || (valtab[a+7]>=7 && valtab[a+7]<8) || (valtab[a+7]>=8 && valtab[a+7]<9)) && a!=42 && a!=43 && a!=44 && a!=45 && a!=46 && a!=47 && a!=48){
+                    casepossible[compteur]=coordtab[a+7];
+                    compteur=compteur+1;
+                } //BAS
+                if (((valtab[a-1]>=2 && valtab[a-1]<3) || (valtab[a-1]>=3 && valtab[a-1]<4) || (valtab[a-1]>=7 && valtab[a-1]<8) || (valtab[a-1]>=9 && valtab[a-1]<10) || (valtab[a-1]>=6 && valtab[a-1]<7) || (valtab[a-1]>=1 && valtab[a-1]<2)) && a!=0 && a!=7 && a!=14 && a!=21 && a!=28 && a!=35 && a!=42){
+                    casepossible[compteur]=coordtab[a-1];
+                    compteur=compteur+1;
+                } //GAUCHE
+                break;
+            default:
+                printf("ERROR \n");
+        }
+    }
+    int bouffe=compteur;
+    for (int i=0;i<bouffe;i++){
+        a=change(casepossible[i]);
+        int c=0;int dss=0;dss=change(casepossible[i]);
+        c=valtab[dss];
+        switch (c){
+            case 1:
+                if (((valtab[a+1]>=2 && valtab[a+1]<3 )|| (valtab[a+1]>=4 && valtab[a+1]<5) || (valtab[a+1]>=6 && valtab[a+1]<7) || (valtab[a+1]>=8 && valtab[a+1]<9) || (valtab[a+1]>=10 && valtab[a+1]<11) || (valtab[a+1]>=1 && valtab[a+1]<2)) && a!=6 && a!=13 && a!=20 && a!=27 && a!=34 && a!=41 && a!=48){
+                    casepossible[compteur]=coordtab[a+1];
+                    compteur=compteur+1;
+                } // DROITE
+                if (((valtab[a-1]>=2 && valtab[a-1]<3) || (valtab[a-1]>=3 && valtab[a-1]<4) || (valtab[a-1]>=7 && valtab[a-1]<8) || (valtab[a-1]>=9 && valtab[a-1]<10) || (valtab[a-1]>=6 && valtab[a-1]<7) || (valtab[a-1]>=1 && valtab[a-1]<2)) && a!=0 && a!=7 && a!=14 && a!=21 && a!=28 && a!=35 && a!=42){
+                    casepossible[compteur]=coordtab[a-1];
+                    compteur=compteur+1;
+                } //GAUCHE
+                if (((valtab[a+7]>=2 && valtab[a+7]<3) || (valtab[a+7]>=3 && valtab[a+7]<4) || (valtab[a+7]>=4 && valtab[a+7]<5) || (valtab[a+7]>=5 && valtab[a+7]<6) || (valtab[a+7]>=7 && valtab[a+7]<8) || (valtab[a+7]>=8 && valtab[a+7]<9)) && a!=42 && a!=43 && a!=44 && a!=45 && a!=46 && a!=47 && a!=48){
+                    casepossible[compteur]=coordtab[a+7];
+                    compteur=compteur+1;
+                } //BAS
+                break;
+            case 2:
+                if (((valtab[a+1]>=2 && valtab[a+1]<3 )|| (valtab[a+1]>=4 && valtab[a+1]<5) || (valtab[a+1]>=6 && valtab[a+1]<7) || (valtab[a+1]>=8 && valtab[a+1]<9) || (valtab[a+1]>=10 && valtab[a+1]<11) || (valtab[a+1]>=1 && valtab[a+1]<2)) && a!=6 && a!=13 && a!=20 && a!=27 && a!=34 && a!=41 && a!=48){
+                    casepossible[compteur]=coordtab[a+1];
+                    compteur=compteur+1;
+                } // DROITE
+                if (((valtab[a-1]>=2 && valtab[a-1]<3) || (valtab[a-1]>=3 && valtab[a-1]<4) || (valtab[a-1]>=7 && valtab[a-1]<8) || (valtab[a-1]>=9 && valtab[a-1]<10) || (valtab[a-1]>=6 && valtab[a-1]<7) || (valtab[a-1]>=1 && valtab[a-1]<2)) && a!=0 && a!=7 && a!=14 && a!=21 && a!=28 && a!=35 && a!=42){
+                    casepossible[compteur]=coordtab[a-1];
+                    compteur=compteur+1;
+                } //GAUCHE
+                if (((valtab[a-7]>=1 && valtab[a-7]<2) || (valtab[a-7]>=3 && valtab[a-7]<4) || (valtab[a-7]>=4 && valtab[a-7]<5) || (valtab[a-7]>=5 && valtab[a-7]<6) || (valtab[a-7]>=9 && valtab[a-7]<10) || (valtab[a-7]>=10 && valtab[a-7]<11)) && a!=0 && a!=1 && a!=2 && a!=3 && a!=4 && a!=5 && a!=6){
+                    casepossible[compteur]=coordtab[a-7];
+                    compteur=compteur+1;
+                } //HAUT
+                break;
+            case 3:
+                if (((valtab[a-7]>=1 && valtab[a-7]<2) || (valtab[a-7]>=3 && valtab[a-7]<4) || (valtab[a-7]>=4 && valtab[a-7]<5) || (valtab[a-7]>=5 && valtab[a-7]<6) || (valtab[a-7]>=9 && valtab[a-7]<10) || (valtab[a-7]>=10 && valtab[a-7]<11)) && a!=0 && a!=1 && a!=2 && a!=3 && a!=4 && a!=5 && a!=6){
+                    casepossible[compteur]=coordtab[a-7];
+                    compteur=compteur+1;
+                } //HAUT
+                if (((valtab[a+7]>=2 && valtab[a+7]<3) || (valtab[a+7]>=3 && valtab[a+7]<4) || (valtab[a+7]>=4 && valtab[a+7]<5) || (valtab[a+7]>=5 && valtab[a+7]<6) || (valtab[a+7]>=7 && valtab[a+7]<8) || (valtab[a+7]>=8 && valtab[a+7]<9)) && a!=42 && a!=43 && a!=44 && a!=45 && a!=46 && a!=47 && a!=48){
+                    casepossible[compteur]=coordtab[a+7];
+                    compteur=compteur+1;
+                } //BAS
+                if (((valtab[a+1]>=2 && valtab[a+1]<3 )|| (valtab[a+1]>=4 && valtab[a+1]<5) || (valtab[a+1]>=6 && valtab[a+1]<7) || (valtab[a+1]>=8 && valtab[a+1]<9) || (valtab[a+1]>=10 && valtab[a+1]<11) || (valtab[a+1]>=1 && valtab[a+1]<2)) && a!=6 && a!=13 && a!=20 && a!=27 && a!=34 && a!=41 && a!=48){
+                    casepossible[compteur]=coordtab[a+1];
+                    compteur=compteur+1;
+                } // DROITE
+                break;
+            case 4:
+                if (((valtab[a-7]>=1 && valtab[a-7]<2) || (valtab[a-7]>=3 && valtab[a-7]<4) || (valtab[a-7]>=4 && valtab[a-7]<5) || (valtab[a-7]>=5 && valtab[a-7]<6) || (valtab[a-7]>=9 && valtab[a-7]<10) || (valtab[a-7]>=10 && valtab[a-7]<11)) && a!=0 && a!=1 && a!=2 && a!=3 && a!=4 && a!=5 && a!=6){
+                    casepossible[compteur]=coordtab[a-7];
+                    compteur=compteur+1;
+                } //HAUT
+                if (((valtab[a+7]>=2 && valtab[a+7]<3) || (valtab[a+7]>=3 && valtab[a+7]<4) || (valtab[a+7]>=4 && valtab[a+7]<5) || (valtab[a+7]>=5 && valtab[a+7]<6) || (valtab[a+7]>=7 && valtab[a+7]<8) || (valtab[a+7]>=8 && valtab[a+7]<9)) && a!=42 && a!=43 && a!=44 && a!=45 && a!=46 && a!=47 && a!=48){
+                    casepossible[compteur]=coordtab[a+7];
+                    compteur=compteur+1;
+                } //BAS
+                if (((valtab[a-1]>=2 && valtab[a-1]<3) || (valtab[a-1]>=3 && valtab[a-1]<4) || (valtab[a-1]>=7 && valtab[a-1]<8) || (valtab[a-1]>=9 && valtab[a-1]<10) || (valtab[a-1]>=6 && valtab[a-1]<7) || (valtab[a-1]>=1 && valtab[a-1]<2)) && a!=0 && a!=7 && a!=14 && a!=21 && a!=28 && a!=35 && a!=42){
+                    casepossible[compteur]=coordtab[a-1];
+                    compteur=compteur+1;
+                } //GAUCHE
+                break;
+            case 5:
+                if (((valtab[a-7]>=1 && valtab[a-7]<2) || (valtab[a-7]>=3 && valtab[a-7]<4) || (valtab[a-7]>=4 && valtab[a-7]<5) || (valtab[a-7]>=5 && valtab[a-7]<6) || (valtab[a-7]>=9 && valtab[a-7]<10) || (valtab[a-7]>=10 && valtab[a-7]<11)) && a!=0 && a!=1 && a!=2 && a!=3 && a!=4 && a!=5 && a!=6){
+                    casepossible[compteur]=coordtab[a-7];
+                    compteur=compteur+1;
+                } //HAUT
+                if (((valtab[a+7]>=2 && valtab[a+7]<3) || (valtab[a+7]>=3 && valtab[a+7]<4) || (valtab[a+7]>=4 && valtab[a+7]<5) || (valtab[a+7]>=5 && valtab[a+7]<6) || (valtab[a+7]>=7 && valtab[a+7]<8) || (valtab[a+7]>=8 && valtab[a+7]<9)) && a!=42 && a!=43 && a!=44 && a!=45 && a!=46 && a!=47 && a!=48){
+                    casepossible[compteur]=coordtab[a+7];
+                    compteur=compteur+1;
+                } //BAS
+                break;
+            case 6:
+                if (((valtab[a-1]>=2 && valtab[a-1]<3) || (valtab[a-1]>=3 && valtab[a-1]<4) || (valtab[a-1]>=7 && valtab[a-1]<8) || (valtab[a-1]>=9 && valtab[a-1]<10) || (valtab[a-1]>=6 && valtab[a-1]<7) || (valtab[a-1]>=1 && valtab[a-1]<2)) && a!=0 && a!=7 && a!=14 && a!=21 && a!=28 && a!=35 && a!=42){
+                    casepossible[compteur]=coordtab[a-1];
+                    compteur=compteur+1;
+                } //GAUCHE
+                if (((valtab[a+1]>=2 && valtab[a+1]<3 )|| (valtab[a+1]>=4 && valtab[a+1]<5) || (valtab[a+1]>=6 && valtab[a+1]<7) || (valtab[a+1]>=8 && valtab[a+1]<9) || (valtab[a+1]>=10 && valtab[a+1]<11) || (valtab[a+1]>=1 && valtab[a+1]<2)) && a!=6 && a!=13 && a!=20 && a!=27 && a!=34 && a!=41 && a!=48){
+                    casepossible[compteur]=coordtab[a+1];
+                    compteur=compteur+1;
+                } // DROITE
+                break;
+            case 7:
+                if (((valtab[a-7]>=1 && valtab[a-7]<2) || (valtab[a-7]>=3 && valtab[a-7]<4) || (valtab[a-7]>=4 && valtab[a-7]<5) || (valtab[a-7]>=5 && valtab[a-7]<6) || (valtab[a-7]>=9 && valtab[a-7]<10) || (valtab[a-7]>=10 && valtab[a-7]<11)) && a!=0 && a!=1 && a!=2 && a!=3 && a!=4 && a!=5 && a!=6){
+                    casepossible[compteur]=coordtab[a-7];
+                    compteur=compteur+1;
+                } //HAUT
+                if (((valtab[a+1]>=2 && valtab[a+1]<3 )|| (valtab[a+1]>=4 && valtab[a+1]<5) || (valtab[a+1]>=6 && valtab[a+1]<7) || (valtab[a+1]>=8 && valtab[a+1]<9) || (valtab[a+1]>=10 && valtab[a+1]<11) || (valtab[a+1]>=1 && valtab[a+1]<2)) && a!=6 && a!=13 && a!=20 && a!=27 && a!=34 && a!=41 && a!=48){
+                    casepossible[compteur]=coordtab[a+1];
+                    compteur=compteur+1;
+                } // DROITE
+                break;
+            case 8:
+                if (((valtab[a-1]>=2 && valtab[a-1]<3) || (valtab[a-1]>=3 && valtab[a-1]<4) || (valtab[a-1]>=7 && valtab[a-1]<8) || (valtab[a-1]>=9 && valtab[a-1]<10) || (valtab[a-1]>=6 && valtab[a-1]<7) || (valtab[a-1]>=1 && valtab[a-1]<2)) && a!=0 && a!=7 && a!=14 && a!=21 && a!=28 && a!=35 && a!=42){
+                    casepossible[compteur]=coordtab[a-1];
+                    compteur=compteur+1;
+                } //GAUCHE
+                if (((valtab[a-7]>=1 && valtab[a-7]<2) || (valtab[a-7]>=3 && valtab[a-7]<4) || (valtab[a-7]>=4 && valtab[a-7]<5) || (valtab[a-7]>=5 && valtab[a-7]<6) || (valtab[a-7]>=9 && valtab[a-7]<10) || (valtab[a-7]>=10 && valtab[a-7]<11)) && a!=0 && a!=1 && a!=2 && a!=3 && a!=4 && a!=5 && a!=6){
+                    casepossible[compteur]=coordtab[a-7];
+                    compteur=compteur+1;
+                } //HAUT
+                break;
+            case 9:
+                if (((valtab[a+1]>=2 && valtab[a+1]<3 )|| (valtab[a+1]>=4 && valtab[a+1]<5) || (valtab[a+1]>=6 && valtab[a+1]<7) || (valtab[a+1]>=8 && valtab[a+1]<9) || (valtab[a+1]>=10 && valtab[a+1]<11) || (valtab[a+1]>=1 && valtab[a+1]<2)) && a!=6 && a!=13 && a!=20 && a!=27 && a!=34 && a!=41 && a!=48){
+                    casepossible[compteur]=coordtab[a+1];
+                    compteur=compteur+1;
+                } // DROITE
+                if (((valtab[a+7]>=2 && valtab[a+7]<3) || (valtab[a+7]>=3 && valtab[a+7]<4) || (valtab[a+7]>=4 && valtab[a+7]<5) || (valtab[a+7]>=5 && valtab[a+7]<6) || (valtab[a+7]>=7 && valtab[a+7]<8) || (valtab[a+7]>=8 && valtab[a+7]<9)) && a!=42 && a!=43 && a!=44 && a!=45 && a!=46 && a!=47 && a!=48){
+                    casepossible[compteur]=coordtab[a+7];
+                    compteur=compteur+1;
+                } //BAS
+                break;
+            case 10:
+                if (((valtab[a+7]>=2 && valtab[a+7]<3) || (valtab[a+7]>=3 && valtab[a+7]<4) || (valtab[a+7]>=4 && valtab[a+7]<5) || (valtab[a+7]>=5 && valtab[a+7]<6) || (valtab[a+7]>=7 && valtab[a+7]<8) || (valtab[a+7]>=8 && valtab[a+7]<9)) && a!=42 && a!=43 && a!=44 && a!=45 && a!=46 && a!=47 && a!=48){
+                    casepossible[compteur]=coordtab[a+7];
+                    compteur=compteur+1;
+                } //BAS
+                if (((valtab[a-1]>=2 && valtab[a-1]<3) || (valtab[a-1]>=3 && valtab[a-1]<4) || (valtab[a-1]>=7 && valtab[a-1]<8) || (valtab[a-1]>=9 && valtab[a-1]<10) || (valtab[a-1]>=6 && valtab[a-1]<7) || (valtab[a-1]>=1 && valtab[a-1]<2)) && a!=0 && a!=7 && a!=14 && a!=21 && a!=28 && a!=35 && a!=42){
+                    casepossible[compteur]=coordtab[a-1];
+                    compteur=compteur+1;
+                } //GAUCHE
+                break;
+            default:
+                printf("ERROR \n");
+        }
+    }
+    int yalaa=compteur;
+    for (int i=0;i<yalaa;i++){
+        a=change(casepossible[i]);
+        int c=0;int jhh=0;jhh=change(casepossible[i]);
+        c=valtab[jhh];
+        switch (c){
+            case 1:
+                if (((valtab[a+1]>=2 && valtab[a+1]<3 )|| (valtab[a+1]>=4 && valtab[a+1]<5) || (valtab[a+1]>=6 && valtab[a+1]<7) || (valtab[a+1]>=8 && valtab[a+1]<9) || (valtab[a+1]>=10 && valtab[a+1]<11) || (valtab[a+1]>=1 && valtab[a+1]<2)) && a!=6 && a!=13 && a!=20 && a!=27 && a!=34 && a!=41 && a!=48){
+                    casepossible[compteur]=coordtab[a+1];
+                    compteur=compteur+1;
+                } // DROITE
+                if (((valtab[a-1]>=2 && valtab[a-1]<3) || (valtab[a-1]>=3 && valtab[a-1]<4) || (valtab[a-1]>=7 && valtab[a-1]<8) || (valtab[a-1]>=9 && valtab[a-1]<10) || (valtab[a-1]>=6 && valtab[a-1]<7) || (valtab[a-1]>=1 && valtab[a-1]<2)) && a!=0 && a!=7 && a!=14 && a!=21 && a!=28 && a!=35 && a!=42){
+                    casepossible[compteur]=coordtab[a-1];
+                    compteur=compteur+1;
+                } //GAUCHE
+                if (((valtab[a+7]>=2 && valtab[a+7]<3) || (valtab[a+7]>=3 && valtab[a+7]<4) || (valtab[a+7]>=4 && valtab[a+7]<5) || (valtab[a+7]>=5 && valtab[a+7]<6) || (valtab[a+7]>=7 && valtab[a+7]<8) || (valtab[a+7]>=8 && valtab[a+7]<9)) && a!=42 && a!=43 && a!=44 && a!=45 && a!=46 && a!=47 && a!=48){
+                    casepossible[compteur]=coordtab[a+7];
+                    compteur=compteur+1;
+                } //BAS
+                break;
+            case 2:
+                if (((valtab[a+1]>=2 && valtab[a+1]<3 )|| (valtab[a+1]>=4 && valtab[a+1]<5) || (valtab[a+1]>=6 && valtab[a+1]<7) || (valtab[a+1]>=8 && valtab[a+1]<9) || (valtab[a+1]>=10 && valtab[a+1]<11) || (valtab[a+1]>=1 && valtab[a+1]<2)) && a!=6 && a!=13 && a!=20 && a!=27 && a!=34 && a!=41 && a!=48){
+                    casepossible[compteur]=coordtab[a+1];
+                    compteur=compteur+1;
+                } // DROITE
+                if (((valtab[a-1]>=2 && valtab[a-1]<3) || (valtab[a-1]>=3 && valtab[a-1]<4) || (valtab[a-1]>=7 && valtab[a-1]<8) || (valtab[a-1]>=9 && valtab[a-1]<10) || (valtab[a-1]>=6 && valtab[a-1]<7) || (valtab[a-1]>=1 && valtab[a-1]<2)) && a!=0 && a!=7 && a!=14 && a!=21 && a!=28 && a!=35 && a!=42){
+                    casepossible[compteur]=coordtab[a-1];
+                    compteur=compteur+1;
+                } //GAUCHE
+                if (((valtab[a-7]>=1 && valtab[a-7]<2) || (valtab[a-7]>=3 && valtab[a-7]<4) || (valtab[a-7]>=4 && valtab[a-7]<5) || (valtab[a-7]>=5 && valtab[a-7]<6) || (valtab[a-7]>=9 && valtab[a-7]<10) || (valtab[a-7]>=10 && valtab[a-7]<11)) && a!=0 && a!=1 && a!=2 && a!=3 && a!=4 && a!=5 && a!=6){
+                    casepossible[compteur]=coordtab[a-7];
+                    compteur=compteur+1;
+                } //HAUT
+                break;
+            case 3:
+                if (((valtab[a-7]>=1 && valtab[a-7]<2) || (valtab[a-7]>=3 && valtab[a-7]<4) || (valtab[a-7]>=4 && valtab[a-7]<5) || (valtab[a-7]>=5 && valtab[a-7]<6) || (valtab[a-7]>=9 && valtab[a-7]<10) || (valtab[a-7]>=10 && valtab[a-7]<11)) && a!=0 && a!=1 && a!=2 && a!=3 && a!=4 && a!=5 && a!=6){
+                    casepossible[compteur]=coordtab[a-7];
+                    compteur=compteur+1;
+                } //HAUT
+                if (((valtab[a+7]>=2 && valtab[a+7]<3) || (valtab[a+7]>=3 && valtab[a+7]<4) || (valtab[a+7]>=4 && valtab[a+7]<5) || (valtab[a+7]>=5 && valtab[a+7]<6) || (valtab[a+7]>=7 && valtab[a+7]<8) || (valtab[a+7]>=8 && valtab[a+7]<9)) && a!=42 && a!=43 && a!=44 && a!=45 && a!=46 && a!=47 && a!=48){
+                    casepossible[compteur]=coordtab[a+7];
+                    compteur=compteur+1;
+                } //BAS
+                if (((valtab[a+1]>=2 && valtab[a+1]<3 )|| (valtab[a+1]>=4 && valtab[a+1]<5) || (valtab[a+1]>=6 && valtab[a+1]<7) || (valtab[a+1]>=8 && valtab[a+1]<9) || (valtab[a+1]>=10 && valtab[a+1]<11) || (valtab[a+1]>=1 && valtab[a+1]<2)) && a!=6 && a!=13 && a!=20 && a!=27 && a!=34 && a!=41 && a!=48){
+                    casepossible[compteur]=coordtab[a+1];
+                    compteur=compteur+1;
+                } // DROITE
+                break;
+            case 4:
+                if (((valtab[a-7]>=1 && valtab[a-7]<2) || (valtab[a-7]>=3 && valtab[a-7]<4) || (valtab[a-7]>=4 && valtab[a-7]<5) || (valtab[a-7]>=5 && valtab[a-7]<6) || (valtab[a-7]>=9 && valtab[a-7]<10) || (valtab[a-7]>=10 && valtab[a-7]<11)) && a!=0 && a!=1 && a!=2 && a!=3 && a!=4 && a!=5 && a!=6){
+                    casepossible[compteur]=coordtab[a-7];
+                    compteur=compteur+1;
+                } //HAUT
+                if (((valtab[a+7]>=2 && valtab[a+7]<3) || (valtab[a+7]>=3 && valtab[a+7]<4) || (valtab[a+7]>=4 && valtab[a+7]<5) || (valtab[a+7]>=5 && valtab[a+7]<6) || (valtab[a+7]>=7 && valtab[a+7]<8) || (valtab[a+7]>=8 && valtab[a+7]<9)) && a!=42 && a!=43 && a!=44 && a!=45 && a!=46 && a!=47 && a!=48){
+                    casepossible[compteur]=coordtab[a+7];
+                    compteur=compteur+1;
+                } //BAS
+                if (((valtab[a-1]>=2 && valtab[a-1]<3) || (valtab[a-1]>=3 && valtab[a-1]<4) || (valtab[a-1]>=7 && valtab[a-1]<8) || (valtab[a-1]>=9 && valtab[a-1]<10) || (valtab[a-1]>=6 && valtab[a-1]<7) || (valtab[a-1]>=1 && valtab[a-1]<2)) && a!=0 && a!=7 && a!=14 && a!=21 && a!=28 && a!=35 && a!=42){
+                    casepossible[compteur]=coordtab[a-1];
+                    compteur=compteur+1;
+                } //GAUCHE
+                break;
+            case 5:
+                if (((valtab[a-7]>=1 && valtab[a-7]<2) || (valtab[a-7]>=3 && valtab[a-7]<4) || (valtab[a-7]>=4 && valtab[a-7]<5) || (valtab[a-7]>=5 && valtab[a-7]<6) || (valtab[a-7]>=9 && valtab[a-7]<10) || (valtab[a-7]>=10 && valtab[a-7]<11)) && a!=0 && a!=1 && a!=2 && a!=3 && a!=4 && a!=5 && a!=6){
+                    casepossible[compteur]=coordtab[a-7];
+                    compteur=compteur+1;
+                } //HAUT
+                if (((valtab[a+7]>=2 && valtab[a+7]<3) || (valtab[a+7]>=3 && valtab[a+7]<4) || (valtab[a+7]>=4 && valtab[a+7]<5) || (valtab[a+7]>=5 && valtab[a+7]<6) || (valtab[a+7]>=7 && valtab[a+7]<8) || (valtab[a+7]>=8 && valtab[a+7]<9)) && a!=42 && a!=43 && a!=44 && a!=45 && a!=46 && a!=47 && a!=48){
+                    casepossible[compteur]=coordtab[a+7];
+                    compteur=compteur+1;
+                } //BAS
+                break;
+            case 6:
+                if (((valtab[a-1]>=2 && valtab[a-1]<3) || (valtab[a-1]>=3 && valtab[a-1]<4) || (valtab[a-1]>=7 && valtab[a-1]<8) || (valtab[a-1]>=9 && valtab[a-1]<10) || (valtab[a-1]>=6 && valtab[a-1]<7) || (valtab[a-1]>=1 && valtab[a-1]<2)) && a!=0 && a!=7 && a!=14 && a!=21 && a!=28 && a!=35 && a!=42){
+                    casepossible[compteur]=coordtab[a-1];
+                    compteur=compteur+1;
+                } //GAUCHE
+                if (((valtab[a+1]>=2 && valtab[a+1]<3 )|| (valtab[a+1]>=4 && valtab[a+1]<5) || (valtab[a+1]>=6 && valtab[a+1]<7) || (valtab[a+1]>=8 && valtab[a+1]<9) || (valtab[a+1]>=10 && valtab[a+1]<11) || (valtab[a+1]>=1 && valtab[a+1]<2)) && a!=6 && a!=13 && a!=20 && a!=27 && a!=34 && a!=41 && a!=48){
+                    casepossible[compteur]=coordtab[a+1];
+                    compteur=compteur+1;
+                } // DROITE
+                break;
+            case 7:
+                if (((valtab[a-7]>=1 && valtab[a-7]<2) || (valtab[a-7]>=3 && valtab[a-7]<4) || (valtab[a-7]>=4 && valtab[a-7]<5) || (valtab[a-7]>=5 && valtab[a-7]<6) || (valtab[a-7]>=9 && valtab[a-7]<10) || (valtab[a-7]>=10 && valtab[a-7]<11)) && a!=0 && a!=1 && a!=2 && a!=3 && a!=4 && a!=5 && a!=6){
+                    casepossible[compteur]=coordtab[a-7];
+                    compteur=compteur+1;
+                } //HAUT
+                if (((valtab[a+1]>=2 && valtab[a+1]<3 )|| (valtab[a+1]>=4 && valtab[a+1]<5) || (valtab[a+1]>=6 && valtab[a+1]<7) || (valtab[a+1]>=8 && valtab[a+1]<9) || (valtab[a+1]>=10 && valtab[a+1]<11) || (valtab[a+1]>=1 && valtab[a+1]<2)) && a!=6 && a!=13 && a!=20 && a!=27 && a!=34 && a!=41 && a!=48){
+                    casepossible[compteur]=coordtab[a+1];
+                    compteur=compteur+1;
+                } // DROITE
+                break;
+            case 8:
+                if (((valtab[a-1]>=2 && valtab[a-1]<3) || (valtab[a-1]>=3 && valtab[a-1]<4) || (valtab[a-1]>=7 && valtab[a-1]<8) || (valtab[a-1]>=9 && valtab[a-1]<10) || (valtab[a-1]>=6 && valtab[a-1]<7) || (valtab[a-1]>=1 && valtab[a-1]<2)) && a!=0 && a!=7 && a!=14 && a!=21 && a!=28 && a!=35 && a!=42){
+                    casepossible[compteur]=coordtab[a-1];
+                    compteur=compteur+1;
+                } //GAUCHE
+                if (((valtab[a-7]>=1 && valtab[a-7]<2) || (valtab[a-7]>=3 && valtab[a-7]<4) || (valtab[a-7]>=4 && valtab[a-7]<5) || (valtab[a-7]>=5 && valtab[a-7]<6) || (valtab[a-7]>=9 && valtab[a-7]<10) || (valtab[a-7]>=10 && valtab[a-7]<11)) && a!=0 && a!=1 && a!=2 && a!=3 && a!=4 && a!=5 && a!=6){
+                    casepossible[compteur]=coordtab[a-7];
+                    compteur=compteur+1;
+                } //HAUT
+                break;
+            case 9:
+                if (((valtab[a+1]>=2 && valtab[a+1]<3 )|| (valtab[a+1]>=4 && valtab[a+1]<5) || (valtab[a+1]>=6 && valtab[a+1]<7) || (valtab[a+1]>=8 && valtab[a+1]<9) || (valtab[a+1]>=10 && valtab[a+1]<11) || (valtab[a+1]>=1 && valtab[a+1]<2)) && a!=6 && a!=13 && a!=20 && a!=27 && a!=34 && a!=41 && a!=48){
+                    casepossible[compteur]=coordtab[a+1];
+                    compteur=compteur+1;
+                } // DROITE
+                if (((valtab[a+7]>=2 && valtab[a+7]<3) || (valtab[a+7]>=3 && valtab[a+7]<4) || (valtab[a+7]>=4 && valtab[a+7]<5) || (valtab[a+7]>=5 && valtab[a+7]<6) || (valtab[a+7]>=7 && valtab[a+7]<8) || (valtab[a+7]>=8 && valtab[a+7]<9)) && a!=42 && a!=43 && a!=44 && a!=45 && a!=46 && a!=47 && a!=48){
+                    casepossible[compteur]=coordtab[a+7];
+                    compteur=compteur+1;
+                } //BAS
+                break;
+            case 10:
+                if (((valtab[a+7]>=2 && valtab[a+7]<3) || (valtab[a+7]>=3 && valtab[a+7]<4) || (valtab[a+7]>=4 && valtab[a+7]<5) || (valtab[a+7]>=5 && valtab[a+7]<6) || (valtab[a+7]>=7 && valtab[a+7]<8) || (valtab[a+7]>=8 && valtab[a+7]<9)) && a!=42 && a!=43 && a!=44 && a!=45 && a!=46 && a!=47 && a!=48){
+                    casepossible[compteur]=coordtab[a+7];
+                    compteur=compteur+1;
+                } //BAS
+                if (((valtab[a-1]>=2 && valtab[a-1]<3) || (valtab[a-1]>=3 && valtab[a-1]<4) || (valtab[a-1]>=7 && valtab[a-1]<8) || (valtab[a-1]>=9 && valtab[a-1]<10) || (valtab[a-1]>=6 && valtab[a-1]<7) || (valtab[a-1]>=1 && valtab[a-1]<2)) && a!=0 && a!=7 && a!=14 && a!=21 && a!=28 && a!=35 && a!=42){
+                    casepossible[compteur]=coordtab[a-1];
+                    compteur=compteur+1;
+                } //GAUCHE
+                break;
+            default:
+                printf("ERROR \n");
+        }
+    }
+    int sixxx=compteur;
+    for (int i=0;i<sixxx;i++){
+        a=change(casepossible[i]);
+        int c=0;int ooo=0;ooo=change(casepossible[i]);
+        c=valtab[ooo];
+        switch (c){
+            case 1:
+                if (((valtab[a+1]>=2 && valtab[a+1]<3 )|| (valtab[a+1]>=4 && valtab[a+1]<5) || (valtab[a+1]>=6 && valtab[a+1]<7) || (valtab[a+1]>=8 && valtab[a+1]<9) || (valtab[a+1]>=10 && valtab[a+1]<11) || (valtab[a+1]>=1 && valtab[a+1]<2)) && a!=6 && a!=13 && a!=20 && a!=27 && a!=34 && a!=41 && a!=48){
+                    casepossible[compteur]=coordtab[a+1];
+                    compteur=compteur+1;
+                } // DROITE
+                if (((valtab[a-1]>=2 && valtab[a-1]<3) || (valtab[a-1]>=3 && valtab[a-1]<4) || (valtab[a-1]>=7 && valtab[a-1]<8) || (valtab[a-1]>=9 && valtab[a-1]<10) || (valtab[a-1]>=6 && valtab[a-1]<7) || (valtab[a-1]>=1 && valtab[a-1]<2)) && a!=0 && a!=7 && a!=14 && a!=21 && a!=28 && a!=35 && a!=42){
+                    casepossible[compteur]=coordtab[a-1];
+                    compteur=compteur+1;
+                } //GAUCHE
+                if (((valtab[a+7]>=2 && valtab[a+7]<3) || (valtab[a+7]>=3 && valtab[a+7]<4) || (valtab[a+7]>=4 && valtab[a+7]<5) || (valtab[a+7]>=5 && valtab[a+7]<6) || (valtab[a+7]>=7 && valtab[a+7]<8) || (valtab[a+7]>=8 && valtab[a+7]<9)) && a!=42 && a!=43 && a!=44 && a!=45 && a!=46 && a!=47 && a!=48){
+                    casepossible[compteur]=coordtab[a+7];
+                    compteur=compteur+1;
+                } //BAS
+                break;
+            case 2:
+                if (((valtab[a+1]>=2 && valtab[a+1]<3 )|| (valtab[a+1]>=4 && valtab[a+1]<5) || (valtab[a+1]>=6 && valtab[a+1]<7) || (valtab[a+1]>=8 && valtab[a+1]<9) || (valtab[a+1]>=10 && valtab[a+1]<11) || (valtab[a+1]>=1 && valtab[a+1]<2)) && a!=6 && a!=13 && a!=20 && a!=27 && a!=34 && a!=41 && a!=48){
+                    casepossible[compteur]=coordtab[a+1];
+                    compteur=compteur+1;
+                } // DROITE
+                if (((valtab[a-1]>=2 && valtab[a-1]<3) || (valtab[a-1]>=3 && valtab[a-1]<4) || (valtab[a-1]>=7 && valtab[a-1]<8) || (valtab[a-1]>=9 && valtab[a-1]<10) || (valtab[a-1]>=6 && valtab[a-1]<7) || (valtab[a-1]>=1 && valtab[a-1]<2)) && a!=0 && a!=7 && a!=14 && a!=21 && a!=28 && a!=35 && a!=42){
+                    casepossible[compteur]=coordtab[a-1];
+                    compteur=compteur+1;
+                } //GAUCHE
+                if (((valtab[a-7]>=1 && valtab[a-7]<2) || (valtab[a-7]>=3 && valtab[a-7]<4) || (valtab[a-7]>=4 && valtab[a-7]<5) || (valtab[a-7]>=5 && valtab[a-7]<6) || (valtab[a-7]>=9 && valtab[a-7]<10) || (valtab[a-7]>=10 && valtab[a-7]<11)) && a!=0 && a!=1 && a!=2 && a!=3 && a!=4 && a!=5 && a!=6){
+                    casepossible[compteur]=coordtab[a-7];
+                    compteur=compteur+1;
+                } //HAUT
+                break;
+            case 3:
+                if (((valtab[a-7]>=1 && valtab[a-7]<2) || (valtab[a-7]>=3 && valtab[a-7]<4) || (valtab[a-7]>=4 && valtab[a-7]<5) || (valtab[a-7]>=5 && valtab[a-7]<6) || (valtab[a-7]>=9 && valtab[a-7]<10) || (valtab[a-7]>=10 && valtab[a-7]<11)) && a!=0 && a!=1 && a!=2 && a!=3 && a!=4 && a!=5 && a!=6){
+                    casepossible[compteur]=coordtab[a-7];
+                    compteur=compteur+1;
+                } //HAUT
+                if (((valtab[a+7]>=2 && valtab[a+7]<3) || (valtab[a+7]>=3 && valtab[a+7]<4) || (valtab[a+7]>=4 && valtab[a+7]<5) || (valtab[a+7]>=5 && valtab[a+7]<6) || (valtab[a+7]>=7 && valtab[a+7]<8) || (valtab[a+7]>=8 && valtab[a+7]<9)) && a!=42 && a!=43 && a!=44 && a!=45 && a!=46 && a!=47 && a!=48){
+                    casepossible[compteur]=coordtab[a+7];
+                    compteur=compteur+1;
+                } //BAS
+                if (((valtab[a+1]>=2 && valtab[a+1]<3 )|| (valtab[a+1]>=4 && valtab[a+1]<5) || (valtab[a+1]>=6 && valtab[a+1]<7) || (valtab[a+1]>=8 && valtab[a+1]<9) || (valtab[a+1]>=10 && valtab[a+1]<11) || (valtab[a+1]>=1 && valtab[a+1]<2)) && a!=6 && a!=13 && a!=20 && a!=27 && a!=34 && a!=41 && a!=48){
+                    casepossible[compteur]=coordtab[a+1];
+                    compteur=compteur+1;
+                } // DROITE
+                break;
+            case 4:
+                if (((valtab[a-7]>=1 && valtab[a-7]<2) || (valtab[a-7]>=3 && valtab[a-7]<4) || (valtab[a-7]>=4 && valtab[a-7]<5) || (valtab[a-7]>=5 && valtab[a-7]<6) || (valtab[a-7]>=9 && valtab[a-7]<10) || (valtab[a-7]>=10 && valtab[a-7]<11)) && a!=0 && a!=1 && a!=2 && a!=3 && a!=4 && a!=5 && a!=6){
+                    casepossible[compteur]=coordtab[a-7];
+                    compteur=compteur+1;
+                } //HAUT
+                if (((valtab[a+7]>=2 && valtab[a+7]<3) || (valtab[a+7]>=3 && valtab[a+7]<4) || (valtab[a+7]>=4 && valtab[a+7]<5) || (valtab[a+7]>=5 && valtab[a+7]<6) || (valtab[a+7]>=7 && valtab[a+7]<8) || (valtab[a+7]>=8 && valtab[a+7]<9)) && a!=42 && a!=43 && a!=44 && a!=45 && a!=46 && a!=47 && a!=48){
+                    casepossible[compteur]=coordtab[a+7];
+                    compteur=compteur+1;
+                } //BAS
+                if (((valtab[a-1]>=2 && valtab[a-1]<3) || (valtab[a-1]>=3 && valtab[a-1]<4) || (valtab[a-1]>=7 && valtab[a-1]<8) || (valtab[a-1]>=9 && valtab[a-1]<10) || (valtab[a-1]>=6 && valtab[a-1]<7) || (valtab[a-1]>=1 && valtab[a-1]<2)) && a!=0 && a!=7 && a!=14 && a!=21 && a!=28 && a!=35 && a!=42){
+                    casepossible[compteur]=coordtab[a-1];
+                    compteur=compteur+1;
+                } //GAUCHE
+                break;
+            case 5:
+                if (((valtab[a-7]>=1 && valtab[a-7]<2) || (valtab[a-7]>=3 && valtab[a-7]<4) || (valtab[a-7]>=4 && valtab[a-7]<5) || (valtab[a-7]>=5 && valtab[a-7]<6) || (valtab[a-7]>=9 && valtab[a-7]<10) || (valtab[a-7]>=10 && valtab[a-7]<11)) && a!=0 && a!=1 && a!=2 && a!=3 && a!=4 && a!=5 && a!=6){
+                    casepossible[compteur]=coordtab[a-7];
+                    compteur=compteur+1;
+                } //HAUT
+                if (((valtab[a+7]>=2 && valtab[a+7]<3) || (valtab[a+7]>=3 && valtab[a+7]<4) || (valtab[a+7]>=4 && valtab[a+7]<5) || (valtab[a+7]>=5 && valtab[a+7]<6) || (valtab[a+7]>=7 && valtab[a+7]<8) || (valtab[a+7]>=8 && valtab[a+7]<9)) && a!=42 && a!=43 && a!=44 && a!=45 && a!=46 && a!=47 && a!=48){
+                    casepossible[compteur]=coordtab[a+7];
+                    compteur=compteur+1;
+                } //BAS
+                break;
+            case 6:
+                if (((valtab[a-1]>=2 && valtab[a-1]<3) || (valtab[a-1]>=3 && valtab[a-1]<4) || (valtab[a-1]>=7 && valtab[a-1]<8) || (valtab[a-1]>=9 && valtab[a-1]<10) || (valtab[a-1]>=6 && valtab[a-1]<7) || (valtab[a-1]>=1 && valtab[a-1]<2)) && a!=0 && a!=7 && a!=14 && a!=21 && a!=28 && a!=35 && a!=42){
+                    casepossible[compteur]=coordtab[a-1];
+                    compteur=compteur+1;
+                } //GAUCHE
+                if (((valtab[a+1]>=2 && valtab[a+1]<3 )|| (valtab[a+1]>=4 && valtab[a+1]<5) || (valtab[a+1]>=6 && valtab[a+1]<7) || (valtab[a+1]>=8 && valtab[a+1]<9) || (valtab[a+1]>=10 && valtab[a+1]<11) || (valtab[a+1]>=1 && valtab[a+1]<2)) && a!=6 && a!=13 && a!=20 && a!=27 && a!=34 && a!=41 && a!=48){
+                    casepossible[compteur]=coordtab[a+1];
+                    compteur=compteur+1;
+                } // DROITE
+                break;
+            case 7:
+                if (((valtab[a-7]>=1 && valtab[a-7]<2) || (valtab[a-7]>=3 && valtab[a-7]<4) || (valtab[a-7]>=4 && valtab[a-7]<5) || (valtab[a-7]>=5 && valtab[a-7]<6) || (valtab[a-7]>=9 && valtab[a-7]<10) || (valtab[a-7]>=10 && valtab[a-7]<11)) && a!=0 && a!=1 && a!=2 && a!=3 && a!=4 && a!=5 && a!=6){
+                    casepossible[compteur]=coordtab[a-7];
+                    compteur=compteur+1;
+                } //HAUT
+                if (((valtab[a+1]>=2 && valtab[a+1]<3 )|| (valtab[a+1]>=4 && valtab[a+1]<5) || (valtab[a+1]>=6 && valtab[a+1]<7) || (valtab[a+1]>=8 && valtab[a+1]<9) || (valtab[a+1]>=10 && valtab[a+1]<11) || (valtab[a+1]>=1 && valtab[a+1]<2)) && a!=6 && a!=13 && a!=20 && a!=27 && a!=34 && a!=41 && a!=48){
+                    casepossible[compteur]=coordtab[a+1];
+                    compteur=compteur+1;
+                } // DROITE
+                break;
+            case 8:
+                if (((valtab[a-1]>=2 && valtab[a-1]<3) || (valtab[a-1]>=3 && valtab[a-1]<4) || (valtab[a-1]>=7 && valtab[a-1]<8) || (valtab[a-1]>=9 && valtab[a-1]<10) || (valtab[a-1]>=6 && valtab[a-1]<7) || (valtab[a-1]>=1 && valtab[a-1]<2)) && a!=0 && a!=7 && a!=14 && a!=21 && a!=28 && a!=35 && a!=42){
+                    casepossible[compteur]=coordtab[a-1];
+                    compteur=compteur+1;
+                } //GAUCHE
+                if (((valtab[a-7]>=1 && valtab[a-7]<2) || (valtab[a-7]>=3 && valtab[a-7]<4) || (valtab[a-7]>=4 && valtab[a-7]<5) || (valtab[a-7]>=5 && valtab[a-7]<6) || (valtab[a-7]>=9 && valtab[a-7]<10) || (valtab[a-7]>=10 && valtab[a-7]<11)) && a!=0 && a!=1 && a!=2 && a!=3 && a!=4 && a!=5 && a!=6){
+                    casepossible[compteur]=coordtab[a-7];
+                    compteur=compteur+1;
+                } //HAUT
+                break;
+            case 9:
+                if (((valtab[a+1]>=2 && valtab[a+1]<3 )|| (valtab[a+1]>=4 && valtab[a+1]<5) || (valtab[a+1]>=6 && valtab[a+1]<7) || (valtab[a+1]>=8 && valtab[a+1]<9) || (valtab[a+1]>=10 && valtab[a+1]<11) || (valtab[a+1]>=1 && valtab[a+1]<2)) && a!=6 && a!=13 && a!=20 && a!=27 && a!=34 && a!=41 && a!=48){
+                    casepossible[compteur]=coordtab[a+1];
+                    compteur=compteur+1;
+                } // DROITE
+                if (((valtab[a+7]>=2 && valtab[a+7]<3) || (valtab[a+7]>=3 && valtab[a+7]<4) || (valtab[a+7]>=4 && valtab[a+7]<5) || (valtab[a+7]>=5 && valtab[a+7]<6) || (valtab[a+7]>=7 && valtab[a+7]<8) || (valtab[a+7]>=8 && valtab[a+7]<9)) && a!=42 && a!=43 && a!=44 && a!=45 && a!=46 && a!=47 && a!=48){
+                    casepossible[compteur]=coordtab[a+7];
+                    compteur=compteur+1;
+                } //BAS
+                break;
+            case 10:
+                if (((valtab[a+7]>=2 && valtab[a+7]<3) || (valtab[a+7]>=3 && valtab[a+7]<4) || (valtab[a+7]>=4 && valtab[a+7]<5) || (valtab[a+7]>=5 && valtab[a+7]<6) || (valtab[a+7]>=7 && valtab[a+7]<8) || (valtab[a+7]>=8 && valtab[a+7]<9)) && a!=42 && a!=43 && a!=44 && a!=45 && a!=46 && a!=47 && a!=48){
+                    casepossible[compteur]=coordtab[a+7];
+                    compteur=compteur+1;
+                } //BAS
+                if (((valtab[a-1]>=2 && valtab[a-1]<3) || (valtab[a-1]>=3 && valtab[a-1]<4) || (valtab[a-1]>=7 && valtab[a-1]<8) || (valtab[a-1]>=9 && valtab[a-1]<10) || (valtab[a-1]>=6 && valtab[a-1]<7) || (valtab[a-1]>=1 && valtab[a-1]<2)) && a!=0 && a!=7 && a!=14 && a!=21 && a!=28 && a!=35 && a!=42){
+                    casepossible[compteur]=coordtab[a-1];
+                    compteur=compteur+1;
+                } //GAUCHE
+                break;
+            default:
+                printf("ERROR \n");
+        }
+    }
+    int sevenn=compteur;
+    for (int i=0;i<sevenn;i++){
+        a=change(casepossible[i]);
+        int c=0;int kkk=0;kkk=change(casepossible[i]);
+        c=valtab[kkk];
+        switch (c){
+            case 1:
+                if (((valtab[a+1]>=2 && valtab[a+1]<3 )|| (valtab[a+1]>=4 && valtab[a+1]<5) || (valtab[a+1]>=6 && valtab[a+1]<7) || (valtab[a+1]>=8 && valtab[a+1]<9) || (valtab[a+1]>=10 && valtab[a+1]<11) || (valtab[a+1]>=1 && valtab[a+1]<2)) && a!=6 && a!=13 && a!=20 && a!=27 && a!=34 && a!=41 && a!=48){
+                    casepossible[compteur]=coordtab[a+1];
+                    compteur=compteur+1;
+                } // DROITE
+                if (((valtab[a-1]>=2 && valtab[a-1]<3) || (valtab[a-1]>=3 && valtab[a-1]<4) || (valtab[a-1]>=7 && valtab[a-1]<8) || (valtab[a-1]>=9 && valtab[a-1]<10) || (valtab[a-1]>=6 && valtab[a-1]<7) || (valtab[a-1]>=1 && valtab[a-1]<2)) && a!=0 && a!=7 && a!=14 && a!=21 && a!=28 && a!=35 && a!=42){
+                    casepossible[compteur]=coordtab[a-1];
+                    compteur=compteur+1;
+                } //GAUCHE
+                if (((valtab[a+7]>=2 && valtab[a+7]<3) || (valtab[a+7]>=3 && valtab[a+7]<4) || (valtab[a+7]>=4 && valtab[a+7]<5) || (valtab[a+7]>=5 && valtab[a+7]<6) || (valtab[a+7]>=7 && valtab[a+7]<8) || (valtab[a+7]>=8 && valtab[a+7]<9)) && a!=42 && a!=43 && a!=44 && a!=45 && a!=46 && a!=47 && a!=48){
+                    casepossible[compteur]=coordtab[a+7];
+                    compteur=compteur+1;
+                } //BAS
+                break;
+            case 2:
+                if (((valtab[a+1]>=2 && valtab[a+1]<3 )|| (valtab[a+1]>=4 && valtab[a+1]<5) || (valtab[a+1]>=6 && valtab[a+1]<7) || (valtab[a+1]>=8 && valtab[a+1]<9) || (valtab[a+1]>=10 && valtab[a+1]<11) || (valtab[a+1]>=1 && valtab[a+1]<2)) && a!=6 && a!=13 && a!=20 && a!=27 && a!=34 && a!=41 && a!=48){
+                    casepossible[compteur]=coordtab[a+1];
+                    compteur=compteur+1;
+                } // DROITE
+                if (((valtab[a-1]>=2 && valtab[a-1]<3) || (valtab[a-1]>=3 && valtab[a-1]<4) || (valtab[a-1]>=7 && valtab[a-1]<8) || (valtab[a-1]>=9 && valtab[a-1]<10) || (valtab[a-1]>=6 && valtab[a-1]<7) || (valtab[a-1]>=1 && valtab[a-1]<2)) && a!=0 && a!=7 && a!=14 && a!=21 && a!=28 && a!=35 && a!=42){
+                    casepossible[compteur]=coordtab[a-1];
+                    compteur=compteur+1;
+                } //GAUCHE
+                if (((valtab[a-7]>=1 && valtab[a-7]<2) || (valtab[a-7]>=3 && valtab[a-7]<4) || (valtab[a-7]>=4 && valtab[a-7]<5) || (valtab[a-7]>=5 && valtab[a-7]<6) || (valtab[a-7]>=9 && valtab[a-7]<10) || (valtab[a-7]>=10 && valtab[a-7]<11)) && a!=0 && a!=1 && a!=2 && a!=3 && a!=4 && a!=5 && a!=6){
+                    casepossible[compteur]=coordtab[a-7];
+                    compteur=compteur+1;
+                } //HAUT
+                break;
+            case 3:
+                if (((valtab[a-7]>=1 && valtab[a-7]<2) || (valtab[a-7]>=3 && valtab[a-7]<4) || (valtab[a-7]>=4 && valtab[a-7]<5) || (valtab[a-7]>=5 && valtab[a-7]<6) || (valtab[a-7]>=9 && valtab[a-7]<10) || (valtab[a-7]>=10 && valtab[a-7]<11)) && a!=0 && a!=1 && a!=2 && a!=3 && a!=4 && a!=5 && a!=6){
+                    casepossible[compteur]=coordtab[a-7];
+                    compteur=compteur+1;
+                } //HAUT
+                if (((valtab[a+7]>=2 && valtab[a+7]<3) || (valtab[a+7]>=3 && valtab[a+7]<4) || (valtab[a+7]>=4 && valtab[a+7]<5) || (valtab[a+7]>=5 && valtab[a+7]<6) || (valtab[a+7]>=7 && valtab[a+7]<8) || (valtab[a+7]>=8 && valtab[a+7]<9)) && a!=42 && a!=43 && a!=44 && a!=45 && a!=46 && a!=47 && a!=48){
+                    casepossible[compteur]=coordtab[a+7];
+                    compteur=compteur+1;
+                } //BAS
+                if (((valtab[a+1]>=2 && valtab[a+1]<3 )|| (valtab[a+1]>=4 && valtab[a+1]<5) || (valtab[a+1]>=6 && valtab[a+1]<7) || (valtab[a+1]>=8 && valtab[a+1]<9) || (valtab[a+1]>=10 && valtab[a+1]<11) || (valtab[a+1]>=1 && valtab[a+1]<2)) && a!=6 && a!=13 && a!=20 && a!=27 && a!=34 && a!=41 && a!=48){
+                    casepossible[compteur]=coordtab[a+1];
+                    compteur=compteur+1;
+                } // DROITE
+                break;
+            case 4:
+                if (((valtab[a-7]>=1 && valtab[a-7]<2) || (valtab[a-7]>=3 && valtab[a-7]<4) || (valtab[a-7]>=4 && valtab[a-7]<5) || (valtab[a-7]>=5 && valtab[a-7]<6) || (valtab[a-7]>=9 && valtab[a-7]<10) || (valtab[a-7]>=10 && valtab[a-7]<11)) && a!=0 && a!=1 && a!=2 && a!=3 && a!=4 && a!=5 && a!=6){
+                    casepossible[compteur]=coordtab[a-7];
+                    compteur=compteur+1;
+                } //HAUT
+                if (((valtab[a+7]>=2 && valtab[a+7]<3) || (valtab[a+7]>=3 && valtab[a+7]<4) || (valtab[a+7]>=4 && valtab[a+7]<5) || (valtab[a+7]>=5 && valtab[a+7]<6) || (valtab[a+7]>=7 && valtab[a+7]<8) || (valtab[a+7]>=8 && valtab[a+7]<9)) && a!=42 && a!=43 && a!=44 && a!=45 && a!=46 && a!=47 && a!=48){
+                    casepossible[compteur]=coordtab[a+7];
+                    compteur=compteur+1;
+                } //BAS
+                if (((valtab[a-1]>=2 && valtab[a-1]<3) || (valtab[a-1]>=3 && valtab[a-1]<4) || (valtab[a-1]>=7 && valtab[a-1]<8) || (valtab[a-1]>=9 && valtab[a-1]<10) || (valtab[a-1]>=6 && valtab[a-1]<7) || (valtab[a-1]>=1 && valtab[a-1]<2)) && a!=0 && a!=7 && a!=14 && a!=21 && a!=28 && a!=35 && a!=42){
+                    casepossible[compteur]=coordtab[a-1];
+                    compteur=compteur+1;
+                } //GAUCHE
+                break;
+            case 5:
+                if (((valtab[a-7]>=1 && valtab[a-7]<2) || (valtab[a-7]>=3 && valtab[a-7]<4) || (valtab[a-7]>=4 && valtab[a-7]<5) || (valtab[a-7]>=5 && valtab[a-7]<6) || (valtab[a-7]>=9 && valtab[a-7]<10) || (valtab[a-7]>=10 && valtab[a-7]<11)) && a!=0 && a!=1 && a!=2 && a!=3 && a!=4 && a!=5 && a!=6){
+                    casepossible[compteur]=coordtab[a-7];
+                    compteur=compteur+1;
+                } //HAUT
+                if (((valtab[a+7]>=2 && valtab[a+7]<3) || (valtab[a+7]>=3 && valtab[a+7]<4) || (valtab[a+7]>=4 && valtab[a+7]<5) || (valtab[a+7]>=5 && valtab[a+7]<6) || (valtab[a+7]>=7 && valtab[a+7]<8) || (valtab[a+7]>=8 && valtab[a+7]<9)) && a!=42 && a!=43 && a!=44 && a!=45 && a!=46 && a!=47 && a!=48){
+                    casepossible[compteur]=coordtab[a+7];
+                    compteur=compteur+1;
+                } //BAS
+                break;
+            case 6:
+                if (((valtab[a-1]>=2 && valtab[a-1]<3) || (valtab[a-1]>=3 && valtab[a-1]<4) || (valtab[a-1]>=7 && valtab[a-1]<8) || (valtab[a-1]>=9 && valtab[a-1]<10) || (valtab[a-1]>=6 && valtab[a-1]<7) || (valtab[a-1]>=1 && valtab[a-1]<2)) && a!=0 && a!=7 && a!=14 && a!=21 && a!=28 && a!=35 && a!=42){
+                    casepossible[compteur]=coordtab[a-1];
+                    compteur=compteur+1;
+                } //GAUCHE
+                if (((valtab[a+1]>=2 && valtab[a+1]<3 )|| (valtab[a+1]>=4 && valtab[a+1]<5) || (valtab[a+1]>=6 && valtab[a+1]<7) || (valtab[a+1]>=8 && valtab[a+1]<9) || (valtab[a+1]>=10 && valtab[a+1]<11) || (valtab[a+1]>=1 && valtab[a+1]<2)) && a!=6 && a!=13 && a!=20 && a!=27 && a!=34 && a!=41 && a!=48){
+                    casepossible[compteur]=coordtab[a+1];
+                    compteur=compteur+1;
+                } // DROITE
+                break;
+            case 7:
+                if (((valtab[a-7]>=1 && valtab[a-7]<2) || (valtab[a-7]>=3 && valtab[a-7]<4) || (valtab[a-7]>=4 && valtab[a-7]<5) || (valtab[a-7]>=5 && valtab[a-7]<6) || (valtab[a-7]>=9 && valtab[a-7]<10) || (valtab[a-7]>=10 && valtab[a-7]<11)) && a!=0 && a!=1 && a!=2 && a!=3 && a!=4 && a!=5 && a!=6){
+                    casepossible[compteur]=coordtab[a-7];
+                    compteur=compteur+1;
+                } //HAUT
+                if (((valtab[a+1]>=2 && valtab[a+1]<3 )|| (valtab[a+1]>=4 && valtab[a+1]<5) || (valtab[a+1]>=6 && valtab[a+1]<7) || (valtab[a+1]>=8 && valtab[a+1]<9) || (valtab[a+1]>=10 && valtab[a+1]<11) || (valtab[a+1]>=1 && valtab[a+1]<2)) && a!=6 && a!=13 && a!=20 && a!=27 && a!=34 && a!=41 && a!=48){
+                    casepossible[compteur]=coordtab[a+1];
+                    compteur=compteur+1;
+                } // DROITE
+                break;
+            case 8:
+                if (((valtab[a-1]>=2 && valtab[a-1]<3) || (valtab[a-1]>=3 && valtab[a-1]<4) || (valtab[a-1]>=7 && valtab[a-1]<8) || (valtab[a-1]>=9 && valtab[a-1]<10) || (valtab[a-1]>=6 && valtab[a-1]<7) || (valtab[a-1]>=1 && valtab[a-1]<2)) && a!=0 && a!=7 && a!=14 && a!=21 && a!=28 && a!=35 && a!=42){
+                    casepossible[compteur]=coordtab[a-1];
+                    compteur=compteur+1;
+                } //GAUCHE
+                if (((valtab[a-7]>=1 && valtab[a-7]<2) || (valtab[a-7]>=3 && valtab[a-7]<4) || (valtab[a-7]>=4 && valtab[a-7]<5) || (valtab[a-7]>=5 && valtab[a-7]<6) || (valtab[a-7]>=9 && valtab[a-7]<10) || (valtab[a-7]>=10 && valtab[a-7]<11)) && a!=0 && a!=1 && a!=2 && a!=3 && a!=4 && a!=5 && a!=6){
+                    casepossible[compteur]=coordtab[a-7];
+                    compteur=compteur+1;
+                } //HAUT
+                break;
+            case 9:
+                if (((valtab[a+1]>=2 && valtab[a+1]<3 )|| (valtab[a+1]>=4 && valtab[a+1]<5) || (valtab[a+1]>=6 && valtab[a+1]<7) || (valtab[a+1]>=8 && valtab[a+1]<9) || (valtab[a+1]>=10 && valtab[a+1]<11) || (valtab[a+1]>=1 && valtab[a+1]<2)) && a!=6 && a!=13 && a!=20 && a!=27 && a!=34 && a!=41 && a!=48){
+                    casepossible[compteur]=coordtab[a+1];
+                    compteur=compteur+1;
+                } // DROITE
+                if (((valtab[a+7]>=2 && valtab[a+7]<3) || (valtab[a+7]>=3 && valtab[a+7]<4) || (valtab[a+7]>=4 && valtab[a+7]<5) || (valtab[a+7]>=5 && valtab[a+7]<6) || (valtab[a+7]>=7 && valtab[a+7]<8) || (valtab[a+7]>=8 && valtab[a+7]<9)) && a!=42 && a!=43 && a!=44 && a!=45 && a!=46 && a!=47 && a!=48){
+                    casepossible[compteur]=coordtab[a+7];
+                    compteur=compteur+1;
+                } //BAS
+                break;
+            case 10:
+                if (((valtab[a+7]>=2 && valtab[a+7]<3) || (valtab[a+7]>=3 && valtab[a+7]<4) || (valtab[a+7]>=4 && valtab[a+7]<5) || (valtab[a+7]>=5 && valtab[a+7]<6) || (valtab[a+7]>=7 && valtab[a+7]<8) || (valtab[a+7]>=8 && valtab[a+7]<9)) && a!=42 && a!=43 && a!=44 && a!=45 && a!=46 && a!=47 && a!=48){
+                    casepossible[compteur]=coordtab[a+7];
+                    compteur=compteur+1;
+                } //BAS
+                if (((valtab[a-1]>=2 && valtab[a-1]<3) || (valtab[a-1]>=3 && valtab[a-1]<4) || (valtab[a-1]>=7 && valtab[a-1]<8) || (valtab[a-1]>=9 && valtab[a-1]<10) || (valtab[a-1]>=6 && valtab[a-1]<7) || (valtab[a-1]>=1 && valtab[a-1]<2)) && a!=0 && a!=7 && a!=14 && a!=21 && a!=28 && a!=35 && a!=42){
+                    casepossible[compteur]=coordtab[a-1];
+                    compteur=compteur+1;
+                } //GAUCHE
+                break;
+            default:
+                printf("ERROR \n");
+        }
+    }
+    int heightt=compteur;
+    for (int i=0;i<heightt;i++){
+        a=change(casepossible[i]);
+        int c=0;int rdf=0;rdf=change(casepossible[i]);
+        c=valtab[rdf];
+        switch (c){
+            case 1:
+                if (((valtab[a+1]>=2 && valtab[a+1]<3 )|| (valtab[a+1]>=4 && valtab[a+1]<5) || (valtab[a+1]>=6 && valtab[a+1]<7) || (valtab[a+1]>=8 && valtab[a+1]<9) || (valtab[a+1]>=10 && valtab[a+1]<11) || (valtab[a+1]>=1 && valtab[a+1]<2)) && a!=6 && a!=13 && a!=20 && a!=27 && a!=34 && a!=41 && a!=48){
+                    casepossible[compteur]=coordtab[a+1];
+                    compteur=compteur+1;
+                } // DROITE
+                if (((valtab[a-1]>=2 && valtab[a-1]<3) || (valtab[a-1]>=3 && valtab[a-1]<4) || (valtab[a-1]>=7 && valtab[a-1]<8) || (valtab[a-1]>=9 && valtab[a-1]<10) || (valtab[a-1]>=6 && valtab[a-1]<7) || (valtab[a-1]>=1 && valtab[a-1]<2)) && a!=0 && a!=7 && a!=14 && a!=21 && a!=28 && a!=35 && a!=42){
+                    casepossible[compteur]=coordtab[a-1];
+                    compteur=compteur+1;
+                } //GAUCHE
+                if (((valtab[a+7]>=2 && valtab[a+7]<3) || (valtab[a+7]>=3 && valtab[a+7]<4) || (valtab[a+7]>=4 && valtab[a+7]<5) || (valtab[a+7]>=5 && valtab[a+7]<6) || (valtab[a+7]>=7 && valtab[a+7]<8) || (valtab[a+7]>=8 && valtab[a+7]<9)) && a!=42 && a!=43 && a!=44 && a!=45 && a!=46 && a!=47 && a!=48){
+                    casepossible[compteur]=coordtab[a+7];
+                    compteur=compteur+1;
+                } //BAS
+                break;
+            case 2:
+                if (((valtab[a+1]>=2 && valtab[a+1]<3 )|| (valtab[a+1]>=4 && valtab[a+1]<5) || (valtab[a+1]>=6 && valtab[a+1]<7) || (valtab[a+1]>=8 && valtab[a+1]<9) || (valtab[a+1]>=10 && valtab[a+1]<11) || (valtab[a+1]>=1 && valtab[a+1]<2)) && a!=6 && a!=13 && a!=20 && a!=27 && a!=34 && a!=41 && a!=48){
+                    casepossible[compteur]=coordtab[a+1];
+                    compteur=compteur+1;
+                } // DROITE
+                if (((valtab[a-1]>=2 && valtab[a-1]<3) || (valtab[a-1]>=3 && valtab[a-1]<4) || (valtab[a-1]>=7 && valtab[a-1]<8) || (valtab[a-1]>=9 && valtab[a-1]<10) || (valtab[a-1]>=6 && valtab[a-1]<7) || (valtab[a-1]>=1 && valtab[a-1]<2)) && a!=0 && a!=7 && a!=14 && a!=21 && a!=28 && a!=35 && a!=42){
+                    casepossible[compteur]=coordtab[a-1];
+                    compteur=compteur+1;
+                } //GAUCHE
+                if (((valtab[a-7]>=1 && valtab[a-7]<2) || (valtab[a-7]>=3 && valtab[a-7]<4) || (valtab[a-7]>=4 && valtab[a-7]<5) || (valtab[a-7]>=5 && valtab[a-7]<6) || (valtab[a-7]>=9 && valtab[a-7]<10) || (valtab[a-7]>=10 && valtab[a-7]<11)) && a!=0 && a!=1 && a!=2 && a!=3 && a!=4 && a!=5 && a!=6){
+                    casepossible[compteur]=coordtab[a-7];
+                    compteur=compteur+1;
+                } //HAUT
+                break;
+            case 3:
+                if (((valtab[a-7]>=1 && valtab[a-7]<2) || (valtab[a-7]>=3 && valtab[a-7]<4) || (valtab[a-7]>=4 && valtab[a-7]<5) || (valtab[a-7]>=5 && valtab[a-7]<6) || (valtab[a-7]>=9 && valtab[a-7]<10) || (valtab[a-7]>=10 && valtab[a-7]<11)) && a!=0 && a!=1 && a!=2 && a!=3 && a!=4 && a!=5 && a!=6){
+                    casepossible[compteur]=coordtab[a-7];
+                    compteur=compteur+1;
+                } //HAUT
+                if (((valtab[a+7]>=2 && valtab[a+7]<3) || (valtab[a+7]>=3 && valtab[a+7]<4) || (valtab[a+7]>=4 && valtab[a+7]<5) || (valtab[a+7]>=5 && valtab[a+7]<6) || (valtab[a+7]>=7 && valtab[a+7]<8) || (valtab[a+7]>=8 && valtab[a+7]<9)) && a!=42 && a!=43 && a!=44 && a!=45 && a!=46 && a!=47 && a!=48){
+                    casepossible[compteur]=coordtab[a+7];
+                    compteur=compteur+1;
+                } //BAS
+                if (((valtab[a+1]>=2 && valtab[a+1]<3 )|| (valtab[a+1]>=4 && valtab[a+1]<5) || (valtab[a+1]>=6 && valtab[a+1]<7) || (valtab[a+1]>=8 && valtab[a+1]<9) || (valtab[a+1]>=10 && valtab[a+1]<11) || (valtab[a+1]>=1 && valtab[a+1]<2)) && a!=6 && a!=13 && a!=20 && a!=27 && a!=34 && a!=41 && a!=48){
+                    casepossible[compteur]=coordtab[a+1];
+                    compteur=compteur+1;
+                } // DROITE
+                break;
+            case 4:
+                if (((valtab[a-7]>=1 && valtab[a-7]<2) || (valtab[a-7]>=3 && valtab[a-7]<4) || (valtab[a-7]>=4 && valtab[a-7]<5) || (valtab[a-7]>=5 && valtab[a-7]<6) || (valtab[a-7]>=9 && valtab[a-7]<10) || (valtab[a-7]>=10 && valtab[a-7]<11)) && a!=0 && a!=1 && a!=2 && a!=3 && a!=4 && a!=5 && a!=6){
+                    casepossible[compteur]=coordtab[a-7];
+                    compteur=compteur+1;
+                } //HAUT
+                if (((valtab[a+7]>=2 && valtab[a+7]<3) || (valtab[a+7]>=3 && valtab[a+7]<4) || (valtab[a+7]>=4 && valtab[a+7]<5) || (valtab[a+7]>=5 && valtab[a+7]<6) || (valtab[a+7]>=7 && valtab[a+7]<8) || (valtab[a+7]>=8 && valtab[a+7]<9)) && a!=42 && a!=43 && a!=44 && a!=45 && a!=46 && a!=47 && a!=48){
+                    casepossible[compteur]=coordtab[a+7];
+                    compteur=compteur+1;
+                } //BAS
+                if (((valtab[a-1]>=2 && valtab[a-1]<3) || (valtab[a-1]>=3 && valtab[a-1]<4) || (valtab[a-1]>=7 && valtab[a-1]<8) || (valtab[a-1]>=9 && valtab[a-1]<10) || (valtab[a-1]>=6 && valtab[a-1]<7) || (valtab[a-1]>=1 && valtab[a-1]<2)) && a!=0 && a!=7 && a!=14 && a!=21 && a!=28 && a!=35 && a!=42){
+                    casepossible[compteur]=coordtab[a-1];
+                    compteur=compteur+1;
+                } //GAUCHE
+                break;
+            case 5:
+                if (((valtab[a-7]>=1 && valtab[a-7]<2) || (valtab[a-7]>=3 && valtab[a-7]<4) || (valtab[a-7]>=4 && valtab[a-7]<5) || (valtab[a-7]>=5 && valtab[a-7]<6) || (valtab[a-7]>=9 && valtab[a-7]<10) || (valtab[a-7]>=10 && valtab[a-7]<11)) && a!=0 && a!=1 && a!=2 && a!=3 && a!=4 && a!=5 && a!=6){
+                    casepossible[compteur]=coordtab[a-7];
+                    compteur=compteur+1;
+                } //HAUT
+                if (((valtab[a+7]>=2 && valtab[a+7]<3) || (valtab[a+7]>=3 && valtab[a+7]<4) || (valtab[a+7]>=4 && valtab[a+7]<5) || (valtab[a+7]>=5 && valtab[a+7]<6) || (valtab[a+7]>=7 && valtab[a+7]<8) || (valtab[a+7]>=8 && valtab[a+7]<9)) && a!=42 && a!=43 && a!=44 && a!=45 && a!=46 && a!=47 && a!=48){
+                    casepossible[compteur]=coordtab[a+7];
+                    compteur=compteur+1;
+                } //BAS
+                break;
+            case 6:
+                if (((valtab[a-1]>=2 && valtab[a-1]<3) || (valtab[a-1]>=3 && valtab[a-1]<4) || (valtab[a-1]>=7 && valtab[a-1]<8) || (valtab[a-1]>=9 && valtab[a-1]<10) || (valtab[a-1]>=6 && valtab[a-1]<7) || (valtab[a-1]>=1 && valtab[a-1]<2)) && a!=0 && a!=7 && a!=14 && a!=21 && a!=28 && a!=35 && a!=42){
+                    casepossible[compteur]=coordtab[a-1];
+                    compteur=compteur+1;
+                } //GAUCHE
+                if (((valtab[a+1]>=2 && valtab[a+1]<3 )|| (valtab[a+1]>=4 && valtab[a+1]<5) || (valtab[a+1]>=6 && valtab[a+1]<7) || (valtab[a+1]>=8 && valtab[a+1]<9) || (valtab[a+1]>=10 && valtab[a+1]<11) || (valtab[a+1]>=1 && valtab[a+1]<2)) && a!=6 && a!=13 && a!=20 && a!=27 && a!=34 && a!=41 && a!=48){
+                    casepossible[compteur]=coordtab[a+1];
+                    compteur=compteur+1;
+                } // DROITE
+                break;
+            case 7:
+                if (((valtab[a-7]>=1 && valtab[a-7]<2) || (valtab[a-7]>=3 && valtab[a-7]<4) || (valtab[a-7]>=4 && valtab[a-7]<5) || (valtab[a-7]>=5 && valtab[a-7]<6) || (valtab[a-7]>=9 && valtab[a-7]<10) || (valtab[a-7]>=10 && valtab[a-7]<11)) && a!=0 && a!=1 && a!=2 && a!=3 && a!=4 && a!=5 && a!=6){
+                    casepossible[compteur]=coordtab[a-7];
+                    compteur=compteur+1;
+                } //HAUT
+                if (((valtab[a+1]>=2 && valtab[a+1]<3 )|| (valtab[a+1]>=4 && valtab[a+1]<5) || (valtab[a+1]>=6 && valtab[a+1]<7) || (valtab[a+1]>=8 && valtab[a+1]<9) || (valtab[a+1]>=10 && valtab[a+1]<11) || (valtab[a+1]>=1 && valtab[a+1]<2)) && a!=6 && a!=13 && a!=20 && a!=27 && a!=34 && a!=41 && a!=48){
+                    casepossible[compteur]=coordtab[a+1];
+                    compteur=compteur+1;
+                } // DROITE
+                break;
+            case 8:
+                if (((valtab[a-1]>=2 && valtab[a-1]<3) || (valtab[a-1]>=3 && valtab[a-1]<4) || (valtab[a-1]>=7 && valtab[a-1]<8) || (valtab[a-1]>=9 && valtab[a-1]<10) || (valtab[a-1]>=6 && valtab[a-1]<7) || (valtab[a-1]>=1 && valtab[a-1]<2)) && a!=0 && a!=7 && a!=14 && a!=21 && a!=28 && a!=35 && a!=42){
+                    casepossible[compteur]=coordtab[a-1];
+                    compteur=compteur+1;
+                } //GAUCHE
+                if (((valtab[a-7]>=1 && valtab[a-7]<2) || (valtab[a-7]>=3 && valtab[a-7]<4) || (valtab[a-7]>=4 && valtab[a-7]<5) || (valtab[a-7]>=5 && valtab[a-7]<6) || (valtab[a-7]>=9 && valtab[a-7]<10) || (valtab[a-7]>=10 && valtab[a-7]<11)) && a!=0 && a!=1 && a!=2 && a!=3 && a!=4 && a!=5 && a!=6){
+                    casepossible[compteur]=coordtab[a-7];
+                    compteur=compteur+1;
+                } //HAUT
+                break;
+            case 9:
+                if (((valtab[a+1]>=2 && valtab[a+1]<3 )|| (valtab[a+1]>=4 && valtab[a+1]<5) || (valtab[a+1]>=6 && valtab[a+1]<7) || (valtab[a+1]>=8 && valtab[a+1]<9) || (valtab[a+1]>=10 && valtab[a+1]<11) || (valtab[a+1]>=1 && valtab[a+1]<2)) && a!=6 && a!=13 && a!=20 && a!=27 && a!=34 && a!=41 && a!=48){
+                    casepossible[compteur]=coordtab[a+1];
+                    compteur=compteur+1;
+                } // DROITE
+                if (((valtab[a+7]>=2 && valtab[a+7]<3) || (valtab[a+7]>=3 && valtab[a+7]<4) || (valtab[a+7]>=4 && valtab[a+7]<5) || (valtab[a+7]>=5 && valtab[a+7]<6) || (valtab[a+7]>=7 && valtab[a+7]<8) || (valtab[a+7]>=8 && valtab[a+7]<9)) && a!=42 && a!=43 && a!=44 && a!=45 && a!=46 && a!=47 && a!=48){
+                    casepossible[compteur]=coordtab[a+7];
+                    compteur=compteur+1;
+                } //BAS
+                break;
+            case 10:
+                if (((valtab[a+7]>=2 && valtab[a+7]<3) || (valtab[a+7]>=3 && valtab[a+7]<4) || (valtab[a+7]>=4 && valtab[a+7]<5) || (valtab[a+7]>=5 && valtab[a+7]<6) || (valtab[a+7]>=7 && valtab[a+7]<8) || (valtab[a+7]>=8 && valtab[a+7]<9)) && a!=42 && a!=43 && a!=44 && a!=45 && a!=46 && a!=47 && a!=48){
+                    casepossible[compteur]=coordtab[a+7];
+                    compteur=compteur+1;
+                } //BAS
+                if (((valtab[a-1]>=2 && valtab[a-1]<3) || (valtab[a-1]>=3 && valtab[a-1]<4) || (valtab[a-1]>=7 && valtab[a-1]<8) || (valtab[a-1]>=9 && valtab[a-1]<10) || (valtab[a-1]>=6 && valtab[a-1]<7) || (valtab[a-1]>=1 && valtab[a-1]<2)) && a!=0 && a!=7 && a!=14 && a!=21 && a!=28 && a!=35 && a!=42){
+                    casepossible[compteur]=coordtab[a-1];
+                    compteur=compteur+1;
+                } //GAUCHE
+                break;
+            default:
+                printf("ERROR \n");
+        }
+    }
+    int nien=compteur;
+    for (int i=0;i<nien;i++){
+        a=change(casepossible[i]);
+        int c=0;int fbh=0;fbh=change(casepossible[i]);
+        c=valtab[fbh];
+        switch (c){
+            case 1:
+                if (((valtab[a+1]>=2 && valtab[a+1]<3 )|| (valtab[a+1]>=4 && valtab[a+1]<5) || (valtab[a+1]>=6 && valtab[a+1]<7) || (valtab[a+1]>=8 && valtab[a+1]<9) || (valtab[a+1]>=10 && valtab[a+1]<11) || (valtab[a+1]>=1 && valtab[a+1]<2)) && a!=6 && a!=13 && a!=20 && a!=27 && a!=34 && a!=41 && a!=48){
+                    casepossible[compteur]=coordtab[a+1];
+                    compteur=compteur+1;
+                } // DROITE
+                if (((valtab[a-1]>=2 && valtab[a-1]<3) || (valtab[a-1]>=3 && valtab[a-1]<4) || (valtab[a-1]>=7 && valtab[a-1]<8) || (valtab[a-1]>=9 && valtab[a-1]<10) || (valtab[a-1]>=6 && valtab[a-1]<7) || (valtab[a-1]>=1 && valtab[a-1]<2)) && a!=0 && a!=7 && a!=14 && a!=21 && a!=28 && a!=35 && a!=42){
+                    casepossible[compteur]=coordtab[a-1];
+                    compteur=compteur+1;
+                } //GAUCHE
+                if (((valtab[a+7]>=2 && valtab[a+7]<3) || (valtab[a+7]>=3 && valtab[a+7]<4) || (valtab[a+7]>=4 && valtab[a+7]<5) || (valtab[a+7]>=5 && valtab[a+7]<6) || (valtab[a+7]>=7 && valtab[a+7]<8) || (valtab[a+7]>=8 && valtab[a+7]<9)) && a!=42 && a!=43 && a!=44 && a!=45 && a!=46 && a!=47 && a!=48){
+                    casepossible[compteur]=coordtab[a+7];
+                    compteur=compteur+1;
+                } //BAS
+                break;
+            case 2:
+                if (((valtab[a+1]>=2 && valtab[a+1]<3 )|| (valtab[a+1]>=4 && valtab[a+1]<5) || (valtab[a+1]>=6 && valtab[a+1]<7) || (valtab[a+1]>=8 && valtab[a+1]<9) || (valtab[a+1]>=10 && valtab[a+1]<11) || (valtab[a+1]>=1 && valtab[a+1]<2)) && a!=6 && a!=13 && a!=20 && a!=27 && a!=34 && a!=41 && a!=48){
+                    casepossible[compteur]=coordtab[a+1];
+                    compteur=compteur+1;
+                } // DROITE
+                if (((valtab[a-1]>=2 && valtab[a-1]<3) || (valtab[a-1]>=3 && valtab[a-1]<4) || (valtab[a-1]>=7 && valtab[a-1]<8) || (valtab[a-1]>=9 && valtab[a-1]<10) || (valtab[a-1]>=6 && valtab[a-1]<7) || (valtab[a-1]>=1 && valtab[a-1]<2)) && a!=0 && a!=7 && a!=14 && a!=21 && a!=28 && a!=35 && a!=42){
+                    casepossible[compteur]=coordtab[a-1];
+                    compteur=compteur+1;
+                } //GAUCHE
+                if (((valtab[a-7]>=1 && valtab[a-7]<2) || (valtab[a-7]>=3 && valtab[a-7]<4) || (valtab[a-7]>=4 && valtab[a-7]<5) || (valtab[a-7]>=5 && valtab[a-7]<6) || (valtab[a-7]>=9 && valtab[a-7]<10) || (valtab[a-7]>=10 && valtab[a-7]<11)) && a!=0 && a!=1 && a!=2 && a!=3 && a!=4 && a!=5 && a!=6){
+                    casepossible[compteur]=coordtab[a-7];
+                    compteur=compteur+1;
+                } //HAUT
+                break;
+            case 3:
+                if (((valtab[a-7]>=1 && valtab[a-7]<2) || (valtab[a-7]>=3 && valtab[a-7]<4) || (valtab[a-7]>=4 && valtab[a-7]<5) || (valtab[a-7]>=5 && valtab[a-7]<6) || (valtab[a-7]>=9 && valtab[a-7]<10) || (valtab[a-7]>=10 && valtab[a-7]<11)) && a!=0 && a!=1 && a!=2 && a!=3 && a!=4 && a!=5 && a!=6){
+                    casepossible[compteur]=coordtab[a-7];
+                    compteur=compteur+1;
+                } //HAUT
+                if (((valtab[a+7]>=2 && valtab[a+7]<3) || (valtab[a+7]>=3 && valtab[a+7]<4) || (valtab[a+7]>=4 && valtab[a+7]<5) || (valtab[a+7]>=5 && valtab[a+7]<6) || (valtab[a+7]>=7 && valtab[a+7]<8) || (valtab[a+7]>=8 && valtab[a+7]<9)) && a!=42 && a!=43 && a!=44 && a!=45 && a!=46 && a!=47 && a!=48){
+                    casepossible[compteur]=coordtab[a+7];
+                    compteur=compteur+1;
+                } //BAS
+                if (((valtab[a+1]>=2 && valtab[a+1]<3 )|| (valtab[a+1]>=4 && valtab[a+1]<5) || (valtab[a+1]>=6 && valtab[a+1]<7) || (valtab[a+1]>=8 && valtab[a+1]<9) || (valtab[a+1]>=10 && valtab[a+1]<11) || (valtab[a+1]>=1 && valtab[a+1]<2)) && a!=6 && a!=13 && a!=20 && a!=27 && a!=34 && a!=41 && a!=48){
+                    casepossible[compteur]=coordtab[a+1];
+                    compteur=compteur+1;
+                } // DROITE
+                break;
+            case 4:
+                if (((valtab[a-7]>=1 && valtab[a-7]<2) || (valtab[a-7]>=3 && valtab[a-7]<4) || (valtab[a-7]>=4 && valtab[a-7]<5) || (valtab[a-7]>=5 && valtab[a-7]<6) || (valtab[a-7]>=9 && valtab[a-7]<10) || (valtab[a-7]>=10 && valtab[a-7]<11)) && a!=0 && a!=1 && a!=2 && a!=3 && a!=4 && a!=5 && a!=6){
+                    casepossible[compteur]=coordtab[a-7];
+                    compteur=compteur+1;
+                } //HAUT
+                if (((valtab[a+7]>=2 && valtab[a+7]<3) || (valtab[a+7]>=3 && valtab[a+7]<4) || (valtab[a+7]>=4 && valtab[a+7]<5) || (valtab[a+7]>=5 && valtab[a+7]<6) || (valtab[a+7]>=7 && valtab[a+7]<8) || (valtab[a+7]>=8 && valtab[a+7]<9)) && a!=42 && a!=43 && a!=44 && a!=45 && a!=46 && a!=47 && a!=48){
+                    casepossible[compteur]=coordtab[a+7];
+                    compteur=compteur+1;
+                } //BAS
+                if (((valtab[a-1]>=2 && valtab[a-1]<3) || (valtab[a-1]>=3 && valtab[a-1]<4) || (valtab[a-1]>=7 && valtab[a-1]<8) || (valtab[a-1]>=9 && valtab[a-1]<10) || (valtab[a-1]>=6 && valtab[a-1]<7) || (valtab[a-1]>=1 && valtab[a-1]<2)) && a!=0 && a!=7 && a!=14 && a!=21 && a!=28 && a!=35 && a!=42){
+                    casepossible[compteur]=coordtab[a-1];
+                    compteur=compteur+1;
+                } //GAUCHE
+                break;
+            case 5:
+                if (((valtab[a-7]>=1 && valtab[a-7]<2) || (valtab[a-7]>=3 && valtab[a-7]<4) || (valtab[a-7]>=4 && valtab[a-7]<5) || (valtab[a-7]>=5 && valtab[a-7]<6) || (valtab[a-7]>=9 && valtab[a-7]<10) || (valtab[a-7]>=10 && valtab[a-7]<11)) && a!=0 && a!=1 && a!=2 && a!=3 && a!=4 && a!=5 && a!=6){
+                    casepossible[compteur]=coordtab[a-7];
+                    compteur=compteur+1;
+                } //HAUT
+                if (((valtab[a+7]>=2 && valtab[a+7]<3) || (valtab[a+7]>=3 && valtab[a+7]<4) || (valtab[a+7]>=4 && valtab[a+7]<5) || (valtab[a+7]>=5 && valtab[a+7]<6) || (valtab[a+7]>=7 && valtab[a+7]<8) || (valtab[a+7]>=8 && valtab[a+7]<9)) && a!=42 && a!=43 && a!=44 && a!=45 && a!=46 && a!=47 && a!=48){
+                    casepossible[compteur]=coordtab[a+7];
+                    compteur=compteur+1;
+                } //BAS
+                break;
+            case 6:
+                if (((valtab[a-1]>=2 && valtab[a-1]<3) || (valtab[a-1]>=3 && valtab[a-1]<4) || (valtab[a-1]>=7 && valtab[a-1]<8) || (valtab[a-1]>=9 && valtab[a-1]<10) || (valtab[a-1]>=6 && valtab[a-1]<7) || (valtab[a-1]>=1 && valtab[a-1]<2)) && a!=0 && a!=7 && a!=14 && a!=21 && a!=28 && a!=35 && a!=42){
+                    casepossible[compteur]=coordtab[a-1];
+                    compteur=compteur+1;
+                } //GAUCHE
+                if (((valtab[a+1]>=2 && valtab[a+1]<3 )|| (valtab[a+1]>=4 && valtab[a+1]<5) || (valtab[a+1]>=6 && valtab[a+1]<7) || (valtab[a+1]>=8 && valtab[a+1]<9) || (valtab[a+1]>=10 && valtab[a+1]<11) || (valtab[a+1]>=1 && valtab[a+1]<2)) && a!=6 && a!=13 && a!=20 && a!=27 && a!=34 && a!=41 && a!=48){
+                    casepossible[compteur]=coordtab[a+1];
+                    compteur=compteur+1;
+                } // DROITE
+                break;
+            case 7:
+                if (((valtab[a-7]>=1 && valtab[a-7]<2) || (valtab[a-7]>=3 && valtab[a-7]<4) || (valtab[a-7]>=4 && valtab[a-7]<5) || (valtab[a-7]>=5 && valtab[a-7]<6) || (valtab[a-7]>=9 && valtab[a-7]<10) || (valtab[a-7]>=10 && valtab[a-7]<11)) && a!=0 && a!=1 && a!=2 && a!=3 && a!=4 && a!=5 && a!=6){
+                    casepossible[compteur]=coordtab[a-7];
+                    compteur=compteur+1;
+                } //HAUT
+                if (((valtab[a+1]>=2 && valtab[a+1]<3 )|| (valtab[a+1]>=4 && valtab[a+1]<5) || (valtab[a+1]>=6 && valtab[a+1]<7) || (valtab[a+1]>=8 && valtab[a+1]<9) || (valtab[a+1]>=10 && valtab[a+1]<11) || (valtab[a+1]>=1 && valtab[a+1]<2)) && a!=6 && a!=13 && a!=20 && a!=27 && a!=34 && a!=41 && a!=48){
+                    casepossible[compteur]=coordtab[a+1];
+                    compteur=compteur+1;
+                } // DROITE
+                break;
+            case 8:
+                if (((valtab[a-1]>=2 && valtab[a-1]<3) || (valtab[a-1]>=3 && valtab[a-1]<4) || (valtab[a-1]>=7 && valtab[a-1]<8) || (valtab[a-1]>=9 && valtab[a-1]<10) || (valtab[a-1]>=6 && valtab[a-1]<7) || (valtab[a-1]>=1 && valtab[a-1]<2)) && a!=0 && a!=7 && a!=14 && a!=21 && a!=28 && a!=35 && a!=42){
+                    casepossible[compteur]=coordtab[a-1];
+                    compteur=compteur+1;
+                } //GAUCHE
+                if (((valtab[a-7]>=1 && valtab[a-7]<2) || (valtab[a-7]>=3 && valtab[a-7]<4) || (valtab[a-7]>=4 && valtab[a-7]<5) || (valtab[a-7]>=5 && valtab[a-7]<6) || (valtab[a-7]>=9 && valtab[a-7]<10) || (valtab[a-7]>=10 && valtab[a-7]<11)) && a!=0 && a!=1 && a!=2 && a!=3 && a!=4 && a!=5 && a!=6){
+                    casepossible[compteur]=coordtab[a-7];
+                    compteur=compteur+1;
+                } //HAUT
+                break;
+            case 9:
+                if (((valtab[a+1]>=2 && valtab[a+1]<3 )|| (valtab[a+1]>=4 && valtab[a+1]<5) || (valtab[a+1]>=6 && valtab[a+1]<7) || (valtab[a+1]>=8 && valtab[a+1]<9) || (valtab[a+1]>=10 && valtab[a+1]<11) || (valtab[a+1]>=1 && valtab[a+1]<2)) && a!=6 && a!=13 && a!=20 && a!=27 && a!=34 && a!=41 && a!=48){
+                    casepossible[compteur]=coordtab[a+1];
+                    compteur=compteur+1;
+                } // DROITE
+                if (((valtab[a+7]>=2 && valtab[a+7]<3) || (valtab[a+7]>=3 && valtab[a+7]<4) || (valtab[a+7]>=4 && valtab[a+7]<5) || (valtab[a+7]>=5 && valtab[a+7]<6) || (valtab[a+7]>=7 && valtab[a+7]<8) || (valtab[a+7]>=8 && valtab[a+7]<9)) && a!=42 && a!=43 && a!=44 && a!=45 && a!=46 && a!=47 && a!=48){
+                    casepossible[compteur]=coordtab[a+7];
+                    compteur=compteur+1;
+                } //BAS
+                break;
+            case 10:
+                if (((valtab[a+7]>=2 && valtab[a+7]<3) || (valtab[a+7]>=3 && valtab[a+7]<4) || (valtab[a+7]>=4 && valtab[a+7]<5) || (valtab[a+7]>=5 && valtab[a+7]<6) || (valtab[a+7]>=7 && valtab[a+7]<8) || (valtab[a+7]>=8 && valtab[a+7]<9)) && a!=42 && a!=43 && a!=44 && a!=45 && a!=46 && a!=47 && a!=48){
+                    casepossible[compteur]=coordtab[a+7];
+                    compteur=compteur+1;
+                } //BAS
+                if (((valtab[a-1]>=2 && valtab[a-1]<3) || (valtab[a-1]>=3 && valtab[a-1]<4) || (valtab[a-1]>=7 && valtab[a-1]<8) || (valtab[a-1]>=9 && valtab[a-1]<10) || (valtab[a-1]>=6 && valtab[a-1]<7) || (valtab[a-1]>=1 && valtab[a-1]<2)) && a!=0 && a!=7 && a!=14 && a!=21 && a!=28 && a!=35 && a!=42){
+                    casepossible[compteur]=coordtab[a-1];
+                    compteur=compteur+1;
+                } //GAUCHE
+                break;
+            default:
+                printf("ERROR \n");
+        }
+    }
+    int tennn=compteur;
+    for (int i=0;i<tennn;i++){
+        a=change(casepossible[i]);
+        int c=0;int gfjj=0;gfjj=change(casepossible[i]);
+        c=valtab[gfjj];
+        switch (c){
+            case 1:
+                if (((valtab[a+1]>=2 && valtab[a+1]<3 )|| (valtab[a+1]>=4 && valtab[a+1]<5) || (valtab[a+1]>=6 && valtab[a+1]<7) || (valtab[a+1]>=8 && valtab[a+1]<9) || (valtab[a+1]>=10 && valtab[a+1]<11) || (valtab[a+1]>=1 && valtab[a+1]<2)) && a!=6 && a!=13 && a!=20 && a!=27 && a!=34 && a!=41 && a!=48){
+                    casepossible[compteur]=coordtab[a+1];
+                    compteur=compteur+1;
+                } // DROITE
+                if (((valtab[a-1]>=2 && valtab[a-1]<3) || (valtab[a-1]>=3 && valtab[a-1]<4) || (valtab[a-1]>=7 && valtab[a-1]<8) || (valtab[a-1]>=9 && valtab[a-1]<10) || (valtab[a-1]>=6 && valtab[a-1]<7) || (valtab[a-1]>=1 && valtab[a-1]<2)) && a!=0 && a!=7 && a!=14 && a!=21 && a!=28 && a!=35 && a!=42){
+                    casepossible[compteur]=coordtab[a-1];
+                    compteur=compteur+1;
+                } //GAUCHE
+                if (((valtab[a+7]>=2 && valtab[a+7]<3) || (valtab[a+7]>=3 && valtab[a+7]<4) || (valtab[a+7]>=4 && valtab[a+7]<5) || (valtab[a+7]>=5 && valtab[a+7]<6) || (valtab[a+7]>=7 && valtab[a+7]<8) || (valtab[a+7]>=8 && valtab[a+7]<9)) && a!=42 && a!=43 && a!=44 && a!=45 && a!=46 && a!=47 && a!=48){
+                    casepossible[compteur]=coordtab[a+7];
+                    compteur=compteur+1;
+                } //BAS
+                break;
+            case 2:
+                if (((valtab[a+1]>=2 && valtab[a+1]<3 )|| (valtab[a+1]>=4 && valtab[a+1]<5) || (valtab[a+1]>=6 && valtab[a+1]<7) || (valtab[a+1]>=8 && valtab[a+1]<9) || (valtab[a+1]>=10 && valtab[a+1]<11) || (valtab[a+1]>=1 && valtab[a+1]<2)) && a!=6 && a!=13 && a!=20 && a!=27 && a!=34 && a!=41 && a!=48){
+                    casepossible[compteur]=coordtab[a+1];
+                    compteur=compteur+1;
+                } // DROITE
+                if (((valtab[a-1]>=2 && valtab[a-1]<3) || (valtab[a-1]>=3 && valtab[a-1]<4) || (valtab[a-1]>=7 && valtab[a-1]<8) || (valtab[a-1]>=9 && valtab[a-1]<10) || (valtab[a-1]>=6 && valtab[a-1]<7) || (valtab[a-1]>=1 && valtab[a-1]<2)) && a!=0 && a!=7 && a!=14 && a!=21 && a!=28 && a!=35 && a!=42){
+                    casepossible[compteur]=coordtab[a-1];
+                    compteur=compteur+1;
+                } //GAUCHE
+                if (((valtab[a-7]>=1 && valtab[a-7]<2) || (valtab[a-7]>=3 && valtab[a-7]<4) || (valtab[a-7]>=4 && valtab[a-7]<5) || (valtab[a-7]>=5 && valtab[a-7]<6) || (valtab[a-7]>=9 && valtab[a-7]<10) || (valtab[a-7]>=10 && valtab[a-7]<11)) && a!=0 && a!=1 && a!=2 && a!=3 && a!=4 && a!=5 && a!=6){
+                    casepossible[compteur]=coordtab[a-7];
+                    compteur=compteur+1;
+                } //HAUT
+                break;
+            case 3:
+                if (((valtab[a-7]>=1 && valtab[a-7]<2) || (valtab[a-7]>=3 && valtab[a-7]<4) || (valtab[a-7]>=4 && valtab[a-7]<5) || (valtab[a-7]>=5 && valtab[a-7]<6) || (valtab[a-7]>=9 && valtab[a-7]<10) || (valtab[a-7]>=10 && valtab[a-7]<11)) && a!=0 && a!=1 && a!=2 && a!=3 && a!=4 && a!=5 && a!=6){
+                    casepossible[compteur]=coordtab[a-7];
+                    compteur=compteur+1;
+                } //HAUT
+                if (((valtab[a+7]>=2 && valtab[a+7]<3) || (valtab[a+7]>=3 && valtab[a+7]<4) || (valtab[a+7]>=4 && valtab[a+7]<5) || (valtab[a+7]>=5 && valtab[a+7]<6) || (valtab[a+7]>=7 && valtab[a+7]<8) || (valtab[a+7]>=8 && valtab[a+7]<9)) && a!=42 && a!=43 && a!=44 && a!=45 && a!=46 && a!=47 && a!=48){
+                    casepossible[compteur]=coordtab[a+7];
+                    compteur=compteur+1;
+                } //BAS
+                if (((valtab[a+1]>=2 && valtab[a+1]<3 )|| (valtab[a+1]>=4 && valtab[a+1]<5) || (valtab[a+1]>=6 && valtab[a+1]<7) || (valtab[a+1]>=8 && valtab[a+1]<9) || (valtab[a+1]>=10 && valtab[a+1]<11) || (valtab[a+1]>=1 && valtab[a+1]<2)) && a!=6 && a!=13 && a!=20 && a!=27 && a!=34 && a!=41 && a!=48){
+                    casepossible[compteur]=coordtab[a+1];
+                    compteur=compteur+1;
+                } // DROITE
+                break;
+            case 4:
+                if (((valtab[a-7]>=1 && valtab[a-7]<2) || (valtab[a-7]>=3 && valtab[a-7]<4) || (valtab[a-7]>=4 && valtab[a-7]<5) || (valtab[a-7]>=5 && valtab[a-7]<6) || (valtab[a-7]>=9 && valtab[a-7]<10) || (valtab[a-7]>=10 && valtab[a-7]<11)) && a!=0 && a!=1 && a!=2 && a!=3 && a!=4 && a!=5 && a!=6){
+                    casepossible[compteur]=coordtab[a-7];
+                    compteur=compteur+1;
+                } //HAUT
+                if (((valtab[a+7]>=2 && valtab[a+7]<3) || (valtab[a+7]>=3 && valtab[a+7]<4) || (valtab[a+7]>=4 && valtab[a+7]<5) || (valtab[a+7]>=5 && valtab[a+7]<6) || (valtab[a+7]>=7 && valtab[a+7]<8) || (valtab[a+7]>=8 && valtab[a+7]<9)) && a!=42 && a!=43 && a!=44 && a!=45 && a!=46 && a!=47 && a!=48){
+                    casepossible[compteur]=coordtab[a+7];
+                    compteur=compteur+1;
+                } //BAS
+                if (((valtab[a-1]>=2 && valtab[a-1]<3) || (valtab[a-1]>=3 && valtab[a-1]<4) || (valtab[a-1]>=7 && valtab[a-1]<8) || (valtab[a-1]>=9 && valtab[a-1]<10) || (valtab[a-1]>=6 && valtab[a-1]<7) || (valtab[a-1]>=1 && valtab[a-1]<2)) && a!=0 && a!=7 && a!=14 && a!=21 && a!=28 && a!=35 && a!=42){
+                    casepossible[compteur]=coordtab[a-1];
+                    compteur=compteur+1;
+                } //GAUCHE
+                break;
+            case 5:
+                if (((valtab[a-7]>=1 && valtab[a-7]<2) || (valtab[a-7]>=3 && valtab[a-7]<4) || (valtab[a-7]>=4 && valtab[a-7]<5) || (valtab[a-7]>=5 && valtab[a-7]<6) || (valtab[a-7]>=9 && valtab[a-7]<10) || (valtab[a-7]>=10 && valtab[a-7]<11)) && a!=0 && a!=1 && a!=2 && a!=3 && a!=4 && a!=5 && a!=6){
+                    casepossible[compteur]=coordtab[a-7];
+                    compteur=compteur+1;
+                } //HAUT
+                if (((valtab[a+7]>=2 && valtab[a+7]<3) || (valtab[a+7]>=3 && valtab[a+7]<4) || (valtab[a+7]>=4 && valtab[a+7]<5) || (valtab[a+7]>=5 && valtab[a+7]<6) || (valtab[a+7]>=7 && valtab[a+7]<8) || (valtab[a+7]>=8 && valtab[a+7]<9)) && a!=42 && a!=43 && a!=44 && a!=45 && a!=46 && a!=47 && a!=48){
+                    casepossible[compteur]=coordtab[a+7];
+                    compteur=compteur+1;
+                } //BAS
+                break;
+            case 6:
+                if (((valtab[a-1]>=2 && valtab[a-1]<3) || (valtab[a-1]>=3 && valtab[a-1]<4) || (valtab[a-1]>=7 && valtab[a-1]<8) || (valtab[a-1]>=9 && valtab[a-1]<10) || (valtab[a-1]>=6 && valtab[a-1]<7) || (valtab[a-1]>=1 && valtab[a-1]<2)) && a!=0 && a!=7 && a!=14 && a!=21 && a!=28 && a!=35 && a!=42){
+                    casepossible[compteur]=coordtab[a-1];
+                    compteur=compteur+1;
+                } //GAUCHE
+                if (((valtab[a+1]>=2 && valtab[a+1]<3 )|| (valtab[a+1]>=4 && valtab[a+1]<5) || (valtab[a+1]>=6 && valtab[a+1]<7) || (valtab[a+1]>=8 && valtab[a+1]<9) || (valtab[a+1]>=10 && valtab[a+1]<11) || (valtab[a+1]>=1 && valtab[a+1]<2)) && a!=6 && a!=13 && a!=20 && a!=27 && a!=34 && a!=41 && a!=48){
+                    casepossible[compteur]=coordtab[a+1];
+                    compteur=compteur+1;
+                } // DROITE
+                break;
+            case 7:
+                if (((valtab[a-7]>=1 && valtab[a-7]<2) || (valtab[a-7]>=3 && valtab[a-7]<4) || (valtab[a-7]>=4 && valtab[a-7]<5) || (valtab[a-7]>=5 && valtab[a-7]<6) || (valtab[a-7]>=9 && valtab[a-7]<10) || (valtab[a-7]>=10 && valtab[a-7]<11)) && a!=0 && a!=1 && a!=2 && a!=3 && a!=4 && a!=5 && a!=6){
+                    casepossible[compteur]=coordtab[a-7];
+                    compteur=compteur+1;
+                } //HAUT
+                if (((valtab[a+1]>=2 && valtab[a+1]<3 )|| (valtab[a+1]>=4 && valtab[a+1]<5) || (valtab[a+1]>=6 && valtab[a+1]<7) || (valtab[a+1]>=8 && valtab[a+1]<9) || (valtab[a+1]>=10 && valtab[a+1]<11) || (valtab[a+1]>=1 && valtab[a+1]<2)) && a!=6 && a!=13 && a!=20 && a!=27 && a!=34 && a!=41 && a!=48){
+                    casepossible[compteur]=coordtab[a+1];
+                    compteur=compteur+1;
+                } // DROITE
+                break;
+            case 8:
+                if (((valtab[a-1]>=2 && valtab[a-1]<3) || (valtab[a-1]>=3 && valtab[a-1]<4) || (valtab[a-1]>=7 && valtab[a-1]<8) || (valtab[a-1]>=9 && valtab[a-1]<10) || (valtab[a-1]>=6 && valtab[a-1]<7) || (valtab[a-1]>=1 && valtab[a-1]<2)) && a!=0 && a!=7 && a!=14 && a!=21 && a!=28 && a!=35 && a!=42){
+                    casepossible[compteur]=coordtab[a-1];
+                    compteur=compteur+1;
+                } //GAUCHE
+                if (((valtab[a-7]>=1 && valtab[a-7]<2) || (valtab[a-7]>=3 && valtab[a-7]<4) || (valtab[a-7]>=4 && valtab[a-7]<5) || (valtab[a-7]>=5 && valtab[a-7]<6) || (valtab[a-7]>=9 && valtab[a-7]<10) || (valtab[a-7]>=10 && valtab[a-7]<11)) && a!=0 && a!=1 && a!=2 && a!=3 && a!=4 && a!=5 && a!=6){
+                    casepossible[compteur]=coordtab[a-7];
+                    compteur=compteur+1;
+                } //HAUT
+                break;
+            case 9:
+                if (((valtab[a+1]>=2 && valtab[a+1]<3 )|| (valtab[a+1]>=4 && valtab[a+1]<5) || (valtab[a+1]>=6 && valtab[a+1]<7) || (valtab[a+1]>=8 && valtab[a+1]<9) || (valtab[a+1]>=10 && valtab[a+1]<11) || (valtab[a+1]>=1 && valtab[a+1]<2)) && a!=6 && a!=13 && a!=20 && a!=27 && a!=34 && a!=41 && a!=48){
+                    casepossible[compteur]=coordtab[a+1];
+                    compteur=compteur+1;
+                } // DROITE
+                if (((valtab[a+7]>=2 && valtab[a+7]<3) || (valtab[a+7]>=3 && valtab[a+7]<4) || (valtab[a+7]>=4 && valtab[a+7]<5) || (valtab[a+7]>=5 && valtab[a+7]<6) || (valtab[a+7]>=7 && valtab[a+7]<8) || (valtab[a+7]>=8 && valtab[a+7]<9)) && a!=42 && a!=43 && a!=44 && a!=45 && a!=46 && a!=47 && a!=48){
+                    casepossible[compteur]=coordtab[a+7];
+                    compteur=compteur+1;
+                } //BAS
+                break;
+            case 10:
+                if (((valtab[a+7]>=2 && valtab[a+7]<3) || (valtab[a+7]>=3 && valtab[a+7]<4) || (valtab[a+7]>=4 && valtab[a+7]<5) || (valtab[a+7]>=5 && valtab[a+7]<6) || (valtab[a+7]>=7 && valtab[a+7]<8) || (valtab[a+7]>=8 && valtab[a+7]<9)) && a!=42 && a!=43 && a!=44 && a!=45 && a!=46 && a!=47 && a!=48){
+                    casepossible[compteur]=coordtab[a+7];
+                    compteur=compteur+1;
+                } //BAS
+                if (((valtab[a-1]>=2 && valtab[a-1]<3) || (valtab[a-1]>=3 && valtab[a-1]<4) || (valtab[a-1]>=7 && valtab[a-1]<8) || (valtab[a-1]>=9 && valtab[a-1]<10) || (valtab[a-1]>=6 && valtab[a-1]<7) || (valtab[a-1]>=1 && valtab[a-1]<2)) && a!=0 && a!=7 && a!=14 && a!=21 && a!=28 && a!=35 && a!=42){
+                    casepossible[compteur]=coordtab[a-1];
+                    compteur=compteur+1;
+                } //GAUCHE
+                break;
+            default:
+                printf("ERROR \n");
+        }
+    }
+    printf("Compteur = %d\n",compteur);
+    for (int i=0;i<compteur;i++){
+        if (casepossible[i]==posdemand){
+            solu=solu+1;
+        }
+        else {
+            solu=solu+0;
+        }
+    }
+    if (lglglg==1){
+        solu=1;
+    }
+    return solu;
+}
+
+
+int verification(int solu){
+    if (solu>=1){
+        printf("\nTu as le droit\n");
+    }
+    else {
+        printf("\nTu n'as pas le droit\n");
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 // Created by antoi on 03/12/2022.

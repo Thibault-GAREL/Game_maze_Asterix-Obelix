@@ -20,6 +20,7 @@ int main() {
     int partie=1;
     double c,d,e,f,g,h;int y=0;
     int posJ1,posJ2,posJ3,posJ4;
+    int solu1=0;int solu2=0;int solu3=0;int solu4=0;
     struct position{
         int col,lig;
     };
@@ -37,7 +38,7 @@ int main() {
         char nomJ1;char nomJ2;char nomJ3;char nomJ4;int pion1,pion2,pion3,pion4,posJ1,posJ2,posJ3,posJ4;double tab[35]={0};
         int nbjoueur,aa,bb,cc,dd,compteur1,compteur2,compteur3,compteur4,compteurJ1,compteurJ2,compteurJ3,compteurJ4;
         int tresJ1[12];int tresJ2[12];int tresJ3[12];int tresJ4[12];
-        FILE* fichier = fopen("C:\\Users\\antoi\\Documents\\COURS\\INFO\\sauvegarde.txt","r");
+        FILE* fichier = fopen("../sauvegarde.txt","r");
         fscanf(fichier, "%d\n%d\n%d\n%d\n%2f\n%2f\n%2f\n%2f\n%2f\n%2f\n%2f\n%2f\n%2f\n%2f\n%2f\n%2f\n%2f\n%2f\n%2f\n%2f\n%2f\n%2f\n%2f\n%2f\n%2f\n%2f\n%2f\n%2f\n%2f\n%2f\n%2f\n%2f\n%2f\n%2f\n%2f\n%2f\n%2f\n%2f\n%2f\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%s\n%s\n%s\n%s", &pion1, &pion2, &pion3, &pion4, &tab[0], &tab[1], &tab[2], &tab[3], &tab[4], &tab[5], &tab[6], &tab[7], &tab[8], &tab[9], &tab[10], &tab[11], &tab[12], &tab[13], &tab[14], &tab[15], &tab[16], &tab[17], &tab[18], &tab[19], &tab[20], &tab[21], &tab[22], &tab[23], &tab[24], &tab[25], &tab[26], &tab[27], &tab[28], &tab[29], &tab[30], &tab[31], &tab[32], &tab[33], &tab[34], &nbjoueur, &aa, &bb, &cc, &dd, &compteur1, &compteur2, &compteur3, &compteur4, &compteurJ1, &compteurJ2, &compteurJ3, &compteurJ4,&tresJ1[0],&tresJ1[1],&tresJ1[2],&tresJ1[3],&tresJ1[4],&tresJ1[5],&tresJ1[6],&tresJ1[7],&tresJ1[8],&tresJ1[9],&tresJ1[10],&tresJ1[11],&tresJ2[0],&tresJ2[1],&tresJ2[2],&tresJ2[3],&tresJ2[4],&tresJ2[5],&tresJ2[6],&tresJ2[7],&tresJ2[8],&tresJ2[9],&tresJ2[10],&tresJ2[11],&tresJ3[0],&tresJ3[1],&tresJ3[2],&tresJ3[3],&tresJ3[4],&tresJ3[5],&tresJ3[6],&tresJ3[7],&tresJ3[8],&tresJ3[9],&tresJ3[10],&tresJ3[11],&tresJ4[0],&tresJ4[1],&tresJ4[2],&tresJ4[3],&tresJ4[4],&tresJ4[5],&tresJ4[6],&tresJ4[7],&tresJ4[8],&tresJ4[9],&tresJ4[10],&tresJ4[11],nomJ1,nomJ2,nomJ3,nomJ4);
         fclose(fichier);
         fichier=NULL;
@@ -296,6 +297,7 @@ int main() {
     printf("\n\n\n");
     ecripos(nbjoueur,nomJ1,nomJ2,nomJ3,nomJ4,j1.lig,j1.col,j2.lig,j2.col,j3.lig,j3.col,j4.lig,j4.col);color(0,0);
     int aa=0;int bb=0;int cc=0;int dd=0;
+    double nvtab[49]={0};
     skip_step:
     while (compteurJ1!=24/nbjoueur || compteurJ2!=24/nbjoueur || compteurJ3!=24/nbjoueur || compteurJ4!=24/nbjoueur){
         if (a==1){
@@ -337,7 +339,18 @@ int main() {
             else {posJ4= nvpos(posJ4,r);}
             test(pion1,pion2,pion3,pion4,tab[1],tab[2],tab[3],tab[4],tab[5],tab[6],tab[7],tab[8],tab[9],tab[10],tab[11],tab[12],tab[13],tab[14],tab[15],tab[16],tab[17],tab[18],tab[19],tab[20],tab[21],tab[22],tab[23],tab[24],tab[25],tab[26],tab[27],tab[28],tab[29],tab[30],tab[31],tab[32],tab[33],posJ1,posJ2,posJ3,posJ4);
             printpiece34(tab[34],posJ1,posJ2,posJ3,posJ4,pion1,pion2,pion3,pion4);
+            nvtab[0]=9;nvtab[1]=tab[1];nvtab[2]=1;nvtab[3]=tab[2];nvtab[4]=1;nvtab[5]=tab[3];nvtab[6]=10;nvtab[7]=tab[4];nvtab[8]=tab[5];nvtab[9]=tab[6];nvtab[10]=tab[7];nvtab[11]=tab[8];nvtab[11]=tab[8];nvtab[12]=tab[9];nvtab[13]=tab[10];nvtab[14]=3;nvtab[15]=tab[11];nvtab[16]=3;nvtab[17]=tab[12];nvtab[18]=1;nvtab[19]=tab[13];nvtab[20]=4;nvtab[21]=tab[14];nvtab[22]=tab[15];nvtab[23]=tab[16];nvtab[24]=tab[17];nvtab[25]=tab[18];nvtab[26]=tab[19];nvtab[27]=tab[20];nvtab[28]=3;nvtab[29]=tab[21];nvtab[30]=2;nvtab[31]=tab[22];nvtab[32]=1;nvtab[33]=tab[23];nvtab[34]=4;nvtab[35]=tab[24];nvtab[36]=tab[25];nvtab[37]=tab[26];nvtab[38]=tab[27];nvtab[39]=tab[28];nvtab[40]=tab[29];nvtab[41]=tab[30];nvtab[42]=7;nvtab[43]=tab[31];nvtab[44]=2;nvtab[45]=tab[32];nvtab[46]=2;nvtab[47]=tab[33];nvtab[48]=8;
+            int xxx=0;xxx=posJ1;double aaaa=0;int bbb=0;bbb=xxx;
+            bbb=change(xxx);aaaa=nvtab[bbb];
             posJ1=direction(nomJ1,j1.lig,j1.col);
+            double ppp=0;ppp=nvtab[posJ1];
+            solu1=fonctiontest(posJ1,xxx,aaaa,ppp,nvtab[0], nvtab[1], nvtab[2], nvtab[3], nvtab[4], nvtab[5], nvtab[6], nvtab[7], nvtab[8], nvtab[9], nvtab[10], nvtab[11], nvtab[12], nvtab[13], nvtab[14], nvtab[15], nvtab[16], nvtab[17], nvtab[18], nvtab[19], nvtab[20], nvtab[21], nvtab[22], nvtab[23], nvtab[24], nvtab[25], nvtab[26], nvtab[27], nvtab[28], nvtab[29], nvtab[30], nvtab[31], nvtab[32], nvtab[33], nvtab[34], nvtab[35], nvtab[36], nvtab[37], nvtab[38], nvtab[39], nvtab[40], nvtab[41], nvtab[42], nvtab[43], nvtab[44], nvtab[45], nvtab[46], nvtab[47],nvtab[48]);
+            verification(solu1);
+            while(solu1==0){
+                posJ1=direction(nomJ1,j1.lig,j1.col);
+                solu1=fonctiontest(posJ1,xxx,aaaa,ppp,nvtab[0], nvtab[1], nvtab[2], nvtab[3], nvtab[4], nvtab[5], nvtab[6], nvtab[7], nvtab[8], nvtab[9], nvtab[10], nvtab[11], nvtab[12], nvtab[13], nvtab[14], nvtab[15], nvtab[16], nvtab[17], nvtab[18], nvtab[19], nvtab[20], nvtab[21], nvtab[22], nvtab[23], nvtab[24], nvtab[25], nvtab[26], nvtab[27], nvtab[28], nvtab[29], nvtab[30], nvtab[31], nvtab[32], nvtab[33], nvtab[34], nvtab[35], nvtab[36], nvtab[37], nvtab[38], nvtab[39], nvtab[40], nvtab[41], nvtab[42], nvtab[43], nvtab[44], nvtab[45], nvtab[46], nvtab[47],nvtab[48]);
+                verification(solu1);
+            }
             test(pion1,pion2,pion3,pion4,tab[1],tab[2],tab[3],tab[4],tab[5],tab[6],tab[7],tab[8],tab[9],tab[10],tab[11],tab[12],tab[13],tab[14],tab[15],tab[16],tab[17],tab[18],tab[19],tab[20],tab[21],tab[22],tab[23],tab[24],tab[25],tab[26],tab[27],tab[28],tab[29],tab[30],tab[31],tab[32],tab[33],posJ1,posJ2,posJ3,posJ4);printf("\n\n");
             printpiece34(tab[34],posJ1,posJ2,posJ3,posJ4,pion1,pion2,pion3,pion4);printf("\n\n\n");
             aa= avancetresor(nbjoueur,nomJ1,compteurJ1,tresJ1[0],tresJ1[1],tresJ1[2],tresJ1[3],tresJ1[4],tresJ1[5],tresJ1[6],tresJ1[7],tresJ1[8],tresJ1[9],tresJ1[10],tresJ1[11]);
@@ -374,7 +387,18 @@ int main() {
             else {posJ4= nvpos(posJ4,r);}
             test(pion1,pion2,pion3,pion4,tab[1],tab[2],tab[3],tab[4],tab[5],tab[6],tab[7],tab[8],tab[9],tab[10],tab[11],tab[12],tab[13],tab[14],tab[15],tab[16],tab[17],tab[18],tab[19],tab[20],tab[21],tab[22],tab[23],tab[24],tab[25],tab[26],tab[27],tab[28],tab[29],tab[30],tab[31],tab[32],tab[33],posJ1,posJ2,posJ3,posJ4);
             printpiece34(tab[34],posJ1,posJ2,posJ3,posJ4,pion1,pion2,pion3,pion4);
-            posJ2= direction(nomJ2,j2.lig,j2.col);
+            nvtab[0]=9;nvtab[1]=tab[1];nvtab[2]=1;nvtab[3]=tab[2];nvtab[4]=1;nvtab[5]=tab[3];nvtab[6]=10;nvtab[7]=tab[4];nvtab[8]=tab[5];nvtab[9]=tab[6];nvtab[10]=tab[7];nvtab[11]=tab[8];nvtab[11]=tab[8];nvtab[12]=tab[9];nvtab[13]=tab[10];nvtab[14]=3;nvtab[15]=tab[11];nvtab[16]=3;nvtab[17]=tab[12];nvtab[18]=1;nvtab[19]=tab[13];nvtab[20]=4;nvtab[21]=tab[14];nvtab[22]=tab[15];nvtab[23]=tab[16];nvtab[24]=tab[17];nvtab[25]=tab[18];nvtab[26]=tab[19];nvtab[27]=tab[20];nvtab[28]=3;nvtab[29]=tab[21];nvtab[30]=2;nvtab[31]=tab[22];nvtab[32]=1;nvtab[33]=tab[23];nvtab[34]=4;nvtab[35]=tab[24];nvtab[36]=tab[25];nvtab[37]=tab[26];nvtab[38]=tab[27];nvtab[39]=tab[28];nvtab[40]=tab[29];nvtab[41]=tab[30];nvtab[42]=7;nvtab[43]=tab[31];nvtab[44]=2;nvtab[45]=tab[32];nvtab[46]=2;nvtab[47]=tab[33];nvtab[48]=8;
+            int yyyy=0;yyyy=posJ2;double mmmm=0;int dddd=0;dddd=yyyy;
+            dddd=change(yyyy);mmmm=nvtab[dddd];
+            posJ2=direction(nomJ2,j2.lig,j2.col);
+            double cccc=0;cccc=nvtab[posJ2];
+            solu2=fonctiontest(posJ2,yyyy,mmmm,cccc,nvtab[0], nvtab[1], nvtab[2], nvtab[3], nvtab[4], nvtab[5], nvtab[6], nvtab[7], nvtab[8], nvtab[9], nvtab[10], nvtab[11], nvtab[12], nvtab[13], nvtab[14], nvtab[15], nvtab[16], nvtab[17], nvtab[18], nvtab[19], nvtab[20], nvtab[21], nvtab[22], nvtab[23], nvtab[24], nvtab[25], nvtab[26], nvtab[27], nvtab[28], nvtab[29], nvtab[30], nvtab[31], nvtab[32], nvtab[33], nvtab[34], nvtab[35], nvtab[36], nvtab[37], nvtab[38], nvtab[39], nvtab[40], nvtab[41], nvtab[42], nvtab[43], nvtab[44], nvtab[45], nvtab[46], nvtab[47],nvtab[48]);
+            verification(solu2);
+            while(solu2==0){
+                posJ2=direction(nomJ2,j2.lig,j2.col);
+                solu2=fonctiontest(posJ2,yyyy,mmmm,cccc,nvtab[0], nvtab[1], nvtab[2], nvtab[3], nvtab[4], nvtab[5], nvtab[6], nvtab[7], nvtab[8], nvtab[9], nvtab[10], nvtab[11], nvtab[12], nvtab[13], nvtab[14], nvtab[15], nvtab[16], nvtab[17], nvtab[18], nvtab[19], nvtab[20], nvtab[21], nvtab[22], nvtab[23], nvtab[24], nvtab[25], nvtab[26], nvtab[27], nvtab[28], nvtab[29], nvtab[30], nvtab[31], nvtab[32], nvtab[33], nvtab[34], nvtab[35], nvtab[36], nvtab[37], nvtab[38], nvtab[39], nvtab[40], nvtab[41], nvtab[42], nvtab[43], nvtab[44], nvtab[45], nvtab[46], nvtab[47],nvtab[48]);
+                verification(solu2);
+            }
             test(pion1,pion2,pion3,pion4,tab[1],tab[2],tab[3],tab[4],tab[5],tab[6],tab[7],tab[8],tab[9],tab[10],tab[11],tab[12],tab[13],tab[14],tab[15],tab[16],tab[17],tab[18],tab[19],tab[20],tab[21],tab[22],tab[23],tab[24],tab[25],tab[26],tab[27],tab[28],tab[29],tab[30],tab[31],tab[32],tab[33],posJ1,posJ2,posJ3,posJ4);printf("\n\n");
             printpiece34(tab[34],posJ1,posJ2,posJ3,posJ4,pion1,pion2,pion3,pion4);printf("\n\n\n");
             bb= avancetresor(nbjoueur,nomJ2,compteurJ2,tresJ2[0],tresJ2[1],tresJ2[2],tresJ2[3],tresJ2[4],tresJ2[5],tresJ2[6],tresJ2[7],tresJ2[8],tresJ2[9],tresJ2[10],tresJ2[11]);
@@ -411,7 +435,18 @@ int main() {
             else {posJ4= nvpos(posJ4,r);}
             test(pion1,pion2,pion3,pion4,tab[1],tab[2],tab[3],tab[4],tab[5],tab[6],tab[7],tab[8],tab[9],tab[10],tab[11],tab[12],tab[13],tab[14],tab[15],tab[16],tab[17],tab[18],tab[19],tab[20],tab[21],tab[22],tab[23],tab[24],tab[25],tab[26],tab[27],tab[28],tab[29],tab[30],tab[31],tab[32],tab[33],posJ1,posJ2,posJ3,posJ4);
             printpiece34(tab[34],posJ1,posJ2,posJ3,posJ4,pion1,pion2,pion3,pion4);
-            posJ3= direction(nomJ3,j3.lig,j3.col);
+            nvtab[0]=9;nvtab[1]=tab[1];nvtab[2]=1;nvtab[3]=tab[2];nvtab[4]=1;nvtab[5]=tab[3];nvtab[6]=10;nvtab[7]=tab[4];nvtab[8]=tab[5];nvtab[9]=tab[6];nvtab[10]=tab[7];nvtab[11]=tab[8];nvtab[11]=tab[8];nvtab[12]=tab[9];nvtab[13]=tab[10];nvtab[14]=3;nvtab[15]=tab[11];nvtab[16]=3;nvtab[17]=tab[12];nvtab[18]=1;nvtab[19]=tab[13];nvtab[20]=4;nvtab[21]=tab[14];nvtab[22]=tab[15];nvtab[23]=tab[16];nvtab[24]=tab[17];nvtab[25]=tab[18];nvtab[26]=tab[19];nvtab[27]=tab[20];nvtab[28]=3;nvtab[29]=tab[21];nvtab[30]=2;nvtab[31]=tab[22];nvtab[32]=1;nvtab[33]=tab[23];nvtab[34]=4;nvtab[35]=tab[24];nvtab[36]=tab[25];nvtab[37]=tab[26];nvtab[38]=tab[27];nvtab[39]=tab[28];nvtab[40]=tab[29];nvtab[41]=tab[30];nvtab[42]=7;nvtab[43]=tab[31];nvtab[44]=2;nvtab[45]=tab[32];nvtab[46]=2;nvtab[47]=tab[33];nvtab[48]=8;
+            int lllll=0;lllll=posJ3;double vvvvv=0;int kkkkk=0;kkkkk=lllll;
+            kkkkk=change(lllll);vvvvv=nvtab[kkkkk];
+            posJ3=direction(nomJ3,j3.lig,j3.col);
+            double rrrrr=0;rrrrr=nvtab[posJ3];
+            solu3=fonctiontest(posJ3,lllll,vvvvv,rrrrr,nvtab[0], nvtab[1], nvtab[2], nvtab[3], nvtab[4], nvtab[5], nvtab[6], nvtab[7], nvtab[8], nvtab[9], nvtab[10], nvtab[11], nvtab[12], nvtab[13], nvtab[14], nvtab[15], nvtab[16], nvtab[17], nvtab[18], nvtab[19], nvtab[20], nvtab[21], nvtab[22], nvtab[23], nvtab[24], nvtab[25], nvtab[26], nvtab[27], nvtab[28], nvtab[29], nvtab[30], nvtab[31], nvtab[32], nvtab[33], nvtab[34], nvtab[35], nvtab[36], nvtab[37], nvtab[38], nvtab[39], nvtab[40], nvtab[41], nvtab[42], nvtab[43], nvtab[44], nvtab[45], nvtab[46], nvtab[47],nvtab[48]);
+            verification(solu3);
+            while(solu3==0){
+                posJ3=direction(nomJ3,j3.lig,j3.col);
+                solu3=fonctiontest(posJ3,lllll,vvvvv,rrrrr,nvtab[0], nvtab[1], nvtab[2], nvtab[3], nvtab[4], nvtab[5], nvtab[6], nvtab[7], nvtab[8], nvtab[9], nvtab[10], nvtab[11], nvtab[12], nvtab[13], nvtab[14], nvtab[15], nvtab[16], nvtab[17], nvtab[18], nvtab[19], nvtab[20], nvtab[21], nvtab[22], nvtab[23], nvtab[24], nvtab[25], nvtab[26], nvtab[27], nvtab[28], nvtab[29], nvtab[30], nvtab[31], nvtab[32], nvtab[33], nvtab[34], nvtab[35], nvtab[36], nvtab[37], nvtab[38], nvtab[39], nvtab[40], nvtab[41], nvtab[42], nvtab[43], nvtab[44], nvtab[45], nvtab[46], nvtab[47],nvtab[48]);
+                verification(solu3);
+            }
             test(pion1,pion2,pion3,pion4,tab[1],tab[2],tab[3],tab[4],tab[5],tab[6],tab[7],tab[8],tab[9],tab[10],tab[11],tab[12],tab[13],tab[14],tab[15],tab[16],tab[17],tab[18],tab[19],tab[20],tab[21],tab[22],tab[23],tab[24],tab[25],tab[26],tab[27],tab[28],tab[29],tab[30],tab[31],tab[32],tab[33],posJ1,posJ2,posJ3,posJ4);printf("\n\n");
             printpiece34(tab[34],posJ1,posJ2,posJ3,posJ4,pion1,pion2,pion3,pion4);printf("\n\n\n");
             cc= avancetresor(nbjoueur,nomJ3,compteurJ3,tresJ3[0],tresJ3[1],tresJ3[2],tresJ3[3],tresJ3[4],tresJ3[5],tresJ3[6],tresJ3[7],tresJ3[8],tresJ3[9],tresJ3[10],tresJ3[11]);
@@ -449,7 +484,18 @@ int main() {
             else {posJ4= nvpos(posJ4,r);}
             test(pion1,pion2,pion3,pion4,tab[1],tab[2],tab[3],tab[4],tab[5],tab[6],tab[7],tab[8],tab[9],tab[10],tab[11],tab[12],tab[13],tab[14],tab[15],tab[16],tab[17],tab[18],tab[19],tab[20],tab[21],tab[22],tab[23],tab[24],tab[25],tab[26],tab[27],tab[28],tab[29],tab[30],tab[31],tab[32],tab[33],posJ1,posJ2,posJ3,posJ4);
             printpiece34(tab[34],posJ1,posJ2,posJ3,posJ4,pion1,pion2,pion3,pion4);
-            posJ4= direction(nomJ4,j4.lig,j4.col);
+            nvtab[0]=9;nvtab[1]=tab[1];nvtab[2]=1;nvtab[3]=tab[2];nvtab[4]=1;nvtab[5]=tab[3];nvtab[6]=10;nvtab[7]=tab[4];nvtab[8]=tab[5];nvtab[9]=tab[6];nvtab[10]=tab[7];nvtab[11]=tab[8];nvtab[11]=tab[8];nvtab[12]=tab[9];nvtab[13]=tab[10];nvtab[14]=3;nvtab[15]=tab[11];nvtab[16]=3;nvtab[17]=tab[12];nvtab[18]=1;nvtab[19]=tab[13];nvtab[20]=4;nvtab[21]=tab[14];nvtab[22]=tab[15];nvtab[23]=tab[16];nvtab[24]=tab[17];nvtab[25]=tab[18];nvtab[26]=tab[19];nvtab[27]=tab[20];nvtab[28]=3;nvtab[29]=tab[21];nvtab[30]=2;nvtab[31]=tab[22];nvtab[32]=1;nvtab[33]=tab[23];nvtab[34]=4;nvtab[35]=tab[24];nvtab[36]=tab[25];nvtab[37]=tab[26];nvtab[38]=tab[27];nvtab[39]=tab[28];nvtab[40]=tab[29];nvtab[41]=tab[30];nvtab[42]=7;nvtab[43]=tab[31];nvtab[44]=2;nvtab[45]=tab[32];nvtab[46]=2;nvtab[47]=tab[33];nvtab[48]=8;
+            int gggggg=0;gggggg=posJ4;double hhhhhh=0;int qqqqqq=0;qqqqqq=gggggg;
+            qqqqqq=change(gggggg);hhhhhh=nvtab[qqqqqq];
+            posJ4=direction(nomJ4,j4.lig,j4.col);
+            double ssssss=0;ssssss=nvtab[posJ4];
+            solu4=fonctiontest(posJ4,gggggg,hhhhhh,ssssss,nvtab[0], nvtab[1], nvtab[2], nvtab[3], nvtab[4], nvtab[5], nvtab[6], nvtab[7], nvtab[8], nvtab[9], nvtab[10], nvtab[11], nvtab[12], nvtab[13], nvtab[14], nvtab[15], nvtab[16], nvtab[17], nvtab[18], nvtab[19], nvtab[20], nvtab[21], nvtab[22], nvtab[23], nvtab[24], nvtab[25], nvtab[26], nvtab[27], nvtab[28], nvtab[29], nvtab[30], nvtab[31], nvtab[32], nvtab[33], nvtab[34], nvtab[35], nvtab[36], nvtab[37], nvtab[38], nvtab[39], nvtab[40], nvtab[41], nvtab[42], nvtab[43], nvtab[44], nvtab[45], nvtab[46], nvtab[47],nvtab[48]);
+            verification(solu4);
+            while(solu4==0){
+                posJ4=direction(nomJ4,j4.lig,j4.col);
+                solu4=fonctiontest(posJ4,gggggg,hhhhhh,ssssss,nvtab[0], nvtab[1], nvtab[2], nvtab[3], nvtab[4], nvtab[5], nvtab[6], nvtab[7], nvtab[8], nvtab[9], nvtab[10], nvtab[11], nvtab[12], nvtab[13], nvtab[14], nvtab[15], nvtab[16], nvtab[17], nvtab[18], nvtab[19], nvtab[20], nvtab[21], nvtab[22], nvtab[23], nvtab[24], nvtab[25], nvtab[26], nvtab[27], nvtab[28], nvtab[29], nvtab[30], nvtab[31], nvtab[32], nvtab[33], nvtab[34], nvtab[35], nvtab[36], nvtab[37], nvtab[38], nvtab[39], nvtab[40], nvtab[41], nvtab[42], nvtab[43], nvtab[44], nvtab[45], nvtab[46], nvtab[47],nvtab[48]);
+                verification(solu4);
+            }
             test(pion1,pion2,pion3,pion4,tab[1],tab[2],tab[3],tab[4],tab[5],tab[6],tab[7],tab[8],tab[9],tab[10],tab[11],tab[12],tab[13],tab[14],tab[15],tab[16],tab[17],tab[18],tab[19],tab[20],tab[21],tab[22],tab[23],tab[24],tab[25],tab[26],tab[27],tab[28],tab[29],tab[30],tab[31],tab[32],tab[33],posJ1,posJ2,posJ3,posJ4);printf("\n\n");
             printpiece34(tab[34],posJ1,posJ2,posJ3,posJ4,pion1,pion2,pion3,pion4);printf("\n\n\n");
             dd= avancetresor(nbjoueur,nomJ4,compteurJ4,tresJ4[0],tresJ4[1],tresJ4[2],tresJ4[3],tresJ4[4],tresJ4[5],tresJ4[6],tresJ4[7],tresJ4[8],tresJ4[9],tresJ4[10],tresJ4[11]);
@@ -459,7 +505,7 @@ int main() {
             color(15,0);ecripos(nbjoueur,nomJ1,nomJ2,nomJ3,nomJ4,j1.lig,j1.col,j2.lig,j2.col,j3.lig,j3.col,j4.lig,j4.col);color(0,0);
         }
         compteur1= toursuivant(compteur4,compteur1);
-        FILE *fichier = fopen("C:\\Users\\antoi\\Documents\\COURS\\INFO\\sauvegarde.txt", "w");
+        FILE *fichier = fopen("../sauvegarde.txt", "w+");
         fprintf(fichier,"%d\n%d\n%d\n%d\n%2f\n%2f\n%2f\n%2f\n%2f\n%2f\n%2f\n%2f\n%2f\n%2f\n%2f\n%2f\n%2f\n%2f\n%2f\n%2f\n%2f\n%2f\n%2f\n%2f\n%2f\n%2f\n%2f\n%2f\n%2f\n%2f\n%2f\n%2f\n%2f\n%2f\n%2f\n%2f\n%2f\n%2f\n%2f\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%s\n%s\n%s\n%s", pion1, pion2, pion3, pion4, tab[0], tab[1], tab[2], tab[3], tab[4], tab[5], tab[6], tab[7], tab[8], tab[9], tab[10], tab[11], tab[12], tab[13], tab[14], tab[15], tab[16], tab[17], tab[18], tab[19], tab[20], tab[21], tab[22], tab[23], tab[24], tab[25], tab[26], tab[27], tab[28], tab[29], tab[30], tab[31], tab[32], tab[33], tab[34], nbjoueur, aa, bb, cc, dd, compteur1, compteur2, compteur3, compteur4, compteurJ1, compteurJ2, compteurJ3, compteurJ4,tresJ1[0],tresJ1[1],tresJ1[2],tresJ1[3],tresJ1[4],tresJ1[5],tresJ1[6],tresJ1[7],tresJ1[8],tresJ1[9],tresJ1[10],tresJ1[11],tresJ2[0],tresJ2[1],tresJ2[2],tresJ2[3],tresJ2[4],tresJ2[5],tresJ2[6],tresJ2[7],tresJ2[8],tresJ2[9],tresJ2[10],tresJ2[11],tresJ3[0],tresJ3[1],tresJ3[2],tresJ3[3],tresJ3[4],tresJ3[5],tresJ3[6],tresJ3[7],tresJ3[8],tresJ3[9],tresJ3[10],tresJ3[11],tresJ4[0],tresJ4[1],tresJ4[2],tresJ4[3],tresJ4[4],tresJ4[5],tresJ4[6],tresJ4[7],tresJ4[8],tresJ4[9],tresJ4[10],tresJ4[11],nomJ1,nomJ2,nomJ3,nomJ4);
         fclose(fichier);
         fichier=NULL;
