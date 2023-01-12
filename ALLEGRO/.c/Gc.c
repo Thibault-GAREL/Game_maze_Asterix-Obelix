@@ -1,4 +1,4 @@
-#include "Gc.h"
+#include "../.h/Gc.h"
 
 
 bool GC_INIT_ALLEGRO()
@@ -30,6 +30,8 @@ bool GC_INIT_ALLEGRO()
     }
     
     al_init_font_addon();
+
+    al_init_ttf_addon();
 
     //Pour les certaines version d'Allegro
     /*if (!al_init_font_addon())
@@ -82,13 +84,26 @@ void GC_MANAGER_CREATE(GC_MANAGER* pManager, int width, int height)
 
     ALLEGRO_EVENT emptyEvent = {0};
     pManager->event = emptyEvent;
+    pManager->event_time = 0;
 }
 
 void GC_MANAGER_UPDATE_EVENT(GC_MANAGER* pManager)
 {
     ALLEGRO_EVENT emptyEvent = {0};
     pManager->event = emptyEvent;
-    al_wait_for_event(pManager->events, &pManager->event);
+
+    if (pManager->event_time == 0)
+    {
+        al_wait_for_event(pManager->events, &pManager->event);
+    }
+    else if (pManager->event_time > 0)
+    {
+        al_wait_for_event_timed(pManager->events, &pManager->event, pManager->event_time);
+    }
+    else
+    {
+        fprintf(stderr, "\n<ERROR> event_time doit être positif");
+    }
 }
 
 void GC_MANAGER_DESTROY(GC_MANAGER* pManger)
@@ -295,22 +310,34 @@ void GC_SPRITE_DRAW(GC_SPRITE* gc_sprite)
 }
 
 
-void GC_TEXT_INIT(GC_TEXT* gc_text, char* text)
+void GC_TEXT_INIT(GC_TEXT* gc_text, char* text_out)
 {
-    gc_text->text = text;
+    gc_text->text = text_out;
+
+    gc_text->al_flag = 0;
 
     gc_text->police = al_create_builtin_font();
 
-    gc_text->color = al_map_rgb(255,255,255);
+    gc_text->color = al_map_rgb(0,0,0);
 
     GC_PROPERTIES_INIT(&gc_text->gc_properties);
 }
 
-void GC_TEXT_DRAW_F(GC_TEXT gc_text)
+void GC_TEXT_SET_FONT(GC_TEXT* gc_text, char* fontPath, int size)
 {
-    al_draw_textf(gc_text.police, gc_text.color, gc_text.gc_properties.gc_space.POSITION_X, gc_text.gc_properties.gc_space.POSITION_Y, 0, gc_text.text);
+    gc_text->police = al_load_ttf_font(fontPath, size , 0);
+
+    if (!gc_text->police)
+    {
+        printf("\n<ERROR> [GC_TEXT_SET_FONT] Can't load font file: \'%s\'", fontPath);
+        gc_text->gc_properties.error = 2;
+    }
 }
 
+void GC_TEXT_DRAW(GC_TEXT* gc_text)
+{
+    al_draw_text(gc_text->police, gc_text->color, gc_text->gc_properties.gc_space.POSITION_X, gc_text->gc_properties.gc_space.POSITION_Y, gc_text->al_flag, gc_text->text);
+}
 
 /*
  *

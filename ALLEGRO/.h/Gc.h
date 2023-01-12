@@ -8,6 +8,7 @@
     #include <allegro5/allegro.h>
     #include <allegro5/allegro_image.h>
     #include <allegro5/allegro_font.h>
+    #include <allegro5/allegro_ttf.h>
 #endif
 
 #ifndef GCINITALLEGRO
@@ -26,6 +27,7 @@
         ALLEGRO_DISPLAY* display;
         ALLEGRO_EVENT_QUEUE* events;
         ALLEGRO_EVENT event;
+        float event_time;
     }GC_MANAGER;
 
     //Retourne l'addresse du nouveau manager si l'initialisation réussie sinon 0 
@@ -113,13 +115,15 @@
     typedef struct
     {
         char* text;
+        int al_flag;
         ALLEGRO_FONT* police;
         ALLEGRO_COLOR color;
         GC_PROPERTIES gc_properties;
     }GC_TEXT;
 
-    void GC_TEXT_INIT(GC_TEXT* gc_text, char* text);
-    void GC_TEXT_DRAW_F(GC_TEXT gc_text);
+    void GC_TEXT_INIT(GC_TEXT* gc_text, char* text_out);
+    void GC_TEXT_SET_FONT(GC_TEXT* gc_text, char* filePath, int size);
+    void GC_TEXT_DRAW(GC_TEXT* gc_text);
 
 #endif
 
