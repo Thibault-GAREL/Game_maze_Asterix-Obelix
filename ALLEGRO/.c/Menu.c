@@ -36,16 +36,16 @@ void TMenuInit(TextMenu* pTextMenu){
 
 void Menu_Init(MENU* pMenu, GC_MANAGER* pManager)
 {
-    GC_SPRITE_INIT(&pMenu->Credits, FILE_ACCESS ".\\Import\\Labyrinthe_Credits.png");                            // Initialisation de la texture des crédits
-    GC_SPRITE_INIT(&pMenu->MENU_BACKGRD, FILE_ACCESS ".\\Import\\MENU_BACKGROUND.png");
+    GC_SPRITE_INIT(&pMenu->Credits, FILE_ACCESS ".\\Import\\Credits_FHD_ALLEGRO.png");                            // Initialisation de la texture des crédits
+    GC_SPRITE_INIT(&pMenu->MENU_BACKGRD, FILE_ACCESS ".\\Import\\Menu_FHD_ALLEGRO.png");
 
     Button_Init(&pMenu->Button_Menu_1, 0, pManager, MENUCHOICE1_PATH);
     Button_Init(&pMenu->Button_Menu_2, 0, pManager, MENUCHOICE2_PATH);
     Button_Init(&pMenu->Button_Menu_3, 0, pManager, MENUCHOICE3_PATH);
 
-    Button_Set_Space(&pMenu->Button_Menu_1, 250, 400, 0);
-    Button_Set_Space(&pMenu->Button_Menu_2, 300, 525, 0);
-    Button_Set_Space(&pMenu->Button_Menu_3, 400, 650, 0);
+    Button_Set_Space(&pMenu->Button_Menu_1, 750, 400, 0);
+    Button_Set_Space(&pMenu->Button_Menu_2, 800, 525, 0);
+    Button_Set_Space(&pMenu->Button_Menu_3, 875, 650, 0);
 
     pMenu->menu_Selected = 0;
 }
@@ -75,6 +75,9 @@ void Menu_Update_Event(MENU* pMenu)
         Button_Update_Event(&pMenu->Button_Menu_1);
         Button_Update_Event(&pMenu->Button_Menu_2);
         Button_Update_Event(&pMenu->Button_Menu_3);
+    }
+    if (pMenu->menu_Selected == 1){
+        if ()
     }
 }
 
