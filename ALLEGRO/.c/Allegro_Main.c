@@ -3,14 +3,14 @@
 // gcc -g -Wall .\main_t.c .\Gc.c .\fonction_t.c .\Menu.c -lallegro -lallegro_image -lallegro_font -oProject; .\Project.exe
 
 
-/*int nbrJoueur=4; //définiti le nombre de joueurs
-int JoueurPlay=1; //définit quel joueur doit jouer
-int tour =1; //définit à quel tour du jeu nous sommes
-int finM =0; //Permet au joueur de finir ses déplacements en appuyant sur entrée
-int finP =0; //Permet au joueur de terminer ses déplacements du plateau
+/*int nbrJoueur=4;              //définiti le nombre de joueurs
+int JoueurPlay=1;               //définit quel joueur doit jouer
+int tour =1;                    //définit à quel tour du jeu nous sommes
+int finM =0;                    //Permet au joueur de finir ses déplacements en appuyant sur entrée
+int finP =0;                    //Permet au joueur de terminer ses déplacements du plateau
 
 int escape = 0;
-int SelectMenu = 0; //permet de valider la sélection dans le menu
+int SelectMenu = 0;             //permet de valider la sélection dans le menu
 
 int main() {
     int x1 = 90;                // coordonnées x et y du premier joueur

@@ -26,6 +26,7 @@ typedef struct
     BUTTON Button_Menu_1;
     BUTTON Button_Menu_2;
     BUTTON Button_Menu_3;
+    BUTTON Button_Escape;
 
     int menu_Selected;
 }MENU;
@@ -35,9 +36,11 @@ void TMenuInit(TextMenu* pTextmenu);          //déclaration de la fonction perm
 void TMenuDisplay(TextMenu* pTextMenu, int* pBACKGROUNDPATH);      //déclaration de la fonction permettant d'afficher le Menu
 
 void Menu_Init(MENU* pMenu, GC_MANAGER* pManager);
-void Menu_Draw(MENU* pMenu);
+void Menu_Draw(MENU* pMenu, int* pManager);
 void Menu_Update_Event(MENU* pMenu);
 void Menu_Button_exe(MENU* pMenu);
+
+
 
 #endif //PROJET_MAINMOUV_H
 

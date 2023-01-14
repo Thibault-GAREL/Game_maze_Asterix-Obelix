@@ -14,7 +14,6 @@ char text_5[] = " 3- Crédits ";
 const int TableauTailleTypo[6]={48,40,48,36,36,36}; //Définit les tailles de police pour les différentes lignes du menu de démarrage
 const int TableauTextOffsetY[6]={300,400,575,750,825,900};  //définit les positions en Y du texte du menu
 
-
 void TMenuInit(TextMenu* pTextMenu){
 
     GC_TEXT_INIT(&pTextMenu->tableauTextes[0], text_0);
@@ -42,17 +41,19 @@ void Menu_Init(MENU* pMenu, GC_MANAGER* pManager)
     Button_Init(&pMenu->Button_Menu_1, 0, pManager, MENUCHOICE1_PATH);
     Button_Init(&pMenu->Button_Menu_2, 0, pManager, MENUCHOICE2_PATH);
     Button_Init(&pMenu->Button_Menu_3, 0, pManager, MENUCHOICE3_PATH);
+    Button_Init(&pMenu->Button_Escape, 0, pManager, MENU_ESCAPE_PATH);
 
     Button_Set_Space(&pMenu->Button_Menu_1, 750, 400, 0);
     Button_Set_Space(&pMenu->Button_Menu_2, 800, 525, 0);
     Button_Set_Space(&pMenu->Button_Menu_3, 875, 650, 0);
+    Button_Set_Space(&pMenu->Button_Escape, 1850, 25, 0);
 
     pMenu->menu_Selected = 0;
 }
 
 
 
-void Menu_Draw(MENU* pMenu)
+void Menu_Draw(MENU* pMenu, int* pManager)
 {
     if (pMenu->menu_Selected == 0)
     {
@@ -61,10 +62,16 @@ void Menu_Draw(MENU* pMenu)
         Button_Draw(&pMenu->Button_Menu_1);
         Button_Draw(&pMenu->Button_Menu_2);
         Button_Draw(&pMenu->Button_Menu_3);
+        Button_Draw(&pMenu->Button_Escape);
     }
     else if (pMenu->menu_Selected == 3)
     {
         GC_SPRITE_DRAW(&pMenu->Credits);
+    }
+    else if (pMenu->menu_Selected == 4)
+    {
+        GC_MANAGER_DESTROY(pManager);
+        exit(0);
     }
 }
 
@@ -75,9 +82,7 @@ void Menu_Update_Event(MENU* pMenu)
         Button_Update_Event(&pMenu->Button_Menu_1);
         Button_Update_Event(&pMenu->Button_Menu_2);
         Button_Update_Event(&pMenu->Button_Menu_3);
-    }
-    if (pMenu->menu_Selected == 1){
-        if ()
+        Button_Update_Event(&pMenu->Button_Escape);
     }
 }
 
@@ -94,6 +99,10 @@ void Menu_Button_exe(MENU* pMenu)
     else if (pMenu->Button_Menu_3.gc_button.state == GC_BUTTON_STATE_RELEASED)
     {
         pMenu->menu_Selected = 3;
+    }
+    else if (pMenu->Button_Escape.gc_button.state == GC_BUTTON_STATE_RELEASED)
+    {
+        pMenu->menu_Selected = 4;
     }
 }
 

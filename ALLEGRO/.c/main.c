@@ -28,7 +28,7 @@ int main() {
 
         ALLEGRO_COLOR blk = al_map_rgb(0,0,0);
         al_clear_to_color(blk);
-        Menu_Draw(&menu);
+        Menu_Draw(&menu, &manager);
         al_flip_display();
     }
         
@@ -36,7 +36,7 @@ int main() {
     Party_Init(&party, 4, &manager);
 
     while (1)
-    {           
+    {
         Switch_Part_Loop(&manager, &party);
         Deplacement_Player_Loop(&manager, &party);
     }
