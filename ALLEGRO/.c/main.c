@@ -12,7 +12,7 @@ void Draw_Clear_Plateau_Player(PARTY* pParty);
 void Update_Event(GC_MANAGER* pManager);
 
 int main() {
-
+    al_set_new_display_flags(ALLEGRO_FULLSCREEN_WINDOW);
     GC_MANAGER manager;
     GC_MANAGER_CREATE(&manager, 1000, 1000);
 

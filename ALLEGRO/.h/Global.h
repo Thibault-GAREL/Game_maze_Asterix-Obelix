@@ -24,7 +24,7 @@
 
 #define BUTTONS_SETPART_COUNT (3*4+2)
 
-#define FILE_ACCESS ""
+#define FILE_ACCESS "."
 #define BUTTON_PATH FILE_ACCESS ".\\Import\\Fleche_1.PNG"
 #define FONT_PATH FILE_ACCESS ".\\Import\\BruceForeverRegular.ttf"
 #define BUTTON_ROTA_POSI FILE_ACCESS ".\\Import\\Fleche_Rota_Posi.png"

@@ -37,12 +37,31 @@ void Party_Init(PARTY* pParty, int player_count, GC_MANAGER* pManager)
     pParty->player_turn_step = 0;
     Plateau_Init(&pParty->plateau, pManager);
 
+    int tab_treasure [24] = {};
+    for (int i = 0; i < 24; ++i) {
+        tab_treasure [i] = i;
+    }
+
+    Random_LessDiscount(tab_treasure, 24, 50);
+
+
+    for (int i = 0; i < player_count; ++i) {
+        for (int j = 0; j < 24/player_count; ++j) {
+            pParty->players[i].liste_treasure[j] = tab_treasure[j+i*24/player_count];
+        }
+    }
+
+    //afficher à chaque joueur le premier trésor à recupérer
+    //afficher les trésors sur le plateau (PARTY.treasure ==> draw le bon) attention tout les fixes sauf 4
+    //faire un compteur de trésor récupérer==>on gagne if (un PLAYER.nb_treasure = 24/player_count || revenu à sa co intitale)
+
     for (int i = 0; i < pParty->player_count; i++)
     {
         Player_Init(&pParty->players[i], i, "");
         pParty->players[i].position_on_plateau.x = players_start_pos[i][0];
         pParty->players[i].position_on_plateau.y = players_start_pos[i][1];
     }
+
 
     for (int i = 0; i < BUTTONS_SETPART_COUNT; i++)
     {

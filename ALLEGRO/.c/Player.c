@@ -13,6 +13,7 @@ void Player_Init(PLAYER* pPlayer, int id, char* name)
     pPlayer->position_on_plateau.x = 0;
     pPlayer->position_on_plateau.y = 0;
     pPlayer->name = name;
+
 }
 
 void Player_Draw(PLAYER* pPlayer)
