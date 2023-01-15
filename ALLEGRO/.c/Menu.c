@@ -47,13 +47,13 @@ void Menu_Init(MENU* pMenu, GC_MANAGER* pManager)
     Button_Set_Space(&pMenu->Button_Menu_1, 750, 400, 0);
     Button_Set_Space(&pMenu->Button_Menu_2, 800, 525, 0);
     Button_Set_Space(&pMenu->Button_Menu_3, 875, 650, 0);
-    Button_Set_Space(&pMenu->Button_Escape, 500, 25, 0);        //1850
-    Button_Set_Space(&pMenu->Button_Escape_1, 500,25,0);
+    Button_Set_Space(&pMenu->Button_Escape, 1850, 25, 0);
+    Button_Set_Space(&pMenu->Button_Escape_1, 1850,25,0);
 
     pMenu->menu_Selected = 0;
 }
 
-void Menu_Draw(MENU* pMenu)
+void MENU_Draw(MENU* pMenu)
 {
     if (pMenu->menu_Selected == 0)
     {
@@ -64,14 +64,18 @@ void Menu_Draw(MENU* pMenu)
         Button_Draw(&pMenu->Button_Menu_3);
         Button_Draw(&pMenu->Button_Escape);
     }
-    else if (pMenu->menu_Selected == 3)
+    if (pMenu->menu_Selected == 3)
     {
         GC_SPRITE_DRAW(&pMenu->Credits);
         Button_Draw(&pMenu->Button_Escape_1);
     }
+    if (pMenu->menu_Selected == 1)
+    {
+        Button_Draw(&pMenu->Button_Escape_1);
+    }
 }
 
-void Menu_Update_Event(MENU* pMenu)
+void Button_Game_Update_Event(MENU* pMenu)
 {
     if (pMenu->menu_Selected == 0)
     {
@@ -80,14 +84,14 @@ void Menu_Update_Event(MENU* pMenu)
         Button_Update_Event(&pMenu->Button_Menu_3);
         Button_Update_Event(&pMenu->Button_Escape);
     }
-    else if (pMenu->menu_Selected == 3)
+    else if (pMenu->menu_Selected == 3 || pMenu->menu_Selected == 1)
     {
         Button_Update_Event(&pMenu->Button_Escape_1);
         //printf("effectue \n");
     }
 }
 
-void Menu_Button_exe(MENU* pMenu, GC_MANAGER* pManager)
+void Button_exe(MENU* pMenu, GC_MANAGER* pManager)
 {
     if (pMenu->Button_Menu_1.gc_button.state == GC_BUTTON_STATE_RELEASED)
     {
@@ -118,6 +122,7 @@ void Menu_Button_exe(MENU* pMenu, GC_MANAGER* pManager)
     }
     //printf("%d  %d  %d \n", pMenu->Button_Escape_1.gc_button.state, pMenu->menu_Selected, GC_BUTTON_STATE_RELEASED );
 }
+
 
 
 

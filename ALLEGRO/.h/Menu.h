@@ -37,10 +37,9 @@ void TMenuInit(TextMenu* pTextmenu);          //déclaration de la fonction perm
 void TMenuDisplay(TextMenu* pTextMenu, int* pBACKGROUNDPATH);      //déclaration de la fonction permettant d'afficher le Menu
 
 void Menu_Init(MENU* pMenu, GC_MANAGER* pManager);
-void Menu_Draw(MENU* pMenu);
-void Menu_Update_Event(MENU* pMenu);
-void Menu_Button_exe(MENU* pMenu, GC_MANAGER* pManager);
-
+void MENU_Draw(MENU* pMenu);
+void Button_Game_Update_Event(MENU* pMenu);
+void Button_exe(MENU* pMenu, GC_MANAGER* pManager);
 
 
 #endif //PROJET_MAINMOUV_H

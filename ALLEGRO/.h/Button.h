@@ -14,5 +14,4 @@ void Button_Init(BUTTON* pButton, int id, GC_MANAGER* pManager, const char* file
 void Button_Set_Space(BUTTON* pButton, float x, float y, float z);
 void Button_Update_Event(BUTTON* pButton);
 void Button_Draw(BUTTON* pButton);
-
 #endif

@@ -4,7 +4,7 @@
 #include "Global.h"
 #include "Plateau.h"
 #include "Player.h"
-#include "Button.h"
+#include "Menu.h"
 
 typedef struct
 {
