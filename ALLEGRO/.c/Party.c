@@ -51,7 +51,7 @@ void Party_Init(PARTY* pParty, int player_count, GC_MANAGER* pManager)
         }
     }
 
-    //afficher à chaque joueur le premier trésor à recupérer
+    //afficher à chaque joueur le premier trésor à recupérer dans Player_draw
     //afficher les trésors sur le plateau (PARTY.treasure ==> draw le bon) attention tout les fixes sauf 4
     //faire un compteur de trésor récupérer==>on gagne if (un PLAYER.nb_treasure = 24/player_count || revenu à sa co intitale)
 

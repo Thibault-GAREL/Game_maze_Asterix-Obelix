@@ -23,7 +23,7 @@ int main() {
     {
         Update_Event(&manager);
         Menu_Update_Event(&menu);
-        Menu_Button_exe(&menu);
+        Menu_Button_exe(&menu, &manager);
 
         ALLEGRO_COLOR blk = al_map_rgb(0,0,0);
         al_clear_to_color(blk);
