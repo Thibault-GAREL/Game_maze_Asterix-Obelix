@@ -30,7 +30,7 @@
 #define LOGIC_PATH_T 1
 #define LOGIC_PATH_I 2
 
-#define FILE_ACCESS ""
+#define FILE_ACCESS "."
 #define BUTTON_PATH FILE_ACCESS ".\\Import\\Fleche_1.PNG"
 #define FONT_PATH FILE_ACCESS ".\\Import\\BruceForeverRegular.ttf"
 #define BUTTON_ROTA_POSI FILE_ACCESS ".\\Import\\Fleche_Rota_Posi.png"

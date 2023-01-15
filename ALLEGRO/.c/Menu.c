@@ -29,6 +29,7 @@ void TMenuInit(TextMenu* pTextMenu){
         pTextMenu->tableauTextes[i].al_flag = ALLEGRO_ALIGN_CENTER;
         pTextMenu->tableauTextes[i].gc_properties.gc_space.POSITION_X=TextOffsetX;
         pTextMenu->tableauTextes[i].gc_properties.gc_space.POSITION_Y=TableauTextOffsetY[i];
+
     }
 }
 
@@ -70,7 +71,7 @@ void MENU_Draw(MENU* pMenu)
     }
     if (pMenu->menu_Selected == 1)
     {
-        Button_Draw(&pMenu->Button_Escape);
+        Button_Draw(&pMenu->Button_Escape_1);
     }
 }
 
@@ -96,7 +97,6 @@ void Button_Game_Update_Event(MENU* pMenu)
 
 void Button_exe(MENU* pMenu, GC_MANAGER* pManager)
 {
-
     if (pMenu->Button_Menu_1.gc_button.state == GC_BUTTON_STATE_RELEASED)
     {
         pMenu->menu_Selected = 1;
@@ -112,15 +112,16 @@ void Button_exe(MENU* pMenu, GC_MANAGER* pManager)
         pMenu->menu_Selected = 3;
         //printf("condit3");
     }
-    if (pMenu->Button_Escape.gc_button.state == GC_BUTTON_STATE_RELEASED )
+    if (pMenu->Button_Escape.gc_button.state == GC_BUTTON_STATE_RELEASED)
     {
         //printf("condit4");
         GC_MANAGER_DESTROY(pManager);
         exit(0);
+
     }
     if (pMenu->Button_Escape_1.gc_button.state == GC_BUTTON_STATE_RELEASED)
     {
-        printf("scheisse");
+        //printf("scheisse");
         pMenu->menu_Selected = 0;
     }
     //printf("%d  %d  %d \n", pMenu->Button_Escape_1.gc_button.state, pMenu->menu_Selected, GC_BUTTON_STATE_RELEASED );
@@ -131,21 +132,16 @@ void Button_exe(MENU* pMenu, GC_MANAGER* pManager)
 
 
 /*void TMenuDisplay(TextMenu* pTextMenu, int* pMENU_BACKGRD){                                               //fonction permettant d'afficher le menu
-
     al_clear_to_color(al_map_rgb(0,0,0));
-
     GC_SPRITE_DRAW(pMENU_BACKGRD);
-
     for (int i = 0; i < 6; ++i) {
         GC_TEXT_DRAW(&pTextMenu->tableauTextes[i]);
     }
-
     al_flip_display();
 }*/
 
 /*void ButtonMenu(){
     GC_BUTTON Button_Menu1;
     Button_Menu1.gc_properties.gc_space.POSITION_X= al_get_text_width();
-
     GC_BUTTON_INIT(&Button_Menu1, &manager);
 }*/
