@@ -133,7 +133,7 @@ void Party_Init(PARTY* pParty, int player_count, GC_MANAGER* pManager) {
         }
     }
 
-
+    //pParty->plateau.parts[][].treasure = tab_treasure_sur_plateau[compteur++];
 
     //afficher à chaque joueur le premier trésor à recupérer dans Player_draw
     //afficher les trésors sur le plateau (PARTY.treasure ==> draw le bon) attention tout les fixes sauf 4
