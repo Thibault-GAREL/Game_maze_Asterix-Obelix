@@ -12,9 +12,10 @@ void Draw_Clear_Plateau_Player(PARTY* pParty);
 void Update_Event(GC_MANAGER* pManager);
 
 int main() {
-    al_set_new_display_flags(ALLEGRO_FULLSCREEN_WINDOW);
+
+    al_set_new_display_flags(ALLEGRO_RESIZABLE);
     GC_MANAGER manager;
-    GC_MANAGER_CREATE(&manager, 1000, 1000);
+    GC_MANAGER_CREATE(&manager, 1000, 1000);            //Les dimensions en pixel ne servent plus à rien vu qu'on affiche en plein écran
 
     MENU menu;
     Menu_Init(&menu, &manager);
@@ -30,14 +31,14 @@ int main() {
         Menu_Draw(&menu);
         al_flip_display();
     }
-        
     PARTY party;
     Party_Init(&party, 4, &manager);
 
     while (1)
-    {           
+    {
         Switch_Part_Loop(&manager, &party);
         Deplacement_Player_Loop(&manager, &party);
+        Menu_Update_Event(&menu);
     }
 
     GC_MANAGER_DESTROY(&manager);

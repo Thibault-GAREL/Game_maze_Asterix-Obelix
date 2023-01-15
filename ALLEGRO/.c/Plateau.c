@@ -93,8 +93,6 @@ void Plateau_Init(PLATEAU* pPlateau, GC_MANAGER* pManager)
 
     Vector2Int extra_part_position = {EXTRA_PART_POS_X, EXTRA_PART_POS_Y};
     Part_Init(&pPlateau->part_extra, parts_filePath[parts_filePath_index[PART_COUNT - 1]], extra_part_position, true, pManager);
-
-
 }
 
 void Plateau_Draw(PLATEAU* pPlateau)
