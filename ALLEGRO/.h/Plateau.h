@@ -1,8 +1,8 @@
 #ifndef PLATEAU_h
 #define PLATEAU_h
 
-#include "Part.h"
-#include "Global.h"
+#include "../.h/Part.h"
+#include "../.h/Global.h"
 #include "utils.h"
 #include "Gc.h"
 

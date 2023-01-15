@@ -8,7 +8,7 @@
     GC_MANAGER_CREATE(&manager, 640, 420);
 
     GC_SPRITE sprite;
-    GC_SPRITE_INIT(&sprite, "Import\\tuile_1.png");
+    GC_SPRITE_INIT(&sprite, "Import\\tuile_1.png");   + draw
 
     GC_BUTTON button;
     GC_BUTTON_INIT(&button, &manager.event);
