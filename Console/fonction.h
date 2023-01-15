@@ -3864,8 +3864,8 @@ int test(int p1,int p2,int p3,int p4,double case01,double case03,double case05,d
     }
     if (case14l2==2.3 && posJ1!=14 && posJ2!=14 && posJ3!=14 && posJ4!=14){
         color(14,0);
-        printf("%c%c%c%c%c", 452, 452, 452, 452, 473);color(15,0);printf(" %c",285);color(14,0);
-        printf("%c%c%c%c%c", 448,452, 452, 452, 452);
+        printf("%c%c%c%c%c%c",452, 452, 452, 452, 452, 473);color(15,0);printf(" %c",285);color(14,0);
+        printf("%c%c%c%c%c%c", 448,452,452, 452, 452, 452);
     }
     if (case14l2==2.3 && (posJ1==14||posJ2==14||posJ3==14||posJ4==14)){
         color(14,0);
@@ -21061,7 +21061,7 @@ int fonctiontest(int posdemand,int posactuel,double valeurposactuel,double valeu
                 compteur=compteur+1;
             } // DROITE
             if (((valtab[a-1]>=2 && valtab[a-1]<3) || (valtab[a-1]>=3 && valtab[a-1]<4) || (valtab[a-1]>=7 && valtab[a-1]<8) || (valtab[a-1]>=9 && valtab[a-1]<10) || (valtab[a-1]>=6 && valtab[a-1]<7) || (valtab[a-1]>=1 && valtab[a-1]<2)) && a!=0 && a!=7 && a!=14 && a!=21 && a!=28 && a!=35 && a!=42){
-                casepossible[compteur]=coordtab[a+1];
+                casepossible[compteur]=coordtab[a-1];
                 compteur=compteur+1;
             } //GAUCHE
             if (((valtab[a+7]>=2 && valtab[a+7]<3) || (valtab[a+7]>=3 && valtab[a+7]<4) || (valtab[a+7]>=4 && valtab[a+7]<5) || (valtab[a+7]>=5 && valtab[a+7]<6) || (valtab[a+7]>=7 && valtab[a+7]<8) || (valtab[a+7]>=8 && valtab[a+7]<9)) && a!=42 && a!=43 && a!=44 && a!=45 && a!=46 && a!=47 && a!=48){
@@ -21075,7 +21075,7 @@ int fonctiontest(int posdemand,int posactuel,double valeurposactuel,double valeu
                 compteur=compteur+1;
             } // DROITE
             if (((valtab[a-1]>=2 && valtab[a-1]<3) || (valtab[a-1]>=3 && valtab[a-1]<4) || (valtab[a-1]>=7 && valtab[a-1]<8) || (valtab[a-1]>=9 && valtab[a-1]<10) || (valtab[a-1]>=6 && valtab[a-1]<7) || (valtab[a-1]>=1 && valtab[a-1]<2)) && a!=0 && a!=7 && a!=14 && a!=21 && a!=28 && a!=35 && a!=42){
-                casepossible[compteur]=coordtab[a+1];
+                casepossible[compteur]=coordtab[a-1];
                 compteur=compteur+1;
             } //GAUCHE
             if (((valtab[a-7]>=1 && valtab[a-7]<2) || (valtab[a-7]>=3 && valtab[a-7]<4) || (valtab[a-7]>=4 && valtab[a-7]<5) || (valtab[a-7]>=5 && valtab[a-7]<6) || (valtab[a-7]>=9 && valtab[a-7]<10) || (valtab[a-7]>=10 && valtab[a-7]<11)) && a!=0 && a!=1 && a!=2 && a!=3 && a!=4 && a!=5 && a!=6){
@@ -21107,7 +21107,7 @@ int fonctiontest(int posdemand,int posactuel,double valeurposactuel,double valeu
                 compteur=compteur+1;
             } //BAS
             if (((valtab[a-1]>=2 && valtab[a-1]<3) || (valtab[a-1]>=3 && valtab[a-1]<4) || (valtab[a-1]>=7 && valtab[a-1]<8) || (valtab[a-1]>=9 && valtab[a-1]<10) || (valtab[a-1]>=6 && valtab[a-1]<7) || (valtab[a-1]>=1 && valtab[a-1]<2)) && a!=0 && a!=7 && a!=14 && a!=21 && a!=28 && a!=35 && a!=42){
-                casepossible[compteur]=coordtab[a+1];
+                casepossible[compteur]=coordtab[a-1];
                 compteur=compteur+1;
             } //GAUCHE
             break;
@@ -21123,7 +21123,7 @@ int fonctiontest(int posdemand,int posactuel,double valeurposactuel,double valeu
             break;
         case 6:
             if (((valtab[a-1]>=2 && valtab[a-1]<3) || (valtab[a-1]>=3 && valtab[a-1]<4) || (valtab[a-1]>=7 && valtab[a-1]<8) || (valtab[a-1]>=9 && valtab[a-1]<10) || (valtab[a-1]>=6 && valtab[a-1]<7) || (valtab[a-1]>=1 && valtab[a-1]<2)) && a!=0 && a!=7 && a!=14 && a!=21 && a!=28 && a!=35 && a!=42){
-                casepossible[compteur]=coordtab[a+1];
+                casepossible[compteur]=coordtab[a-1];
                 compteur=compteur+1;
             } //GAUCHE
             if (((valtab[a+1]>=2 && valtab[a+1]<3 )|| (valtab[a+1]>=4 && valtab[a+1]<5) || (valtab[a+1]>=6 && valtab[a+1]<7) || (valtab[a+1]>=8 && valtab[a+1]<9) || (valtab[a+1]>=10 && valtab[a+1]<11) || (valtab[a+1]>=1 && valtab[a+1]<2)) && a!=6 && a!=13 && a!=20 && a!=27 && a!=34 && a!=41 && a!=48){
@@ -21143,7 +21143,7 @@ int fonctiontest(int posdemand,int posactuel,double valeurposactuel,double valeu
             break;
         case 8:
             if (((valtab[a-1]>=2 && valtab[a-1]<3) || (valtab[a-1]>=3 && valtab[a-1]<4) || (valtab[a-1]>=7 && valtab[a-1]<8) || (valtab[a-1]>=9 && valtab[a-1]<10) || (valtab[a-1]>=6 && valtab[a-1]<7) || (valtab[a-1]>=1 && valtab[a-1]<2)) && a!=0 && a!=7 && a!=14 && a!=21 && a!=28 && a!=35 && a!=42){
-                casepossible[compteur]=coordtab[a+1];
+                casepossible[compteur]=coordtab[a-1];
                 compteur=compteur+1;
             } //GAUCHE
             if (((valtab[a-7]>=1 && valtab[a-7]<2) || (valtab[a-7]>=3 && valtab[a-7]<4) || (valtab[a-7]>=4 && valtab[a-7]<5) || (valtab[a-7]>=5 && valtab[a-7]<6) || (valtab[a-7]>=9 && valtab[a-7]<10) || (valtab[a-7]>=10 && valtab[a-7]<11)) && a!=0 && a!=1 && a!=2 && a!=3 && a!=4 && a!=5 && a!=6){
@@ -21167,7 +21167,7 @@ int fonctiontest(int posdemand,int posactuel,double valeurposactuel,double valeu
                 compteur=compteur+1;
             } //BAS
             if (((valtab[a-1]>=2 && valtab[a-1]<3) || (valtab[a-1]>=3 && valtab[a-1]<4) || (valtab[a-1]>=7 && valtab[a-1]<8) || (valtab[a-1]>=9 && valtab[a-1]<10) || (valtab[a-1]>=6 && valtab[a-1]<7) || (valtab[a-1]>=1 && valtab[a-1]<2)) && a!=0 && a!=7 && a!=14 && a!=21 && a!=28 && a!=35 && a!=42){
-                casepossible[compteur]=coordtab[a+1];
+                casepossible[compteur]=coordtab[a-1];
                 compteur=compteur+1;
             } //GAUCHE
             break;
@@ -21175,9 +21175,11 @@ int fonctiontest(int posdemand,int posactuel,double valeurposactuel,double valeu
             printf("ERROR \n");
     }
     int lglglg=0;
+    printf("Valeur compteur : %d\n",compteur);
     if (compteur==0){
         lglglg=1;
     }
+    printf("Valeur lglglg : %d\n",lglglg);
     int prout=compteur;
     for (int i=0;i<prout;i++){
         a=change(casepossible[i]);
@@ -23581,8 +23583,14 @@ int fonctiontest(int posdemand,int posactuel,double valeurposactuel,double valeu
             solu=solu+0;
         }
     }
-    if (lglglg==1){
-        solu=1;
+    if(compteur==1 && (casepossible[0]==posdemand || casepossible[1]==posdemand)){
+        solu=2;
+    }
+    if (lglglg==1 && posdemand==posactuel){
+        solu=2;
+    }
+    if (solu==0 && posdemand==posactuel){
+        solu=2;
     }
     return solu;
 }
