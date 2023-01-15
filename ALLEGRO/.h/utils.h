@@ -5,7 +5,7 @@
 #include <stdio.h>
 #include <time.h>
 
-#include "../h/Global.h"
+#include "Global.h"
 
 typedef struct
 {
