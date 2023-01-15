@@ -10,11 +10,11 @@
 #include <time.h>
 
 #include "Gc.h"
-#include "../h/Global.h"
+#include "../.h/Global.h"
 #include "utils.h"
 #include "Plateau.h"
-#include "../h/Part.h"
-#include "../h/Player.h"
+#include "../.h/Part.h"
+#include "../.h/Player.h"
 #include "Menu.h"
 
 typedef struct

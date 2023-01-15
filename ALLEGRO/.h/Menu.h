@@ -5,7 +5,7 @@
 #ifndef PROJET_MAINMOUV_H
 #define PROJET_MAINMOUV_H
 #include "Gc.h"
-#include "../h/Global.h"
+#include "../.h/Global.h"
 #include "Button.h"
 
 #define TextOffsetX 500     //définit la position en X du texte du menu

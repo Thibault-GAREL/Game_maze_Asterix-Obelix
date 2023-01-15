@@ -14,6 +14,7 @@ typedef struct
     PLATEAU plateau;
     PLAYER players[PLAYER_MAX_COUNT];
     BUTTON buttons[BUTTONS_SETPART_COUNT];
+    int treasure;
     GC_MANAGER* pManager;
 }PARTY;
 
