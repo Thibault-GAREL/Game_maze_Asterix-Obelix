@@ -14,6 +14,8 @@
 
 #define PLATEAU_H 7
 #define PLATEAU_W 7
+#define PLATEAU_LOGIC_PATH_H PLATEAU_H * 3
+#define PLATEAU_LOGIC_PATH_W PLATEAU_W * 3
 #define PLATEAU_H_MAX_I (PLATEAU_H - 1)
 #define PLATEAU_W_MAX_I (PLATEAU_W - 1)
 #define PLATEAU_OFFSET_X 95
@@ -24,7 +26,11 @@
 
 #define BUTTONS_SETPART_COUNT (3*4+2)
 
-#define FILE_ACCESS "."
+#define LOGIC_PATH_L 0
+#define LOGIC_PATH_T 1
+#define LOGIC_PATH_I 2
+
+#define FILE_ACCESS ""
 #define BUTTON_PATH FILE_ACCESS ".\\Import\\Fleche_1.PNG"
 #define FONT_PATH FILE_ACCESS ".\\Import\\BruceForeverRegular.ttf"
 #define BUTTON_ROTA_POSI FILE_ACCESS ".\\Import\\Fleche_Rota_Posi.png"

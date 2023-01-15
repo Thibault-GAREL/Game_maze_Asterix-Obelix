@@ -89,6 +89,28 @@ void Party_Buttons_Update_Event(PARTY* pParty)
     }
 }
 
+void Update_Player_Position(PARTY* pParty, int line, int column, bool direct_sens)
+{
+    for (int i = 0; i < pParty->player_count; i++)
+    {
+        Vector2Int* player_pos = &pParty->players[i].position_on_plateau;
+
+        if (player_pos->x == column)
+        {
+            player_pos->y -= 1 - 2 * direct_sens;
+            player_pos->y -= 7 * (player_pos->y > PLATEAU_H_MAX_I);
+            player_pos->y += 7 * (player_pos->y < 0);
+        }
+
+        else if (player_pos->y == line)
+        {
+            player_pos->x -= 1 - 2 * direct_sens;
+            player_pos->x -= 7 * (player_pos->x > PLATEAU_W_MAX_I);
+            player_pos->x += 7 * (player_pos->x < 0);
+        }
+    }
+}
+
 void Party_Buttons_Exe(PARTY* pParty)
 {
     int i = 0;
@@ -98,6 +120,7 @@ void Party_Buttons_Exe(PARTY* pParty)
         if (pParty->buttons[i++].gc_button.state == GC_BUTTON_STATE_RELEASED)
         {
             Shift_Column(&pParty->plateau, j * 2 + 1, true);
+            Update_Player_Position(pParty, -1, j * 2 + 1, true);
             pParty->player_turn_step = 1;
             return;
         }
@@ -108,6 +131,7 @@ void Party_Buttons_Exe(PARTY* pParty)
         if (pParty->buttons[i++].gc_button.state == GC_BUTTON_STATE_RELEASED)
         {
             Shift_Column(&pParty->plateau, j * 2 + 1, false); 
+            Update_Player_Position(pParty, -1, j * 2 + 1, false);
             pParty->player_turn_step = 1;
             return;
         }
@@ -118,6 +142,7 @@ void Party_Buttons_Exe(PARTY* pParty)
         if (pParty->buttons[i++].gc_button.state == GC_BUTTON_STATE_RELEASED)
         {
             Shift_Line(&pParty->plateau, j * 2 + 1, true); 
+            Update_Player_Position(pParty, j * 2 + 1, -1, true);
             pParty->player_turn_step = 1;
             return;
         }
@@ -128,6 +153,7 @@ void Party_Buttons_Exe(PARTY* pParty)
         if (pParty->buttons[i++].gc_button.state == GC_BUTTON_STATE_RELEASED)
         {
             Shift_Line(&pParty->plateau, j * 2 + 1, false);
+            Update_Player_Position(pParty, j * 2 + 1, -1, false);
             pParty->player_turn_step = 1;
             return;
         }

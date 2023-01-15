@@ -58,3 +58,21 @@ void Random_LessDiscount(int values[], int size, int pass)
         values[index_b] = value_a;
     }
 }
+
+void Rotate_Tableau2(int tab[3][3])
+{
+    int newtab[3][3] = 
+    {
+        {tab[2][0], tab[1][0], tab[0][0]}, 
+        {tab[2][1], tab[1][1], tab[0][1]},
+        {tab[2][2], tab[1][2], tab[0][2]}
+    };
+
+    for (int x = 0; x < 3; x++)
+    {
+        for (int y = 0; y < 3; y++)
+        {
+            tab[x][y] = newtab[x][y];
+        }
+    }
+}

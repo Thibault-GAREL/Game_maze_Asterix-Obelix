@@ -16,9 +16,9 @@ void Update_Event(GC_MANAGER* pManager, MENU* pMenu);
 int Play = 0;
 
 int main() {
-    al_set_new_display_flags(ALLEGRO_FULLSCREEN_WINDOW);
+    //al_set_new_display_flags(ALLEGRO_FULLSCREEN_WINDOW);
     GC_MANAGER manager;
-    GC_MANAGER_CREATE(&manager, 1000,1000);            //Les dimensions en pixel ne servent plus à rien vu qu'on affiche en plein écran
+    GC_MANAGER_CREATE(&manager, 1920,1080);            //Les dimensions en pixel ne servent plus à rien vu qu'on affiche en plein écran
 
     MENU menu;
     Menu_Init(&menu, &manager);
@@ -71,18 +71,12 @@ void Deplacement_Player_Loop(GC_MANAGER* pManager, PARTY* pParty, MENU* pMenu)
     al_flip_display();
 
     PART* pPart_target = 0;
-    while (!pPart_target || &pParty->plateau.parts[pParty->players[pParty->player_turn].position_on_plateau.x][pParty->players[pParty->player_turn].position_on_plateau.y] == pPart_target)
+    while (!Player_Deplacement(&pParty->players[pParty->player_turn], pPart_target, &pParty->plateau)) //&pParty->plateau.parts[pParty->players[pParty->player_turn].position_on_plateau.x][pParty->players[pParty->player_turn].position_on_plateau.y] == pPart_target
     {
         Update_Event(pManager, pMenu);
         pPart_target = Plateau_Get_Part_Click(&pParty->plateau);
-
-        /*if (pPart_target->position_on_plateau.x == pParty->players[pParty->player_turn].position_on_plateau.x && pPart_target->position_on_plateau.y == pParty->players[pParty->player_turn].position_on_plateau.y)
-        {
-            pPart_target = 0;
-        }*/
     }
 
-    Player_Deplacement(&pParty->players[pParty->player_turn], pPart_target);
     Party_Next_Turn(pParty);
     Draw_Clear_Plateau_Player(pParty, pMenu);
     Party_Buttons_Draw(pParty);

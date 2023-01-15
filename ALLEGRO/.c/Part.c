@@ -1,6 +1,6 @@
 #include "../.h/Part.h"
 
-void Part_Init(PART* pPart, const char* sprite_filePath, Vector2Int _position_on_plateau, char _isExtra, GC_MANAGER* pManager)
+void Part_Init(PART* pPart, const char* sprite_filePath, Vector2Int _position_on_plateau, char _isExtra, GC_MANAGER* pManager, int _logicPath[3][3], int angle)
 {
     Button_Init(&pPart->button, 0, pManager, sprite_filePath);
     pPart->position_on_plateau = _position_on_plateau;
@@ -11,6 +11,30 @@ void Part_Init(PART* pPart, const char* sprite_filePath, Vector2Int _position_on
     {
         pPart->pPlayers[i] = NULL;
     }*/
+
+    for (int x = 0; x < 3; x++)
+    {
+        for (int y = 0; y < 3; y++)
+        {
+            pPart->logicPath[x][y] = _logicPath[x][y];
+        }
+    }
+
+    for (int i = 0; i < angle; i++)
+    {
+        Rotate_Tableau2(pPart->logicPath);
+    }
+
+    //printf("\n%d", pPart->logicPath[0][0]);
+    //printf("%d",   pPart->logicPath[1][0]);
+    //printf("%d",   pPart->logicPath[2][0]);
+    //printf("\n%d", pPart->logicPath[0][1]);
+    //printf("%d",   pPart->logicPath[1][1]);
+    //printf("%d",   pPart->logicPath[2][1]);
+    //printf("\n%d", pPart->logicPath[0][2]);
+    //printf("%d",   pPart->logicPath[1][2]);
+    //printf("%d",   pPart->logicPath[2][2]);
+    //printf("(1) [%d;%d] Index{part=%d} \n", pPart->position_on_plateau.x, pPart->position_on_plateau.y, Vector2Int2Index(&pPart->position_on_plateau));
 }
 
 void Part_Draw(PART* pPart)

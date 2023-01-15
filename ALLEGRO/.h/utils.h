@@ -20,5 +20,6 @@ int Vector2Int2Index(Vector2Int* pVector);
 int Position2Index(int x, int y);
 
 void Random_LessDiscount(int values[], int size, int pass);
+void Rotate_Tableau2(int tab[3][3]);
 
 #endif

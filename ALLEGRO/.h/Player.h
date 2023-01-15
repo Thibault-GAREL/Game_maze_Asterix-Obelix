@@ -5,6 +5,8 @@
 #include "Global.h"
 #include "Part.h"
 #include "utils.h"
+#include "Plateau.h"
+#include "PathFinding.h"
 
 
 typedef struct
@@ -18,6 +20,6 @@ typedef struct
 
 void Player_Init(PLAYER* pPlayer, int id, char* name);
 void Player_Draw(PLAYER* pPlayer);
-void Player_Deplacement(PLAYER* pPlayer, PART* pPart_New);
+int Player_Deplacement(PLAYER* pPlayer, PART* pPart_New, PLATEAU* pPlateau);
 
 #endif

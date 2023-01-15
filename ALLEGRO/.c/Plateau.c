@@ -51,6 +51,79 @@ char parts_filePath[50][50] = {     FILE_ACCESS ".\\Import\\tuile_2.png",
                                     FILE_ACCESS ".\\Import\\tuile_47.png",
                                     FILE_ACCESS ".\\Import\\tuile_49.png"};
 
+int logicPath[3][3][3] = {
+    {
+        {1,1,1},
+        {0,0,1},
+        {1,0,1}
+    },
+
+    {
+        {1,0,1},
+        {1,0,0},
+        {1,0,1}
+    }, 
+
+    {
+        {1,1,1},
+        {0,0,0},
+        {1,1,1}
+    }
+};
+
+int parts_logicPath[50][2] = {
+    {LOGIC_PATH_L, 2},
+    {LOGIC_PATH_I, 1},
+    {LOGIC_PATH_I, 1},
+    {LOGIC_PATH_L, 3},
+    {LOGIC_PATH_T, 2},
+    {LOGIC_PATH_L, 2}, //i = 5 
+    {LOGIC_PATH_I, 0},
+    {LOGIC_PATH_L, 0},
+    {LOGIC_PATH_T, 2},
+    {LOGIC_PATH_T, 2},
+    {LOGIC_PATH_L, 3}, //i = 10
+    {LOGIC_PATH_T, 2},
+    {LOGIC_PATH_I, 1},
+    {LOGIC_PATH_I, 0},
+    {LOGIC_PATH_L, 0},
+    {LOGIC_PATH_L, 2}, //i = 15
+    {LOGIC_PATH_L, 2},
+    {LOGIC_PATH_L, 3},
+    {LOGIC_PATH_T, 0},
+    {LOGIC_PATH_L, 2},
+    {LOGIC_PATH_I, 1}, //i = 20
+    {LOGIC_PATH_I, 0},
+    {LOGIC_PATH_L, 0},
+    {LOGIC_PATH_L, 0},
+    {LOGIC_PATH_I, 1},
+    {LOGIC_PATH_L, 2}, //i = 25
+    {LOGIC_PATH_L, 3},
+    {LOGIC_PATH_I, 0},
+    {LOGIC_PATH_L, 3},
+    {LOGIC_PATH_L, 3},
+    {LOGIC_PATH_I, 1}, //i = 30
+    {LOGIC_PATH_I, 1},
+    {LOGIC_PATH_T, 2},
+    {LOGIC_PATH_I, 1},
+    {LOGIC_PATH_L, 3},
+    {LOGIC_PATH_T, 0}, //i = 35
+    {LOGIC_PATH_T, 0},
+    {LOGIC_PATH_L, 2},
+    {LOGIC_PATH_T, 1},
+    {LOGIC_PATH_T, 1},
+    {LOGIC_PATH_T, 0}, //i = 40
+    {LOGIC_PATH_T, 3},
+    {LOGIC_PATH_T, 1},
+    {LOGIC_PATH_T, 2},
+    {LOGIC_PATH_T, 3},
+    {LOGIC_PATH_T, 3},
+    {LOGIC_PATH_L, 0},
+    {LOGIC_PATH_T, 2},
+    {LOGIC_PATH_T, 2},
+    {LOGIC_PATH_L, 1}
+};
+
 void Generate_Parts_filePath_Index(int parts_filePath_Index[PART_COUNT])
 {
     int parts_movable_index = 0;
@@ -87,12 +160,12 @@ void Plateau_Init(PLATEAU* pPlateau, GC_MANAGER* pManager)
         {
             PART* pPart_current = &pPlateau->parts[x][y];
             Vector2Int part_position = {x,y};
-            Part_Init(pPart_current, parts_filePath[parts_filePath_index[Vector2Int2Index(&part_position)]], part_position, false, pManager);
+            Part_Init(pPart_current, parts_filePath[parts_filePath_index[Vector2Int2Index(&part_position)]], part_position, false, pManager, logicPath[parts_logicPath[parts_filePath_index[Vector2Int2Index(&part_position)]][0]], parts_logicPath[parts_filePath_index[Vector2Int2Index(&part_position)]][1]);
         }
     }
 
     Vector2Int extra_part_position = {EXTRA_PART_POS_X, EXTRA_PART_POS_Y};
-    Part_Init(&pPlateau->part_extra, parts_filePath[parts_filePath_index[PART_COUNT - 1]], extra_part_position, true, pManager);
+    Part_Init(&pPlateau->part_extra, parts_filePath[parts_filePath_index[PART_COUNT - 1]], extra_part_position, true, pManager, logicPath[parts_logicPath[parts_filePath_index[PART_COUNT - 1]][0]], parts_logicPath[parts_filePath_index[PART_COUNT - 1]][1]);
 }
 
 void Plateau_Draw(PLATEAU* pPlateau)
@@ -116,6 +189,16 @@ void Rotate_Part(PLATEAU* pPlateau, int direction)
     if (pPlateau->part_extra.rotation < 0)
     {
         pPlateau->part_extra.rotation = 3;
+    }
+
+    Rotate_Tableau2(pPlateau->part_extra.logicPath);
+
+    if (direction > 0)
+    {
+        for (int i = 0; i < 2; i++)
+        {
+            Rotate_Tableau2(pPlateau->part_extra.logicPath);
+        }
     }
 }
 
