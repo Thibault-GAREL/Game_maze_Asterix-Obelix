@@ -9,49 +9,49 @@
 void Switch_Part_Loop(GC_MANAGER* pManager, PARTY* pParty, MENU* pMenu);
 void Deplacement_Player_Loop(GC_MANAGER* pManager, PARTY* pParty, MENU* pMenu);
 void Draw_Clear_Plateau_Player(PARTY* pParty, MENU* pMenu);
-void Update_Event(GC_MANAGER* pManager, MENU* pMenu);
+void Update_Event_In_Menu(GC_MANAGER* pManager, MENU* pMenu);
+void Update_Event_In_Party(GC_MANAGER* pManager, MENU* pMenu);
 
 
-int main() {
-
-    al_set_new_display_flags(ALLEGRO_FULLSCREEN_WINDOW);
+int main() 
+{
+    //al_set_new_display_flags(ALLEGRO_FULLSCREEN_WINDOW);
     GC_MANAGER manager;
-    GC_MANAGER_CREATE(&manager, 1000,
-                      1000);            //Les dimensions en pixel ne servent plus à rien vu qu'on affiche en plein écran
+    GC_MANAGER_CREATE(&manager, 1920, 1080);            //Les dimensions en pixel ne servent plus à rien vu qu'on affiche en plein écran
 
     MENU menu;
     Menu_Init(&menu, &manager);
 
-
-    while (menu.menu_Selected != 1) {
-        Update_Event(&manager, &menu);
+    while (menu.menu_Selected != 1) 
+    {
+        Update_Event_In_Menu( &manager, &menu);
         Button_Game_Update_Event(&menu);
         Button_exe(&menu, &manager);
-
+        
         ALLEGRO_COLOR blk = al_map_rgb(0, 0, 0);
         al_clear_to_color(blk);
         MENU_Draw(&menu);
         al_flip_display();
     }
+
     PARTY party;
     Party_Init(&party, 4, &manager);
-
 
     while (1) {
         Switch_Part_Loop(&manager, &party, &menu);
         Deplacement_Player_Loop(&manager, &party, &menu);
-        Button_exe(&menu, &manager);
+        //Button_exe(&menu, &manager);
     }
 
-    //GC_MANAGER_DESTROY(&manager);
-    //return 0;
+    GC_MANAGER_DESTROY(&manager);
+    return 0;
 }
 
 void Switch_Part_Loop(GC_MANAGER* pManager, PARTY* pParty, MENU* pMenu)
 {
     while (!pParty->player_turn_step)
     {
-        Update_Event(pManager, pMenu);
+        Update_Event_In_Party(pManager, pMenu);
         //Button_Update_Event(&pMenu->Button_Escape_1);
 
         Party_Buttons_Update_Event(pParty);
@@ -73,7 +73,7 @@ void Deplacement_Player_Loop(GC_MANAGER* pManager, PARTY* pParty, MENU* pMenu)
     PART* pPart_target = 0;
     while (!Player_Deplacement(&pParty->players[pParty->player_turn], pPart_target, &pParty->plateau)) //&pParty->plateau.parts[pParty->players[pParty->player_turn].position_on_plateau.x][pParty->players[pParty->player_turn].position_on_plateau.y] == pPart_target
     {
-        Update_Event(pManager, pMenu);
+        Update_Event_In_Party(pManager, pMenu);
         pPart_target = Plateau_Get_Part_Click(&pParty->plateau);
     }
 
@@ -89,10 +89,22 @@ void Draw_Clear_Plateau_Player(PARTY* pParty, MENU* pMenu)
     al_clear_to_color(blk);
     Party_Plateau_Draw(pParty);
     Party_Player_Draw(pParty);
+
     Button_Draw(&pMenu->Button_Escape_1);
 }
 
-void Update_Event(GC_MANAGER* pManager, MENU* pMenu)
+void Update_Event_In_Menu(GC_MANAGER* pManager, MENU* pMenu)
+{
+    GC_MANAGER_UPDATE_EVENT(pManager);
+
+    if (pManager->event.display.type == ALLEGRO_EVENT_DISPLAY_CLOSE)
+    {
+        GC_MANAGER_DESTROY(pManager);
+        exit(0);
+    }
+}
+
+void Update_Event_In_Party(GC_MANAGER* pManager, MENU* pMenu)
 {
     GC_MANAGER_UPDATE_EVENT(pManager);
 
@@ -106,7 +118,7 @@ void Update_Event(GC_MANAGER* pManager, MENU* pMenu)
 
     if (pMenu->Button_Escape.gc_button.state == GC_BUTTON_STATE_RELEASED)
     {
-        GC_MANAGER_DESTROY(&pManager);
+        GC_MANAGER_DESTROY(pManager);
         exit(0);
     }
 }

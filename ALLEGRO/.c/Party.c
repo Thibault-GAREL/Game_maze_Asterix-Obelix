@@ -63,10 +63,12 @@ void Party_Init(PARTY* pParty, int player_count, GC_MANAGER* pManager)
     }
 
 
-    for (int i = 0; i < BUTTONS_SETPART_COUNT; i++)
+    for (int i = 0; i < BUTTONS_SETPART_COUNT - 2; i++)
     {
         Button_Init(&pParty->buttons[i], i, pManager, BUTTON_PATH);
     }
+    Button_Init(&pParty->buttons[BUTTONS_SETPART_COUNT - 2], 0, pManager, BUTTON_ROTA_POSI);
+    Button_Init(&pParty->buttons[BUTTONS_SETPART_COUNT - 1], 0, pManager, BUTTON_ROTA_NEGA);
 
     Buttons_Init(pParty);
 
