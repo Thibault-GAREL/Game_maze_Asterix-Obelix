@@ -69,10 +69,10 @@ void MENU_Draw(MENU* pMenu)
         GC_SPRITE_DRAW(&pMenu->Credits);
         Button_Draw(&pMenu->Button_Escape_1);
     }
-    if (pMenu->menu_Selected == 1)
+    /*if (pMenu->menu_Selected == 1)
     {
         Button_Draw(&pMenu->Button_Escape_1);
-    }
+    }*/
 }
 
 void Button_Game_Update_Event(MENU* pMenu)
@@ -83,16 +83,18 @@ void Button_Game_Update_Event(MENU* pMenu)
         Button_Update_Event(&pMenu->Button_Menu_2);
         Button_Update_Event(&pMenu->Button_Menu_3);
         Button_Update_Event(&pMenu->Button_Escape);
+        Button_Update_Event(&pMenu->Button_Escape_1);
+        //pMenu->Button_Escape_1.gc_button.state = 0;
     }
     if (pMenu->menu_Selected == 3)
     {
         Button_Update_Event(&pMenu->Button_Escape_1);
         //printf("effectue \n");
     }
-    if (pMenu->menu_Selected == 1)
+    /*if (pMenu->menu_Selected == 1)
     {
         Button_Update_Event(&pMenu->Button_Escape);
-    }
+    }*/
 }
 
 void Button_exe(MENU* pMenu, GC_MANAGER* pManager)
@@ -112,13 +114,13 @@ void Button_exe(MENU* pMenu, GC_MANAGER* pManager)
         pMenu->menu_Selected = 3;
         //printf("condit3");
     }
-    if (pMenu->Button_Escape.gc_button.state == GC_BUTTON_STATE_RELEASED)
+    /*if (pMenu->Button_Escape.gc_button.state == GC_BUTTON_STATE_RELEASED)
     {
         //printf("condit4");
         GC_MANAGER_DESTROY(pManager);
         exit(0);
 
-    }
+    }*/
     if (pMenu->Button_Escape_1.gc_button.state == GC_BUTTON_STATE_RELEASED)
     {
         //printf("scheisse");
