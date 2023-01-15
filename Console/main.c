@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "fichier.h"
+#include "fonction.h"
 #include <stdlib.h>
 #include <string.h>
 #include <time.h>
