@@ -47,14 +47,14 @@ void Player_Draw(PLAYER* pPlayer)
     pPlayer->sprite.gc_properties.gc_space.POSITION_Y = pixel_pos.y;
 
 
-    GC_SPRITE treasure;
+    /*GC_SPRITE treasure;
     GC_SPRITE_INIT(&treasure, adresse_treasure [0]); //
     printf("%d", pPlayer->liste_treasure[pPlayer->nb_treasure]);
     treasure.gc_properties.gc_space.POSITION_X = 1500;
     treasure.gc_properties.gc_space.POSITION_Y = 200;
     GC_SPRITE_DRAW(&treasure);
 
-    /*if (pPlayer->pPart)
+    if (pPlayer->pPart)
     {   
         //pPlayer->sprite.gc_properties.gc_space.POSITION_X = pPlayer->pPart->button.sprite.gc_properties.gc_space.POSITION_X;
         //pPlayer->sprite.gc_properties.gc_space.POSITION_Y = pPlayer->pPart->button.sprite.gc_properties.gc_space.POSITION_Y;

@@ -29,7 +29,6 @@ void TMenuInit(TextMenu* pTextMenu){
         pTextMenu->tableauTextes[i].al_flag = ALLEGRO_ALIGN_CENTER;
         pTextMenu->tableauTextes[i].gc_properties.gc_space.POSITION_X=TextOffsetX;
         pTextMenu->tableauTextes[i].gc_properties.gc_space.POSITION_Y=TableauTextOffsetY[i];
-
     }
 }
 
@@ -71,7 +70,7 @@ void MENU_Draw(MENU* pMenu)
     }
     if (pMenu->menu_Selected == 1)
     {
-        Button_Draw(&pMenu->Button_Escape_1);
+        Button_Draw(&pMenu->Button_Escape);
     }
 }
 
@@ -84,15 +83,20 @@ void Button_Game_Update_Event(MENU* pMenu)
         Button_Update_Event(&pMenu->Button_Menu_3);
         Button_Update_Event(&pMenu->Button_Escape);
     }
-    else if (pMenu->menu_Selected == 3 || pMenu->menu_Selected == 1)
+    if (pMenu->menu_Selected == 3)
     {
         Button_Update_Event(&pMenu->Button_Escape_1);
         //printf("effectue \n");
+    }
+    if (pMenu->menu_Selected == 1)
+    {
+        Button_Update_Event(&pMenu->Button_Escape);
     }
 }
 
 void Button_exe(MENU* pMenu, GC_MANAGER* pManager)
 {
+
     if (pMenu->Button_Menu_1.gc_button.state == GC_BUTTON_STATE_RELEASED)
     {
         pMenu->menu_Selected = 1;
@@ -108,16 +112,15 @@ void Button_exe(MENU* pMenu, GC_MANAGER* pManager)
         pMenu->menu_Selected = 3;
         //printf("condit3");
     }
-    if (pMenu->Button_Escape.gc_button.state == GC_BUTTON_STATE_RELEASED)
+    if (pMenu->Button_Escape.gc_button.state == GC_BUTTON_STATE_RELEASED )
     {
         //printf("condit4");
         GC_MANAGER_DESTROY(pManager);
         exit(0);
-
     }
     if (pMenu->Button_Escape_1.gc_button.state == GC_BUTTON_STATE_RELEASED)
     {
-        //printf("scheisse");
+        printf("scheisse");
         pMenu->menu_Selected = 0;
     }
     //printf("%d  %d  %d \n", pMenu->Button_Escape_1.gc_button.state, pMenu->menu_Selected, GC_BUTTON_STATE_RELEASED );
