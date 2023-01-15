@@ -48,7 +48,8 @@ void Player_Draw(PLAYER* pPlayer)
 
 
     GC_SPRITE treasure;
-    GC_SPRITE_INIT(&treasure, adresse_treasure [pPlayer->players[i].liste_treasure[0]]);        //pPlayer.liste_treasure[0]
+    GC_SPRITE_INIT(&treasure, adresse_treasure [0]); //
+    printf("%d", pPlayer->liste_treasure[pPlayer->nb_treasure]);
     treasure.gc_properties.gc_space.POSITION_X = 1500;
     treasure.gc_properties.gc_space.POSITION_Y = 200;
     GC_SPRITE_DRAW(&treasure);
