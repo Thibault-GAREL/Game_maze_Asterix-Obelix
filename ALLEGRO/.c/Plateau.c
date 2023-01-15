@@ -168,17 +168,17 @@ void Plateau_Init(PLATEAU* pPlateau, GC_MANAGER* pManager)
     Part_Init(&pPlateau->part_extra, parts_filePath[parts_filePath_index[PART_COUNT - 1]], extra_part_position, true, pManager, logicPath[parts_logicPath[parts_filePath_index[PART_COUNT - 1]][0]], parts_logicPath[parts_filePath_index[PART_COUNT - 1]][1]);
 }
 
-void Plateau_Draw(PLATEAU* pPlateau)
+void Plateau_Draw(PLATEAU* pPlateau,GC_SPRITE treasure_sprite [24])
 {
     for (int x = 0; x < PLATEAU_W; x++)
     {
         for (int y = 0; y < PLATEAU_H; y++)
         {
-            Part_Draw(&pPlateau->parts[x][y]);
+            Part_Draw(&pPlateau->parts[x][y],  treasure_sprite);
         }
     }
 
-    Part_Draw(&pPlateau->part_extra);
+    Part_Draw(&pPlateau->part_extra, treasure_sprite);
 }
 
 void Rotate_Part(PLATEAU* pPlateau, int direction)

@@ -89,6 +89,7 @@ void Draw_Clear_Plateau_Player(PARTY* pParty, MENU* pMenu)
     al_clear_to_color(blk);
     Party_Plateau_Draw(pParty);
     Party_Player_Draw(pParty);
+    Treasure_draw(&pParty->players[pParty->player_turn]);
 
     Button_Draw(&pMenu->Button_Escape_1);
 }

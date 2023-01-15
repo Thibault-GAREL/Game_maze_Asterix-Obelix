@@ -2,19 +2,21 @@
 #define PARTY_h
 
 #include "Global.h"
+#include "Gc.h"
 #include "Plateau.h"
 #include "Player.h"
 #include "Menu.h"
 
+
 typedef struct
 {
+    GC_SPRITE treasure_sprite [24];
     int player_count;
     int player_turn;
     int player_turn_step;
     PLATEAU plateau;
     PLAYER players[PLAYER_MAX_COUNT];
     BUTTON buttons[BUTTONS_SETPART_COUNT];
-    int treasure;
     GC_MANAGER* pManager;
 }PARTY;
 
@@ -24,6 +26,7 @@ void Party_Next_Turn(PARTY* pParty);
 
 void Party_Buttons_Update_Event(PARTY* pParty);
 void Party_Buttons_Exe(PARTY* pParty);
+
 
 void Party_Plateau_Draw(PARTY* pParty);
 void Party_Buttons_Draw(PARTY* pParty);

@@ -13,7 +13,7 @@ typedef struct
 }PLATEAU;
 
 void Plateau_Init(PLATEAU* pPlateau, GC_MANAGER* pManager);
-void Plateau_Draw(PLATEAU* pPlateau);
+void Plateau_Draw(PLATEAU* pPlateau,GC_SPRITE treasure_sprite [24]);
 
 void Rotate_Part(PLATEAU* pPlateau, int direction);
 void Shift_Line(PLATEAU* pPlateau, const int ln, bool direct_sens);

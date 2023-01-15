@@ -6,6 +6,7 @@ void Part_Init(PART* pPart, const char* sprite_filePath, Vector2Int _position_on
     pPart->position_on_plateau = _position_on_plateau;
     pPart->rotation = 0;
     pPart->isExtra = _isExtra;
+    pPart->treasure = -1;
 
     /*for (int i = 0; i < PLAYER_MAX_COUNT; i++)
     {
@@ -37,7 +38,7 @@ void Part_Init(PART* pPart, const char* sprite_filePath, Vector2Int _position_on
     //printf("(1) [%d;%d] Index{part=%d} \n", pPart->position_on_plateau.x, pPart->position_on_plateau.y, Vector2Int2Index(&pPart->position_on_plateau));
 }
 
-void Part_Draw(PART* pPart)
+void Part_Draw(PART* pPart, GC_SPRITE treasure_sprite [24])
 {   
     Vector2Int sprite_positon;
 
@@ -52,9 +53,25 @@ void Part_Draw(PART* pPart)
 
     Button_Set_Space(&pPart->button, sprite_positon.x, sprite_positon.y, pPart->rotation * PI / 2);
     Button_Draw(&pPart->button);
+    if (pPart->treasure != -1){
+        Part_Treasure (pPart, treasure_sprite);
+    }
 }
 
 void Part_Update_Event(PART* pPart)
 {
     Button_Update_Event(&pPart->button);
+}
+
+void Part_Treasure (PART* pPart,  GC_SPRITE treasure_sprite [24]){
+
+    GC_SPRITE treasure;
+
+
+    //GC_SPRITE_INIT(&treasure, adresse_treasure[pPart->treasure]); //(pPlayer)->liste_treasureadresse_treasure [0]pPlayer->nb_treasurepPlayer->liste_treasure[0]
+    treasure.pBitmap = treasure_sprite [pPart->treasure].pBitmap;
+    treasure.gc_properties.gc_space.POSITION_X = pPart->button.sprite.gc_properties.gc_space.POSITION_X;
+    treasure.gc_properties.gc_space.POSITION_Y = pPart->button.sprite.gc_properties.gc_space.POSITION_Y;
+    GC_SPRITE_DRAW(&treasure);
+
 }

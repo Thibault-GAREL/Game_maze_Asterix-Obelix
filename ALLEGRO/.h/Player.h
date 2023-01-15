@@ -15,11 +15,12 @@ typedef struct
     Vector2Int position_on_plateau;
     char* name;
     int nb_treasure;   //tresor en sa posetion
-    int liste_treasure [];    //liste de trésor à récup
+    int liste_treasure [24];    //liste de trésor à récup
 }PLAYER;
 
 void Player_Init(PLAYER* pPlayer, int id, char* name);
 void Player_Draw(PLAYER* pPlayer);
 int Player_Deplacement(PLAYER* pPlayer, PART* pPart_New, PLATEAU* pPlateau);
+void Treasure_draw (PLAYER* pPlayer);
 
 #endif

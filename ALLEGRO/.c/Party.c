@@ -30,38 +30,59 @@ void Buttons_Init(PARTY* pParty)
     Button_Set_Space(&pParty->buttons[i], EXTRA_PART_POS_X + PART_W, EXTRA_PART_POS_Y, PI);
 }
 
-void Party_Init(PARTY* pParty, int player_count, GC_MANAGER* pManager)
-{
+void Party_Init(PARTY* pParty, int player_count, GC_MANAGER* pManager) {
     pParty->player_count = player_count;
     pParty->player_turn = 0;
     pParty->player_turn_step = 0;
     Plateau_Init(&pParty->plateau, pManager);
 
-    int tab_treasure [24] = {};
-    for (int i = 0; i < 24; ++i) {
-        tab_treasure [i] = i;
-    }
-
-    Random_LessDiscount(tab_treasure, 24, 50);
-
-
-    for (int i = 0; i < player_count; ++i) {
-        for (int j = 0; j < 24/player_count; ++j) {
-            pParty->players[i].liste_treasure[j] = tab_treasure[j+i*24/player_count];
-        }
-    }
-
-    //afficher à chaque joueur le premier trésor à recupérer dans Player_draw
-    //afficher les trésors sur le plateau (PARTY.treasure ==> draw le bon) attention tout les fixes sauf 4
-    //faire un compteur de trésor récupérer==>on gagne if (un PLAYER.nb_treasure = 24/player_count || revenu à sa co intitale)
-
-    for (int i = 0; i < pParty->player_count; i++)
-    {
+    for (int i = 0; i < pParty->player_count; i++) {
         Player_Init(&pParty->players[i], i, "");
         pParty->players[i].position_on_plateau.x = players_start_pos[i][0];
         pParty->players[i].position_on_plateau.y = players_start_pos[i][1];
     }
 
+    char* adresse_treasure[25] = {FILE_ACCESS ".\\Import\\Dessin_bague d'émeraude.png",
+                                  FILE_ACCESS ".\\Import\\Dessin_bouclier_romain.png",
+                                  FILE_ACCESS ".\\Import\\Dessin_byjoux.png",
+                                  FILE_ACCESS ".\\Import\\Dessin_casque.png",
+                                  FILE_ACCESS ".\\Import\\Dessin_casque_romain.png",
+                                  FILE_ACCESS ".\\Import\\Dessin_Chaudron.png",
+                                  FILE_ACCESS ".\\Import\\Dessin_clef.png",
+                                  FILE_ACCESS ".\\Import\\Dessin_coffre.png",
+                                  FILE_ACCESS ".\\Import\\Dessin_couronne_de_laurier.png",
+                                  FILE_ACCESS ".\\Import\\Dessin_diamand.png",
+                                  FILE_ACCESS ".\\Import\\Dessin_epee.png",
+                                  FILE_ACCESS ".\\Import\\Dessin_fouet.png",
+                                  FILE_ACCESS ".\\Import\\Dessin_Gourde.png",
+                                  FILE_ACCESS ".\\Import\\Dessin_louche.png",
+                                  FILE_ACCESS ".\\Import\\Dessin_Menhir.png",
+                                  FILE_ACCESS ".\\Import\\Dessin_oeil.png",
+                                  FILE_ACCESS ".\\Import\\Dessin_Os.png",
+                                  FILE_ACCESS ".\\Import\\Dessin_Papyrusse.png",
+                                  FILE_ACCESS ".\\Import\\Dessin_Pharaon.png",
+                                  FILE_ACCESS ".\\Import\\Dessin_Poisson_Frai.png",
+                                  FILE_ACCESS ".\\Import\\Dessin_sac_de_piece.png",
+                                  FILE_ACCESS ".\\Import\\Dessin_sanglier.png",
+                                  FILE_ACCESS ".\\Import\\Dessin_Sercophage.png",
+                                  FILE_ACCESS ".\\Import\\Dessin_Serpe.png"};
+
+    for (int i = 0; i < 24; ++i) {
+        GC_SPRITE_INIT(&pParty->treasure_sprite[i], adresse_treasure[i]);
+    }
+
+    for (int i = 0; i < BUTTONS_SETPART_COUNT; i++) {
+        Button_Init(&pParty->buttons[i], i, pManager, BUTTON_PATH);
+    }
+
+    Buttons_Init(pParty);
+
+    pParty->pManager = pManager;
+
+    int tab_treasure[24];
+    for (int i = 0; i < 24; ++i) {
+        tab_treasure[i] = i;
+    }
 
     for (int i = 0; i < BUTTONS_SETPART_COUNT - 2; i++)
     {
@@ -73,7 +94,52 @@ void Party_Init(PARTY* pParty, int player_count, GC_MANAGER* pManager)
     Buttons_Init(pParty);
 
     pParty->pManager = pManager;
+
+
+
+    Random_LessDiscount(tab_treasure, 24, 50);
+
+    for (int i = 0; i < player_count; ++i) {
+        for (int j = 0; j < 24 / player_count; ++j) {
+            pParty->players[i].liste_treasure[j] = tab_treasure[j + i * 24 / player_count];
+        }/**/
+        //pParty->players[i].liste_treasure[0] = 0;
+    }
+
+
+    int tab_treasure_sur_plateau[24];
+    for (int i = 0; i < 24; ++i) {
+        tab_treasure_sur_plateau[i] = i;
+    }
+    Random_LessDiscount(tab_treasure_sur_plateau, 24, 50);
+
+    int tab_treasure_possible[] = {1, 3, 5, 7, 8, 9, 10, 11, 12, 13, 15, 17, 19, 21, 22, 23, 24, 25, 26, 27, 29, 31, 33,
+                                   35, 36, 37, 38, 39, 40, 41, 43, 45, 47};
+    Random_LessDiscount(tab_treasure_possible, 33, 50);
+
+    int compteur = 0;
+    int compteur1 = 0;
+    for (int x = 0; x < PLATEAU_W; x++) {
+        for (int y = 0; y < PLATEAU_H; y++) {
+            if ((x == 0 && y == 0) || (x == 0 && y == 6) || (x == 6 && y == 0) || (x == 6 && y == 6)) {
+                continue;
+            }
+            if ((x % 2 || y % 2) && compteur1 != 12) {
+                //pParty->plateau.parts[x][y].treasure = tab_treasure_possible[compteur1++];
+                //compteur1 = compteur+1;
+            } else {
+                pParty->plateau.parts[x][y].treasure = tab_treasure_sur_plateau[compteur++];
+            }
+        }
+    }
+
+    //afficher à chaque joueur le premier trésor à recupérer dans Player_draw
+    //afficher les trésors sur le plateau (PARTY.treasure ==> draw le bon) attention tout les fixes sauf 4
+    //faire un compteur de trésor récupérer==>on gagne if (un PLAYER.nb_treasure = 24/player_count || revenu à sa co intitale)
+
+
 }
+
 
 void Party_Next_Turn(PARTY* pParty)
 {
@@ -176,7 +242,7 @@ void Party_Buttons_Exe(PARTY* pParty)
 
 void Party_Plateau_Draw(PARTY* pParty)
 {
-    Plateau_Draw(&pParty->plateau);
+    Plateau_Draw(&pParty->plateau, pParty->treasure_sprite);
 }
 
 void Party_Buttons_Draw(PARTY* pParty)
