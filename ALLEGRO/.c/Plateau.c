@@ -170,7 +170,6 @@ void Plateau_Init(PLATEAU* pPlateau, GC_MANAGER* pManager)
 
 void Plateau_Draw(PLATEAU* pPlateau, GC_SPRITE treasure_sprite [24])
 {
-    //printf("\ntresors qui tourne ces gros débile !!!!!");
     for (int x = 0; x < PLATEAU_W; x++)
     {
         for (int y = 0; y < PLATEAU_H; y++)
@@ -180,7 +179,6 @@ void Plateau_Draw(PLATEAU* pPlateau, GC_SPRITE treasure_sprite [24])
     }
 
     Part_Draw(&pPlateau->part_extra, treasure_sprite);
-    //printf("\ntresors qui ont tourne ces gros débile !!!!!");
 }
 
 void Rotate_Part(PLATEAU* pPlateau, int direction)

@@ -13,6 +13,7 @@ typedef struct
 {
     GC_SPRITE sprite;
     Vector2Int position_on_plateau;
+    Vector2Int position_start;
     char* name;
     int nb_treasure;   //tresor en sa posetion
     int liste_treasure [24];    //liste de trésor à récup
@@ -22,5 +23,6 @@ void Player_Init(PLAYER* pPlayer, int id, char* name);
 void Player_Draw(PLAYER* pPlayer);
 int Player_Deplacement(PLAYER* pPlayer, PART* pPart_New, PLATEAU* pPlateau);
 void Treasure_draw (PLAYER* pPlayer, GC_SPRITE* pTresor);
+void Player_Check_Treasure_Victory(PLAYER* pPlayer, PLATEAU* pPlateau, int nb_player);
 
 #endif

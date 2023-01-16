@@ -184,10 +184,6 @@ void Update_Player_Position(PARTY* pParty, int line, int column, bool direct_sen
             player_pos->x -= 7 * (player_pos->x > PLATEAU_W_MAX_I);
             player_pos->x += 7 * (player_pos->x < 0);
         }
-        if (pParty->players [i].liste_treasure[pParty->players[pParty->player_turn].nb_treasure]==pParty->plateau.parts[player_pos->x][player_pos->y].treasure) {
-            printf ("Win");
-        }
-
     }
 }
 

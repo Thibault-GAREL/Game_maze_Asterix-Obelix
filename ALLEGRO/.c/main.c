@@ -120,6 +120,11 @@ void Deplacement_Player_Loop(GC_MANAGER* pManager, PARTY* pParty, MENU* pMenu)
 
 void Draw_Clear_Plateau_Player(PARTY* pParty, MENU* pMenu)
 {
+    for (int i = 0; i < pParty->player_count; i++)
+    {
+        Player_Check_Treasure_Victory(&pParty->players[i], &pParty->plateau, pParty->player_count);
+    }
+
     ALLEGRO_COLOR blk = al_map_rgb(0,0,0);
     al_clear_to_color(blk);
     Party_Plateau_Draw(pParty);

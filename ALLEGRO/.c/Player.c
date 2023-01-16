@@ -22,20 +22,6 @@ void Player_Draw(PLAYER* pPlayer)
     Vector2Int pixel_pos = PlateauPosition2PixelPosition(pPlayer->position_on_plateau);
     pPlayer->sprite.gc_properties.gc_space.POSITION_X = pixel_pos.x;
     pPlayer->sprite.gc_properties.gc_space.POSITION_Y = pixel_pos.y;
-
-
-    /*GC_SPRITE treasure;
-    GC_SPRITE_INIT(&treasure, adresse_treasure [0]); //
-    printf("%d", pPlayer->liste_treasure[pPlayer->nb_treasure]);
-    treasure.gc_properties.gc_space.POSITION_X = 1500;
-    treasure.gc_properties.gc_space.POSITION_Y = 200;
-    GC_SPRITE_DRAW(&treasure);
-
-    if (pPlayer->pPart)
-    {   
-        //pPlayer->sprite.gc_properties.gc_space.POSITION_X = pPlayer->pPart->button.sprite.gc_properties.gc_space.POSITION_X;
-        //pPlayer->sprite.gc_properties.gc_space.POSITION_Y = pPlayer->pPart->button.sprite.gc_properties.gc_space.POSITION_Y;
-    }*/
     
     GC_SPRITE_DRAW(&pPlayer->sprite);
 }
@@ -123,4 +109,28 @@ void Treasure_draw (PLAYER* pPlayer, GC_SPRITE* pTresor)
     pPlayer->sprite.gc_properties.gc_space.POSITION_X = 1300;
     pPlayer->sprite.gc_properties.gc_space.POSITION_Y = 200;
     GC_SPRITE_DRAW(&pPlayer->sprite);
+}
+
+void Player_Check_Treasure_Victory(PLAYER* pPlayer, PLATEAU* pPlateau, int nb_player)
+{
+    if (pPlateau->parts[pPlayer->position_on_plateau.x][pPlayer->position_on_plateau.y].treasure == pPlayer->liste_treasure[pPlayer->nb_treasure])
+    {
+        printf("\nTresor recupere !");
+        if (pPlayer->nb_treasure < 24 / nb_player)
+        {
+            pPlayer->nb_treasure++;
+        }
+        pPlateau->parts[pPlayer->position_on_plateau.x][pPlayer->position_on_plateau.y].treasure = -1;
+    }
+
+    if (pPlayer->nb_treasure >= 24 / nb_player && pPlayer->position_on_plateau.x == pPlayer->position_start.x&& pPlayer->position_on_plateau.y == pPlayer->position_start.y)
+    {
+        printf("\n");
+        printf("\n");
+        printf("\n");
+        printf("VICTOIRE");
+        printf("\n");
+        printf("\n");
+        printf("\n");
+    }
 }
