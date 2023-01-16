@@ -22,7 +22,7 @@ int main()
     GC_MANAGER_CREATE(&manager, 1920, 1080);            //Les dimensions en pixel ne servent plus à rien vu qu'on affiche en plein écran
 
     GC_SPRITE PlayerCount;
-    GC_SPRITE_INIT(&PlayerCount,"..\\Import\\ALLEGRO_PLAYERS_CONFIG.png");
+    GC_SPRITE_INIT(&PlayerCount,FILE_ACCESS".\\Import\\ALLEGRO_PLAYERS_CONFIG.png");
     PlayerCount.gc_properties.gc_space.POSITION_X = 500;
     PlayerCount.gc_properties.gc_space.POSITION_Y = 300;
 
@@ -59,14 +59,14 @@ int main()
 
     PARTY party;
     Party_Init(&party, menu.PlayerCount, &manager);
-    Load_Party(&party, ".\\SAVE_3", &manager);
+    //Load_Party(&party, ".\\SAVE_1", &manager);
 
     while (1) {
         Switch_Part_Loop(&manager, &party, &menu);
         Deplacement_Player_Loop(&manager, &party, &menu);
         
         
-        Save_Party(party, ".\\SAVE_3");
+        Save_Party(party, ".\\SAVE_1");
     
         //Button_exe(&menu, &manager);
     }

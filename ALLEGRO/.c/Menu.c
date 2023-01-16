@@ -115,7 +115,7 @@ void Button_exe(MENU* pMenu, GC_MANAGER* pManager)
     if (pMenu->Button_Menu_1.gc_button.state == GC_BUTTON_STATE_RELEASED)
     {
         pMenu->menu_Selected = 1;
-        printf("condit1");
+        //printf("condit1");
     }
     if (pMenu->Button_Menu_2.gc_button.state == GC_BUTTON_STATE_RELEASED)
     {
