@@ -28,7 +28,11 @@ typedef struct
     BUTTON Button_Menu_3;
     BUTTON Button_Escape;
     BUTTON Button_Escape_1;
+    BUTTON PLAYER_TWO;
+    BUTTON PLAYER_THREE;
+    BUTTON PLAYER_FOUR;
 
+    int PlayerCount;
     int menu_Selected;
 }MENU;
 

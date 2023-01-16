@@ -15,7 +15,6 @@ void Button_Set_Space(BUTTON* pButton, float x, float y, float z)
 
     pButton->gc_button.gc_properties.gc_space = pButton->sprite.gc_properties.gc_space;
 }
-
 void Button_Update_Event(BUTTON* pButton)
 {
     GC_BUTTON_UPDATE_EVENT(&pButton->gc_button);
