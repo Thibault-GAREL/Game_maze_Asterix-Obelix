@@ -7,6 +7,7 @@
 #include "Gc.h"
 #include "../.h/Global.h"
 #include "Button.h"
+//#include "SaveManager.h"
 
 #define TextOffsetX 500     //définit la position en X du texte du menu
 
@@ -24,6 +25,7 @@ typedef struct
     GC_SPRITE ChargerSauvegarde;
     GC_SPRITE MENU_BACKGRD;
     GC_TEXT GamesSaved;
+    GC_BUTTON GamesSaved_bt[10];
 
     BUTTON Button_Menu_1;
     BUTTON Button_Menu_2;
@@ -37,6 +39,8 @@ typedef struct
 
     int PlayerCount;
     int menu_Selected;
+    int save_count;
+    int save_selected;
 }MENU;
 
 

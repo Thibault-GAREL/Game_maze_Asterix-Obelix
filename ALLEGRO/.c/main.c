@@ -28,6 +28,8 @@ int main()
 
     MENU menu;
     Menu_Init(&menu, &manager);
+    menu.save_selected = Get_Last_Party_Saved();
+    menu.save_count = menu.save_selected + 1;
 
     menu.PlayerCount = 0;
     while (menu.menu_Selected == 0 || menu.menu_Selected == 3 || menu.menu_Selected == 2)
@@ -60,10 +62,16 @@ int main()
     PARTY party;
     if (menu.PlayerCount == -1)
     {
-        Load_Party(&party, ".\\SAVE_1", &manager);
+
+        
+        Load_Party(&party, menu.save_selected, &manager);
     }
     else
     {
+        if (menu.save_selected < 9)
+        {
+            menu.save_selected++;
+        }
         Party_Init(&party, menu.PlayerCount, &manager);
     }
 
@@ -72,7 +80,7 @@ int main()
         Deplacement_Player_Loop(&manager, &party, &menu);
         
         
-        Save_Party(party, ".\\SAVE_1");
+        Save_Party(party, menu.save_selected);
     
         //Button_exe(&menu, &manager);
     }

@@ -30,7 +30,6 @@ void TMenuInit(TextMenu* pTextMenu){
         pTextMenu->tableauTextes[i].al_flag = ALLEGRO_ALIGN_CENTER;
         pTextMenu->tableauTextes[i].gc_properties.gc_space.POSITION_X=TextOffsetX;
         pTextMenu->tableauTextes[i].gc_properties.gc_space.POSITION_Y=TableauTextOffsetY[i];
-
     }
 }
 
@@ -42,6 +41,14 @@ void Menu_Init(MENU* pMenu, GC_MANAGER* pManager)
     pMenu->ChargerSauvegarde.gc_properties.gc_space.POSITION_X = 450;
     GC_TEXT_INIT(&pMenu->GamesSaved, "Save1");
     GC_TEXT_SET_FONT(&pMenu->GamesSaved, FILE_ACCESS ".\\Import\\CaesarDressing-Regular.ttf", 50);
+    
+    for (int i = 0; i < 10; i++)
+    {
+        GC_BUTTON_INIT(&pMenu->GamesSaved_bt[i], &pManager->event);
+        pMenu->GamesSaved_bt[i].gc_properties.gc_space.HEIGHT = 50;
+        pMenu->GamesSaved_bt[i].gc_properties.gc_space.WIDTH = 200;
+    }
+    
 
     Button_Init(&pMenu->Button_Menu_1, 0, pManager, MENUCHOICE1_PATH);
     Button_Init(&pMenu->Button_Menu_2, 0, pManager, MENUCHOICE2_PATH);
@@ -83,12 +90,16 @@ void MENU_Draw(MENU* pMenu)
         GC_SPRITE_DRAW(&pMenu->ChargerSauvegarde);
         Button_Draw(&pMenu->Button_Escape_1);
         char name[6] = "Save ";
-        for (int i = 0; i < 10; i++)
+        //printf("\n");
+        for (int i = 0; i < pMenu->save_count; i++)
         {   
+            //printf("\nnumero=%d", i);
             name[5] = 48 + i;
             pMenu->GamesSaved.text = name;
             pMenu->GamesSaved.gc_properties.gc_space.POSITION_X = 600;
             pMenu->GamesSaved.gc_properties.gc_space.POSITION_Y = 300 + i * 60;
+            pMenu->GamesSaved_bt[i].gc_properties.gc_space.POSITION_X = pMenu->GamesSaved.gc_properties.gc_space.POSITION_X;
+            pMenu->GamesSaved_bt[i].gc_properties.gc_space.POSITION_Y = pMenu->GamesSaved.gc_properties.gc_space.POSITION_Y;
             GC_TEXT_DRAW(&pMenu->GamesSaved);
         }
     }
@@ -119,6 +130,11 @@ void Button_Game_Update_Event(MENU* pMenu)
     if (pMenu->menu_Selected == 2)
     {
         Button_Update_Event(&pMenu->Button_Escape_1);
+        for (int i = 0; i < 10; i++)
+        {
+            GC_BUTTON_UPDATE_EVENT(&pMenu->GamesSaved_bt[i]);
+        }
+        
     }
     if (pMenu->menu_Selected == 3)
     {
@@ -176,6 +192,17 @@ void Button_exe(MENU* pMenu, GC_MANAGER* pManager)
     {
         pMenu->PlayerCount = -1;
         //pMenu->menu_Selected = 1;
+    }
+    if (pMenu->menu_Selected == 2)
+    {
+        for (int i = 0; i < 10; i++)
+        {
+            if (pMenu->GamesSaved_bt[i].state == GC_BUTTON_STATE_RELEASED)
+            {
+                pMenu->save_selected = i;
+                printf("\nSauvegarde %d selectionee", i);
+            }
+        }
     }
 }
 

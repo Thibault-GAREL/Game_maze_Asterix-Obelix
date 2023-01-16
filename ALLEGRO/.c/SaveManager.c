@@ -1,21 +1,36 @@
 #include "..\.h\SaveManager.h"
 
-void Save_Party(PARTY party, char* save_name)
+void Save_Party(PARTY party, int save_id)
 {
+    if (save_id < 0)
+    {
+        save_id = 0;
+    }
+    
     FILE* pFile;
-    pFile = fopen(save_name, "w");
+    char fileName[9] = ".\\SAVE_ ";
+    printf("\nSave in %d", save_id);
+    fileName[7] = 48 + save_id;
+    pFile = fopen(fileName, "w");
 
     fwrite(&party, sizeof(PARTY), 1, pFile);
 
     fclose(pFile);
 }
 
-void Load_Party(PARTY* pParty, char* save_name, GC_MANAGER* pManager)
+void Load_Party(PARTY* pParty, int save_id, GC_MANAGER* pManager)
 {
+    if (save_id < 0)
+    {
+        save_id = 0;
+    }
+
     Party_Init(pParty, 4, pManager);
 
     FILE* pFile;
-    pFile = fopen(save_name, "r");
+    char fileName[9] = ".\\SAVE_ ";
+    fileName[7] = 48 + save_id;
+    pFile = fopen(fileName, "r");
 
     PARTY loaded_Party;
     long long unsigned int size = 0;
@@ -25,7 +40,7 @@ void Load_Party(PARTY* pParty, char* save_name, GC_MANAGER* pManager)
 
     if (size < sizeof(PARTY))
     {
-        printf("Sauvegarde non valide (size=%llu)", size);
+        printf("\nSauvegarde non valide (size=%llu) numero %d", size, save_id);
         return;
     }
     
@@ -49,4 +64,29 @@ void Load_Party(PARTY* pParty, char* save_name, GC_MANAGER* pManager)
 
     pParty->player_count = loaded_Party.player_count;
     pParty->player_turn = loaded_Party.player_turn;;
+}
+
+int Get_Last_Party_Saved()
+{
+    FILE* pFile;
+    PARTY loaded_Party;
+    char fileName[9] = ".\\SAVE_ ";
+    for (int i = 0; i < 10; i++)
+    {
+        fileName[7] = 48 + i;
+        pFile = fopen(fileName, "r");
+
+        long long unsigned int size = 0;
+        size += sizeof(PARTY) * fread(&loaded_Party, sizeof(PARTY), 1, pFile);
+
+        fclose(pFile);
+
+        if (size != sizeof(PARTY))
+        {
+            printf("\nDerniere sauvegarde -> SAVE_%d", i-1);
+            return i-1;
+        }
+    }
+
+    return 8;
 }
