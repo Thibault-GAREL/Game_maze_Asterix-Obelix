@@ -4,6 +4,7 @@
 
 #include "../.h/Menu.h"
 
+
 char text_0[] = " Bienvenue Dans Le Labyrinthe ! ";
 char text_1[] = " Récupérez tous les trésors afin de compléter le jeu ! ";
 char text_2[] = " Bonne Chance ! ";
@@ -44,11 +45,18 @@ void Menu_Init(MENU* pMenu, GC_MANAGER* pManager)
     Button_Init(&pMenu->Button_Escape, 0, pManager, MENU_ESCAPE_PATH);
     Button_Init(&pMenu->Button_Escape_1, 0,pManager, MENU_ESCAPE_PATH);
 
+    Button_Init(&pMenu->PLAYER_TWO, 0, pManager, FILE_ACCESS ".\\Import\\Player_2.png");
+    Button_Init(&pMenu->PLAYER_THREE, 0, pManager, FILE_ACCESS ".\\Import\\Player_3.png");
+    Button_Init(&pMenu->PLAYER_FOUR, 0, pManager, FILE_ACCESS ".\\Import\\Player_4.png");
+
     Button_Set_Space(&pMenu->Button_Menu_1, 750, 400, 0);
     Button_Set_Space(&pMenu->Button_Menu_2, 800, 525, 0);
     Button_Set_Space(&pMenu->Button_Menu_3, 875, 650, 0);
     Button_Set_Space(&pMenu->Button_Escape, 1850, 25, 0);
     Button_Set_Space(&pMenu->Button_Escape_1, 1850,25,0);
+    Button_Set_Space(&pMenu->PLAYER_TWO, 800 , 600, 0);
+    Button_Set_Space(&pMenu->PLAYER_THREE, 960, 600, 0);
+    Button_Set_Space(&pMenu->PLAYER_FOUR, 1120, 600, 0);
 
     pMenu->menu_Selected = 0;
 }
@@ -69,10 +77,13 @@ void MENU_Draw(MENU* pMenu)
         GC_SPRITE_DRAW(&pMenu->Credits);
         Button_Draw(&pMenu->Button_Escape_1);
     }
-    /*if (pMenu->menu_Selected == 1)
+    if (pMenu->menu_Selected == 1)
     {
-        Button_Draw(&pMenu->Button_Escape_1);
-    }*/
+        //printf("ca marche");
+        Button_Draw(&pMenu->PLAYER_TWO);
+        Button_Draw(&pMenu->PLAYER_THREE);
+        Button_Draw(&pMenu->PLAYER_FOUR);
+    }
 }
 
 void Button_Game_Update_Event(MENU* pMenu)
@@ -91,10 +102,12 @@ void Button_Game_Update_Event(MENU* pMenu)
         Button_Update_Event(&pMenu->Button_Escape_1);
         //printf("effectue \n");
     }
-    /*if (pMenu->menu_Selected == 1)
+    if (pMenu->menu_Selected == 1)
     {
-        Button_Update_Event(&pMenu->Button_Escape);
-    }*/
+        Button_Update_Event(&pMenu->PLAYER_TWO);
+        Button_Update_Event(&pMenu->PLAYER_THREE);
+        Button_Update_Event(&pMenu->PLAYER_FOUR);
+    }
 }
 
 void Button_exe(MENU* pMenu, GC_MANAGER* pManager)
@@ -102,7 +115,7 @@ void Button_exe(MENU* pMenu, GC_MANAGER* pManager)
     if (pMenu->Button_Menu_1.gc_button.state == GC_BUTTON_STATE_RELEASED)
     {
         pMenu->menu_Selected = 1;
-        //printf("condit1");
+        printf("condit1");
     }
     if (pMenu->Button_Menu_2.gc_button.state == GC_BUTTON_STATE_RELEASED)
     {
@@ -114,19 +127,29 @@ void Button_exe(MENU* pMenu, GC_MANAGER* pManager)
         pMenu->menu_Selected = 3;
         //printf("condit3");
     }
-    /*if (pMenu->Button_Escape.gc_button.state == GC_BUTTON_STATE_RELEASED)
-    {
-        //printf("condit4");
-        GC_MANAGER_DESTROY(pManager);
-        exit(0);
 
-    }*/
     if (pMenu->Button_Escape_1.gc_button.state == GC_BUTTON_STATE_RELEASED)
     {
         //printf("scheisse");
         pMenu->menu_Selected = 0;
     }
     //printf("%d  %d  %d \n", pMenu->Button_Escape_1.gc_button.state, pMenu->menu_Selected, GC_BUTTON_STATE_RELEASED );
+
+    if (pMenu->PLAYER_TWO.gc_button.state == GC_BUTTON_STATE_RELEASED)
+    {
+        pMenu->PlayerCount = 2;
+        //pMenu->menu_Selected = 1;
+    }
+    if (pMenu->PLAYER_THREE.gc_button.state == GC_BUTTON_STATE_RELEASED)
+    {
+        pMenu->PlayerCount = 3;
+        //pMenu->menu_Selected = 1;
+    }
+    if (pMenu->PLAYER_FOUR.gc_button.state == GC_BUTTON_STATE_RELEASED)
+    {
+        pMenu->PlayerCount = 4;
+        //pMenu->menu_Selected = 1;
+    }
 }
 
 

@@ -6,12 +6,13 @@
 
 //int SelectMenu=0; //permet de valider la sélection dans le menu
 
+int ConfigPlayer = 0;
+
 void Switch_Part_Loop(GC_MANAGER* pManager, PARTY* pParty, MENU* pMenu);
 void Deplacement_Player_Loop(GC_MANAGER* pManager, PARTY* pParty, MENU* pMenu);
 void Draw_Clear_Plateau_Player(PARTY* pParty, MENU* pMenu);
 void Update_Event_In_Menu(GC_MANAGER* pManager, MENU* pMenu);
 void Update_Event_In_Party(GC_MANAGER* pManager, MENU* pMenu);
-
 
 int main() 
 {
@@ -19,10 +20,16 @@ int main()
     GC_MANAGER manager;
     GC_MANAGER_CREATE(&manager, 1920, 1080);            //Les dimensions en pixel ne servent plus à rien vu qu'on affiche en plein écran
 
+    GC_SPRITE PlayerCount;
+    GC_SPRITE_INIT(&PlayerCount,"..\\Import\\ALLEGRO_PLAYERS_CONFIG.png");
+    PlayerCount.gc_properties.gc_space.POSITION_X = 500;
+    PlayerCount.gc_properties.gc_space.POSITION_Y = 300;
+
     MENU menu;
     Menu_Init(&menu, &manager);
 
-    while (menu.menu_Selected != 1) 
+    menu.PlayerCount = 0;
+    while (menu.menu_Selected == 0 || menu.menu_Selected == 3)
     {
         Update_Event_In_Menu( &manager, &menu);
         Button_Game_Update_Event(&menu);
@@ -34,8 +41,23 @@ int main()
         al_flip_display();
     }
 
+    while (menu.PlayerCount == 0)
+    {
+        Update_Event_In_Menu( &manager, &menu);
+        Button_Game_Update_Event(&menu);
+        Button_exe(&menu, &manager);
+
+        ALLEGRO_COLOR blk = al_map_rgb(0, 0, 0);
+        al_clear_to_color(blk);
+
+        GC_SPRITE_DRAW(&PlayerCount);
+        menu.menu_Selected = 1;
+        MENU_Draw(&menu);
+        al_flip_display();
+    }
+
     PARTY party;
-    Party_Init(&party, 4, &manager);
+    Party_Init(&party, menu.PlayerCount, &manager);
 
     while (1) {
         Switch_Part_Loop(&manager, &party, &menu);
