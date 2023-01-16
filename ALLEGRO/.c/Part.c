@@ -1,12 +1,19 @@
 #include "../.h/Part.h"
 
-void Part_Init(PART* pPart, const char* sprite_filePath, Vector2Int _position_on_plateau, char _isExtra, GC_MANAGER* pManager, int _logicPath[3][3], int angle)
+void Part_Init(PART* pPart, char sprite_filePath[50], Vector2Int _position_on_plateau, char _isExtra, GC_MANAGER* pManager, int _logicPath[3][3], int angle)
 {
     Button_Init(&pPart->button, 0, pManager, sprite_filePath);
     pPart->position_on_plateau = _position_on_plateau;
     pPart->rotation = 0;
     pPart->isExtra = _isExtra;
     pPart->treasure = -1;
+
+    for (int i = 0; i < 50; i++)
+    {
+        pPart->filePath[i] = sprite_filePath[i];
+    }
+    
+    pPart->angle = angle;
 
     /*for (int i = 0; i < PLAYER_MAX_COUNT; i++)
     {

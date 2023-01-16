@@ -21,14 +21,21 @@ typedef struct
 typedef struct
 {
     GC_SPRITE Credits;
+    GC_SPRITE ChargerSauvegarde;
     GC_SPRITE MENU_BACKGRD;
+    GC_TEXT GamesSaved;
 
     BUTTON Button_Menu_1;
     BUTTON Button_Menu_2;
     BUTTON Button_Menu_3;
     BUTTON Button_Escape;
     BUTTON Button_Escape_1;
+    BUTTON PLAYER_TWO;
+    BUTTON PLAYER_THREE;
+    BUTTON PLAYER_FOUR;
+    BUTTON PLAYER_CONTINUE;
 
+    int PlayerCount;
     int menu_Selected;
 }MENU;
 

@@ -40,5 +40,6 @@
 #define MENUCHOICE3_PATH FILE_ACCESS ".\\Import\\Choixmenu3Allegro.png"
 #define MENU_ESCAPE_PATH FILE_ACCESS ".\\Import\\CroixEscape.png"
 #define MENU_BACKGROUND FILE_ACCESS ".\\Import\\MENU_BACKGROUND.jpg"
+#define SAVE_DIRECTORY FILE_ACCESS ".\\Sauvegardes"
 
 #endif
