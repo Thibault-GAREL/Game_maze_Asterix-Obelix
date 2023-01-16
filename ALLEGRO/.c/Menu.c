@@ -59,17 +59,17 @@ void Menu_Init(MENU* pMenu, GC_MANAGER* pManager)
     Button_Init(&pMenu->PLAYER_TWO, 0, pManager, FILE_ACCESS ".\\Import\\Player_2.png");
     Button_Init(&pMenu->PLAYER_THREE, 0, pManager, FILE_ACCESS ".\\Import\\Player_3.png");
     Button_Init(&pMenu->PLAYER_FOUR, 0, pManager, FILE_ACCESS ".\\Import\\Player_4.png");
-    Button_Init(&pMenu->PLAYER_CONTINUE, 0, pManager, FILE_ACCESS ".\\Import\\Player_3.png");
+    Button_Init(&pMenu->PLAYER_CONTINUE, 0, pManager, FILE_ACCESS ".\\Import\\Logo Continue_Party ALLEGRO.png");
 
     Button_Set_Space(&pMenu->Button_Menu_1, 750, 400, 0);
     Button_Set_Space(&pMenu->Button_Menu_2, 800, 525, 0);
     Button_Set_Space(&pMenu->Button_Menu_3, 875, 650, 0);
     Button_Set_Space(&pMenu->Button_Escape, 1850, 25, 0);
     Button_Set_Space(&pMenu->Button_Escape_1, 1850,25,0);
-    Button_Set_Space(&pMenu->PLAYER_TWO, 800 , 600, 0);
-    Button_Set_Space(&pMenu->PLAYER_THREE, 960, 600, 0);
-    Button_Set_Space(&pMenu->PLAYER_FOUR, 1120, 600, 0);
-    Button_Set_Space(&pMenu->PLAYER_CONTINUE, 960, 650, 0);
+    Button_Set_Space(&pMenu->PLAYER_TWO, 780 , 550, 0);
+    Button_Set_Space(&pMenu->PLAYER_THREE, 940, 550, 0);
+    Button_Set_Space(&pMenu->PLAYER_FOUR, 1100, 550, 0);
+    Button_Set_Space(&pMenu->PLAYER_CONTINUE, 750, 650, 0);
 
     pMenu->menu_Selected = 0;
 }
