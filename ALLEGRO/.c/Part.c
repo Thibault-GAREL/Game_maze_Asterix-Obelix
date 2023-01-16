@@ -74,7 +74,6 @@ void Part_Update_Event(PART* pPart)
 
 void Part_Draw_Treasure (PART* pPart,  GC_SPRITE treasure_sprite [24])
 {
-
     GC_SPRITE treasure;
 
     treasure = treasure_sprite [pPart->treasure];
