@@ -145,5 +145,9 @@ void Treasure_draw (PLAYER* pPlayer){
     treasure.gc_properties.gc_space.POSITION_X = 1500;
     treasure.gc_properties.gc_space.POSITION_Y = 200;
     GC_SPRITE_DRAW(&treasure);
+
+    pPlayer->sprite.gc_properties.gc_space.POSITION_X = 1300;
+    pPlayer->sprite.gc_properties.gc_space.POSITION_Y = 200;
+    GC_SPRITE_DRAW(&pPlayer->sprite);
 }
 

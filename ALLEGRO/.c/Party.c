@@ -113,9 +113,11 @@ void Party_Init(PARTY* pParty, int player_count, GC_MANAGER* pManager) {
     }
     Random_LessDiscount(tab_treasure_sur_plateau, 24, 50);
 
-    int tab_treasure_possible[] = {1, 3, 5, 7, 8, 9, 10, 11, 12, 13, 15, 17, 19, 21, 22, 23, 24, 25, 26, 27, 29, 31, 33,
-                                   35, 36, 37, 38, 39, 40, 41, 43, 45, 47};
-    Random_LessDiscount(tab_treasure_possible, 33, 50);
+    //int tab_treasure_possible[]= {0,1, 0,3, 0,5, 1, 0, 1, 1, 1, 2, 1, 3, 1, 4, 1, 5, 1, 6, 2, 1, 2, 3, 2, 5, 3,0, 3,1, 3, 2, 3, 4, 3, 5, 3, 6, 4, 1, 4,3, 4, 5, 5,0, 5,1, 5,2, 5,3,5,4, 5,5, 5,6, 6, 1, 6,3, 6,5};
+    //Random_LessDiscount(tab_treasure_possible, 33, 50);
+
+
+
 
     int compteur = 0;
     int compteur1 = 0;
@@ -124,14 +126,69 @@ void Party_Init(PARTY* pParty, int player_count, GC_MANAGER* pManager) {
             if ((x == 0 && y == 0) || (x == 0 && y == 6) || (x == 6 && y == 0) || (x == 6 && y == 6)) {
                 continue;
             }
-            if ((x % 2 || y % 2) && compteur1 != 12) {
-                //pParty->plateau.parts[x][y].treasure = tab_treasure_possible[compteur1++];
-                //compteur1 = compteur+1;
-            } else {
-                pParty->plateau.parts[x][y].treasure = tab_treasure_sur_plateau[compteur++];
+            /*if ((x % 2 || y % 2)) {
+                /*if (compteur1<12) {
+                    compteur1 = compteur1+1;
+                    printf("%d", compteur1);
+                    pParty->plateau.parts[x][y].treasure = tab_treasure_sur_plateau[compteur1];
+                }}*/
+            if ((x % 2 || y % 2)!=1) {
+                pParty->plateau.parts[x][y].treasure = tab_treasure_sur_plateau[12 + compteur++];
             }
         }
     }
+
+    /*int x = 0;
+    int y = 0;
+    int c = 0;
+    for (int i = 0; i <12; ++i) {
+        while (((x % 2==0 || y % 2==0)) && !(pParty->plateau.parts[x][y].treasure ==-1)) {
+
+            x = rand()%7;
+            y = rand()%7;
+
+            printf("a");
+            printf("%d", x);
+            printf("%d", y);
+        }
+
+        pParty->plateau.parts[x][y].treasure = tab_treasure_sur_plateau[12 + i];
+
+    }*/
+
+    int x = 0;
+    int y = 0;
+    int c = 0;
+
+    for (int i = 0; i <12; ++i) {
+        int x = 0;
+        int y = 0;
+        while ((x % 2==0 && y%2 ==0)&&!(pParty->plateau.parts[x][y].treasure ==-1)){
+            x = rand();
+            x=x%7;
+            y = rand();
+            y= y%7;
+        }
+
+
+        pParty->plateau.parts[x][y].treasure = tab_treasure_sur_plateau[ i];
+        printf("%d", i);
+    }
+
+    /*for (int x = 0; x < PLATEAU_W; x++) {
+        for (int y = 0; y < PLATEAU_H; y++) {
+            if ((x == 0 && y == 0) || (x == 0 && y == 6) || (x == 6 && y == 0) || (x == 6 && y == 6)) {
+                continue;
+            }
+            if ((x % 2 || y % 2)!=1 && compteur1 != 12) {
+                pParty->plateau.parts[x][y].treasure = tab_treasure_sur_plateau[compteur++];
+            } else{
+                pParty->plateau.parts[x][y].treasure = tab_treasure_sur_plateau[compteur++];
+            }
+            compteur1 = compteur1 + 1;
+        }
+    }*/
+
 
     //pParty->plateau.parts[][].treasure = tab_treasure_sur_plateau[compteur++];
 
@@ -178,6 +235,10 @@ void Update_Player_Position(PARTY* pParty, int line, int column, bool direct_sen
             player_pos->x -= 7 * (player_pos->x > PLATEAU_W_MAX_I);
             player_pos->x += 7 * (player_pos->x < 0);
         }
+        if (pParty->players [i].liste_treasure[pParty->players[pParty->player_turn].nb_treasure]==pParty->plateau.parts[player_pos->x][player_pos->y].treasure) {
+            printf ("Win");
+        }
+
     }
 }
 
