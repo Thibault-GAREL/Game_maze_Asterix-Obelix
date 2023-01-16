@@ -38,6 +38,10 @@ void Menu_Init(MENU* pMenu, GC_MANAGER* pManager)
 {
     GC_SPRITE_INIT(&pMenu->Credits, FILE_ACCESS ".\\Import\\Credits_FHD_ALLEGRO.png");                            // Initialisation de la texture des crédits
     GC_SPRITE_INIT(&pMenu->MENU_BACKGRD, FILE_ACCESS ".\\Import\\Menu_FHD_ALLEGRO.png");
+    GC_SPRITE_INIT(&pMenu->ChargerSauvegarde, FILE_ACCESS ".\\Import\\ALLEGRO_SAVE.png");
+    pMenu->ChargerSauvegarde.gc_properties.gc_space.POSITION_X = 450;
+    GC_TEXT_INIT(&pMenu->GamesSaved, "Save1");
+    GC_TEXT_SET_FONT(&pMenu->GamesSaved, FILE_ACCESS ".\\Import\\CaesarDressing-Regular.ttf", 50);
 
     Button_Init(&pMenu->Button_Menu_1, 0, pManager, MENUCHOICE1_PATH);
     Button_Init(&pMenu->Button_Menu_2, 0, pManager, MENUCHOICE2_PATH);
@@ -48,6 +52,7 @@ void Menu_Init(MENU* pMenu, GC_MANAGER* pManager)
     Button_Init(&pMenu->PLAYER_TWO, 0, pManager, FILE_ACCESS ".\\Import\\Player_2.png");
     Button_Init(&pMenu->PLAYER_THREE, 0, pManager, FILE_ACCESS ".\\Import\\Player_3.png");
     Button_Init(&pMenu->PLAYER_FOUR, 0, pManager, FILE_ACCESS ".\\Import\\Player_4.png");
+    Button_Init(&pMenu->PLAYER_CONTINUE, 0, pManager, FILE_ACCESS ".\\Import\\Player_3.png");
 
     Button_Set_Space(&pMenu->Button_Menu_1, 750, 400, 0);
     Button_Set_Space(&pMenu->Button_Menu_2, 800, 525, 0);
@@ -57,6 +62,7 @@ void Menu_Init(MENU* pMenu, GC_MANAGER* pManager)
     Button_Set_Space(&pMenu->PLAYER_TWO, 800 , 600, 0);
     Button_Set_Space(&pMenu->PLAYER_THREE, 960, 600, 0);
     Button_Set_Space(&pMenu->PLAYER_FOUR, 1120, 600, 0);
+    Button_Set_Space(&pMenu->PLAYER_CONTINUE, 960, 650, 0);
 
     pMenu->menu_Selected = 0;
 }
@@ -72,6 +78,20 @@ void MENU_Draw(MENU* pMenu)
         Button_Draw(&pMenu->Button_Menu_3);
         Button_Draw(&pMenu->Button_Escape);
     }
+    if (pMenu->menu_Selected == 2)
+    {
+        GC_SPRITE_DRAW(&pMenu->ChargerSauvegarde);
+        Button_Draw(&pMenu->Button_Escape_1);
+        char name[6] = "Save ";
+        for (int i = 0; i < 10; i++)
+        {   
+            name[5] = 48 + i;
+            pMenu->GamesSaved.text = name;
+            pMenu->GamesSaved.gc_properties.gc_space.POSITION_X = 600;
+            pMenu->GamesSaved.gc_properties.gc_space.POSITION_Y = 300 + i * 60;
+            GC_TEXT_DRAW(&pMenu->GamesSaved);
+        }
+    }
     if (pMenu->menu_Selected == 3)
     {
         GC_SPRITE_DRAW(&pMenu->Credits);
@@ -79,10 +99,10 @@ void MENU_Draw(MENU* pMenu)
     }
     if (pMenu->menu_Selected == 1)
     {
-        //printf("ca marche");
         Button_Draw(&pMenu->PLAYER_TWO);
         Button_Draw(&pMenu->PLAYER_THREE);
         Button_Draw(&pMenu->PLAYER_FOUR);
+        Button_Draw(&pMenu->PLAYER_CONTINUE);
     }
 }
 
@@ -93,20 +113,23 @@ void Button_Game_Update_Event(MENU* pMenu)
         Button_Update_Event(&pMenu->Button_Menu_1);
         Button_Update_Event(&pMenu->Button_Menu_2);
         Button_Update_Event(&pMenu->Button_Menu_3);
-        Button_Update_Event(&pMenu->Button_Escape);
+        //Button_Update_Event(&pMenu->Button_Escape);
         Button_Update_Event(&pMenu->Button_Escape_1);
-        //pMenu->Button_Escape_1.gc_button.state = 0;
+    }
+    if (pMenu->menu_Selected == 2)
+    {
+        Button_Update_Event(&pMenu->Button_Escape_1);
     }
     if (pMenu->menu_Selected == 3)
     {
         Button_Update_Event(&pMenu->Button_Escape_1);
-        //printf("effectue \n");
     }
     if (pMenu->menu_Selected == 1)
     {
         Button_Update_Event(&pMenu->PLAYER_TWO);
         Button_Update_Event(&pMenu->PLAYER_THREE);
         Button_Update_Event(&pMenu->PLAYER_FOUR);
+        Button_Update_Event(&pMenu->PLAYER_CONTINUE);
     }
 }
 
@@ -130,7 +153,6 @@ void Button_exe(MENU* pMenu, GC_MANAGER* pManager)
 
     if (pMenu->Button_Escape_1.gc_button.state == GC_BUTTON_STATE_RELEASED)
     {
-        //printf("scheisse");
         pMenu->menu_Selected = 0;
     }
     //printf("%d  %d  %d \n", pMenu->Button_Escape_1.gc_button.state, pMenu->menu_Selected, GC_BUTTON_STATE_RELEASED );
@@ -148,6 +170,11 @@ void Button_exe(MENU* pMenu, GC_MANAGER* pManager)
     if (pMenu->PLAYER_FOUR.gc_button.state == GC_BUTTON_STATE_RELEASED)
     {
         pMenu->PlayerCount = 4;
+        //pMenu->menu_Selected = 1;
+    }
+    if (pMenu->PLAYER_CONTINUE.gc_button.state == GC_BUTTON_STATE_RELEASED)
+    {
+        pMenu->PlayerCount = -1;
         //pMenu->menu_Selected = 1;
     }
 }

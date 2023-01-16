@@ -30,7 +30,7 @@ int main()
     Menu_Init(&menu, &manager);
 
     menu.PlayerCount = 0;
-    while (menu.menu_Selected == 0 || menu.menu_Selected == 3)
+    while (menu.menu_Selected == 0 || menu.menu_Selected == 3 || menu.menu_Selected == 2)
     {
         Update_Event_In_Menu( &manager, &menu);
         Button_Game_Update_Event(&menu);
@@ -58,8 +58,14 @@ int main()
     }
 
     PARTY party;
-    Party_Init(&party, menu.PlayerCount, &manager);
-    //Load_Party(&party, ".\\SAVE_1", &manager);
+    if (menu.PlayerCount == -1)
+    {
+        Load_Party(&party, ".\\SAVE_1", &manager);
+    }
+    else
+    {
+        Party_Init(&party, menu.PlayerCount, &manager);
+    }
 
     while (1) {
         Switch_Part_Loop(&manager, &party, &menu);
@@ -130,6 +136,14 @@ void Update_Event_In_Menu(GC_MANAGER* pManager, MENU* pMenu)
         GC_MANAGER_DESTROY(pManager);
         exit(0);
     }
+
+    Button_Update_Event(&pMenu->Button_Escape);
+
+    if (pMenu->Button_Escape.gc_button.state == GC_BUTTON_STATE_RELEASED && pMenu->menu_Selected == 0)
+    {
+        GC_MANAGER_DESTROY(pManager);
+        exit(0);
+    }
 }
 
 void Update_Event_In_Party(GC_MANAGER* pManager, MENU* pMenu)
@@ -141,7 +155,7 @@ void Update_Event_In_Party(GC_MANAGER* pManager, MENU* pMenu)
         GC_MANAGER_DESTROY(pManager);
         exit(0);
     }
-
+    
     Button_Update_Event(&pMenu->Button_Escape);
 
     if (pMenu->Button_Escape.gc_button.state == GC_BUTTON_STATE_RELEASED)
