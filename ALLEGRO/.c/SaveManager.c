@@ -56,6 +56,7 @@ void Load_Party(PARTY* pParty, int save_id, GC_MANAGER* pManager)
         {
             Part_Init(&pParty->plateau.parts[x][y], loaded_Party.plateau.parts[x][y].filePath, loaded_Party.plateau.parts[x][y].position_on_plateau, false, pManager, loaded_Party.plateau.parts[x][y].logicPath, 0);
             pParty->plateau.parts[x][y].rotation = loaded_Party.plateau.parts[x][y].rotation;
+            pParty->plateau.parts[x][y].treasure = loaded_Party.plateau.parts[x][y].treasure;
         }
     }
     
@@ -63,7 +64,7 @@ void Load_Party(PARTY* pParty, int save_id, GC_MANAGER* pManager)
     pParty->plateau.part_extra.rotation = loaded_Party.plateau.part_extra.rotation;
 
     pParty->player_count = loaded_Party.player_count;
-    pParty->player_turn = loaded_Party.player_turn;;
+    pParty->player_turn = loaded_Party.player_turn;
 }
 
 int Get_Last_Party_Saved()

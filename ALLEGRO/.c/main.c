@@ -60,10 +60,9 @@ int main()
     }
 
     PARTY party;
-    if (menu.PlayerCount == -1)
-    {
 
-        
+    if (menu.PlayerCount == -1)
+    {    
         Load_Party(&party, menu.save_selected, &manager);
     }
     else
@@ -75,14 +74,12 @@ int main()
         Party_Init(&party, menu.PlayerCount, &manager);
     }
 
-    while (1) {
+    while (1) 
+    {
         Switch_Part_Loop(&manager, &party, &menu);
-        Deplacement_Player_Loop(&manager, &party, &menu);
-        
-        
+        Deplacement_Player_Loop(&manager, &party, &menu); 
+
         Save_Party(party, menu.save_selected);
-    
-        //Button_exe(&menu, &manager);
     }
 
     GC_MANAGER_DESTROY(&manager);
@@ -94,7 +91,6 @@ void Switch_Part_Loop(GC_MANAGER* pManager, PARTY* pParty, MENU* pMenu)
     while (!pParty->player_turn_step)
     {
         Update_Event_In_Party(pManager, pMenu);
-        //Button_Update_Event(&pMenu->Button_Escape_1);
 
         Party_Buttons_Update_Event(pParty);
         Party_Buttons_Exe(pParty);
@@ -113,7 +109,7 @@ void Deplacement_Player_Loop(GC_MANAGER* pManager, PARTY* pParty, MENU* pMenu)
     al_flip_display();
 
     PART* pPart_target = 0;
-    while (!Player_Deplacement(&pParty->players[pParty->player_turn], pPart_target, &pParty->plateau)) //&pParty->plateau.parts[pParty->players[pParty->player_turn].position_on_plateau.x][pParty->players[pParty->player_turn].position_on_plateau.y] == pPart_target
+    while (!Player_Deplacement(&pParty->players[pParty->player_turn], pPart_target, &pParty->plateau)) 
     {
         Update_Event_In_Party(pManager, pMenu);
         pPart_target = Plateau_Get_Part_Click(&pParty->plateau);
@@ -131,9 +127,8 @@ void Draw_Clear_Plateau_Player(PARTY* pParty, MENU* pMenu)
     al_clear_to_color(blk);
     Party_Plateau_Draw(pParty);
     Party_Player_Draw(pParty);
-    Treasure_draw(&pParty->players[pParty->player_turn]);
-
-    Button_Draw(&pMenu->Button_Escape_1);
+    Treasure_draw(&pParty->players[pParty->player_turn], &pParty->treasure_sprite[pParty->players[pParty->player_turn].liste_treasure[pParty->players[pParty->player_turn].nb_treasure]]);
+    Button_Draw(&pMenu->Button_Escape);
 }
 
 void Update_Event_In_Menu(GC_MANAGER* pManager, MENU* pMenu)

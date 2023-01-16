@@ -30,7 +30,8 @@ void Buttons_Init(PARTY* pParty)
     Button_Set_Space(&pParty->buttons[i], EXTRA_PART_POS_X + PART_W, EXTRA_PART_POS_Y, PI);
 }
 
-void Party_Init(PARTY* pParty, int player_count, GC_MANAGER* pManager) {
+void Party_Init(PARTY* pParty, int player_count, GC_MANAGER* pManager) 
+{
     pParty->player_count = player_count;
     pParty->player_turn = 0;
     pParty->player_turn_step = 0;
@@ -67,11 +68,13 @@ void Party_Init(PARTY* pParty, int player_count, GC_MANAGER* pManager) {
                                   FILE_ACCESS ".\\Import\\Dessin_Sercophage.png",
                                   FILE_ACCESS ".\\Import\\Dessin_Serpe.png"};
 
-    for (int i = 0; i < 24; ++i) {
+    for (int i = 0; i < 24; ++i) 
+    {
         GC_SPRITE_INIT(&pParty->treasure_sprite[i], adresse_treasure[i]);
     }
 
-    for (int i = 0; i < BUTTONS_SETPART_COUNT; i++) {
+    for (int i = 0; i < BUTTONS_SETPART_COUNT; i++) 
+    {
         Button_Init(&pParty->buttons[i], i, pManager, BUTTON_PATH);
     }
 
@@ -99,11 +102,12 @@ void Party_Init(PARTY* pParty, int player_count, GC_MANAGER* pManager) {
 
     Random_LessDiscount(tab_treasure, 24, 50);
 
-    for (int i = 0; i < player_count; ++i) {
-        for (int j = 0; j < 24 / player_count; ++j) {
+    for (int i = 0; i < player_count; ++i) 
+    {
+        for (int j = 0; j < 24 / player_count; ++j) 
+        {
             pParty->players[i].liste_treasure[j] = tab_treasure[j + i * 24 / player_count];
-        }/**/
-        //pParty->players[i].liste_treasure[0] = 0;
+        }
     }
 
 
@@ -113,92 +117,37 @@ void Party_Init(PARTY* pParty, int player_count, GC_MANAGER* pManager) {
     }
     Random_LessDiscount(tab_treasure_sur_plateau, 24, 50);
 
-    //int tab_treasure_possible[]= {0,1, 0,3, 0,5, 1, 0, 1, 1, 1, 2, 1, 3, 1, 4, 1, 5, 1, 6, 2, 1, 2, 3, 2, 5, 3,0, 3,1, 3, 2, 3, 4, 3, 5, 3, 6, 4, 1, 4,3, 4, 5, 5,0, 5,1, 5,2, 5,3,5,4, 5,5, 5,6, 6, 1, 6,3, 6,5};
-    //Random_LessDiscount(tab_treasure_possible, 33, 50);
-
-
-
-
     int compteur = 0;
     int compteur1 = 0;
-    for (int x = 0; x < PLATEAU_W; x++) {
-        for (int y = 0; y < PLATEAU_H; y++) {
-            if ((x == 0 && y == 0) || (x == 0 && y == 6) || (x == 6 && y == 0) || (x == 6 && y == 6)) {
+    for (int x = 0; x < PLATEAU_W; x++) 
+    {
+        for (int y = 0; y < PLATEAU_H; y++) 
+        {
+            if ((x == 0 && y == 0) || (x == 0 && y == 6) || (x == 6 && y == 0) || (x == 6 && y == 6)) 
+            {
                 continue;
             }
-            /*if ((x % 2 || y % 2)) {
-                /*if (compteur1<12) {
-                    compteur1 = compteur1+1;
-                    printf("%d", compteur1);
-                    pParty->plateau.parts[x][y].treasure = tab_treasure_sur_plateau[compteur1];
-                }}*/
-            if ((x % 2 || y % 2)!=1) {
+            if ((x % 2 || y % 2)!=1) 
+            {
                 pParty->plateau.parts[x][y].treasure = tab_treasure_sur_plateau[12 + compteur++];
+                //printf("\ntresor_fixe=%d (%d;%d)", 12 + compteur - 1, x, y);
             }
         }
     }
 
-    /*int x = 0;
-    int y = 0;
-    int c = 0;
-    for (int i = 0; i <12; ++i) {
-        while (((x % 2==0 || y % 2==0)) && !(pParty->plateau.parts[x][y].treasure ==-1)) {
+    int compteur2 = 0;
 
-            x = rand()%7;
-            y = rand()%7;
-
-            printf("a");
-            printf("%d", x);
-            printf("%d", y);
+    while (compteur2 < 12)
+    {
+        int x = rand() % 7;
+        int y = rand() % 7;
+        if (pParty->plateau.parts[x][y].treasure == -1 && !(x == 0 && y == 0) && !(x == 6 && y == 6) && !(x == 0 && y == 6) && !(x == 6 && y == 0))
+        {
+            pParty->plateau.parts[x][y].treasure = tab_treasure_sur_plateau[compteur2++];
+            //printf("\ntresor_mobile=%d (%d;%d)", compteur2 - 1, x, y);
         }
-
-        pParty->plateau.parts[x][y].treasure = tab_treasure_sur_plateau[12 + i];
-
-    }*/
-
-    int x = 0;
-    int y = 0;
-    int c = 0;
-
-    for (int i = 0; i <12; ++i) {
-        int x = 0;
-        int y = 0;
-        while ((x % 2==0 && y%2 ==0)&&!(pParty->plateau.parts[x][y].treasure ==-1)){
-            x = rand();
-            x=x%7;
-            y = rand();
-            y= y%7;
-        }
-
-
-        pParty->plateau.parts[x][y].treasure = tab_treasure_sur_plateau[ i];
-        printf("%d", i);
     }
-
-    /*for (int x = 0; x < PLATEAU_W; x++) {
-        for (int y = 0; y < PLATEAU_H; y++) {
-            if ((x == 0 && y == 0) || (x == 0 && y == 6) || (x == 6 && y == 0) || (x == 6 && y == 6)) {
-                continue;
-            }
-            if ((x % 2 || y % 2)!=1 && compteur1 != 12) {
-                pParty->plateau.parts[x][y].treasure = tab_treasure_sur_plateau[compteur++];
-            } else{
-                pParty->plateau.parts[x][y].treasure = tab_treasure_sur_plateau[compteur++];
-            }
-            compteur1 = compteur1 + 1;
-        }
-    }*/
-
-
-    //pParty->plateau.parts[][].treasure = tab_treasure_sur_plateau[compteur++];
-
-    //afficher à chaque joueur le premier trésor à recupérer dans Player_draw
-    //afficher les trésors sur le plateau (PARTY.treasure ==> draw le bon) attention tout les fixes sauf 4
-    //faire un compteur de trésor récupérer==>on gagne if (un PLAYER.nb_treasure = 24/player_count || revenu à sa co intitale)
-
-
 }
-
 
 void Party_Next_Turn(PARTY* pParty)
 {

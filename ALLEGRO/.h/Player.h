@@ -21,6 +21,6 @@ typedef struct
 void Player_Init(PLAYER* pPlayer, int id, char* name);
 void Player_Draw(PLAYER* pPlayer);
 int Player_Deplacement(PLAYER* pPlayer, PART* pPart_New, PLATEAU* pPlateau);
-void Treasure_draw (PLAYER* pPlayer);
+void Treasure_draw (PLAYER* pPlayer, GC_SPRITE* pTresor);
 
 #endif

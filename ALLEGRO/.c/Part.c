@@ -60,8 +60,10 @@ void Part_Draw(PART* pPart, GC_SPRITE treasure_sprite [24])
 
     Button_Set_Space(&pPart->button, sprite_positon.x, sprite_positon.y, pPart->rotation * PI / 2);
     Button_Draw(&pPart->button);
-    if (pPart->treasure != -1){
-        Part_Treasure (pPart, treasure_sprite);
+    
+    if (pPart->treasure != -1)
+    {
+        Part_Draw_Treasure (pPart, treasure_sprite);
     }
 }
 
@@ -70,15 +72,14 @@ void Part_Update_Event(PART* pPart)
     Button_Update_Event(&pPart->button);
 }
 
-void Part_Treasure (PART* pPart,  GC_SPRITE treasure_sprite [24]){
+void Part_Draw_Treasure (PART* pPart,  GC_SPRITE treasure_sprite [24])
+{
 
     GC_SPRITE treasure;
 
-
-    //GC_SPRITE_INIT(&treasure, adresse_treasure[pPart->treasure]); //(pPlayer)->liste_treasureadresse_treasure [0]pPlayer->nb_treasurepPlayer->liste_treasure[0]
-    treasure.pBitmap = treasure_sprite [pPart->treasure].pBitmap;
+    treasure = treasure_sprite [pPart->treasure];
     treasure.gc_properties.gc_space.POSITION_X = pPart->button.sprite.gc_properties.gc_space.POSITION_X;
     treasure.gc_properties.gc_space.POSITION_Y = pPart->button.sprite.gc_properties.gc_space.POSITION_Y;
+    
     GC_SPRITE_DRAW(&treasure);
-
 }

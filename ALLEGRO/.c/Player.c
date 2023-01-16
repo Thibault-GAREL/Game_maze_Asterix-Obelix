@@ -76,14 +76,14 @@ int Get_PathFinding(PLAYER* pPlayer, PART* pPart_New, PLATEAU* pPlateau)
 	{	
 		if (ways[path_size][0] == ND && ways[path_size][1] == ND)
 		{
-			printf("\nDistance=%d", path_size);
+			//printf("\nDistance=%d", path_size);
 			break;
 		}
 	}
 
-	Console_Draw_Tableau(walls, "[WALLS]");
+	/*Console_Draw_Tableau(walls, "[WALLS]");
 	Console_Draw_Tableau(distances, "[DISTANCES]");
-	Console_Draw_Way(ways);
+	Console_Draw_Way(ways);*/
 
     if (path_size >= 2)
     {
@@ -113,41 +113,14 @@ int Player_Deplacement(PLAYER* pPlayer, PART* pPart_New, PLATEAU* pPlateau)
 
     return 1;
 }
-void Treasure_draw (PLAYER* pPlayer){
-    char* adresse_treasure[25] = {FILE_ACCESS ".\\Import\\Dessin_bague d'émeraude.png",
-                                  FILE_ACCESS ".\\Import\\Dessin_bouclier_romain.png",
-                                  FILE_ACCESS ".\\Import\\Dessin_byjoux.png",
-                                  FILE_ACCESS ".\\Import\\Dessin_casque.png",
-                                  FILE_ACCESS ".\\Import\\Dessin_casque_romain.png",
-                                  FILE_ACCESS ".\\Import\\Dessin_Chaudron.png",
-                                  FILE_ACCESS ".\\Import\\Dessin_clef.png",
-                                  FILE_ACCESS ".\\Import\\Dessin_coffre.png",
-                                  FILE_ACCESS ".\\Import\\Dessin_couronne_de_laurier.png",
-                                  FILE_ACCESS ".\\Import\\Dessin_diamand.png",
-                                  FILE_ACCESS ".\\Import\\Dessin_epee.png",
-                                  FILE_ACCESS ".\\Import\\Dessin_fouet.png",
-                                  FILE_ACCESS ".\\Import\\Dessin_Gourde.png",
-                                  FILE_ACCESS ".\\Import\\Dessin_louche.png",
-                                  FILE_ACCESS ".\\Import\\Dessin_Menhir.png",
-                                  FILE_ACCESS ".\\Import\\Dessin_oeil.png",
-                                  FILE_ACCESS ".\\Import\\Dessin_Os.png",
-                                  FILE_ACCESS ".\\Import\\Dessin_Papyrusse.png",
-                                  FILE_ACCESS ".\\Import\\Dessin_Pharaon.png",
-                                  FILE_ACCESS ".\\Import\\Dessin_Poisson_Frai.png",
-                                  FILE_ACCESS ".\\Import\\Dessin_sac_de_piece.png",
-                                  FILE_ACCESS ".\\Import\\Dessin_sanglier.png",
-                                  FILE_ACCESS ".\\Import\\Dessin_Sercophage.png",
-                                  FILE_ACCESS ".\\Import\\Dessin_Serpe.png"};
 
-
-    GC_SPRITE treasure;
-    GC_SPRITE_INIT(&treasure, adresse_treasure[pPlayer->liste_treasure [pPlayer->nb_treasure]]); //(pPlayer)->liste_treasureadresse_treasure [0]pPlayer->nb_treasurepPlayer->liste_treasure[0]
-    treasure.gc_properties.gc_space.POSITION_X = 1500;
-    treasure.gc_properties.gc_space.POSITION_Y = 200;
-    GC_SPRITE_DRAW(&treasure);
+void Treasure_draw (PLAYER* pPlayer, GC_SPRITE* pTresor)
+{
+    pTresor->gc_properties.gc_space.POSITION_X = 1500;
+    pTresor->gc_properties.gc_space.POSITION_Y = 200;
+    GC_SPRITE_DRAW(pTresor);
 
     pPlayer->sprite.gc_properties.gc_space.POSITION_X = 1300;
     pPlayer->sprite.gc_properties.gc_space.POSITION_Y = 200;
     GC_SPRITE_DRAW(&pPlayer->sprite);
 }
-
