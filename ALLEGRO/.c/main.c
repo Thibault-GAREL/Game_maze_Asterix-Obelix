@@ -1,5 +1,6 @@
 #include "../.h/fonction_t.h"
 #include "../.h/Party.h"
+#include "..\.h\SaveManager.h"
 
 // gcc -g -Wall main_t.c Gc.c fonction_t.c Menu.c Plateau.c Player.c Part.c -lallegro -lallegro_image -lallegro_font -oProject; .\Project.exe
 //gcc -g -Wall main_t.c Gc.c fonction_t.c Menu.c Plateau.c Player.c Part.c utils.c Party.c -lallegro -lallegro_image -lallegro_font -lallegro_ttf -oProject
@@ -36,10 +37,15 @@ int main()
 
     PARTY party;
     Party_Init(&party, 4, &manager);
+    Load_Party(&party, ".\\SAVE_3", &manager);
 
     while (1) {
         Switch_Part_Loop(&manager, &party, &menu);
         Deplacement_Player_Loop(&manager, &party, &menu);
+        
+        
+        Save_Party(party, ".\\SAVE_3");
+    
         //Button_exe(&menu, &manager);
     }
 
