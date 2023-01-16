@@ -5,7 +5,7 @@
 #include "Global.h"
 #include "Party.h"
 
-void Save_Party(PARTY party, char* save_name);
-void Load_Party(PARTY* pParty, char* save_name, GC_MANAGER* pManager);
-
+void Save_Party(PARTY party, int save_id);
+void Load_Party(PARTY* pParty, int save_id, GC_MANAGER* pManager);
+int Get_Last_Party_Saved();
 #endif
