@@ -37,8 +37,13 @@ void Menu_Init(MENU* pMenu, GC_MANAGER* pManager)
 {
     GC_SPRITE_INIT(&pMenu->Credits, FILE_ACCESS ".\\Import\\Credits_FHD_ALLEGRO.png");                            // Initialisation de la texture des crédits
     GC_SPRITE_INIT(&pMenu->MENU_BACKGRD, FILE_ACCESS ".\\Import\\Menu_FHD_ALLEGRO.png");
+    GC_SPRITE_INIT(&pMenu->PARTY_BACKGRD, FILE_ACCESS ".\\Import\\ALLEGRO_Sand.png"); 
+    GC_SPRITE_INIT(&pMenu->PLAYER_INFO, FILE_ACCESS ".\\Import\\JoueursInfo.png");
+    pMenu->PLAYER_INFO.gc_properties.gc_space.POSITION_X = 1255;
+    pMenu->PLAYER_INFO.gc_properties.gc_space.POSITION_Y = 145;
     GC_SPRITE_INIT(&pMenu->ChargerSauvegarde, FILE_ACCESS ".\\Import\\ALLEGRO_SAVE.png");
     pMenu->ChargerSauvegarde.gc_properties.gc_space.POSITION_X = 450;
+    GC_SPRITE_INIT(&pMenu->VICTORY, FILE_ACCESS ".\\Import\\Win.png");
     GC_TEXT_INIT(&pMenu->GamesSaved, "Save1");
     GC_TEXT_SET_FONT(&pMenu->GamesSaved, FILE_ACCESS ".\\Import\\CaesarDressing-Regular.ttf", 50);
     

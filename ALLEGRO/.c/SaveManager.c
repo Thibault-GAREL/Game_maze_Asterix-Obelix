@@ -40,7 +40,7 @@ void Load_Party(PARTY* pParty, int save_id, GC_MANAGER* pManager)
 
     if (size < sizeof(PARTY))
     {
-        printf("\nSauvegarde non valide (size=%llu) numero %d", size, save_id);
+        printf("\nSauvegarde non valide (size=%llu) numero %d \"%s\"", size, save_id, fileName[0]);
         return;
     }
     
@@ -82,7 +82,7 @@ int Get_Last_Party_Saved()
 
         fclose(pFile);
 
-        if (size != sizeof(PARTY))
+        if (size != sizeof(PARTY) || loaded_Party.victory != -1)
         {
             printf("\nDerniere sauvegarde -> SAVE_%d", i-1);
             return i-1;

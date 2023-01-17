@@ -24,6 +24,9 @@ typedef struct
     GC_SPRITE Credits;
     GC_SPRITE ChargerSauvegarde;
     GC_SPRITE MENU_BACKGRD;
+    GC_SPRITE PARTY_BACKGRD;
+    GC_SPRITE PLAYER_INFO;
+    GC_SPRITE VICTORY;
     GC_TEXT GamesSaved;
     GC_BUTTON GamesSaved_bt[10];
 

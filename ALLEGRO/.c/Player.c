@@ -102,8 +102,8 @@ int Player_Deplacement(PLAYER* pPlayer, PART* pPart_New, PLATEAU* pPlateau)
 
 void Treasure_draw (PLAYER* pPlayer, GC_SPRITE* pTresor)
 {
-    pTresor->gc_properties.gc_space.POSITION_X = 1500;
-    pTresor->gc_properties.gc_space.POSITION_Y = 200;
+    pTresor->gc_properties.gc_space.POSITION_X = 1535;
+    pTresor->gc_properties.gc_space.POSITION_Y = 210;
     GC_SPRITE_DRAW(pTresor);
 
     pPlayer->sprite.gc_properties.gc_space.POSITION_X = 1300;
@@ -111,7 +111,7 @@ void Treasure_draw (PLAYER* pPlayer, GC_SPRITE* pTresor)
     GC_SPRITE_DRAW(&pPlayer->sprite);
 }
 
-void Player_Check_Treasure_Victory(PLAYER* pPlayer, PLATEAU* pPlateau, int nb_player)
+int Player_Check_Treasure_Victory(PLAYER* pPlayer, PLATEAU* pPlateau, int nb_player)
 {
     if (pPlateau->parts[pPlayer->position_on_plateau.x][pPlayer->position_on_plateau.y].treasure == pPlayer->liste_treasure[pPlayer->nb_treasure])
     {
@@ -123,14 +123,10 @@ void Player_Check_Treasure_Victory(PLAYER* pPlayer, PLATEAU* pPlateau, int nb_pl
         pPlateau->parts[pPlayer->position_on_plateau.x][pPlayer->position_on_plateau.y].treasure = -1;
     }
 
-    if (pPlayer->nb_treasure >= 24 / nb_player && pPlayer->position_on_plateau.x == pPlayer->position_start.x&& pPlayer->position_on_plateau.y == pPlayer->position_start.y)
+    if ((pPlayer->nb_treasure >= 1) && (pPlayer->position_on_plateau.x == pPlayer->position_start.x) && (pPlayer->position_on_plateau.y == pPlayer->position_start.y))
     {
-        printf("\n");
-        printf("\n");
-        printf("\n");
-        printf("VICTOIRE");
-        printf("\n");
-        printf("\n");
-        printf("\n");
+        return 1;
     }
+
+    return 0;
 }

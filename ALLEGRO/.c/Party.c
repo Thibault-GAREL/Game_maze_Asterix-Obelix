@@ -35,12 +35,16 @@ void Party_Init(PARTY* pParty, int player_count, GC_MANAGER* pManager)
     pParty->player_count = player_count;
     pParty->player_turn = 0;
     pParty->player_turn_step = 0;
+    pParty->victory = -1;
     Plateau_Init(&pParty->plateau, pManager);
 
     for (int i = 0; i < pParty->player_count; i++) {
         Player_Init(&pParty->players[i], i, "");
         pParty->players[i].position_on_plateau.x = players_start_pos[i][0];
         pParty->players[i].position_on_plateau.y = players_start_pos[i][1];
+        pParty->players[i].position_start.x = players_start_pos[i][0];
+        pParty->players[i].position_start.y = players_start_pos[i][1];
+
     }
 
     char* adresse_treasure[25] = {FILE_ACCESS ".\\Import\\Dessin_bague d'émeraude.png",

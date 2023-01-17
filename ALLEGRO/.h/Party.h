@@ -18,6 +18,7 @@ typedef struct
     PLAYER players[PLAYER_MAX_COUNT];
     BUTTON buttons[BUTTONS_SETPART_COUNT];
     GC_MANAGER* pManager;
+    int victory;
 }PARTY;
 
 void Party_Init(PARTY* pParty, int player_count, GC_MANAGER* pManager);

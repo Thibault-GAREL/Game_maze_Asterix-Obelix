@@ -21,6 +21,7 @@ int main()
     GC_MANAGER manager;
     GC_MANAGER_CREATE(&manager, 1920, 1080);            //Les dimensions en pixel ne servent plus à rien vu qu'on affiche en plein écran
 
+    Start:
     GC_SPRITE PlayerCount;
     GC_SPRITE_INIT(&PlayerCount,FILE_ACCESS".\\Import\\ALLEGRO_PLAYERS_CONFIG.png");
     PlayerCount.gc_properties.gc_space.POSITION_X = 500;
@@ -72,12 +73,29 @@ int main()
         Party_Init(&party, menu.PlayerCount, &manager);
     }
 
-    while (1) 
+    while (party.victory == -1) 
     {
         Switch_Part_Loop(&manager, &party, &menu);
         Deplacement_Player_Loop(&manager, &party, &menu); 
 
         Save_Party(party, menu.save_selected);
+    }
+
+    while (1)
+    { 
+        ALLEGRO_COLOR blk = al_map_rgb(0,0,0);
+        al_clear_to_color(blk); 
+        GC_SPRITE_DRAW(&menu.VICTORY);
+        Button_Draw(&menu.Button_Escape);
+        al_flip_display();
+
+        GC_MANAGER_UPDATE_EVENT(&manager);
+        Button_Update_Event(&menu.Button_Escape);
+
+        if (menu.Button_Escape.gc_button.state == GC_BUTTON_STATE_RELEASED)
+        {
+            goto Start;
+        }
     }
 
     GC_MANAGER_DESTROY(&manager);
@@ -120,16 +138,26 @@ void Deplacement_Player_Loop(GC_MANAGER* pManager, PARTY* pParty, MENU* pMenu)
 
 void Draw_Clear_Plateau_Player(PARTY* pParty, MENU* pMenu)
 {
+    int v = 0;
     for (int i = 0; i < pParty->player_count; i++)
     {
-        Player_Check_Treasure_Victory(&pParty->players[i], &pParty->plateau, pParty->player_count);
+        v = Player_Check_Treasure_Victory(&pParty->players[i], &pParty->plateau, pParty->player_count);
+        if (v != 0)
+        {
+            pParty->victory = i;
+        }
     }
 
     ALLEGRO_COLOR blk = al_map_rgb(0,0,0);
     al_clear_to_color(blk);
+
+    GC_SPRITE_DRAW(&pMenu->PARTY_BACKGRD);
+    GC_SPRITE_DRAW(&pMenu->PLAYER_INFO);
+
     Party_Plateau_Draw(pParty);
     Party_Player_Draw(pParty);
     Treasure_draw(&pParty->players[pParty->player_turn], &pParty->treasure_sprite[pParty->players[pParty->player_turn].liste_treasure[pParty->players[pParty->player_turn].nb_treasure]]);
+    
     Button_Draw(&pMenu->Button_Escape);
 }
 
