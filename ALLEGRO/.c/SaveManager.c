@@ -40,7 +40,7 @@ void Load_Party(PARTY* pParty, int save_id, GC_MANAGER* pManager)
 
     if (size < sizeof(PARTY))
     {
-        printf("\nSauvegarde non valide (size=%llu) numero %d \"%s\"", size, save_id, fileName[0]);
+        //printf("\nSauvegarde non valide (size=%llu) numero %d \"%s\"", size, save_id, fileName[0]);
         return;
     }
     
