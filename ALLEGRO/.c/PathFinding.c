@@ -17,7 +17,7 @@
 	{
 		for (int y = 0; y < Y; y++)
 		{
-			walls[x][y] = VOID;
+			walls[x][y] = PATH_VOID;
 			distances[x][y] = ND;
 			path[x][y] = ND;
 		}
@@ -38,7 +38,7 @@
 	Algo_PathFinding(walls, distances, sx, sy, eX, eY, ways_pos);
 
 	for (int i = 0; i < 100; i++)
-	{	
+	{
 		if (ways_pos[i][0] == ND && ways_pos[i][1] == ND)
 		{
 			printf("\nDistance=%d", i);
@@ -70,7 +70,7 @@ void Algo_PathFinding(int walls[X][Y], int distances[X][Y], int sx, int sy, int 
 }
 
 int Pass(int walls[X][Y], int distances[X][Y])
-{	
+{
 	//int distances_Count = 0;
 	for (int x = 0; x < X; x++)
 	{
@@ -96,7 +96,7 @@ int Set_Distance(int distances[X][Y], int oX, int oY)
 	int offset[4][2] = {{1,0}, {0,1}, {-1,0}, {0,-1}};
 	int x, y;
 	int distance_lowest = ND;
-	
+
 	for (int i = 0; i < 4; i++)
 	{
 		x = oX + offset[i][0];
@@ -117,7 +117,7 @@ int Set_Distance(int distances[X][Y], int oX, int oY)
 			distance_lowest = distances[x][y];
 			continue;
 		}
-		
+
 		if (distances[x][y] < distance_lowest)
 		{
 			distance_lowest = distances[x][y];
@@ -190,7 +190,7 @@ void Console_Draw_Tableau(int tab[X][Y], char* title)
 	for (int y = 0; y < X; y++) //int y = Y-1; y >= 0; y--
 	{
 		printf("\ny=%d| ", y);
-		
+
 		if (y < 10)
 		{
 			printf(" ");
@@ -203,7 +203,7 @@ void Console_Draw_Tableau(int tab[X][Y], char* title)
 				printf("  - ");
 				continue;
 			}
-			
+
 			if (tab[x][y] <  100)
 			{
 				printf(" ");
@@ -213,7 +213,7 @@ void Console_Draw_Tableau(int tab[X][Y], char* title)
 			{
 				printf(" ");
 			}
-								
+
 			printf("%d ", tab[x][y]);
 
 		}
@@ -223,12 +223,12 @@ void Console_Draw_Tableau(int tab[X][Y], char* title)
 }
 
 void Console_Draw_Way(int way[100][2])
-{	
+{
 	int way_Per_Line = 10;
 	int wl = 0;
-	
+
 	printf("\n[WAY]\n");
-	
+
 	for (int i = 0; i < 100; i++)
 	{
 		if (way[i][0] == ND && way[i][1] == ND)

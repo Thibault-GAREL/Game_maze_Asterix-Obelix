@@ -26,7 +26,7 @@
         GC_BUTTON_UPDATE_EVENT(&button);
         printf("\n[%d] (%d; %d), mouse=%d", button.state, button.event->mouse.x, button.event->mouse.y, button.isMouseOver);
         GC_SPRITE_DRAW(&sprite);
-    
+
         al_flip_display();
     }
 
@@ -35,7 +35,7 @@
 
 
 
-/* Exemple d'entrée texte 
+/* Exemple d'entrée texte
 
 int main()
 {
@@ -44,7 +44,7 @@ int main()
 
     GC_INPUT_FIELD gc_input_field;
     GC_INPUT_FIELD_INIT(&gc_input_field, &manager.event);
-    
+
     GC_TEXT gc_text;
     GC_TEXT_INIT(&gc_text, gc_input_field.text);
 
@@ -57,10 +57,10 @@ int main()
             break;
         }
 
-        GC_INPUT_FIELD_UPDATE_EVENT(&gc_input_field);       
+        GC_INPUT_FIELD_UPDATE_EVENT(&gc_input_field);
         printf("\n<DEBUG> [GC_INPUT_FIELD_UPDATE_EVENT] INPUT: [%d] --> \'%c\'", gc_input_field.event->keyboard.unichar, gc_input_field.event->keyboard.unichar);
         al_clear_to_color(al_map_rgb(0,0,0));
-        GC_TEXT_DRAW(&gc_text); 
+        GC_TEXT_DRAW(&gc_text);
 
         al_flip_display();
     }
@@ -71,13 +71,13 @@ int main()
 
 
 
-/* Exemple d'affichage de texte 
+/* Exemple d'affichage de texte
 
 int main()
 {
     GC_MANAGER manager;
     GC_MANAGER_CREATE(&manager, 640, 420);
-    
+
     char text_out[] = "Texte 1";
 
     GC_TEXT gc_text;
@@ -96,4 +96,4 @@ int main()
     al_rest(2);
 
     GC_MANAGER_DESTROY(&manager);
-}/**/
+}

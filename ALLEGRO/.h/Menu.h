@@ -40,6 +40,9 @@ typedef struct
     BUTTON PLAYER_FOUR;
     BUTTON PLAYER_CONTINUE;
 
+    GC_TEXT winner_text;
+    char winner_name[50];
+
     int PlayerCount;
     int menu_Selected;
     int save_count;

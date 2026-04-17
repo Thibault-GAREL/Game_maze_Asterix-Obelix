@@ -42,13 +42,13 @@ int main() {
     GC_BUTTON Button_Menu_1, Button_Menu_2, Button_Menu_3;                          //déclaration des boutons du menu
 
     GC_SPRITE sprite_rotation_posi, sprite_rotation_nega;
-    
+
     GC_SPRITE MenuChoice1;
     GC_SPRITE MenuChoice2;
     GC_SPRITE MenuChoice3;
-    GC_SPRITE Credits;        
+    GC_SPRITE Credits;
     GC_SPRITE MENU_BACKGRD;                                                       // Initialisation de la page des crédits
-    
+
     GC_SPRITE Pion_position1;                                                       // Initialisation des textures des quatre pions
     GC_SPRITE Pion_position2;                                                       // 2ème
     GC_SPRITE Pion_position3;                                                       // 3ème
@@ -76,7 +76,7 @@ int main() {
                    FILE_ACCESS ".\\Import\\Labyrinthe_Credits.png");                            // Initialisation de la texture des crédits
     GC_SPRITE_INIT(&MENU_BACKGRD,
                    FILE_ACCESS ".\\Import\\MENU_BACKGROUND.png");                          // import du fichier du fond d'écran du menu
-    
+
     GC_SPRITE_INIT(&Pion_position1,
                    FILE_ACCESS ".\\Import\\Dessin_asterix_Image_Centre_Small.png");      // Import du premier joueur
     GC_SPRITE_INIT(&Pion_position2,
@@ -364,4 +364,4 @@ int main() {
             }
         }
     }
-}/**/
+}

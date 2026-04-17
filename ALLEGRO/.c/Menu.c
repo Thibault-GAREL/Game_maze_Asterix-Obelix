@@ -76,6 +76,14 @@ void Menu_Init(MENU* pMenu, GC_MANAGER* pManager)
     Button_Set_Space(&pMenu->PLAYER_FOUR, 1100, 550, 0);
     Button_Set_Space(&pMenu->PLAYER_CONTINUE, 750, 650, 0);
 
+    GC_TEXT_INIT(&pMenu->winner_text, pMenu->winner_name);
+    GC_TEXT_SET_FONT(&pMenu->winner_text, FILE_ACCESS ".\\Import\\CaesarDressing-Regular.ttf", 80);
+    pMenu->winner_text.color = al_map_rgb(255, 220, 50);
+    pMenu->winner_text.al_flag = ALLEGRO_ALIGN_CENTER;
+    pMenu->winner_text.gc_properties.gc_space.POSITION_X = 960;
+    pMenu->winner_text.gc_properties.gc_space.POSITION_Y = 820;
+    pMenu->winner_name[0] = '\0';
+
     pMenu->menu_Selected = 0;
 }
 

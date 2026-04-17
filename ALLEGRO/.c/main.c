@@ -15,19 +15,20 @@ void Draw_Clear_Plateau_Player(PARTY* pParty, MENU* pMenu);
 void Update_Event_In_Menu(GC_MANAGER* pManager, MENU* pMenu);
 void Update_Event_In_Party(GC_MANAGER* pManager, MENU* pMenu);
 
-int main() 
+int main()
 {
     //al_set_new_display_flags(ALLEGRO_FULLSCREEN_WINDOW);
     GC_MANAGER manager;
-    GC_MANAGER_CREATE(&manager, 1920, 1080);            //Les dimensions en pixel ne servent plus à rien vu qu'on affiche en plein écran
+    GC_SPRITE PlayerCount;
+    MENU menu;
+
+    GC_MANAGER_CREATE(&manager, 1920, 1080);
 
     Start:
-    GC_SPRITE PlayerCount;
     GC_SPRITE_INIT(&PlayerCount,FILE_ACCESS".\\Import\\ALLEGRO_PLAYERS_CONFIG.png");
     PlayerCount.gc_properties.gc_space.POSITION_X = 500;
     PlayerCount.gc_properties.gc_space.POSITION_Y = 300;
 
-    MENU menu;
     Menu_Init(&menu, &manager);
     menu.save_selected = Get_Last_Party_Saved();
     menu.save_count = menu.save_selected + 1;
@@ -61,7 +62,7 @@ int main()
     PARTY party;
 
     if (menu.PlayerCount == -1)
-    {    
+    {
         Load_Party(&party, menu.save_selected, &manager);
     }
     else
@@ -73,19 +74,23 @@ int main()
         Party_Init(&party, menu.PlayerCount, &manager);
     }
 
-    while (party.victory == -1) 
+    while (party.victory == -1)
     {
         Switch_Part_Loop(&manager, &party, &menu);
-        Deplacement_Player_Loop(&manager, &party, &menu); 
+        Deplacement_Player_Loop(&manager, &party, &menu);
 
         Save_Party(party, menu.save_selected);
     }
 
+    snprintf(menu.winner_name, sizeof(menu.winner_name), "Joueur %d a gagne !", party.victory + 1);
+    menu.winner_text.text = menu.winner_name;
+
     while (1)
-    { 
+    {
         ALLEGRO_COLOR blk = al_map_rgb(0,0,0);
-        al_clear_to_color(blk); 
+        al_clear_to_color(blk);
         GC_SPRITE_DRAW(&menu.VICTORY);
+        GC_TEXT_DRAW(&menu.winner_text);
         Button_Draw(&menu.Button_Escape);
         al_flip_display();
 
@@ -124,7 +129,7 @@ void Deplacement_Player_Loop(GC_MANAGER* pManager, PARTY* pParty, MENU* pMenu)
     al_flip_display();
 
     PART* pPart_target = 0;
-    while (!Player_Deplacement(&pParty->players[pParty->player_turn], pPart_target, &pParty->plateau)) 
+    while (!Player_Deplacement(&pParty->players[pParty->player_turn], pPart_target, &pParty->plateau))
     {
         Update_Event_In_Party(pManager, pMenu);
         pPart_target = Plateau_Get_Part_Click(&pParty->plateau);
@@ -157,7 +162,7 @@ void Draw_Clear_Plateau_Player(PARTY* pParty, MENU* pMenu)
     Party_Plateau_Draw(pParty);
     Party_Player_Draw(pParty);
     Treasure_draw(&pParty->players[pParty->player_turn], &pParty->treasure_sprite[pParty->players[pParty->player_turn].liste_treasure[pParty->players[pParty->player_turn].nb_treasure]]);
-    
+
     Button_Draw(&pMenu->Button_Escape);
 }
 
@@ -189,7 +194,7 @@ void Update_Event_In_Party(GC_MANAGER* pManager, MENU* pMenu)
         GC_MANAGER_DESTROY(pManager);
         exit(0);
     }
-    
+
     Button_Update_Event(&pMenu->Button_Escape);
 
     if (pMenu->Button_Escape.gc_button.state == GC_BUTTON_STATE_RELEASED)

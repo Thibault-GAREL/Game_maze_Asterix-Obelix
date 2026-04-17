@@ -1,8 +1,24 @@
 #include "../.h/Gc.h"
 
+#ifdef _WIN32
+    #include <windows.h>
+#endif
+
 
 bool GC_INIT_ALLEGRO()
 {
+    #ifdef _WIN32
+    {
+        typedef BOOL (WINAPI *SetDPIAware_t)(void);
+        HMODULE hUser32 = LoadLibraryA("user32.dll");
+        if (hUser32) {
+            SetDPIAware_t fn = (SetDPIAware_t)GetProcAddress(hUser32, "SetProcessDPIAware");
+            if (fn) fn();
+            FreeLibrary(hUser32);
+        }
+    }
+    #endif
+
     //al_set_new_bitmap_flags(ALLEGRO_MIN_LINEAR | ALLEGRO_MAG_LINEAR) ;
 
     if (!al_init())
@@ -51,6 +67,10 @@ void GC_MANAGER_CREATE(GC_MANAGER* pManager, int width, int height)
         fprintf(stderr, "\n<ERROR> Impossible to initialize allegro and his addons");
         return;
     }
+
+    // Utiliser une fenêtre windowed standard (pas fullscreen) pour éviter tout scaling du système
+    // Cela garantit que les coordonnées de souris correspondent exactement aux pixels affichés
+    al_set_new_display_flags(0);  // Mode fenêtré standard
 
     if ((pManager->display = al_create_display(width, height)) == NULL)
     {
@@ -173,11 +193,18 @@ void GC_BUTTON_UPDATE_EVENT(GC_BUTTON* gc_button)
     if (gc_button->event->type == ALLEGRO_EVENT_MOUSE_AXES)
     {
         GC_SPACE btSpace = gc_button->gc_properties.gc_space;
+        
+        // Détection simple: le sprite couvre la zone de POSITION_X à POSITION_X+WIDTH
+        // et de POSITION_Y à POSITION_Y+HEIGHT
+        float sprite_left = btSpace.POSITION_X;
+        float sprite_top = btSpace.POSITION_Y;
+        float sprite_right = btSpace.POSITION_X + btSpace.WIDTH;
+        float sprite_bottom = btSpace.POSITION_Y + btSpace.HEIGHT;
 
-        if (btSpace.POSITION_X <= gc_button->event->mouse.x 
-        && btSpace.POSITION_Y <= gc_button->event->mouse.y 
-        && btSpace.POSITION_X + btSpace.WIDTH >= gc_button->event->mouse.x 
-        && btSpace.POSITION_Y + btSpace.HEIGHT >= gc_button->event->mouse.y)
+        if (sprite_left <= gc_button->event->mouse.x 
+        && sprite_top <= gc_button->event->mouse.y 
+        && sprite_right >= gc_button->event->mouse.x 
+        && sprite_bottom >= gc_button->event->mouse.y)
         {
             gc_button->isMouseOver = true;
         }

@@ -8,10 +8,10 @@
 #define X 7*3
 #define Y 7*3
 #define WALL 1
-#define VOID 0
+#define PATH_VOID 0
 #define START 2
 #define END 3
-#define ND -1 
+#define ND -1
 
 
 void Algo_PathFinding(int walls[X][Y], int distances[X][Y], int sx, int sy, int eX, int eY, int way[100][2]);
